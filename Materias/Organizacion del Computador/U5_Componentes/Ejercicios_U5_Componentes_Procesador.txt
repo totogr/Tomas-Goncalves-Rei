@@ -1,0 +1,124 @@
+1. ¿Cómo funciona el ciclo de trabajo búsqueda - decodificación - ejecución?
+
+En la busqueda (Fetch), el procesador busca la próxima instrucción desde la memoria. 
+Luego, la decodifica (Decode), para entender qué operación debe realizar.
+Y por ultimo, la ejecuta (Execute),  llevando a cabo la operación especificada por la instrucción.
+
+2. Indicar 5 características de los procesadores CISC.
+
+CISC:
+Juego de Instrucciones: Complejo y variado
+Duracion de Instrucciones: Varias pueden necesitar múltiples ciclos
+Tamaño del Codigo: Generalmente menor
+Energia y Consumo: Mayor consumo de energía
+Microcodigo y Pipeline: Microcodigo para simplificar instrucciones complejas
+
+3. Indicar 5 características de los procesadores RISC.
+
+RISC:
+Juego de Instrucciones: Reducido y simplificado
+Duracion de Instrucciones: La mayoría se ejecuta en un ciclo
+Tamaño del Codigo: Generalmente mayor
+Energia y Consumo: Menor consumo de energía
+Microcodigo y Pipeline: Pipeline eficiente y con mejor velocidad de ejecucion
+
+4. Mencionar los nombres de 3 procesadores CISC y 3 RISC.
+
+CISC: Intel x86, AMD Athlon, Motorola 68000
+RISC: ARM Cortex-A, IBM PowerPC, SPARC
+
+5. Indicar cuál tarda menos si el promedio de ciclos de máquina por instrucción 
+de este procesador RISC es de 1,2 y el del CISC es 1,5.
+
+Para saber cual tarda menos debemos multiplicar la cantidad de instrucciones por
+el promedio de ciclos por instruccion, ya que los dos tienen 6 instrucciones:
+6 * 1.2 = 7.2 ciclos
+6 * 1.5 = 9 ciclos
+Esto significa que el procesador RISC tardo menos ya que requirio 7.2 ciclos para 
+ejecutarse, mientras que el CISC necesito 9.
+
+6. Tiempo de ejecución => T = N x CPI / fck . 
+N es la cantidad de instrucciones ejecutadas
+CPI es el número de ciclos de máquina promedio por instrucción
+fck es la frecuencia de reloj del procesador
+promedio de ciclos de máquina por instrucción del procesador 
+RISC de 1,2 y de 1,5 en el procesador CISC.
+
+a) Si tardan lo mismo en ejecutar el programa y la frecuencia de reloj es la misma,
+¿ que porcentaje de instrucciones N RISC representa N CISC ?
+Nrisc x CPIrisc / fck === Ncisc x CPIcisc / fck ==> Nrisc / Ncisc === 1.25
+Nrisc es el 125% de Ncisc
+
+b) Si la frecuencia de reloj del procesador RISC es 12% mayor a la 
+frecuencia de reloj del procesador CISC.
+¿ que porcentaje de instrucciones N RISC representa N CISC ?
+Nrisc x CPIrisc / fck === Ncisc x CPIcisc / fck ==> Nrisc / Ncisc === 1.4
+Nrisc es el 140% de Ncisc
+​
+7. Determinar el CPI efectivo, la velocidad en MIPS, y el tiempo de ejecución para este
+programa. Con un procesador de 40 MHz y 100.000 instrucciones.
+
+CPI (ciclos por instruccion) se calcula como el total de ciclos sobre el total de instrucciones,
+Aritméticos enteros => 45.000 * 1 = 45.000
+Datos transferidos => 32.000 * 2 = 64.000
+Punto flotante => 15.000 * 2 = 30.000
+Control transferidos => 8.000 * 2 = 16.000
+Total de ciclos = 45.000 + 64.000 + 30.000 + 16.000 = 155.000
+CPI total = 155.000 / 100.000 = 1.55 CPI
+
+MIPS (Millones de Instrucciones Por Segundo) se calcula como las instrucciones ejecutadas
+sobre el tiempo de ejecucion en segundos x10^6
+Para el tiempo de ejecucion en segundos usamos la frecuencia 40 MHz = 40 x10^6 Hz
+Tiempo de ciclo => 1 / frecuencia = 1 / 40 x10^6 = 0.000000025 Hz
+Tiempo de ejecucion => total de ciclos * tiempo de ciclo = 155.000 * 0.000000025 = 0.003875 s
+MIPS = 100.000 / 0.003875 x10^6 = 25.8 MIPS
+
+CPI = 1.55
+MIPS = 25.8
+Tiempo de Ejecucion = 0.003875 s
+
+8. 
+a. Explicar el concepto de pipelining.
+
+El pipelining es una técnica de diseño de procesadores que permite 
+la superposición de la ejecución de múltiples instrucciones.
+Etapas:
+1. Fetch (F): Obtener la instrucción de la memoria.
+2. Decode (D): Decodificar la instrucción y leer los registros.
+3. Execute (E): Ejecutar la operación.
+4. Memory Access (M): Acceder a la memoria si es necesario.
+5. Write Back (W): Escribir el resultado de vuelta en el registro.
+
+b. ¿Qué representa el número 4 marcado en rojo en la figura?
+
+Significa que la instruccion 4 esta en estado de ejecucion.
+
+c. Indicar todo lo que ocurre durante el tiempo 6.
+
+Mientras el tiempo va pasando, cada instruccion avanza en las etapas del pipelining mientras
+que otras va realizando el mismo procedimiento simultaneamente.
+
+9. Un procesador superscalar es un tipo de procesador que puede ejecutar más de una 
+instrucción por ciclo de reloj utilizando múltiples unidades funcionales. La ventaja del diseño 
+superscalar es que puede manejar múltiples instrucciones en paralelo, independientemente de la 
+duración de las etapas individuales.
+
+10. En un procesador superscalar con 3 canalizaciones (o unidades funcionales), se pueden 
+ejecutar hasta 3 instrucciones al mismo tiempo en cada ciclo de reloj.
+
+11. 
+a. ¿Qué significa el acrónimo FLOPS?
+
+FLOPS es la medida de rendimiento en computacion para indicar cuantas operaciones de punto 
+flotante realiza el sistema por segundo.
+
+b. Escribir un 1 seguido de tantos ceros como corresponda a la cantidad de FLOPS que
+puede alcanzar la velocidad de funcionamiento de la supercomputadora Blue Gene.
+
+Como la supercomputadora Blue Gene alcanza velocidades de peta FLOPS, esto significa que maneja 
+1.000.000.000.000.000 de FLOPS por segundo.
+
+
+
+
+ .

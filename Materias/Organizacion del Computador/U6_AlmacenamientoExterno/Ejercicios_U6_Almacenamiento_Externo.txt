@@ -1,0 +1,95 @@
+1. Indicar dos velocidades típicas de discos rígidos magnéticos con su
+correspondiente unidad.
+
+7200 RPM
+5400 RPM
+
+2. ¿Describa superficies , sectores, pistas y cilindros en un disco magnético y su
+relación?
+
+Superficies: Cara del disco donde se almacena la informacion
+Sectores: Unidades pequeñas de almacenamiento, comunmente de 512 bytes
+Pistas: Caminos en la superficie del disco donde se graba la informacion
+Cilindros: Conjunto de pistas que están a la misma distancia relativa del centro en los platos
+
+3. Para el disco rígido Seagate SkyHawk ST8000VX0022 indicar:
+
+a. Las 5 especificaciones que considere más importantes
+- Capacidad: 8Tb
+- RPM: 5400 RPM
+- Cache: 256Mb
+- Interfaz: SATA 6Gb/s
+- Formato: 3,5 pulgadas
+
+b. ¿Cuántos discos tiene (P)?
+Este modelo generalmente tiene 6 discos.
+
+c. ¿Cuántas cabezas por disco tiene?
+Cada disco tiene 2 cabezas, osea 12 en total
+
+d. ¿Cuántos bytes por sector tiene (N) ?
+El tamaño de un sector es de 512 bytes.
+
+e. ¿Cuántos sectores tiene?
+Capacidad / tamaño por sector => 8Tb = 8.796.093.022.208 bytes / 512 bytes == 17.179.869.184 sectores
+
+f. ¿Cuántos sectores por pista tiene (S)?
+63 sectores por pista (segun el manual)
+
+g. ¿Cuántos cilindros tiene?
+16,383 cilindros (Segun manual)
+
+4. Una unidad de disco tiene las siguientes especificaciones:
+- Superficies de grabación: 24
+- Cilindros: 14.000
+- Sectores por pista: 800
+- Bytes por sector: 1024
+
+a. ¿Cuál es la capacidad del disco?
+Capacidad = Superficies de Grabacion * Cilindros * Sectores de Pista * Bytes por Sector
+Capacidad = 24 * 14.000 * 800 * 1.024 == 275.251.200.000 bytes
+Pasando a Gb = Capacidad / 2^30 = 256,34 Gb
+
+b. ¿A qué velocidad se transfieren los datos si rota a 7200 rpm?
+7200 rpm / 60 = 120 rps
+Velocidad de transferencia = Sectores por pista * Bytes por sector * Revoluciones por segundo
+Velocidad de transferencia = 800 * 1.024 * 120 == 98.304.000 bytes/segundo
+Velocidad de transferencia = 98.304.000 / 2^20 == 93,75 Mb/segundo
+
+5. 
+- Un disco de 300 Mbyte de capacidad 
+- 815 cilindros
+- 19 cabezas
+- Velocidad entre pista y pista de 7,5 m/s
+- Frecuencia de rotación de 3.600 rpm. 
+- Existen 10 platos y solo se usan 19 caras para el almacenamiento de datos. 
+- Cada sector contiene la misma cantidad de información y cada pista tiene la misma cantidad de sectores.
+- El tiempo de transferencia entre el disco y la CPU es de 300 Kbytes/s. 
+- El espacio entre pistas es de 0,25 mm.
+
+a. Calcular el tiempo necesario para leer una pista (no el tiempo requerido para
+transmitir el contenido de la pista a la computadora). Suponer que no se utiliza entrelazado.
+Tiempo de lectura de pista = 1 / rps
+RPS = 3.600 rpm / 60s == 60 rps
+Tiempo de lectura de pista = 1 / 60rps == 0,016s
+
+b. ¿Cuál es el mínimo tiempo requerido para transferir la totalidad del contenido
+del disco a una CPU, bajo las mejores circunstancias posibles? Suponer que
+la cabeza de la primera cara a ser leida está posicionada al comienzo del
+primer sector de la primera pista y que se lee la totalidad de un cilindro antes
+de mover el brazo. Suponer, además, que la unidad de disco puede contener
+en memoria un cilindro completo, pero no más que eso. Durante la operación,la unidad de disco llena primero su memoria buffer, luego la descarga sobre
+la CPU y solo después de esa operación realiza una nueva lectura del disco.
+
+Capacidad por cilindro = Capacidad Total / Cilindros = 300Mb / 815 == 0,368 Mb/cilindro
+Tiempo de lectura de cilindro = cabezas * tiempo de lectura de pista = 19 * 0,016s == 0,304s
+
+Velocidad de transferencia = 300 Kbytes/s == 0,3Mb/s
+Tiempo de transf. de cilindro = Capacidad por cilindro / velocidad de transf. = 0,368 / 0,3 = 1,23s
+
+Tiempo total de cilindro = Tiempo de lectura de cilindro + Tiempo de transf. de cilindro = 0,304s + 1,23s == 1,534s
+
+Tiempo mínimo para transferir todo el contenido del disco:
+Tiempo total de cilindro * 815 = 1,534s * 815 = 1.250s
+
+

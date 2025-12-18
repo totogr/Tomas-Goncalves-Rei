@@ -1,0 +1,91 @@
+###########
+# IEEE754 #
+###########
+
+http://puntoflotante.org/formats/fp/
+
+Punto flotante permite escribir números mucho más grandes y mucho más chicos que punto fijo.
+4 digitos decimales ---> 9999 es el más grande
+
+2 exponente 2 mantisa ----> 99 x 10^99
+
+99 x 10^99  >>  9999 
+
+________________________________________
+
+#####################
+# DECIMAL A IEEE754 #
+#####################
+
+Pasar el decimal - 94,921875 a punto flotante
+  
+PASO 1. Convertir a binario
+  A = 1011110,111011
+  
+  B = 1011110,111011 x 2^0
+  C = 1011110,111011 x 2^0
+  D = 1011110111,011 x 2^(-3)
+  E = 101,1110111011 x 2^4
+  F = 0,001011110111011 x 2^9
+  F = 1,011110111011 x 2^6
+  
+Para punto flotante escribimos el número con un 1
+como parte entera. Nos quedamos con F
+  
+PASO 2. Escribir el número con 1 en la parte entera:
+	1,011110111011 x 2^6
+  Ese 1 de la parte entera no se representa porque todos sabemos que va y no 
+  queremos gastar un bit de presición de la mantisa para representarlo.
+  Por eso se llama bit implícito.
+  
+PASO 3. Exponente en código exceso 127
+    6 + 127 = 133 = 128 + 5
+	             10000000 + 101
+	133(base 10) = 10000101 (base 2)
+	
+	
+	  01111111 = 127
+  8 bits --> 256 números --> 128 arrancan con 0 y 128 arrancan con 1
+  Cualquier exponente positivo el MSB es 1
+  Cualquier exponente negativo el MSB es 0
+	
+PASO 4. Completar la grilla [signo(1 bit) exponente (8 bits) mantisa (23 bits)]
+	s e m
+  Positivo  ---> yo escribo un 0
+  Negativo  ---> yo escribo un 1
+  s    e            m
+  1 10000101 01111011101100000...000 (es una palabra de 32 bits que van juntos)
+  
+Ejercicio:
+  Convertir -837,78 decimal a Punto Flotante simple presición
+  R: 11000100010100010111000111101011
+       
+________________________________________
+
+#####################
+# IEEE754 A DECIMAL #
+#####################
+    
+ Pasar de punto flotante  11000010101111011101100000...000 a decimal 
+  
+  1. Separamos la gilla sem
+s = 1
+e = 10000101
+m = 1,01111011101100000...000
+  
+  2. exponente
+  1+4+128 = 133  
+  133 - 127 = 6
+  
+  3. mantisa
+  1,0 1  1  1  10 1  1  1 0 1   1 = 
+  2^0+ 2^(-2)+ 2^( -3)+ 2^( -4) + 2^(-5) + 2^(-7)+ 2^( -8) + 2^(-9) + 2^(-11) + 2^(-12) = 1,483154297
+  
+  4.  1,483154297 x 2 ^6 = 94,921875 
+   
+   -94,921875
+   
+ Ejercicio:
+Convertir a decimal el siguiente número en punto flotante simple presición:
+10101011110111010000000100010001 
+ 

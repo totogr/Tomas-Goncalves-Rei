@@ -1,0 +1,51 @@
+Mascaras
+1) 01001000 -> 48 (Operacion AND) (Obtiene el bit 3 y 6)
+2) 00010000 -> 10 (Operacion OR) (Fuerza un 1 en el bit 4)
+3) 11011111 -> DF (Operacion AND) (Fuerza un 0 en el bit 5)
+4) 00100000 -> 20 (Operacion OR) (Fuerza un 1 en el bit 5)
+5) 11101111 -> EF (Operacion AND) (Fuerza un 0 en el bit 4)
+
+
+00001000 -> 08 (Resultado esperado: bit 3 en 1 y bit 6 en 0)
+
+--------------------------------------------------------------
+
+20 	2008	Guardo el resultado esperado
+22 	11AA	Obtengo el contenido de la direccion AA
+24 	2248	Guardo la mascara para obtener el bit 3 y 6
+26 	8312	Aplico la mascara al dato obtenido
+28 	B330	Compruebo si el resultado es el esperado (bit 3 en 1 y bit 6 en 0)
+----------------Caso FALSO--------------------------------------------------------
+2A 	2420	Guardo las mascara para forzar un 1 en el bit 5 (mascara 1)
+2C 	25EF	Guardo las mascara para forzar un 0 en el bit 4 (mascara 2)
+2E 	B034	Salto a la instruccion que aplica las mascaras
+----------------Caso VERDADERO--------------------------------------------------------
+30 	2410	Guardo la mascara para forzar un 1 en el bit 4 (mascara 1)
+32 	25DF	Guardo la mascara para forzar un 0 en el bit 5 (mascara 2)
+34 	7614	Aplico la mascara 1 al dato original
+36 	8656	Aplico la mascara 2 al resultado de la instruccion anterior
+38 	36AA	Guardo el resultado en la direccion AA
+3A 	C000	Fin del programa
+
+Realizar un programa que comience en la dirección 20 que lea el contenido de la dirección AA. Si el bit 3 es 1 y el bit 6 es 0 forzar un 1 en el bit 4 y un 0 en ele bit 5. En caso contario forzar un 0 en el bit 4 y un 1 en ele bit 5.
+76543210        
+01001000
+
+4    8
+20 2008
+22 12AA
+24 2148
+26 8312
+28 B32E
+24 24EF  11101111
+26 8514
+28 2620  00100000
+2A 7765
+2C B036
+2E 1020  00100000
+30 7601
+32 28EF   11101111
+34 8786
+36 37AA
+38 C000
+3A

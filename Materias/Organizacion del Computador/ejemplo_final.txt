@@ -1,0 +1,15 @@
+1 ) Restas de binarios de punto fijo sin signo y con signo en representación, flags y si se exceden del rango de representación, igual al del primer parcial
+
+2 ) Número guardado la dirección BB y otro en la dirección CC, multiplicarlos y ver si el resultado tiene el bit 4 en 1. Caso afirmativo guardar el complemento a la base en EE, caso negativo guardar el resultado en EE
+
+3 ) Lista de números que empieza en una dirección, de largo igual al numero en otra dirección. Guardar en una dirección la cantidad de numeros de la lista que son iguales al primero
+
+4 ) Uno de sensor y alarma igual al del segundo parcial
+
+5 ) Teoría de CPU. Como afecta a la performance de la CPU la frecuencia y en que se mide? Como afecta a la performance de la CPU la cantidad de instrucciones que puede ejecutar un procesador por unidad de tiempo y en que se mide? Que es el contador de programa? Que son los registros multipropósito y para que sirven?
+
+6 ) Preguntas calcadas del final del drive
+a- Una pista se divide en varias unidades llamadas sectores (V/F)
+b- Un sector consiste de varias pistas (V/F)
+c- Una pregunta de si los discos tenían velocidad lineal constante que no me acuerdo bien como era (V/F)
+d- Un disco de 4 platos tiene 36000 cilindros. Cuantas pistas tiene?

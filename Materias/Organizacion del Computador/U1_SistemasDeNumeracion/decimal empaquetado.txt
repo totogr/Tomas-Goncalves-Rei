@@ -1,0 +1,30 @@
+Expresar como decimal empaquetado al número ABCD
+ABCD en base 16
+1. Pasar a base 10
+
+43981
+
+2. Agregar signo positivo
+43981C es hexadecimal empaquetado 
+
+3. Pasar a decimal
+4429852  es decimal empaquetado
+
+_______________________________
+
+4429852 es un número decimal empaquetado.
+Expresarlo como decimal y como hexadecimal
+
+1. convierto a base 16
+43981C
+
+2. Lo interpreto como el número BCD 43981 con signo +
+
+3. Es el decimal 43981
+
+4. En base 16 se expresa como ABCD
+_______________________________
+Expresar en binario el decimal empaquetado del número -4726 que está en base 8
+1. a decimal -2518
+2. signo: 2518B
+3. pasar a binario 00100101000110001011

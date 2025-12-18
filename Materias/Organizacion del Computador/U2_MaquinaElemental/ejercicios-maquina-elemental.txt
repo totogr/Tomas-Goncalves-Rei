@@ -1,0 +1,489 @@
+16. Los 3 componentes principales son el CPU, la MEMORIA y los BUSES.
+El CPU administra y realiza las operaciones entre los registros,
+la MEMORIA lee y archiva informacion y los BUSES se encargan de 
+direccionar datos, operaciones o direcciones de memoria.
+
+17. La maquina de Brookshear tiene 16 registros de proposito general,
+del registro R0 al RF.
+Este procesador puede direccionar 256 celdas de memoria.
+
+18. El numero mas grandes de contenido de dos registros que puede 
+sumar esta maquina sin desbordarse es el 255, ya que se representa 
+como 11111111 y si le suma un 0 no se desborda.
+
+19. Para sumar 20 numeros almacenados en memoria haria lo siguiente:
+- Utilizo una instruccion para llevar un numero de la memoria
+  hacia un registro.
+- Luego llevo otro numero de la memoria hacia otro registro.
+- Utilizo una funcion para sumar ese registros y guardarlos en un 
+  nuevo registro.
+- Vuelvo a llevar otro numero de la memoria hacia un registro y se 
+  lo sumo al registro que tiene la suma anteriormente hecha.
+- Repito el proceso hasta tener un registro con la suma de lo 20 
+  numeros y realizo una instruccion para guardar ese datos en 
+  una direccion de la memoria.
+- Por ultimo, termino el programa con la instruccion C000.
+
+20. Si un bloque de datos se almacena en la memoria desde la 
+direccion 98 hasta A2, la cantidad de celdas de memoria en ese bloque 
+serian: 98, 99, 9A, 9B, 9C, 9D, 9E, 9F, A0, A1, A2. 11 celdas de 
+memoria.
+
+21. El codigo de operacion es de 4 bits por lo que soporta 16 
+operaciones.
+
+22. La instruccion en haxedecimal para leer un dato de la direccion 
+4F y guardarlo en el registro R4, si el codigo de operacion para 
+cargar un dato de memoria en registro es 1, seria: 144F
+
+23. El registro de instrucciones tiene 16 bits y los otros 
+registro 8 bits, porque el registro de instrucciones debe contener 
+la operacion y los operandos.
+La cantidad de celdas de memoria para almacenar una sola instruccion 
+son 2, ya que la instruccion tiene 2 bytes y las celdas 1 byte.
+
+24.
+a. 368A - Almaceno lo que hay en el registro 6 en la celda de memoria
+	con direccion 8A.
+b. BADE - Si el contenido del registro A es igual al del registro 0,
+	salto a la direccion de memoria DE.
+c. 803C - Compara con un AND los bits de los registros 3 y C, y lo 
+	carga en el registro 0.
+d. 40F4 - Mueve lo que esta en el registro F al 4.
+e. 7123 - Compara con un OR los bits de los registro 2 y 3, y lo 
+	carga en el registro 1
+f. 40E1 - Mueve lo que esta en el registro E al 1.
+g. A302 - Rota los bits del registro 3, 2 veces a la derecha. (00001111 -> 11000011)
+h. B100 - Si el contenido del registro 1 es igual al del registro 0,
+	salto a la direccion de memoria 00.
+i. 2BCD - Carga el registro B con el valor de CD.
+
+25. El valor del contador del programa despues de ejecutar la 
+instruccion B0CD es el CD, ya que compara el registro 0 con el mismo
+con lo que nos envia a la direccion de memoria CD.
+
+26. 
+DIRECCION	CONTENIDO	CONTADOR	REGISTRO	MEMORIA
+				DE PROGRAMA	DE INSTRUCCION	DIRECCION 02
+
+00		22		02		2211		00		
+01		11		02		2211		00
+02		32		04		3202		11
+03		02		04		3202		11
+04		C0		06		C000		11
+05		00		06		C000		11
+
+
+27. La diferencia entre 15AB y 25AB es que el primero CARGA en el registro
+5 con el patron de bits que estan en la celda de memoria de direccion AB, y
+el segundo CARGA el registo 5 con el patron de bits AB.
+
+28. 
+a. CARGAR el registro número 3 con el valor hexadecimal 56. --- 2356
+b. ROTAR el registro número 5 tres bits a la derecha. --- A503
+c. OPERACIÓN LÓGICA AND del contenido del registro A con el contenido del
+registro 5 y dejar del resultado en el registro 0. --- 80A5
+
+29. 
+DIRECCION	CONTENIDO
+
+00		14
+01		02
+02		34
+03		17
+04		C0
+05		00
+
+Cuando la maquina se detenga, la celda de memoria de direccion 17 tendra el
+patron de bits 34 que se encuentra en un principio en la celda de memoria 02.
+
+30. 
+DIRECCION	CONTENIDO
+
+B0		13
+B1		B8
+B2		A3
+B3		02
+B4		33
+B5		B8
+B6		C0
+B7		00
+B8		0F
+
+a. Luego de ejecutar la primera instruccion, el registro 3 tendra el patron 0F
+b. Al finalizar, la celda de memoria B8 tendra el patron C3.
+
+31. 
+DIRECCION	CONTENIDO
+
+A4		2000
+A6		2103
+A8		2201
+AA		B1B0
+AC		5002
+AE		B0AA
+B0		C000
+
+a. ¿Qué hay en el registro 0 la primera vez que se ejecuta 
+la instrucción de la dirección AA? --- 00
+b. ¿Qué hay en el registro 0 la segunda vez que se ejecuta 
+la instrucción de la dirección AA? --- 01
+c. ¿Cuántas veces se ejecuta la instrucción en la dirección 
+AA antes de que la máquina se detenga? --- 4 veces
+
+32. Si le mandamos a la maquina la instruccion FFFF se detendria ya que no puede
+recibirla.
+
+33. 
+a. Mueva el valor en la dirección de memoria D8 a la dirección de memoria
+B3.
+b. Intercambiar los valores almacenados en la memoria en las direcciones
+D8 y B3.
+c. Si el valor almacenado en la dirección 44 de la memoria es 00, coloque
+el valor 01 en la dirección 46 de la memoria; de lo contrario, ponga el
+valor FF en la dirección de la memoria 46.
+
+DIRECCION	CONTENIDO(A)	CONTENIDO(B)	CONTENIDO(C)
+
+00		20D8		20D8		1144
+02		30B3		21B3		B108
+04		C000		30B3		22FF
+06		----		31D8		B00A
+08		----		C000		2201
+0A		----		----		3246
+0C		----		----		C000
+
+34.
+   a. 01001011   b. 10000011   c. 11111111
+      10101011	    11101100      00101101
+      --------      --------	  --------
+AND   00001011	    10000000      00101101
+OR    11101011      11101111      11111111
+XOR   11100000      01101111      11010010
+
+35. Si queremos que los 4 bits del medio de un byte sean cero, sin 
+modificar los 2 bits de cada extremo, usamos la mascara 11000011 con
+la operacion AND.
+
+36. Si queremos que los 4 bits del medio de un byte se complementen,
+osea cambien de 0 a 1 y viceversa, usamos la mascara 00111100 con
+la operacion XOR.
+
+37. Si hacemos un XOR de a 2 bits sucesivamente con el resultado de
+los anteriores bits, si el ultimo XOR es 1 en la cadena hay una 
+cantidad impar de unos, y si el ultimo XOR es 0 en la cadena hay una 
+cantidad par de unos. 
+Esto nos indica la paridad de un mensaje, si termina el XOR con 1,
+la paridad es 1 y si termina con 0, la paridad es 0.
+
+38. El AND es parecido a realizar una multiplicacion entre los bits, 
+mientras que el OR se asimila a una suma. El problema de este es que 
+al sumar un bit 1 a otro 1, el OR es 1 pero la suma daria 10 osea 2,
+con lo que tendriamos un acarreo.
+
+39. Para los codigos ASCII, la diferencia entre mayusculas y minusculas
+es un solo bit, una a = 01100001 y la A = 01000001. Por lo que para pasar
+de minus a mayus usamos AND y de mayus a minus usamos OR. Ejemplo:
+- De a -> A: a AND 11011111
+- De A -> a: A OR 00100000
+
+40. Desplazamiento circular a la derecha de 3 bits:
+a. 01101010 -> 01001101
+b. 00001111 -> 11100001
+c. 01111111 -> 11101111
+
+41. En Hexa, desplazamiento circular a la izquierda de 1 bit:
+a. AB -> 10101011 --> 01010111 -> 57
+b. 5C -> 01011100 --> 10111000 -> B8
+c. B7 -> 10110111 --> 01101111 -> 6F
+d. 35 -> 00110101 --> 01101010 -> 6A
+
+42. Desplazar circularmente 3 bits a la derecha, es equivalente a 
+desplazar 5 a la izquierda.
+
+43. Sumar 01101010 y 11001100 como numeros representados como enteros:
+01101010 empieza con 0 por lo que es positivo asi que lo representamos
+como un numero natural: 106
+11001100 empieza con 1 por lo que es negativo, hacemos el complemento 
+a la base que es 00110011 y le sumamos 1 que es 00110100, esto es 52 en 
+decimal pero como era negativo queda -52.
+Hacemos la suma 106 + (-52) = 54, y lo pasamos a binario, 00110110.
+
+44. 
+DIRECCION	CONTENIDO
+00		2080
+02		11A7
+04		7201
+06		32A7
+08		C000
+
+45. 
+DIRECCION	CONTENIDO
+00		10E0
+02		213C
+04		8201
+06		A202
+08		32E1
+0A		C000
+
+46. La memoria tiene 256 celdas de 8 bits c/u, hay 16 registros de 8 bits c/u
+y las instrucciones tienen 16 bits.
+Programa: Punto de Carga en celda 50(16), en celdas 15(16) y 25(16) hay 2 
+numeros X e Y. Efectuar X + Y y almacenarlo en celda 30(16):
+
+DIRECCION	CONTENIDO
+50		1015
+52		1125
+54		5201
+56		3230
+58		C000
+
+47. Si en la direccion 79 hay un positivo, dejar el complemento a la base,
+en caso contrario dejar el -1 (FF):
+
+DIRECCION	CONTENIDO
+00		2080
+02		21FF
+04		1279
+06		8302
+08		B310
+0A		9412
+0C		3479
+0E		B012
+10		3179
+12		C000
+
+48. En la celdas 15(16) y 25(16) hay 2 numeros X e Y, y hacer X - Y
+almacenando el resultado en la celda 30(16):
+
+DIRECCION	CONTENIDO
+00		20FF
+02		2101
+04		1215
+06		1325
+08		9403
+0A		5514
+0C		5625
+0E		3630
+10		C000
+
+49. En la celdas 15(16) y 25(16) hay 2 numeros X e Y, y hacer X * Y
+almacenando el resultado en la celda 30(16):
+
+DIRECCION	CONTENIDO
+00		1016
+02		1126
+04		2200	-- suma
+06		2300	-- contador
+08		2401	-- incrementador
+0A		5212
+0C		5334
+0E		B312
+10		B00A
+12		3230
+14		C000
+		
+51. 
+DIRECCION	CONTENIDO
+12		2003		-- en R0 guardo 03
+14		2101		-- en R1 guardo 01
+16		2202		-- en R2 guardo 02
+18		2300		-- en R3 guardo 00
+1A		2400		-- en R4 guardo 00
+1C		5442		-- en R4 sumo R4 + R2 = 02
+1E		5331		-- en R3 sumo R3 + R1 = 01
+20		B324		-- si R3 = R0 => voy a 24
+22		B01C		-- si R0 = R0 => voy a 1C
+24		34AA		-- almaceno R4 en AA
+26		33BB		-- almaceno R3 en BB
+28		C000		-- cierro programa
+
+a. AA y BB inicialmente son 0000, luego de ejecutarse el programa,
+su contenido es: AA = 06, BB = 03
+b. 
+R0	R1	R2	R3	R4	AA	BB
+03	01	02	00	00	00	00
+			01	02	
+			02	04	
+			03	06
+					06	03
+
+52. En la celdas 60(16), 61(16) y 62(16) hay 3 numeros positivos, X, Y y Z.
+Ordenarlos ascendentemente y almacenarlos a partir de la direccion 70(16).
+
+DIRECCION	CONTENIDO
+00		2000
+02		2101
+04		1260
+06		1361
+08		1462
+0A		25FF
+0C		2670
+0E		2730
+10		B21E
+12		B31E
+14		B41E
+16		B51C
+18		5001
+1A		B010
+1C		C000
+1E		3722
+20		3623
+22		8888
+24		5661
+26		5001
+28		B010
+
+53. 
+PARA TENER EN CUENTA:
+RI: Guarda la instrucción que el procesador debe ejecutar.
+RM: Guarda el dato que se está leyendo o escribiendo en memoria.
+RDM: Guarda la dirección de memoria donde se está realizando la operación.
+PC: Direccion de la proxima instruccion a ejecutar.
+
+DIRECCION	CONTENIDO	RI	RDM	RM	PC	CELDAS
+00		1102		1102	02	dato	02	R1=dato en 02
+02		1203		1203	03	dato	04	R2=dato en 03
+04		237F		237F	--	--	06	R3=7F
+06		5012		5012	--	--	08	R0=R1+R2
+08		A001		A001	--	--	0A	R0 roto 1 bit
+0A		8003		8003	--	--	0C	R0=R0 AND R3
+0C		C000		C000	--	--	--	Finalizo
+
+El programa lee 2 datos de la memoria, los suma, rota el resultado 1 vez y 
+luego realiza un AND entre ese resultado y el 7F.
+
+54. En A0(16) hay un numero que representa la maxima longitud de un BPF
+con signo en bits. Almacenar en B0(16) el menor numero almacenable en esa 
+cantidad de bits y en la B2(16) el mayor numero almacenable.
+----
+
+55. Detectar si en dir 79 es -85, si si poner el bit 4 en 1 sino en 0.
+-85:
+1) 85 = 1010101 , le agrego un 0 para que sean 8 bits = 01010101 (55)
+2) complemento a la base de 85 = 10101010
+3) sumo 1 => 10101010 + 1 = 10101011
+4) -85 = 10101011 = AB
+
+DIRECCION	CONTENIDO
+00		2000
+02		2155
+04		2208
+06		23F7
+08		1479
+0A		5541
+0C		B512
+0E		8634
+10		B014
+12		7624
+14		3679
+16		C000
+
+56. Saber si en la dir 79, el numero tiene 1 en bit 5 y 0 en bit 4. Si si
+poner en dir 79 su complemento a la base, sino poner 1 en bit 1 y 0 en bit 6.
+
+xxx10xxx
+xx0xxxx1
+
+DIRECCION	CONTENIDO
+00		2010	
+02		21FF
+04		2218
+06		1379
+08		8423
+0A		B416
+0C		2601
+0E		7763
+10		28DF
+12		8978
+14		B018
+16		9931
+18		3979
+1A		C000
+
+57. Dir CA recibe el bit 1 y 3, si estan en 0 enviar un 1 por el bit 7,
+si estan en 1 enviar un 0 por el bit 6, en otro caso enviar 0 por el
+bit 5 y 1 por el bit 4:
+
+DIRECCION	CONTENIDO
+00		2140	- 0100 0000
+02		22DF	- 1101 1111
+04		23EF	- 1110 1111
+06		2408	- 0000 1000
+08		2005	- 0000 0101
+0A		1ACA
+0C		8BA0
+0E		BB1A	- si tiene 1 el los 2
+10		2000	- 0000 0000
+12		BB1E	- si tiene 0 en los 2
+14		85A3
+16		7654
+18		B020	- si no es ninguna
+1A		86A2		
+1C		B020
+1E		76A1
+20		36CA
+22		C000
+
+58.  
+DIRECCION	RI	RDM	RM	PC	OPERACION
+12		2080	--	--	14	R0 = 80
+14		B01A	1A	--	1A	R0 = R0
+16		9999	--	--	18	R9 = R9 XOR R9		
+18		C000	--	--	--	FIN		
+1A		11FA	FA	7F	1C	R1 = 7F		
+1C		1284	84	25	1E	R2 = 25		
+1E		5412	--	--	20	R4 = R1 + R2		
+20		8403	--	--	22	R4 = R0 AND R3		
+22		B416	16	--	16	R4 = R0		
+24		B018	18	--	18	R1 = R8		
+
+FA = 7F --- 84 = 25
+
+59. 
+DIRECCION	RI	RDM	RM	PC	OPERACION
+00		11CA	CA	(CA)	02	R1 = (CA)
+02		200A	--	--	04	R0 = 0A
+04		8210	--	--	06	R2 = R1 AND R0 (CA AND 00001010)
+06		B218	18	--	18	si R2 = R0
+08		2000	--	--	0A	R0 = 00
+0A		B220	20	--	20	si R2 = R0
+0C		23DF	--	--	0E	R3 = DF
+0E		8413	--	--	10	R4 = R1 AND R3
+10		2310	--	--	12	R3 = 10
+12		7534	--	--	14	R5 = R3 OR R4
+14		35CA	CA	R5	16	CA = R5
+16		B027	27	--	27	si R0 = R0
+18		23FD	--	--	1A	R3 = FD
+1A		8531	--	--	1C	R5 = R3 AND R1 (11111101 AND CA)
+1C		35CA	CA	R5	1E	CA = R5
+1E		B027	27	--	27	si R0 = R0 (no exite 27)
+20		2380	--	--	22	R3 = 80
+22		7531	--	--	24	R5 = R3 OR R1
+24		35CA	CA	R5	26	CA = R5
+
+60. Las celdas 20(16) y 22(16) tiene 2 direcciones, calcular la sumatoria
+de todas las celdas comprendidas entre esas direcciones.
+
+DIRECCION	RI
+00		1120	almaceno en R1 el contenido de 20
+02		1022	almaceno en R2 el contenido de 22
+04		2314
+06		2801
+08		2900
+0A		330E
+0C		310F
+0E		8888
+10		5949
+12		5181
+14		B118
+16		B00C
+18		C000
+
+
+
+
+
+
+
+

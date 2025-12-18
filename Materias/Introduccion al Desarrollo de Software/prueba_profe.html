@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Intro. al Desarrollo de Soft.</title>
+
+	<!-- <link rel="stylesheet" href="/assets/ejemplo.css"> -->
+	<link rel="stylesheet" href="estilos.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<h1>Intro. al Desarrollo de Software</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Inicio</a></li>
+				<li><a href="/cronograma">Cronograma</a></li>
+				<li><a href="/contacto">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<h2>Contacto</h2>
+			<form action=".">
+				<div class="horizontal">
+					<div class="campo">
+						<label for="nombre">Nombre <span class="required">*</span></label>
+						<input type="text" id="nombre" name="nombre" required>
+					</div>
+					<div class="campo">
+						<label for="apellido">Apellido <span class="required">*</span></label>
+						<input type="text" id="apellido" name="apellido" required>
+					</div>
+				</div>
+				<div class="campo">
+					<label for="email">Email <span class="required">*</span></label>
+					<input type="email" id="email" name="email" required>
+				</div>
+				<div class="campo">
+					<label for="asunto">Asunto</label>
+					<input type="text" id="asunto" name="asunto">
+				</div>
+				<div class="campo">
+					<label for="mensaje">Mensaje <span class="required">*</span></label>
+					<textarea id="mensaje" name="mensaje" required></textarea>
+				</div>
+				<div class="boton">
+					<button type="submit">Enviar</button>
+				</div>
+			</form>
+		</section>
+	</main>
+	<footer>
+		Desarrollado con
+		<svg height="18" viewBox="0 0 24 24" fill="currentColor">
+			<g stroke-width="0"></g>
+			<g stroke-linecap="round" stroke-linejoin="round"></g>
+			<g id="SVGRepo_iconCarrier">
+				<path
+					d="M12 5.881C12.981 4.729 14.484 4 16.05 4C18.822 4 21 6.178 21 8.95C21 12.3492 17.945 15.1195 13.3164 19.3167L13.305 19.327L12 20.515L10.695 19.336L10.6595 19.3037C6.04437 15.1098 3 12.3433 3 8.95C3 6.178 5.178 4 7.95 4C9.516 4 11.019 4.729 12 5.881Z"
+					fill="currentColor"></path>
+			</g>
+		</svg>
+		en clase
+	</footer>
+</body>
+
+</html>

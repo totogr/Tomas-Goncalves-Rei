@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1>Clase de JS</h1>
+
+    <button onclick="sumar()"> +</button>
+    <span id="contador">0</span>
+    <button onclick="restar()">-</button>
+    <button onclick="reiniciar()">Reiniciar</button>
+
+    <div>
+        <input type="number" id="inputContador">
+        <button onclick="cambiar()">Cambiar</buttom>
+    </div>
+
+    <script>
+    let i = 0
+    
+    function cambiar(){
+        i = parseInt(inputContador.value)
+        contador.innerText = i
+    }
+
+    function reiniciar(){
+        i = 0
+        contador.innerText = i
+    }
+    
+    function restar(){
+        i--
+        contador.innerText = i
+        }
+    
+    function sumar(){
+        i++
+        contador.innerText = i
+    }
+    </script>
+    <!-- <script>
+        let num1 = prompt("Decime un numero")
+        let num2 = prompt("Decime otro numero")
+        let resultado = suma(parseInt(num1), parseInt(num2))
+        alert(resultado)
+    </script> -->
+    <!-- 
+    <script>
+        // console.log("Hola Mundo")
+        // function suma(num1,num2){
+        //     return num1 + num2
+        // }
+        // let miNumero = suma(4,3)
+        // console.log(miNumero)
+        
+        // console.log(`Te sacaste un ${miNumero}`)
+        // alert(suma(2,2))
+        
+        // // lo primero se hace siempre, lo segundo es el ciclo y 
+        // // lo tercero es lo que hace cuando termina el ciclo
+        // for (let i = 0; i < 10; i++){  
+        //     console.log(i)
+        // }
+        // let nombre = prompt("Tu Nombre")
+        // confirm("Estas seguro?")
+    </script> -->
+
+
+
+
+
+    <script src="calculadora.js"></script>  
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,59 @@
+65.
+Se sabe que en la dirección A0(16) se encuentra la dirección de inicio del
+primer nodo de una lista cuyos nodos están formados por dos celdas
+contiguas. La primera celda de cada nodo contiene un valor en BPF
+c/signo de 16 bits y la segunda contiene la dirección de inicio del nodo
+siguiente. En el último nodo la segunda celda contiene un -1(10) para
+indicar el fin de la lista. Se pide recorrer todos los nodos de la lista y
+almacenar la sumatoria de todos los BPF c/signo de 16bits. Dicha
+sumatoria se deberá almacenar en la celda A2(16).
+
+Suponemos que ninguna suma da carry
+
+DIR  Contenido				Ejemplo    Número de 16 bits
+A0    56
+
+NODO 4
+54  dato4a (8 bits)            2      00000001 00000010          
+55  dato4b (8bits)             1
+56  -1 = FF
+
+NODO 1
+56   dato1a (8bits)           3       00000000 00000011
+57   dato1b (8bits)           0
+58   
+
+
+NODO 2
+79   dato2a (8bits)           5      00000010 00000101 
+7A   dato2b (8bits)           2  
+7B    94
+
+NODO 3
+94   dato3a (8bits)            7     00000100 00000111 
+95   dato3 (8bits)            4
+96   54
+
+R6 Acumulado de la parte baja (a) de los 16 bits
+R5 Acumulado de la parte alta (b) de los 16 bits
+
+Inicialmente
+R5 = 0                               00000000 00000000
+R6 = 0
+
+Nodo 1
+R6 = R6 + 3 = 3                     00000000 00000011 
+R5 = R5 + 0 = 0 
+
+Nodo2
+R6 = 3 + 5 = 8                      00000010 00001000 
+R5 = 0 + 2 = 2
+
+Nodo 3
+R6 = 8 + 7 = 15                     00000110 00001111 
+R5 = 2 + 4 = 6
+
+Nodo 4
+R6 = 15 + 2 = 17                    00000111 00010001 
+R5 = 6 + 1 = 7
+

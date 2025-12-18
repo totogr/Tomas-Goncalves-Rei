@@ -1,0 +1,45 @@
+a)
+-64,37 en base 10, pasarlo a punto flotante simple precisión.
+
+1° convertir a binario
+0,37 x 2 = 0,74
+0,74 x 2 = 1,48
+0,48 x 2 =
+etc
+ 1000000,011
+ 
+2° correr la coma hasta el bit implícito
+ 1,000000011 x 2^6
+
+3° 6 + 127 = 5 + 128 --> 101 + 10000000 = 10000101
+   
+4°  S  E         M
+	1 10000101 000000011000....
+    110000101000000011000...
+b) + 0,098 en base 10, pasarlo a punto flotante simple precisión.
+1° Pasar a binario
+    0,0001100100
+
+2°  1,100100 x 2^(-4)
+
+3°  -4 + 127 = 123 -->1111011
+
+4°  S  	   E  			M
+    0  01111011	    100100000...
+
+c) Convertir a decimal el punto flotante simple precisión 		
+	0101110101111110000000
+        
+1° S = +
+   E = 10111010
+   M = 1111110000000
+   
+2°    E = 186   está excedido en 127
+      186 - 127 = 59
+	  
+3° 1,1111110000000 x 2^59
+   [2^0 + 2^(-1)+ 2^(-2)+ 2^(-3)+ 2^(-4) + 2^(-5)+ 2^(-6)]x 2^59
+   [1 + 0,5 + 0,25 + 0,125 + 0,0625 + 0,03125 + 0,015625]x 2^59
+   
+   
+   

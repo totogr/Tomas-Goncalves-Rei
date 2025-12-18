@@ -1,0 +1,126 @@
+1)
+Ra = BAh
+Rb = A5h
+Rc = 45h
+Rd = C9h 
+
+a. Interpretarlos como binarios en punto fijo sin signo y hacer Ra+Rb, Rc-Rd.
+Indicar y justificar si el resultado esta dentro del rango de representacion.
+
+Ra = 1011 1010 (2), Rb = 1010 0101 (2), Rc = 0100 0101 (2), Rd = 1100 1001 (2)
+
+  Ra     10111010
++ Rb = + 10100101 = El resultado no puede ser representado en 8 bits, por eso
+       1 01011111   al hacer la cuenta se pasa del rango de representacion.
+
+  Rc     01000101
+- Rd = - 11001001 = 
+Complemento de Rd + 1 = 00110110 + 1 = 00110111
+      __
+Rc + (Rd) =   01000101
+            + 00110111 = El resultado no puede representarse en 8 bits, ya que no
+              01111100   no puedo restarle el 1 0000 0000, por lo que hago:
+
+Complemento del resultado + 1 = 10000011 + 1 = 10000100 = (132) y lo hago 
+negativo por lo que el resultado es -132
+
+b. Repetir el ejercicio a pero con los numeros como representacion de punto
+fijo con signo, indicar los flasg C, V, N, Z y P.
+
+Vemos que numero esta representado realizando el complemento a la base + 1
+
+Ra = BAh = 10111010 (negativo) = 01000101 + 1 = -01000110 = -70
+Rb = A5h = 10100101 (negativo) = 01011010 + 1 = -01011011 = -91
+Rc = 45h = 01000101 (positivo) = 69
+Rd = C9h = 11001001 (negativo) = 00110110 + 1 = -00110111 = -55
+
+  Ra     10111010     -70
++ Rb = + 10100101 = + -91 = El resultado le realizamos el complemento + 1:
+       1 01011111    -161   101011111 = 010100000 + 1 = -010100001 = -161
+El resultado no puede representarse con 8 bits porque se pasa del rango
+C=1, V=1, N=0, Z=0, P=0
+
+  Rc     01000101      69
+- Rd = - 11001001 = - -55 =
+		      124
+Complemento de Rd + 1 = 00110110 + 1 = 00110111
+
+Rc + (Rd) =   01000101
+            + 00110111 = El resultado es +124, coincide con el esperado
+              01111100   y puede representarse en los 8 bits
+C=0, V=0, N=0, Z=0, P=1
+
+2)
+a. Representar segun la norma IEEE754 el numero +63,21(10)
+1°: Paso a binario:
+111111,0011010111
+2°: Corro la coma hasta el bit implicito:
+1,111110011010111 x 2^5
+3°: Sumo el exponente con el exceso 127:
+5 + 127 = 132 = 10000100
+4°: Completo el numero en punto flotante:
+0 10000100 11111001101011100000000
+S    E                M
+
+b. Convertir a decimal el siguiente numero punto flotante:
+1100 0010 0101 0011 1100 1100 0000 0000
+
+1°: Separo Signo, Exponente y Mantisa:
+1 10000100 10100111100110000000000
+2°: Resto el exceso 127 al exponente:
+Exponente = 132 - 127 = 5
+3°: Represento el numero:
+1,10100111100110000000000 x 2^5
+4°: Convierto el numero a decimal:
+1,6546630859375 x 2^5 = 52,95 = Como el signo es 1, es negativo = -52,95
+
+3)
+Circuito combinacional que muestre salida 1 cuando las 4 entradas tengan 
+mayoria de unos.
+
+A  B  C  D	S
+0  0  0  0	0
+0  0  0  1	0
+0  0  1  0	0
+0  0  1  1	0
+0  1  0  0	0
+0  1  0  1	0
+0  1  1  0	0
+0  1  1  1	1
+1  0  0  0	0
+1  0  0  1	0
+1  0  1  0	0
+1  0  1  1	1
+1  1  0  0	0
+1  1  0  1	1
+1  1  1  0	1
+1  1  1  1	1
+    _       _       _       _
+F = ABCD + ABCD + ABCD + ABCD + ABCD
+
+4)
+Programa que detecta si el numero en la direccion A5 tiene el bit 3 en 1 y el
+bit 5 en 0, si si guardar en CC el -1, sino pone el bit 3 en 1 y el bit 5
+en 0 y guardarlo en CC, comenzar desde 04.
+00000001 = 1
+11111110 + 1 = -1
+11111111 = -1
+Para verificar, hago un AND con 0010 1000 y lo comparo con el
+R0 que seria 0000 1000
+Para poner xxxx 1xxx , hago un OR con el 0000 1000
+Para poner xx0x xxxx , hago un AND con el 1101 1111
+
+DIRECCION	RI
+04		2008	(0000 1000)
+06		21FF	(1111 1111)
+08		2228	(0010 1000)
+0A		23DF	(1101 1111)
+0C		14A5
+0E		8524
+10		B51A
+12		7604
+14		8763
+16		37CC
+18		C000
+1A		31CC
+1C		B018

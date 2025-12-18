@@ -1,0 +1,40 @@
+declarar variable:
+let "nombre variable" = "valor"
+imprimir por pantalla:
+console.log("Mensaje")
+igualdad estricta: === || distinto estricto: !==
+igualdad comun: == || distintos comun: !=
+
+if:
+if ("condicion") {
+    "Codigo"
+} else if ("condicion") {
+    "Codigo"
+} else {
+    "Codigo"
+}
+
+while:
+while ("Repeticion") {
+    ("Codigo")
+}
+
+for:
+for ("condicion") {
+    ("Codigo")
+}
+
+funciones:
+function "nombreFuncion"() {
+    ("Codigo")
+}
+"nombreFuncion()" 
+
+cartel pidiendo dato y mandandolo a variable:
+let nombre = prompt("Tu Nombre")
+
+cartel con aceptar o cancelar:
+confirm("Estas seguro?")
+
+
+

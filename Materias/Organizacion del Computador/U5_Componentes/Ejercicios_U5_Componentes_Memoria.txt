@@ -1,0 +1,175 @@
+1. ¿Cómo se llama, en una memoria, el tiempo que transcurre desde que se aplica una
+dirección en la entrada, hasta que el dato almacenado se tiene en la salida?
+
+La rapidez con la que se puede acceder a los datos almacenados en la memoria se llama LATENCIA.
+
+2. Clasificamos a Registro, Cache, Principal, Unidades de Disco y Cinta Magnetica de 
+menor a mayor a partir de:
+Capacidad: Cinta Magnetica - Discos - Principal - Cache - Registro 
+Tiempo de Acceso: Registro - Cache - Principal - Discos - Cinta Magnetica
+Costo: Cinta Magnetica - Discos - Principal - Cache - Registro
+
+3. Dado un circuito integrado de memoria ROM de 512 x 4 indicar:
+a. Cuántas entradas de dirección tiene
+
+Como la memoria tiene 512 palabras, las entradas de direccion se calculan como: 2^n, con n cantidad
+de entradas. Entonces 2^n = 512, por lo que la ROM tendra 9 entradas de direccion.
+
+b. Cuántas entradas/salidas de datos tiene
+
+Cada palabra de la ROM tiene 4 bits por lo que dice, asi que la memoria tendra 4 lineas de
+entrada/salida de datos
+
+c. Cuántas palabras y de qué tamaño almacena
+
+Contiene 512 palabras y cada palabra tiene un tamaño de 4 bits.
+
+4. Considere la parte del procesador y la RAM del sistema que se muestra a continuación
+
+a. ¿Cuántas palabras contiene la RAM y con qué longitud de bits?
+Como la RAM tiene la etiqueta de 4K x 8, significa que tiene:
+4K palabras: 4 x 1024 = 4096 palabras
+8 bits de longitud cada palabra
+
+b. Para escribir en la RAM, las entradas de dirección A0 a A11 deben estar
+activadas, entonces , el selector de módulo de memoria MS debe estar habilitado. ¿La
+habilitación debería lograrse con un "1" o un "0"?
+Cuando MS está en 0, el módulo se habilita. Esto ocurre porque las señales de habilitación 
+en circuitos como estos suelen ser activas en bajo (activo-BAJO).
+
+c. Al mismo tiempo, la única entrada lectura R y escritura W se mantiene a un nivel
+constante; ¿este nivel debería ser un nivel ALTO o un nivel BAJO?.
+En la RAM, para lectura y escritura el nivel debe ser BAJO.
+
+d. ¿La habilitación de salida OE debe estar en ALTO o BAJO?
+La habilitacion de salida OE debe estar en BAJO para permitir la salida de datos
+
+e. ¿ I/O0 a I/O7 son entradas o salidas para la operación?
+Si la operacion es de escritura las lineas son de entrada, y si es de lectura son de salidas
+
+f. ¿Qué líneas constituyen el bus de control en la figura?
+El bus de control constituye de: MS (selector de modulo), R/W (lectura/escritura) y OE (habilitacion de salida).
+
+5. ¿Cuál es la diferencia entre una memoria volátil y una perenne o no volátil?
+
+La memoria volatil requiere energia para mantener los datos por lo que al apagarse los pierde (RAM).
+En cambio, la no volatil, no necesita energia por lo que mantiene sus datos al apagarse (ROM)
+
+6. Para las siguientes memorias indicar el significado de las siglas, las características
+que derivan de su nombre y si es volátil o no volátil:
+RAM (Random Access Memory): Volatil, permite el acceso a cualquier celda de memoria en tiempo constante. 
+ROM (Read-Only Memory): No volatil, memoria de solo lectura sin poder modificarse. 
+PROM (Programmable ROM): No volatil, memoria ROM pero programable una sola vez.
+EPROM (Erasable PROM): No volatil, memoria PROM que puede ser borrada y reprogramada usando luz ultravioleta. 
+EEPROM (Electrically EPROM): No volatil, memoria EPROM pero usando electricidad. 
+FLASH: No volatil, escritura y borrado en bloques de datos. Es rapida y se utiliza en dispositivos USB.
+
+7. Diseñar un banco de memoria RAM de 1 GByte. Se dispone de un circuito integrado de
+512 M palabras de 4 bits y dos de 256 M palabras de 4 bits. Se pide:
+
+a. Indicar cuántos y cuáles circuitos integrados se van a usar.
+Direccionamiento
+1 x 512M x 4 bits (D0 a D3)  para completar 8 bits =>   1 x 512M x 4 bits (D4 a D7) (IC3b)
+2 x 256M x 4 bits (D0 a D3)  para completar 8 bits =>   2 x 256M x 4 bits (D4 a D7) (IC1b E IC2b)
+
+1 GByte = 2^n 
+1K = 2^10 = 1024
+1M =1K x 1K = 2^10 x 2^10 = 2^20 
+1G= 1M x 1K = 2^20 x 2^10 = 2^30
+30 líneas de direcciones A0 hasta A29
+
+256M = 2^8 2^20 = 2^28   A0 hasta A27
+512M = 2^9 2^20 = 2^29   A0 hasta A28
+IC1 - IC2 - IC3
+
+b. Armar un mapa de memoria en el que se vea la primera dirección y la última para
+cada circuito integrado.
+
+A29 A28 A27 A26 .........A0
+0    0   0   0  .........0  PRIMER DIRECCIÓN DE IC1 256M
+..........................
+0    0   1   1  .........1  ULTIMA DIRECCIÓN DE IC1 256M
+                      + 1
+0    1   0   0 ..........0  PRIMER DIRECCIÓN DE IC2 256M
+..........................  
+0    1   1   1 ..........1  ULTIMA DIRECCIÓN DE IC2 256M
+                      + 1
+1    0   0   0 ..........0  PRIMER DIRECCIÓN DE IC3 512M
+.......................... 
+1    1   1   1 ......... 1  ULTIMA DIRECCIÓN DE IC3 512M  
+
+c. Decodificar los selectores de integrado (Chip Select).
+
+A29  A28
+0     0
+0     1
+1     X
+
+d. Dibujar el circuito. 
+Ni idea
+
+8. Diseñar un banco de memoria RAM de 768 MBytes y 256 Bytes de ROM. Para la
+memoria RAM se dispone de dos circuitos integrados de 256 Mbytes y dos de 128
+MBytes. Para la memoria ROM se dispone de un circuito integrado de 128 MBytes, uno
+de 64 MBytes y dos de 32 Mbytes. Se pide:
+
+a. Indicar cuántos y cuáles circuitos integrados se van a usar.
+
+1M = 2^20
+
+RAM: (768Mb)					ROM: (256Mb)
+2 x 256Mb => 2^20 * 2^8 = 2^28 (RA1 y RA2)	1 x 128Mb => 2^20 * 2^7 = 2^27 (RO1) 
+2 x 128Mb => 2^20 * 2^7 = 2^27 (RA3 y RA4)	1 x 64Mb => 2^20 * 2^6 = 2^26 (RO2)
+						2 x 32Mb => 2^20 * 2^5 = 2^25 (RO3 y RO4)
+Tenemos RAM + ROM = 1Gb, osea 30 líneas de direcciones A0 hasta A29
+
+b. Armar un mapa de memoria en el que se vea la primera dirección y la última para
+cada circuito integrado.
+
+A29 A28 A27 A26 A25 A24..A0
+0    0   0   0  .........0  PRIMER DIRECCIÓN DE RA1 256M
+..........................
+0    0   1   1  .........1  ULTIMA DIRECCIÓN DE RA1 256M
+                      + 1
+0    1   0   0 ..........0  PRIMER DIRECCIÓN DE RA2 256M
+..........................  
+0    1   1   1 ..........1  ULTIMA DIRECCIÓN DE RA2 256M
+                      + 1
+1    0   0   0 ..........0  PRIMER DIRECCIÓN DE RA3 128M
+.......................... 
+1    0   0   1 ......... 1  ULTIMA DIRECCIÓN DE RA3 128M 
+                      + 1
+1    0   1   0 ..........0  PRIMER DIRECCIÓN DE RA4 128M
+.......................... 
+1    0   1   1 ......... 1  ULTIMA DIRECCIÓN DE RA4 128M 
+                      + 1
+1    1   0   0 ..........0  PRIMER DIRECCIÓN DE RO1 128M
+.......................... 
+1    1   0   1 ......... 1  ULTIMA DIRECCIÓN DE RO1 128M 
+                      + 1
+1    1   1   0 ..........0  PRIMER DIRECCIÓN DE RO2 64Mb 
+.......................... 
+1    1   1   0   1 ..... 1  ULTIMA DIRECCIÓN DE RO2 64Mb 
+                      + 1
+1    1   1   1   0.......0  PRIMER DIRECCIÓN DE RO3 32Mb 
+.......................... 
+1    1   1   1   0   1.. 1  ULTIMA DIRECCIÓN DE RO3 32Mb
+                      + 1
+1    1   1   1   1   0...0  PRIMER DIRECCIÓN DE RO4 32Mb 
+.......................... 
+1    1   1   1   1   1...1  ULTIMA DIRECCIÓN DE RO4 32Mb 
+
+c. Decodificar los selectores de integrado (Chip Select).
+
+A29  A28  A27  A26  A25
+ 0    0    X    X    X
+ 0    1    X    X    X
+ 1    0    0    X    X
+ 1    0    1    X    X
+ 1    1    0    X    X
+ 1    1    1    0    X
+ 1    1    1    1    0
+ 1    1    1    1    1
+
+d. Dibujar el circuito.
+Ni idea

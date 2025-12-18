@@ -1,0 +1,127 @@
+envcd - moverse entre directorios
+cd .. - vuelve para atras en el directorio
+cp - copiar archivos y con -r copio carpetas
+rm - remover archivos y con -r borro carpetas y -rf fuerza el borrado
+mv - mover archivos
+mkdir - crea una carpeta
+man - manual de comandos
+Q - para salir de algun comando
+touch - crear archivos
+chmod - cambiar permisos a archivos (No se va a usar seguro)
+sudo - para trabajar como root
+shutdown - apaga la PC
+htop - muestra estado de PC
+apt - instalar programas
+echo - devuelve una respuesta
+ps - ver procesos corriendo
+cat - muestra contenido de archivos
+bat - muestra contenido de archivos pero mas lindo
+kill - mata procesos
+ping - consultamos si una pagina sigue activa
+vim - editor de texto
+history - muestra ultimos comandos
+comandos ls:
+media y mont viejos
+  run, procesos ejecutandose
+  sys, bateria por ejemplo
+  tmp, archivos temporales
+  usr, datos de usuario
+  home, usuario en la pc
+  root, usuario con mas permisos
+-h para help de un comando
+pwd para saber en que directorio estoy
+nano - editar texto
+vim: (nvim mas lindo)
+i - modo insert 
+esc - salgo
+:x - salis guardando 
+:q! - sali sin guardar
+Markdown - lenguaje de editor de texto
+sudo apt install - instalar programas
+sudo apt remove - desintala programas
+Varieble de Entorno: las variables no se guardan en las sesiones
+echo $USER - devuelve el user como variable
+echo $HOME - devuelve la carpeta user
+echo $PATH - carpeta en que estan los programas (ejemplo ls)
+whereis "comando" - muestra en que carpetas se encuentra el programa
+which "comando" - muestra que comando se va a ejecutar para el programa
+export NOMBRE=tomas - guarda la variable en la sesion
+unset NOMBRE - borro la variable
+env - vemos todas las variables
+micro ~/.bashrc - edita el texto que se ejecuta cuando inicia la terminal y podemos agregarse los alias por ejemplo
+!"comando" - con ! ejecuta el ultimo comando que ejecute con ese comando
+!! - ejecuta el ultimo comando que se hizo
+echo $? - devuelve codigo del ultimo programa que se ejecuto, si es 0 es que se ejecuto sin error
+history - ves todos los comandos que realizaste
+con '' - no se reemplaza
+con "" - se expanden las variables
+con '' - se ejecuta el comando adentro del otro comando
+echo "Hola" > saludo.txt - manda el mensaje al archivo (si mandas otra cosa lo pisa)
+echo "Como estas" >> saludo.txt - manda el mensaje pero al final
+cat texto.txt texto2.txt - junto los textos y con > texto3.txt los mando a ese archivo
+cat > archivo.txt - espera que le ingrese lo que quiero escribirle
+| - mandas a un programa ("algo" | less)
+wc - muestra cuantas lineas, palabras y caracteres
+grep - busca cosas (ls /usr/bin | grep "sh" , busca todo lo que tenga sh)
+head -n(numero) - muestra las primeras n filas
+tail -n(numero) - muestra las ultimas n filas
+; - para ir poniendo muchos comandos en una linea
+&& - ejecuta los comandos si el anterior sale bien
+comando || comando - si uno falla igual se ejecuta el otro
+script: programa que ejecuta una funcion
+vim script.sh{
+  #!/bin/sh
+  # - para hacer comentarios
+  echo "En esta carpeta estan estos archivos:"
+  ls
+} - bash script.sh (ejecuta lo de adentro)
+./"archivo" - ejecuta el archivo
+chmod +x "archivo" - das permiso de ejecucion
+-gt: "greater than" (mayor que)
+-lt: "less than" (menor que)
+-eq: "equal" (igual a)
+-ne: "not equal" (no igual a)
+-ge: "greater than or equal to" (mayor o igual que)
+-le: "less than or equal to" (menor o igual que)
+-a - es un and
+-o - es un or
+virguilla ~ (Alt 126)
+git:
+git status - estado actual del repositorio
+git add "archivo" - aceptas que se agreguen los cambios (git add . - sube todos los cambios)
+git restore --staged "archivo" - volves para atras del add
+git commit - confirma la serie de cambios (git commit -m "Comentario" - lo confirma y ya sube el comentario)
+git push - mando los cambios a internet
+git pull - traigo los cambios de internet que se hayan hecho en el repositorio
+git clone "url_repositorio" - clono el repositorio
+git log - historial de los commit que se hicieron
+git commit --amend - cambiar el comentario del commit
+git reset HEAD~1 - vuelva 1 para atras y deshace el commit
+git checkout . - borra todo cambio nuevo que se haya hecho despues del add
+git stash - guarda los ultimos cambios y te muestra todo sin el cambio hecho
+git stash pop - vuelve a escribir todo con los cambios hecho
+git fetch origin - actualiza la informacion del repositorio
+
+orden para trabajar en git:
+- primero git pull
+- hago cambios
+- git add
+- git commit -m
+- git push
+
+git checkout -b "nombre rama" - crear rama
+git push origin "nombre rama"
+git checkout "nombre rama" - me muevo a una rama
+git branch -D "nombre rama" - borro la rama
+pull request - pido mandar los cambios de otra rama a la rama main
+marge pull request - autorizo mandar la rama al main
+git marge main - manda los cambios de main a mi rama para saber si hay conflictos
+git ignore - ignorar archivos para no pushearlos
+
+Paginas WEB:
+
+HTML:
+python3 -m http.server - para correr en python (no necesario)
+
+
+
