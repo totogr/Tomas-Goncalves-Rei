@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="25" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to bottom, #a2c4f2, #6699cc);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.robocop.grafica.PantallaDeTablero">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="¡Has perdido!" style="-fx-font-size: 30px; -fx-text-fill: red; -fx-font-weight: bold;  -fx-effect: dropshadow(gaussian, black, 2, 0, 0, 1);"/>
+
+    <Button text="Reiniciar juego" onAction="#reiniciarJuego" style="-fx-font-size: 16px; -fx-background-color: white; -fx-text-fill: #333333; -fx-background-radius: 10px; -fx-padding: 10 25; -fx-cursor: hand;"/>
+
+</VBox>
