@@ -1,0 +1,7 @@
+Palabras: corto.txt, entrada: 5000_in.txt
+No es un mensaje
+No es un mensaje
+No es un mensaje
+No es un mensaje
+No es un mensaje
+

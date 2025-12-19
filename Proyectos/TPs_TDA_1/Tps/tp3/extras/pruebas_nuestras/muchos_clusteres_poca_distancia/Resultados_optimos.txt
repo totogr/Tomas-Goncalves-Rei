@@ -1,0 +1,110 @@
+Resultados optimos de los archivos:
+
+- Archivo: v-80_k-20_c-3.txt
+--- Cantidad de vertices: 80
+--- Cantidad de clusters: 20
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-160_k-40_c-3.txt
+--- Cantidad de vertices: 160
+--- Cantidad de clusters: 40
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-240_k-60_c-3.txt
+--- Cantidad de vertices: 240
+--- Cantidad de clusters: 60
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-320_k-80_c-3.txt
+--- Cantidad de vertices: 320
+--- Cantidad de clusters: 80
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-400_k-100_c-3.txt
+--- Cantidad de vertices: 400
+--- Cantidad de clusters: 100
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-480_k-120_c-3.txt
+--- Cantidad de vertices: 480
+--- Cantidad de clusters: 120
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-560_k-140_c-3.txt
+--- Cantidad de vertices: 560
+--- Cantidad de clusters: 140
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-640_k-160_c-3.txt
+--- Cantidad de vertices: 640
+--- Cantidad de clusters: 160
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-720_k-180_c-3.txt
+--- Cantidad de vertices: 720
+--- Cantidad de clusters: 180
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-800_k-200_c-3.txt
+--- Cantidad de vertices: 800
+--- Cantidad de clusters: 200
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-880_k-220_c-3.txt
+--- Cantidad de vertices: 880
+--- Cantidad de clusters: 220
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-960_k-240_c-3.txt
+--- Cantidad de vertices: 960
+--- Cantidad de clusters: 240
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1040_k-260_c-3.txt
+--- Cantidad de vertices: 1040
+--- Cantidad de clusters: 260
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1120_k-280_c-3.txt
+--- Cantidad de vertices: 1120
+--- Cantidad de clusters: 280
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1200_k-300_c-3.txt
+--- Cantidad de vertices: 1200
+--- Cantidad de clusters: 300
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1280_k-320_c-3.txt
+--- Cantidad de vertices: 1280
+--- Cantidad de clusters: 320
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1360_k-340_c-3.txt
+--- Cantidad de vertices: 1360
+--- Cantidad de clusters: 340
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-1440_k-360_c-3.txt
+--- Cantidad de vertices: 1440
+--- Cantidad de clusters: 360
+--- Distancia maxima esperada: 3
+
+

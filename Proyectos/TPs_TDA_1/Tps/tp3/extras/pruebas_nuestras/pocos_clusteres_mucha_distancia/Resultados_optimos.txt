@@ -1,0 +1,158 @@
+Resultados optimos de los archivos:
+
+- Archivo: v-33_k-3_c-10.txt
+--- Cantidad de vertices: 33
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 10
+
+
+- Archivo: v-93_k-3_c-30.txt
+--- Cantidad de vertices: 93
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 30
+
+
+- Archivo: v-153_k-3_c-50.txt
+--- Cantidad de vertices: 153
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 50
+
+
+- Archivo: v-213_k-3_c-70.txt
+--- Cantidad de vertices: 213
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 70
+
+
+- Archivo: v-273_k-3_c-90.txt
+--- Cantidad de vertices: 273
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 90
+
+
+- Archivo: v-333_k-3_c-110.txt
+--- Cantidad de vertices: 333
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 110
+
+
+- Archivo: v-393_k-3_c-130.txt
+--- Cantidad de vertices: 393
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 130
+
+
+- Archivo: v-453_k-3_c-150.txt
+--- Cantidad de vertices: 453
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 150
+
+
+- Archivo: v-513_k-3_c-170.txt
+--- Cantidad de vertices: 513
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 170
+
+
+- Archivo: v-573_k-3_c-190.txt
+--- Cantidad de vertices: 573
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 190
+
+
+- Archivo: v-633_k-3_c-210.txt
+--- Cantidad de vertices: 633
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 210
+
+
+- Archivo: v-693_k-3_c-230.txt
+--- Cantidad de vertices: 693
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 230
+
+
+- Archivo: v-753_k-3_c-250.txt
+--- Cantidad de vertices: 753
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 250
+
+
+- Archivo: v-813_k-3_c-270.txt
+--- Cantidad de vertices: 813
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 270
+
+
+- Archivo: v-873_k-3_c-290.txt
+--- Cantidad de vertices: 873
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 290
+
+
+- Archivo: v-933_k-3_c-310.txt
+--- Cantidad de vertices: 933
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 310
+
+
+- Archivo: v-993_k-3_c-330.txt
+--- Cantidad de vertices: 993
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 330
+
+
+- Archivo: v-1053_k-3_c-350.txt
+--- Cantidad de vertices: 1053
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 350
+
+
+- Archivo: v-1113_k-3_c-370.txt
+--- Cantidad de vertices: 1113
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 370
+
+
+- Archivo: v-1173_k-3_c-390.txt
+--- Cantidad de vertices: 1173
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 390
+
+
+- Archivo: v-1233_k-3_c-410.txt
+--- Cantidad de vertices: 1233
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 410
+
+
+- Archivo: v-1293_k-3_c-430.txt
+--- Cantidad de vertices: 1293
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 430
+
+
+- Archivo: v-1353_k-3_c-450.txt
+--- Cantidad de vertices: 1353
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 450
+
+
+- Archivo: v-1413_k-3_c-470.txt
+--- Cantidad de vertices: 1413
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 470
+
+
+- Archivo: v-1473_k-3_c-490.txt
+--- Cantidad de vertices: 1473
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 490
+
+
+- Archivo: v-1503_k-3_c-500.txt
+--- Cantidad de vertices: 1503
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 500
+
+

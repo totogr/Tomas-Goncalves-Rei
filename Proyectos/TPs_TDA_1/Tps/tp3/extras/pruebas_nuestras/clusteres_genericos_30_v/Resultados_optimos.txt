@@ -1,0 +1,182 @@
+Resultados optimos de los archivos:
+
+- Archivo: v-8_k-4_c-1.txt
+--- Cantidad de vertices: 8
+--- Cantidad de clusters: 4
+--- Distancia maxima esperada: 1
+
+
+- Archivo: v-9_k-3_c-2.txt
+--- Cantidad de vertices: 9
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 2
+
+
+- Archivo: v-5_k-1_c-4.txt
+--- Cantidad de vertices: 5
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 4
+
+
+- Archivo: v-10_k-5_c-1.txt
+--- Cantidad de vertices: 10
+--- Cantidad de clusters: 5
+--- Distancia maxima esperada: 1
+
+
+- Archivo: v-10_k-2_c-4.txt
+--- Cantidad de vertices: 10
+--- Cantidad de clusters: 2
+--- Distancia maxima esperada: 4
+
+
+- Archivo: v-12_k-6_c-1.txt
+--- Cantidad de vertices: 12
+--- Cantidad de clusters: 6
+--- Distancia maxima esperada: 1
+
+
+- Archivo: v-12_k-3_c-3.txt
+--- Cantidad de vertices: 12
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-12_k-4_c-2.txt
+--- Cantidad de vertices: 12
+--- Cantidad de clusters: 4
+--- Distancia maxima esperada: 2
+
+
+- Archivo: v-14_k-7_c-1.txt
+--- Cantidad de vertices: 14
+--- Cantidad de clusters: 7
+--- Distancia maxima esperada: 1
+
+
+- Archivo: v-14_k-2_c-6.txt
+--- Cantidad de vertices: 14
+--- Cantidad de clusters: 2
+--- Distancia maxima esperada: 6
+
+
+- Archivo: v-15_k-5_c-2.txt
+--- Cantidad de vertices: 15
+--- Cantidad de clusters: 5
+--- Distancia maxima esperada: 2
+
+
+- Archivo: v-10_k-1_c-9.txt
+--- Cantidad de vertices: 10
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 9
+
+
+- Archivo: v-16_k-4_c-3.txt
+--- Cantidad de vertices: 16
+--- Cantidad de clusters: 4
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-18_k-6_c-2.txt
+--- Cantidad de vertices: 18
+--- Cantidad de clusters: 6
+--- Distancia maxima esperada: 2
+
+
+- Archivo: v-18_k-3_c-5.txt
+--- Cantidad de vertices: 18
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 5
+
+
+- Archivo: v-20_k-5_c-3.txt
+--- Cantidad de vertices: 20
+--- Cantidad de clusters: 5
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-21_k-3_c-6.txt
+--- Cantidad de vertices: 21
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 6
+
+
+- Archivo: v-21_k-7_c-2.txt
+--- Cantidad de vertices: 21
+--- Cantidad de clusters: 7
+--- Distancia maxima esperada: 2
+
+
+- Archivo: v-20_k-4_c-4.txt
+--- Cantidad de vertices: 20
+--- Cantidad de clusters: 4
+--- Distancia maxima esperada: 4
+
+
+- Archivo: v-20_k-2_c-9.txt
+--- Cantidad de vertices: 20
+--- Cantidad de clusters: 2
+--- Distancia maxima esperada: 9
+
+
+- Archivo: v-15_k-1_c-14.txt
+--- Cantidad de vertices: 15
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 14
+
+
+- Archivo: v-24_k-6_c-3.txt
+--- Cantidad de vertices: 24
+--- Cantidad de clusters: 6
+--- Distancia maxima esperada: 3
+
+
+- Archivo: v-24_k-2_c-11.txt
+--- Cantidad de vertices: 24
+--- Cantidad de clusters: 2
+--- Distancia maxima esperada: 11
+
+
+- Archivo: v-25_k-5_c-4.txt
+--- Cantidad de vertices: 25
+--- Cantidad de clusters: 5
+--- Distancia maxima esperada: 4
+
+
+- Archivo: v-27_k-3_c-8.txt
+--- Cantidad de vertices: 27
+--- Cantidad de clusters: 3
+--- Distancia maxima esperada: 8
+
+
+- Archivo: v-20_k-1_c-19.txt
+--- Cantidad de vertices: 20
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 19
+
+
+- Archivo: v-23_k-1_c-22.txt
+--- Cantidad de vertices: 23
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 22
+
+
+- Archivo: v-28_k-4_c-6.txt
+--- Cantidad de vertices: 28
+--- Cantidad de clusters: 4
+--- Distancia maxima esperada: 6
+
+
+- Archivo: v-24_k-2_c-11.txt
+--- Cantidad de vertices: 24
+--- Cantidad de clusters: 2
+--- Distancia maxima esperada: 11
+
+
+- Archivo: v-30_k-1_c-29.txt
+--- Cantidad de vertices: 30
+--- Cantidad de clusters: 1
+--- Distancia maxima esperada: 29
+
+

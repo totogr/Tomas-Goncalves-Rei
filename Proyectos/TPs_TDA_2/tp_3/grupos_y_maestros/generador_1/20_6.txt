@@ -1,0 +1,22 @@
+# La primera linea indica la cantidad de grupos a formar, las siguientes son de la forma 'nombre maestro, habilidad'
+6
+Hama, 1280
+Sura, 480
+Eska, 1989
+Desna, 1695
+Unalaq, 1283
+Katara, 1344
+Yue, 780
+Pakku, 1143
+Kya, 1114
+Kuruk, 839
+Ming-Hua, 1823
+Senna, 1071
+La, 1234
+Tui, 723
+Amon, 551
+Sangok, 833
+Huu, 445
+Rafa, 1960
+Tho, 1215
+Misu, 1125
