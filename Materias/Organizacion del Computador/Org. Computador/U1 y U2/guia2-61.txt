@@ -1,0 +1,39 @@
+Dado un vector de cinco elementos (cada elemento es una celda de
+memoria) almacenados a partir de la dirección A0(16), intercambiar de
+posición al primer elemento del vector con el máximo.
+
+R9 guarda el mayor
+61) para ir haciendo
+MEMORIA
+DIR      A0   A1   A2   A3   A4   
+DATO     4    5    8    7    1    
+Al terminar el programa:
+DIR      A0   A1   A2   A3   A4
+DATO     8    5    4    7    1
+           R6 = A1 primer dirección
+		   guardar en R7 = 1 contador
+		   guardar en R8 = 1 unidad
+           leer A0 y guardar en R1 = 4
+           leer A1 y guardar en R2 = 5
+INICIO     R3 = R1-R2 = -1
+           Máscara R0 = 10000000
+           R4 = R3 AND R0
+           Si R4 == R0 saltar a CAMBIAR y si no continúa
+           R9 = R1 AND R1  Guardar el mayor en R9
+		   saltar a CONTINUAR
+CAMBIAR    R9 = R2 AND R2  Guardar el mayor en R9
+CONTINUAR  contador = contador + 1 : R7 = R7 + R8 = 2
+           R0 = 5 para preguntar si terminamos
+		   B7 FINAL Si el contador ya está en 5 saltar a final
+           cargar R9 (el mayor) en R1  R1 = R9 AND R9
+		   LAS 4 INSTRUCCIONES QUE SIGUEN ES CARGAR EN R2 LO QUE HAY EN A2, A3 Y A4:
+		   Sumar 1 a R6 ( siguiente dirección) 5668 R6 = R6 + R8 = A2		
+		   guardar en R5 el auxiliar de carga 12 --> 2512 --> R5 = 12 
+           guardar en AQUI R5  --> 35AQUI
+		   guardar en AQUI + 1 R6 --> 36AQUI + 1 
+AQUI       1111 nada que importe porque el programa lo reescribe con 12A2, 12A3 y 12A4 en cada iteración.
+		   salto incondicional a INICIO B0 INICIO
+FINAL	   guardar en A0 el contenido de R9	   
+           salir
+ 
+

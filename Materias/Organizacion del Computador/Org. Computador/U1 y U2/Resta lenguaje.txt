@@ -1,0 +1,20 @@
+ XOR
+A B F
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+
+Ae pide la resta de lo que esta en la direccion AA-BB y guardarlo en la direccion CC
+en la Dir AA esta 1B
+en la Dir BB esta AA
+
+02  10AA     R0 = 00011011
+04  12BB     R2 = 10101010
+06  21FF     R1 = 11111111
+08  2301     R3 = 00000001
+0A  9412     R4 = 01010101
+0C  5434     R4 = 01010110
+0E  5504     R5 = R0 + R4
+10  35CC
+12  C000

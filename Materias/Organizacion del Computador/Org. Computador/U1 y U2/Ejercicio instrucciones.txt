@@ -1,0 +1,24 @@
+09  11F0  guardo en el registro 1 el contenido de la direcc de memoria F0
+0B  12F1  guardo en el registro 2 el contenido de la direcc de memoria F1
+0D  5312  sumo lo de los registros 1 y 2 y lo guardo en el registro 3       
+0F  33D1  guardo lo que esta en el registro 3 en la direcc de memoria D1
+
+11  14F2  guardo en el registro 4 el contenido de la direcc de memoria F2
+13  15F3  guardo en el registro 5 el contenido de la direcc de memoria F3
+15  5645  sumo lo de los registros 4 y 5 y lo guardo en el registro 6
+17  36D2  guardo lo que esta en el registro 6 en la direcc de memoria D2
+
+19  17F4  guardo en el registro 7 el contenido de la direcc de memoria F4
+1B  18F5  guardo en el registro 8 el contenido de la direcc de memoria F5
+1D  5978  sumo lo de los registros 7 Y 8 y lo guardo en el registro 9
+1F  39D3  guardo lo que esta en el registro 9 en la direcc de memoria D3
+
+21  1AF6  guardo en el registro A el contenido de la direcc de memoria F6
+23  1BF7  guardo en el registro B el contenido de la direcc de memoria F7
+25  5CAB  sumo lo de los registros A Y B y lo guardo en el registro C
+27  3CD4  guardo lo que esta en el registro C en la direcc de memoria D4
+
+29  5D36  sumo lo de los registros 3 y 6 y lo guardo en el registro D
+2B  5E9C  sumo lo de los registros 9 y C y lo guardo en el registro E
+2D  5FDE  sumo lo de los registros D y E y lo guardo en el registro F
+2F  3FE0  guardo lo que esta en el registro F en la direcc de memoria E0

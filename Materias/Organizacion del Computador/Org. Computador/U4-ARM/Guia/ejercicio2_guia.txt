@@ -1,0 +1,27 @@
+.data
+    numeros_a_sumar: .word 1, 2, 1, 1, 1, 1, 1, 1 @ Vector en ARM
+    tope: .word 8
+    resultado: .word 0
+
+.text
+
+main:
+    ldr r0, =numeros_a_sumar @ ro = direccion del primer numero en "datos"
+    ldr r2, =tope @ r2 = direccion de "tope"
+    ldr r1, [r2] @ r1 = tope
+    mov r4, #0 @ En r4 voy a guardar el resultado
+
+loop:
+    cmp r1, #0 @ ¿Es r1 igual a 0?
+    beq fin
+    ldr r3, [r0] @ r3 = numero actual
+    add r0, #4 @ muevo a la direccion guardada en r0 una palabra
+    add r4, r3 @ r4 = r4 + r3 (numero actual). Si add recibe dos operandos en lugar de tres, suma todo en el primero de los operandos
+    sub r1, #1 @ tope -= 1
+    b loop
+
+fin:
+    ldr r0, =resultado
+    str r4, [r0] @ guardo el resultado en "resultado". str guarda de izquierda a derecha
+    swi 0x11
+.end

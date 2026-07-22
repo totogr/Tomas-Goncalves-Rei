@@ -1,0 +1,22 @@
+@Escribir un programa que eleve al cuadrado cada elemento de un arreglo y los sume.
+
+
+.equ SWI_Exit, 0x11 @ constante
+
+.data 		@ variables
+
+numeros: .word 2,4,1,5
+cant: .word 4
+resultado: .word 0
+
+.text @ sección de código
+.global main
+
+main:
+	ldr r0, =numeros			  
+	ldr r1, [r0]			 
+	mul r2, r1,r1
+	ldr r0, =resultado
+	str r2,[r0] 
+	swi SWI_Exit
+	.end

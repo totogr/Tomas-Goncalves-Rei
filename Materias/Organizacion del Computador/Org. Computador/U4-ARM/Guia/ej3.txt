@@ -1,0 +1,21 @@
+@Escribir un código ARM para elevar al cuadrado un número
+
+
+.equ SWI_Exit, 0x11 @ constante
+
+.data 		@ variables
+
+numero: .word 5
+resultado: .word 0
+
+.text @ sección de código
+.global main
+
+main:
+	ldr r0, =numero			  
+	ldr r1, [r0]			 
+	mul r2, r1,r1
+	ldr r0, =resultado
+	str r2,[r0] 
+	swi SWI_Exit
+	.end

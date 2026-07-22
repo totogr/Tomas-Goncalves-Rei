@@ -1,0 +1,88 @@
+<html>
+<head>
+       <title>source code: ejercicio21.asm</title>
+       <meta name="description" content="source code">
+       <style>
+           a:link {text-decoration: none}
+           a:visited {text-decoration: none}
+           a:hover {text-decoration: none; color:#ff0000}
+       </style>
+</head>
+<body leftmargin=110  rightmargin=110 topmargin=20 bgcolor=#FFFFFF text=#000000 link=blue vlink=blue alink=blue>
+ 
+ 
+<!-- * -->
+ 
+ 
+
+
+
+
+&nbsp; &nbsp;<center> <font color=#FFFFFF> ;</font> <font size=2 face="Terminal"> ejercicio21.asm </font></center>
+
+
+
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=2 face="Terminal">
+ 
+<font color=#008000>; You may customize this and other start-up templates;  </font>
+<font color=#008000>; The location of this template is c:\emu8086\inc\0_com_template.txt </font>
+ 
+<font color=#000064>org</font> 100h 
+ 
+set: 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>201<font color=#0064C8>]</font>,4 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>202<font color=#0064C8>]</font>,<font color=#800080>'h'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>203<font color=#0064C8>]</font>,<font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>204<font color=#0064C8>]</font>,<font color=#800080>'l'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>205<font color=#0064C8>]</font>,<font color=#800080>'a'</font> 
+ 
+ 
+inicio: 
+<font color=#0000FF>mov</font> <font color=#C80000>di</font>,202 
+<font color=#0000FF>mov</font> <font color=#C80000>cx</font>,<font color=#0064C8>[</font>201<font color=#0064C8>]</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,0  
+ 
+programa: 
+<font color=#0000FF>mov</font> <font color=#C80000>bl</font>,<font color=#0064C8>[</font><font color=#C80000>di</font><font color=#0064C8>]</font> 
+<font color=#0000FF>inc</font> <font color=#C80000>di</font> 
+<font color=#0000FF>or</font> <font color=#C80000>bl</font>,<font color=#C80000>al</font> 
+<font color=#0000FF>jnp</font> NOparidad 
+<font color=#0000FF>jmp</font> paridad 
+ 
+ 
+paridad: 
+<font color=#0000FF>loop</font> programa 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>200<font color=#0064C8>]</font>,11111111b 
+<font color=#0000FF>jmp</font> fin 
+ 
+ 
+NOparidad: 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>200<font color=#0064C8>]</font>,00 
+<font color=#0000FF>jmp</font> fin 
+ 
+fin: 
+<font color=#0000FF>ret</font> 
+ 
+ 
+ 
+ 
+ 
+</font></pre>
+<center> <font color=#FFFFFF>;</font> <a href="http://www.emu8086.com" target="_blank"><font face=verdana size=1 color=#000000> - asm2html - </font></a> </center>
+<!-- emu8086 version 4.08    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+ 
+ 
+<!-- *** -->
+ 
+ 
+</body>
+</html>

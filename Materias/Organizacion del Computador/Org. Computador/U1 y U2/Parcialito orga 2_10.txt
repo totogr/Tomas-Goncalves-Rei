@@ -1,0 +1,14 @@
+Detectar si el numero que estaba en la direccion 2A era negativo, en caso afirmativo guardar el complemento del numero en la direccion A2  sino lo es guardar en A2 el -1. Comienza en la direccion B2
+ 
+B2 112A  R1 = X1101100
+B4 2080  R0 = 10000000
+B6 8201  R2 = X0000000
+B8 23FF  R3 = 11111111
+BA B2C0  Si R2 = R0 Negativo
+BC 33A2  Se guarda el -1 en A2
+BE B0C8  Salta al fin del programa
+C0 9413  XOR para invertir los bits del numero original R4 = 00010011
+C2 2501  R5 = 00000001
+C4 5445  R4 Complemento del numero que estaba en 2A
+C6 34A2  Se guarda el numero original complementado en A2
+C8 C000  Fin de programa

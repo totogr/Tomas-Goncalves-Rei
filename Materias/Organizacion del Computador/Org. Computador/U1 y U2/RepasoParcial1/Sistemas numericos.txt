@@ -1,0 +1,68 @@
+A=B6h B=68h hacer la suma y la resta de los numeros que estan en representacion
+
+  A     A
++ B   - B    
+
+  10110110  182 + 104 = 286 punto fijo sin signo   - 74 + 104 = 30  En representacion
++ 01101000
+
+1 00011110   El Carry afecta la cuenta en punto fijo sin signo
+
+C=1 V=0 N=0 Z=0 P=0
+
+  10110110             10010111 + 1   10011000
+- 01101000
+
+  10110110   182 - 104 = 78 punto fijo sin signo   -74 -104 = -178  En representacion
++ 10011000
+
+1 01001110    En Overflow afecta a la cuenta en representacion o punto fijo con signo
+
+C=1 V=1 N=0 Z=0 P=0
+
+
+   01101                      
++ 110111
+
+  00001101  En Representacion
++ 11110111
+
+  00001101
++ 00110111  En punto fijo sin signo
+
+
+Punto Flotante SP y DP  32 bits S=1 Exp=8 (Exceso 127) Mantisa=23  64 bits S=1 Exp=11 (Esceso 1023) Mantisa= 52
+
+-23.43 pasar a punto flotante SP
+
+Primero pasar el numero a binario
+
+10111.01101 2 0 
+ 
+Normalizar el numero
+
+1.011101101 2 4   exponente 4 + 127 = 131
+
+S   Exp        Mantisa
+1 10000011 011101101...000
+
+Pasar a decimal el numero que esta expesado en PF SP C2F4A190
+
+1 10000101 11101001010000110010000
+
+Exponente 133 - 127 = 6
+
+1.11101001010000110010000 2 6
+
+1111010.01010000110010000 2 0
+
+-61.63
+
+
+1,101 2 4  101101
+1,01  2 6  101000
+
+
+
+
+  

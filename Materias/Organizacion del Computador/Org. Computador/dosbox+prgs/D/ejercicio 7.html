@@ -1,0 +1,92 @@
+<html>
+<head>
+       <title>ejercicio 7</title>
+       <meta name="description" content="source code">
+       <style>
+           a:link {text-decoration: none}
+           a:visited {text-decoration: none}
+           a:hover {text-decoration: none; color:#ff0000}
+       </style>
+</head>
+<body leftmargin=110  rightmargin=110 topmargin=20 bgcolor=#FFFFFF text=#000000 link=blue vlink=blue alink=blue>
+ 
+ 
+<!-- * -->
+ 
+ 
+
+
+
+
+&nbsp; &nbsp;<center> <font color=#FFFFFF> ;</font> <font size=2 face="Terminal"> ejercicio parcial.asm </font></center>
+
+
+
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=2 face="Terminal">
+ 
+<font color=#008000>; You may customize this and other start-up templates;  </font>
+<font color=#008000>; The location of this template is c:\emu8086\inc\0_com_template.txt </font>
+ 
+<font color=#000064>org</font> 100h 
+ 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,0b800h 
+<font color=#0000FF>mov</font> <font color=#800000>ds</font>,<font color=#C80000>ax</font>  
+<font color=#0000FF>mov</font> <font color=#C80000>bx</font>,0002h 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>02h<font color=#0064C8>]</font>, <font color=#800080>'m'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>04h<font color=#0064C8>]</font>, <font color=#800080>'i'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>06h<font color=#0064C8>]</font>, <font color=#800080>'c'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>08h<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>0Ah<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>0Ch<font color=#0064C8>]</font>, <font color=#800080>'p'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>0Eh<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>10h<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>12h<font color=#0064C8>]</font>, <font color=#800080>'c'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>14h<font color=#0064C8>]</font>, <font color=#800080>'e'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>16h<font color=#0064C8>]</font>, <font color=#800080>'s'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>18h<font color=#0064C8>]</font>, <font color=#800080>'a'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>1Ah<font color=#0064C8>]</font>, <font color=#800080>'d'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>1Ch<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>1Eh<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>20h<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>22h<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>24h<font color=#0064C8>]</font>, <font color=#800080>'d'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>26h<font color=#0064C8>]</font>, <font color=#800080>'a'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>28h<font color=#0064C8>]</font>, <font color=#800080>'s'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>2Ah<font color=#0064C8>]</font>, <font color=#800080>'e'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>2Ch<font color=#0064C8>]</font>, <font color=#800080>'c'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>2Eh<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>30h<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>32h<font color=#0064C8>]</font>, <font color=#800080>'p'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>34h<font color=#0064C8>]</font>, <font color=#800080>'o'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>36h<font color=#0064C8>]</font>, <font color=#800080>'r'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>38h<font color=#0064C8>]</font>, <font color=#800080>'c'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>3Ah<font color=#0064C8>]</font>, <font color=#800080>'i'</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>3Ch<font color=#0064C8>]</font>, <font color=#800080>'m'</font> 
+ 
+ 
+ 
+<font color=#0000FF>ret</font> 
+ 
+ 
+ 
+ 
+ 
+</font></pre>
+<center> <font color=#FFFFFF>;</font> <a href="http://www.emu8086.com" target="_blank"><font face=verdana size=1 color=#000000> - asm2html - </font></a> </center>
+<!-- emu8086 version 4.08    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+ 
+ 
+<!-- *** -->
+ 
+ 
+</body>
+</html>

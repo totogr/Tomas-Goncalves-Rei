@@ -1,0 +1,35 @@
+Dado un banco de memoria de 512MB, teniendo las siguientes memorias: 1 de 256MB, 1 de 128MB y 2 de 64 MB, 
+
+1. Indicar cuantos y cuales integrados se usaran 
+
+2. hacer el mapa de memoria que se vea la primera dirección y la ultima de cada chip.
+
+```raw
+a- 
+Se van a usar los 4 integrados dados por el enunciado
+IC1: 256MB = 2^8 * 2^20
+IC2: 128MB = 2^7 * 2^20
+IC3: 64MB = 2^6 * 2^20
+IC4: 64MB = 2^6 * 2^20
+
+b- 
+512MB = 2^9 * 2^20
+
+Mapa:
+A28	A27	A26	A25	...	A0
+ 0	 0	 0	 0	...	 0 (empieza IC1)
+ 0	 1	 1	 1	...	 1 (termina IC1)
+ 1	 0	 0	 0	...	 0 (+1 y empieza IC2)
+ 1	 0	 1	 1	...	 1 (termina IC2)
+ 1	 1	 0	 0	...	 0 (+1 y empieza IC3)
+ 1	 1	 0	 1	...	 1 (termina IC3)
+ 1	 1	 1	 0	...	 0 (+1 y empieza IC4)
+ 1	 1	 1	 1	...	 1 (termina IC4)
+
+Selectores:
+A28	A27	A26
+ 0	 x	 x	IC1
+ 1	 0	 x	IC2
+ 1	 1	 0	IC3
+ 1	 1	 1	IC4
+```

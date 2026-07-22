@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang=""es>
+    <head>
+        <meta charset="utf-8">
+        <title>IntroAnimos</title>
+    </head>
+    <body>
+        <form id="form_animo">
+            <input id="dia" type="number" min="1" max="31" placeholder="Ingrese dia del mes: "/>
+            <select id="animo">
+                <option value="">Como te sentis hoy?</option>
+                <option value="Muy bien">Muy bien</option>
+                <option value="Bien">Bien</option>
+                <option value="Maso">Maso</option>
+                <option value="Mal">Mal</option>
+                <option value="Mul mal">Mul mal</option>
+            </select>
+            <input type="button" value="Agregar" onclick="agregar_animo()" />
+            <h1>Animos cargados</h1>
+            <ul id="animos_cargados">
+            </ul>
+            <script>
+                function agregar_animo(){
+                    // Agarramos el form para ver su contenido
+                    let elementos = document.getElementById("form_animo").elements
+                    dia = elementos.dia.value
+                    animo = elementos.animo.value
+
+                    // Obtenemos el listado de animos cargados
+                    let animos_cargados = document.getElementById("animos_cargados")
+                    
+                    // Creamos un nuevo elemento <li></li>
+                    let nuevo_elemento = document.createElement("li")
+                    
+                    // Seteamos <li>Dia: .. - Animo: .. </li>
+                    nuevo_elemento.append(`Dia: ${dia} - Animo: ${animo}`)
+                    nuevo_elemento.setAttribute
+
+
+                    let nuevo_boton = document.createElement("button")
+                    nuevo_boton.innerText = "Remover"
+                    nuevo_boton.onclick = function(){remover_animo()} 
+
+                    // Agregamos a la tabla los elementos de dia y animo
+                    animos_cargados.append(nuevo_elemento)
+                }
+                function remover_animo(){
+                    animos_cargados.remove(nuevo_elemento)
+                }
+            </script>
+        </form>
+
+
+    </body>
+    
+
+
+
+
+
+
+</html>

@@ -1,0 +1,98 @@
+<html>
+<head>
+       <title>source code: ejercicio15.asm</title>
+       <meta name="description" content="source code">
+       <style>
+           a:link {text-decoration: none}
+           a:visited {text-decoration: none}
+           a:hover {text-decoration: none; color:#ff0000}
+       </style>
+</head>
+<body leftmargin=110  rightmargin=110 topmargin=20 bgcolor=#FFFFFF text=#000000 link=blue vlink=blue alink=blue>
+ 
+ 
+<!-- * -->
+ 
+ 
+
+
+
+
+&nbsp; &nbsp;<center> <font color=#FFFFFF> ;</font> <font size=2 face="Terminal"> ejercicio15.asm </font></center>
+
+
+
+
+
+
+<!-- START AUTOMATIC ASM TO HTML EXPORT -->
+<pre><font size=2 face="Terminal">
+ 
+<font color=#008000>; You may customize this and other start-up templates;  </font>
+<font color=#008000>; The location of this template is c:\emu8086\inc\0_com_template.txt </font>
+ 
+<font color=#000064>org</font> 100h 
+ 
+set: 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,3 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>203<font color=#0064C8>]</font>,<font color=#C80000>ax</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,1000110100001111b 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>204<font color=#0064C8>]</font>,<font color=#C80000>ah</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>205<font color=#0064C8>]</font>,<font color=#C80000>al</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,0001110010100101b 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>206<font color=#0064C8>]</font>,<font color=#C80000>ah</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>207<font color=#0064C8>]</font>,<font color=#C80000>al</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,0000000000001111b 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>208<font color=#0064C8>]</font>,<font color=#C80000>ah</font> 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>209<font color=#0064C8>]</font>,<font color=#C80000>al</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>ax</font>,0 
+<font color=#0000FF>mov</font> <font color=#C80000>bx</font>,0 
+<font color=#0000FF>mov</font> <font color=#C80000>cx</font>,0 
+<font color=#0000FF>jmp</font> inicio 
+ 
+ 
+ 
+ 
+ 
+inicio: 
+<font color=#0000FF>mov</font> <font color=#C80000>di</font>,204 
+<font color=#0000FF>mov</font> <font color=#C80000>cl</font>,<font color=#0064C8>[</font>203<font color=#0064C8>]</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>dx</font>,0 
+repetir: 
+<font color=#0000FF>mov</font> <font color=#C80000>ah</font>,<font color=#0064C8>[</font><font color=#C80000>di</font><font color=#0064C8>]</font> 
+<font color=#0000FF>inc</font> <font color=#C80000>di</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>al</font>,<font color=#0064C8>[</font><font color=#C80000>di</font><font color=#0064C8>]</font> 
+<font color=#0000FF>inc</font> <font color=#C80000>di</font> 
+<font color=#0000FF>mov</font> <font color=#C80000>bx</font>,08h 
+<font color=#0000FF>and</font> <font color=#C80000>ax</font>,<font color=#C80000>bx</font> 
+<font color=#0000FF>cmp</font> <font color=#C80000>ax</font>,08h 
+<font color=#0000FF>je</font> incrementar 
+<font color=#0000FF>loop</font> repetir 
+ 
+ 
+incrementar: 
+<font color=#0000FF>inc</font> <font color=#C80000>dx</font> 
+<font color=#0000FF>loop</font> repetir 
+ 
+<font color=#0000FF>mov</font> <font color=#0064C8>[</font>200<font color=#0064C8>]</font>,<font color=#C80000>dl</font> 
+<font color=#0000FF>ret</font> 
+ 
+ 
+ 
+ 
+ 
+</font></pre>
+<center> <font color=#FFFFFF>;</font> <a href="http://www.emu8086.com" target="_blank"><font face=verdana size=1 color=#000000> - asm2html - </font></a> </center>
+<!-- emu8086 version 4.08    -->
+<!-- STOP AUTOMATIC ASM TO HTML EXPORT -->
+
+
+
+
+ 
+ 
+<!-- *** -->
+ 
+ 
+</body>
+</html>
