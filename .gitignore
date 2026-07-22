@@ -1,0 +1,37 @@
+# ─── Entornos y dependencias ───────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+node_modules/
+target/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# ─── Binarios y compilados ─────────────────────────────────
+*.exe
+*.out
+*.o
+*.class
+*.log
+
+# ─── Configuración de IDEs / editores ──────────────────────
+.idea/
+.vs/
+.vscode/
+*.iml
+*.sqlite
+
+# ─── Secretos y variables de entorno ───────────────────────
+.env
+.env.*
+!.env.example
+
+# ─── Archivos del sistema operativo ────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Directorio interno de Claude Code ─────────────────────
+.claude/
