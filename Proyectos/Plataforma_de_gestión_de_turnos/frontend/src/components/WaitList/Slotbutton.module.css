@@ -1,0 +1,59 @@
+.slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1.5px solid #e8e4dc;
+    background: #ffffff;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #181c18;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    min-width: 64px;
+}
+
+.slot:hover:not(.full):not(.selected) {
+    background: #f0f4f0;
+    border-color: #a8c5a0;
+}
+
+/* Selected state — matches the dark green in the screenshot */
+.slot.selected {
+    background: #1a3a2a;
+    border-color: #1a3a2a;
+    color: #ffffff;
+}
+
+/* Full slot — muted grey, still clickable to open waitlist modal */
+.slot.full {
+    background: #f5f3f0;
+    border-color: #ddd9d0;
+    color: #9ca39a;
+    cursor: pointer;
+}
+
+.slot.full:hover {
+    background: #eeecea;
+    border-color: #c8c4bc;
+    color: #6b7068;
+}
+
+.time {
+    line-height: 1;
+}
+
+.fullBadge {
+    font-size: 10px;
+    font-weight: 600;
+    color: #b45309;
+    background: #fef3c7;
+    border-radius: 4px;
+    padding: 1px 5px;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}

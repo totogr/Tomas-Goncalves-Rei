@@ -1,0 +1,7 @@
+.button {
+  grid-column: span 2;
+}
+
+.button:hover{
+  background-color: #0b2e16;
+}

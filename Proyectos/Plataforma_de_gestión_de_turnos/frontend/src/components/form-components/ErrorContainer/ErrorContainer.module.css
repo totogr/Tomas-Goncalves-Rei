@@ -1,0 +1,19 @@
+.errorContainer {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorContainer li {
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #a63d2f;
+  padding: 6px 10px;
+  background: #fdf2f0;
+  border: 1px solid #f0c4bc;
+  border-radius: 6px;
+  line-height: 1.4;
+}

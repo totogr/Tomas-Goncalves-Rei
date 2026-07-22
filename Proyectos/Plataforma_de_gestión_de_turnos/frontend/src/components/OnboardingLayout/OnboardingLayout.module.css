@@ -1,0 +1,129 @@
+.root {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(160deg, #1a3320 0%, #0f2218 60%, #0d1f15 100%);
+    color: white;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.logo {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.logo span {
+    color: #6aaa7e;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.stepIndicator {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 600;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.4);
+    background: transparent;
+}
+
+.stepIndicator.done {
+    background: #1a6636;
+    border-color: #1a6636;
+    color: #fff;
+}
+
+.stepIndicator.active {
+    background: #fff;
+    border-color: #fff;
+    color: #1a3320;
+}
+
+.stepText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 3px;
+}
+
+.stepTitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.9);
+}
+
+.stepTitle.inactive {
+    color: rgba(255,255,255,0.35);
+}
+
+.stepSubtitle {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+}
+
+.content {
+    margin-left: 240px;
+    flex: 1;
+    background: #f5f3ee;
+    padding: 64px 72px;
+    min-height: 100vh;
+}
+
+.stepMeta {
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a6636;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.stepHeading {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: #181c18;
+    margin: 0 0 8px 0;
+}
+
+.stepDescription {
+    font-size: 15px;
+    color: #7a8878;
+    margin: 0 0 40px 0;
+    max-width: 680px;
+}
+
+.inner {
+    max-width: 680px;
+    margin: 0 auto;
+}

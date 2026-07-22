@@ -1,0 +1,148 @@
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.header {
+  margin-bottom: 4px;
+}
+
+.title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #181c18;
+  margin: 0 0 6px 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #7a8878;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.searchWrapper {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchWrapper svg {
+  position: absolute;
+  left: 14px;
+  color: #7a8878;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid #dedad2;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #181c18;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+
+.searchInput:focus {
+  border-color: #1a6636;
+}
+
+.searchInput::placeholder {
+  color: #b0b8ae;
+}
+
+.select {
+  padding: 12px 16px;
+  border: 1px solid #dedad2;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #374151;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  border-color: #1a6636;
+}
+
+.listCard {
+  background: #fff;
+  border: 1px solid #e8e4dc;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.listGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .listGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.resultsCount {
+  font-size: 14px;
+  color: #7a8878;
+  margin: 0;
+}
+
+.empty {
+  padding: 64px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  color: #dedad2;
+}
+
+.emptyTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a8878;
+}
+
+.clearButton {
+  background: none;
+  border: 1px solid #1a6636;
+  border-radius: 8px;
+  color: #1a6636;
+  font-size: 14px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 9px 22px;
+  margin-top: 4px;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.clearButton:hover {
+  background-color: #1a6636;
+  color: #fff;
+}

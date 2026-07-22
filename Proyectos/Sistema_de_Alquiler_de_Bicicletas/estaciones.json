@@ -1,0 +1,10 @@
+{
+  "estaciones": [
+    { "id": 1, "puerto": 8001, "ubicacion": [-34.60, -58.40] },
+    { "id": 2, "puerto": 8002, "ubicacion": [-34.51, -58.40] },
+    { "id": 3, "puerto": 8003, "ubicacion": [-34.42, -58.40] }
+  ],
+  "pasarela": { "puerto": 9000 },
+  "tarifa": { "base": 50.0, "por_minuto": 10.0 },
+  "lider": 1
+}

@@ -1,0 +1,341 @@
+.stepLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a6636;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+ 
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+ 
+/* Card */
+.card {
+    background: #fff;
+    border: 0.5px solid #dedad2;
+    border-radius: 14px;
+    overflow: hidden;
+}
+ 
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: #f7f5f0;
+    border-bottom: 0.5px solid #dedad2;
+}
+ 
+.cardIndex {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a8878;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+ 
+.removeBtn {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7a8878;
+    transition: background 0.12s, color 0.12s;
+    padding: 0;
+}
+ 
+.removeBtn:hover {
+    background: #fef5f5;
+    color: #c0392b;
+}
+ 
+.cardBody {
+    padding: 16px 16px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+ 
+/* Fields */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+ 
+.fieldLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #7a8878;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+ 
+.nameInput {
+    width: 70%;
+    border: 0.5px solid #d0ccc4;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #181c18;
+    background: #fff;
+    transition: border-color 0.12s, box-shadow 0.12s;
+}
+ 
+.nameInput:focus {
+    outline: none;
+    border-color: #1a6636;
+    box-shadow: 0 0 0 3px rgba(26, 102, 54, 0.1);
+}
+ 
+.nameInput::placeholder {
+    color: #b0aaa5;
+    font-weight: 400;
+}
+ 
+.nameInput.inputErr {
+    border-color: #e74c3c;
+}
+ 
+/* Input group (with adorner) */
+.inputGroup {
+    display: flex;
+    align-items: stretch;
+    border: 0.5px solid #d0ccc4;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    transition: border-color 0.12s, box-shadow 0.12s;
+}
+ 
+.inputGroup:focus-within {
+    border-color: #1a6636;
+    box-shadow: 0 0 0 3px rgba(26, 102, 54, 0.1);
+}
+ 
+.inputGroup.inputGroupErr {
+    border-color: #e74c3c;
+}
+ 
+.groupInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 9px 10px;
+    font-size: 14px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    color: #181c18;
+    outline: none;
+    min-width: 0;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+ 
+.groupInput::-webkit-outer-spin-button,
+.groupInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+.adorn {
+    padding: 0 10px;
+    font-size: 13px;
+    color: #7a8878;
+    background: #f7f5f0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-family: 'DM Sans', system-ui, sans-serif;
+}
+ 
+.adornLeft {
+    border-right: 0.5px solid #dedad2;
+}
+ 
+.adornRight {
+    border-left: 0.5px solid #dedad2;
+}
+ 
+/* Grid */
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+ 
+/* Error messages */
+.errMsg {
+    font-size: 11px;
+    color: #c0392b;
+    min-height: 14px;
+    display: block;
+}
+ 
+.errHidden {
+    visibility: hidden;
+}
+ 
+/* Toggle row */
+.toggleRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-top: 0.5px solid #ebe7de;
+    margin-top: 2px;
+}
+ 
+.toggleLabel {
+    font-size: 13px;
+    color: #7a8878;
+    font-family: 'DM Sans', system-ui, sans-serif;
+}
+ 
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    cursor: pointer;
+    display: inline-block;
+}
+ 
+.toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+ 
+.toggleSlider {
+    position: absolute;
+    inset: 0;
+    background: #d0ccc4;
+    border-radius: 11px;
+    transition: background 0.2s;
+}
+ 
+.toggleSlider::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+ 
+.toggle input:checked + .toggleSlider {
+    background: #1a6636;
+}
+ 
+.toggle input:checked + .toggleSlider::before {
+    transform: translateX(18px);
+}
+ 
+.toggleVal {
+    font-size: 13px;
+    font-weight: 500;
+    color: #181c18;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    min-width: 18px;
+}
+ 
+/* Add button */
+.addBtn {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border: 1.5px dashed #c8c4bc;
+    border-radius: 14px;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #7a8878;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    width: 100%;
+    transition: border-color 0.12s, color 0.12s;
+}
+ 
+.addBtn:hover {
+    border-color: #1a6636;
+    color: #1a6636;
+}
+ 
+.globalErr {
+    font-size: 12px;
+    color: #c0392b;
+    margin-top: 8px;
+}
+ 
+/* Footer */
+.divider {
+    border: none;
+    border-top: 0.5px solid #dedad2;
+    margin: 24px 0;
+}
+ 
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+ 
+.footerCenter {
+    font-size: 13px;
+    color: #7a8878;
+}
+ 
+.backBtn {
+    background: none;
+    border: 0.5px solid #dedad2;
+    color: #181c18;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+ 
+.backBtn:hover {
+    border-color: #1a6636;
+}
+ 
+.continueBtn {
+    background: #1a3320;
+    color: #fff;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+ 
+.continueBtn:hover:not(:disabled) {
+    background: #1a6636;
+}
+ 
+.continueBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

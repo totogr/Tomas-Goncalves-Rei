@@ -1,0 +1,184 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 36px 32px 28px;
+    width: 100%;
+    max-width: 400px;
+    margin: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    animation: slideUp 0.2s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(12px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #f5f3ee;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    color: #6b7068;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.closeBtn:hover { background: #e8e4dc; }
+
+.iconWrapper {
+    width: 56px;
+    height: 56px;
+    background: #fef3c7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 24px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #181c18;
+    margin: 0 0 8px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #374151;
+    margin: 0 0 12px;
+}
+
+.description {
+    font-size: 14px;
+    color: #7a8878;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+.checking {
+    font-size: 14px;
+    color: #9ca39a;
+    margin: 12px 0;
+}
+
+.infoBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #f0f7f2;
+    border: 1px solid #a8d5b5;
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #1a3a2a;
+    line-height: 1.5;
+}
+
+.position {
+    font-weight: 600;
+    color: #2d7a4f;
+}
+
+.errorMsg {
+    font-size: 13px;
+    color: #991b1b;
+    background: #fef2f2;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+    margin-bottom: 14px;
+}
+
+.joinBtn {
+    width: 100%;
+    background: #2d7a4f;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-bottom: 10px;
+}
+
+.joinBtn:hover:not(:disabled) { background: #236040; }
+
+.joinBtn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.cancelLink {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #9ca39a;
+    cursor: pointer;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    padding: 4px 8px;
+    transition: color 0.15s;
+}
+
+.cancelLink:hover { color: #374151; }
+
+.slotsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.slotBtn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.15s;
+}
+
+.slotBtn:hover {
+    background: #e0e0e0;
+}

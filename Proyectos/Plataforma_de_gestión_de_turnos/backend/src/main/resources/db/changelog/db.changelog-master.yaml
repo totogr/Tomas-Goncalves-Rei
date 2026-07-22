@@ -1,0 +1,1155 @@
+databaseChangeLog:
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 0 — limpieza completa
+  # Dropea todas las tablas viejas y resetea el
+  # historial de Liquibase para arrancar limpio.
+  # runAlways: false + preCondition por tabla
+  # garantiza que solo corre si todavía existe
+  # el schema viejo.
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 0
+      author: jose
+      runOnChange: false
+      preConditions:
+        onFail: MARK_RAN
+        tableExists:
+          tableName: users
+      changes:
+        - sql:
+            sql: |
+              -- Dropear tablas viejas en orden (FK primero)
+              DROP TABLE IF EXISTS refresh_token CASCADE;
+              DROP TABLE IF EXISTS product CASCADE;
+              DROP TABLE IF EXISTS brand CASCADE;
+              DROP TABLE IF EXISTS users CASCADE;
+ 
+              -- Resetear historial de Liquibase para que
+              -- los changesets 1-12 corran como nuevos
+              DELETE FROM databasechangelog WHERE id != '0';
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 1 — tabla CLIENT
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 1
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: client
+      changes:
+        - createTable:
+            tableName: client
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: client_email_unique
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 2 — tabla PROFESSIONAL
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 2
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: professional
+      changes:
+        - createTable:
+            tableName: professional
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: professional_email_unique
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+              - column:
+                  name: specialty
+                  type: VARCHAR(255)
+              - column:
+                  name: address
+                  type: VARCHAR(255)
+              - column:
+                  name: neighborhood
+                  type: VARCHAR(255)
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 3 — tabla REFRESH_TOKEN
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 3
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: refresh_token
+      changes:
+        - createTable:
+            tableName: refresh_token
+            columns:
+              - column:
+                  name: token_value
+                  type: VARCHAR(255)
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: expires_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_type
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+ 
+        - sql:
+            sql: |
+              ALTER TABLE refresh_token ADD CONSTRAINT refresh_token_user_type_check
+              CHECK (user_type IN ('CLIENT', 'PROFESSIONAL'));
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 4 — tabla EMPLOYEE
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 4
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: employee
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+              - column:
+                  name: profession
+                  type: VARCHAR(255)
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: employee
+            baseColumnNames: professional_id
+            constraintName: fk_employee_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 5 — tabla SERVICE
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 5
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: service
+      changes:
+        - createTable:
+            tableName: service
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category
+                  type: VARCHAR(255)
+              - column:
+                  name: slug
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: duration
+                  type: INT
+              - column:
+                  name: price
+                  type: DECIMAL(10, 2)
+              - column:
+                  name: max_capacity
+                  type: INT
+              - column:
+                  name: is_active
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: service
+            baseColumnNames: professional_id
+            constraintName: fk_service_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 6 — tabla EMPLOYEE_SERVICE (join table)
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 6
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: employee_service
+      changes:
+        - createTable:
+            tableName: employee_service
+            columns:
+              - column:
+                  name: employee_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+ 
+        - addPrimaryKey:
+            tableName: employee_service
+            columnNames: employee_id, service_id
+            constraintName: pk_employee_service
+ 
+        - addForeignKeyConstraint:
+            baseTableName: employee_service
+            baseColumnNames: employee_id
+            constraintName: fk_employee_service_employee
+            referencedTableName: employee
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: employee_service
+            baseColumnNames: service_id
+            constraintName: fk_employee_service_service
+            referencedTableName: service
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 7 — tabla SCHEDULE
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 7
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: schedule
+      changes:
+        - createTable:
+            tableName: schedule
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: day_week
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start
+                  type: TIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end
+                  type: TIME
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: schedule
+            baseColumnNames: professional_id
+            constraintName: fk_schedule_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 8 — tabla SCHEDULE_BLOCK
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 8
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: schedule_block
+      changes:
+        - createTable:
+            tableName: schedule_block
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: from_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: until_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: schedule_block
+            baseColumnNames: professional_id
+            constraintName: fk_schedule_block_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 9 — tabla APPOINTMENT
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 9
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: appointment
+      changes:
+        - createTable:
+            tableName: appointment
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: employee_id
+                  type: BIGINT
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cancelled_date
+                  type: TIMESTAMPTZ
+              - column:
+                  name: created_date
+                  type: TIMESTAMPTZ
+                  defaultValueComputed: NOW()
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: appointment
+            baseColumnNames: professional_id
+            constraintName: fk_appointment_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: appointment
+            baseColumnNames: employee_id
+            constraintName: fk_appointment_employee
+            referencedTableName: employee
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: appointment
+            baseColumnNames: client_id
+            constraintName: fk_appointment_client
+            referencedTableName: client
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: appointment
+            baseColumnNames: service_id
+            constraintName: fk_appointment_service
+            referencedTableName: service
+            referencedColumnNames: id
+ 
+        - sql:
+            sql: |
+              ALTER TABLE appointment ADD CONSTRAINT appointment_status_check
+              CHECK (status IN ('CONFIRMED', 'CANCELLED', 'COMPLETED'));
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 10 — tabla CANCELLATION_POLICY
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 10
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: cancellation_policy
+      changes:
+        - createTable:
+            tableName: cancellation_policy
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: hours_before
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: block
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: absent_limit
+                  type: INT
+ 
+        - addForeignKeyConstraint:
+            baseTableName: cancellation_policy
+            baseColumnNames: professional_id
+            constraintName: fk_cancellation_policy_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 11 — tabla REVIEW
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 11
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: review
+      changes:
+        - createTable:
+            tableName: review
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: appointment_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: score
+                  type: INT
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: review
+            baseColumnNames: professional_id
+            constraintName: fk_review_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: review
+            baseColumnNames: client_id
+            constraintName: fk_review_client
+            referencedTableName: client
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: review
+            baseColumnNames: appointment_id
+            constraintName: fk_review_appointment
+            referencedTableName: appointment
+            referencedColumnNames: id
+ 
+        - sql:
+            sql: |
+              ALTER TABLE review ADD CONSTRAINT review_score_check
+              CHECK (score >= 1 AND score <= 5);
+ 
+  # ─────────────────────────────────────────────
+  # CHANGESET 12 — tabla WAIT_LIST
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 12
+      author: jose
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: wait_list
+      changes:
+        - createTable:
+            tableName: wait_list
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: appointment_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: creation_time
+                  type: TIMESTAMPTZ
+                  defaultValueComputed: NOW()
+                  constraints:
+                    nullable: false
+ 
+        - addForeignKeyConstraint:
+            baseTableName: wait_list
+            baseColumnNames: client_id
+            constraintName: fk_wait_list_client
+            referencedTableName: client
+            referencedColumnNames: id
+ 
+        - addForeignKeyConstraint:
+            baseTableName: wait_list
+            baseColumnNames: appointment_id
+            constraintName: fk_wait_list_appointment
+            referencedTableName: appointment
+            referencedColumnNames: id
+
+  # ─────────────────────────────────────────────
+# ─────────────────────────────────────────────
+# CHANGESET 13 — tabla PASSWORD_RESET_TOKEN
+# ─────────────────────────────────────────────
+
+  - changeSet:
+      id: 13
+      author: ignacio
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: password_reset_token
+
+      changes:
+        - createTable:
+            tableName: password_reset_token
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: token_hash
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: prt_token_hash_unique
+
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: user_type
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: expires_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: used
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMPTZ
+                  defaultValueComputed: NOW()
+                  constraints:
+                    nullable: false
+
+        - sql:
+            sql: |
+              ALTER TABLE password_reset_token ADD CONSTRAINT prt_user_type_check
+              CHECK (user_type IN ('CLIENT', 'PROFESSIONAL'));
+
+# ─────────────────────────────────────────────
+# CHANGESET 14 — índice único en WAIT_LIST
+# Evita duplicados cliente+turno
+# ─────────────────────────────────────────────
+
+  - changeSet:
+      id: 14
+      author: ignacio
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          indexExists:
+            indexName: idx_wait_list_client_appointment
+      changes:
+        - createIndex:
+            indexName: idx_wait_list_client_appointment
+            tableName: wait_list
+            columns:
+              - column:
+                  name: client_id
+              - column:
+                  name: appointment_id
+            unique: true
+# ─────────────────────────────────────────────
+# CHANGESET 15 — columna cancelled_by en APPOINTMENT
+# Registra quién canceló: 'client' o 'professional'
+# ─────────────────────────────────────────────
+
+  - changeSet:
+      id: 15
+      author: fix/cancelled-by
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: appointment
+            columnName: cancelled_by
+      changes:
+        - addColumn:
+            tableName: appointment
+            columns:
+              - column:
+                  name: cancelled_by
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 16
+      author: feature/slot-interval
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: professional
+            columnName: slot_interval_minutes
+      changes:
+        - addColumn:
+            tableName: professional
+            columns:
+              - column:
+                  name: slot_interval_minutes
+                  type: INT
+                  defaultValueNumeric: 30
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 17
+      author: valentin
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: schedule_block
+            columnName: block_date
+      changes:
+        - addColumn:
+            tableName: schedule_block
+            columns:
+              - column:
+                  name: block_date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_time
+                  type: TIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end_time
+                  type: TIME
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 18
+      author: valentin
+      preConditions:
+        onFail: MARK_RAN
+        and:
+          - columnExists:
+              tableName: schedule_block
+              columnName: from_date
+          - columnExists:
+              tableName: schedule_block
+              columnName: until_date
+      changes:
+        - dropColumn:
+            tableName: schedule_block
+            columnName: from_date
+        - dropColumn:
+            tableName: schedule_block
+            columnName: until_date
+
+  - changeSet:
+      id: 19
+      author: valentin
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: blocked_client
+      changes:
+        - createTable:
+            tableName: blocked_client
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: blocked_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: blocked_client
+            baseColumnNames: professional_id
+            constraintName: fk_blocked_client_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: blocked_client
+            baseColumnNames: client_id
+            constraintName: fk_blocked_client_client
+            referencedTableName: client
+            referencedColumnNames: id
+
+        - addUniqueConstraint:
+            tableName: blocked_client
+            columnNames: professional_id, client_id
+            constraintName: uq_blocked_client_professional_client
+
+  - changeSet:
+      id: 20
+      author: valentin
+      preConditions:
+        onFail: MARK_RAN
+        columnExists:
+          tableName: appointment
+          columnName: start
+      changes:
+        - renameColumn:
+            tableName: appointment
+            oldColumnName: start
+            newColumnName: start_time
+            columnDataType: TIMESTAMPTZ
+        - renameColumn:
+            tableName: appointment
+            oldColumnName: end
+            newColumnName: end_time
+            columnDataType: TIMESTAMPTZ
+
+  - changeSet:
+      id: 21
+      author: camila
+      preConditions:
+        onFail: MARK_RAN
+        columnExists:
+          tableName: wait_list
+          columnName: appointment_id
+      changes:
+        - dropAllForeignKeyConstraints:
+            baseTableName: wait_list
+        - dropIndex:
+            indexName: idx_wait_list_client_appointment
+            tableName: wait_list
+        - dropColumn:
+            tableName: wait_list
+            columnName: appointment_id
+        - addColumn:
+            tableName: wait_list
+            columns:
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: slot_start
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+        - addUniqueConstraint:
+            tableName: wait_list
+            columnNames: client_id, professional_id, service_id, slot_start
+            constraintName: uq_wait_list_client_slot
+
+  - changeSet:
+      id: 22
+      author: cami
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: client
+            columnName: absence_count
+      changes:
+        - addColumn:
+            tableName: client
+            columns:
+              - column:
+                  name: absence_count
+                  type: INT
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: 23
+      author: cami
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: appointment
+            columnName: marked_absent_at
+      changes:
+        - addColumn:
+            tableName: appointment
+            columns:
+              - column:
+                  name: marked_absent_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 24
+      author: nico
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          columnExists:
+            tableName: client
+            columnName: receives_reminders
+      changes:
+        - addColumn:
+            tableName: client
+            columns:
+              - column:
+                  name: receives_reminders
+                  type: boolean
+                  defaultValueBoolean: true
+        - addColumn:
+            tableName: appointment
+            columns:
+              - column:
+                  name: reminder_sent
+                  type: boolean
+                  defaultValueBoolean: false
+
+
+  # ─────────────────────────────────────────────
+  # CHANGESET 25 → tabla WAIT_LIST_PROMOTION
+  # Registra ofertas de turno enviadas a clientes
+  # en lista de espera, con ventana de 2 horas
+  # para confirmar antes de pasar al siguiente.
+  # ─────────────────────────────────────────────
+  - changeSet:
+      id: 25
+      author: camila
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          tableExists:
+            tableName: wait_list_promotion
+      changes:
+        - createTable:
+            tableName: wait_list_promotion
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: wait_list_entry_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: client_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: professional_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: service_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: slot_start
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expires_at
+                  type: TIMESTAMPTZ
+                  constraints:
+                    nullable: false
+              - column:
+                  name: confirmed
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: expired
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+
+        - addForeignKeyConstraint:
+            baseTableName: wait_list_promotion
+            baseColumnNames: client_id
+            constraintName: fk_wait_list_promotion_client
+            referencedTableName: client
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: wait_list_promotion
+            baseColumnNames: professional_id
+            constraintName: fk_wait_list_promotion_professional
+            referencedTableName: professional
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: wait_list_promotion
+            baseColumnNames: service_id
+            constraintName: fk_wait_list_promotion_service
+            referencedTableName: service
+            referencedColumnNames: id
+
+        - addUniqueConstraint:
+            tableName: wait_list_promotion
+            columnNames: client_id, professional_id, service_id, slot_start, confirmed, expired
+            constraintName: uq_wait_list_promotion_active
+
+  - changeSet:
+      id: 26
+      author: camila
+      preConditions:
+        onFail: MARK_RAN
+        tableExists:
+          tableName: wait_list_promotion
+      changes:
+        - renameTable:
+            oldTableName: wait_list_promotion
+            newTableName: wait_list_promotions
+
+  - changeSet:
+      id: 27
+      author: camila
+      preConditions:
+        onFail: MARK_RAN
+        columnExists:
+          tableName: wait_list
+          columnName: requested_slot_start
+      changes:
+        - dropColumn:
+            tableName: wait_list
+            columnName: requested_slot_start
