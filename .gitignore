@@ -35,3 +35,7 @@ desktop.ini
 
 # ─── Directorio interno de Claude Code ─────────────────────
 .claude/
+
+# ─── Bibliografía con copyright (se mantiene local, no se publica) ───
+Materias/*/Bibliografia/
+Materias/*/Bibliografía/
