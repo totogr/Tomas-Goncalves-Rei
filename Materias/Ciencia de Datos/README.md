@@ -8,6 +8,7 @@ Los profesores van subiendo material clase a clase (slides y archivos) en **Clas
 
 | Carpeta / Archivo | Descripción |
 | --- | --- |
+| [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
 | [`Clases Teóricas/`](Clases%20Te%C3%B3ricas/) | Slides y material teórico por unidad (introducción a la materia, visualización de datos, introducción a la ciencia de datos, métricas). |
 | [`Clases Prácticas/`](Clases%20Pr%C3%A1cticas/) | Notebooks y material de práctica por clase (intro a Pandas, indexing, visualización, EDA, métodos de regresión). |
 | [`Guías de Ejercicios/`](Gu%C3%ADas%20de%20Ejercicios/) | Guías de ejercicios por tema (Pandas). |

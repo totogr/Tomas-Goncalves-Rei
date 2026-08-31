@@ -8,6 +8,7 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 
 | Carpeta / Archivo | Descripción |
 | --- | --- |
+| [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
 | [`Teoría (PPTs de la cátedra)/`](Teor%C3%ADa%20%28PPTs%20de%20la%20c%C3%A1tedra%29/) | Presentaciones teóricas de la cátedra, numeradas según el orden de las clases. |
 | [`Resúmenes/`](Res%C3%BAmenes/) | Resúmenes de clases y apuntes de estudio. |
 

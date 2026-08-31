@@ -10,6 +10,7 @@ Material de la materia **Gestión del Desarrollo de Sistemas de Información** (
 
 | Carpeta / Archivo | Descripción |
 | --- | --- |
+| [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
 | [`Cronograma 2C 2026.md`](Cronograma%202C%202026.md) | Cronograma completo del 2º cuatrimestre 2026: calendario clase por clase, material previo, entregas del TP y fechas de evaluación. |
 
 _Se irá completando con slides, guías de prácticos y resúmenes a medida que se agregue material._
