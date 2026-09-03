@@ -57,6 +57,10 @@ flowchart LR
 
 > 🔑 "Empezar por la aceptación": definir **cómo se prueba que está bien hecho** antes de construirlo (enlaza BDD con el mapa de ejemplos).
 
+### Slicing vertical, la clave para cortar historias
+
+![Slicing vertical vs horizontal: gajos de valor vs capas técnicas](assets/04-slicing-vertical.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

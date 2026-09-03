@@ -48,6 +48,12 @@ flowchart LR
 
 > 🔑 Conexión con *Artful Making*: si el **cambio es barato** y trabajás en ciclos cortos, muchos riesgos se **descubren y corrigen temprano**, cuando cuesta poco.
 
+### La matriz probabilidad × impacto (con qué priorizás)
+
+![Matriz de riesgos con zonas verde/amarillo/naranja/rojo y ejemplos ubicados](assets/07-matriz-riesgos.svg)
+
+> Sirve como semáforo: los que caen en **rojo** exigen plan B o evitarlos antes del sprint; los verdes se aceptan y listo.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

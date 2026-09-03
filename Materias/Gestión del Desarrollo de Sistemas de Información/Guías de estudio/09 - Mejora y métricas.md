@@ -56,6 +56,10 @@ Método para **no medir por medir**: primero el **objetivo**, después las **pre
 
 > ⚠️ **Cuidado con las métricas:** una métrica mal elegida se vuelve un objetivo que se "juega" (Ley de Goodhart: *"cuando una medida se vuelve objetivo, deja de ser buena medida"*). Por eso DORA balancea **velocidad** (frequency, lead time) con **estabilidad** (failure rate, restore).
 
+### DORA como balanza: velocidad ↔ estabilidad
+
+![Balanza con las 4 métricas DORA repartidas entre velocidad y estabilidad](assets/09-dora-balance.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

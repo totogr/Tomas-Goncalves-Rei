@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="100%" role="img" aria-label="Diagrama de flujo acumulado (CFD) de Kanban">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .ax{stroke:#333;stroke-width:1.2}
+    .todo{fill:#eceff1;stroke:#455a64;stroke-width:1}
+    .doing{fill:#fff3e0;stroke:#f57c00;stroke-width:1}
+    .review{fill:#e3f2fd;stroke:#1565c0;stroke-width:1}
+    .done{fill:#c8e6c9;stroke:#2e7d32;stroke-width:1}
+    .arrow{stroke:#c62828;stroke-width:1.5;fill:none;marker-end:url(#cfd-a)}
+  </style>
+  <defs>
+    <marker id="cfd-a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c62828"/></marker>
+  </defs>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Diagrama de flujo acumulado (CFD) — la salud del flujo de un tablero Kanban</text>
+
+  <!-- Ejes -->
+  <line class="ax" x1="60" y1="280" x2="640" y2="280"/>
+  <line class="ax" x1="60" y1="40" x2="60" y2="280"/>
+  <text x="350" y="305" text-anchor="middle" class="s">Tiempo →</text>
+  <text x="25" y="160" transform="rotate(-90 25 160)" text-anchor="middle" class="s">Cantidad de ítems acumulados</text>
+
+  <!-- Bandas apiladas (áreas) -->
+  <!-- DONE (verde) al fondo -->
+  <path class="done" d="M 60,280 L 60,270 L 150,255 L 250,225 L 350,180 L 450,140 L 550,100 L 640,70 L 640,280 Z"/>
+  <!-- REVIEW (azul) encima -->
+  <path class="review" d="M 60,270 L 150,240 L 250,205 L 350,160 L 450,120 L 550,85 L 640,60 L 640,70 L 550,100 L 450,140 L 350,180 L 250,225 L 150,255 L 60,270 Z"/>
+  <!-- DOING (naranja) encima -->
+  <path class="doing" d="M 60,255 L 150,220 L 250,180 L 350,135 L 450,100 L 550,70 L 640,45 L 640,60 L 550,85 L 450,120 L 350,160 L 250,205 L 150,240 L 60,270 Z"/>
+  <!-- TODO (gris) encima -->
+  <path class="todo" d="M 60,235 L 150,195 L 250,155 L 350,110 L 450,80 L 550,55 L 640,35 L 640,45 L 550,70 L 450,100 L 350,135 L 250,180 L 150,220 L 60,255 Z"/>
+
+  <!-- Etiquetas -->
+  <text x="600" y="260" class="ss" fill="#2e7d32" font-weight="bold">Done</text>
+  <text x="600" y="140" class="ss" fill="#1565c0" font-weight="bold">Review</text>
+  <text x="600" y="90" class="ss" fill="#f57c00" font-weight="bold">Doing</text>
+  <text x="600" y="30" class="ss" fill="#455a64" font-weight="bold">To Do</text>
+
+  <!-- Anotaciones sobre cuellos de botella -->
+  <path class="arrow" d="M 300,60 L 260,120"/>
+  <text x="305" y="55" class="ss" fill="#c62828">La banda "Doing" se ensancha</text>
+  <text x="305" y="68" class="ss" fill="#c62828">→ cuello de botella (WIP crece,</text>
+  <text x="305" y="81" class="ss" fill="#c62828">nada avanza a Review)</text>
+
+  <!-- Lecturas -->
+  <text x="360" y="325" text-anchor="middle" class="ss">Ancho vertical de una banda = ítems en ese estado hoy · Distancia horizontal entre bandas = lead time promedio.</text>
+</svg>

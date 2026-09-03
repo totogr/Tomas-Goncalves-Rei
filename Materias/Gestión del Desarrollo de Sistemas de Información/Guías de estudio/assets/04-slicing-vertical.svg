@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%" role="img" aria-label="Slicing vertical vs horizontal: torta cortada en gajos vs capas">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .cap-ui{fill:#e3f2fd;stroke:#1565c0;stroke-width:1.2}
+    .cap-back{fill:#fff3e0;stroke:#f57c00;stroke-width:1.2}
+    .cap-db{fill:#f3e5f5;stroke:#7b1fa2;stroke-width:1.2}
+    .slice{fill:none;stroke:#c62828;stroke-width:2.5;stroke-dasharray:5,3}
+    .ok{fill:#c8e6c9;stroke:#2e7d32}
+  </style>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Slicing vertical vs horizontal — cómo partir una funcionalidad grande</text>
+
+  <!-- HORIZONTAL (por capas técnicas) -->
+  <g transform="translate(30,50)">
+    <text x="150" y="0" text-anchor="middle" class="s" font-weight="bold" fill="#c62828">❌ Horizontal (por capa técnica)</text>
+    <rect class="cap-ui" x="0" y="20" width="300" height="40"/>
+    <text x="150" y="45" text-anchor="middle" class="s">UI (toda la interfaz)</text>
+    <rect class="cap-back" x="0" y="60" width="300" height="40"/>
+    <text x="150" y="85" text-anchor="middle" class="s">Backend (toda la lógica)</text>
+    <rect class="cap-db" x="0" y="100" width="300" height="40"/>
+    <text x="150" y="125" text-anchor="middle" class="s">Base de datos (todas las tablas)</text>
+    <text x="150" y="165" text-anchor="middle" class="ss" fill="#c62828">Cada sprint termina algo que "no funciona todavía"</text>
+    <text x="150" y="180" text-anchor="middle" class="ss" fill="#c62828">→ no hay valor entregable hasta el final</text>
+  </g>
+
+  <!-- VERTICAL (por valor) -->
+  <g transform="translate(400,50)">
+    <text x="150" y="0" text-anchor="middle" class="s" font-weight="bold" fill="#2e7d32">✅ Vertical (por funcionalidad completa)</text>
+    <rect class="cap-ui" x="0" y="20" width="300" height="40"/>
+    <text x="30" y="45" text-anchor="middle" class="ss">UI</text>
+    <rect class="cap-back" x="0" y="60" width="300" height="40"/>
+    <text x="30" y="85" text-anchor="middle" class="ss">Back</text>
+    <rect class="cap-db" x="0" y="100" width="300" height="40"/>
+    <text x="30" y="125" text-anchor="middle" class="ss">BD</text>
+
+    <!-- Rebanadas verticales -->
+    <line class="slice" x1="80" y1="20" x2="80" y2="140"/>
+    <line class="slice" x1="150" y1="20" x2="150" y2="140"/>
+    <line class="slice" x1="220" y1="20" x2="220" y2="140"/>
+
+    <!-- gajo highlighted -->
+    <rect fill="rgba(46,125,50,0.2)" x="80" y="20" width="70" height="120"/>
+    <text x="115" y="155" text-anchor="middle" class="ss" fill="#2e7d32">gajo = 1 funcionalidad</text>
+
+    <text x="115" y="10" text-anchor="middle" class="ss">Login</text>
+    <text x="185" y="10" text-anchor="middle" class="ss">Compra</text>
+    <text x="255" y="10" text-anchor="middle" class="ss">Devolución</text>
+    <text x="150" y="180" text-anchor="middle" class="ss" fill="#2e7d32">Cada gajo funciona solo, aporta valor y se puede mostrar.</text>
+  </g>
+
+  <text x="360" y="250" text-anchor="middle" class="s">🍰 Metáfora: "cortar la torta" — mejor por gajos (con crema, bizcocho y relleno) que en capas.</text>
+  <text x="360" y="270" text-anchor="middle" class="ss">Un slice vertical toca todas las capas técnicas pero entrega una funcionalidad completa (una rebanada de valor).</text>
+</svg>

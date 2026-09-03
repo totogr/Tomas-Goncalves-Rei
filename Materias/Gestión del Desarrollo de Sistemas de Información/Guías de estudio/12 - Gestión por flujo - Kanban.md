@@ -34,6 +34,10 @@ flowchart LR
 
 > 🔑 El **WIP (Work In Progress)** limitado es el corazón de Kanban: **menos tareas simultáneas = más flujo**.
 
+### El diagrama de flujo acumulado (CFD) — cómo leerlo
+
+![CFD con bandas apiladas mostrando cuello de botella en Doing](assets/12-cfd-kanban.svg)
+
 ---
 
 ## 📊 Conceptos clave
