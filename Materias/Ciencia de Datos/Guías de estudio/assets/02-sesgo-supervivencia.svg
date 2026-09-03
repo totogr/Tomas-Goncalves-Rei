@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 260" width="100%" role="img" aria-label="Sesgo de supervivencia — avión con impactos">
+  <style>
+    .t{font-family:sans-serif;font-size:13px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .plane{fill:#eceff1;stroke:#455a64;stroke-width:1.5}
+    .hit{fill:#c62828}
+    .refuerzo{fill:none;stroke:#2e7d32;stroke-width:2;stroke-dasharray:4,3}
+    .lblg{font-family:sans-serif;font-size:11px;fill:#2e7d32;font-weight:bold}
+    .lblr{font-family:sans-serif;font-size:11px;fill:#c62828;font-weight:bold}
+  </style>
+  <text x="280" y="20" text-anchor="middle" class="t">Sesgo de supervivencia: los agujeros que VOLVIERON</text>
+
+  <!-- Silueta simple de avión -->
+  <g transform="translate(90,60)">
+    <!-- Fuselaje -->
+    <ellipse class="plane" cx="200" cy="80" rx="180" ry="28"/>
+    <!-- Alas -->
+    <polygon class="plane" points="140,80 260,80 300,120 100,120"/>
+    <!-- Cola -->
+    <polygon class="plane" points="30,80 100,80 90,50 40,50"/>
+    <!-- Cabina -->
+    <path class="plane" d="M 350,70 Q 380,60 380,80 Q 380,100 350,90 Z"/>
+
+    <!-- Impactos rojos (donde volvieron con agujeros) -->
+    <circle class="hit" cx="180" cy="80" r="4"/>
+    <circle class="hit" cx="220" cy="82" r="4"/>
+    <circle class="hit" cx="200" cy="70" r="4"/>
+    <circle class="hit" cx="255" cy="88" r="4"/>
+    <circle class="hit" cx="145" cy="88" r="4"/>
+    <circle class="hit" cx="170" cy="105" r="4"/>
+    <circle class="hit" cx="230" cy="105" r="4"/>
+    <circle class="hit" cx="200" cy="110" r="4"/>
+    <circle class="hit" cx="120" cy="115" r="4"/>
+    <circle class="hit" cx="270" cy="115" r="4"/>
+
+    <!-- Zonas SIN impactos (motor y cabina) -->
+    <ellipse class="refuerzo" cx="360" cy="80" rx="28" ry="18"/>
+    <ellipse class="refuerzo" cx="60" cy="65" rx="30" ry="16"/>
+  </g>
+
+  <text x="90"  y="210" class="lblr">● Aquí sí hay impactos: aviones VOLVIERON.</text>
+  <text x="90"  y="228" class="lblg">— — Aquí no hay: los que fueron impactados NO volvieron.</text>
+  <text x="280" y="250" text-anchor="middle" class="s">Reforzar donde NO hay agujeros — no donde hay. Analizás lo que sobrevivió, no lo perdido.</text>
+</svg>

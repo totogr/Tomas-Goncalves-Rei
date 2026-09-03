@@ -46,6 +46,10 @@ flowchart LR
 
 > 🔑 Reducir dimensiones tiene un **trade-off**: ganás velocidad y visualización, perdés algo de información e **interpretabilidad** (los componentes ya no son las variables originales).
 
+### PCA visualmente
+
+![PCA: elige la dirección de máxima varianza (PC1) y proyecta la nube sobre ella](assets/07-pca-proyeccion.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

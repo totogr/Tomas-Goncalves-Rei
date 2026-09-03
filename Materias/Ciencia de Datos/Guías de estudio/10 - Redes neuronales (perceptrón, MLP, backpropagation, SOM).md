@@ -52,6 +52,10 @@ flowchart LR
 
 > ⚠️ El perceptrón **simple** no puede resolver el XOR (no lineal); por eso hacen falta **capas ocultas** (MLP).
 
+### Perceptrón, MLP y funciones de activación
+
+![Perceptrón simple, MLP con forward/backprop y activaciones sigmoide/tanh/ReLU](assets/10-perceptron-mlp.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

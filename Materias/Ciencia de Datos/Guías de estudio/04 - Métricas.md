@@ -29,17 +29,61 @@ Casi siempre hay que **elegir cuál te importa más** según el problema.
 
 ## 🗺️ La matriz de confusión
 
-```mermaid
-flowchart TD
-    subgraph M["Matriz de confusión"]
-    A["✅ TP<br/>predijo positivo<br/>y era positivo"]
-    B["❌ FP<br/>predijo positivo<br/>pero era negativo"]
-    C["❌ FN<br/>predijo negativo<br/>pero era positivo"]
-    D["✅ TN<br/>predijo negativo<br/>y era negativo"]
-    end
+La matriz cruza **lo que dijo el modelo** (filas) con **la verdad** (columnas):
+
+```
+                        REALIDAD
+                  Positivo    Negativo
+              ┌─────────────┬─────────────┐
+   Predicho   │     TP      │     FP      │  ← "dije positivo"
+   Positivo   │   ✅ acierto │  ❌ falsa   │
+              │             │    alarma   │
+              ├─────────────┼─────────────┤
+   Predicho   │     FN      │     TN      │  ← "dije negativo"
+   Negativo   │  ❌ se me   │  ✅ acierto │
+              │    escapó   │             │
+              └─────────────┴─────────────┘
+                     ↑             ↑
+              "era positivo"  "era negativo"
 ```
 
-> 🔑 Queremos que la **diagonal (TP y TN)** sea lo más alta posible: son los aciertos.
+```mermaid
+flowchart LR
+    subgraph MC["Matriz de confusión (2x2)"]
+      direction TB
+      subgraph fila1["Predicho POSITIVO"]
+        TP["✅ TP<br/>acierto positivo"]
+        FP["❌ FP<br/>falsa alarma"]
+      end
+      subgraph fila2["Predicho NEGATIVO"]
+        FN["❌ FN<br/>se me escapó"]
+        TN["✅ TN<br/>acierto negativo"]
+      end
+    end
+    style TP fill:#c8e6c9,stroke:#2e7d32
+    style TN fill:#c8e6c9,stroke:#2e7d32
+    style FP fill:#ffcdd2,stroke:#c62828
+    style FN fill:#ffcdd2,stroke:#c62828
+```
+
+> 🔑 Queremos que la **diagonal (TP y TN, verdes)** sea lo más alta posible: son los aciertos. Los rojos (FP, FN) son los errores — y no todos duelen igual según el problema.
+
+### De dónde salen precisión y recall (visual)
+
+```
+        REALIDAD:  ● ● ● ● ● ● ● ● ○ ○ ○ ○ ○ ○
+                   (positivos)     (negativos)
+
+        Modelo dice POSITIVO en:  ┌────────────┐
+                                  ● ● ● ● ● ○ ○
+                                  └────────────┘
+                                    TP=5      FP=2
+        Modelo dice NEGATIVO en:  ● ● ● ○ ○ ○ ○ ○
+                                    FN=3      TN=5
+
+  PRECISIÓN = TP / (TP+FP) = 5/7 ≈ 71%   → "de los que aposté, gané 71%"
+  RECALL    = TP / (TP+FN) = 5/8 ≈ 62%   → "detecté 62% de los positivos reales"
+```
 
 ---
 
@@ -65,10 +109,21 @@ flowchart TD
 
 > ⚠️ El **trade-off precisión ↔ recall**: subir una suele bajar la otra. Se ajusta moviendo el **umbral** de decisión (en scikit-learn, `decision_function()` da un puntaje y vos elegís el corte).
 
+### El trade-off precisión ↔ recall (visual)
+
+![Trade-off precisión y recall según el umbral](assets/04-tradeoff-precision-recall.svg)
+
+> Bajás el umbral → el modelo dice "positivo" a más casos → **más recall, menos precisión**.
+> Subís el umbral → el modelo es más exigente → **más precisión, menos recall**.
+
 ### Curva ROC y AUC
 
 - **ROC** (Receiver Operating Characteristic): grafica **tasa de verdaderos positivos (recall)** vs. **tasa de falsos positivos (FPR)** para **todos los umbrales** posibles.
 - **AUC** (área bajo la curva): resume la ROC en un número. **Clasificador perfecto = 1**, **azaroso = 0.5**.
+
+![Curva ROC comparando clasificadores](assets/04-curva-roc.svg)
+
+> La diagonal punteada gris es el **clasificador que tira una moneda** (AUC = 0.5). Cualquier curva por encima aporta información; cuanto más se acerca a la esquina superior izquierda, mejor.
 
 ### El ejemplo de la cátedra (Bola de Cristal)
 

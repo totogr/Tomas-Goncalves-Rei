@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" width="100%" role="img" aria-label="K-NN, SVM y regresión lineal en un panel">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .ax{stroke:#333;stroke-width:1}
+    .A{fill:#1976d2}
+    .B{fill:#c62828}
+    .line{stroke:#2e7d32;stroke-width:2.5}
+    .margin{stroke:#2e7d32;stroke-width:1;stroke-dasharray:4,3}
+    .circle{fill:none;stroke:#f57c00;stroke-width:1.5;stroke-dasharray:2,2}
+  </style>
+
+  <!-- REGRESIÓN LINEAL -->
+  <g transform="translate(10,10)">
+    <text x="110" y="0" text-anchor="middle" class="t">Regresión lineal</text>
+    <text x="110" y="16" text-anchor="middle" class="ss">y = b + m·x — minimizar residuos</text>
+    <line class="ax" x1="20" y1="180" x2="210" y2="180"/>
+    <line class="ax" x1="20" y1="30" x2="20" y2="180"/>
+    <text x="115" y="200" text-anchor="middle" class="ss">metros²</text>
+    <text x="10" y="105" transform="rotate(-90 10 105)" text-anchor="middle" class="ss">precio</text>
+    <line class="line" x1="30" y1="165" x2="200" y2="45"/>
+    <g fill="#1976d2">
+      <circle cx="40" cy="170" r="3"/><circle cx="60" cy="150" r="3"/><circle cx="80" cy="140" r="3"/>
+      <circle cx="100" cy="125" r="3"/><circle cx="120" cy="115" r="3"/><circle cx="140" cy="90" r="3"/>
+      <circle cx="160" cy="85" r="3"/><circle cx="180" cy="60" r="3"/><circle cx="200" cy="55" r="3"/>
+      <circle cx="70" cy="130" r="3"/><circle cx="130" cy="95" r="3"/><circle cx="170" cy="70" r="3"/>
+    </g>
+    <!-- residuos -->
+    <line stroke="#c62828" stroke-width="0.8" x1="70" y1="130" x2="70" y2="150"/>
+    <line stroke="#c62828" stroke-width="0.8" x1="130" y1="95" x2="130" y2="107"/>
+    <text x="115" y="220" text-anchor="middle" class="ss" fill="#c62828">rojo: residuo (obs − predicho)</text>
+  </g>
+
+  <!-- K-NN -->
+  <g transform="translate(240,10)">
+    <text x="110" y="0" text-anchor="middle" class="t">K-NN (K=5)</text>
+    <text x="110" y="16" text-anchor="middle" class="ss">clase = mayoría entre vecinos</text>
+    <line class="ax" x1="20" y1="180" x2="210" y2="180"/>
+    <line class="ax" x1="20" y1="30" x2="20" y2="180"/>
+    <g><!-- clase A azul -->
+      <circle class="A" cx="50" cy="150" r="4"/><circle class="A" cx="70" cy="130" r="4"/>
+      <circle class="A" cx="90" cy="145" r="4"/><circle class="A" cx="60" cy="105" r="4"/>
+      <circle class="A" cx="85" cy="90" r="4"/><circle class="A" cx="45" cy="80" r="4"/>
+    </g>
+    <g><!-- clase B roja -->
+      <circle class="B" cx="150" cy="130" r="4"/><circle class="B" cx="170" cy="150" r="4"/>
+      <circle class="B" cx="180" cy="120" r="4"/><circle class="B" cx="145" cy="90" r="4"/>
+      <circle class="B" cx="185" cy="90" r="4"/><circle class="B" cx="165" cy="60" r="4"/>
+    </g>
+    <!-- punto a clasificar -->
+    <polygon points="120,110 128,120 120,130 112,120" fill="#f9a825" stroke="#333" stroke-width="1"/>
+    <text x="132" y="105" class="ss">nuevo</text>
+    <circle class="circle" cx="120" cy="120" r="35"/>
+    <text x="115" y="215" text-anchor="middle" class="ss">Vecinos dentro del círculo: 3 azules, 2 rojos</text>
+    <text x="115" y="230" text-anchor="middle" class="ss" fill="#1976d2">→ predice: azul</text>
+  </g>
+
+  <!-- SVM -->
+  <g transform="translate(470,10)">
+    <text x="110" y="0" text-anchor="middle" class="t">SVM — máximo margen</text>
+    <text x="110" y="16" text-anchor="middle" class="ss">separar con el "pasillo" más ancho</text>
+    <line class="ax" x1="20" y1="180" x2="210" y2="180"/>
+    <line class="ax" x1="20" y1="30" x2="20" y2="180"/>
+    <g><!-- clase A -->
+      <circle class="A" cx="40" cy="140" r="4"/><circle class="A" cx="60" cy="160" r="4"/>
+      <circle class="A" cx="80" cy="145" r="4"/><circle class="A" cx="55" cy="175" r="4"/>
+      <circle class="A" cx="30" cy="170" r="4"/>
+    </g>
+    <g><!-- clase B -->
+      <circle class="B" cx="150" cy="60" r="4"/><circle class="B" cx="170" cy="80" r="4"/>
+      <circle class="B" cx="190" cy="50" r="4"/><circle class="B" cx="140" cy="90" r="4"/>
+      <circle class="B" cx="205" cy="75" r="4"/>
+    </g>
+    <!-- hiperplano -->
+    <line stroke="#2e7d32" stroke-width="2.5" x1="30" y1="90" x2="215" y2="150"/>
+    <!-- margen -->
+    <line class="margin" x1="30" y1="70" x2="215" y2="130"/>
+    <line class="margin" x1="30" y1="110" x2="215" y2="170"/>
+    <text x="115" y="215" text-anchor="middle" class="ss" fill="#2e7d32">verde: frontera · punteadas: margen</text>
+  </g>
+
+  <!-- Gradient Descent -->
+  <g transform="translate(140,240)">
+    <text x="200" y="0" text-anchor="middle" class="t">Gradient descent — bajar la loss paso a paso</text>
+    <line class="ax" x1="20" y1="120" x2="380" y2="120"/>
+    <line class="ax" x1="20" y1="10" x2="20" y2="120"/>
+    <text x="200" y="140" text-anchor="middle" class="ss">parámetros del modelo</text>
+    <text x="10" y="70" transform="rotate(-90 10 70)" text-anchor="middle" class="ss">loss</text>
+    <path d="M 30,25 Q 100,110 200,115 Q 300,110 370,25" fill="none" stroke="#1976d2" stroke-width="2.5"/>
+    <g fill="#c62828">
+      <circle cx="55" cy="60" r="4"/><circle cx="90" cy="95" r="4"/>
+      <circle cx="130" cy="110" r="4"/><circle cx="170" cy="114" r="4"/>
+      <circle cx="200" cy="115" r="4"/>
+    </g>
+    <text x="55" y="52" class="ss">paso 1</text>
+    <text x="200" y="107" class="ss">mínimo (converge)</text>
+  </g>
+</svg>

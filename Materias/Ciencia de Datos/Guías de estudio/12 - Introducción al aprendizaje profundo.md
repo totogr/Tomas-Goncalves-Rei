@@ -46,6 +46,10 @@ flowchart LR
 
 > 🔑 La diferencia clave con el ML clásico: en deep learning **no diseñás las features a mano**, la red las **aprende** de los datos crudos.
 
+### Cómo una CNN "ve" una cara capa por capa
+
+![CNN aprendiendo bordes, formas y caras jerárquicamente, comparación ML clásico vs Deep Learning](assets/12-cnn-jerarquia.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

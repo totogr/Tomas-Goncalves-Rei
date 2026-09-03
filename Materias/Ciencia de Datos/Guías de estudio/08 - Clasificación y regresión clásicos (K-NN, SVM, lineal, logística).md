@@ -61,6 +61,10 @@ flowchart LR
 | **Convergencia** | Se detiene cuando la derivada ≈ 0 o se llega al límite de pasos |
 | **SGD** (Stochastic GD) | Usa **un ejemplo (o mini-batch) al azar** por paso → mucho más rápido con muchos datos |
 
+### Los cuatro modelos y el gradient descent en un vistazo
+
+![Regresión lineal, K-NN, SVM y gradient descent visuales](assets/08-modelos-clasicos.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

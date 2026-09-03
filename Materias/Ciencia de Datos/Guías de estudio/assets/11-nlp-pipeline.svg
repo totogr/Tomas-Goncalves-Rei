@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="100%" role="img" aria-label="Pipeline NLP con ejemplo concreto y Bag of Words">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .mono{font-family:monospace;font-size:11px;fill:#333}
+    .box{fill:#fff;stroke:#455a64;stroke-width:1.2;rx:4}
+    .arr{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a11)}
+    .cell{fill:#f5f5f5;stroke:#999;stroke-width:0.8}
+    .cellh{fill:#c8e6c9;stroke:#2e7d32;stroke-width:0.8}
+  </style>
+  <defs>
+    <marker id="a11" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Pipeline NLP con un ejemplo: reseña → tokens → vector → clase</text>
+
+  <!-- Texto crudo -->
+  <g transform="translate(20,40)">
+    <rect class="box" x="0" y="0" width="200" height="60" rx="5" fill="#fff3e0" stroke="#f57c00"/>
+    <text x="100" y="18" text-anchor="middle" class="s">1 · Texto crudo</text>
+    <text x="100" y="40" text-anchor="middle" class="mono">"La película fue excelente"</text>
+    <text x="100" y="55" text-anchor="middle" class="mono">"y muy recomendable"</text>
+  </g>
+
+  <path class="arr" d="M 225,70 L 265,70"/>
+
+  <!-- Tokens -->
+  <g transform="translate(270,40)">
+    <rect class="box" x="0" y="0" width="200" height="60" rx="5" fill="#e3f2fd" stroke="#1565c0"/>
+    <text x="100" y="18" text-anchor="middle" class="s">2 · Tokenizar + limpiar</text>
+    <text x="100" y="38" text-anchor="middle" class="mono">[pelicula, excelente,</text>
+    <text x="100" y="52" text-anchor="middle" class="mono">recomendable]</text>
+  </g>
+  <text x="370" y="115" text-anchor="middle" class="ss">(minúsculas, sin stopwords: "la", "fue", "y", "muy")</text>
+
+  <path class="arr" d="M 475,70 L 515,70"/>
+
+  <!-- Vector -->
+  <g transform="translate(520,40)">
+    <rect class="box" x="0" y="0" width="180" height="60" rx="5" fill="#fce4ec" stroke="#c2185b"/>
+    <text x="90" y="18" text-anchor="middle" class="s">3 · Vectorización</text>
+    <text x="90" y="38" text-anchor="middle" class="mono">[0, 1, 1, 0, 1, 0, ...]</text>
+    <text x="90" y="52" text-anchor="middle" class="ss">Bag of Words / TF-IDF</text>
+  </g>
+
+  <!-- Matriz BoW ejemplo -->
+  <g transform="translate(60,150)">
+    <text x="240" y="0" text-anchor="middle" class="t">Bag of Words — reseñas como filas, palabras como columnas</text>
+    <text x="240" y="16" text-anchor="middle" class="ss">La celda es 1 si la palabra aparece en la reseña</text>
+
+    <!-- encabezado -->
+    <g transform="translate(0,30)">
+      <rect class="cell" x="0" y="0" width="90" height="22"/>
+      <text x="45" y="16" text-anchor="middle" class="ss">reseña ↓ / palabra →</text>
+      <g font-family="sans-serif" font-size="10" fill="#333" text-anchor="middle">
+        <rect class="cell" x="90" y="0" width="55" height="22"/><text x="117" y="16">excelente</text>
+        <rect class="cell" x="145" y="0" width="55" height="22"/><text x="172" y="16">malo</text>
+        <rect class="cell" x="200" y="0" width="75" height="22"/><text x="237" y="16">recomendable</text>
+        <rect class="cell" x="275" y="0" width="55" height="22"/><text x="302" y="16">estafa</text>
+        <rect class="cell" x="330" y="0" width="55" height="22"/><text x="357" y="16">genial</text>
+        <rect class="cell" x="385" y="0" width="55" height="22"/><text x="412" y="16">horrible</text>
+      </g>
+    </g>
+
+    <!-- fila 1 (positivo) -->
+    <g transform="translate(0,52)">
+      <rect class="cellh" x="0" y="0" width="90" height="22"/><text x="45" y="16" text-anchor="middle" class="ss">R1 (positivo)</text>
+      <rect class="cellh" x="90" y="0" width="55" height="22"/><text x="117" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="145" y="0" width="55" height="22"/><text x="172" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cellh" x="200" y="0" width="75" height="22"/><text x="237" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="275" y="0" width="55" height="22"/><text x="302" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="330" y="0" width="55" height="22"/><text x="357" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="385" y="0" width="55" height="22"/><text x="412" y="16" text-anchor="middle" class="mono">0</text>
+    </g>
+
+    <!-- fila 2 (negativo) -->
+    <g transform="translate(0,74)">
+      <rect class="cell" x="0" y="0" width="90" height="22"/><text x="45" y="16" text-anchor="middle" class="ss">R2 (negativo)</text>
+      <rect class="cell" x="90" y="0" width="55" height="22"/><text x="117" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="145" y="0" width="55" height="22" fill="#ffcdd2"/><text x="172" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="200" y="0" width="75" height="22"/><text x="237" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="275" y="0" width="55" height="22" fill="#ffcdd2"/><text x="302" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="330" y="0" width="55" height="22"/><text x="357" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="385" y="0" width="55" height="22" fill="#ffcdd2"/><text x="412" y="16" text-anchor="middle" class="mono">1</text>
+    </g>
+
+    <!-- fila 3 (positivo) -->
+    <g transform="translate(0,96)">
+      <rect class="cellh" x="0" y="0" width="90" height="22"/><text x="45" y="16" text-anchor="middle" class="ss">R3 (positivo)</text>
+      <rect class="cell" x="90" y="0" width="55" height="22"/><text x="117" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cell" x="145" y="0" width="55" height="22"/><text x="172" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cellh" x="200" y="0" width="75" height="22"/><text x="237" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="275" y="0" width="55" height="22"/><text x="302" y="16" text-anchor="middle" class="mono">0</text>
+      <rect class="cellh" x="330" y="0" width="55" height="22"/><text x="357" y="16" text-anchor="middle" class="mono">1</text>
+      <rect class="cell" x="385" y="0" width="55" height="22"/><text x="412" y="16" text-anchor="middle" class="mono">0</text>
+    </g>
+
+    <text x="240" y="150" text-anchor="middle" class="ss">Naïve Bayes aprende P(palabra | positivo) y P(palabra | negativo) → multiplica y decide.</text>
+    <text x="240" y="165" text-anchor="middle" class="ss">"Ingenuo" porque asume que las palabras son independientes entre sí.</text>
+  </g>
+</svg>

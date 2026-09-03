@@ -58,6 +58,10 @@ flowchart LR
 
 > 🔑 **Por qué importa la escala:** algoritmos basados en **distancia** (K-NN, SVM) o **gradiente** (redes neuronales) se ven dominados por las variables de valores más grandes si no normalizás. Ejemplo: "sueldo" (miles) aplastaría a "edad" (decenas) en una distancia.
 
+### Cómo se ven outliers y escalado
+
+![Outliers en box plot y escalado antes/después](assets/05-outliers-y-escalado.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

@@ -49,6 +49,10 @@ flowchart LR
 
 > 🔑 **Teorema de Bayes** (la base): P(clase\|texto) ∝ P(texto\|clase) · P(clase). Se elige la clase más probable dado el texto.
 
+### Pipeline con un ejemplo concreto (BoW)
+
+![Pipeline NLP: reseña → tokens → vector → Bag of Words](assets/11-nlp-pipeline.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

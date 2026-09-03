@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 320" width="100%" role="img" aria-label="Outliers y escalado antes/después">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:10px;fill:#555}
+    .ax{stroke:#333;stroke-width:1}
+    .dot{fill:#1976d2}
+    .out{fill:#c62828;stroke:#8e0000;stroke-width:1}
+    .norm{fill:#2e7d32}
+    .arrow{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a)}
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- OUTLIERS -->
+  <text x="150" y="20" text-anchor="middle" class="t">Outliers en un box plot</text>
+  <g transform="translate(20,40)">
+    <line class="ax" x1="0" y1="100" x2="260" y2="100"/>
+    <line stroke="#1976d2" stroke-width="1.5" x1="40" y1="100" x2="80" y2="100"/>
+    <line stroke="#1976d2" stroke-width="1.5" x1="40" y1="90" x2="40" y2="110"/>
+    <rect x="80" y="75" width="80" height="50" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+    <line stroke="#c62828" stroke-width="2.5" x1="120" y1="75" x2="120" y2="125"/>
+    <line stroke="#1976d2" stroke-width="1.5" x1="160" y1="100" x2="200" y2="100"/>
+    <line stroke="#1976d2" stroke-width="1.5" x1="200" y1="90" x2="200" y2="110"/>
+    <circle class="out" cx="240" cy="100" r="5"/>
+    <text x="245" y="90" class="s">outlier</text>
+    <text x="130" y="150" text-anchor="middle" class="s">Fuera de Q1−1.5·IQR o Q3+1.5·IQR = outlier</text>
+    <text x="130" y="165" text-anchor="middle" class="s">Decisión: eliminar, corregir o conservar</text>
+  </g>
+
+  <!-- ESCALADO -->
+  <text x="470" y="20" text-anchor="middle" class="t">Escalado — por qué normalizar</text>
+  <g transform="translate(330,40)">
+    <text x="130" y="0" text-anchor="middle" class="s">SIN normalizar (edad vs sueldo)</text>
+    <line class="ax" x1="10" y1="120" x2="260" y2="120"/>
+    <line class="ax" x1="10" y1="20" x2="10" y2="120"/>
+    <text x="10" y="132" class="s">0</text>
+    <text x="260" y="132" class="s">100000</text>
+    <text x="5" y="20" class="s">100</text>
+    <text x="5" y="120" class="s">0</text>
+    <text x="130" y="145" text-anchor="middle" class="s">"sueldo" domina toda la distancia</text>
+    <circle class="dot" cx="20" cy="115" r="3"/>
+    <circle class="dot" cx="60" cy="112" r="3"/>
+    <circle class="dot" cx="120" cy="110" r="3"/>
+    <circle class="dot" cx="180" cy="108" r="3"/>
+    <circle class="dot" cx="240" cy="106" r="3"/>
+  </g>
+
+  <path class="arrow" d="M 330,220 L 400,220"/>
+  <text x="365" y="212" text-anchor="middle" class="s">Min-Max</text>
+  <text x="365" y="235" text-anchor="middle" class="s">o Z-score</text>
+
+  <g transform="translate(330,200)">
+    <text x="130" y="0" text-anchor="middle" class="s" fill="#2e7d32">Con escalado (misma escala)</text>
+    <line class="ax" x1="10" y1="100" x2="260" y2="100"/>
+    <line class="ax" x1="10" y1="20" x2="10" y2="100"/>
+    <text x="10" y="112" class="s">0</text>
+    <text x="260" y="112" class="s">1</text>
+    <text x="5" y="20" class="s">1</text>
+    <text x="5" y="100" class="s">0</text>
+    <circle class="norm" cx="30" cy="80" r="3"/>
+    <circle class="norm" cx="80" cy="60" r="3"/>
+    <circle class="norm" cx="140" cy="45" r="3"/>
+    <circle class="norm" cx="190" cy="35" r="3"/>
+    <circle class="norm" cx="240" cy="28" r="3"/>
+  </g>
+</svg>

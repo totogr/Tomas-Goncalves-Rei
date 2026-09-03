@@ -48,6 +48,10 @@ flowchart TD
 
 > 🔑 **Bagging ataca la varianza** (overfitting), **boosting ataca el sesgo** (underfitting). Por eso los ensambles suelen ganarle a un modelo solo.
 
+### Boosting visualmente
+
+![Boosting: cada modelo en secuencia corrige errores del anterior](assets/09-boosting.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

@@ -35,6 +35,10 @@ flowchart TD
 
 > ❌ **Error clásico:** confundir el **soporte** del dato (continuo vs. discreto) y elegir el gráfico equivocado.
 
+### Cómo se ven los principales gráficos
+
+![Panel con histograma, box plot, scatter y line plot](assets/02-tipos-de-graficos.svg)
+
 ---
 
 ## 📊 Conceptos clave
@@ -47,6 +51,12 @@ flowchart TD
 | **Mediana** | El valor del medio de la población ordenada |
 | **Cuartiles (Q1, Q2, Q3)** | Cortan la población en 25% / 50% / 75% |
 | **Rango intercuartílico (IQR)** | El rango entre Q1 y Q3 (el 50% central) |
+
+### Anatomía de un box plot (te lo van a pedir leer varias veces)
+
+![Box plot con mediana, cuartiles, IQR, bigotes y outliers](assets/02-anatomia-boxplot.svg)
+
+> Reglas: **IQR = Q3 − Q1**. Los **bigotes** llegan hasta Q1 − 1.5·IQR y Q3 + 1.5·IQR. **Todo lo que cae afuera** de eso se dibuja como punto → outlier.
 
 ### Los gráficos y para qué sirven
 
@@ -70,6 +80,16 @@ flowchart TD
 | **Sesgo de supervivencia** | Analizás solo lo que "sobrevivió" (los aviones que **volvieron**) y sacás la conclusión al revés | Preguntarte siempre: **¿cuál es el origen de mis datos?** |
 
 > 🔑 Correlación **no** implica causalidad (ver [scatter plot] y los ejemplos de *spurious correlations*).
+
+### Las dos falacias en imagen
+
+**Paradoja de Simpson**
+
+![La tendencia global sube pero por grupo baja](assets/02-paradoja-simpson.svg)
+
+**Sesgo de supervivencia** (los aviones de la 2ª Guerra Mundial: Abraham Wald)
+
+![Silueta de avión con impactos donde volvieron y zonas sin impactos a reforzar](assets/02-sesgo-supervivencia.svg)
 
 ---
 

@@ -58,6 +58,10 @@ flowchart TD
 
 > 🌲🌲🌲 **Random Forest** reduce el **overfitting** típico de un árbol único porque promedia muchos árboles diversos.
 
+### Cómo trabaja un Random Forest
+
+![Random Forest: cada árbol se entrena con un subset y se vota el resultado](assets/06-random-forest.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

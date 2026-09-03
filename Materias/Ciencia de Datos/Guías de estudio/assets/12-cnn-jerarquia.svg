@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" width="100%" role="img" aria-label="CNN aprendiendo bordes → formas → objetos jerárquicamente">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .box{fill:#fff;stroke:#455a64;stroke-width:1.2}
+    .lay1{fill:#fff3e0;stroke:#f57c00;stroke-width:1.2}
+    .lay2{fill:#e3f2fd;stroke:#1565c0;stroke-width:1.2}
+    .lay3{fill:#f3e5f5;stroke:#7b1fa2;stroke-width:1.2}
+    .lay4{fill:#c8e6c9;stroke:#2e7d32;stroke-width:1.2}
+    .arr{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a12)}
+  </style>
+  <defs>
+    <marker id="a12" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" text-anchor="middle" class="t">CNN reconociendo una cara — cada capa aprende algo más abstracto</text>
+
+  <!-- Entrada: imagen -->
+  <g transform="translate(20,60)">
+    <rect x="0" y="0" width="120" height="120" fill="#eceff1" stroke="#455a64"/>
+    <!-- silueta simple -->
+    <circle cx="60" cy="60" r="40" fill="#ffe0b2" stroke="#8d6e63"/>
+    <circle cx="48" cy="52" r="4" fill="#333"/>
+    <circle cx="72" cy="52" r="4" fill="#333"/>
+    <path d="M 45,75 Q 60,88 75,75" fill="none" stroke="#333" stroke-width="2"/>
+    <text x="60" y="145" text-anchor="middle" class="s" font-weight="bold">Entrada</text>
+    <text x="60" y="160" text-anchor="middle" class="ss">imagen (pixeles)</text>
+  </g>
+
+  <path class="arr" d="M 150,120 L 190,120"/>
+
+  <!-- Capa 1: bordes -->
+  <g transform="translate(195,60)">
+    <rect class="lay1" x="0" y="0" width="120" height="120"/>
+    <line stroke="#333" stroke-width="2" x1="15" y1="30" x2="45" y2="30"/>
+    <line stroke="#333" stroke-width="2" x1="70" y1="20" x2="70" y2="55"/>
+    <line stroke="#333" stroke-width="2" x1="90" y1="70" x2="115" y2="90"/>
+    <line stroke="#333" stroke-width="2" x1="20" y1="80" x2="45" y2="105"/>
+    <line stroke="#333" stroke-width="2" x1="60" y1="90" x2="90" y2="90"/>
+    <text x="60" y="145" text-anchor="middle" class="s" font-weight="bold">Capa 1</text>
+    <text x="60" y="160" text-anchor="middle" class="ss">bordes y líneas</text>
+  </g>
+
+  <path class="arr" d="M 325,120 L 365,120"/>
+
+  <!-- Capa 2: formas -->
+  <g transform="translate(370,60)">
+    <rect class="lay2" x="0" y="0" width="120" height="120"/>
+    <circle cx="40" cy="40" r="15" fill="none" stroke="#333" stroke-width="2"/>
+    <circle cx="80" cy="40" r="15" fill="none" stroke="#333" stroke-width="2"/>
+    <path d="M 30,80 Q 60,95 90,80" fill="none" stroke="#333" stroke-width="2"/>
+    <text x="60" y="145" text-anchor="middle" class="s" font-weight="bold">Capa 2</text>
+    <text x="60" y="160" text-anchor="middle" class="ss">ojos, bocas, formas</text>
+  </g>
+
+  <path class="arr" d="M 500,120 L 540,120"/>
+
+  <!-- Capa 3: caras -->
+  <g transform="translate(545,60)">
+    <rect class="lay3" x="0" y="0" width="120" height="120"/>
+    <circle cx="60" cy="60" r="40" fill="#ffe0b2" stroke="#8d6e63"/>
+    <circle cx="48" cy="52" r="4" fill="#333"/>
+    <circle cx="72" cy="52" r="4" fill="#333"/>
+    <path d="M 45,75 Q 60,88 75,75" fill="none" stroke="#333" stroke-width="2"/>
+    <text x="60" y="145" text-anchor="middle" class="s" font-weight="bold">Capa 3</text>
+    <text x="60" y="160" text-anchor="middle" class="ss">caras completas</text>
+  </g>
+
+  <!-- Etiquetas de arriba -->
+  <text x="80" y="200" text-anchor="middle" class="ss" font-style="italic">crudo</text>
+  <text x="255" y="200" text-anchor="middle" class="ss" font-style="italic">más simple</text>
+  <text x="430" y="200" text-anchor="middle" class="ss" font-style="italic">más abstracto →</text>
+  <text x="605" y="200" text-anchor="middle" class="ss" font-style="italic">salida (persona X)</text>
+
+  <!-- Contrast ML clásico vs Deep -->
+  <g transform="translate(20,240)">
+    <rect x="0" y="0" width="330" height="60" fill="#fff8e1" stroke="#f9a825" rx="4"/>
+    <text x="165" y="18" text-anchor="middle" class="s" font-weight="bold">ML clásico</text>
+    <text x="165" y="36" text-anchor="middle" class="ss">Vos diseñás las features (bordes, colores, HOG, etc.)</text>
+    <text x="165" y="50" text-anchor="middle" class="ss">y después le pasás esos números al modelo.</text>
+  </g>
+  <g transform="translate(370,240)">
+    <rect x="0" y="0" width="330" height="60" fill="#e8f5e9" stroke="#2e7d32" rx="4"/>
+    <text x="165" y="18" text-anchor="middle" class="s" font-weight="bold">Deep Learning</text>
+    <text x="165" y="36" text-anchor="middle" class="ss">La red aprende sola las features desde los pixeles crudos.</text>
+    <text x="165" y="50" text-anchor="middle" class="ss">Cambio de paradigma → necesita muchos datos y GPU.</text>
+  </g>
+</svg>

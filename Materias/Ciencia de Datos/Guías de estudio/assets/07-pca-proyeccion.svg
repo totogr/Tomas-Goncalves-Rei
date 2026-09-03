@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="100%" role="img" aria-label="PCA: elipse de varianza y proyección">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ax{stroke:#333;stroke-width:1.2}
+    .dot{fill:#1976d2}
+    .pc1{stroke:#c62828;stroke-width:2.5}
+    .pc2{stroke:#2e7d32;stroke-width:2}
+    .proj{stroke:#c62828;stroke-width:0.8;stroke-dasharray:2,2}
+    .arrow{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a3)}
+  </style>
+  <defs>
+    <marker id="a3" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <!-- Izquierda: nube 2D + PC1/PC2 -->
+  <g transform="translate(20,30)">
+    <text x="150" y="0" text-anchor="middle" class="t">Datos con dos variables</text>
+    <line class="ax" x1="20" y1="240" x2="280" y2="240"/>
+    <line class="ax" x1="20" y1="30" x2="20" y2="240"/>
+    <text x="150" y="260" text-anchor="middle" class="s">variable X</text>
+    <text x="10" y="135" transform="rotate(-90 10 135)" text-anchor="middle" class="s">variable Y</text>
+
+    <!-- Nube alargada -->
+    <g fill="#1976d2">
+      <circle cx="50" cy="215" r="3"/><circle cx="65" cy="205" r="3"/><circle cx="80" cy="200" r="3"/>
+      <circle cx="90" cy="185" r="3"/><circle cx="100" cy="195" r="3"/><circle cx="115" cy="175" r="3"/>
+      <circle cx="125" cy="165" r="3"/><circle cx="135" cy="180" r="3"/><circle cx="150" cy="150" r="3"/>
+      <circle cx="160" cy="160" r="3"/><circle cx="170" cy="140" r="3"/><circle cx="180" cy="130" r="3"/>
+      <circle cx="195" cy="140" r="3"/><circle cx="205" cy="115" r="3"/><circle cx="215" cy="125" r="3"/>
+      <circle cx="230" cy="100" r="3"/><circle cx="245" cy="90" r="3"/><circle cx="260" cy="80" r="3"/>
+      <circle cx="130" cy="185" r="3"/><circle cx="175" cy="160" r="3"/><circle cx="215" cy="100" r="3"/>
+    </g>
+
+    <!-- Elipse principal orientada -->
+    <ellipse cx="150" cy="150" rx="120" ry="30" fill="none" stroke="#999" stroke-width="1" transform="rotate(-30 150 150)"/>
+
+    <!-- PC1 (dirección de máxima varianza) -->
+    <line class="pc1" x1="50" y1="215" x2="260" y2="80" marker-end="url(#a3)"/>
+    <text x="200" y="118" class="s" fill="#c62828" font-weight="bold">PC1 (máx. varianza)</text>
+
+    <!-- PC2 -->
+    <line class="pc2" x1="120" y1="115" x2="185" y2="200" marker-end="url(#a3)"/>
+    <text x="185" y="215" class="s" fill="#2e7d32" font-weight="bold">PC2</text>
+  </g>
+
+  <!-- Flecha central -->
+  <path class="arrow" d="M 320,150 L 380,150"/>
+  <text x="350" y="140" text-anchor="middle" class="s">proyectar</text>
+  <text x="350" y="168" text-anchor="middle" class="s">sobre PC1</text>
+
+  <!-- Derecha: 1D con proyección -->
+  <g transform="translate(390,30)">
+    <text x="115" y="0" text-anchor="middle" class="t">Después de PCA (1 dimensión)</text>
+    <line class="ax" x1="10" y1="150" x2="230" y2="150"/>
+    <text x="115" y="175" text-anchor="middle" class="s" fill="#c62828">PC1 (conserva casi toda la variación)</text>
+
+    <!-- Puntos alineados -->
+    <g fill="#1976d2">
+      <circle cx="30" cy="150" r="3.5"/><circle cx="45" cy="150" r="3.5"/><circle cx="60" cy="150" r="3.5"/>
+      <circle cx="80" cy="150" r="3.5"/><circle cx="95" cy="150" r="3.5"/><circle cx="115" cy="150" r="3.5"/>
+      <circle cx="130" cy="150" r="3.5"/><circle cx="150" cy="150" r="3.5"/><circle cx="165" cy="150" r="3.5"/>
+      <circle cx="180" cy="150" r="3.5"/><circle cx="195" cy="150" r="3.5"/><circle cx="215" cy="150" r="3.5"/>
+    </g>
+    <text x="115" y="230" text-anchor="middle" class="s">Trade-off: menos info,</text>
+    <text x="115" y="245" text-anchor="middle" class="s">más velocidad y visualización.</text>
+  </g>
+</svg>

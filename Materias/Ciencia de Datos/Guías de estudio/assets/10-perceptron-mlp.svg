@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="100%" role="img" aria-label="Perceptrón, MLP y backpropagation">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .in{fill:#fff3e0;stroke:#f57c00;stroke-width:1.5}
+    .hid{fill:#e3f2fd;stroke:#1565c0;stroke-width:1.5}
+    .out{fill:#c8e6c9;stroke:#2e7d32;stroke-width:1.5}
+    .link{stroke:#888;stroke-width:0.9;fill:none}
+    .fwd{stroke:#1565c0;stroke-width:2;fill:none;marker-end:url(#fw)}
+    .bk{stroke:#c62828;stroke-width:2;stroke-dasharray:4,3;fill:none;marker-end:url(#bk)}
+  </style>
+  <defs>
+    <marker id="fw" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1565c0"/></marker>
+    <marker id="bk" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c62828"/></marker>
+  </defs>
+
+  <!-- Perceptrón -->
+  <g transform="translate(20,20)">
+    <text x="170" y="0" text-anchor="middle" class="t">Perceptrón simple (una neurona)</text>
+    <circle class="in" cx="30" cy="40" r="14"/><text x="30" y="44" text-anchor="middle" class="s">x₁</text>
+    <circle class="in" cx="30" cy="90" r="14"/><text x="30" y="94" text-anchor="middle" class="s">x₂</text>
+    <circle class="in" cx="30" cy="140" r="14"/><text x="30" y="144" text-anchor="middle" class="s">x₃</text>
+    <line class="link" x1="45" y1="40" x2="150" y2="90"/><text x="90" y="55" class="ss">w₁</text>
+    <line class="link" x1="45" y1="90" x2="150" y2="90"/><text x="90" y="87" class="ss">w₂</text>
+    <line class="link" x1="45" y1="140" x2="150" y2="90"/><text x="90" y="125" class="ss">w₃</text>
+    <circle fill="#f9a825" stroke="#333" cx="165" cy="90" r="18"/><text x="165" y="94" text-anchor="middle" class="s">Σ</text>
+    <rect x="200" y="75" width="60" height="30" fill="#fff" stroke="#333"/><text x="230" y="94" text-anchor="middle" class="s">f(·)</text>
+    <text x="230" y="70" text-anchor="middle" class="ss">activación</text>
+    <line class="link" x1="183" y1="90" x2="200" y2="90"/>
+    <line class="link" x1="260" y1="90" x2="300" y2="90" marker-end="url(#fw)"/>
+    <text x="315" y="94" class="s">y</text>
+    <text x="170" y="185" text-anchor="middle" class="ss">y = f( w₁x₁ + w₂x₂ + w₃x₃ + b )</text>
+    <text x="170" y="200" text-anchor="middle" class="ss" fill="#c62828">Solo separa linealmente (falla en XOR)</text>
+  </g>
+
+  <!-- MLP -->
+  <g transform="translate(400,20)">
+    <text x="150" y="0" text-anchor="middle" class="t">MLP — capas + backpropagation</text>
+    <!-- Capa entrada -->
+    <circle class="in" cx="30" cy="40" r="12"/><text x="30" y="43" text-anchor="middle" class="s">x₁</text>
+    <circle class="in" cx="30" cy="90" r="12"/><text x="30" y="93" text-anchor="middle" class="s">x₂</text>
+    <circle class="in" cx="30" cy="140" r="12"/><text x="30" y="143" text-anchor="middle" class="s">x₃</text>
+    <!-- Capa oculta 1 -->
+    <circle class="hid" cx="120" cy="30" r="12"/>
+    <circle class="hid" cx="120" cy="70" r="12"/>
+    <circle class="hid" cx="120" cy="110" r="12"/>
+    <circle class="hid" cx="120" cy="150" r="12"/>
+    <!-- Capa oculta 2 -->
+    <circle class="hid" cx="200" cy="55" r="12"/>
+    <circle class="hid" cx="200" cy="95" r="12"/>
+    <circle class="hid" cx="200" cy="135" r="12"/>
+    <!-- Salida -->
+    <circle class="out" cx="280" cy="90" r="14"/><text x="280" y="94" text-anchor="middle" class="s">ŷ</text>
+    <!-- Conexiones -->
+    <g class="link">
+      <line x1="42" y1="40" x2="108" y2="30"/><line x1="42" y1="40" x2="108" y2="70"/><line x1="42" y1="40" x2="108" y2="110"/><line x1="42" y1="40" x2="108" y2="150"/>
+      <line x1="42" y1="90" x2="108" y2="30"/><line x1="42" y1="90" x2="108" y2="70"/><line x1="42" y1="90" x2="108" y2="110"/><line x1="42" y1="90" x2="108" y2="150"/>
+      <line x1="42" y1="140" x2="108" y2="30"/><line x1="42" y1="140" x2="108" y2="70"/><line x1="42" y1="140" x2="108" y2="110"/><line x1="42" y1="140" x2="108" y2="150"/>
+      <line x1="132" y1="30" x2="188" y2="55"/><line x1="132" y1="30" x2="188" y2="95"/><line x1="132" y1="30" x2="188" y2="135"/>
+      <line x1="132" y1="70" x2="188" y2="55"/><line x1="132" y1="70" x2="188" y2="95"/><line x1="132" y1="70" x2="188" y2="135"/>
+      <line x1="132" y1="110" x2="188" y2="55"/><line x1="132" y1="110" x2="188" y2="95"/><line x1="132" y1="110" x2="188" y2="135"/>
+      <line x1="132" y1="150" x2="188" y2="55"/><line x1="132" y1="150" x2="188" y2="95"/><line x1="132" y1="150" x2="188" y2="135"/>
+      <line x1="212" y1="55" x2="266" y2="90"/><line x1="212" y1="95" x2="266" y2="90"/><line x1="212" y1="135" x2="266" y2="90"/>
+    </g>
+    <!-- Flechas forward -->
+    <path class="fwd" d="M 30,175 Q 150,175 280,120"/>
+    <text x="150" y="195" text-anchor="middle" class="s" fill="#1565c0">→ Forward (calcular ŷ)</text>
+    <!-- Flechas backward -->
+    <path class="bk" d="M 280,220 Q 150,220 30,220"/>
+    <text x="150" y="242" text-anchor="middle" class="s" fill="#c62828">← Backprop (ajustar pesos)</text>
+    <text x="30" y="185" text-anchor="middle" class="ss">entrada</text>
+    <text x="120" y="185" text-anchor="middle" class="ss">oculta 1</text>
+    <text x="200" y="185" text-anchor="middle" class="ss">oculta 2</text>
+    <text x="280" y="120" text-anchor="middle" class="ss">salida</text>
+  </g>
+
+  <!-- Activaciones -->
+  <g transform="translate(20,270)">
+    <text x="330" y="0" text-anchor="middle" class="t">Funciones de activación típicas — le dan no-linealidad a la red</text>
+    <!-- Sigmoide -->
+    <g transform="translate(20,15)">
+      <line stroke="#333" x1="0" y1="30" x2="100" y2="30"/>
+      <line stroke="#333" x1="50" y1="0" x2="50" y2="55"/>
+      <path fill="none" stroke="#1976d2" stroke-width="2" d="M 5,50 Q 40,50 50,30 Q 60,10 95,10"/>
+      <text x="50" y="70" text-anchor="middle" class="ss">Sigmoide (0..1)</text>
+    </g>
+    <!-- tanh -->
+    <g transform="translate(230,15)">
+      <line stroke="#333" x1="0" y1="30" x2="100" y2="30"/>
+      <line stroke="#333" x1="50" y1="0" x2="50" y2="55"/>
+      <path fill="none" stroke="#c62828" stroke-width="2" d="M 5,55 Q 40,55 50,30 Q 60,5 95,5"/>
+      <text x="50" y="70" text-anchor="middle" class="ss">Tanh (−1..1)</text>
+    </g>
+    <!-- ReLU -->
+    <g transform="translate(440,15)">
+      <line stroke="#333" x1="0" y1="30" x2="100" y2="30"/>
+      <line stroke="#333" x1="50" y1="0" x2="50" y2="55"/>
+      <polyline fill="none" stroke="#2e7d32" stroke-width="2" points="5,30 50,30 95,5"/>
+      <text x="50" y="70" text-anchor="middle" class="ss">ReLU (max(0,x))</text>
+    </g>
+  </g>
+</svg>

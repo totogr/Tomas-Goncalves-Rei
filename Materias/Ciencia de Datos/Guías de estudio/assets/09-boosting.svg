@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="100%" role="img" aria-label="Boosting secuencial corrigiendo errores">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .ax{stroke:#333;stroke-width:1}
+    .A{fill:#1976d2}
+    .B{fill:#c62828}
+    .arr{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a9)}
+    .final{stroke:#2e7d32;stroke-width:2.5}
+  </style>
+  <defs>
+    <marker id="a9" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Boosting — cada modelo corrige los errores del anterior</text>
+
+  <!-- Modelo 1 -->
+  <g transform="translate(20,50)">
+    <text x="80" y="0" text-anchor="middle" class="s" font-weight="bold">Modelo 1</text>
+    <line class="ax" x1="10" y1="140" x2="150" y2="140"/>
+    <line class="ax" x1="10" y1="20" x2="10" y2="140"/>
+    <circle class="A" cx="30" cy="120" r="4"/><circle class="A" cx="45" cy="100" r="4"/>
+    <circle class="A" cx="65" cy="115" r="4"/><circle class="A" cx="55" cy="80" r="4"/>
+    <circle class="B" cx="100" cy="70" r="4"/><circle class="B" cx="120" cy="90" r="4"/>
+    <circle class="B" cx="135" cy="55" r="4"/><circle class="B" cx="115" cy="45" r="4"/>
+    <!-- frontera simple -->
+    <line stroke="#f57c00" stroke-width="2" x1="80" y1="20" x2="80" y2="140"/>
+    <!-- errores marcados con círculo -->
+    <circle cx="65" cy="115" r="9" fill="none" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <circle cx="100" cy="70" r="9" fill="none" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="80" y="165" text-anchor="middle" class="ss">2 errores (círculos rojos)</text>
+    <text x="80" y="178" text-anchor="middle" class="ss">→ suben de peso</text>
+  </g>
+
+  <path class="arr" d="M 180,120 L 220,120"/>
+
+  <!-- Modelo 2 -->
+  <g transform="translate(230,50)">
+    <text x="80" y="0" text-anchor="middle" class="s" font-weight="bold">Modelo 2</text>
+    <line class="ax" x1="10" y1="140" x2="150" y2="140"/>
+    <line class="ax" x1="10" y1="20" x2="10" y2="140"/>
+    <circle class="A" cx="30" cy="120" r="3"/><circle class="A" cx="45" cy="100" r="3"/>
+    <circle class="A" cx="65" cy="115" r="6"/><!-- pesado -->
+    <circle class="A" cx="55" cy="80" r="3"/>
+    <circle class="B" cx="100" cy="70" r="6"/><!-- pesado -->
+    <circle class="B" cx="120" cy="90" r="3"/>
+    <circle class="B" cx="135" cy="55" r="3"/><circle class="B" cx="115" cy="45" r="3"/>
+    <!-- frontera curva mejorada -->
+    <path fill="none" stroke="#f57c00" stroke-width="2" d="M 80,140 Q 90,90 75,20"/>
+    <circle cx="120" cy="90" r="9" fill="none" stroke="#c62828" stroke-width="1.5" stroke-dasharray="3,2"/>
+    <text x="80" y="165" text-anchor="middle" class="ss">Corrige los anteriores</text>
+    <text x="80" y="178" text-anchor="middle" class="ss">pero deja 1 nuevo error</text>
+  </g>
+
+  <path class="arr" d="M 390,120 L 430,120"/>
+
+  <!-- Modelo N -->
+  <g transform="translate(440,50)">
+    <text x="80" y="0" text-anchor="middle" class="s" font-weight="bold">... Modelo N</text>
+    <line class="ax" x1="10" y1="140" x2="150" y2="140"/>
+    <line class="ax" x1="10" y1="20" x2="10" y2="140"/>
+    <circle class="A" cx="30" cy="120" r="3"/><circle class="A" cx="45" cy="100" r="3"/>
+    <circle class="A" cx="65" cy="115" r="3"/><circle class="A" cx="55" cy="80" r="3"/>
+    <circle class="B" cx="100" cy="70" r="3"/><circle class="B" cx="120" cy="90" r="3"/>
+    <circle class="B" cx="135" cy="55" r="3"/><circle class="B" cx="115" cy="45" r="3"/>
+    <path fill="none" stroke="#f57c00" stroke-width="2" d="M 65,140 Q 85,90 90,20"/>
+    <text x="80" y="165" text-anchor="middle" class="ss">Cada vez menos errores</text>
+    <text x="80" y="178" text-anchor="middle" class="ss">(frontera más afinada)</text>
+  </g>
+
+  <path class="arr" d="M 605,120 L 645,120"/>
+
+  <!-- Ensamble final -->
+  <g transform="translate(640,50)">
+    <text x="35" y="0" text-anchor="middle" class="s" font-weight="bold">Suma</text>
+    <line class="ax" x1="0" y1="140" x2="70" y2="140"/>
+    <line class="ax" x1="0" y1="20" x2="0" y2="140"/>
+    <path class="final" fill="none" d="M 5,140 Q 40,80 55,20"/>
+    <text x="35" y="165" text-anchor="middle" class="ss" fill="#2e7d32">Predicción</text>
+    <text x="35" y="178" text-anchor="middle" class="ss" fill="#2e7d32">final</text>
+  </g>
+
+  <text x="360" y="245" text-anchor="middle" class="ss">Los tamaños grandes en Modelo 2 son ejemplos "re-ponderados": el nuevo modelo los mira con lupa (AdaBoost).</text>
+</svg>
