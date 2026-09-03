@@ -31,6 +31,10 @@ flowchart TD
     A --> C["Multimodo (OM)<br/>núcleo ancho · varios 'rayos'<br/>🟠 conector beige · corta distancia"]
 ```
 
+### Cómo se ve la luz dentro de la fibra
+
+![Fibra multimodo vs monomodo: corte y propagación de rayos](assets/05-monomodo-vs-multimodo.svg)
+
 ---
 
 ## 📊 Conceptos clave

@@ -50,6 +50,10 @@ timeline
 | **Hito: teléfono (1876)** | Transmisión de **voz** en tiempo real |
 | **Hito: Internet** | Interconexión global de redes de computadoras |
 
+### Las topologías de red físicas (aparecen todo el tiempo)
+
+![Topologías: bus, estrella, anillo y malla con hosts y enlaces](assets/01-topologias.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

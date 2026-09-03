@@ -55,6 +55,12 @@ flowchart TD
 
 > 🧠 **Regla mnemotécnica (de arriba abajo):** *"**A**lgunos **P**rofes **S**e **T**oman **R**ecreos **E**ntre **F**ilminas"* → **A**plicación · **P**resentación · **S**esión · **T**ransporte · **R**ed · **E**nlace · **F**ísica.
 
+### Encapsulamiento — el "sobre dentro del sobre"
+
+![Encapsulamiento OSI: datos que bajan por las capas y cada una agrega su header](assets/03-encapsulamiento-osi.svg)
+
+> Fijate cómo el mismo bloque de datos va quedando **envuelto** por headers cada vez que baja una capa. En el receptor pasa exactamente al revés (subir desencapsulando).
+
 ---
 
 ## 📊 Conceptos clave

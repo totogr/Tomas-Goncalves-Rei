@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" width="100%" role="img" aria-label="Topologías físicas de red: bus, estrella, anillo, malla">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .host{fill:#e3f2fd;stroke:#1565c0;stroke-width:1.5}
+    .hub{fill:#fff3e0;stroke:#f57c00;stroke-width:1.5}
+    .link{stroke:#555;stroke-width:1.5;fill:none}
+  </style>
+
+  <!-- Bus -->
+  <g transform="translate(20,30)">
+    <text x="80" y="0" text-anchor="middle" class="t">Bus</text>
+    <text x="80" y="14" text-anchor="middle" class="ss">un cable, todos escuchan</text>
+    <line class="link" x1="10" y1="120" x2="150" y2="120"/>
+    <line class="link" x1="30" y1="80" x2="30" y2="120"/>
+    <line class="link" x1="70" y1="80" x2="70" y2="120"/>
+    <line class="link" x1="110" y1="80" x2="110" y2="120"/>
+    <line class="link" x1="140" y1="80" x2="140" y2="120"/>
+    <rect class="host" x="15" y="60" width="30" height="20" rx="3"/>
+    <rect class="host" x="55" y="60" width="30" height="20" rx="3"/>
+    <rect class="host" x="95" y="60" width="30" height="20" rx="3"/>
+    <rect class="host" x="125" y="60" width="30" height="20" rx="3"/>
+    <text x="80" y="145" text-anchor="middle" class="ss">un corte deja a todos sin red</text>
+  </g>
+
+  <!-- Estrella -->
+  <g transform="translate(200,30)">
+    <text x="80" y="0" text-anchor="middle" class="t">Estrella</text>
+    <text x="80" y="14" text-anchor="middle" class="ss">todo pasa por un hub/switch</text>
+    <line class="link" x1="80" y1="90" x2="30" y2="50"/>
+    <line class="link" x1="80" y1="90" x2="130" y2="50"/>
+    <line class="link" x1="80" y1="90" x2="30" y2="130"/>
+    <line class="link" x1="80" y1="90" x2="130" y2="130"/>
+    <rect class="host" x="10" y="40" width="30" height="20" rx="3"/>
+    <rect class="host" x="120" y="40" width="30" height="20" rx="3"/>
+    <rect class="host" x="10" y="120" width="30" height="20" rx="3"/>
+    <rect class="host" x="120" y="120" width="30" height="20" rx="3"/>
+    <circle class="hub" cx="80" cy="90" r="14"/>
+    <text x="80" y="94" text-anchor="middle" class="ss" font-weight="bold">HUB</text>
+    <text x="80" y="165" text-anchor="middle" class="ss">si el hub cae, cae la red</text>
+  </g>
+
+  <!-- Anillo -->
+  <g transform="translate(380,30)">
+    <text x="80" y="0" text-anchor="middle" class="t">Anillo</text>
+    <text x="80" y="14" text-anchor="middle" class="ss">el mensaje da la vuelta</text>
+    <polygon points="80,40 130,70 130,120 80,150 30,120 30,70" fill="none" class="link"/>
+    <rect class="host" x="65" y="30" width="30" height="20" rx="3"/>
+    <rect class="host" x="115" y="60" width="30" height="20" rx="3"/>
+    <rect class="host" x="115" y="110" width="30" height="20" rx="3"/>
+    <rect class="host" x="65" y="140" width="30" height="20" rx="3"/>
+    <rect class="host" x="15" y="110" width="30" height="20" rx="3"/>
+    <rect class="host" x="15" y="60" width="30" height="20" rx="3"/>
+    <text x="80" y="180" text-anchor="middle" class="ss">un corte parte el anillo</text>
+  </g>
+
+  <!-- Malla -->
+  <g transform="translate(560,30)">
+    <text x="80" y="0" text-anchor="middle" class="t">Malla</text>
+    <text x="80" y="14" text-anchor="middle" class="ss">todos con todos</text>
+    <line class="link" x1="30" y1="50" x2="130" y2="50"/>
+    <line class="link" x1="30" y1="50" x2="30" y2="130"/>
+    <line class="link" x1="30" y1="50" x2="130" y2="130"/>
+    <line class="link" x1="130" y1="50" x2="30" y2="130"/>
+    <line class="link" x1="130" y1="50" x2="130" y2="130"/>
+    <line class="link" x1="30" y1="130" x2="130" y2="130"/>
+    <rect class="host" x="15" y="40" width="30" height="20" rx="3"/>
+    <rect class="host" x="115" y="40" width="30" height="20" rx="3"/>
+    <rect class="host" x="15" y="120" width="30" height="20" rx="3"/>
+    <rect class="host" x="115" y="120" width="30" height="20" rx="3"/>
+    <text x="80" y="165" text-anchor="middle" class="ss">máxima redundancia, alto costo</text>
+  </g>
+
+  <text x="360" y="245" text-anchor="middle" class="ss">Redes reales combinan varias: casi siempre estrella (LAN) + malla parcial (backbone).</text>
+</svg>

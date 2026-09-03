@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%" role="img" aria-label="Máscara de subred y AND lógico">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .mono{font-family:monospace;font-size:12px;fill:#333}
+    .monoB{font-family:monospace;font-size:12px;fill:#0d47a1;font-weight:bold}
+    .red{fill:#e3f2fd;stroke:#1565c0}
+    .host{fill:#fff3e0;stroke:#f57c00}
+    .cell{fill:#fff;stroke:#666;stroke-width:0.8}
+  </style>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Máscara de subred — separar parte de RED (azul) y parte de HOST (naranja)</text>
+
+  <!-- IP + Máscara + AND -->
+  <g transform="translate(30,50)">
+    <text x="0" y="20" class="s">IP</text>
+    <text x="60" y="20" class="mono">192.168.10.132</text>
+    <text x="230" y="20" class="ss">→</text>
+    <g transform="translate(255,4)">
+      <g font-family="monospace" font-size="11" fill="#0d47a1" font-weight="bold">
+        <text x="0" y="15">11000000</text>
+        <text x="90" y="15">10101000</text>
+        <text x="180" y="15">00001010</text>
+      </g>
+      <g font-family="monospace" font-size="11" fill="#e65100" font-weight="bold">
+        <text x="270" y="15">10000100</text>
+      </g>
+    </g>
+
+    <text x="0" y="50" class="s">Máscara</text>
+    <text x="60" y="50" class="mono">255.255.255.0</text>
+    <text x="230" y="50" class="ss">→</text>
+    <g transform="translate(255,34)">
+      <g font-family="monospace" font-size="11" fill="#0d47a1" font-weight="bold">
+        <text x="0" y="15">11111111</text>
+        <text x="90" y="15">11111111</text>
+        <text x="180" y="15">11111111</text>
+      </g>
+      <g font-family="monospace" font-size="11" fill="#e65100" font-weight="bold">
+        <text x="270" y="15">00000000</text>
+      </g>
+    </g>
+
+    <line x1="255" y1="62" x2="600" y2="62" stroke="#333"/>
+    <text x="230" y="80" class="ss">AND</text>
+
+    <text x="0" y="80" class="s">Red</text>
+    <text x="60" y="80" class="mono" fill="#1565c0" font-weight="bold">192.168.10.0</text>
+    <text x="230" y="80" class="ss">→</text>
+    <g transform="translate(255,64)">
+      <g font-family="monospace" font-size="11" fill="#0d47a1" font-weight="bold">
+        <text x="0" y="15">11000000</text>
+        <text x="90" y="15">10101000</text>
+        <text x="180" y="15">00001010</text>
+      </g>
+      <g font-family="monospace" font-size="11" fill="#999">
+        <text x="270" y="15">00000000</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Notación CIDR -->
+  <g transform="translate(30,160)">
+    <text x="0" y="0" class="t">Notación CIDR: /24 = "los primeros 24 bits son de RED"</text>
+    <g font-family="monospace" font-size="14" text-anchor="middle">
+      <rect class="red" x="0" y="15" width="150" height="30"/>
+      <text x="75" y="35" fill="#0d47a1" font-weight="bold">24 bits de RED</text>
+      <rect class="host" x="150" y="15" width="70" height="30"/>
+      <text x="185" y="35" fill="#e65100" font-weight="bold">8 host</text>
+    </g>
+    <text x="0" y="70" class="ss">192.168.10.0/24 → 256 direcciones (2⁸), 254 hosts útiles (menos red y broadcast).</text>
+    <text x="0" y="88" class="ss">Máscaras comunes: /8 = 255.0.0.0 · /16 = 255.255.0.0 · /24 = 255.255.255.0 · /30 = 255.255.255.252 (2 hosts, ideal para punto-a-punto).</text>
+  </g>
+
+  <!-- Decisión local vs remoto -->
+  <g transform="translate(30,260)">
+    <text x="0" y="0" class="s" font-weight="bold">¿Local o vía gateway?</text>
+    <text x="0" y="16" class="ss">AND(IP_destino, máscara) == mi red → entrega directa (capa 2).</text>
+    <text x="0" y="30" class="ss">AND(IP_destino, máscara) ≠ mi red → paquete al gateway (router).</text>
+  </g>
+</svg>

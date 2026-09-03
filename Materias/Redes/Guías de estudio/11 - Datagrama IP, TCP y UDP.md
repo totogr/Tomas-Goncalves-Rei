@@ -67,6 +67,12 @@ Encabezado UDP (simple): **puerto origen (16 bits)**, **puerto destino (16 bits)
 
 > 🔑 **TCP vs UDP** es la comparación estrella: confiable+lento vs. rápido+sin garantía. Elegís según lo que la app necesite.
 
+### Las tres cabeceras lado a lado
+
+![Cabeceras IPv4, TCP y UDP en formato de 32 bits por fila](assets/11-cabeceras-ip-tcp-udp.svg)
+
+> Fijate el tamaño: **IP y TCP = 20 bytes cada una**, **UDP = 8 bytes**. Por eso UDP es tan liviano — no tiene toda la maquinaria de secuencia/ACK que sí tiene TCP.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

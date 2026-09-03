@@ -57,6 +57,10 @@ flowchart TD
 - Escala por potencia: **pequeños** hasta 20 MW · **medianos** 50–100 MW · **grandes** +100 MW.
 - **Tiers (Uptime Institute)**: clasifican la **disponibilidad/redundancia** del DC (a mayor Tier, más redundancia y menos tiempo de caída tolerado).
 
+### Cómo se cablea un DC moderno: arquitectura spine-leaf
+
+![Spine-leaf: 4 spines y 5 leaves, cada leaf con todos los spines, servidores debajo](assets/06-spine-leaf-dc.svg)
+
 ---
 
 ## ❓ Preguntas para autoevaluarte

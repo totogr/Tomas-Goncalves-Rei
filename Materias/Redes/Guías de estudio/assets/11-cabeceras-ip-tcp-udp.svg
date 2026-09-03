@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="100%" role="img" aria-label="Cabeceras IPv4, TCP y UDP en formato 32 bits">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#333}
+    .cell{fill:#e3f2fd;stroke:#1565c0;stroke-width:1}
+    .cellip{fill:#c8e6c9;stroke:#2e7d32;stroke-width:1}
+    .celltcp{fill:#fff3e0;stroke:#f57c00;stroke-width:1}
+    .celludp{fill:#f3e5f5;stroke:#7b1fa2;stroke-width:1}
+    .bit{font-family:sans-serif;font-size:9px;fill:#555}
+  </style>
+
+  <!-- Barra de bits -->
+  <text x="30" y="30" class="t">Cabecera IPv4 (20 bytes = 5 filas de 32 bits)</text>
+  <g transform="translate(30,40)">
+    <text x="0" y="12" class="bit">0</text>
+    <text x="120" y="12" class="bit">8</text>
+    <text x="240" y="12" class="bit">16</text>
+    <text x="360" y="12" class="bit">24</text>
+    <text x="470" y="12" class="bit">31</text>
+  </g>
+
+  <!-- IP header -->
+  <g transform="translate(30,50)">
+    <!-- Fila 1 -->
+    <rect class="cellip" x="0" y="0" width="60" height="26"/><text x="30" y="17" text-anchor="middle" class="ss">Ver</text>
+    <rect class="cellip" x="60" y="0" width="60" height="26"/><text x="90" y="17" text-anchor="middle" class="ss">IHL</text>
+    <rect class="cellip" x="120" y="0" width="120" height="26"/><text x="180" y="17" text-anchor="middle" class="ss">Tipo servicio</text>
+    <rect class="cellip" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Longitud total</text>
+    <!-- Fila 2 -->
+    <rect class="cellip" x="0" y="26" width="240" height="26"/><text x="120" y="43" text-anchor="middle" class="ss">Identificación</text>
+    <rect class="cellip" x="240" y="26" width="60" height="26"/><text x="270" y="43" text-anchor="middle" class="ss">Flags</text>
+    <rect class="cellip" x="300" y="26" width="180" height="26"/><text x="390" y="43" text-anchor="middle" class="ss">Fragment offset</text>
+    <!-- Fila 3 -->
+    <rect class="cellip" x="0" y="52" width="120" height="26"/><text x="60" y="69" text-anchor="middle" class="ss">TTL</text>
+    <rect class="cellip" x="120" y="52" width="120" height="26"/><text x="180" y="69" text-anchor="middle" class="ss">Protocolo</text>
+    <rect class="cellip" x="240" y="52" width="240" height="26"/><text x="360" y="69" text-anchor="middle" class="ss">Checksum de cabecera</text>
+    <!-- Fila 4 -->
+    <rect class="cellip" x="0" y="78" width="480" height="26"/><text x="240" y="95" text-anchor="middle" class="s" font-weight="bold">Dirección IP origen (32 bits)</text>
+    <!-- Fila 5 -->
+    <rect class="cellip" x="0" y="104" width="480" height="26"/><text x="240" y="121" text-anchor="middle" class="s" font-weight="bold">Dirección IP destino (32 bits)</text>
+  </g>
+
+  <text x="530" y="105" class="ss">TTL = "vida"</text>
+  <text x="530" y="120" class="ss">del paquete: baja</text>
+  <text x="530" y="135" class="ss">en cada router.</text>
+
+  <!-- TCP header -->
+  <text x="30" y="210" class="t">Cabecera TCP (20 bytes)</text>
+  <g transform="translate(30,220)">
+    <text x="0" y="12" class="bit">0</text><text x="120" y="12" class="bit">8</text><text x="240" y="12" class="bit">16</text><text x="360" y="12" class="bit">24</text><text x="470" y="12" class="bit">31</text>
+  </g>
+  <g transform="translate(30,230)">
+    <rect class="celltcp" x="0" y="0" width="240" height="26"/><text x="120" y="17" text-anchor="middle" class="ss">Puerto origen</text>
+    <rect class="celltcp" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Puerto destino</text>
+    <rect class="celltcp" x="0" y="26" width="480" height="26"/><text x="240" y="43" text-anchor="middle" class="s" font-weight="bold">Número de secuencia (32 bits)</text>
+    <rect class="celltcp" x="0" y="52" width="480" height="26"/><text x="240" y="69" text-anchor="middle" class="s" font-weight="bold">Número de acuse (ACK) (32 bits)</text>
+    <rect class="celltcp" x="0" y="78" width="60" height="26"/><text x="30" y="95" text-anchor="middle" class="ss">Off</text>
+    <rect class="celltcp" x="60" y="78" width="60" height="26"/><text x="90" y="95" text-anchor="middle" class="ss">Res</text>
+    <rect class="celltcp" x="120" y="78" width="120" height="26"/><text x="180" y="95" text-anchor="middle" class="ss">Flags (SYN/ACK/FIN…)</text>
+    <rect class="celltcp" x="240" y="78" width="240" height="26"/><text x="360" y="95" text-anchor="middle" class="ss">Tamaño de ventana</text>
+    <rect class="celltcp" x="0" y="104" width="240" height="26"/><text x="120" y="121" text-anchor="middle" class="ss">Checksum</text>
+    <rect class="celltcp" x="240" y="104" width="240" height="26"/><text x="360" y="121" text-anchor="middle" class="ss">Puntero urgente</text>
+  </g>
+  <text x="530" y="290" class="ss" fill="#f57c00">Sec + ACK + Flags =</text>
+  <text x="530" y="305" class="ss" fill="#f57c00">la máquina de estados</text>
+  <text x="530" y="320" class="ss" fill="#f57c00">de TCP (confiabilidad).</text>
+
+  <!-- UDP header -->
+  <text x="30" y="405" class="t">Cabecera UDP (8 bytes) — mínima, sin garantías</text>
+  <g transform="translate(30,415)">
+    <text x="0" y="12" class="bit">0</text><text x="120" y="12" class="bit">8</text><text x="240" y="12" class="bit">16</text><text x="360" y="12" class="bit">24</text><text x="470" y="12" class="bit">31</text>
+  </g>
+  <g transform="translate(30,425)">
+    <rect class="celludp" x="0" y="0" width="240" height="26"/><text x="120" y="17" text-anchor="middle" class="ss">Puerto origen</text>
+    <rect class="celludp" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Puerto destino</text>
+    <rect class="celludp" x="0" y="26" width="240" height="26"/><text x="120" y="43" text-anchor="middle" class="ss">Longitud</text>
+    <rect class="celludp" x="240" y="26" width="240" height="26"/><text x="360" y="43" text-anchor="middle" class="ss">Checksum</text>
+  </g>
+</svg>

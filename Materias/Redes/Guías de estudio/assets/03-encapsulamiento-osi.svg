@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="100%" role="img" aria-label="Encapsulamiento OSI: dato bajando por las capas, cada una agrega su header">
+  <style>
+    .t{font-family:sans-serif;font-size:12px;font-weight:bold;fill:#333}
+    .s{font-family:sans-serif;font-size:11px;fill:#333}
+    .ss{font-family:sans-serif;font-size:10px;fill:#555}
+    .l7{fill:#ffebee;stroke:#c62828}
+    .l4{fill:#fff3e0;stroke:#f57c00}
+    .l3{fill:#e3f2fd;stroke:#1565c0}
+    .l2{fill:#e8f5e9;stroke:#2e7d32}
+    .l1{fill:#f3e5f5;stroke:#7b1fa2}
+    .data{fill:#fff9c4;stroke:#f9a825}
+    .arr{stroke:#333;stroke-width:1.5;fill:none;marker-end:url(#a03)}
+    .capa{fill:#eceff1;stroke:#455a64;stroke-width:1}
+  </style>
+  <defs>
+    <marker id="a03" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="20" text-anchor="middle" class="t">Encapsulamiento — cada capa agrega su propio "sobre" (header)</text>
+
+  <!-- Capa 7 -->
+  <g transform="translate(20,40)">
+    <rect class="capa" x="0" y="0" width="140" height="40"/>
+    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">7 · Aplicación</text>
+    <text x="70" y="32" text-anchor="middle" class="ss">HTTP, DNS, SMTP</text>
+  </g>
+  <g transform="translate(200,40)">
+    <rect class="data" x="60" y="10" width="140" height="24"/>
+    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+  </g>
+
+  <path class="arr" d="M 130,88 L 130,110"/>
+
+  <!-- Capa 4 -->
+  <g transform="translate(20,115)">
+    <rect class="capa" x="0" y="0" width="140" height="40"/>
+    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">4 · Transporte</text>
+    <text x="70" y="32" text-anchor="middle" class="ss">TCP / UDP</text>
+  </g>
+  <g transform="translate(200,115)">
+    <rect class="l4" x="0" y="10" width="60" height="24"/>
+    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <rect class="data" x="60" y="10" width="140" height="24"/>
+    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+    <text x="270" y="26" class="ss">segmento</text>
+  </g>
+
+  <path class="arr" d="M 130,163 L 130,185"/>
+
+  <!-- Capa 3 -->
+  <g transform="translate(20,190)">
+    <rect class="capa" x="0" y="0" width="140" height="40"/>
+    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">3 · Red</text>
+    <text x="70" y="32" text-anchor="middle" class="ss">IP</text>
+  </g>
+  <g transform="translate(200,190)">
+    <rect class="l3" x="-60" y="10" width="60" height="24"/>
+    <text x="-30" y="26" text-anchor="middle" class="s">IP</text>
+    <rect class="l4" x="0" y="10" width="60" height="24"/>
+    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <rect class="data" x="60" y="10" width="140" height="24"/>
+    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+    <text x="270" y="26" class="ss">paquete</text>
+  </g>
+
+  <path class="arr" d="M 130,238 L 130,260"/>
+
+  <!-- Capa 2 -->
+  <g transform="translate(20,265)">
+    <rect class="capa" x="0" y="0" width="140" height="40"/>
+    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">2 · Enlace</text>
+    <text x="70" y="32" text-anchor="middle" class="ss">Ethernet (MAC)</text>
+  </g>
+  <g transform="translate(200,265)">
+    <rect class="l2" x="-120" y="10" width="60" height="24"/>
+    <text x="-90" y="26" text-anchor="middle" class="s">MAC</text>
+    <rect class="l3" x="-60" y="10" width="60" height="24"/>
+    <text x="-30" y="26" text-anchor="middle" class="s">IP</text>
+    <rect class="l4" x="0" y="10" width="60" height="24"/>
+    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <rect class="data" x="60" y="10" width="140" height="24"/>
+    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+    <rect class="l2" x="200" y="10" width="30" height="24"/>
+    <text x="215" y="26" text-anchor="middle" class="ss">FCS</text>
+    <text x="290" y="26" class="ss">trama</text>
+  </g>
+
+  <path class="arr" d="M 130,313 L 130,335"/>
+
+  <!-- Capa 1 -->
+  <g transform="translate(20,340)">
+    <rect class="l1" x="0" y="0" width="140" height="16"/>
+    <text x="70" y="12" text-anchor="middle" class="s" font-weight="bold">1 · Física — bits al cable</text>
+  </g>
+  <g transform="translate(200,340)">
+    <text x="130" y="12" text-anchor="middle" class="ss" fill="#7b1fa2">0101100010101110100110101010001011011101010101010...</text>
+  </g>
+</svg>

@@ -48,6 +48,10 @@ flowchart TD
 | **Ruteo** | Decide por dónde mandar el paquete usando tablas de enrutamiento |
 | **Best effort** | **No garantiza** entrega, orden ni integridad → por eso existe TCP |
 
+### Máscara y AND lógico (cae seguro en el parcial)
+
+![Máscara de subred: AND lógico entre IP y máscara + notación CIDR](assets/08-mascara-and.svg)
+
 ### IP pública vs. privada
 
 | | Pública | Privada |
