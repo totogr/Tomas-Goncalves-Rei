@@ -9,7 +9,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 01 | 24/8 | [Introducción — modelos de gestión del desarrollo de software](01%20-%20Introducci%C3%B3n%20-%20Modelos%20de%20gesti%C3%B3n%20del%20desarrollo%20de%20software.md) | ✅ |
 | 02 | 31/8 | [Descubrimiento de producto](02%20-%20Descubrimiento%20de%20producto.md) | ✅ |
 | 03 | 7/9 | [Métodos empíricos](03%20-%20M%C3%A9todos%20emp%C3%ADricos.md) | ✅ |
-| 04 | 14/9 | [Construcción con Scrum (BDD, slicing)](04%20-%20Construcci%C3%B3n%20con%20Scrum.md) | ✅ |
+| 04 | 14/9 | [Construcción con Scrum + BDD Discovery](04%20-%20Construcci%C3%B3n%20con%20Scrum.md) | ✅ |
 | 05 | 21/9 | [Revisión de avance con Scrum](05%20-%20Revisi%C3%B3n%20de%20avance%20con%20Scrum.md) | ✅ |
 | 06 | 28/9 | [Planificación y release planning](06%20-%20Planificaci%C3%B3n%20y%20release%20planning.md) | ✅ |
 | 07 | 5/10 | [Gestión de riesgos](07%20-%20Gesti%C3%B3n%20de%20riesgos.md) | ✅ |

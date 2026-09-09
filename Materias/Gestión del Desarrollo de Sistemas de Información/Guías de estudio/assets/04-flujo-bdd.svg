@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" role="img" aria-label="Flujo BDD de 8 pasos con las 3 actividades Discovery, Formulation, Automation">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
+    .box { stroke:#333; stroke-width:1.4; rx:8; }
+    .d { fill:#e0e7ff; }
+    .f { fill:#fff2cc; }
+    .a { fill:#dcedc8; }
+    .r { fill:#f0f0f0; }
+    .num { font: 700 14px system-ui, sans-serif; fill:#222; text-anchor:middle; }
+    .h { font: 700 12.5px system-ui, sans-serif; fill:#111; text-anchor:middle; }
+    .p { font: 11px system-ui, sans-serif; fill:#333; text-anchor:middle; }
+    .arrow { fill:none; stroke:#444; stroke-width:2; marker-end:url(#ah); }
+    .stt { font: 700 13px system-ui, sans-serif; fill:#3a4bbf; }
+    .fmt { font: 700 13px system-ui, sans-serif; fill:#a37d00; }
+    .aut { font: 700 13px system-ui, sans-serif; fill:#3a7d1e; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="840" height="380"/>
+  <text class="ttl" x="20" y="24">Flujo BDD — 8 pasos agrupados en Discovery · Formulation · Automation</text>
+
+  <!-- Bandas de actividades -->
+  <text class="stt" x="30" y="60">🔎 Discovery — descubrir</text>
+  <text class="fmt" x="330" y="60">✍️  Formulation — escribir</text>
+  <text class="aut" x="600" y="60">🤖 Automation — automatizar</text>
+
+  <!-- Paso 1: Elegir historia -->
+  <g>
+    <rect class="box r" x="20" y="90" width="140" height="70"/>
+    <text class="num" x="90" y="112">1</text>
+    <text class="h"   x="90" y="130">Elegir historia</text>
+    <text class="p"   x="90" y="148">Priorizada del backlog</text>
+  </g>
+  <!-- Paso 2: Taller req -->
+  <g>
+    <rect class="box d" x="175" y="90" width="140" height="70"/>
+    <text class="num" x="245" y="112">2</text>
+    <text class="h"   x="245" y="130">Taller de req.</text>
+    <text class="p"   x="245" y="148">Descubrir con ejemplos</text>
+  </g>
+  <!-- Paso 3: Formular -->
+  <g>
+    <rect class="box f" x="330" y="90" width="140" height="70"/>
+    <text class="num" x="400" y="112">3</text>
+    <text class="h"   x="400" y="130">Formular</text>
+    <text class="p"   x="400" y="148">Ejemplos → escenarios</text>
+  </g>
+  <!-- Paso 4: Revisar -->
+  <g>
+    <rect class="box d" x="20" y="200" width="140" height="70"/>
+    <text class="num" x="90" y="222">4</text>
+    <text class="h"   x="90" y="240">Revisar</text>
+    <text class="p"   x="90" y="258">Feedback del negocio</text>
+  </g>
+  <!-- Paso 5: Automatizar -->
+  <g>
+    <rect class="box a" x="175" y="200" width="140" height="70"/>
+    <text class="num" x="245" y="222">5</text>
+    <text class="h"   x="245" y="240">Automatizar</text>
+    <text class="p"   x="245" y="258">Escribir tests automáticos</text>
+  </g>
+  <!-- Paso 6: Implementar -->
+  <g>
+    <rect class="box a" x="330" y="200" width="140" height="70"/>
+    <text class="num" x="400" y="222">6</text>
+    <text class="h"   x="400" y="240">Implementar</text>
+    <text class="p"   x="400" y="258">Código con TDD</text>
+  </g>
+  <!-- Paso 7: Tests complementarios -->
+  <g>
+    <rect class="box a" x="485" y="200" width="180" height="70"/>
+    <text class="num" x="575" y="222">7</text>
+    <text class="h"   x="575" y="240">Tests complementarios</text>
+    <text class="p"   x="575" y="258">Carga · integración · seguridad</text>
+  </g>
+  <!-- Paso 8: Release -->
+  <g>
+    <rect class="box r" x="680" y="200" width="140" height="70"/>
+    <text class="num" x="750" y="222">8</text>
+    <text class="h"   x="750" y="240">Release</text>
+    <text class="p"   x="750" y="258">Producto entregable</text>
+  </g>
+
+  <!-- Flechas 1→2→3 -->
+  <path class="arrow" d="M 160 125 L 173 125"/>
+  <path class="arrow" d="M 315 125 L 328 125"/>
+  <!-- 3→4 doble curva bajando -->
+  <path class="arrow" d="M 400 160 C 400 180 200 180 90 198"/>
+  <!-- 4→5→6→7→8 -->
+  <path class="arrow" d="M 160 235 L 173 235"/>
+  <path class="arrow" d="M 315 235 L 328 235"/>
+  <path class="arrow" d="M 470 235 L 483 235"/>
+  <path class="arrow" d="M 665 235 L 678 235"/>
+
+  <!-- Nota inferior -->
+  <text class="ttl" x="20" y="310" style="font-size:13px">Distinguir Product Discovery vs BDD Discovery</text>
+  <text class="p" x="20" y="330" text-anchor="start" style="fill:#333">• <tspan style="font-weight:700">Product Discovery</tspan>: ¿qué producto construir? (visión, JTBD, story map, UX research)</text>
+  <text class="p" x="20" y="348" text-anchor="start" style="fill:#333">• <tspan style="font-weight:700">BDD Discovery</tspan>: para una historia YA elegida, ¿qué comportamiento exacto tiene? (Example Mapping, Three Amigos)</text>
+</svg>

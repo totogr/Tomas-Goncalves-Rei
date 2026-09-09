@@ -46,6 +46,36 @@ flowchart TD
 
 > ⚠️ **Regla de *The Mom Test*:** la gente **miente por cortesía** cuando le pedís opinión. Preguntá por lo que **ya hizo**, no por lo que **haría**.
 
+### El test de usabilidad, en detalle (Kate Moran / NN/g)
+
+Un test de usabilidad tiene **3 componentes esenciales**:
+
+| Componente | Qué hace |
+| --- | --- |
+| **Facilitador** | Le presenta las tareas, observa y hace preguntas *sin inducir* la respuesta |
+| **Tareas** | Actividades **realistas** que el participante haría de verdad — redactadas con cuidado para no revelar la solución |
+| **Participante** | Alguien que **representa al usuario real** (no un compañero del equipo) |
+
+**¿Cuántos usuarios?** — **5 usuarios detectan el ~85% de los problemas** de usabilidad (Nielsen). Después el retorno baja bruscamente: es mejor testear 5, iterar y volver a testear otros 5.
+
+**Modalidades:**
+
+|   | Moderado | No moderado |
+| --- | --- | --- |
+| **Presencial** | Vos al lado, guiándolo | (raro) |
+| **Remoto** | Vos por videollamada, screen-share | Plataforma que graba solo |
+
+**Otra dicotomía útil:**
+- **Formativo** (cualitativo): *descubrir* problemas para arreglarlos.
+- **Sumativo** (cuantitativo): *medir* con benchmarks (tasa de éxito, tiempo por tarea, errores).
+
+### 4 mandamientos del facilitador
+
+1. **Think-aloud protocol** — pedile al usuario que **piense en voz alta** mientras usa el producto.
+2. **No induzcas** la respuesta. "¿Qué te parece este botón acá?" ya es leading.
+3. **Observá comportamiento**, no solo lo que dice — la gente dice que le gustó y se traba 3 veces.
+4. Instrucciones **claras y neutrales**, sin revelar cómo se hace la tarea.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -55,6 +85,9 @@ flowchart TD
 3. ¿Cómo funciona un **fake door / smoke test** y qué mide?
 4. ¿Por qué *The Mom Test* dice que hay que preguntar por **hechos pasados**?
 5. ¿Qué aporta la **observación contextual** que una entrevista no?
+6. ¿Cuáles son los **3 componentes** de un test de usabilidad? ¿Y cuántos usuarios se recomiendan?
+7. ¿Qué es el **think-aloud protocol** y por qué sirve?
+8. Diferenciá test de usabilidad **formativo** vs **sumativo**.
 
 ---
 

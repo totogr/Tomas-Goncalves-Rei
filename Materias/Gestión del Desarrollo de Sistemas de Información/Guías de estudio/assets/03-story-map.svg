@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" role="img" aria-label="User Story Map: backbone y walking skeleton según Jeff Patton">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
+    .band { fill:#fef3d0; stroke:#e6c05c; stroke-width:1.4; rx:6; }
+    .band2 { fill:#dceffb; stroke:#5b9fd7; stroke-width:1.4; rx:6; }
+    .card { stroke:#333; stroke-width:1.2; rx:4; }
+    .y { fill:#fff2a8; }
+    .g1 { fill:#e8f5e9; }
+    .g2 { fill:#c8e6c9; }
+    .g3 { fill:#a5d6a7; }
+    .h { font: 700 12.5px system-ui, sans-serif; text-anchor:middle; fill:#111; }
+    .p { font: 11px system-ui, sans-serif; text-anchor:middle; fill:#333; }
+    .stt { font: 700 12.5px system-ui, sans-serif; fill:#444; }
+    .arr { font: italic 11px system-ui, sans-serif; fill:#666; }
+    .rel { stroke:#c0392b; stroke-width:2.2; stroke-dasharray:6,3; fill:none; }
+    .rel2 { stroke:#2e6fdb; stroke-width:2.2; stroke-dasharray:6,3; fill:none; }
+  </style>
+  <rect class="bg" width="860" height="380"/>
+  <text class="ttl" x="20" y="24">User Story Map — el backlog "nuevo" de Jeff Patton</text>
+
+  <!-- Eje: Backbone arriba (actividades del usuario) -->
+  <text class="stt" x="20" y="55">→ Recorrido del usuario (backbone / actividades) →</text>
+  <text class="stt" x="20" y="180" transform="rotate(-90 20 180)">↑ Prioridad</text>
+
+  <!-- Backbone (amarillo) -->
+  <g>
+    <rect class="card y" x="60"  y="65" width="140" height="40"/>
+    <text class="h" x="130" y="90">1 · Buscar producto</text>
+    <rect class="card y" x="220" y="65" width="140" height="40"/>
+    <text class="h" x="290" y="90">2 · Agregar al carrito</text>
+    <rect class="card y" x="380" y="65" width="140" height="40"/>
+    <text class="h" x="450" y="90">3 · Pagar</text>
+    <rect class="card y" x="540" y="65" width="140" height="40"/>
+    <text class="h" x="610" y="90">4 · Recibir</text>
+    <rect class="card y" x="700" y="65" width="140" height="40"/>
+    <text class="h" x="770" y="90">5 · Valorar</text>
+  </g>
+
+  <!-- Filas de user stories bajo cada actividad -->
+  <!-- Fila 1: MVP / walking skeleton -->
+  <g>
+    <rect class="card g3" x="60"  y="120" width="140" height="35"/>
+    <text class="p" x="130" y="142">Búsqueda por nombre</text>
+    <rect class="card g3" x="220" y="120" width="140" height="35"/>
+    <text class="p" x="290" y="142">Sumar 1 unidad</text>
+    <rect class="card g3" x="380" y="120" width="140" height="35"/>
+    <text class="p" x="450" y="142">Pago con tarjeta</text>
+    <rect class="card g3" x="540" y="120" width="140" height="35"/>
+    <text class="p" x="610" y="142">Envío estándar</text>
+    <rect class="card g3" x="700" y="120" width="140" height="35"/>
+    <text class="p" x="770" y="142">1 a 5 estrellas</text>
+  </g>
+  <!-- Línea del walking skeleton (release 1) -->
+  <path class="rel" d="M 55 115 L 845 115 L 845 158 L 55 158 Z"/>
+  <text class="p" x="850" y="140" text-anchor="start" style="fill:#c0392b; font-weight:700;">Release 1 · MVP</text>
+
+  <!-- Fila 2: mejoras -->
+  <g>
+    <rect class="card g2" x="60"  y="170" width="140" height="35"/>
+    <text class="p" x="130" y="192">Búsqueda por filtro</text>
+    <rect class="card g2" x="220" y="170" width="140" height="35"/>
+    <text class="p" x="290" y="192">Editar cantidad</text>
+    <rect class="card g2" x="380" y="170" width="140" height="35"/>
+    <text class="p" x="450" y="192">Pago con QR</text>
+    <rect class="card g2" x="540" y="170" width="140" height="35"/>
+    <text class="p" x="610" y="192">Tracking en vivo</text>
+    <rect class="card g2" x="700" y="170" width="140" height="35"/>
+    <text class="p" x="770" y="192">Reseña con foto</text>
+  </g>
+  <path class="rel2" d="M 55 165 L 845 165 L 845 208 L 55 208 Z"/>
+  <text class="p" x="850" y="190" text-anchor="start" style="fill:#2e6fdb; font-weight:700;">Release 2</text>
+
+  <!-- Fila 3: opcional / futuro -->
+  <g>
+    <rect class="card g1" x="60"  y="220" width="140" height="35"/>
+    <text class="p" x="130" y="242">Búsqueda por foto</text>
+    <rect class="card g1" x="220" y="220" width="140" height="35"/>
+    <text class="p" x="290" y="242">Lista de deseos</text>
+    <rect class="card g1" x="380" y="220" width="140" height="35"/>
+    <text class="p" x="450" y="242">Cuotas sin interés</text>
+    <rect class="card g1" x="540" y="220" width="140" height="35"/>
+    <text class="p" x="610" y="242">Retiro en sucursal</text>
+    <rect class="card g1" x="700" y="220" width="140" height="35"/>
+    <text class="p" x="770" y="242">Responder reseñas</text>
+  </g>
+  <text class="p" x="850" y="240" text-anchor="start">Futuro</text>
+
+  <!-- Notas al pie -->
+  <text class="stt" x="20" y="295">🦴 Backbone (fila amarilla): las actividades esenciales del usuario. Es la columna vertebral del producto.</text>
+  <text class="stt" x="20" y="315">🚶 Walking skeleton (release 1): una historia de cada actividad → producto usable end-to-end.</text>
+  <text class="stt" x="20" y="335">↕️ La vertical prioriza; se libera por franjas horizontales (releases), no por columna completa.</text>
+  <text class="stt" x="20" y="355">💡 Ventaja sobre el backlog plano: contexto, narrativa y facilidad para cortar releases.</text>
+</svg>

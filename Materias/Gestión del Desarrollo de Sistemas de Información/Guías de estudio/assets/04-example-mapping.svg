@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 400" role="img" aria-label="Example Mapping: tarjetas amarilla azul verde y roja">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
+    .card { stroke:#333; stroke-width:1.4; rx:6; }
+    .yellow { fill:#fff2a8; }
+    .blue { fill:#c9ddf7; }
+    .green { fill:#c8e6c9; }
+    .red { fill:#f7c9c9; }
+    .h { font: 700 12.5px system-ui, sans-serif; text-anchor:middle; fill:#111; }
+    .p { font: 11px system-ui, sans-serif; text-anchor:middle; fill:#222; }
+    .subh { font: 700 12px system-ui, sans-serif; fill:#444; }
+    .lbl { font: 11.5px system-ui, sans-serif; fill:#333; }
+    .arrow { fill:none; stroke:#666; stroke-width:1.6; marker-end:url(#ah); }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="820" height="400"/>
+  <text class="ttl" x="20" y="24">Example Mapping — el mapa de una user story con tarjetas de colores</text>
+
+  <!-- Historia (amarilla) arriba centrada -->
+  <g>
+    <rect class="card yellow" x="330" y="50" width="160" height="60"/>
+    <text class="h" x="410" y="75">Historia (User Story)</text>
+    <text class="p" x="410" y="93">"Como cliente quiero...</text>
+    <text class="p" x="410" y="105">para lograr..."</text>
+  </g>
+
+  <!-- Reglas (azules) -->
+  <g>
+    <rect class="card blue" x="60" y="150" width="180" height="55"/>
+    <text class="h" x="150" y="172">Regla 1 (Rule)</text>
+    <text class="p" x="150" y="190">"Se permite cambio si no</text>
+    <text class="p" x="150" y="202">fue retirado el pedido"</text>
+  </g>
+  <g>
+    <rect class="card blue" x="320" y="150" width="180" height="55"/>
+    <text class="h" x="410" y="172">Regla 2</text>
+    <text class="p" x="410" y="190">"Solo direcciones dentro</text>
+    <text class="p" x="410" y="202">del rango de reparto"</text>
+  </g>
+  <g>
+    <rect class="card blue" x="580" y="150" width="180" height="55"/>
+    <text class="h" x="670" y="172">Regla 3</text>
+    <text class="p" x="670" y="190">"Se recalcula el tiempo</text>
+    <text class="p" x="670" y="202">estimado de entrega"</text>
+  </g>
+
+  <!-- Flechas historia → reglas -->
+  <path class="arrow" d="M 380 112 L 190 148"/>
+  <path class="arrow" d="M 410 112 L 410 148"/>
+  <path class="arrow" d="M 440 112 L 630 148"/>
+
+  <!-- Ejemplos (verdes) -->
+  <g>
+    <rect class="card green" x="30" y="240" width="120" height="65"/>
+    <text class="h" x="90" y="260">Ejemplo</text>
+    <text class="p" x="90" y="278">"Peter cambia dirección</text>
+    <text class="p" x="90" y="290">antes del pickup ✓"</text>
+  </g>
+  <g>
+    <rect class="card green" x="160" y="240" width="120" height="65"/>
+    <text class="h" x="220" y="260">Ejemplo</text>
+    <text class="p" x="220" y="278">"Tim cambia después</text>
+    <text class="p" x="220" y="290">del pickup ✗ error"</text>
+  </g>
+  <g>
+    <rect class="card green" x="290" y="240" width="130" height="65"/>
+    <text class="h" x="355" y="260">Ejemplo</text>
+    <text class="p" x="355" y="278">"Dirección dentro</text>
+    <text class="p" x="355" y="290">del radio ✓"</text>
+  </g>
+  <g>
+    <rect class="card green" x="430" y="240" width="130" height="65"/>
+    <text class="h" x="495" y="260">Ejemplo</text>
+    <text class="p" x="495" y="278">"Dirección fuera</text>
+    <text class="p" x="495" y="290">del radio ✗ rechazo"</text>
+  </g>
+  <g>
+    <rect class="card green" x="580" y="240" width="180" height="65"/>
+    <text class="h" x="670" y="260">Ejemplo</text>
+    <text class="p" x="670" y="278">"Cambio a 1 km más: ETA</text>
+    <text class="p" x="670" y="290">pasa de 20 a 25 min"</text>
+  </g>
+
+  <!-- Flechas reglas → ejemplos -->
+  <path class="arrow" d="M 140 208 L 90 238"/>
+  <path class="arrow" d="M 170 208 L 220 238"/>
+  <path class="arrow" d="M 380 208 L 355 238"/>
+  <path class="arrow" d="M 440 208 L 495 238"/>
+  <path class="arrow" d="M 670 208 L 670 238"/>
+
+  <!-- Preguntas (rojas) al costado -->
+  <g>
+    <rect class="card red" x="10" y="340" width="240" height="50"/>
+    <text class="h" x="130" y="360">? Pregunta pendiente</text>
+    <text class="p" x="130" y="378">"¿Qué pasa si se está retirando</text>
+  </g>
+  <g>
+    <rect class="card red" x="270" y="340" width="240" height="50"/>
+    <text class="h" x="390" y="360">? Pregunta pendiente</text>
+    <text class="p" x="390" y="378">"¿Hasta cuántos km puede moverse?"</text>
+  </g>
+
+  <!-- Leyenda de colores -->
+  <g transform="translate(555, 340)">
+    <text class="subh" x="0" y="14">Colores:</text>
+    <rect class="card yellow" x="0" y="20" width="14" height="14"/>
+    <text class="lbl" x="20" y="32">Historia</text>
+    <rect class="card blue" x="70" y="20" width="14" height="14"/>
+    <text class="lbl" x="90" y="32">Regla</text>
+    <rect class="card green" x="130" y="20" width="14" height="14"/>
+    <text class="lbl" x="150" y="32">Ejemplo</text>
+    <rect class="card red" x="200" y="20" width="14" height="14"/>
+    <text class="lbl" x="220" y="32">Pregunta</text>
+  </g>
+</svg>

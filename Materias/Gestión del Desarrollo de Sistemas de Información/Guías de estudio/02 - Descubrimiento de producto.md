@@ -45,9 +45,29 @@ flowchart LR
 | **Lista de riesgos** | Anotar las **suposiciones más peligrosas** (lo que, si es falso, hunde el producto) para atacarlas primero |
 | **Diseño de experimentos** | Definir cómo **probar** una hipótesis con el mínimo esfuerzo |
 | **Prototipado rápido** | Construir una versión "de mentira" para aprender sin desarrollar todo |
+| **Story Map** | Ver el producto **completo** como un mapa 2D de actividades del usuario (Patton) |
 | **Incertidumbre** | Lo normal en producto: no sabés qué querés hasta que lo probás → por eso experimentás |
 
 > 🔑 La idea de *Artful Making*: gestionar el desarrollo como un **ensayo teatral** (probar, ajustar, colaborar), no como una fábrica que ejecuta un plan cerrado.
+
+## 🗺️ El Story Map de Jeff Patton — el "backlog nuevo"
+
+Un backlog plano (una lista larga de historias en orden de prioridad) tiene un problema serio: **pierde el contexto** y se vuelve *"una bolsa de mulch sin contexto"* (Patton). No podés explicarle a un stakeholder qué hace el sistema, es fácil que te falten funcionalidades y priorizar cansa muchísimo.
+
+El **Story Map** lo reemplaza con una matriz 2D:
+
+- **Horizontal (backbone / columna vertebral):** las **actividades del usuario** en el orden en que las hace. Es la **historia del sistema**.
+- **Vertical:** las historias que implementan cada actividad, ordenadas de **más prioridad arriba** a menos abajo.
+
+![Story Map: backbone horizontal, prioridad vertical y walking skeleton como release 1](assets/03-story-map.svg)
+
+| Concepto | Qué es |
+| --- | --- |
+| 🦴 **Backbone** | La fila superior con las actividades esenciales — la "columna vertebral" del producto |
+| 🚶 **Walking skeleton** | Una franja horizontal con **una historia de cada actividad** → producto usable **end-to-end** |
+| 📦 **Release slice** | Un corte horizontal del mapa: se libera una franja completa, no una columna |
+
+> 💡 **Por qué es el "backlog nuevo":** en vez de terminar toda una columna antes de arrancar la siguiente (y llegar al lanzamiento con la mitad del producto sin salida al usuario), liberás **franjas** que atraviesan todas las actividades. Ese primer walking skeleton **hace algo útil** aunque sea básico, y las franjas siguientes lo van mejorando.
 
 ---
 
@@ -58,6 +78,8 @@ flowchart LR
 3. ¿Por qué conviene atacar primero los **riesgos/supuestos más peligrosos**?
 4. ¿Qué significa "hacer el cambio barato" según *Artful Making* y por qué ayuda?
 5. ¿Por qué se **prototipa** en vez de construir el producto completo de una?
+6. ¿Qué es el **backbone** de un Story Map? ¿Y el **walking skeleton**?
+7. ¿Cuál es el problema principal de un **backlog plano** según Patton?
 
 ---
 
@@ -70,4 +92,4 @@ flowchart LR
 
 ---
 
-<sub>⚙️ Guía basada en el cronograma de la cátedra y *Artful Making* (Austin & Devin).</sub>
+<sub>⚙️ Guía basada en el cronograma de la cátedra, *Artful Making* (Austin & Devin) y Jeff Patton — *The new backlog* / *User Story Mapping*.</sub>
