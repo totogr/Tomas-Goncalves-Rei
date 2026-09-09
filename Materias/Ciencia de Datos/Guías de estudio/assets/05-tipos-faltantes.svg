@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Tipos de datos faltantes: MCAR, MAR, MNAR">
+  <style>
+    .bg { fill: #fff; }
+    .box { stroke: #333; stroke-width: 1.6; rx: 10; }
+    .m1 { fill: #d9edd3; }
+    .m2 { fill: #ffe6b3; }
+    .m3 { fill: #fbd0d0; }
+    .h { font: 700 15px system-ui, sans-serif; text-anchor: middle; fill:#222; }
+    .sub { font: 700 12px system-ui, sans-serif; text-anchor: middle; fill: #555; }
+    .p { font: 12px system-ui, sans-serif; text-anchor: middle; fill:#333; }
+    .ttl { font: 700 17px system-ui, sans-serif; fill:#222; }
+    .ex { font: italic 11.5px system-ui, sans-serif; text-anchor: middle; fill:#444; }
+  </style>
+  <rect class="bg" width="780" height="300"/>
+  <text class="ttl" x="20" y="26">Los 3 tipos de datos faltantes (clasificación de Rubin, 1976)</text>
+
+  <!-- MCAR -->
+  <g>
+    <rect class="box m1" x="30" y="60" width="230" height="215"/>
+    <text class="h" x="145" y="90">MCAR</text>
+    <text class="sub" x="145" y="108">Missing Completely At Random</text>
+    <text class="p" x="145" y="140">La falta es 100% aleatoria.</text>
+    <text class="p" x="145" y="160">No depende de ninguna variable</text>
+    <text class="p" x="145" y="176">(observada ni ausente).</text>
+    <text class="p" x="145" y="210">Omitir esos registros</text>
+    <text class="p" x="145" y="226">NO introduce sesgo.</text>
+    <text class="ex" x="145" y="256">Ej: un bug borró filas al azar</text>
+  </g>
+
+  <!-- MAR -->
+  <g>
+    <rect class="box m2" x="275" y="60" width="230" height="215"/>
+    <text class="h" x="390" y="90">MAR</text>
+    <text class="sub" x="390" y="108">Missing At Random</text>
+    <text class="p" x="390" y="140">La falta se puede explicar por</text>
+    <text class="p" x="390" y="156">OTRAS variables observadas,</text>
+    <text class="p" x="390" y="172">pero no por la variable en sí.</text>
+    <text class="p" x="390" y="210">Imputable con métodos</text>
+    <text class="p" x="390" y="226">multivariados (MICE, hot deck)</text>
+    <text class="ex" x="390" y="256">Ej: quien fue a universidad</text>
+    <text class="ex" x="390" y="271">privada oculta más ingresos</text>
+  </g>
+
+  <!-- MNAR -->
+  <g>
+    <rect class="box m3" x="520" y="60" width="230" height="215"/>
+    <text class="h" x="635" y="90">MNAR</text>
+    <text class="sub" x="635" y="108">Missing Not At Random</text>
+    <text class="p" x="635" y="140">La falta SÍ depende del propio</text>
+    <text class="p" x="635" y="156">valor ausente. No es al azar.</text>
+    <text class="p" x="635" y="176">Hay que investigar la causa.</text>
+    <text class="p" x="635" y="210">Descartarlos es peligroso:</text>
+    <text class="p" x="635" y="226">introduce sesgo sistemático.</text>
+    <text class="ex" x="635" y="256">Ej: pacientes graves dejan</text>
+    <text class="ex" x="635" y="271">de responder el seguimiento</text>
+  </g>
+</svg>

@@ -10,7 +10,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 02 | [Visualización de datos (y falacias)](02%20-%20Visualizaci%C3%B3n%20de%20datos.md) | ✅ |
 | 03 | [Introducción a la ciencia de datos](03%20-%20Introducci%C3%B3n%20a%20la%20ciencia%20de%20datos.md) | ✅ |
 | 04 | [Métricas](04%20-%20M%C3%A9tricas.md) | ✅ |
-| 05 | [Limpieza y normalización de datos](05%20-%20Limpieza%20y%20normalizaci%C3%B3n%20de%20datos.md) | 🟡 |
+| 05 | [Limpieza y normalización de datos (Feature Engineering)](05%20-%20Limpieza%20y%20normalizaci%C3%B3n%20de%20datos.md) | ✅ |
 | 06 | [Árboles: ID3, C4.5 y Random Forest](06%20-%20%C3%81rboles%20-%20ID3%2C%20C4.5%20y%20Random%20Forest.md) | 🟡 |
 | 07 | [Reducción de la dimensionalidad](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) | 🟡 |
 | 08 | [Clasificación y regresión clásicos (K-NN, SVM, lineal, logística)](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) | ✅ parcial |
@@ -18,5 +18,6 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 10 | [Redes neuronales (perceptrón, MLP, backprop, SOM)](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | 🟡 |
 | 11 | [Procesamiento de lenguaje natural](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) | 🟡 |
 | 12 | [Introducción al aprendizaje profundo](12%20-%20Introducci%C3%B3n%20al%20aprendizaje%20profundo.md) | 🟡 |
+| 13 | [Métodos de agrupamiento (Clustering — K-Means)](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) | ✅ |
 
 _Las 🟡 se arman con el temario del plan de estudios; cuando la cátedra suba las slides las ajustamos a su enfoque y ejemplos. La numeración sigue el temario y se acomoda al orden real de la cursada._

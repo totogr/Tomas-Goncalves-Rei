@@ -152,4 +152,4 @@ flowchart LR
 
 ---
 
-<sub>⚙️ Guía basada en `Metricas.pdf` (Luis J. Paredes) y *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez). Ejemplos en `Metricas_ejemplos.ipynb`.</sub>
+<sub>⚙️ Guía basada en `Metricas.pdf` (Luis J. Paredes) y *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez). Ejemplos en `Metricas_ejemplos.ipynb` y en el notebook **`practica_ejemplo_métricas.ipynb`** del módulo *Métodos de Clasificación*.</sub>

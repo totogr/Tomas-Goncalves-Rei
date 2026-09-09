@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Métodos de normalización: Min-Max, Z-score, Decimal scaling">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 16px system-ui, sans-serif; fill:#222; }
+    .box { stroke:#333; stroke-width:1.4; rx:8; }
+    .b1 { fill:#e2f0d9; }
+    .b2 { fill:#fff2cc; }
+    .b3 { fill:#dae3f3; }
+    .h { font: 700 14px system-ui, sans-serif; text-anchor:middle; fill:#222; }
+    .f { font: 700 13px monospace; text-anchor:middle; fill:#111; }
+    .p { font: 12px system-ui, sans-serif; text-anchor:middle; fill:#333; }
+    .rng { font: italic 12px system-ui, sans-serif; text-anchor:middle; fill:#555; }
+  </style>
+  <rect class="bg" width="780" height="300"/>
+  <text class="ttl" x="20" y="26">Formas de normalizar valores numéricos</text>
+
+  <!-- Min-Max -->
+  <g>
+    <rect class="box b1" x="30" y="60" width="230" height="215"/>
+    <text class="h" x="145" y="90">Min-Max</text>
+    <text class="f" x="145" y="130">x' = (x − min) / (max − min)</text>
+    <text class="rng" x="145" y="160">→ rango [0, 1]</text>
+    <text class="p" x="145" y="195">Fácil, intuitivo,</text>
+    <text class="p" x="145" y="211">usa min y max reales.</text>
+    <text class="p" x="145" y="245">⚠️ Muy sensible</text>
+    <text class="p" x="145" y="261">a valores atípicos.</text>
+  </g>
+  <!-- Z-score -->
+  <g>
+    <rect class="box b2" x="275" y="60" width="230" height="215"/>
+    <text class="h" x="390" y="90">Z-score (estandarización)</text>
+    <text class="f" x="390" y="130">x' = (x − μ) / σ</text>
+    <text class="rng" x="390" y="160">→ media 0, desvío 1</text>
+    <text class="p" x="390" y="195">Útil cuando no conocés</text>
+    <text class="p" x="390" y="211">el min/max real</text>
+    <text class="p" x="390" y="245">o hay outliers que</text>
+    <text class="p" x="390" y="261">dominan min-max.</text>
+  </g>
+  <!-- Decimal -->
+  <g>
+    <rect class="box b3" x="520" y="60" width="230" height="215"/>
+    <text class="h" x="635" y="90">Decimal scaling</text>
+    <text class="f" x="635" y="130">x' = x / 10^d</text>
+    <text class="rng" x="635" y="160">→ valores en (−1, 1)</text>
+    <text class="p" x="635" y="195">d = cantidad de dígitos</text>
+    <text class="p" x="635" y="211">del valor absoluto máximo.</text>
+    <text class="p" x="635" y="245">Simple, sirve para escalar</text>
+    <text class="p" x="635" y="261">valores muy grandes.</text>
+  </g>
+</svg>

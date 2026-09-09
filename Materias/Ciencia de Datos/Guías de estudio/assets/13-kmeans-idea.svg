@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Idea de K-Means: nube de puntos, centroides y asignaciones">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
+    .step { font: 700 13px system-ui, sans-serif; text-anchor:middle; fill:#222; }
+    .p1 { fill:#f0a4a4; stroke:#8a0000; stroke-width:0.8; }
+    .p2 { fill:#8ecae6; stroke:#023047; stroke-width:0.8; }
+    .p3 { fill:#c8e6c9; stroke:#2e7d32; stroke-width:0.8; }
+    .pn { fill:#bbb; stroke:#555; stroke-width:0.8; }
+    .cx { fill:#111; stroke:#fff; stroke-width:2; }
+    .lbl { font: 11px system-ui, sans-serif; fill:#333; text-anchor:middle; }
+    .arrow { fill:none; stroke:#444; stroke-width:1.6; marker-end:url(#ah); }
+    .frame { fill:#fafafa; stroke:#ddd; stroke-width:1; rx:8; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="780" height="300"/>
+  <text class="ttl" x="20" y="24">K-Means: los 3 pasos que se repiten</text>
+
+  <!-- Frame 1: nube sin clasificar -->
+  <g transform="translate(10,50)">
+    <rect class="frame" x="0" y="0" width="240" height="200"/>
+    <text class="step" x="120" y="20">1 · Datos sin agrupar</text>
+    <!-- puntos "grises" -->
+    <circle class="pn" cx="60"  cy="80"  r="5"/>
+    <circle class="pn" cx="75"  cy="70"  r="5"/>
+    <circle class="pn" cx="65"  cy="100" r="5"/>
+    <circle class="pn" cx="90"  cy="90"  r="5"/>
+    <circle class="pn" cx="150" cy="65"  r="5"/>
+    <circle class="pn" cx="170" cy="80"  r="5"/>
+    <circle class="pn" cx="180" cy="60"  r="5"/>
+    <circle class="pn" cx="160" cy="90"  r="5"/>
+    <circle class="pn" cx="100" cy="150" r="5"/>
+    <circle class="pn" cx="120" cy="160" r="5"/>
+    <circle class="pn" cx="110" cy="170" r="5"/>
+    <circle class="pn" cx="130" cy="145" r="5"/>
+  </g>
+  <path class="arrow" d="M 255 145 L 270 145"/>
+
+  <!-- Frame 2: elegir k, colocar centroides al azar -->
+  <g transform="translate(275,50)">
+    <rect class="frame" x="0" y="0" width="240" height="200"/>
+    <text class="step" x="120" y="20">2 · k centroides iniciales (al azar)</text>
+    <!-- puntos grises -->
+    <circle class="pn" cx="60"  cy="80"  r="5"/>
+    <circle class="pn" cx="75"  cy="70"  r="5"/>
+    <circle class="pn" cx="65"  cy="100" r="5"/>
+    <circle class="pn" cx="90"  cy="90"  r="5"/>
+    <circle class="pn" cx="150" cy="65"  r="5"/>
+    <circle class="pn" cx="170" cy="80"  r="5"/>
+    <circle class="pn" cx="180" cy="60"  r="5"/>
+    <circle class="pn" cx="160" cy="90"  r="5"/>
+    <circle class="pn" cx="100" cy="150" r="5"/>
+    <circle class="pn" cx="120" cy="160" r="5"/>
+    <circle class="pn" cx="110" cy="170" r="5"/>
+    <circle class="pn" cx="130" cy="145" r="5"/>
+    <!-- centroides X -->
+    <path d="M 66 85 l 10 10 M 76 85 l -10 10" stroke="#8a0000" stroke-width="3"/>
+    <path d="M 165 68 l 10 10 M 175 68 l -10 10" stroke="#023047" stroke-width="3"/>
+    <path d="M 110 155 l 10 10 M 120 155 l -10 10" stroke="#2e7d32" stroke-width="3"/>
+  </g>
+  <path class="arrow" d="M 520 145 L 535 145"/>
+
+  <!-- Frame 3: converged coloreado -->
+  <g transform="translate(540,50)">
+    <rect class="frame" x="0" y="0" width="230" height="200"/>
+    <text class="step" x="115" y="20">3 · Asignar y mover centroides (iterar)</text>
+    <!-- rojos -->
+    <circle class="p1" cx="55"  cy="80"  r="5"/>
+    <circle class="p1" cx="70"  cy="70"  r="5"/>
+    <circle class="p1" cx="60"  cy="100" r="5"/>
+    <circle class="p1" cx="85"  cy="90"  r="5"/>
+    <circle class="cx" cx="68"  cy="85"  r="5"/>
+    <!-- azules -->
+    <circle class="p2" cx="145" cy="65"  r="5"/>
+    <circle class="p2" cx="165" cy="80"  r="5"/>
+    <circle class="p2" cx="175" cy="60"  r="5"/>
+    <circle class="p2" cx="155" cy="90"  r="5"/>
+    <circle class="cx" cx="160" cy="74"  r="5"/>
+    <!-- verdes -->
+    <circle class="p3" cx="95"  cy="150" r="5"/>
+    <circle class="p3" cx="115" cy="160" r="5"/>
+    <circle class="p3" cx="105" cy="170" r="5"/>
+    <circle class="p3" cx="125" cy="145" r="5"/>
+    <circle class="cx" cx="110" cy="156" r="5"/>
+
+    <text class="lbl" x="115" y="196">cada punto va al centroide más cercano</text>
+  </g>
+</svg>

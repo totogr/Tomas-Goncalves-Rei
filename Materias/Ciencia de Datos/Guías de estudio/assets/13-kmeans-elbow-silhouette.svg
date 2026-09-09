@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" role="img" aria-label="K-Means: método del codo y silhouette">
+  <style>
+    .bg { fill:#fff; }
+    .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
+    .stt { font: 700 12.5px system-ui, sans-serif; fill:#444; text-anchor:middle; }
+    .ax { stroke:#333; stroke-width:1.4; }
+    .grid { stroke:#eee; stroke-width:1; }
+    .curve { fill:none; stroke:#2e6fdb; stroke-width:2.4; }
+    .lbl { font: 11.5px system-ui, sans-serif; fill:#333; }
+    .k { font: 700 12px system-ui, sans-serif; fill:#c62828; }
+    .bar { fill:#8ecae6; stroke:#023047; stroke-width:1; }
+    .barneg { fill:#f0a4a4; stroke:#8a0000; stroke-width:1; }
+    .avg { stroke:#c62828; stroke-width:1.4; stroke-dasharray:5,3; }
+    .note { font: italic 11px system-ui, sans-serif; fill:#555; text-anchor:middle; }
+  </style>
+  <rect class="bg" width="820" height="340"/>
+  <text class="ttl" x="20" y="24">Elegir k en K-Means: método del codo y silhouette</text>
+
+  <!-- ============ Método del codo ============ -->
+  <text class="stt" x="200" y="60">Método del codo (Elbow) — WCSS vs k</text>
+  <!-- axes -->
+  <g transform="translate(60,80)">
+    <line class="ax" x1="0" y1="0" x2="0" y2="200"/>
+    <line class="ax" x1="0" y1="200" x2="290" y2="200"/>
+    <!-- labels axes -->
+    <text class="lbl" x="-10" y="0" text-anchor="end">WCSS</text>
+    <text class="lbl" x="290" y="220" text-anchor="middle">k (nº de clusters)</text>
+    <!-- ticks x -->
+    <g>
+      <text class="lbl" x="30"  y="215" text-anchor="middle">1</text>
+      <text class="lbl" x="70"  y="215" text-anchor="middle">2</text>
+      <text class="lbl" x="110" y="215" text-anchor="middle">3</text>
+      <text class="lbl" x="150" y="215" text-anchor="middle">4</text>
+      <text class="lbl" x="190" y="215" text-anchor="middle">5</text>
+      <text class="lbl" x="230" y="215" text-anchor="middle">6</text>
+      <text class="lbl" x="270" y="215" text-anchor="middle">7</text>
+    </g>
+    <!-- curva de codo (baja rápido luego se aplana). Codo en k=4 (x=150) -->
+    <path class="curve" d="M 30 20 L 70 60 L 110 100 L 150 145 L 190 170 L 230 180 L 270 186"/>
+    <!-- codo -->
+    <circle cx="150" cy="145" r="6" fill="#c62828"/>
+    <text class="k" x="163" y="140">codo → k = 4</text>
+    <text class="note" x="145" y="248">agregar más clusters ya no reduce mucho el error</text>
+  </g>
+
+  <!-- ============ Silhouette ============ -->
+  <text class="stt" x="620" y="60">Silhouette — cohesión vs separación</text>
+  <g transform="translate(430,80)">
+    <line class="ax" x1="0" y1="0" x2="0" y2="200"/>
+    <line class="ax" x1="0" y1="200" x2="290" y2="200"/>
+    <text class="lbl" x="-10" y="0" text-anchor="end">s(i)</text>
+    <text class="lbl" x="290" y="220" text-anchor="middle">observaciones agrupadas por cluster</text>
+    <!-- valores de referencia -->
+    <text class="lbl" x="-10" y="60"  text-anchor="end">1</text>
+    <text class="lbl" x="-10" y="130" text-anchor="end">0</text>
+    <text class="lbl" x="-10" y="190" text-anchor="end">−1</text>
+    <line class="grid" x1="0" y1="60" x2="290" y2="60"/>
+    <line class="grid" x1="0" y1="130" x2="290" y2="130"/>
+    <line class="grid" x1="0" y1="190" x2="290" y2="190"/>
+    <!-- 4 bandas de barras (cluster 1..4), buena silhouette (~0.7) -->
+    <!-- cluster 1 (x=10..70) -->
+    <rect class="bar" x="10" y="80"  width="10" height="50"/>
+    <rect class="bar" x="22" y="82"  width="10" height="48"/>
+    <rect class="bar" x="34" y="85"  width="10" height="45"/>
+    <rect class="bar" x="46" y="88"  width="10" height="42"/>
+    <rect class="bar" x="58" y="95"  width="10" height="35"/>
+    <!-- cluster 2 (x=82..142) -->
+    <rect class="bar" x="82"  y="75"  width="10" height="55"/>
+    <rect class="bar" x="94"  y="78"  width="10" height="52"/>
+    <rect class="bar" x="106" y="82"  width="10" height="48"/>
+    <rect class="bar" x="118" y="86"  width="10" height="44"/>
+    <rect class="bar" x="130" y="92"  width="10" height="38"/>
+    <!-- cluster 3 (x=154..214) -->
+    <rect class="bar" x="154" y="78"  width="10" height="52"/>
+    <rect class="bar" x="166" y="82"  width="10" height="48"/>
+    <rect class="bar" x="178" y="86"  width="10" height="44"/>
+    <rect class="bar" x="190" y="90"  width="10" height="40"/>
+    <rect class="bar" x="202" y="98"  width="10" height="32"/>
+    <!-- cluster 4 (x=226..286) — con algún punto mal asignado (bar negativa) -->
+    <rect class="bar" x="226" y="80"  width="10" height="50"/>
+    <rect class="bar" x="238" y="84"  width="10" height="46"/>
+    <rect class="bar" x="250" y="88"  width="10" height="42"/>
+    <rect class="bar" x="262" y="92"  width="10" height="38"/>
+    <rect class="barneg" x="274" y="130" width="10" height="20"/>
+    <!-- promedio -->
+    <line class="avg" x1="0" y1="90" x2="290" y2="90"/>
+    <text class="k" x="240" y="86">promedio</text>
+    <text class="note" x="145" y="248">bandas anchas y positivas → buen clustering</text>
+  </g>
+</svg>

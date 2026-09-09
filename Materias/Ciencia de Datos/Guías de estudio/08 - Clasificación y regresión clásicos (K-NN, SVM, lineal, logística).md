@@ -87,4 +87,4 @@ flowchart LR
 
 ---
 
-<sub>⚙️ Regresión/gradient descent: *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez) y `practica_regresion_lineal.ipynb`. K-NN y SVM: preliminar (temario).</sub>
+<sub>⚙️ Regresión/gradient descent: *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez) y `practica_regresion_lineal.ipynb`. **Regresión logística en detalle: notebooks `practica_regresion_logistica_1.ipynb` y `practica_regresion_logistica_2.ipynb`** (módulo *Métodos de Clasificación*). K-NN y SVM: preliminar (temario).</sub>

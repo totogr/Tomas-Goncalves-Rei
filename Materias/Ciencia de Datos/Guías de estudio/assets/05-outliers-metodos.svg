@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" role="img" aria-label="Métodos de detección de outliers univariados y multivariados">
+  <style>
+    .bg { fill: #fff; }
+    .ttl { font: 700 16px system-ui, sans-serif; fill:#222; }
+    .stt { font: 700 13px system-ui, sans-serif; fill:#444; }
+    .lbl { font: 11.5px system-ui, sans-serif; fill:#333; }
+    .method { font: 700 12px system-ui, sans-serif; fill:#222; }
+    .desc { font: 11px system-ui, sans-serif; fill:#333; }
+    .box { stroke:#666; stroke-width:1.4; rx:6; fill:#fff; }
+    .divider { stroke:#ccc; stroke-width:1; stroke-dasharray:5,4; }
+    .b1 { fill:#e8f4ff; }
+    .b2 { fill:#f3e8ff; }
+  </style>
+  <rect class="bg" width="820" height="340"/>
+  <text class="ttl" x="20" y="24">Métodos para detectar valores atípicos (outliers)</text>
+
+  <!-- univariado -->
+  <text class="stt" x="30" y="60">🔹 Univariados (miran una variable a la vez)</text>
+  <g>
+    <rect class="box b1" x="30"  y="75" width="240" height="100"/>
+    <text class="method" x="42" y="98">IQR (Rango intercuartil)</text>
+    <text class="desc"   x="42" y="118">Fuera de Q1 − 1.5·IQR o Q3 + 1.5·IQR</text>
+    <text class="desc"   x="42" y="133">→ outliers moderados</text>
+    <text class="desc"   x="42" y="150">Fuera de Q1 − 3·IQR o Q3 + 3·IQR</text>
+    <text class="desc"   x="42" y="165">→ outliers severos</text>
+  </g>
+  <g>
+    <rect class="box b1" x="285" y="75" width="240" height="100"/>
+    <text class="method" x="297" y="98">Z-Score</text>
+    <text class="desc"   x="297" y="118">Cuántos desvíos estándar</text>
+    <text class="desc"   x="297" y="133">está el punto de la media (asume Normal)</text>
+    <text class="desc"   x="297" y="152">Regla de oro: |Z| &gt; 3</text>
+  </g>
+  <g>
+    <rect class="box b1" x="540" y="75" width="255" height="100"/>
+    <text class="method" x="552" y="98">Z-Score modificado (MAD)</text>
+    <text class="desc"   x="552" y="118">Usa mediana y MAD en vez de media/σ.</text>
+    <text class="desc"   x="552" y="133">MAD = mediana de |xi − med|, / 0.6745</text>
+    <text class="desc"   x="552" y="152">Umbral: |Z_mod| &gt; 3.5</text>
+    <text class="desc"   x="552" y="167">→ resiste a extremos ✔️</text>
+  </g>
+
+  <line class="divider" x1="20" y1="195" x2="800" y2="195"/>
+
+  <!-- multivariado -->
+  <text class="stt" x="30" y="215">🔹 Multivariados (miran combinaciones de variables)</text>
+  <g>
+    <rect class="box b2" x="30"  y="230" width="245" height="95"/>
+    <text class="method" x="42" y="253">Distancia de Mahalanobis</text>
+    <text class="desc"   x="42" y="273">Distancia al centro considerando</text>
+    <text class="desc"   x="42" y="288">correlaciones entre variables.</text>
+    <text class="desc"   x="42" y="305">Sirve para nubes elípticas.</text>
+  </g>
+  <g>
+    <rect class="box b2" x="285" y="230" width="245" height="95"/>
+    <text class="method" x="297" y="253">LOF (Local Outlier Factor)</text>
+    <text class="desc"   x="297" y="273">Compara la densidad de un punto</text>
+    <text class="desc"   x="297" y="288">con la de sus k vecinos.</text>
+    <text class="desc"   x="297" y="305">Score alto → outlier local.</text>
+  </g>
+  <g>
+    <rect class="box b2" x="540" y="230" width="255" height="95"/>
+    <text class="method" x="552" y="253">Isolation Forest</text>
+    <text class="desc"   x="552" y="273">Aísla puntos con particiones</text>
+    <text class="desc"   x="552" y="288">aleatorias. Cortos = raros.</text>
+    <text class="desc"   x="552" y="305">Método basado en árboles ✔️ escala.</text>
+  </g>
+</svg>
