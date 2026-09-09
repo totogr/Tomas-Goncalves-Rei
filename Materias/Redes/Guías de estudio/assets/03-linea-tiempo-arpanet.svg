@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 220" role="img" aria-label="Línea de tiempo ARPANET a la WWW">
+  <style>
+    .bg { fill: #fff; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .tick { stroke: #333; stroke-width: 1.5; }
+    .dot { fill: #2e6fdb; }
+    .yr { font: 700 13px system-ui, sans-serif; fill: #222; }
+    .lbl { font: 12px system-ui, sans-serif; fill: #333; }
+    .head { font: 700 15px system-ui, sans-serif; fill: #222; }
+    .sub { font: italic 12px system-ui, sans-serif; fill: #555; }
+  </style>
+  <rect class="bg" width="780" height="220"/>
+  <text class="head" x="20" y="24">Hitos de la evolución de las redes</text>
+  <text class="sub" x="20" y="42">De ARPANET a la WWW en 25 años</text>
+
+  <!-- eje -->
+  <line class="axis" x1="40" y1="130" x2="740" y2="130"/>
+
+  <!-- 6 hitos: 1966, 1972, 1975, 1979, 1980-1983, 1990, 1991 -->
+  <!-- puntos en x = 60, 170, 260, 360, 460, 580, 700 -->
+  <g>
+    <circle class="dot" cx="60"  cy="130" r="6"/>
+    <line class="tick" x1="60"  y1="130" x2="60"  y2="90"/>
+    <text class="yr" x="60"  y="82" text-anchor="middle">1966</text>
+    <text class="lbl" x="60"  y="160" text-anchor="middle">Inicio</text>
+    <text class="lbl" x="60"  y="176" text-anchor="middle">ARPANET</text>
+  </g>
+  <g>
+    <circle class="dot" cx="170" cy="130" r="6"/>
+    <line class="tick" x1="170" y1="130" x2="170" y2="90"/>
+    <text class="yr" x="170" y="82" text-anchor="middle">1972</text>
+    <text class="lbl" x="170" y="160" text-anchor="middle">Invención</text>
+    <text class="lbl" x="170" y="176" text-anchor="middle">del e-mail</text>
+  </g>
+  <g>
+    <circle class="dot" cx="280" cy="130" r="6"/>
+    <line class="tick" x1="280" y1="130" x2="280" y2="90"/>
+    <text class="yr" x="280" y="82" text-anchor="middle">1975</text>
+    <text class="lbl" x="280" y="160" text-anchor="middle">Uso real</text>
+    <text class="lbl" x="280" y="176" text-anchor="middle">de ARPANET</text>
+  </g>
+  <g>
+    <circle class="dot" cx="400" cy="130" r="6"/>
+    <line class="tick" x1="400" y1="130" x2="400" y2="90"/>
+    <text class="yr" x="400" y="82" text-anchor="middle">1979</text>
+    <text class="lbl" x="400" y="160" text-anchor="middle">Grupos de</text>
+    <text class="lbl" x="400" y="176" text-anchor="middle">Noticias</text>
+  </g>
+  <g>
+    <circle class="dot" cx="520" cy="130" r="6"/>
+    <line class="tick" x1="520" y1="130" x2="520" y2="90"/>
+    <text class="yr" x="520" y="82" text-anchor="middle">1980-83</text>
+    <text class="lbl" x="520" y="160" text-anchor="middle">Adopción</text>
+    <text class="lbl" x="520" y="176" text-anchor="middle">TCP/IP</text>
+  </g>
+  <g>
+    <circle class="dot" cx="640" cy="130" r="6"/>
+    <line class="tick" x1="640" y1="130" x2="640" y2="90"/>
+    <text class="yr" x="640" y="82" text-anchor="middle">1990</text>
+    <text class="lbl" x="640" y="160" text-anchor="middle">Apagado</text>
+    <text class="lbl" x="640" y="176" text-anchor="middle">ARPANET</text>
+  </g>
+  <g>
+    <circle class="dot" cx="740" cy="130" r="6"/>
+    <line class="tick" x1="740" y1="130" x2="740" y2="90"/>
+    <text class="yr" x="740" y="82" text-anchor="middle">1991</text>
+    <text class="lbl" x="740" y="160" text-anchor="middle">Invención</text>
+    <text class="lbl" x="740" y="176" text-anchor="middle">WWW</text>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" role="img" aria-label="Evolución de las redes: de hardware propietario a cloud/edge">
+  <style>
+    .bg { fill: #fff; }
+    .box { stroke: #333; stroke-width: 1.6; rx: 8; }
+    .b1 { fill: #f2d7c7; }
+    .b2 { fill: #ffe6b3; }
+    .b3 { fill: #d9edd3; }
+    .b4 { fill: #cfe5f5; }
+    .b5 { fill: #dfd0ea; }
+    .b6 { fill: #fbd0d0; }
+    .tit { font: 700 12.5px system-ui, sans-serif; fill: #222; text-anchor: middle; }
+    .yr { font: 700 11px system-ui, sans-serif; fill: #444; text-anchor: middle; }
+    .lbl { font: 11px system-ui, sans-serif; fill: #333; text-anchor: middle; }
+    .arrow { fill: none; stroke: #444; stroke-width: 1.8; marker-end: url(#ah); }
+    .head { font: 700 16px system-ui, sans-serif; fill: #222; }
+    .era { font: italic 12px system-ui, sans-serif; fill: #666; text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="820" height="320"/>
+  <text class="head" x="20" y="26">Del hardware propietario al software: la evolución de las redes</text>
+
+  <!-- 6 hitos -->
+  <g>
+    <rect class="box b1" x="20"  y="90" width="120" height="90"/>
+    <text class="yr"  x="80"  y="80">1970-80</text>
+    <text class="tit" x="80"  y="115">Hardware</text>
+    <text class="tit" x="80"  y="132">dedicado</text>
+    <text class="lbl" x="80"  y="152">1 caja = 1 función</text>
+    <text class="lbl" x="80"  y="168">router · switch · fw</text>
+  </g>
+  <g>
+    <rect class="box b2" x="150" y="90" width="120" height="90"/>
+    <text class="yr"  x="210" y="80">1990s</text>
+    <text class="tit" x="210" y="115">Cliente /</text>
+    <text class="tit" x="210" y="132">Servidor</text>
+    <text class="lbl" x="210" y="152">Ethernet + TCP/IP</text>
+    <text class="lbl" x="210" y="168">LAN/WAN corporativa</text>
+  </g>
+  <g>
+    <rect class="box b3" x="280" y="90" width="130" height="90"/>
+    <text class="yr"  x="345" y="80">fin 90 / 2000</text>
+    <text class="tit" x="345" y="115">Redes IP</text>
+    <text class="tit" x="345" y="132">multiservicio</text>
+    <text class="lbl" x="345" y="152">datos, voz, video,</text>
+    <text class="lbl" x="345" y="168">VPN — una infra sola</text>
+  </g>
+  <g>
+    <rect class="box b4" x="420" y="90" width="120" height="90"/>
+    <text class="yr"  x="480" y="80">década 2000</text>
+    <text class="tit" x="480" y="115">Virtualización</text>
+    <text class="tit" x="480" y="132">(VMs · DCs)</text>
+    <text class="lbl" x="480" y="152">vSwitch · VLAN</text>
+    <text class="lbl" x="480" y="168">VXLAN · vFW · vRouter</text>
+  </g>
+  <g>
+    <rect class="box b5" x="550" y="90" width="120" height="90"/>
+    <text class="yr"  x="610" y="80">2010s</text>
+    <text class="tit" x="610" y="115">SDN + NFV</text>
+    <text class="lbl" x="610" y="140">separar plano de</text>
+    <text class="lbl" x="610" y="154">control y datos —</text>
+    <text class="lbl" x="610" y="168">funciones en software</text>
+  </g>
+  <g>
+    <rect class="box b6" x="680" y="90" width="120" height="90"/>
+    <text class="yr"  x="740" y="80">hoy</text>
+    <text class="tit" x="740" y="115">Cloud + Edge</text>
+    <text class="lbl" x="740" y="138">5G · contenedores</text>
+    <text class="lbl" x="740" y="152">Kubernetes · APIs</text>
+    <text class="lbl" x="740" y="168">Cloud-Native + IA</text>
+  </g>
+
+  <!-- flechas -->
+  <path class="arrow" d="M 140 135 L 148 135"/>
+  <path class="arrow" d="M 270 135 L 278 135"/>
+  <path class="arrow" d="M 410 135 L 418 135"/>
+  <path class="arrow" d="M 540 135 L 548 135"/>
+  <path class="arrow" d="M 670 135 L 678 135"/>
+
+  <!-- eras al pie -->
+  <line x1="20" y1="220" x2="800" y2="220" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text class="era" x="140" y="245">Era of Virtual Machines</text>
+  <text class="lbl" x="140" y="262">eficiencia y aislamiento</text>
+
+  <text class="era" x="410" y="245">Era of Clouds &amp; Microservices</text>
+  <text class="lbl" x="410" y="262">infra oculta, plataforma orientada al negocio</text>
+
+  <text class="era" x="700" y="245">Era of Applications / Services</text>
+  <text class="lbl" x="700" y="262">APIs · red como plataforma</text>
+
+  <text class="head" x="410" y="300" text-anchor="middle" style="font-size:13px; fill:#333;">del hardware al software · del CapEx al OpEx · de la conectividad al servicio</text>
+</svg>

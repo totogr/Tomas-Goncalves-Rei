@@ -23,15 +23,22 @@ Antes, cada función de red era un **electrodoméstico dedicado**: una tostadora
 
 ---
 
-## 🗺️ La evolución hacia NFV
+## 🗺️ La evolución hacia NFV (línea completa)
 
-```mermaid
-flowchart LR
-    A["Purpose-built<br/>hardware dedicado<br/>1 equipo = 1 función"] --> B["Virtualización (VMs)<br/>varios SO en un servidor<br/>hipervisor (VMware, KVM)"]
-    B --> C["Nube<br/>infraestructura elástica<br/>bajo demanda (AWS, Azure)"]
-    C --> D["Contenedores<br/>ligeros y portables<br/>(Docker)"]
-    D --> E["Cloud native<br/>orquestado<br/>(Kubernetes, OpenStack)"]
-```
+![Evolución de las redes: HW dedicado → cliente-servidor → IP → virtualización → SDN/NFV → Cloud/Edge](assets/10-evolucion-redes.svg)
+
+> Cada paso es un **desacople**: primero el hardware se desacopla del proveedor único, después la aplicación se desacopla del hardware (VMs), después la infra se desacopla del cliente (cloud), y al final la **función de red** se desacopla de la caja física (NFV).
+
+### Los 8 pasos que resumen la cursada (Volpi/Giorgi/Llasat)
+
+1. **Redes basadas en HW propietario** (70-80): 1 caja física = 1 función. Redes **caras y rígidas**.
+2. **Cliente / Servidor** (90): Ethernet + TCP/IP + LAN/WAN. Las apps migran a servidores conectados por IP.
+3. **Consolidación de IP** (fin 90 - 2000): datos, voz, video y VPN sobre la **misma infra IP** (nodo de servicio multiservicio).
+4. **Virtualización de servidores** (2000): un servidor físico corre **varias VMs**. Se prueba que **hardware y función se pueden separar**.
+5. **Data Centers y redes virtuales**: aparecen **vSwitch, VLAN, VXLAN, vFirewall, vRouter, vLoad-balancer**.
+6. **Separación Control / Data Plane**: cambia la forma de administrar los paquetes.
+7. **SDN** (Software-Defined Networking): control por software, la red se **programa**.
+8. **NFV** (Network Function Virtualization): las funciones de red **dejan de ser hardware** y pasan a ser software. Habilita **SDN + NFV + Cloud + Contenedores + Kubernetes + Network Automation + Cloud-Native**.
 
 ---
 
@@ -61,6 +68,16 @@ flowchart LR
 - **Contenedor**: comparte el SO del host, solo empaqueta la app y sus dependencias → **más liviano y portable**.
 - Beneficios de virtualizar: mejor uso del hardware, aislamiento de cargas, escalabilidad simplificada.
 
+### Las tres "eras" según la cátedra
+
+| Era | Idea | Foco |
+| --- | --- | --- |
+| **Era of Virtual Machines** | Eficiencia y aislamiento a nivel SO | Aprovechar mejor el hardware |
+| **Era of Clouds & Microservices** | Infra oculta, plataformas orientadas al negocio | Servicios "listos para usar" |
+| **Era of Applications / Services** | APIs, plataformas orientadas al desarrollador | La red **es** una plataforma |
+
+> 🔑 **Nuevo paradigma:** la red deja de ser solamente **conectividad** y se convierte en una **plataforma de servicios** que genera valor para el negocio (APIs, microservicios, IA incorporada).
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -83,4 +100,4 @@ flowchart LR
 
 ---
 
-<sub>⚙️ Guía basada en la PPT 10 de la cátedra (Volpi / Giorgi / Llasat).</sub>
+<sub>⚙️ Guía basada en la PPT 10 de la cátedra (Volpi / Giorgi / Llasat, versión 2026 — "El Factor Tecnológico en la Evolución de las Redes"). Enriquecida con los 8 pasos de la línea evolutiva y las tres eras (VMs / Clouds / Apps).</sub>

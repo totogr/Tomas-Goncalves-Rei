@@ -1,7 +1,7 @@
 # 03 · Redes de datos y modelo de capas (OSI)
 
 > 🧩 **Guía de estudio para llegar a la clase con el tema masticado.**
-> Basada en la PPT 03 de la cátedra (*Redes de Datos & Modelo de Capas*) y el temario del plan de estudios.
+> Basada en la PPT 03 de la cátedra (*Redes de Datos & Modelo de Capas* — Volpi / Giorgi / Llasat, versión 2026) y el temario del plan de estudios.
 
 ---
 
@@ -63,6 +63,16 @@ flowchart TD
 
 ---
 
+## 📅 Un poquito de historia (para ponerle contexto)
+
+Antes de la red había que **mover físicamente las computadoras** para compartir datos — algo digno de tortura en los 60, con máquinas del tamaño de una heladera. En 1966 el Departamento de Defensa financia **ARPANET** (la primera red operativa), y a partir de ahí, en 25 años, se llega a la **WWW**.
+
+![Línea de tiempo desde ARPANET a la WWW](assets/03-linea-tiempo-arpanet.svg)
+
+> Fijate el salto **1983** (adopción de **TCP/IP**): a partir de ahí las redes hablan un idioma común. Ese "protocolo compartido" es lo que hace posible todo lo que viene después.
+
+---
+
 ## 📊 Conceptos clave
 
 ### Tipos de red por alcance
@@ -84,15 +94,28 @@ flowchart TD
 | 2 | **Enlace** | Entrega **nodo a nodo** en tramas, direccionamiento físico | Ethernet (IEEE 802.3), PPP, HDLC |
 | 1 | **Física** | Transmitir **bits** por el medio (voltajes, cables) | 10BASE-T, 1000BASE-SX, fibra |
 
-### OSI vs. TCP/IP
+### OSI vs. TCP/IP — el mapeo exacto
 
-| | **OSI** | **TCP/IP** |
-| --- | --- | --- |
-| Capas | 7 | 4 (Acceso a red · Internet · Transporte · Aplicación) |
-| Naturaleza | **Teórico** (modelo de referencia) | **Práctico** (el que realmente usa Internet) |
-| Para qué sirve | Entender y estudiar | Funcionar en el mundo real |
+| **OSI** | **TCP/IP** |
+| --- | --- |
+| 7 · Aplicación · 6 · Presentación · 5 · Sesión | **Aplicación** |
+| 4 · Transporte | **Transporte** |
+| 3 · Red | **Internet** |
+| 2 · Enlace · 1 · Física | **Acceso a Red** |
 
-> 🔑 **La confusión clásica:** OSI se **estudia**, TCP/IP se **usa**. Las capas 5-6-7 de OSI se juntan en la única capa "Aplicación" de TCP/IP.
+> 🔑 **La confusión clásica:** OSI se **estudia** (7 capas, modelo teórico), TCP/IP se **usa** (4 capas, el modelo real de Internet). Las **capas 5-6-7 de OSI** se juntan en la única capa **Aplicación** de TCP/IP; **capas 1-2** se juntan en **Acceso a Red**.
+
+### Protocolos típicos por capa (para ir asociando nombres)
+
+| Capa | Protocolos "clásicos" para reconocer |
+| --- | --- |
+| **7 · Aplicación** | HTTP, HTTPS, FTP, TFTP, SMTP, SNMP, DHCP |
+| **6 · Presentación** | ASCII, EBCDIC · JPEG, GIF, TIFF, PICT · MIDI, MPEG, QuickTime · TLS |
+| **5 · Sesión** | NFS, SQL, RPC, X-Window, ASP (AppleTalk), SCP (DNA) |
+| **4 · Transporte** | **TCP** (confiable — HTTP, FTP, TELNET) · **UDP** (no confiable — DNS, TFTP, SNMP, NFS) |
+| **3 · Red** | **IP**, IPX |
+| **2 · Enlace** | Ethernet (**IEEE 802.3**), Token Ring (**802.5**), HDLC, PPP |
+| **1 · Física** | 10BASE-T (10 Mbps), 100BASE-TX (100 Mbps), 1000BASE-SX (1 Gbps, **fibra**), 40GBASE-LR4 (40 Gbps, **fibra**), V.35, RS-232 |
 
 ---
 
@@ -116,4 +139,4 @@ flowchart TD
 
 ---
 
-<sub>⚙️ Guía basada en la PPT 03 de la cátedra (Volpi / Giorgi / Llasat). Si conseguís más material de esta clase, se completa o corrige acá.</sub>
+<sub>⚙️ Guía basada en la PPT 03 de la cátedra (Volpi / Giorgi / Llasat, versión 2026). Enriquecida con la línea histórica ARPANET → WWW y la tabla de protocolos por capa.</sub>
