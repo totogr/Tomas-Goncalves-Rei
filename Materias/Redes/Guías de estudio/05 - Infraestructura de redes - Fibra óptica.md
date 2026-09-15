@@ -65,11 +65,45 @@ flowchart TD
 | **FC** | Rosca, ambientes con vibración | ~0.3 dB |
 | **MPO** | **Multifibra** (12–24 fibras): 40G/100G/400G | ~0.25 dB |
 
-### Otros conceptos que aparecen
+### Nomenclatura OM / OS y OM5
 
-- **Nomenclatura OM / OS** (ANSI/TIA-568.3): **OM** = multimodo, **OS** = monomodo. **OM5** llega a 800G a futuro (multiplexación SWDM).
-- **Modulación**: **NRZ** (2 niveles = 1 bit/símbolo) vs. **PAM4** (4 niveles = 2 bits/símbolo) → duplica la tasa de datos.
-- **Flamabilidad del cable**: **Plenum (CMP)** (poco humo, para conductos de aire) vs. **Riser (CMR)** (vertical entre pisos). Existen cables **libres de halógenos** (menos humo tóxico).
+- **ANSI/TIA-568.3-D** adopta la nomenclatura de **ISO/IEC 11801**: **OM** = multimodo, **OS** = monomodo. Cada "OM" tiene un ancho de banda modal mínimo.
+- **OM5**: multimodo de última generación, pensado para **SWDM** (Shortwave WDM) — reduce la cantidad de fibras en paralelo y **escala hacia 800G**. Spec **TIA-4992-AAAE**.
+
+### Modulación: NRZ → PAM4
+
+| Modulación | Niveles | Bits/símbolo | Ejemplo |
+| --- | --- | --- | --- |
+| **NRZ** | 2 (0 y 1) | 1 | 100G LR4: 4 λ × 28 Gbaud × 1 bit = 100 Gbps |
+| **PAM4** | 4 (00, 01, 10, 11) | 2 | Duplica la tasa por λ; con SWDM llega a **400G** |
+
+> **Idea clave:** mismo cable, más información. Cambia el láser y el modulador, no la fibra.
+
+### Áreas de instalación: Riser vs. Plenum
+
+| Área | Dónde | Riesgo | Cable a usar |
+| --- | --- | --- | --- |
+| **Riser** ("la vertical") | Ductos verticales piso a piso | Menor | **CMR** — se prende pero se apaga antes de 1,5 m; más económico, un poco más de humo |
+| **Plenum** | Entre plafón y losa (con aire acondicionado, iluminación) | **Mayor**: circulación constante de aire → más oxígeno → alimenta el fuego | **CMP** — no crea llamas, muy poco humo, el forro se derrite |
+
+**Cables libres de halógenos (LSZH):** el humo de CMP/CMR puede ser tóxico por flúor, cloro, bromo, yodo (halógenos). Los LSZH reducen la cantidad de humo tóxico — obligatorios en muchos ambientes públicos.
+
+### Fibra energizada — PFCS (Powered Fiber Cable System)
+
+Cable híbrido que combina **fibras ópticas + conductores de cobre** en el mismo cable: la fibra lleva **datos**, el cobre lleva **energía DC**. Sirve para alimentar equipos remotos (cámaras, APs, small cells) hasta cientos de metros sin instalar red eléctrica separada — es el equivalente óptico de **PoE**, pero mucho más largo.
+
+### Inspección y limpieza de conectores
+
+- La **contaminación** en la cara del conector (polvo, aceite de la piel, partículas sólidas) es **uno de los problemas más frecuentes** en redes de fibra: agrega pérdida, daña la férula y puede degradar todo el enlace.
+- **Regla de oro:** *inspeccionar antes de conectar, siempre*. Se usa un **microscopio de fibra** (200×–400×) para verificar la cara pulida.
+- Estándar de aceptación: **IEC 61300-3-35** — define zonas (core, cladding, contacto, ferrule) y la cantidad/tamaño máximo de partículas y defectos por zona.
+- Limpieza: **cleanpen** de un click (solución seca) o toallitas con alcohol isopropílico + luego seco.
+
+### Instrumental de prueba y protocolo de aceptación
+
+- **Medidor de potencia óptica (OPM)** + **fuente de luz calibrada** → mide **pérdida de inserción** de un enlace punto a punto en dB.
+- **OTDR (Optical Time-Domain Reflectometer):** manda pulsos y "grafica" el enlace — detecta empalmes, curvaturas, cortes y su distancia exacta.
+- **Protocolo de aceptación** (ejemplo típico): medir la pérdida total del enlace, verificar que esté por debajo del **presupuesto óptico** (según longitud, cantidad de conectores y empalmes), documentar y firmar.
 
 ---
 
@@ -80,7 +114,10 @@ flowchart TD
 3. Ordená por calidad (pérdida de retorno): PC, UPC, APC. ¿Cuál es verde?
 4. ¿Qué ventaja tiene un conector **MPO** frente a un **LC**?
 5. ¿Qué diferencia hay entre **NRZ** y **PAM4**? ¿Cuál transmite más por símbolo?
-6. ¿Dónde usarías un cable **Plenum** y por qué?
+6. ¿Dónde usarías un cable **Plenum** y por qué la norma es más estricta ahí?
+7. ¿Qué es **PFCS** y en qué se parece a **PoE**?
+8. ¿Qué estándar define la aceptación de limpieza de un conector de FO?
+9. ¿Con qué instrumento medirías dónde está una rotura en un cable de 3 km ya tendido?
 
 ---
 
@@ -90,7 +127,11 @@ flowchart TD
 - Cómo el **pulido (PC/UPC/APC)** impacta en la **pérdida** — concepto de "pérdida de retorno / inserción".
 - El salto **NRZ → PAM4** como forma de subir la velocidad sin cambiar la fibra.
 - No memorizar todos los conectores; sí reconocer **SC, LC y MPO** y para qué sirve cada uno.
+- **Riser vs. Plenum** y el porqué de la norma más estricta en plenum (aire → oxígeno → fuego).
+- **PFCS** como "PoE en fibra" para energizar equipos remotos.
+- **Inspección + limpieza** de conectores como *root cause* típico de problemas en FO — la clase enfatiza que la mayoría de las fallas vienen por acá.
+- **OTDR vs. medidor de potencia**: uno te dice *cuánto* se pierde, el otro te dice *dónde*.
 
 ---
 
-<sub>⚙️ Guía basada en la PPT 05 de la cátedra (Volpi / Giorgi / Llasat).</sub>
+<sub>⚙️ Guía basada en la PPT 05 de la cátedra (Volpi / Giorgi / Llasat) y la ampliación de la clase #6 de la cursada 2026 (fibra óptica en profundidad: cables Plenum/Riser, PFCS, inspección IEC 61300-3-35 e instrumental de prueba).</sub>
