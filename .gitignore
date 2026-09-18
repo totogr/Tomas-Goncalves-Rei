@@ -16,6 +16,12 @@ __pycache__/
 *.class
 *.log
 
+# ─── Videos de clases (muy pesados, se guardan localmente) ──
+*.mp4
+*.mkv
+*.mov
+*.avi
+
 # ─── Configuración de IDEs / editores ──────────────────────
 .idea/
 .vs/

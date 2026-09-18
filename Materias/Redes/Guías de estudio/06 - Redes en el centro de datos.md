@@ -57,9 +57,46 @@ flowchart TD
 - Escala por potencia: **pequeños** hasta 20 MW · **medianos** 50–100 MW · **grandes** +100 MW.
 - **Tiers (Uptime Institute)**: clasifican la **disponibilidad/redundancia** del DC (a mayor Tier, más redundancia y menos tiempo de caída tolerado).
 
+### Tiers en detalle
+
+| Tier | Título | Redundancia | Paradas planificadas | Tolerancia a fallas |
+| --- | --- | --- | --- | --- |
+| **Tier I** | Capacidades básicas | Ninguna | Requiere parar todo el sitio | Cualquier falla afecta el servicio |
+| **Tier II** | Componentes redundantes | UPS y generador redundantes (N+1) | Requiere parar todo el sitio | Fallas de distribución afectan el servicio |
+| **Tier III** | Mantenimiento simultáneo | **Múltiples vías** (una activa, otra alterna) | **No** interrumpen operaciones | Sigue expuesto a fallas de equipo o error humano |
+| **Tier IV** | Tolerante a fallas | Todo duplicado y activo-activo | **No** interrumpen operaciones | Una falla individual no afecta la operación |
+
+**Componentes eléctricos típicos:**
+
+- **Tier II:** UPS redundante N+1, generador redundante, sistema **EPO** (Emergency Power Off), refrigeración/humedad 24/7.
+- **Tier III:** N+1 en generador, UPS y distribución. **Dos vías** (activa + alterna), puesta a tierra y protección contra rayos, sistema de control y monitoreo, **combustible para 72 h**.
+
+Además del cableado, un Tier III/IV pide: acceso controlado, muros exteriores sin ventanas, **CCTV perimetral**, y **dos proveedores de telecomunicaciones** con cuartos de entrada separados.
+
 ### Cómo se cablea un DC moderno: arquitectura spine-leaf
 
 ![Spine-leaf: 4 spines y 5 leaves, cada leaf con todos los spines, servidores debajo](assets/06-spine-leaf-dc.svg)
+
+**Ejemplo típico (100G / topología spine-leaf):**
+
+- **Switch Core L3** → **switches spine** → **switches leaf** → **switch ToR** (Top-of-Rack) → servidores.
+- Enlaces **spine ↔ leaf** con transceivers **100Gb SR-4** (multimodo, corto alcance).
+- **ToR ↔ servidor** con **4 × 25 Gb SR** por *break-out* de un puerto 100G en 4 de 25G.
+
+### Transceivers ópticos: SFP y familia
+
+Los switches del DC no traen la óptica soldada: se les enchufa un módulo intercambiable (**pluggable**) según la velocidad y el alcance.
+
+| Módulo | Velocidad típica | Uso |
+| --- | --- | --- |
+| **SFP** | 1 G | Legado / cobre |
+| **SFP+** | 10 G | Server-to-ToR |
+| **SFP28** | 25 G | Server-to-ToR moderno |
+| **QSFP+** | 40 G (4 × 10 G) | Spine-leaf de generación anterior |
+| **QSFP28** | 100 G (4 × 25 G) | Spine-leaf actual |
+| **QSFP-DD / OSFP** | 400–800 G | Hyperscalers |
+
+**Sufijos comunes:** `SR` = short reach (multimodo, ~100 m), `LR` = long reach (monomodo, hasta 10 km), `ER/ZR` = extended (40–80 km).
 
 ---
 
@@ -69,7 +106,11 @@ flowchart TD
 2. ¿Para qué sirve un DC **Edge** y qué ventaja da estar "cerca del usuario"?
 3. ¿Qué estándar rige el cableado de un DC en América? ¿Y en Europa?
 4. ¿Qué mide la clasificación **Tier** del Uptime Institute?
-5. ¿Por qué un DC tiene **dos caminos** (A y B) y acometidas de distintos proveedores?
+5. ¿Cuál es la diferencia principal entre **Tier III** y **Tier IV**?
+6. ¿Por qué un Tier III pide **combustible para 72 h**?
+7. ¿Qué es un **SFP** y por qué los DC usan transceivers *pluggables* en vez de óptica fija?
+8. En una topología **spine-leaf**, ¿por qué cada leaf se conecta a todos los spines?
+9. ¿Qué significa **100Gb SR-4** vs **100Gb LR-4**?
 
 ---
 
@@ -77,9 +118,10 @@ flowchart TD
 
 - Los **4 tipos de DC** y saber ubicar ejemplos reales en cada uno.
 - Que el diseño físico (**energía + refrigeración + redundancia**) es tan importante como la red.
-- El concepto de **Tier** como medida de confiabilidad.
+- La progresión **Tier I → II → III → IV**: qué se agrega en cada nivel (redundancia, mantenimiento sin parar, tolerancia a fallas).
 - Cómo se conectan acá **fibra y cobre** de las clases anteriores.
+- **Spine-leaf** con transceivers **SFP/QSFP** — arquitectura y notación típica (SR, LR, break-out 4×25G).
 
 ---
 
-<sub>⚙️ Guía basada en la PPT 06 de la cátedra (Volpi / Giorgi / Llasat).</sub>
+<sub>⚙️ Guía basada en la PPT 06 de la cátedra (Volpi / Giorgi / Llasat) y en la ampliación de la clase #7 de la cursada 2026 (Tiers I–IV detallados, componentes eléctricos, SFP/QSFP y ejemplo 100G spine-leaf).</sub>
