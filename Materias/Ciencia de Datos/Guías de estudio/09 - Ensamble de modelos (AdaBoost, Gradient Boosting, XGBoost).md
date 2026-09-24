@@ -138,17 +138,49 @@ Los "ensambles homogéneos" (Bagging, Boosting) combinan **el mismo tipo** de cl
 
 ### Voting
 
-- Entrenar N modelos distintos sobre los mismos datos y quedarse con la **predicción mayoritaria**.
-- Si los modelos devuelven probabilidades, se puede hacer *voting ponderado* (más peso al más seguro).
-- Simple y efectivo, es el punto de partida.
+Construir **N modelos distintos** con los mismos datos y quedarse con la **predicción mayoritaria**.
+
+En scikit-learn, `VotingClassifier` tiene dos hiperparámetros clave:
+
+- **`estimators`**: lista de clasificadores nombrados (ej. `[('rf', RandomForestClassifier()), ('svm', SVC(probability=True)), ('knn', KNeighborsClassifier())]`).
+- **`voting`**: cómo se combinan las predicciones — dos modos:
+
+| Modo | Cómo decide | Requiere |
+| --- | --- | --- |
+| **`hard`** | Voto por **regla de mayoría** sobre las etiquetas predichas | Nada especial |
+| **`soft`** | Suma las **probabilidades** de cada clase entre modelos y elige el argmax → **voto ponderado por confianza** | Que cada modelo implemente `predict_proba` (en SVM hay que setear `probability=True`) |
+
+> 🔑 **Soft > hard cuando los modelos dan probabilidades bien calibradas**: un modelo muy seguro pesa más que uno dudoso. Con clasificadores binarios y modelos poco calibrados, hard alcanza.
+
+Simple y efectivo, es el punto de partida obligado antes de Stacking.
 
 ### Stacking
 
-- Entrenar N modelos base + **un modelo meta** que aprende a combinarlos.
-- El meta-modelo recibe como entrada las predicciones (o probabilidades) de los base y decide la salida final.
-- Usualmente el meta es simple: árbol, Naive Bayes, SVM o perceptrón.
-- Se pueden apilar varias capas.
-- ⚠️ Difícil de analizar teóricamente ("caja negra"); más útil cuando los base dan **medidas de certeza**.
+Reemplaza el mecanismo de voto por **meta-aprendizaje**: en vez de sumar/promediar, un **modelo extra ("meta")** aprende a decidir a partir de las predicciones de los modelos base.
+
+**Cómo funciona:**
+
+1. Entrenar N **modelos base** distintos (ej. Random Forest, SVM, KNN).
+2. Con las **predicciones (o probabilidades)** de los base, construir un nuevo dataset.
+3. Entrenar un **modelo meta** sobre ese dataset nuevo — decide la etiqueta final.
+4. Se pueden apilar varias capas (predicción del meta se pasa a otro meta, etc.).
+
+**Cómo se compara con los modelos individuales en la práctica** (patrón típico de la cátedra):
+
+- Se usa una estrategia de **cross-validation de 5 folds repetida 2 veces** → 10 puntajes por modelo.
+- Cada modelo se entrena en el 80% y valida en el 20%, rotando los folds.
+- Se guarda la distribución de scores en un diccionario y se compara **modelos base vs ensamble** (boxplot típico).
+
+Usualmente el meta es simple: **árbol, Naive Bayes, SVM o perceptrón**.
+
+> ⚠️ Difícil de analizar teóricamente ("caja negra"). Más útil cuando los modelos base **dan medidas de certeza** (probabilidades), no solo etiquetas duras.
+
+### Ensembles homogéneos vs heterogéneos
+
+| Tipo | Qué combina | Ejemplos |
+| --- | --- | --- |
+| **Homogéneo** | El **mismo tipo** de clasificador entrenado N veces con datos/setup distintos | Random Forest (árboles), AdaBoost (stumps), XGBoost |
+| **Heterogéneo (híbrido)** | **Distintos tipos** de clasificadores combinados | Voting (RF + SVM + KNN), Stacking, Cascading |
 
 ### Cascading
 
@@ -175,7 +207,10 @@ Los "ensambles homogéneos" (Bagging, Boosting) combinan **el mismo tipo** de cl
 7. ¿Qué mide el **Similarity Score** en XGBoost y qué rol cumple **λ**?
 8. ¿Por qué XGBoost es más rápido que Gradient Boosting "clásico"?
 9. Diferenciá **Voting**, **Stacking** y **Cascading** con un ejemplo de cada uno.
-10. ¿Bagging reduce **sesgo o varianza**? ¿Y boosting? ¿Y por qué?
+10. En **Voting**, ¿qué diferencia hay entre **hard** y **soft**? ¿Cuándo elegís uno u otro?
+11. ¿Qué diferencia hay entre un ensamble **homogéneo** y uno **heterogéneo**? Dame un ejemplo de cada uno.
+12. En Stacking, ¿qué recibe como entrada el **modelo meta**? ¿Por qué es útil hacerlo con probabilidades y no con etiquetas duras?
+13. ¿Bagging reduce **sesgo o varianza**? ¿Y boosting? ¿Y por qué?
 
 ---
 
@@ -190,4 +225,4 @@ Los "ensambles homogéneos" (Bagging, Boosting) combinan **el mismo tipo** de cl
 
 ---
 
-<sub>⚙️ Guía basada en las PPTs *Ensambles de modelos* (Introducción, AdaBoost, Gradient Boost, XGBoost, Ensambles híbridos) de la cátedra (Rodríguez).</sub>
+<sub>⚙️ Guía basada en las PPTs *Ensambles de modelos* (Introducción, AdaBoost, Gradient Boost, XGBoost, Ensambles híbridos) de la cátedra (Rodríguez) y en los notebooks `practica_ensambles_random_forest.ipynb`, `practica_ensambles_boosting.ipynb` y `practica_ensambles_stacking_voting.ipynb` (patrón de evaluación con `RepeatedStratifiedKFold` 5×2 y comparación modelos base vs ensamble).</sub>
