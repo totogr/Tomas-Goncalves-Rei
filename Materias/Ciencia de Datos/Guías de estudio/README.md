@@ -15,7 +15,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 07 | [Reducción de la dimensionalidad](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) | 🟡 |
 | 08 | [Clasificación y regresión clásicos (K-NN, SVM, lineal, logística)](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) | ✅ |
 | 09 | [Ensamble de modelos (AdaBoost, Gradient Boosting, XGBoost)](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) | ✅ |
-| 10 | [Redes neuronales (perceptrón, MLP, backprop, SOM)](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | 🟡 |
+| 10 | [Redes neuronales (perceptrón, MLP, backprop, SOM)](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | ✅ |
 | 11 | [Procesamiento de lenguaje natural](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) | 🟡 |
 | 12 | [Introducción al aprendizaje profundo](12%20-%20Introducci%C3%B3n%20al%20aprendizaje%20profundo.md) | 🟡 |
 | 13 | [Métodos de agrupamiento (Clustering — K-Means)](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) | ✅ |

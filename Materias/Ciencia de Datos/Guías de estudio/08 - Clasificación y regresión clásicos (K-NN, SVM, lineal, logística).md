@@ -107,34 +107,65 @@ flowchart LR
 
 Cuando se usa como regresor, los **valores atípicos** de la variable objetivo distorsionan mucho el promedio. Estrategia típica: filtrar outliers con la **regla 1.5 × IQR** (todo lo que esté a más de 1.5 veces el rango entre cuartiles se descarta) antes de entrenar.
 
+### Dos sensibilidades que tenés que grabar
+
+- **Conjuntos desbalanceados:** si una clase es minoritaria (3 rojos vs 6 azules entre K=9 vecinos), el voto mayoritario la aplasta y KNN la clasifica mal. Usar `weights='distance'` o balancear antes.
+- **Outliers:** con K chico, un outlier en la vecindad "contamina" el voto (si K=3 y los 3 vecinos son rojos pero son outliers, el punto nuevo pasa a ser rojo erróneamente). Subir K o filtrar outliers antes.
+
 ---
 
 ## 🎯 SVM en detalle (Support Vector Machines)
 
 **Idea.** Encontrar el **hiperplano** (línea en 2D, plano en 3D, hiperplano en Rⁿ) que separa las clases dejando **el mayor margen posible** a los puntos más cercanos.
 
+### Los tres niveles — MMC → SVC → SVM
+
+La cátedra te lo cuenta como una **escalera de clasificadores**:
+
+| Nivel | Qué hace | Problema que resuelve |
+| --- | --- | --- |
+| **1. Maximal Margin Classifier (MMC)** | Umbral en el punto medio entre las dos observaciones más cercanas de cada clase → margen máximo | **Solo** sirve si los datos son linealmente separables **sin outliers** |
+| **2. Soft Margin Classifier (SVC)** | Permite **cierta clasificación errónea** dentro del margen → más robusto a outliers | Datos "casi" separables, con algunos puntos conflictivos |
+| **3. Support Vector Machine (SVM)** | SVC + **kernel** que lleva los datos a mayor dimensión | Problemas **no separables linealmente** |
+
+**MMC es super sensible a outliers**: un solo punto raro empuja todo el umbral y arruina la clasificación. El SVC "relaja" eso permitiendo errores dentro de un **soft margin**, y SVM además agrega el truco del kernel.
+
+### Trade-off bias/varianza del umbral
+
+| Umbral | Resultado |
+| --- | --- |
+| **Muy sensible al train** | Low bias / **high variance** → overfit, no generaliza bien |
+| **Poco sensible al train** | Higher bias / **low variance** → generaliza mejor, aunque algún error en train |
+
+Esto es exactamente la misma idea que viste en ensambles (clase 09) — **el soft margin es la herramienta de regularización de SVM**.
+
 ### Los conceptos clave
 
 - **Hiperplano de decisión:** la frontera que separa las clases.
-- **Margen:** el "colchón" entre el hiperplano y los puntos más cercanos de cada clase. **Más margen = más confianza** en la predicción.
-- **Vectores de soporte:** los pocos puntos que **tocan el margen** — son los únicos que definen dónde va el hiperplano. Si cambiás los demás puntos, el modelo no cambia.
-- **Soft margin:** SVM permite **cierta clasificación errónea** durante el entrenamiento para no dejarse dominar por outliers. Cuánta se permite lo controla el parámetro **C**.
+- **Margen:** el "colchón" entre el hiperplano y los puntos más cercanos. **Más margen = más confianza** en la predicción.
+- **Vectores de soporte:** los pocos puntos que **tocan el margen** o están dentro de él — son los únicos que definen dónde va el hiperplano. Si cambiás los demás puntos, el modelo no cambia.
+- **Soft margin:** la banda donde SVM permite clasificación errónea. Cuánta tolera lo decide el algoritmo por **validación cruzada**.
 
-### El truco del kernel — separar lo no separable
+### El truco del kernel — separar lo no separable (XOR)
 
-Si los datos **no son linealmente separables** en el espacio original, SVM los **mapea a un espacio de mayor dimensión** donde sí lo son.
+El ejemplo canónico de "no separable linealmente" es el **XOR**: cuatro puntos en las esquinas de un cuadrado donde las diagonales son la misma clase. **Ninguna línea** los separa en 2D. Pero si proyectás a 3D con una función adecuada, aparecen separables por un plano.
 
 - No se calcula la transformación explícita — se usa el **producto interno** de los puntos en el espacio aumentado (mucho más barato computacionalmente).
 - La función que hace esa transformación es el **kernel**.
+- Esto es el famoso **"kernel trick"**: evita toda la matemática de transformar realmente el espacio.
 
 ### Kernels y sus hiperparámetros
 
-| Kernel | Cuándo usarlo | Hiperparámetros |
-| --- | --- | --- |
-| **Lineal** | Datos linealmente separables o con muchos features (texto, alta dimensión) | **C** |
-| **Polinómico** (`poly`) | Fronteras curvas | **C**, **degree** (grado), **gamma**, **coef0** |
-| **Radial / RBF** (`rbf`) | Default para no linealidad. El más usado | **C**, **gamma** |
-| **Sigmoide** | Casos específicos, redes neuronales chiquitas | **C**, **gamma**, **coef0** |
+| Kernel | Cómo "transforma" | Cuándo usarlo | Hiperparámetros |
+| --- | --- | --- | --- |
+| **Lineal** | Sin transformación | Datos linealmente separables o con muchos features (texto, alta dimensión) | **C** |
+| **Polinómico** (`poly`) | Agrega dimensiones elevando a potencias (`x`, `x²`, `x³`, …) | Fronteras curvas | **C**, **degree** (grado), **gamma**, **coef0** |
+| **Radial / RBF** (`rbf`) | Infinitas dimensiones — funciona **como un KNN ponderado**: los puntos cercanos influyen más | Default para no linealidad. El más usado | **C**, **gamma** |
+| **Sigmoide** | Transformación tipo tanh | Casos específicos, redes neuronales chiquitas | **C**, **gamma**, **coef0** |
+
+> 💡 **Intuición RBF ≈ KNN ponderado:** cuando el kernel es radial, SVM se parece a un "KNN inteligente": las observaciones cercanas definen la clasificación, pero el aporte de cada vecina **cae con la distancia** (y eso lo controla **gamma**).
+
+> 💡 **Polinómico paso a paso:** con `d=1` queda igual al lineal; con `d=2` el algoritmo computa `x²` como nueva dimensión y busca el separador allí; con `d=3` agrega `x³`, etc. Cross-validation elige el `d` óptimo.
 
 ### Los dos hiperparámetros críticos: C y gamma
 
