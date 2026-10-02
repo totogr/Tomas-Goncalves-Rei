@@ -98,7 +98,15 @@ Un atributo continuo A se convierte en un booleano `A < C` (dinámicamente):
 3. Si al eliminarlo el **error de clasificación** sobre el conjunto de test **no aumenta**, se lo elimina.
 4. Se repite hasta no poder podar más.
 
-$$\text{Error} = \frac{\text{casos bien clasificados}}{\text{casos totales}}$$
+$$\text{Error} = \frac{\text{casos mal clasificados}}{\text{casos totales}}$$
+
+> La idea: el árbol completo suele estar **sobreajustado** al train. Si sacar un nodo de abajo no empeora el resultado en test, ese nodo solo estaba aprendiendo ruido → se poda y se sigue con el nodo de arriba; si empeora, se deja y se prueba con el de al lado.
+
+### Datos faltantes y numéricos — detalles de clase
+
+- **Faltantes:** se marcan con un carácter especial (ej. `?`) y **no se usan** en el cálculo de entropía/ganancia (o de Gini). Consecuencia: los totales de cada atributo pueden no coincidir.
+- ⚠️ Un atributo que parece clasificar **perfecto** pero tiene **muchos nulos** no es necesariamente el mejor: solo clasifica bien los pocos casos que tiene completos.
+- **Numéricos:** además de partir en dos con un umbral C, se puede pedir (como hiperparámetro) partir en **n rangos**. Qué significa cada rango (alto/bajo, frío/caliente) lo interpreta el científico de datos.
 
 ### Random Forest: bagging + attribute bagging
 
@@ -117,6 +125,23 @@ $$\text{Error} = \frac{\text{casos bien clasificados}}{\text{casos totales}}$$
 
 ![Random Forest: cada árbol se entrena con un subset y se vota el resultado](assets/06-random-forest.svg)
 
+### Por qué funciona y cuándo no
+
+- **"Muchos estimadores mediocres promediados pueden ser muy buenos."** Cada árbol ve solo una parte de las filas y columnas, así que **solo** es un mal clasificador; pero cada uno se equivoca en cosas distintas, y la votación de todos acierta. Es la **sabiduría de las multitudes** (ver guía 09).
+- Un árbol solo **no escala bien** a datasets enormes; muchos árboles chicos sí.
+- 🚫 **Cuándo no aplica:** si hay **un atributo predictor muy fuerte** (como *piel* en el ejemplo de animales, que solo ya define la clase), **todos los árboles lo eligen como raíz** y salen casi iguales → votar entre árboles iguales no suma nada. En ese caso alcanza con un árbol común.
+
+---
+
+## 🎯 Remarcado en clase (teórica 15/09)
+
+- **ID3** = *Iterative Dichotomiser 3* (Ross Quinlan). El "3" no es una versión: es un juego de palabras con *tree*.
+- **Entropía de Shannon:** 0 si la muestra es homogénea; con 2 clases la máxima es **1** (50/50). Un dado justo tiene entropía log₂6 ≈ **2.58**.
+- **Gini vs. entropía:** son **equivalentes** (deberían armar árboles muy parecidos). Scikit-learn usa **Gini por defecto** porque es **más barata de calcular**; la ganancia de información tiene un fundamento teórico más sólido. Se elige con el hiperparámetro `criterion`.
+- En el ejemplo de animales, **piel** tiene la mayor ganancia (≈ 1.56) y además clasifica perfecto → las tres ramas terminan directamente en hojas (pelo → mamífero, plumas → ave, escamas → reptil).
+- En el ejemplo *Heart Disease*, gana como raíz el atributo con **menor Gini ponderada** (el promedio de la Gini de sus hojas, pesado por la cantidad de casos de cada una).
+- Los árboles de **scikit-learn** implementan **CART** (árboles binarios, Gini por defecto), que toma las mismas ideas de C4.5: manejo de numéricos con umbrales y control del sobreajuste.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -132,6 +157,10 @@ $$\text{Error} = \frac{\text{casos bien clasificados}}{\text{casos totales}}$$
 9. ¿Qué es el **attribute bagging** y por qué es clave en Random Forest?
 10. ¿Cómo se combina la predicción de los k árboles del bosque?
 11. ¿Por qué los árboles **no** necesitan normalización de datos?
+12. ¿Por qué scikit-learn usa **Gini** por defecto y no entropía?
+13. ¿En qué caso **Random Forest no aporta** frente a un solo árbol?
+14. ¿Cómo maneja C4.5 los **valores faltantes**? ¿Qué cuidado hay que tener con un atributo con muchos nulos?
+15. Explicá la **poda** de C4.5: ¿en qué orden recorre el árbol y con qué criterio saca un nodo?
 
 ---
 

@@ -22,6 +22,8 @@ Es donde el ML "pega el salto" en precisión. Extiende la idea de **Random Fores
 - **Bagging** (Random Forest) = pedirle la opinión a **un jurado grande y diverso** y **votar**: cada uno se equivoca en cosas distintas, y el promedio acierta.
 - **Boosting** (AdaBoost, Gradient Boosting) = un **equipo de alumnos en fila**: cada uno se concentra en **corregir los errores que dejó el anterior**. El resultado final es la suma de todos, cada vez más afinado.
 
+> 🟢 **La sabiduría de las multitudes (la anécdota de clase).** En 1906 **Francis Galton** quiso demostrar que la gente común estima mal: en una feria, cada visitante escribió en un papel cuánto creía que pesaba una vaca. Esperaba que solo los expertos acertaran, pero **el promedio de todas las estimaciones** quedó muy cerca del peso real. Es la base de los ensambles: **muchos estimadores mediocres, combinados, pueden ser muy buenos** — siempre que se equivoquen en cosas **distintas** (por eso cada modelo se entrena con datos diferentes).
+
 ---
 
 ## 🗺️ Bagging vs. Boosting
@@ -53,6 +55,17 @@ flowchart TD
 - **Bias (sesgo):** diferencia entre lo que predice el modelo en promedio y la realidad. Sesgo alto = modelo **demasiado simple** → *underfitting*.
 - **Varianza:** cuánto cambia la predicción si le cambiás un poco los datos de entrenamiento. Varianza alta = modelo **demasiado sensible** → *overfitting*.
 - Un modelo ideal tiene **bajo bias y baja varianza**, pero suele haber tradeoff. **Bagging** apunta a bajar varianza; **boosting**, a bajar bias.
+
+### Bagging: ventajas y límites (teórica 15/09)
+
+- **Disminuye la varianza** del modelo final aunque cada árbol individual tenga varianza alta → útil cuando los datos están muy dispersos y para reducir el overfitting.
+- **Robusto a outliers:** como cada modelo ve un subconjunto distinto, un outlier no aparece en todos y pesa poco en la votación.
+- **Voto ponderado:** si los modelos además de la clase dan un **nivel de confianza** ("clase A con 90%"), votar ponderando por esa confianza suele mejorar el resultado.
+- **Límite:** si hay **pocos atributos que son predictores muy fuertes**, todos los árboles se parecen (eligen la misma raíz) y el ensamble no aporta.
+
+### Boosting: cómo pondera los errores
+
+En cada iteración se entrena con **todos los datos**, pero dando **más importancia a los mal clasificados** por los modelos anteriores — por ejemplo **duplicando** esas instancias o **ponderándolas**. Se corta tras un número de iteraciones o al alcanzar la métrica buscada, y en producción la predicción es una **votación ponderada** de todos los modelos. La técnica no está limitada a árboles, aunque los casos de éxito (AdaBoost, Gradient Boosting, XGBoost) usan árboles.
 
 ### Boosting visualmente
 
@@ -127,6 +140,8 @@ $$\text{Similarity} = \frac{(\sum \text{residuos})^2}{\#\text{residuos} + \lambd
 **2. Ingeniería.** XGBoost está pensado para *Big Data*: implementación en C++, paralelización por atributo, aprovechamiento de GPU, manejo eficiente de datos dispersos y valores faltantes.
 
 **Regularización.** Además de λ, XGBoost añade un término que penaliza la cantidad de hojas del árbol (α). Esta doble regularización + tuning fino de hiperparámetros es lo que lo hace ganador en competencias con datos tabulares.
+
+**XGBoost vs. Random Forest.** XGBoost **superó a Random Forest** en desempeño en la mayoría de los problemas tabulares y su biblioteca está muy optimizada (incluso usa GPU). A cambio, es **más costoso** de entrenar y **puede sobreajustar** si el conjunto es muy complejo o no se regulariza bien.
 
 **Cuándo elegirlo.** Datos tabulares medianos-grandes, feature engineering ya trabajado, meta = **máxima métrica**. Para datasets chicos, un Random Forest o Gradient Boosting simple puede alcanzar sin la complejidad de tuneo.
 
@@ -211,6 +226,9 @@ Usualmente el meta es simple: **árbol, Naive Bayes, SVM o perceptrón**.
 11. ¿Qué diferencia hay entre un ensamble **homogéneo** y uno **heterogéneo**? Dame un ejemplo de cada uno.
 12. En Stacking, ¿qué recibe como entrada el **modelo meta**? ¿Por qué es útil hacerlo con probabilidades y no con etiquetas duras?
 13. ¿Bagging reduce **sesgo o varianza**? ¿Y boosting? ¿Y por qué?
+14. Contá la anécdota de **Galton y la vaca**: ¿qué idea de los ensambles ilustra y qué condición hace falta para que funcione?
+15. ¿Por qué los ensambles de bagging toleran mejor los **outliers**?
+16. ¿Qué gana y qué pierde **XGBoost** frente a **Random Forest**?
 
 ---
 

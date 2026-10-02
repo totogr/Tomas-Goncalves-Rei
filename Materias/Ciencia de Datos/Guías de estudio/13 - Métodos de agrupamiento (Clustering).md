@@ -101,6 +101,29 @@ Antes de correr K-Means podés preguntarte: *¿estos datos **realmente** tienen 
 
 > 🔑 Hopkins **antes**, elbow o silhouette **durante**. No corras K-Means a ciegas si Hopkins dice que no hay estructura.
 
+**Cómo se calcula (idea de clase):**
+1. Tomar una muestra de *n* puntos **reales** y, para cada uno, medir la distancia a su **vecino real más cercano** → `xᵢ`.
+2. Generar *n* puntos **artificiales** con distribución **uniforme** dentro del mismo rango de cada variable, y medir la distancia de cada uno al **punto real más cercano** → `yᵢ`.
+3. $H = \dfrac{\sum y_i}{\sum x_i + \sum y_i}$
+
+Si los datos reales están **agrupados**, sus vecinos están muy cerca (los `xᵢ` son chicos) mientras que los puntos al azar caen lejos (los `yᵢ` son grandes) → **H se acerca a 1**. Si los datos reales también están desparramados al azar, ambas sumas se parecen → **H ≈ 0.5**.
+
+Se plantea como **test de hipótesis**: H₀ = "los datos están distribuidos uniformemente (no hay clusters)". Con **H > 0.75** se rechaza H₀ con un **90% de confianza** → hay tendencia significativa a agruparse.
+
+> ⚠️ No es "meterle ruido a los datos": es **generar un conjunto nuevo**, uniforme, del mismo tamaño y rango, y comparar distancias.
+
+### ¿Cuándo uso cada técnica?
+
+> 🔴 **Pregunta de examen** (el profe lo marcó así): regla del codo, silhouette y Hopkins.
+
+| Técnica | Pregunta que responde | Costo |
+| --- | --- | --- |
+| **Hopkins** | ¿Hay clusters? (¿vale la pena hacer clustering?) | — |
+| **Codo** | ¿Cuántos clusters? | **Bajo**: más fácil y rápido de calcular |
+| **Silhouette** | ¿Cuántos clusters? y ¿qué puntos quedaron mal asignados? | **Alto**: más cálculos, pero suele ser más acertado |
+
+Orden recomendado: **Hopkins → (codo o silhouette)**. En el *silhouette plot* cada barra es un punto; las barras **negativas** son puntos mal asignados (o outliers). Se compara el gráfico para distintos K y se elige el que deja menos puntos mal asignados.
+
 ### Validación externa (cuando tenés labels reales)
 
 Si por casualidad conocés las etiquetas verdaderas (ej: dataset iris), podés comparar los clusters de K-Means con esas etiquetas usando **ARI (Adjusted Rand Index)** o similares.
@@ -129,6 +152,10 @@ Resultado: imagen con solo 16 colores, muchísimo más liviana, todavía reconoc
 6. Si el estadístico de **Hopkins da 0.5**, ¿tiene sentido hacer K-Means?
 7. ¿Por qué K-Means falla con nubes en **forma de luna** y qué se usaría en su lugar?
 8. ¿Hay que **normalizar** antes de K-Means? ¿Por qué?
+9. 🔴 Explicá qué responde cada técnica: **Hopkins**, **codo** y **silhouette**. ¿En qué orden las usarías?
+10. ¿Cómo se construye el conjunto artificial en Hopkins y por qué H ≈ 1 indica clusters?
+11. ¿Por qué K-Means necesita **variables numéricas**? (pista: distancia euclídea a los centroides)
+12. Si corrés K-Means sobre Iris con K=3, ¿tiene que coincidir con las 3 especies? ¿Quién interpreta qué significa cada cluster?
 
 ---
 
@@ -138,6 +165,8 @@ Resultado: imagen con solo 16 colores, muchísimo más liviana, todavía reconoc
 - La **sensibilidad a la inicialización** y el uso de `n_init` / `k-means++`.
 - El **método del codo** vs. **silhouette** — no son excluyentes, se usan juntos.
 - **Hopkins** como paso 0 (antes de correr el clustering).
+- 🔴 En la teórica del 25/08 el profe dijo explícitamente que **codo, silhouette y Hopkins son pregunta de examen**.
+- Los clusters que encuentra K-Means **no traen significado**: interpretarlos es trabajo del científico de datos (en Iris, K-Means con K=3 no reproduce exactamente las especies).
 - Que K-Means es **solo un algoritmo** de clustering — hay muchos más (DBSCAN, jerárquico, spectral, GMM).
 - El notebook `practica_clustering.ipynb` cierra con el **caso de compresión de imágenes**, un ejemplo muy vistoso.
 

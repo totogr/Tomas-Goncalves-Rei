@@ -86,6 +86,51 @@ También se distinguen por su rol:
 
 ---
 
+## 🎯 Remarcado en clase (teóricas 25/08 y 01/09)
+
+> 🟠 El profe dijo que estos conceptos son **fundamentales** y que hay que **dominarlos bien**: tipos de problema, supervisado vs. no supervisado, y cómo se entrena y evalúa un modelo.
+
+### Supervisado vs. no supervisado
+
+| | Supervisado | No supervisado |
+| --- | --- | --- |
+| **Dataset** | **Etiquetado**: cada fila trae la salida esperada (la "etiqueta") | Sin etiqueta |
+| **Problemas** | **Clasificación** y **regresión** | **Clustering**, reducción de dimensionalidad, asociación |
+| **Modelos de la materia** | Regresión lineal/logística, árboles, KNN, SVM, ensambles, MLP | K-Means, redes SOM, PCA |
+| **Métricas** | Claras (precisión, recall, MSE…) — se necesitan para entrenar y comparar | Dependen del problema |
+
+**En clasificación las clases son finitas y conocidas de antemano.** El modelo solo puede devolver clases con las que se entrenó: si entrenaste MNIST con los dígitos 0–9, un garabato o una letra **igual va a salir como algún dígito**. Para detectar "no es un dígito" habría que sumar esa clase y entrenarla con ejemplos.
+
+### ¿De dónde vienen los modelos?
+
+| Origen | Ejemplos |
+| --- | --- |
+| **Matemática previa a la computación** (cálculos a mano, algunos de los siglos XVIII–XIX) | Regresión lineal (mínimos cuadrados, Gauss 1805), análisis discriminante, PCA |
+| **Mezcla de matemática e informática** | ID3, K-Means, Naive Bayes |
+| **Propios de la informática** | Redes neuronales, SVM |
+
+> 🟢 El dataset **Iris** (Ronald Fisher, 1936) es de la era pre-informática y viene precargado en casi todas las bibliotecas; **MNIST** (dígitos manuscritos de 28×28 píxeles en escala de grises) es el otro dataset "de prueba" que se repite en toda la materia.
+
+### ¿Qué hago con un outlier?
+
+Antes de borrarlo, tres preguntas:
+1. **¿Es genuino o un error?** Un error de carga (una persona de 18 m por una coma olvidada) o una **combinación imposible** (1,80 m de altura con 2 años de edad) se corrige o se saca. Un caso **real pero excepcional** (alguien que gana muchísimo) es genuino.
+2. **¿Me interesa?** Si quiero predecir el caso general, puedo sacarlo del entrenamiento aunque sea genuino. Pero a veces **el outlier es justo lo que busco**: un **fraude** es casi un outlier entre millones de transacciones.
+3. **¿Mi modelo lo tolera?** Hay modelos muy sensibles (KNN, el clasificador de margen máximo de SVM) y otros que los toleran mejor (los ensambles de bagging).
+
+### Variables: cómo conviene representarlas
+
+- Que una variable **nominal** se codifique con números (Argentina = 1, Uruguay = 2) **no la vuelve cuantitativa**: no tiene sentido sumar ni promediar esos números.
+- Una variable que en el fondo es discreta (el tiempo medido en milisegundos) se puede **modelar como continua** si eso ayuda a resolver el problema: lo que importa es cómo te conviene representarla para el modelo (las redes neuronales, por ejemplo, trabajan muy bien con valores continuos).
+- Dos columnas pueden **depender** entre sí (latitud/longitud y código postal): en ese caso conviene quedarse con una o combinarlas.
+
+### Pearson y desvío estándar, sin mezclarlos
+
+- **Pearson** = covarianza(X, Y) / (desvío X · desvío Y). Mide **solo relación lineal**; dos variables podrían estar relacionadas de forma no lineal y dar r ≈ 0.
+- El **desvío estándar** de una sola variable dice qué tan **concentrados** están los datos cerca de la media (bajo) o qué tan **desparramados** (alto). Es un dato aparte de la correlación: Pearson solo lo usa para normalizar.
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. Si mi variable dependiente es "categoría de producto", ¿es un problema de clasificación o de regresión? ¿Y si es "precio en pesos"?
@@ -94,6 +139,10 @@ También se distinguen por su rol:
 4. Si dos variables tienen r = 0.95, ¿puedo afirmar que una causa la otra? ¿Por qué?
 5. ¿Qué es un outlier y por qué no siempre conviene eliminarlo?
 6. ¿En qué se diferencian covarianza y correlación de Pearson?
+7. ¿Qué diferencia hay entre un modelo **supervisado** y uno **no supervisado**? Dame dos ejemplos de cada uno.
+8. Si entrenás un clasificador de dígitos y le pasás una letra, ¿qué devuelve? ¿Por qué?
+9. Te aparece un outlier en el dataset de fraudes: ¿lo sacás? ¿Qué preguntas te hacés antes?
+10. Si codifico "país" como 1, 2, 3…, ¿se vuelve una variable cuantitativa?
 
 ---
 
@@ -106,4 +155,4 @@ También se distinguen por su rol:
 
 ---
 
-<sub>⚙️ Guía basada en la slide *Introducción a la ciencia de datos 01* (Dr. Ing. Juan M. Rodríguez). Si se suman más slides o notebooks de esta clase, se completa o corrige acá.</sub>
+<sub>⚙️ Guía basada en la slide *Introducción a la ciencia de datos 01* (Dr. Ing. Juan M. Rodríguez) y las teóricas del 25/08 y 01/09.</sub>

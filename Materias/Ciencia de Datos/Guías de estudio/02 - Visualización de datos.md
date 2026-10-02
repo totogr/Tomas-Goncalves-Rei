@@ -75,11 +75,36 @@ flowchart TD
 
 | Falacia | Qué es | Cómo evitarla |
 | --- | --- | --- |
-| **Paradoja de Simpson** | Una tendencia se **invierte** al separar los datos en grupos (ej. cirugía vs. método parece peor, pero le tocan los casos difíciles) | Segmentar bien; **validación cruzada** / asignación al azar |
+| **Paradoja de Simpson** | Una tendencia se **invierte** al separar los datos en grupos (ej. cirugía vs. método parece peor, pero le tocan los casos difíciles) | Segmentar bien; **asignación al azar** de los casos a cada grupo (experimento controlado) |
 | **A/B testing (mal hecho)** | Un cambio "mejora" un 5%… ¿fue el cambio u otra cosa? | Dividir el tráfico **50/50** al mismo tiempo (grupo A vs. B) |
 | **Sesgo de supervivencia** | Analizás solo lo que "sobrevivió" (los aviones que **volvieron**) y sacás la conclusión al revés | Preguntarte siempre: **¿cuál es el origen de mis datos?** |
 
 > 🔑 Correlación **no** implica causalidad (ver [scatter plot] y los ejemplos de *spurious correlations*).
+
+> 💡 En la grabación, a la asignación aleatoria se la llama "validación cruzada". Ojo: **validación cruzada** (*cross-validation*) es otra cosa — la técnica de rotar folds para evaluar un modelo (guía 04). Acá lo correcto es **asignación aleatoria / experimento A-B**.
+
+---
+
+## 🎯 Remarcado en clase (teórica 18/08)
+
+> 🔴 **Pregunta de examen:** *"¿Por qué / para qué graficamos los datos?"*
+> 1. Para **entender** los datos de forma eficiente.
+> 2. Para **encontrar patrones o relaciones** entre variables.
+> 3. Para **comunicar** de forma concisa y clara lo que vemos.
+>
+> Otras formas de resumir datos son el **análisis descriptivo** y la **agregación**; la visualización es además **parte del análisis**: sirve para chequear los supuestos de un método, detectar outliers, ver si hay linealidad y comparar lo predicho contra lo observado (residuos).
+
+**Detalles que remarcó al explicar cada gráfico:**
+- **Histograma ≠ bar plot:** el histograma es para un soporte **continuo** (sueldos, tiempo); para valores **discretos** (meses, cantidad de aumentos) va un **bar plot** o una torta.
+- **Bins:** pocos bins esconden la forma (ej. una distribución **bimodal** parece una escalera); demasiados la rompen en ruido. Conviene un ancho **redondo** (2, 5, 10) para poder leer los cortes mentalmente.
+- **Formas típicas** de un histograma: simétrica unimodal (campana de Gauss), sesgada a un lado, uniforme, bimodal, multimodal.
+- **Empezar los ejes en 0:** recortar el eje no ahorra nada y hace el gráfico más difícil de interpretar (o engañoso).
+- **Density plot:** muestra proporciones (el área total es 1), así que **perdés la cantidad absoluta** (¿100 o 5000 encuestados?). Al estar interpolado puede dibujar valores imposibles (salarios negativos).
+- **Box plot:** **Q2 = mediana** (no la media). El rango intercuartílico concentra el 50% central.
+- **Scatter plot con una variable discreta** (ej. años de experiencia enteros): los puntos se apilan en columnas y se lee mal → mejor un **box plot por categoría**.
+- **Torta vs. barras:** la torta muestra bien la **completitud**; si querés agregar una variable más (ej. separar por profesión), barras agrupadas o **apiladas** funcionan mejor.
+- **Heatmap:** el **color** agrega una dimensión (ej. profesión × años de experiencia, color = salario).
+- **Violin plot:** como un box plot, pero mostrando la **densidad** a los costados.
 
 ### Las dos falacias en imagen
 
@@ -101,6 +126,10 @@ flowchart TD
 4. Explicá la **paradoja de Simpson** con el ejemplo de la cirugía.
 5. ¿Qué es el **sesgo de supervivencia**? ¿Cómo lo evitás?
 6. ¿Cómo se hace bien un **A/B test**?
+7. 🔴 ¿Para qué graficamos los datos? (tres respuestas)
+8. ¿Qué pasa con un histograma si usás muy pocos bins? ¿Y demasiados?
+9. ¿Por qué un **density plot** puede ser mala idea para mostrar cantidad de encuestados?
+10. ¿Cuándo usás histograma y cuándo bar plot?
 
 ---
 

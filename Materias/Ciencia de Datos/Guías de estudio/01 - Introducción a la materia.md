@@ -70,6 +70,35 @@ Salud (prediagnósticos, detección de tumores), gaming y video (engagement, thu
 
 2 trabajos prácticos (el 2º, competencia privada en **Kaggle**) + **parcial** presencial escrito (con recuperatorios) + **final** presencial (con pseudo-promoción).
 
+Detalle que dio el profe en la primera teórica:
+
+| Instancia | Cómo es |
+| --- | --- |
+| **TP1** (grupal, obligatorio) | Se **presenta en forma presencial**: hay que exponer lo que hicieron |
+| **TP2** (grupal, obligatorio) | **Competencia privada en Kaggle** |
+| **Parcial** | **Presencial y escrito en hoja** (no digital). Tiene **2 recuperatorios** |
+| **Final** | Presencial y escrito. Se puede **evitar** con un **coloquio oral grupal** sobre temas de la segunda parte |
+| **Condición de promoción** | Aprobar los **2 TPs** y el **parcial con 7 o más en la primera oportunidad** |
+
+> 💡 El profe remarcó que **todo lo que se evalúa es contenido dado en clase** (teóricas y prácticas): ir a las clases es la mejor forma de preparar el parcial. Lo que marcó como pregunta de examen está en [Remarcado en clase](Remarcado%20en%20clase.md).
+
+**Organización:** teórica los martes y práctica los jueves, de 19 a 22, virtual (algunas prácticas son presenciales y obligatorias). Comunicación por **Slack**; material, calendario y bibliografía en la carpeta de Drive *Material alumnos*. Para la última parte (Transformers, LLMs) se suma el libro **Dive into Deep Learning**.
+
+### Minería de datos — el ejemplo de pañales y cerveza
+
+**Minería de datos** = buscar **patrones ocultos** sin tener una pregunta previa (a diferencia de una consulta puntual como "¿en qué país se vendió más?"). Ejemplo clásico: analizando las ventas de una cadena de supermercados apareció que **quien compraba pañales solía comprar cerveza**. La explicación que encontraron: padres jóvenes mandados a comprar pañales que aprovechaban para llevarse una cerveza. Pusieron la cerveza cerca de los pañales y **subieron las ventas**.
+
+### Metodología de un proyecto de datos
+
+1. **Entender el problema.**
+2. **Recolectar los datos** — muchas veces el paso que traba todo: los datos pueden ser **privados** (historias clínicas), viejos o **insuficientes**. En la materia los datasets "llegan listos" porque son educativos.
+3. **Procesar** (examinar y limpiar).
+4. **Explorar** ("jugar con los datos": probar columnas, generar variables, visualizar).
+5. **Analizar / modelar**: entrenar modelos que **generalicen** a datos nuevos que nunca vieron (ej. un detector de fraude entrenado con transacciones históricas que después opera en el banco real).
+6. **Comunicar** los resultados a los interesados (visualización, traducir el modelo a palabras).
+
+> 🟢 La definición de Mitchell (con experiencia, tarea y medida de rendimiento) describe bien al **aprendizaje autónomo**, donde la máquina experimenta y mide su resultado — el ejemplo que dio el profe es **AlphaGo**.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -79,6 +108,9 @@ Salud (prediagnósticos, detección de tumores), gaming y video (engagement, thu
 3. ¿Por qué el enfoque **ML** del filtro de spam es mejor que el tradicional?
 4. Nombrá tres áreas donde se aplica ML.
 5. ¿Qué herramientas/librerías vas a usar en la materia?
+6. ¿Qué es la **minería de datos** y en qué se diferencia de hacer una consulta puntual? Contá el ejemplo de pañales y cerveza.
+7. Nombrá los pasos de la **metodología** de un proyecto de datos. ¿Cuál suele trabar el proyecto y por qué?
+8. ¿Cuáles son las condiciones para **promocionar** la materia?
 
 ---
 

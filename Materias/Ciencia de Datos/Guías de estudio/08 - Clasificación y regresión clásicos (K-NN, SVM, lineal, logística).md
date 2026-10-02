@@ -67,6 +67,62 @@ flowchart LR
 
 ---
 
+## 📈 Regresión lineal en detalle
+
+**Idea.** Encontrar la recta `ŷ = b + m·x` que **mejor ajusta** a la nube de puntos. "Mejor ajusta" = la que hace **mínima la suma de los errores al cuadrado** de todos los puntos: no hay otra recta con menos error total. Esa recta **es el modelo**: para un `x` nuevo, calculás `ŷ` y tenés la predicción.
+
+- **Residuo** = valor real − valor predicho (la distancia vertical de cada punto a la recta). Es el **error** de esa observación.
+- Con varias variables se generaliza en forma **matricial** (`ŷ = X·θ`).
+
+> 🟢 **¿Por qué se llama "regresión"?** Por **Francis Galton** (fines del siglo XIX): observó que los hijos de padres muy altos tienden a ser algo más bajos, y los de padres muy bajos algo más altos — la naturaleza "**regresa a la media**". El nombre quedó para todo método que predice un valor numérico.
+
+### Dos formas de encontrar la recta
+
+| Método | Cómo | Ventaja | Desventaja |
+| --- | --- | --- | --- |
+| **Mínimos cuadrados** (analítico, Gauss 1805) | Fórmula cerrada: `θ = (XᵀX)⁻¹ Xᵀy` | Da **la** mejor recta, exacta | Invertir la matriz es **muy caro** con muchas variables (duplicar las variables multiplica el tiempo ≈ 5 a 8 veces) |
+| **Descenso por gradiente** (iterativo) | Arrancar al azar y moverse paso a paso hacia donde baja el error | **Escala** a muchos datos y variables; es el método general (redes neuronales no tienen fórmula cerrada) | Aproxima, no garantiza el óptimo exacto; hay que elegir learning rate y pasos |
+
+### Descenso por gradiente — el ejemplo numérico de clase
+
+Datos: peso → altura de 3 personas. La pendiente se fija en `m = 0.64` para enfocarse en encontrar solo la **ordenada al origen `b`**.
+
+1. **Inicializar al azar:** `b = 0`.
+2. **Calcular la pérdida** (suma de residuos al cuadrado) → 3.1.
+3. **Derivar** la pérdida respecto de `b` y evaluar en `b = 0` → **−5.7**. El signo dice hacia dónde **crece** el error (a la izquierda), así que hay que ir hacia el otro lado.
+4. **Paso** = −(learning rate × derivada) = −(0.1 × −5.7) = **+0.57** → nuevo `b = 0.57`.
+5. **Repetir** hasta que la derivada ≈ 0 (o el error deje de bajar, o se llegue a un máximo de pasos). El mínimo está en `b ≈ 1`.
+
+> 🔑 Con más de un parámetro (ej. `b` **y** `m`), la derivada se vuelve un **vector** (el **gradiente**) con una componente por parámetro, y se actualizan todos a la vez. Ese mismo mecanismo, aplicado a los pesos de una red, es **backpropagation** (clase 10).
+
+### Parámetros vs. hiperparámetros
+
+| | Qué son | Ejemplo en regresión lineal |
+| --- | --- | --- |
+| **Parámetros** | Los valores que el modelo **aprende** durante el entrenamiento | Pendiente `m` y ordenada `b` |
+| **Hiperparámetros** | Los valores que **elegís vos antes** de entrenar y definen **cómo** entrena | Learning rate, cantidad de pasos, regularización, umbral |
+
+---
+
+## 📉 Regresión logística en detalle
+
+> 🔴 **Pregunta de examen (trampa):** *"¿La regresión logística es un método de regresión o de clasificación?"* → **De clasificación.** Toma la idea de ajustar una curva, pero la usa para **partir el espacio en dos** y decidir una clase.
+
+**Cómo funciona.** Ajusta una **sigmoide** sobre los datos:
+
+$$p(x) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}}$$
+
+- La salida está entre 0 y 1 → se interpreta como la **probabilidad** de pertenecer a la clase 1.
+- **Entrenar** = encontrar los **β₀ y β₁** que ubican y estiran la sigmoide para que ajuste lo mejor posible a los datos.
+- Con un **umbral** (típicamente 0.5) la probabilidad se convierte en clase.
+- En su forma básica es **binaria** (clase 0 / clase 1); hay extensiones para más clases.
+
+> 🟢 **Ejemplo de clase — préstamo hipotecario según puntaje crediticio:** con puntaje < 500 nunca se otorga, entre 500 y 800 es casi una lotería, y > 800 casi siempre se otorga. Graficado (0 = rechazado, 1 = otorgado) se ven dos "filas" de puntos; la sigmoide modela la **transición** de 0 a 1.
+
+**`SGDClassifier`** de scikit-learn es un clasificador lineal entrenado con **descenso por gradiente estocástico**: con `decision_function()` te devuelve un puntaje de confianza y su umbral por defecto es **0**. Moverlo cambia el balance precisión/recall (ver clase 04).
+
+---
+
 ## 🎯 K-NN en detalle (K-Nearest Neighbors)
 
 **Idea.** Para un punto nuevo, mirás los **K puntos más parecidos** del conjunto de entrenamiento y adoptás la respuesta mayoritaria (clasificación) o el promedio (regresión). "Similares" se define con una **función de distancia** en el espacio de features.
@@ -219,6 +275,12 @@ El ejemplo canónico de "no separable linealmente" es el **XOR**: cuatro puntos 
 10. ¿Por qué es común hacer **PCA antes de SVM** cuando hay muchas features?
 11. Explicá el **gradient descent** en tus palabras (loss, derivada, learning rate).
 12. ¿Qué gana **SGD** frente al gradient descent clásico?
+13. 🔴 ¿La regresión logística es un método de **regresión** o de **clasificación**? ¿Por qué tiene ese nombre?
+14. ¿Qué es un **residuo**? ¿Qué significa que una recta sea "la que mejor ajusta"?
+15. Si mínimos cuadrados da la solución exacta, ¿por qué se usa descenso por gradiente?
+16. En el ejemplo de clase, la derivada en `b = 0` da −5.7 y el learning rate es 0.1. ¿Cuál es el nuevo `b`? ¿Por qué se cambia el signo?
+17. Diferenciá **parámetro** de **hiperparámetro** con un ejemplo de cada uno.
+18. Explicá los tres niveles de SVM (margen máximo → margen blando → kernel) y qué problema resuelve cada uno.
 
 ---
 
@@ -230,7 +292,8 @@ El ejemplo canónico de "no separable linealmente" es el **XOR**: cuatro puntos 
 - El **truco del kernel** en SVM — es el concepto clave del tema.
 - **C y gamma en SVM** — cae seguro en pregunta de parcial.
 - La **elección de K** en KNN vía cross-validation (curva K vs métrica de validación).
+- 🔴 La pregunta trampa: **la regresión logística es de clasificación**.
 
 ---
 
-<sub>⚙️ Regresión/gradient descent: *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez) y `practica_regresion_lineal.ipynb`. Regresión logística en detalle: notebooks `practica_regresion_logistica_1/2.ipynb`. **KNN completo: `practica_knn.ipynb`** (dataset *wine* para clasificación y *diamonds* para regresión). **SVM completo: `practica_support_vector_machines.ipynb`** (kernels lineal/polinómico/RBF + PCA + normalización) y `ejemplo_norm.ipynb`.</sub>
+<sub>⚙️ Regresión/gradient descent: *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez), las teóricas del 25/08, 01/09 y 29/09, y `practica_regresion_lineal.ipynb`. Regresión logística en detalle: notebooks `practica_regresion_logistica_1/2.ipynb`. **KNN completo: `practica_knn.ipynb`** (dataset *wine* para clasificación y *diamonds* para regresión). **SVM completo: `practica_support_vector_machines.ipynb`** (kernels lineal/polinómico/RBF + PCA + normalización) y `ejemplo_norm.ipynb`.</sub>

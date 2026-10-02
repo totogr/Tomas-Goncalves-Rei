@@ -187,6 +187,107 @@ Típicamente `η = 0.5` en el ejemplo didáctico; en producción se usan valores
 
 > 🔑 **¿Qué es una época?** Una pasada completa por **todo el dataset**. Entrenar una red son típicamente decenas o cientos de épocas.
 
+### Lo esencial para el examen
+
+- **Backpropagation = descenso por gradiente** (el de la clase 08) aplicado a **todos los pesos** de la red.
+- Los pesos se actualizan **de la última capa hacia la primera**: el único valor esperado que conocemos es el de la **salida**; las capas ocultas no tienen "respuesta correcta" propia, así que se ajustan usando lo que ya se calculó en las capas posteriores.
+- Es **la única forma práctica de entrenar** una red y es **costosa**: cada peso es un parámetro a ajustar (los "miles de millones de parámetros" de un LLM son pesos entrenados así).
+
+### ¿Por qué no se usa el escalón para entrenar?
+
+El escalón **no es continuo ni derivable** (en el salto no hay derivada y en el resto vale 0). Sin derivada no hay gradiente, y sin gradiente no se puede aplicar descenso por gradiente ni backpropagation. Además, con el escalón el error "no avisa" cuánto te acercaste: en el ejemplo del AND, después de un paso los pesos estaban más cerca de la solución pero el error seguía siendo 1. Por eso se usan activaciones **derivables** (sigmoide, tanh, ReLU).
+
+---
+
+## 🛡️ Regularización — cómo evitar el overfitting en una red
+
+> 🔴 **Pregunta de examen:** *"¿Qué métodos de regularización tenemos para una red neuronal?"* → **L1, L2, Dropout, Early stopping y Data augmentation.**
+
+Una red sobreajusta cuando es **demasiado compleja para los datos** o hay **pocos datos para la red**. Las técnicas atacan uno de esos dos lados:
+
+| Técnica | Qué hace | Ataca |
+| --- | --- | --- |
+| **L1** | Suma `λ · Σ |wᵢ|` a la función de pérdida | Complejidad (penaliza pesos grandes; tiende a dejar pesos en 0) |
+| **L2** | Suma `λ · Σ wᵢ²` a la función de pérdida | Complejidad (achica todos los pesos) |
+| **Dropout** | En cada paso de entrenamiento **apaga neuronas al azar** | Que la red dependa de pocas neuronas → obliga a caminos alternativos, más robusta |
+| **Early stopping** | **Corta el entrenamiento** cuando el error de validación deja de bajar y empieza a subir | Que siga aprendiendo el ruido del train |
+| **Data augmentation** | **Genera más datos** a partir de los que hay (rotar, agregar ruido, cambiar luz/sombras, distorsionar imágenes) | Falta de datos |
+
+**Función de pérdida vs. función de error.** Normalmente son lo mismo. Con L1/L2, la **pérdida** es el error **más** el término de regularización, y el descenso por gradiente minimiza la pérdida (no solo el error): así el modelo ajusta un poco peor en train pero generaliza mejor.
+
+**Early stopping, visualmente:**
+
+```
+ error
+   │ ╲                          ╱  ← validación: baja y después SUBE
+   │  ╲                     ___╱
+   │   ╲___            ___╱
+   │       ╲______════╱  ⟵ cortar acá (mínimo de validación)
+   │              ╲______
+   │                     ╲_______  ← train: sigue bajando
+   └──────────────────────────────── épocas
+     underfitting │ overfitting
+```
+
+---
+
+## ⚙️ Optimizadores — versiones mejoradas del descenso por gradiente
+
+Un **optimizador** es una forma concreta de aplicar el descenso por gradiente en backpropagation. Las mejoras buscan **converger más rápido** (en menos épocas) y sin quedarse oscilando.
+
+| Optimizador | Año | Idea en una línea | En Keras |
+| --- | --- | --- | --- |
+| **SGD** | — | Descenso por gradiente "a secas": paso = `learning rate × gradiente` | `optimizers.SGD(learning_rate=...)` |
+| **Momentum** | 1964 (Polyak) | Como una **pelota que rueda cuesta abajo**: acumula velocidad de los pasos anteriores. El gradiente actúa como **aceleración**, no como velocidad. Hiperparámetro β (≈ fricción), típico **0.9** | `SGD(..., momentum=0.9)` |
+| **Nesterov (NAG)** | 1983 | Momentum, pero calcula el gradiente **un poco más adelante** en la dirección del impulso → corrige antes de pasarse. Suele ser más rápido que Momentum | `SGD(..., momentum=0.9, nesterov=True)` |
+| **AdaGrad** | 2011 | Divide el paso por la acumulación de gradientes al cuadrado → **frena en las dimensiones empinadas** y avanza parejo en todas. Problema: acumula todo y **se frena demasiado pronto** → no se usa en redes profundas | `Adagrad(...)` |
+| **RMSProp** | 2012 (Hinton) | AdaGrad pero **olvidando** los gradientes viejos (promedio con decaimiento β ≈ **0.9**) → arregla el frenado | `RMSprop(..., rho=0.9)` |
+| **Adam** | 2014 | **Momentum + RMSProp**. Hiperparámetros β₁ ≈ 0.9 (momento), β₂ ≈ 0.999 (escalado), ε ≈ 10⁻⁷. **El más usado** | `Adam(..., beta_1, beta_2)` |
+| **AdaMax** | 2014 | Variante de Adam que usa el **máximo** en vez del promedio de gradientes al cuadrado | `Adamax(...)` |
+| **Nadam** | 2016 | **Adam + Nesterov** | `Nadam(...)` |
+| **AdaDelta** | 2012 | Mejora de AdaGrad (como RMSProp) que mira solo una **ventana** de los últimos gradientes | `Adadelta(...)` |
+
+```mermaid
+flowchart LR
+    SGD --> M["Momentum<br/>(aceleración)"]
+    M --> N["Nesterov<br/>(mira adelante)"]
+    SGD --> AG["AdaGrad<br/>(paso por dimensión)"]
+    AG --> R["RMSProp<br/>(olvida lo viejo)"]
+    AG --> AD["AdaDelta<br/>(ventana)"]
+    M --> A["Adam"]
+    R --> A
+    A --> NA["Nadam"]
+    N --> NA
+    A --> AM["AdaMax"]
+```
+
+> 🔑 **Para recordar:** Adam = Momentum + RMSProp · Nadam = Adam + Nesterov · RMSProp y AdaDelta arreglan a AdaGrad. **Ninguno gana siempre**: depende del problema; en la práctica se arranca con **Adam**.
+
+---
+
+## 🏗️ Diseñar la red: arquitectura e hiperparámetros
+
+**Capas de entrada y salida → las define el problema:**
+
+| Dataset | Entrada | Salida |
+| --- | --- | --- |
+| MNIST (dígitos 28×28) | **784** neuronas (una por píxel) | **10** (una por dígito) |
+| Iris | **4** (largo/ancho de sépalo y pétalo) | **3** (una por especie) |
+
+**Capas ocultas → prueba y error.** No hay fórmula. Con MNIST, una sola capa oculta de unos cientos de neuronas ya supera el 97%; agregar otra con el mismo total de neuronas apenas mejora. Una práctica habitual es la **pirámide**: muchas neuronas en las primeras capas ocultas y cada vez menos (ej. 784 → 300 → 200 → 100 → 10), aunque no siempre mejora frente a una sola capa.
+
+**Learning rate:**
+- **Muy grande** → los pasos se pasan del mínimo y el error **oscila** sin converger.
+- **Muy chico** → converge, pero **tarda muchísimo**.
+
+**Épocas:** no hay un número correcto. Entrenar "hasta error 0" puede no terminar nunca (o sobreajustar); se fija un máximo de épocas y/o se usa **early stopping**.
+
+**Batch size:** en cada paso de actualización la red no mira todo el dataset sino un **lote** (*batch*) de ejemplos.
+
+**Curvas de entrenamiento:** lo esperable es que el **loss baje** en train y en validación, con validación **un poco peor** que train (o la accuracy **suba** en ambas, con validación un poco por debajo). Si validación empieza a empeorar mientras train mejora → **overfitting**.
+
+> 💡 Para jugar con todo esto en el navegador (capas, neuronas, activación, regularización, ruido, batch size): [TensorFlow Playground](https://playground.tensorflow.org), el simulador que se mostró en clase.
+
 ---
 
 ## 🔀 SOM — Self-Organizing Maps (Kohonen)
@@ -199,6 +300,16 @@ Las redes neuronales no son todas supervisadas. Las **SOM** (de Teuvo Kohonen) s
 | Objetivo | Agrupar / visualizar | Predecir |
 | Salida | Mapa 2D | Clase o valor |
 | Backprop | **No usa** (regla propia de Kohonen) | Sí |
+
+**Cómo entrena (versión de clase):**
+1. Cada neurona del mapa de salida está conectada a **todas** las entradas, con sus propios pesos (inicializados al azar).
+2. Para cada observación se calcula la **distancia euclídea** entre la entrada y los pesos de cada neurona de salida.
+3. **Gana** la neurona más cercana (la "neurona ganadora").
+4. La ganadora **actualiza sus pesos y los de sus vecinas** dentro de un **radio R** (hiperparámetro) para acercarlas a la entrada.
+5. Con las iteraciones el **radio se achica**: cada vez se actualizan menos vecinas.
+6. Al final quedan "centroides" (las neuronas que más ganaron) rodeados de vecindarios → **clusters**, como en K-Means.
+
+> 🟢 Ejemplo de clase: un dataset de **países** con indicadores pasado por una SOM; cada hexágono del mapa es una neurona y, al pintar los clusters sobre el mapa mundial, se ven grupos de países parecidos. Históricamente también se usó para el **problema del viajante**.
 
 **Usos típicos:** visualizar datasets de alta dimensión en 2D, clustering avanzado con topología, análisis de clientes.
 
@@ -231,7 +342,8 @@ model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
 | **Learning rate (η)** | Qué tanto se mueven los pesos por paso |
 | **Épocas** | Cuántas pasadas al dataset completo |
 | **Batch size** | Cuántos ejemplos ve antes de actualizar pesos (SGD con mini-batches) |
-| **Optimizador** | `adam`, `sgd`, `rmsprop`… |
+| **Optimizador** | `adam`, `sgd`, `rmsprop`… (ver la sección *Optimizadores* más arriba) |
+| **Regularización** | L1/L2 (`λ`), tasa de **dropout**, **early stopping** |
 | **Función de pérdida** | `mse` (regresión), `binary_crossentropy` (binaria), `categorical_crossentropy` (multiclase) |
 
 **Evaluación con cross-validation:** el notebook `redes_neuronales_keras_cross_validation.ipynb` arma la red con `KerasClassifier` + `KFold` + `cross_val_score` para tener una estimación honesta.
@@ -252,6 +364,14 @@ model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
 10. ¿Qué diferencia a una **red SOM (Kohonen)** de un MLP?
 11. Si tu MLP overfitea, ¿qué hiperparámetros podrías tocar para regularizar?
 12. ¿Qué guarda un modelo entrenado al final del día?
+13. 🔴 ¿Puede un perceptrón modelar **AND**? ¿Y **OR**? ¿Y **XOR**? Justificá con la idea de separabilidad lineal.
+14. 🔴 Nombrá los **5 métodos de regularización** de una red y explicá cada uno en una línea.
+15. ¿Por qué no se puede entrenar con backpropagation una red que use la **función escalón**?
+16. ¿Qué diferencia hay entre **función de pérdida** y **función de error** cuando usás L2?
+17. ¿Qué agregan **Momentum**, **RMSProp** y **Adam** sobre el SGD básico? ¿Qué es Adam respecto de los otros dos?
+18. ¿Cuántas neuronas de entrada y de salida pondrías para **MNIST**? ¿Y para **Iris**? ¿Cómo decidís las capas ocultas?
+19. ¿Qué pasa si el **learning rate** es muy grande? ¿Y si es muy chico?
+20. Mirando las curvas de loss de train y validación, ¿cómo detectás overfitting y dónde cortarías con early stopping?
 
 ---
 
@@ -263,7 +383,10 @@ model.fit(X_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
 - La **regla de actualización** `w ← w + α · error · x` del perceptrón — la base conceptual de todo lo demás.
 - El rol del **learning rate** (ya lo venís viendo desde la clase 08: aparece en gradient descent, en gradient boosting y acá).
 - Las **SOM** como caso **no supervisado** — rompe el patrón de que "redes neuronales = supervisado".
+- 🔴 Las dos preguntas de examen que marcó el profe: **perceptrón y compuertas (AND/OR sí, XOR no)** y los **métodos de regularización**.
+- La **genealogía de los optimizadores** (Adam = Momentum + RMSProp) más que sus fórmulas.
+- La biología de la neurona (axón, dendritas, neurotransmisores) es **contexto**: el profe aclaró que no entra al examen.
 
 ---
 
-<sub>⚙️ Guía basada en las PPTs *Redes Neuronales*, *Backpropagation* e *Implementación de Redes Neuronales* de la cátedra (Rodríguez), y en los notebooks `redes_neuronales_introducción.ipynb`, `redes_neuronales_keras_clasificacion.ipynb`, `redes_neuronales_keras_regresion.ipynb` y `redes_neuronales_keras_cross_validation.ipynb`.</sub>
+<sub>⚙️ Guía basada en la teórica del 29/09, las PPTs *Redes Neuronales*, *Backpropagation* e *Implementación de Redes Neuronales* de la cátedra (Rodríguez), y en los notebooks `redes_neuronales_introducción.ipynb`, `redes_neuronales_keras_clasificacion.ipynb`, `redes_neuronales_keras_regresion.ipynb` y `redes_neuronales_keras_cross_validation.ipynb`.</sub>

@@ -130,6 +130,73 @@ flowchart LR
 - Modelo *"siempre gana"* → TP=8, FP=2, FN=0, TN=0 → **precisión 80%**, **recall perfecto** (no se le escapó ninguna victoria)… pero es un modelo inútil.
 - Modelo *"al azar 50%"* → TP=3, FN=5, FP=2 → mucho peor recall. Sirve para ver **cómo cambian las métricas** según el modelo.
 
+### ¿Qué métrica priorizo? (ejemplos de clase)
+
+| Problema | Prioridad | Por qué |
+| --- | --- | --- |
+| Detectar **tumores** en resonancias | **Recall** | Que no se escape ninguno; los falsos positivos los descarta después un médico |
+| Reconocer **caras** para etiquetar un álbum | **Precisión** | Solo etiquetar si está seguro; un error molesta más que una foto sin etiquetar |
+| Comparar modelos con P y R cruzadas | **F1** | Uno tiene mejor precisión y otro mejor recall → F1 los pone en una sola escala |
+
+> 🎯 **Umbral "equilibrado":** si graficás precisión y recall en función del umbral, el **punto donde se cruzan** las dos curvas es un buen umbral cuando querés las dos lo más altas posible. En scikit-learn, `predict()` usa un umbral fijo; con `decision_function()` (o `predict_proba()`) obtenés el puntaje y elegís vos el corte (en `SGDClassifier` el umbral por defecto es 0).
+
+### Matriz de confusión multiclase
+
+Con N clases (ej. *setosa / versicolor / virginica* en Iris, o los 10 dígitos de MNIST) la matriz es **N×N**:
+- La **diagonal** son los aciertos de cada clase → queremos que concentre casi todo.
+- Para una clase dada, mirándola "uno contra todos": su celda diagonal son sus **TP**; el resto de su **fila de predicción** son sus **FP** (el modelo dijo esa clase y era otra); el resto de su **columna real** son sus **FN** (era esa clase y el modelo dijo otra).
+
+> 🔴 **Pregunta de examen:** te muestran dos matrices y tenés que decir cuál es el **buen modelo**: el que tiene valores **altos en la diagonal** y **bajos fuera de ella**. Si en la clase positiva los FN superan a los TP, el modelo casi no detecta esa clase.
+
+---
+
+## ⚖️ Antes de medir: cómo partir los datos
+
+Las métricas **siempre** se calculan sobre datos que el modelo **no vio** al entrenar; si no, estás midiendo memoria, no generalización.
+
+| Esquema | Cómo se reparte |
+| --- | --- |
+| **Train / test** | 80/20, 75/25 o 2/3–1/3 (siempre la mayor parte para entrenar) |
+| **Train / validación / test** | ej. 50 / 25 / 25 — la validación se usa para ajustar el modelo, el test solo al final |
+| **Cross-validation (k folds)** | Con 5 folds: en cada ronda 4/5 entrena y 1/5 valida, rotando; se promedian las 5 métricas |
+
+```
+Overfitting   → train ✅ muy bien · test ❌ mal   ("se aprendió el ruido de memoria")
+Underfitting  → train ❌ mal      · test ❌ mal   ("el modelo es demasiado simple")
+Buen ajuste   → train ✅          · test ✅ (un poco peor que train, es normal)
+```
+
+> 💡 Analogía de clase: estudiar para el final **memorizando parciales viejos**. Con esos sacás 10 (train), pero si las preguntas cambian (test) desaprobás: no aprendiste el concepto, aprendiste las respuestas.
+
+### Clases desbalanceadas
+
+Ejemplo: 1.000.000 de transacciones, solo 1.000 fraudes. Un modelo que **siempre dice "genuina"** tiene **accuracy ≈ 99,9%** y no detecta **ningún** fraude (recall = 0). Por eso con desbalance se mira **precisión, recall, F1 o AUC**, no accuracy.
+
+Para entrenar bien hay que **balancear** el conjunto de entrenamiento:
+
+| Técnica | Qué hace | Ojo con |
+| --- | --- | --- |
+| **Undersampling** | Saca ejemplos de la clase **mayoritaria** hasta igualar | Tirás información |
+| **Oversampling** | Agrega ejemplos de la clase **minoritaria** (duplicando o generando sintéticos) | No siempre se pueden inventar datos realistas; en imágenes sí (rotar, agregar ruido, cambiar iluminación) |
+
+---
+
+## 📏 Métricas de regresión
+
+En regresión no hay "acierto/error": hay una **distancia** entre lo real y lo predicho. Esa diferencia, por observación, es el **residuo** `yᵢ − ŷᵢ`.
+
+**Por qué no alcanza con sumar los residuos:**
+1. Los positivos y negativos **se cancelan** → por eso se elevan al cuadrado o se toma el módulo.
+2. Un dataset más grande **suma más error** aunque cada error sea chico → por eso se **promedia** (se divide por *m*, la cantidad de observaciones). Así podés comparar modelos evaluados con distinta cantidad de datos.
+
+| Métrica | Fórmula | Qué te dice |
+| --- | --- | --- |
+| **MSE** (error cuadrático medio) | $\frac{1}{m}\sum (y_i - \hat{y}_i)^2$ | Castiga mucho los **errores grandes**; es la que se suele **minimizar al entrenar** (es derivable) |
+| **RMSE** (raíz del MSE) | $\sqrt{\text{MSE}}$ | Mismo orden que el MSE, pero en las **mismas unidades** que la variable → se interpreta mejor |
+| **MAE** (error absoluto medio) | $\frac{1}{m}\sum \lvert y_i - \hat{y}_i \rvert$ | El "error promedio real"; **más robusto a outliers** que el MSE |
+
+> 🔑 Para **comparar** dos modelos (o el mismo modelo entre épocas) MSE y RMSE dan el mismo ranking: sacar la raíz no cambia cuál es mejor. Se usa RMSE cuando querés **reportar** el error en unidades entendibles ("me equivoco ±12 mil dólares").
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -140,6 +207,12 @@ flowchart LR
 4. ¿Qué representa el **F-score** y por qué combina precisión y recall?
 5. ¿Qué valor de **AUC** tiene un clasificador perfecto? ¿Y uno que tira una moneda?
 6. ¿Cómo cambiarías el balance precisión/recall en la práctica? (pista: umbral)
+7. Te dan dos matrices de confusión: ¿cómo decidís cuál es el mejor modelo?
+8. En una matriz 3×3 (Iris), ¿dónde están los FP y los FN de *virginica*?
+9. Un modelo de fraude tiene 99,9% de accuracy. ¿Por qué puede ser inútil? ¿Qué harías con el entrenamiento?
+10. ¿Qué diferencia hay entre **undersampling** y **oversampling**?
+11. ¿Por qué se evalúa sobre **test/validación** y no sobre train? ¿Cómo reconocés overfitting y underfitting mirando los dos errores?
+12. ¿Por qué los errores de regresión se **elevan al cuadrado** y se **promedian**? Diferenciá **MSE, RMSE y MAE**.
 
 ---
 
@@ -149,7 +222,8 @@ flowchart LR
 - El **trade-off precisión ↔ recall** y en qué problema conviene cada uno.
 - Por qué **accuracy sola no alcanza** (clases desbalanceadas).
 - La lógica de la **ROC/AUC** (recorrer todos los umbrales) más que su cálculo exacto.
+- 🎯 Lo que el profe remarcó en las teóricas está resumido en [Remarcado en clase](Remarcado%20en%20clase.md).
 
 ---
 
-<sub>⚙️ Guía basada en `Metricas.pdf` (Luis J. Paredes) y *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez). Ejemplos en `Metricas_ejemplos.ipynb` y en el notebook **`practica_ejemplo_métricas.ipynb`** del módulo *Métodos de Clasificación*.</sub>
+<sub>⚙️ Guía basada en `Metricas.pdf` (Luis J. Paredes), *Clasificación con SGD* (Dr. Ing. Juan M. Rodríguez) y las teóricas del 25/08 y 01/09. Ejemplos en `Metricas_ejemplos.ipynb` y en el notebook **`practica_ejemplo_métricas.ipynb`** del módulo *Métodos de Clasificación*.</sub>
