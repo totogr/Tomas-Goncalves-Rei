@@ -14,8 +14,10 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 06 | [Redes en el centro de datos](06%20-%20Redes%20en%20el%20centro%20de%20datos.md) | ✅ |
 | 07 | [Redes legacy y protocolos de capa 2](07%20-%20Redes%20legacy%20y%20protocolos%20de%20capa%202.md) | ✅ |
 | 08 | [Protocolo de capa 3 — IP](08%20-%20Protocolo%20de%20capa%203%20-%20Internet%20Protocol%20%28IP%29.md) | ✅ |
-| 09 | [Enrutamiento estático y dinámico (BGP / OSPF)](09%20-%20Enrutamiento%20est%C3%A1tico%20y%20din%C3%A1mico%20%28BGP%20y%20OSPF%29.md) | ✅ (del resumen; falta la PPT) |
+| 09 | [Enrutamiento estático y dinámico (BGP / OSPF)](09%20-%20Enrutamiento%20est%C3%A1tico%20y%20din%C3%A1mico%20%28BGP%20y%20OSPF%29.md) | ✅ |
 | 10 | [NFV — virtualización de funciones de red](10%20-%20NFV%20-%20Virtualizaci%C3%B3n%20de%20funciones%20de%20red.md) | ✅ |
 | 11 | [Datagrama IP, TCP y UDP](11%20-%20Datagrama%20IP%2C%20TCP%20y%20UDP.md) | ✅ |
 
-**Temas del plan de estudios aún sin PPT propia** (se sumarán como guías cuando haya material): capa de aplicación (DNS, HTTP, SMTP) · capa de transporte TCP en detalle (handshake, control de flujo) · ICMP y ARP · seguridad en redes · CDN, SDN, IXP.
+**Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11).
+
+**Temas del plan de estudios aún sin PPT propia** (se sumarán como guías cuando haya material): capa de aplicación en profundidad · ARP · seguridad en redes (más allá de capa 4) · CDN, SDN.
