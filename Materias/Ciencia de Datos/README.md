@@ -13,6 +13,7 @@ Los profesores van subiendo material clase a clase (slides y archivos) en **Clas
 | [`Clases Prácticas/`](Clases%20Pr%C3%A1cticas/) | Notebooks y material de práctica por clase (intro a Pandas, indexing, visualización, EDA, métodos de regresión). |
 | [`Guías de Ejercicios/`](Gu%C3%ADas%20de%20Ejercicios/) | Guías de ejercicios por tema (Pandas). |
 | [`Bibliografia/`](Bibliografia/) | Libros de referencia de la materia (Machine Learning con Scikit-Learn, Keras y TensorFlow). |
+| `Material extra/` | Material de terceros (parciales de años anteriores, apuntes de otros alumnos). **Solo local**: está en `.gitignore` y no se publica; lo que sirve se vuelca, revisado, en las guías y el resumen. |
 | `Calendario 2do 2026.xlsx` | Calendario del cuatrimestre con fechas de clases y evaluaciones. |
 
 ## Estructura

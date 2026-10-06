@@ -45,3 +45,6 @@ desktop.ini
 # ─── Bibliografía con copyright (se mantiene local, no se publica) ───
 Materias/*/Bibliografia/
 Materias/*/Bibliografía/
+
+# ─── Material de terceros (parciales viejos, apuntes de otros) — local, no se publica ───
+Materias/*/Material extra/
