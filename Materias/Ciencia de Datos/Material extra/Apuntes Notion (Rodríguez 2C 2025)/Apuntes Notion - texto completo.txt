@@ -1,0 +1,2317 @@
+Title: apuntes de Ciencia de Datos
+URL: https://scratched-lantern-d4a.notion.site/apuntes-de-Ciencia-de-Datos-257716c1daf48005b682f0ec543b4129
+Source element: <main>
+---
+apuntes de Ciencia de Datos
+Buenass aca les dejo mi Notion que use de Ciencia de Datos de la catedra Rodriguez. Quiero darle las gracias a Lu, Fede, Santi y a Cris por ser mis compañeros de TP y a Mora por haberme prestado sus apuntes para mejorar los mios. Muchas gracias por el espacio y suerte en la cursada!!!!!!!!!!!!!!!!! <3333333
+Clases
+Clase 19/8: Introducción a la materia & Visualización de datos
+Qué es un data scientist?
+Es capaz de:
+Obtener, Interpretar, procesar y filtrar los datos.
+Llegar a conclusiones a partir de lo anterior.
+Construir soluciones para los problemas que se quiere solucionar.
+Por que el data scientist es distinto al data engineer?
+Considerable solapamiento entre las habilidades y responsabilidades.
+Hay una importante diferencia en el enfoque.
+El ingeniero de datos se enfoca en la creación de la infraestructura y arquitectura para la generación, soporte y extracción de los datos. (Big Data)
+El científico de datos se enfoca en la interpretación y análisis de los datos mediante el análisis estadístico y matemático.
+Que es Machine Learning (Aprendizaje Automático)?
+El aprendizaje automático es la ciencia (y el arte) de programar computadoras para que aprendan a partir de datos.
+Se dice que un programa de computadoras aprende de la experiencia E, respecto de una tarea T y una medida de rendimiento R, si su rendimiento en T, medido por R, mejora la experiencia E.
+Por qué es necesario graficar?
+Las técnicas de visualización de datos son muy importantes tanto para nuestro trabajo como para comunicarlo
+La cantidad de tipos de gráficos disponibles es enorme y es importante entenderlos y saber para qué es útil cada uno
+Entender de forma eficiente los datos
+Comunicar de forma concisa y clara
+Encontrar patrones/relaciones
+Que aspectos importantes tiene graficar?
+El análisis descriptivo es uno de las partes principales de cualquier análisis relacionado con un proyecto de ciencia de datos o de una investigación especı́fica
+La agregación de datos, el resumen y la visualización son algunos de los pilares principales que respaldan este área
+La visualización de datos es una herramienta poderosa y ampliamente adoptada debido a su efectividad para extraer la información correcta, comprender e interpretar los resultados de manera clara y fácil
+Para que se utiliza la visualización en Machine Learning?
+En aprendizaje automático, la visualización se utiliza para:
+Análisis inicial de los datos:
+para examinar si los datos satisfacen los supuestos requeridos para el método
+tienen complicaciones inesperadas como valores atı́picos o no linealidad
+Evaluar el ajuste del modelo:
+predicho vs observado
+análisis de residuos
+Clase 21/08: Introducción a Colab y maquinas Jupyter Pandas - Librerías de visualización
+Que son las variables categóricas o cualitativas? 
+Las distintas modalidades que adoptan estas variables sólo se distinguen por ser diferentes, no se puede establecer un ordenamiento entre ellas. Son ejemplos de estas variables: color de cabello, tipo de auto, sexo.
+Que son las variables cuasicuantitativas u ordinales?
+En estas variables, si bien se puede ordenar las modalidades que adopta, no se puede establecer una distancia entre ellas. Por ejemplo: calificación de examen (A, B, C, D y E), estadío de una enfermedad (I, II, III o IV).
+Que son las variables cuantitativas discretas?
+Estas variables toman valores numéricos siendo que entre dos valores consecutivos de las mismas no existen valores intermedios. Pueden tomar un conjunto a lo sumo numerable de valores, vinculándose generalmente al proceso de contar. Son ejemplos de estas variables: cantidad de hijos, cantidad de materias aprobadas, dinero en una billetera.
+Que son las variables cuantitativas continuas?
+Estas variables también toman valores numéricos, pero entre dos valores de la variable existen infinitos valores intermedios, asociándose generalmente al proceso de medir. Son ejemplos de estas variables: peso, edad, duración de un llamado
+Clase 26/08: Introducción a la ciencia de datos, Métodos de regresión & Métricas
+Que tipos de variables hay en la ciencia de datos?
+Variables Independientes (entradas)
+Variables dependientes (salidas, categorías)
+Que tipos de variables tiene la variable independiente?
+Cualitativas
+Texto
+Nominales (categorías, ejemplo: países)
+Ordinales (poco, mucho, muchísimo)
+Númericas
+Nominales
+Ordinales
+Cuantitativa
+Discreta
+Continua
+Que tipos de problemas existen en las variables? 
+Si la variable dependiente es cualitativa, el tipo de problema es de clasificación
+Si la variable dependiente es cuantitativa, el problema es de regresión
+Si NO hay variable dependientes, el problema es de agrupamiento
+Como se muestra en un gráfico un Outliers (valor atípico)?
+Que son la correlación de variables?
+Dos variables están correlacionadas cuando varían de igual forma sistemáticamente.
+Que tipos de correlaciones hay?
+La correlación implica causalidad?
+Correlación NO IMPLICA Causalidad
+Que dos variables tengan alto índice de correlación no significa que una cause la otra
+Las relaciones de causalidad son mucho más difíciles de encontrar y demostrar
+Las correlaciones pueden suceder por otros motivos como: Una tercer variable que “empuja” a ambas o simplemente azar
+Cual seria una correlación sin sentido?
+Que es la varianza y como se calcula?
+Calculamos la diferencia, de cada observación respecto de su media.
+Sumamos todas esas diferencias y las dividimos por n-1. No por n, ya que como estamos en verdad estimando la varianza, esta forma nos da un valor más adecuado
+La media es: 17.6
+Como son las formulas de varianza y desviacion estandar?
+Que es la covarianza?
+En probabilidad y estadística, la covarianza es un valor que indica el grado de variación conjunta de dos variables aleatorias respecto a sus medias.
+Es el dato básico para determinar si existe una dependencia entre ambas variables y además es el dato necesario para estimar otros parámetros básicos, como el coeficiente de correlación lineal o la recta de regresión.
+Como se calcula la covarianza?
+
+Como se calcula la correlacion de Pearson?
+Para 2 variables podemos medir su correlación lineal con el coeficiente de correlación r (Pearson). Este coeficiente, es una función que mide cuán relacionada estan 2 variables de forma lineal.
+Si da 0 NO existe correlación
+Si da 1 Están relacionadas linealmente de forma perfecta (todos los puntos están en una línea)
+Si da -1 Existe una correlación negativa perfecta.
+Como se calcula el desvio estandar en la correlacion de Pearson?
+Es una medida que se utiliza para cuantificar la variación o la dispersión de un conjunto de datos numéricos. 
+Una desviación estándar baja indica que la mayor parte de los datos de una muestra tienden a estar agrupados cerca de su media (también denominada el valor esperado), mientras que una desviación estándar alta indica que los datos se extienden sobre un rango de valores más amplio.
+Que es la regresion?
+El concepto de regresión proviene de la genética y fue popularizado por Sir Francis Galton a finales del siglo XIX con la publicación de Regression towards mediocrity in hereditary stature.7 Galton observó que las características extremas (por ejemplo, la altura) de los padres no se transmiten por completo a su descendencia. Más bien, las características de la descendencia retroceden hacia un punto mediocre (un punto que desde entonces ha sido identificado como la media)
+Buscamos predecir un valor en un rango continuo, para ciertos valores de entrada. Ejemplos:
+Temperatura
+Valor de una propiedad
+Como seria un grafico de regresion lineal o ajuste lineal?
+Cuales son los problemas de la ecuacion normal?
+La ecuación normal calcula el inverso de X⊺ X, que es una matriz de  (n + 1) × (n + 1)
+(donde n es el número de características).
+La complejidad computacional de invertir tal matriz es típicamente alrededor de
+O(n^2.4) a O(n^3 ), dependiendo de la implementación.
+En otras palabras, si se duplica el número de características, el tiempo se multiplica por aproximadamente 22.4 = 5.3 a 23= 8.
+Como se representa el error de la regresion en un grafico?
+Como se calcula la metrica de regresion?
+Que hacemos cuando resolvemos un problema de clasificacion?
+Cuando resolvemos un problema de clasificación, buscamos, para ciertos datos de entrada, un categoría c de un conjunto C de categorías posibles. Estas categorías no solo son finitas, sino que además son conocidas de antemano.
+Que se hace en la regresion logistica (es mas de clasificacion que regresion)?
+En la regresión logística lo que quiero es categorizar, clasificar.
+Es decir que dado una serie de puntos quiero encontrar una función (no es una recta en este caso) que separe los puntos en dos, en dos conjuntos.
+Y una vez que la encontré puedo determinar para cualquier valor X futuro, el conjunto al cual pertenecerá. Está asociado a problemas de probabilidad.
+Como es un caso de regresion logistica?
+Una persona quiere comprar una casa y para ello necesita pedir un préstamo hipotecario. Esta persona quiere saber si se lo van a otorgar o no. Pero el único dato fehaciente que tiene es su puntaje crediticio, el cual es de 720.
+La única información que se tiene es una lista de puntajes crediticios de otras 1000 personas con el resultado del otorgamiento, es decir si el crédito fue otorgado: 1 o bien si no fue otorgado: 0.
+Acá podemos ver que la curva, para cada valor de X, asigna un valor entre 0 y 1 que indica la probabilidad de que el préstamo sea otorgado.
+Como la curva es creciente, la probabilidad será más alta cuanto el score esté más cerca de 850 y será más baja cuando el score esté cerca de 300.
+Encontrar los parametros optimos para esta curva consiste en construir un estimador de regresión logística.
+Como se grafica la diferencia entre la precision y el recall?
+Como se representa la precision?
+Como son las formulas de Recall y Precision?
+Como son las formulas de FBeta Score y F1 Score?
+Que hace el K-Means?
+El usuario decide la cantidad de grupos
+K-Means elige al azar K centroides
+Decide qué grupos están más cerca de cada centroide. Esos puntos forman un grupo
+K-Means recalcula los centroides al centro de cada grupo
+K-Means vuelve a reasignar los puntos usando los nuevos centroides. Calcula nuevos grupos
+K-means repite punto 4 y 5 hasta que los puntos no cambian de grupo.
+Cómo saber cuántos conjuntos elegir (Elbow Method)?
+Elegimos un rango, ejemplo 1 a 10, y para cada valor:
+Para cada centroide calculamos la distancia promedio
+Como es el metodo Silhouette?
+Elegimos un rango, ejemplo 1 a 10, y para cada valor:
+Para cada valor de K graficamos la silhouette
+El mejor valor posible es silhouette = 1
+El peor valor posible es silhouette = -1
+Como es el coeficiente Silhouette?
+Cada punto en el conjunto de datos tiene un coeficiente de Silhouette.
+Para calcular este coeficiente necesitamos calcular a(i) y b(i)
+a(i) = distancia promedio del punto i a cada uno de los puntos de su cluster
+b(i) = distancia promedio del punto i a cada uno de los puntos del cluster más cercano a su propio cluster
+Que es la estadistica de Hopkins?
+La estadística de Hopkins (Lawson y Jurs 1990) se utiliza para evaluar la tendencia de agrupación de un conjunto de datos midiendo la probabilidad de que un conjunto de datos dado sea generado por una distribución de datos uniforme.
+En otras palabras, prueba la aleatoriedad espacial de los datos.
+Como se calcula la estadistica de Hopkins?
+La idea es comparar una muestra cualquiera con una muestra uniforme (creada de forma aleatoria) y ver cómo se distribuyen los ejemplos (los puntos) en dicho espacio.
+Sea D un conjunto de datos reales:
+Tomar una muestra uniformemente de n puntos (p1,…, pn) de D.
+Calcular la distancia, xi, de cada punto real a cada vecino más cercano.
+Para cada punto pi ∈ D, encuentre su vecino más cercano pj; l
+calcular la distancia entre pi y pj y llámela xi=dist(pi , pj)
+Generar un conjunto de datos simulados (randomD) extraído de una distribución uniforme aleatoria con n puntos (q1,…, qn) y la misma variación que el conjunto de datos reales original D.
+Calcular la distancia, yi desde cada punto artificial hasta el punto de datos real más cercano.
+Para cada punto qi ∈ randomD, encuentre su vecino más cercano qj en D
+calcular la distancia entre qi y qj y llámela yi=dist(qi , qj)
+Calcule la estadística de Hopkins (H) como: la distancia media del vecino más cercano en el conjunto de datos aleatorios dividida por la suma de las distancias medias del vecino más cercano en el conjunto de datos real y simulado.
+Cómo interpretar la estadística de Hopkins? 
+Si D está distribuida de forma uniforme, entonces ∑ xi y ∑ yi   serían muy parecidos, entonces H sería aproximadamente ½ (0.5).
+Pero si hay clústeres en D, las distancias de los puntos artificiales ∑ yi serían mucho más grandes que las distancias de los puntos reales:  ∑ xi y por lo tanto H sería mayor que 0.5.
+Un valor de H superior a 0,75 indica una tendencia a la agrupación en un nivel de confianza del 90 %.
+Como es la hipotesis que maneja la estadistica de Hopkins?
+Hipótesis que maneja Hopkins:
+Hipótesis nula: el conjunto de datos D se distribuye uniformemente (es decir, no hay clusters significativos)
+Hipótesis alternativa: el conjunto de datos D no está uniformemente distribuido (es decir, contiene clusters significativos)
+Podemos realizar la prueba de la estadística de Hopkins de forma iterativa, utilizando 0,5 como umbral para rechazar la hipótesis alternativa.
+Es decir, si H < 0,5, es poco probable que D tenga conglomerados estadísticamente significativos.
+O si el valor de la estadística de Hopkins es cercano a 1, entonces podemos rechazar la hipótesis nula y concluir que el conjunto de datos D es significativamente un dato agrupable.
+Clase 02/09: Métodos de clasificación, Métodos de agrupamiento (clustering) & Métricas
+Que son las metricas?
+ Las métricas sirven para poder comparar entre modelos de un mismo tipo.
+Es una forma en que podemos medir cuál modelo nos funciona mejor.
+Las métricas útiles depende de la data que tenemos disponible.
+Vamos a estar trabajando con modelos de clasificación. Esto implica que:
+Nuestro modelo predice una categoría (clasifican)
+La data esta pre-categorizada (labeled dataset)
+Cuales son las metricas comunes?
+Que es una matriz de confusion?
+Nos sirve para tener un pantallazo de cómo clasifica nuestro modelo.
+Queremos que la diagonal de la matriz sea lo más alto posible porque significa que está acertando cuando clasifica.
+Cual seria un ejemplo de una matriz de confusion?
+Que otras metricas comunes hay?
+Cuando usamos la matriz de confusion N-aria?
+La utilizamos cuando la clasificación no es binaria (True or False).
+Es la misma idea, la diagonal tiene la cantidad de aciertos y los otros cuadros son predicciones erradas.
+Clase 09/09: Ingeniería de características 
+Cuales son algunas etapas de la ciencia de datos?
+Algunas tareas de estas etapas son:
+Integración de datos: Integración de múltiples bases de datos, archivos, etc.
+Limpieza de datos: Completar valores faltantes, eliminación de ruido, identificar o eliminar valores atípicos y corregir incoherencias
+Reducción de datos: Reducción de dimensionalidad, Reducción de Numerosidad
+Transformación de datos: Normalizaciones, generación de jerarquías
+conceptuales, etc. (Feature Engineering)
+Cuales son los tipos de datos faltantes?
+Missing completely at random MCAR : significa que la razón por la cual el dato no está es completamente aleatoria, y que probablemente no podamos predecir el valor a partir de otro valor en los datos.
+Missing At Random MAR: los datos faltantes pueden ser explicados por valores en las otras columnas, pero no por valores de esa columna. Por ejemplo, si cada columna representa una elección excluyente
+Missing Not At Random MNAR: significa que es probable que la falta de ese dato no sea al azar. En este caso tenemos que investigar la causa por la que falta ese valor.
+Que es el Missing completely at random (MCAR)?
+La probabilidad de valores faltantes es la misma para todas las observaciones.
+No existe ninguna relación entre los datos faltantes y otros valores observados o faltantes en el dataset.
+Omitir estas observaciones no implicaría un sesgo en las inferencias.
+Ejemplo: Se perdió la respuesta de una encuesta
+Que es el Missing At Random (MAR)?
+La probabilidad de datos faltantes en una observación no está relacionada con los datos faltantes, pero puede depender de la información que sí está disponible. Es decir, el azar no es la única causa por la que faltan esos datos.
+Ejemplo: En un estudio para un nuevo tratamiento, algunos sujetos se retiran cuando empiezan a tener efectos secundarios
+Que es el Missing Not At Random (MNAR)?
+Existe una explicación por la cual hay valores faltantes en un dataset.
+Ejemplos:
+En una encuesta sobre salarios, los participantes con mayor nivel de ingresos se
+ven menos inclinados a reportarlos.
+En un estudio sobre depresión, los pacientes con depresión son menos
+propensos a responder algunas preguntas.
+Cuales son las estrategias para trabajar con datos faltantes?
+Eliminar registros o variables
+Si la eliminación de un subconjunto disminuye significativamente la utilidad de los datos, la eliminación del caso puede no ser efectiva (No se recomienda en situaciones que no sean MCAR)
+Imputar datos
+Utilizar métodos de relleno de faltantes.
+Que es la imputacion de datos faltantes?
+La imputación es el acto de reemplazar datos faltantes con estimaciones estadísticas de los valores ausentes.
+El objetivo de cualquier técnica de imputación es producir un dataset completo que permita entrenar un modelo de aprendizaje automático.
+Pueden agruparse las técnicas de imputación en dos categorías:
+Univariada: cuando la imputación se realiza de manera independiente para cada variable de entrada, sin considerar las otras variables.
+Multivariada: cuando el valor imputado para cada variable es una función de dos o más variable
+Cuales son algunas tecnicas de imputacion univariada?
+Que otras estrategias hay de imputacion de datos?
+Sustitución de casos
+Se reemplaza con valores no observados.
+Debería ser realizado por un experto en esos datos
+Sustitución por Media o Mediana
+Se reemplaza utilizando la medida calculada de los valores presentes.
+Algunas desventajas:
+La varianza estimada de la nueva variable no es válida porque está atenuada por los valores repetidos
+Se distorsiona la distribución
+Las correlaciones que se observen estarán deprimidas debido a la repetición de un solo valor constante
+Que es la imputacion Cold Deck?
+Selecciona valores o usa relaciones obtenidas de fuentes distintas de la base de datos actual
+Que es la imputacion Hot Deck?
+Se reemplazan los faltantes con valores obtenidos de registros que son los más similares. (Hay que definir que es similar, K vecinos más cercanos puede servir)
+Que es la imputacion por regresion?
+El dato faltante es reemplazado con el valor predicho por un modelo de regresión
+Que es el MICE - Multivariate Imputation by Chained Equations?
+Trabaja bajo el supuesto de que el origen de los faltantes es Missing At Random (MAR)
+Es un proceso de imputación de datos faltantes iterativo, en el cual, en cada iteración cada valor faltante de cada variable se predice en función de las variables restantes.
+Esta iteración se repite hasta que se encuentre convergencia en los valores. No es tan sencillo determinar la condición de convergencia.
+Como seria un ejemplo del MICE?
+Que es el KNN - K-Nearest Neighbours?
+Consiste en utilizar el algoritmo KNN para estimar los valores faltantes por semejanza a los más próximos.
+Se suele utilizar con una función de distancia que contemple la presencia de NaNs, como por ejemplo nan_euclidean_distance.
+Al igual que en KNN, el número de vecinos suele ser un número impar.
+Que es el Feature Engineering y cual es su objetivo?
+Esta etapa incluye cualquier proceso de modificación de la forma de los datos (es común que los datos sufran algún tipo de transformación)
+El objetivo principal de esta etapa es mejorar el rendimiento de los modelos creados mediante la transformación de los datos que utilizan
+Cuales son algunas tecnicas del Feature Engineering?
+Normalización
+Discretización
+Lograr normalidad
+Imaginación ( Generación de nuevas variables )
+Que es la normalizacion?
+Consiste en escalar los features de manera que puedan ser mapeados a un rango
+más pequeño.
+Por ejemplo: 0 a 1 o -1 a 1
+Se aplica sobre valores numéricos
+Es principalmente utilizada cuando:
+Las unidades de medidas dificultan la comparación de features
+Se quiere evitar que atributos con mayores magnitudes tengan pesos muy diferentes al resto
+Como es la ecuacion de la normalizacion - Min Max?
+Funciona al ver cuánto más grande es el valor actual del valor mínimo del feature y escala esta diferencia por el rango
+Los valores de normalización min-max van de 0 a 1
+Como es la ecuacion de la normalizacion - Z Score?
+Los valores para un atributo se normalizan en base a su media y desvío estándar
+Es útil cuando el verdadero mínimo y máximo del atributo no son conocidos, o cuando hay valores atípicos que dominan la normalización min-max.
+Como es la ecuacion de la normalizacion - Decimal Scalling?
+Asegura que cada valor normalizado se encuentra entre - 1 y 1.
+Donde d representa el número de dígitos en los valores de la variable con el valor absoluto más grande
+Como seria el ejemplo de un histograma de estas cuentas de normalizacion?
+Cuales son los algoritmos afectados y los no afectados?
+Que es la discretizacion?
+Es una técnica que permite dividir el rango de una variable continua en intervalos.
+Se reducen los valores de una variable contínua a un número reducido de etiquetas
+Que es el Binning en la discretizacion?
+Se divide a la variable en un número específico de bins
+Los criterios de agrupamiento pueden ser por ejemplo:
+Igual-Frecuencia: La misma cantidad de observaciones en un bin
+Igual-Ancho: Definimos rangos o intervalos de clases para cada bin
+Cuantiles: Separar en intervalos utilizando Mediana, Cuantiles, Percentiles.
+Como se pueden hacer los agrupamientos en Binning?
+A su vez para cada uno de los agrupamientos podemos hacer:
+Reemplazo por media o mediana
+Reemplazo por una etiqueta o valor entero
+Como serian ejemplos hay del Binning?
+Que son las variables dummies?
+Algunos métodos analíticos requieren que las variables predictoras sean numéricas
+Cuando tenemos categóricos, podemos recodificar la variable categórica en una o más variables Dummies
+Que es un Outlier?
+Un outlier es una observación que se desvía tanto de las otras observaciones como para despertar sospechas que fue generado por un mecanismo diferente.
+Es un concepto subjetivo al problema.
+Son observaciones distantes del resto de los datos
+Pueden deberse a un error de medición, aleatoriedad, que esa instancia pertenezca a una familia distinta del resto, etc
+Ejemplo 1: Una persona de 120 años de edad
+Ejemplo 2: Una persona de 4 años que mide 1.80mts
+Es necesario eliminar los outliers?
+Deben ser cuidadosamente inspeccionados
+Pueden estar alertando anomalías, en algunas situaciones nuestra tarea de interés será encontrarlos:
+Detección de Fraudes
+Detección de Fallas
+Patologías Médicas
+Cuales son los tipos de Outliers?
+Como son los Outliers Univariado y Multivariado?
+Univariado 
+Son valores atípicos que podemos encontrar en una simple variable.
+El problema de los enfoques univariados es que son buenos para detección de extremos pero no en otros casos.
+Multivariado 
+Los valores atípicos multivariados se pueden encontrar en un espacio n-dimensional.
+Para detectar valores atípicos en espacios n-dimensionales es necesario ajustar un modelo.
+Cuales son los metodos univariados?
+IQR: Analizar los valores que están por fuera del IRQ
+Z-score y Z-score Modificado
+Identificar valores extremos a partir de 1, 2 o 3 desvíos de la media.
+Cuales son los metodos multivariados?
+Análisis globales: Clustering.
+Utilizando medidas de distancia como Mahalanobis. Los valores similares son agrupados y los que quedan aislados pueden ser considerados outliers.
+Local Outlier Factor (LOF)
+Es un método de detección de outliers basado en distancias.
+Calcula un score de outlier a partir de una distancia que se normaliza por densidad.
+Métodos basados en árboles de búsqueda: IsolationForest
+Como es el Z-Score en los metodos univariados?
+Como es el Z-Score modificado en los metodos univariados?
+Como es el analisis de Box Plot?
+Los Box-Plots permiten visualizar valores extremos univariados. 
+Las estadísticas de una distribución univariada se resumen en términos de cinco cantidades:
+Mínimo/máximo (bigotes)
+Primer y tercer cuantil (caja)
+Mediana (línea media de la caja)
+IQR = Q3 - Q1
+Generalmente la regla de decisión:
++/- 1.5*IQR Outliers moderados
++/- 3 *IQR Outliers severos
+Que es la distancia de Mahalanobis (metodo multivariado)?
+Que es el LOF – (Local Outlier Factor)?
+El método LOF valora puntos en un conjunto de datos multivariados.
+Es un método basado en densidad que utiliza la búsqueda de vecinos más cercanos.
+Se compara la densidad de cualquier punto de datos con la densidad de sus vecinos
+Parámetro k (cantidad de vecinos) y métrica de distancia
+El método calcula los scores para cada punto, se debe definir un umbral de corte (depende del dominio)
+Si el score del punto X es 5, significa que la densidad promedio de los vecinos de X es 5 veces mayor que su densidad local
+Como seria un ejemplo del LOF?
+Que es el Isolation Forest?
+Es un algoritmo no supervisado y no paramétrico basado en árboles de decisión.
+Idea Principal: los datos anómalos se pueden aislar los datos normales mediante particiones recursivas del conjunto de datos.
+Como es el paso a paso del Isolation Forest?
+Tomar una muestra de los datos y construir un árbol de aislamiento:
+Seleccionar aleatoriamente n características.
+Dividir los puntos de datos seleccionando aleatoriamente un valor entre el mínimo y el máximo de las características seleccionadas.
+La partición de observaciones se repite recursivamente hasta que todas las observaciones estén aisladas.
+Clase 16/09: Arboles
+Que es el ID3?
+ID3: Iterative Dichotomiser 3 (tree -> árbol)
+Creado por: Ross Quinlan
+Genera un árbol de decisión a partir de un conjunto de ejemplos.
+De que esta compuesto un ID3?
+Un nodo principal llamado raíz en la parte superior
+Nodos terminales, como su nombre lo indica, son nodos donde termina el flujo y que ya no son raíz de ningún otro nodo. Estos nodos terminales deben contener una respuesta, o sea, la clasificación a que pertenece el objeto que ha conducido hasta él.
+Los demás nodos representan preguntas con respecto al valor de uno de los atributos.
+Las líneas representan las posibles respuestas que los atributos pueden tomar.
+Que es la entropia (de la informacion) y como se calcula?
+La medida del desorden o la medida de la pureza. Básicamente, es la medida de la impureza o aleatoriedad en los datos.
+
+Dónde:
+S: es una lista de valores posibles.
+Pi: es la probabilidad de los valores.
+i: Cada uno de los valores.
+Que es la ganancia de la informacion?
+La ganancia de información se aplica para cuantificar qué característica, de un conjunto de datos dados, proporciona la máxima información sobre la clasificación.
+Si tuviésemos que elegir una sola característica, para clasificar. ¿Cuál sería?
+Como se calcula la ganancia de la informacion?
+Dónde:
+S: es una lista de valores posibles para un atributo dado: A
+A: Uno de los atributos, en la lista de ejemplo.
+V(A) : Conjunto de valores que A puede tomar
+Sv/S = Probabilidad de un valor, para el atributo A.
+Entropía (Sv), entropía calculada para el valor “v” de A.
+Cual es el algoritmo basico de ID3?
+1. Calcular la entropía para todas las clases.
+2. Calcular la entropía para cada valor posible de cada atributo.
+3. Seleccionar el mejor atributo basado en la reducción de la entropía. Usando el cálculo de
+Ganancia de la Información
+4. Iterar, para cada sub-nodo. Excluyendo el nodo raíz, que ya fue usado.
+Como seria un ejemplo de este algoritmo?
+Que es la impuerza de Gini?
+La impureza de Gini es una medida de cuán a menudo un elemento elegido aleatoriamente del conjunto sería etiquetado incorrectamente si fue etiquetado de manera aleatoria de acuerdo a la distribución de las etiquetas en el subconjunto
+Algunas implementaciones de árboles de decisión utilizan la impureza de Gini en lugar de la ganancia de información, ya que es más fácil de calcular (computacionalmente menos costosa) Ejemplo: Scikit-learn
+Que es el C4.5?
+Se hicieron mejoras a ID3
+Campos numéricos, rangos continuous
+Datos faltantes
+Poda
+Como se manejan los datos faltantes en C4.5?
+Datos faltantes:
+Manejo de los datos de formación con valores de atributos faltantes - C4.5 permite valores de los atributos para ser marcado como “?” para faltantes. Los valores faltantes de los atributos simplemente no se usan en los cálculos de la ganancia y la entropía.
+Como maneja los campos numericos o rangos continuos en C4.5?
+Campos numéricos, o rangos continuous:
+Si un atributo A, tiene un rango continuo de valores. El algoritmo puede, dinámicamente crear
+un campo Booleano tal que si A < C Ac = TRUE, sino Ac = FALSE.
+¿Cómo encontrar ese umbral C?
+Vamos a cortar el rango de forma que C nos quede con la mayor ganancia de información.
+Ordenamos A de menor a mayor, por ejemplo.
+Identificamos los valores adyacentes (de la clase que es nuestra salida)
+Detectamos cuando hay un cambio de valor de salida, entonces en esos límites seguramente están nuestros Ci candidatos.
+Creamos varios Ci, que dividen en dos el rango. Para cada uno de estos rangos calculamos la ganancia de información. Nos quedamos con el que nos
+da el mejor resultado. (Se puede también quedarse con los N mejor.)
+Como manjea la podea el C4.5?
+El método de poda del árbol consiste en:
+generar el árbol tal y como hemos visto
+A continuación, analizar recursivamente, y desde las hojas, qué preguntas (nodos interiores) se pueden eliminar sin que se incremente el error de clasificación con el conjunto de test.
+(Si hay ruido el árbol tendrá un error, es decir cantidad de casos mal clasificados)
+Error= Casos bien clasificados / Casos Totales
+Se elimina un nodo interior cuyos sucesores son todos nodos hoja.
+Se vuelve a calcular el error que se comete con este nuevo árbol sobre el conjunto de test.
+Si este error es menor que el error anterior, entonces se elimina el nodo y todos sus sucesores(hojas)
+Se repite.
+Que es el Bias?
+El error debido al Bias de un modelo es simplemente la diferencia entre el valor esperado del estimador (es decir, la predicción media del modelo) y el valor real.
+Cuando se dice que un modelo tiene un bias muy alto quiere decir que el modelo es muy simple y no se ha ajustado a los datos de entrenamiento (suele ser underfitting), por lo que produce un error alto en todas las muestras: entrenamiento, validación y test
+Que es el la Variance?
+La varianza de un estimador es cuánto varía la predicción según los datos que utilicemos para el entrenamiento.
+Un modelo con varianza baja indica que cambiar los datos de entrenamiento produce cambios pequeños en la estimación.
+Al contrario, un modelo con varianza alta quiere decir que pequeños cambios en el dataset conlleva a grandes cambios en el output (suele ser overfitting).
+Que es la votacion en ensambles de modelos?
+Votación: Para una nueva instancia, clasificarla con todos los modelos, y devolver la clase más elegida.
+La votación reduce la varianza de la clasificación. (Random Forest)
+Si los modelos individuales devuelven probabilidades, se puede hacer una votación ponderada.
+Que es el Bagging?
+Es una técnica que consiste en construir nuevos conjuntos de entrenamiento usando bootstrap (muestras aleatorias con reemplazo) para entrenar distintos modelos, y luego combinarlos.
+Como es el Random Forest?
+Igual a bagging tradicional, pero en cada nodo, considerar sólo un subconjunto de m atributos elegidos al azar.
+Que es el Bootstrap aggregating?
+Es una técnica, o meta-algoritmo que dice lo siguiente:
+Dado un conjunto de entrenamiento D, de tamaño n, la técnica de bagging generará m nuevos conjuntos de entrenamiento D1,... Di,..., Dm cada uno de tamaño n' tomando muestras aleatorias de D.
+Y  en general n'<n. Siendo n' aproximadamente un 2⁄3 de n.
+Que es el Boosting?
+Alternativa a Bagging.
+Buscar nuevos modelos para las instancias mal clasificadas por los anteriores.
+Como es el paso a paso del Boosting?
+Comenzar con un modelo (simple) entrenado sobre todos los datos: h₀
+En cada iteración i, entrenar hᵢ dando mayor importancia a los datos mal clasificados por las iteraciones anteriores.
+Terminar al conseguir cierto cubrimiento, o luego de un número de iteraciones.
+Clasificar nuevas instancias usando una votación ponderada de todos los modelos construidos.
+Cuales son las diferencias entre XGBoost y Gradient Boosting?
+La velocidad de entrenamiento de XGBoost es mucho menor gracias a su implementación y a estar mejor orientado al uso eficiente del hardware (GPU)
+El accuracy (o la métrica adecuada) también es mejor debido a que XGBoost maneja mejor el overfitting mediante regularizaciones (esto lo veremos más adelante)
+Clase 23/09: k-nearest neighbors algorithm, Support Vector Machines (SVM) & Ensambles Híbridos
+Que tipos de ensambles hay?
+Ensambles homogéneos: combinan el mismo tipo de modelo BaggingBoosting
+Ensambles híbridos: combinan clasificadores de distinto tipo VotingStackingCascading
+Que es el Stacking?
+Entrenar diferentes modelos (modelos base) y un modelo más, que decide, dada una instancia nueva, qué modelo usar.
+Concepto de meta-aprendizaje para reemplazar el mecanismo de voto
+Pueden apilarse tantas capas de modelos como se desee
+Cuales son las características del Stacking?
+Los modelos para el meta-aprendizaje suelen ser: árboles, NB, SVM o Perceptrón (lo vemos en Redes Neuronales)
+Para los otros puede usarse cualquiera
+Menos popular que boosting, bagging
+Dificultad de análisis teórico: caja negra
+Múltiples variantes
+Se puede interpretar como una mejora (generalización) del método de votación (Voting)
+Si los clasificadores base pueden generar medidas de certeza, suele funcionar mejor
+Que es el Cascading?
+Enfoque en el que se pasa sucesivamente los datos de un modelo a otro
+A diferencia de Stacking cada “capa” tiene un sólo modelo
+El input de cada modelo son las instancias predichas con poca certeza por el modelo anterior
+Suele utilizarse cuando se necesita una alta certeza en la predicción
+Como sería un ejemplo del Cascading?
+Queremos un modelo que prediga si una transacción con tarjeta de crédito es fraudulenta
+Necesitamos una alta certeza para definir si no lo es, en caso de error las pérdidas pueden ser millonarias
+Construimos entonces una secuencia (o cascada) de modelos de ML
+Como es el entrenamiento del Cascading?
+Entrenamos N modelos distintos utilizando nuestro set de entrenamiento 
+Cada modelo lo entrenamos sobre las instancias predichas con baja certeza del modelo anterior
+Suele hacerse de forma tal de empezar por modelos simples y a medida que se entrenan nuevos los mismos sean de mayor complejidad
+Como es el predicción del Cascading?
+El primer modelo recibe los datos de la transacciónSi la probabilidad de que no sea fraude es menor a 0.99, se pasa al siguiente modelo
+Caso contrario se descarta la posibilidad de fraude
+Si ningún modelo descarta el fraude con p < 0.99 se procede a confirmar la operación de forma personal
+Que otras características hay del Cascading?
+A diferencia de Voting y Stacking que tienen un enfoque de modelos “Multi-expertos”, Cascading tiene un enfoque “Multi-estado”
+Inicialmente creados para computer vision Cascadas muy profundas pueden producir overfitting
+Cuales son las ventajas y desventajas de los ensambles?
+Ventajas
+Generalmente logran mejores predicciones que los modelos vistos hasta ahora
+Buen trade-off sesgo varianza
+Desventajas
+Se pierde interpretabilidad
+Tienen una complejidad computacional mayor
+Cuál es la idea principal del Support Vector Machine (SVM)?
+Empezar con observaciones en una dimensión relativamente baja 
+Llevar los datos a una dimensión mayor
+Encontrar un clasificador tipo Support Vector que separe los datos en la alta dimensión de los 2 grupos.
+Cuál es el algoritmo detrás del SVM?
+El algoritmo detrás de Support Vector Machines, usa algo llamado Funciones Kernel que sistemáticamente buscan clasificadores de tipo Support Vector Classifiers en dimensiones más altas. 
+Cuál es el resumen del SVM Kernel polinomico?
+El Kernel Polinómico de SVM sistemáticamente incrementa las dimensiones seteando d, desde 1 (o el valor base de las observaciones) hasta el valor del parámetro.
+Calcula en cada caso las relaciones entre las observaciones para encontrar un hiper-plano que parta el conjunto en 2. 
+Usando validación cruzada, en cada caso calcula el error y se queda con el mejor d.
+Que calcula las funciones Kernel?
+Las Kernel Functions, sólo calculan la relación entre pares de observaciones como si estuviesen en otra dimensión, pero no realizan una verdadera transformación del espacio.
+Cuál es el truco del Kernel?
+Este truco del Kernel, reduce la cantidad de tiempo de cómputo necesario ya que evita toda la matemática relacionada a la transformación del espacio.
+Además permite que se realicen los cálculos del Kernel Radial en infinitas dimensiones.
+Practica para el Parcial
+Resolución Parcial 20-11-2025.pdf
+135.5 KiB
+Resolución Parcial 16-10-2025.pdf
+143.2 KiB
+Resolución Recuperatorio Parcial 23-11-2023.pdf
+202 KB
+Resolución Parcial 26-10-2023.pdf
+117 KB
+27/10/2022-Enunciado.pdf
+153.1 KB
+27/10/2022-Respuestas.pdf
+1.4 MB
+29/06/2022-Enunciado.pdf
+61.6 KB
+29/06/2022-Respuestas.pdf
+64.4 KB
+Ejemplo_de_preguntas_tipo_parcial.pdf
+76.3 KB
+02-E.pdf
+106.3 KB
+ResumenCiencia.pdf
+3 MB
+Preguntas de tipo parcial
+Explique brevemente los conceptos de Overfitting y Underfitting. Mencione cómo puede detectarse cada una de estas situaciones y qué se podría hacer para evitarlas.
+Overfitting: Significa que el modelo sobre-ajustó los datos de entrenamiento. Esto se
+puede ver cuando el modelo obtuvo muy buenas métricas en entrenamiento pero al momento de testear las métricas con el conjunto de prueba estas bajan significativamente,
+esto quiere decir que el modelo no generalizó. Este comportamiento se puede deber a una alta varianza o que el modelo es muy complejo. Lo que se puede hacer para tratar este problema es utilizar validación cruzada para poder optimizar hiper-parámetros o intentar con un modelo más simple.
+Underfitting: Significa que el modelo no fue capaz de encontrar patrones en el conjunto de
+datos de entrenamiento. Esto se puede ver cuando el modelo tiene una mala performance
+tanto con el conjunto de entrenamiento como con el de prueba. Este comportamiento se
+puede deber a que el modelo elegido es muy simple para la complejidad del problema, un
+alto sesgo (bias), regularizaciones muy estrictas o un dataset pobre. Lo que se puede hacer para tratar este problema es utilizar un modelo más complejo, reducir las regularizaciones o mejorar el dataset.
+Explique brevemente el concepto de Outliers e indique cuál es la diferencia entre valores
+atípicos univariados y multivariados. Mencione métodos/técnicas para detectar estos
+valores en cada caso.
+Un valor atípico es una observación que está muy distante del resto del conjunto. Estos
+pueden deberse a un error de tipeo, medición o aleatoriedad. Estos deben ser
+cuidadosamente tratados ya que pueden empeorar la performance de nuestros modelos.
+Los outliers univariados son valores que están muy distantes del resto de valores en una
+variable. Por ejemplo: En un conjunto de datos de personas, en la variable “Edad”, hay una
+persona de 300 años.
+Para detectar este tipo de outliers se pueden utilizar técnicas como:
+Z-Score.
+Z-Score Modificado.
+IQR (Análisis de Box-Plot).
+Los outliers multivariados son aquellos que ven con un análisis univariado ya que se
+encuentran en un espacio n-dimensional. Por ejemplo: En un conjunto de datos de
+personas, hay una persona de 4 años que mide 1,90 metros.
+Para detectar este tipo de outliers se puede utilizar técnicas como:
+Scatter Plot.
+Distancia Mahalanobis.
+LOF.
+Isolation Forest.
+Responda las siguientes preguntas en relación al tema Reducción de Dimensionalidad:
+a. ¿Para qué usaría un gráfico "Scree plot", al utilizar PCA?
+Se puede usar para determinar cuales variables son las que tienen mayor variación final (mayor porcentaje de dispersión) y así poder elegir con cuántos componentes principales quedarnos.
+b. ¿Qué técnica utilizaría si sospecha que los datos están distribuidos sobre una variedad del espacio total?
+Utilizaría la técnica de ISOMAP ya que su objetivo es preservar la geometría intrínseca de los datos reflejada en las distancias geodésicas de la variedad.
+c. ¿Qué técnica utilizaría si desea conservar los clusters?
+Utilizaría la técnica T-SNE ya que es su principal objetivo la preservación de los clusters al hacer la proyección.
+Responda las siguientes preguntas en relación al tema: Árboles de decisión:
+a. ¿Para qué utilizaría la técnica de poda en un árbol C4.5?
+Para evitar un posible overfitting.
+b. ¿Puede un árbol manejar valores de entrada numéricos? ¿Cómo?
+Si, lo que hace es, dado un atributo A de rango continuo de valores se establece un umbral C que divida en dos el rango maximizando la ganancia de información. Con dicho umbral se crea un booleano A_C tal que si A < C, A_C = TRUE, sino A_C = FALSE.
+c. ¿Para qué se usa la impureza de Gini? ¿Qué significa que un nodo sea puro o impuro?
+Se usa para determinar el nodo raíz y para generar las divisiones de los nodos del árbol, seleccionando el atributo que mejor separa las clases. Un nodo es puro cuando todos los ejemplos pertenecen a la misma clase y es impuro cuando hay mezclas de clases dentro de este.
+¿En qué tipo de problemas sería conveniente maximizar la métrica Precisión y en cuáles Recall? Ejemplifique.
+La métrica de Precisión nos interesa maximizarla en problemas que nos importe que las predicciones positivas del modelo sean confiables. Por ejemplo: Apuestas deportivas.
+La métrica de Recall nos interesa maximizarla en problemas que nos importe más la cobertura de casos positivos. Por ejemplo: Detección de enfermedades.
+¿Son esas métricas adecuadas para resolver un problema de regresión? En caso de responder negativamente, expliqué qué métricas usaría.
+No, las métricas de Precisión y Recall se usan para medir el rendimiento de modelos de clasificación. Para medir el rendimiento de un modelo de regresión se pueden utilizar métricas como MSE (Mean Square Error), MAE (Mean Absolute Error) y RMSE (Root Mean Square Error).
+Explique brevemente en qué consiste y para qué se utiliza el método Early Stopping en Redes Neuronales.
+Es un método de regularización que consiste en evitar el sobreajuste parando el entrenamiento antes de que el error del set de validación empiece a subir.
+Explique los siguientes conceptos y cómo se relacionan con la complejidad de un modelo de aprendizaje automático:
+a. Error de Sesgo (Bias).
+Es la diferencia entre el valor esperado del estimador y el valor real. Cuando el error de sesgo es muy alto quiere decir que el modelo es muy simple y no fue capaz de ajustarse a los datos de entrenamiento (suele ser underfitting).
+b. Overfitting (sobreajuste).
+Es cuando el modelo sobre-ajustó los datos de entrenamiento (se los aprendió de memoria, incluyendo el ruido) y al momento de probar su rendimiento con el conjunto de prueba este tiene muy malas métricas lo que nos dice que no es capaz de generalizar. Esto quiere decir que el modelo es muy complejo y que hay una alta varianza.
+Decir la formula las siguientes métricas de clasificación: F1-Score y Accuracy
+F1Score
+=
+2
+∗
+Precisi
+o
+ˊ
+n
+∗
+Recall
+Precisi
+o
+ˊ
+n
++
+Recall
+F1Score=2∗
+Precisi
+o
+ˊ
+n+Recall
+Precisi
+o
+ˊ
+n∗Recall
+	​
+
+​
+𝐴
+𝑐
+𝑐
+𝑢
+𝑟
+𝑎
+𝑐
+𝑦
+=
+𝑇
+𝑃
++
+𝑇
+𝑁
+𝑃
++
+𝑁
+Accuracy=
+P+N
+TP+TN
+	​
+
+​
+Nombrar características de las métricas F1-Score y Accuracy.
+F1-Score:
+Proporciona una medida equilibrada entre la Precisión y el Recall.
+Es sensible al desequilibrio de clases.
+Acurracy:
+En todas las predicciones que hace nuestro modelo ¿Qué tanto acierta?
+Si la data no está bien equilibrada, se puede dar el caso de un accuracy alto, pero no nos estaría brindando información relevante.
+Características de Random Search y Grid Search.
+Random Search:
+Control del presupuesto computacional, podemos definir de antemano cuántas combinaciones probar.
+No prueba todas las combinaciones, por lo que podría no encontrar el óptimo absoluto.
+Es especialmente útil cuando tenemos diversidad de hiper-parámetros, ya que la aleatoriedad permite explorar una mayor variedad de valores.
+Grid Search:
+Evalúa cada combinación posible de los hiper-parámetros proporcionados.
+Proceso determinístico.
+Coste computacional elevado.
+Recomendado para espacios de búsqueda pequeños y con pocos hiper-parámetros.
+Explicar los diferentes tipos de variables.
+Cuantitativas:
+Discretas: Números enteros.
+Continuas: Punto flotante.
+Cualitativas/categóricas:
+Texto:
+Ordinales: Tienen un orden.
+Nominales: No tienen ninguna correlación entre ellas ni tampoco tienen un orden.
+Numéricas:
+Ordinales: Tienen un rango, una escala.
+Nominales: No tienen un orden ni una correlación entre ellas.
+¿Cuándo dos variables están correlacionadas?
+Dos variables están correlacionadas si sus valores tienden a moverse juntos de una manera predecible.
+Correlación positiva: Ambas variables se mueven en la misma dirección. Si una disminuye la otra también.
+Correlación negativa: Ambas variables se mueven en direcciones opuestas Si una disminuye, la otra sube.
+¿De qué nos sirve la Correlación de Pearson?
+Nos sirve para medir cuán correlacionadas están dos variables de forma lineal.
+Explicar características del método de regresión lineal.
+Es un modelo supervisado utilizado para resolver problemas de regresión.
+Es simple e interpretable.
+Predice valores en un rango continuo.
+Calcular la recta que mejor se ajusta a los datos de entrada.
+Explicar características del método de regresión logística.
+Es un modelo supervisado utilizado para problemas de clasificación.
+Dado una serie de puntos se busca una función que separe los puntos en dos conjuntos (para el caso de clasificación binaria).
+Está asociado a problemas de probabilidad.
+Fácil de interpretar.
+Explicar características del método de K-Means.
+Es un modelo no supervisado utilizado para resolver problemas de clustering/agrupamiento.
+El usuario elige la cantidad de clusters.
+Lo que hace es elegir K centroides al azar y agrupar los puntos con el centroide más cercano. Una vez agrupados recalcula los centroides de cada cluster y reasigna los puntos repitiendo estos dos últimos pasos hasta que los puntos no cambien de cluster.
+Explicar el método de Silhouette.
+Es un método utilizado en clustering para evaluar la calidad de los grupos formados.
+Nos ayuda a encontrar el número óptimo de clusters para un conjunto de datos.
+Mide qué tan bien está un punto dentro de su cluster, comparando dos distancias
+a(i) (Cohesión): distancia promedio a los puntos de su propio cluster, debe ser baja.
+b(i) (Separación): distancia promedio a los puntos del cluster más cercano, debe ser alta.
+s(i) = -1, es el peor de los casos, mal clasificado.
+s(i) = 1, es el mejor de los casos, bien clasificado.
+s(i) = 0, no está claramente en uno u otro.
+Explicar la Regla del Codo (Elbow Method).
+Es un método gráfico utilizado para determinar el número óptimo de clusters. El gráfico nos muestra la distancia promedio a los centroides para distintas cantidades de clusters. Si vemos que este tiene una caída abrupta y luego una pendiente menos significativa quiere decir que encontramos la cantidad ideal de clusters, el codo es el número óptimo.
+¿Para qué sirve el estadístico de Hopkins?
+El estadístico de Hopkins, sirve para evaluar la tendencia de agrupación de un conjunto de datos midiendo la probabilidad de que un conjunto de datos sea generado por una distribución uniforme.
+Si H < 0. 5, es poco probable que nuestro conjunto de datos contenga clusters significativos.
+Si H es cercano a 1, significa que los datos están agrupados y son un excelente candidato para el clustering.
+Explicar características de Cross Validation.
+Es una técnica utilizada para evaluar el rendimiento de un modelo y ajustar sus hiperparámetros. Consiste en dividir el conjunto de entrenamiento en varias partes (folds) y, en cada ciclo, usar una de ellas para validación y las demás para entrenamiento.
+Se usa para determinar los hiper-parámetros óptimos de un modelo determinado.
+Es como un testeo en la etapa de entrenamiento pero sin usar el conjunto de prueba ya que testeamos con una parte del conjunto de entrenamiento.
+Se usa para evitar el overfitting.
+Explicar Undersampling y Oversampling.
+Ambas son técnicas para solucionar el problema del desbalance de clases y el objetivo de estas técnicas es equilibrar la distribución.
+Undersampling: Consiste en reducir el número de ejemplos de la clase mayoritaria, eliminando de forma aleatoria observaciones, para igualarlo al número de ejemplos de la clase minoritaria.
+Ventaja: Reduce el tamaño del conjunto de datos.
+Desventaja: Se corre el riesgo de eliminar información valiosa y útil.
+Oversampling: consiste en aumentar el número de ejemplos de la clase minoritaria para que coincida con la cantidad de la clase mayoritaria, esto se puede lograr duplicando las observaciones.
+Ventaja: No se pierde información.
+Desventaja: Aumenta el tamaño del conjunto de datos y existe el riesgo de overfitting, ya que el modelo podría memorizar los ejemplos repetidos.
+Explicar brevemente Descenso por Gradiente y su importancia.
+Es un algoritmo de optimización fundamental, cuyo objetivo es encontrar los valores mínimos de una función. En el contexto de un modelo se usa para minimizar la función de error, que mide qué tan mal está funcionando un modelo. Al minimizar este error, encontramos los parámetros óptimos del modelo.
+Calcula la pendiente(Gradiente) → Da un paso en la dirección opuesta →Repite
+Se utiliza para entrenar un montón de modelos.
+Se utiliza para buscar parámetros óptimos en modelos que no son predictivos.
+Se utiliza para entrenar redes neuronales y redes neuronales profundas
+Técnica genérica, que se puede aplicar en varios lugares.
+¿Para qué sirven las métricas?
+Las métricas sirven para poder comparar entre modelos de un mismo tipo.
+Es una forma de poder medir cuál modelo nos funciona mejor.
+Las métricas útiles dependen de la data que tenemos disponible.
+¿Para qué sirven los hiper-parámetros?
+Sirven para cambiar la forma en la que predice nuestro modelo. Cada una de estas combinaciones posibles de hiper-parámetros, van a significar otro modelo diferente. Y de esta forma vamos a comprar las diferentes performances.
+Controlan el balance entre sesgo y varianza.
+Definen la complejidad del modelo
+Determinan la velocidad y eficiencia del entrenamiento.
+Explicar la utilidad de la curva ROC.
+Se utiliza cuando queremos comparar el rendimiento de distintos modelos de clasificación.
+Aquellos modelos que se inclinen más para el punto perfecto, generalmente tendrán una mejor clasificación.
+El peor modelo que podemos llegar a encontrar es aquel que pertenece a la diagonal "Random Classifier" lo que significa que el modelo está adivinando.
+¿Qué estrategias hay para trabajar los datos faltantes?
+Eliminar registros o variables:
+Si la eliminación de un subconjunto disminuye significativamente la utilidad de los datos, la eliminación del caso puede no ser efectiva.
+Eliminar datos no es gratis, por lo general, tratamos de conservar la mayor cantidad.
+Imputar datos: Utilizar métodos de relleno de faltantes.
+Explicar las técnicas de imputación univariadas.
+Variable numérica
+Imputación por promedio / mediana
+Desventaja: La varianza estimada de la nueva variable no es válida porque está atenuada, se distorsiona la distribución, las correlaciones que se observen estarán deprimidas debido a la repetición
+Imputación por valor arbitrario: Debe ser realizado por un experto en esos datos.
+Variable categórica
+Imputación por categoría frecuente
+Agregar "Faltante"
+Imputación Cold Deck → Busca información en Dataset adicional para imputar datos faltantes.
+Imputación Hot Deck → Busca información con los datos que tenemos para imputar datos faltantes
+KNN - K - Nearest Neightbours → Consiste en utilizar el algoritmo KNN para estimar los valores faltantes por semejanza a los más próximos.
+¿Para qué sirve la normalización de variables?
+Consiste en escalar las variables de manera que puedan ser mapeadas en un rango más pequeño sin distorsionar su distribución. Se utilizan cuando:
+Las unidades de mención dificultan la comparación.
+Se quiere evitar que atributos con mayores magnitudes tengan pesos muy diferentes al resto.
+Las unidades de medición son muy dispares.
+¿Qué tipo de normalizaciones hay?
+Normalización Mín-Máx: Funciona para ver qué tan grande es el valor actual respecto del valor mínimo.
+Normalización Z-Score: Los valores de un atributo se normalizan según su media y desvío estándar.
+Es útil cuando los valores mín-máx no son conocidos o cuando los valores atípicos dominan la normalización Mín-Máx.
+Normalización Decimal Scaling: Se asegura que los valores normalizados se encuentren entre − 1 y 1.
+¿Para qué sirve la discretización de variables?
+Es una técnica que permite dividir el rango de una variable continua en intervalos. Reduce los valores de una variable continua a un número reducido.
+¿Qué tipo de discretizaciones hay?
+Bining: Se divide a la variable en un número de bins. Los criterios de agrupamiento pueden ser por ejemplo:
+Igual - Frecuencia: Para cada categoría tenemos la misma cantidad de observaciones.
+Igual - Ancho: Elegimos intervalos de la misma longitud, pero la cantidad de observaciones varía.
+Cuantiles: La cantidad de observaciones por cuartil varía.
+¿Qué tipos de outliers hay?
+Outlier Global: Tenemos la nube de puntos, y tenemos unos cuantos que están muy alejados.
+Outlier contextuales: Son los que están relacionados con el contexto. Por ejemplo, temperaturas bajo cero en verano.
+Outlier Colectivos: Donde tenemos la nube de puntos y tenemos un grupo, muy pegado, que tienen una característica diferente. No es que estén alejados de la nube, pero se hacen distinguir.
+Explicar brevemente cómo funciona ID3.
+Lo que hace este algoritmo es generar un árbol de decisiones a partir de ejemplos (dataset).
+Genera un nodo principal llamado nodo raíz.
+Los nodos terminales son nodos donde termina el flujo por lo que deben contener una respuesta, o sea, la clasificación a la cuál pertenece el objeto que condujo a ese nodo.
+Los nodos intermedios representan preguntas con respecto al valor de alguno de los atributos.
+Las líneas representan posibles respuestas que los atributos pueden tomar.
+Explicar características de la entropía de la información / entropía de Shannon.
+Es una métrica fundamental, que mide la impureza o aleatoriedad en los datos.
+Para una muestra homogénea la entropía es igual a 0
+Cuando la mitad son de una clase y la otra mitad de otra, tenemos la máxima incertidumbre, ya que no podemos especular nada, la entropía es igual a 1
+Nos sirve para calcular la ganancia de información.
+Explicar características de la ganancia de información.
+Se aplica para cuantificar qué características de un conjunto de datos proporciona la máxima información sobre la clasificación.
+En la raíz ponemos aquella variable que nos maximiza la ganancia de información.
+Nombrar mejoras de C4.5 respecto a ID3.
+Posibilidad de utilizar campos numéricos, rangos continuos: El algoritmo puede
+dinámicamente crear un umbral C que determinará cómo clasificarlos para que nos
+quedemos con la mayor ganancia de información.
+Datos faltantes: Puede manejar columnas con valores nulos, los valores faltantes
+simplemente no se usan en el cálculo de la ganancia y la entropía
+Poda: Mecanismo para evitar el overfitting.
+Explicar brevemente cómo funciona la poda en C4.5.
+Se elimina un nodo interior cuyos sucesores son todos nodos hoja (terminales).
+Se vuelve a calcular el error que se comete con el nuevo árbol sobre el conjunto de
+test.
+Si este error es menor que el error anterior, entonces se elimina el nodo y todos sus
+sucesores.
+Se repite.
+Se detiene cuando revisó todos los nodos terminales y no hay más nodos que
+eliminar (el error no decreció, entonces, no hay por qué eliminarlos).
+¿Qué es la varianza?
+Es cuánto varía la predicción según los datos que utilicemos para el entrenamiento.
+Si esta es muy alta, quiere decir que pequeños cambios en el dataset conlleva a
+grandes cambios en el output (overfitting).
+Explicar brevemente la idea de los modelos de ensamblaje.
+Tenemos modelos chiquitos que no logran capturar la esencia de la complejidad del
+problema en su totalidad, entonces no pueden generalizar bien. Es decir, obtenemos
+modelos que aprenden una porción del total.
+Lo que se puede hacer es que varios modelos aprendan diferentes porciones del concepto
+total para poder cubrirlo en su totalidad.
+Explicar brevemente Cascading.
+Enfoque en el que se le pasan sucesivamente los datos de un modelo a otro.
+Cada capa tiene un solo modelo.
+El input de cada modelo son las instancias predichas con poca certeza por el modelo anterior.
+Suele utilizarse cuando se necesita alta certeza en la predicción.
+Aquellas instancias que son genuinas serán descartadas. Nos quedamos con un
+subset de las que no son genuinas para entrenar al siguiente modelo.
+Con esta misma lógica, vamos generando subsets más pequeños de aquellas
+transacciones que el modelo anterior no supo clasificar con certeza.
+Tiene un enfoque “Multi-estados”.
+Cascadas muy profundas pueden ocasionar overfitting.
+Ventajas y desventajas de los ensamblajes.
+Ventajas:
+Generalmente, logran mejores predicciones que los modelos que no son de tipo
+ensamblaje.
+Buen trade-off sesgo, varianza.
+Desventajas:
+Se pierde interpretabilidad.
+Tiene una complejidad computacional mayor.
+Explicar brevemente características de KNN.
+Es un método de clasificación, que predice según la clase mayoritaria de los k
+vecinos más cercanos.
+Es sensible a conjuntos de datos no balanceados y a los valores atípicos.
+Tenemos hiper-parámetros para determinar la cantidad de vecinos que queremos, el
+tipo de distancia a usar, ponderar los votos según la distancia (más peso a los
+vecinos más cercanos), etc.
+Qué tipos de clasificadores de margen existen. Explicar características.
+Margen Máximo (Maximal Margin Classifier):
+El margen es el más grande posible.
+Sensible outliers.
+Puede no generalizar bien.
+Soft Margin (Support Vector Classifier):
+Permite la clasificación errónea.
+Las observaciones que están en los límites y dentro del soft margin se llaman
+Support Vectors (Vectores de Soporte).
+No clasifica bien problemas que no son linealmente separables.
+Explicar la idea principal de los SVM.
+Empezar con observaciones en una dimensión relativamente baja, llevar los datos a una
+dimensión mayor y encontrar un clasificador de tipo Support Classifier que separe los datos
+en la alta dimensión en dos grupos.
+Para qué sirven las funciones de Kernel.
+Calculan la relación entre los pares de observaciones como si estuvieran en otra dimensión, pero no realizan una verdadera transformación del espacio. Reducen la cantidad de tiempo de cómputo necesario ya que evita la matemática relacionada con la transformación del espacio.
+Explicar PCA.
+Busca capturar, la dispersión de los datos en el espacio de alta dimensionalidad y
+mostrarla en un espacio de dimensionalidad reducida. La dispersión es como esos datos
+están distribuidos en el espacio respecto a su media para cada una de las variables.
+Explicar MDS.
+Busca preservar las distancias del espacio de alta dimensionalidad en un espacio de baja
+dimensionalidad. Puede utilizar distancias euclidianas o no euclidianas.
+Explicar T-SNE.
+Busca preservar los clusters, no le interesa preservar la distribución de los datos, variación
+ni instancia. Si había x clusters, esos x clusters se representan en una dimensión menor.
+Explicar ISOMAP.
+Utiliza una aproximación a la distancia geodésica, pero deberíamos usarlo cuando los datos están sobre una variedad (los datos no están distribuidos de una forma uniforme, sino que están ubicados dentro de una figura geométrica de dimensión menor).
+Explicar brevemente Perceptrón Multicapa.
+Cuando agregamos capas, el perceptrón simple se convierte en un perceptrón multicapa.
+En consecuencia, tenemos una red neuronal más compleja.
+Está formada por:
+Capa de entrada: Recibe los datos iniciales.
+Capa oculta: Ubicada entre la entrada y la salida. Acá ocurre el procesamiento y permite a la red aprender, las neuronas de estas capas reciben información de la
+capa anterior, la transforman mediante la función de activación y la pasan a la
+siguiente capa.
+Capa de salida: Recibe la información procesada, por las capas ocultas y produce
+un resultado final.
+Esto permite separar el espacio en formas más complejas, además que puede aprender y modelar problemas no lineales.
+¿Qué se necesita para entrenar una red neuronal?
+Se necesita tener una arquitectura, haber elegido los hiper-parámetros, los optimizadores, la función de pérdida y la función de activación.
+Explicar brevemente los métodos de regularización para redes neuronales.
+Regularización L1 y L2: Penaliza el valor de los pesos de la red evitando que se le dé más relevancia a una característica por sobre otra. Puede hacer que el modelo generalice mejor.
+Dropout: Evita codependencias en las conexiones de la red. La idea es “apagar” las conexiones durante el entrenamiento. Hace que la red dependa de unas pocas neuronas.
+Early Stopping: Se usa para evitar el overfitting parando el entrenamiento antes que el
+error del conjunto de validación empiece a crecer.
+Data Augmentation: Se agregan datos usando los que se tienen pero aplicándoles
+transformaciones que los convierten en nuevos datos. Es útil cuando se trabaja con
+imágenes.
+¿Qué funciones de activación se utilizan para los distintos problemas?
+Problemas de Regresión: Sigmoidea, Lineal, ReLu, etc.
+Problemas de Clasificación Binaria: Sigmoidea.
+Problemas de Clasificación de N Clases Simultáneas: Softmax.
+¿Cuál es la diferencia entre clasificación, regresión y agrupamiento? De un ejemplo de cada caso, detallando qué algoritmos podrían utilizarse en cada tipo de problema.
+Regresión: Son problemas en los que se busca predecir un valor en un rango continuo para ciertos valores de entrada. Por ejemplo: Predecir el valor del dólar. Para este tipo de problemas se puede utilizar algoritmos como: Regresión Lineal, Árboles de Decisión, XGBoost, KNN y Random Forest.
+Clasificación: Son problemas en los que se busca clasificar a los datos en categorías finitas y conocidas. Por ejemplo: Se quiere clasificar si una persona está enferma o no. Para este tipo de problemas se puede utilizar algoritmos como: Regresión Logística, KNN, Random Forest, XGBoost y Árboles de Decisión.
+Agrupamiento: Son problemas en los que se busca descubrir estructuras o grupos ocultos dentro de los datos, sin conocer las clases de antemano. Por ejemplo: Se busca agrupar canciones de spotify. Para este tipo de problemas se puede utilizar el algoritmo de K-Means.
+Mencione cuál es la diferencia entre las métricas Precision y Recall y cómo se calculan las mismas.
+Precisión: Mide qué porcentaje de los casos que el modelo predijo como positivos realmente lo eran. Indica qué tan confiables son las predicciones positivas del modelo.
+𝑃
+𝑟
+𝑒
+𝑠
+𝑖
+𝑐
+𝑖
+𝑜
+ˊ
+𝑛
+=
+𝑇
+𝑃
+(
+𝑇
+𝑃
++
+𝐹
+𝑃
+)
+Presici
+o
+ˊ
+n=
+(TP+FP)
+TP
+	​
+
+​
+Recall: Mide qué porcentaje de los positivos reales fueron correctamente detectados por el modelo. Indica qué tan bien el modelo captura todos los casos positivos.
+𝑅
+𝑒
+𝑐
+𝑎
+𝑙
+𝑙
+=
+𝑇
+𝑃
+(
+𝑇
+𝑃
++
+𝐹
+𝑁
+)
+Recall=
+(TP+FN)
+TP
+	​
+
+​
+¿Para qué sirve la Matriz de Confusión?
+Nos sirve para tener un pantallazo de cómo clasificar un modelo.
+La idea es que la diagonal de esta matriz sea lo más alta posible porque esto significa que el modelo está acertando en lo que predice.
+Lo que está fuera de la diagonal principal representa errores de clasificación.
+Explicar brevemente One Hot Encoding.
+Es una técnica usada cuando el modelo requiere que las variables predictoras sean numéricas. Cuando tenemos variables categóricas, lo que se hace es recodificarlas en una o más variables dummies.
+Las variables dummies se expanden n − 1 veces según n sea la cantidad de categorías.
+Explique brevemente las principales diferencias entre:
+a. Métodos de ensamble de tipo bagging y los de tipo boosting.
+Bagging:
+Los modelos se entrenan en paralelo.
+Combina por votación o promedio dependiendo del tipo de problema.
+Utiliza bootstrap para la construcción de los conjuntos de entrenamiento de los modelos.
+Reduce la varianza.
+Boosting:
+Entrena los modelos en secuencia.
+El modelo siguiente se entrena a partir de los datos mal clasificados del modelo anterior.
+Clasifican nuevas instancias utilizando una votación ponderada.
+Reduce el sesgo.
+b. Métodos de ensamble de tipo stacking y los de tipo voting.
+Stacking:
+Utiliza un meta-modelo que es el encargado de tomar la decisión final.
+Se utilizan modelos sencillos.
+Voting:
+Nos quedamos con lo que diga la mayoría.
+La complejidad de los modelos puede ser mayor.
+Explicar brevemente las características de Random Forest.
+Es un algoritmo de aprendizaje automático que utiliza un conjunto de árboles de decisión para mejorar la precisión de las predicciones y reducir el sobre-ajuste.
+Es igual a Bagging Tradicional pero en cada nodo, considera m atributos elegidos
+al azar.
+Identifica la importancia de las variables.
+Es eficiente con grandes conjuntos de datos y puede manejar características
+correlacionadas.
+Explicar brevemente las características de XGBoost.
+Es una implementación optimizada del algoritmo de gradient boosting, que combina
+múltiples árboles de decisión débiles para formar un modelo más fuerte y preciso.
+Diseñado para Big Data.
+Fue diseñado para ser computacionalmente muy eficiente.
+Manejo de datos faltantes.
+Hiper-parámetros para el control de sobre ajuste.
+Importancia de características, mostrando cuáles aportan más a las predicciones.
+Explicar brevemente las características de los ensamblajes híbridos.
+Combinan modelos de distintos tipos para aprovechar las fortalezas de cada uno.
+Explicar brevemente Perceptrón Simple.
+Es una única neurona que tiene múltiples entradas que son multiplicadas por pesos, se
+suman y serán el input de una función de activación. No sirve para problemas no
+linealmente separables.
+¿Para qué se utiliza el método backpropagation? ¿Qué tipo de método es, es decir, que recurso matemático utiliza?
+Es un método que se utiliza para entrenar redes neuronales. Su objetivo es ajustar los pesos de la red para minimizar la función de error o pérdida. Es un método basado en derivadas y utiliza el gradiente de la función de error o pérdida respecto a los pesos.
+Explicar brevemente los optimizadores para redes neuronales.
+Un optimizador es una implementación concreta del algoritmo de backpropagation para
+que converja más rápido y que el entrenamiento sea menos costoso.
+SGD: Actualiza los pesos usando el gradiente de una muestra, es el método básico.
+Momentum: Añade una “inercia” al movimiento del gradiente, acumulando parte de las actualizaciones anteriores.
+Nesterov: Mejora el Momentum al calcular el gradiente anticipando la próxima posición del parámetro, lo que lo hace más útil y estable.
+AdaGrad: Adapta la tasa de aprendizaje para cada parámetro. Concretamente, la reduce mucho en las dimensiones más empinadas y menos en las más planas. No se usa para entrenar redes profundas.
+RMSprop: Mantiene los beneficios de AdaGrad, pero en lugar de acumular todos los
+gradientes pasados, como lo hace AdaGrad, utiliza un promedio móvil de ellos
+Adam: Combina las ideas de Momentum y RMSProp. Hace un seguimiento de una media de decaimiento exponencial de gradientes pasados y de gradientes cuadrados pasados. Es el más usado por su estabilizador y rapidez.
+AdamMax: Una modificación de Adam, en general da mejores resultados pero depende del conjunto de datos.
+Nadam: Es Adam + Nesterov, así que a menudo converge más rápido que Adam.
+Explicar brevemente Redes SOM.
+Son redes superficiales que nos permiten mapear un espacio de entrada a un espacio de salida.
+Son como una especie de K-Means pero mejorado.
+Constan de dos capas.
+Son un modelo no supervisado ya que no necesitamos de un conjunto de entrenamiento previamente etiquetado.
+Lo que hacen es formar clusters.
+Hacen una transformación del espacio.
+No se entrenan con Backpropagation.
+Se van a definir unos pesos que son únicos para cada valor de entrada y cada
+neurona de salida, son dados de forma aleatoria inicialmente.
+Practica para el Integrador
+Modelos de integrador
+Examen final_ 13-12-2022.pdf
+64.6 KiB
+docs.google.com​
+Examen 22/12/2022 
+1) Dado un lexicón de sentimientos con palabras y correspondiente puntaje positivo y negativo ¿Qué debo hacer antes de usar el lexicón? Dar puntaje positivo/negativo de 2 documentos (oraciones).
+Maravilloso
+	
++
+
+Aburrido
+	
+-
+
+Ansiedad
+	
+-
+
+Iluminado
+	
++
+
+Terrible
+	
+-
+
+Divertido
+	
++
+
+Apesta
+	
+-
+¿Qué debo hacer antes de usar un lexicón?
+Partiendo desde el texto input que se nos brinda, antes de hacer uso de un lexicón para clasificar sus palabras, debemos hacer un procesamiento previo con este.
+Tokenización del texto
+Extracción de características (palabras clave)
+Lidiar con la negación para no obtener la connotación errónea.
+Clasificación automática en una categoría (asignación de etiquetas previamente definidas dentro de ese mismo lexicón. Por ejemplo el género de una persona, o si una palabra es un sustantivo, adjetivo, etc).
+Puntuar la polaridad de 2 documentos.
+Documento 1: A pesar de que Marcos fue un poco aburrido, la cita fue maravillosa. El lugar donde comimos estaba muy bien iluminado, y se veía un ambiente divertido.
+Documento 2: El examen de Orga es mañana. Esto me da mucha ansiedad.
+Pasos:
+Defino pivotes
+Maravillosa (+)
+Ansiedad (-)
+Extraigo frases
+Documento 1
+A pesar de que Marcos fue un poco aburrido, la cita fue maravillosa.
+El lugar donde comimos estaba muy bien iluminado, y se veía un ambiente divertido.
+Documento 2
+El examen de Orga es mañana.
+Esto me da mucha ansiedad.
+Aprender la polaridad de cada una de las frases
+𝑃
+𝑀
+𝐼
+(
+𝑝
+1
+,
+𝑝
+2
+)
+=
+log
+⁡
+2
+(
+#
+(
+𝑝
+1
+ near 
+𝑝
+1
+)
+#
+𝑝
+1
+ 
+∗
+ 
+#
+𝑝
+2
+)
+PMI(p1,p2)=log
+2
+	​
+
+(
+#p1 ∗ #p2
+#(p1 near p1)
+	​
+
+)​
+𝑃
+𝑜
+𝑙
+𝑎
+𝑟
+𝑖
+𝑑
+𝑎
+𝑑
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+)
+=
+𝑃
+𝑀
+𝐼
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+,
+𝑝
+1
+)
+−
+𝑃
+𝑀
+𝐼
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+,
+𝑝
+2
+)
+=
+log
+⁡
+2
+(
+#
+(
+frase near p1
+)
+∗
+#
+𝑝
+2
+#
+(
+frase near p2
+)
+∗
+#
+𝑝
+1
+)
+Polaridad(frase)=PMI(frase,p1)−PMI(frase,p2)=log
+2
+	​
+
+(
+#(frase near p2)∗#p1
+#(frase near p1)∗#p2
+	​
+
+)​
+Polaridad(“Esto me da mucha ansiedad”) = PMI(“Esto me da mucha ansiedad”, “Maravillosa”) - PMI(“Esto me da mucha ansiedad”, “ansiedad”)
+2) 4 V/F respecto a deep Belief, Cómo se entrena una red deep belief?
+Características de Deep Belief
+Red neuronal profunda. Estas redes se denominan así dado que tienen más capas, lo que incrementa su tiempo de entrenamiento.
+Las redes Deep Belief (cada capa) memorizan el input en su totalidad, y se entrenan cada 2 capas. Una vez concluido su entrenamiento, la red aprendió a detectar patrones, pero todavía no tenemos información sobre estos. Es una alternativa al backpropagation (También conocida como desvanecimiento del gradiente, propaga errores desde la capa de salida hasta la de entrada).
+Construyen una RBM (Restricted Boltzmann Machine) y apilan la red. No está demás recordar, que las RBM ejecutan su entrada en sentido directo, luego en el sentido inverso, y por último ajustan el bias. Esto se repite hasta lograr el menor posible.
+¿Cómo se entrena esta red?
+Se entrena cada dos capas, cada una aprende el input entero. Al finalizar, la red aprende a detectar patrones inherentes en los datos. La segunda parte del entrenamiento es supervisado con pequeñas cantidades de datos.
+3) Cuáles son los 3 tipos de estructuras que puede tener una red recurrente. Dar ejemplos para c/u. Cual es el principal problema de una red recurrente
+Los tres tipos de estructuras que puede tener una red recurrente son:
+secuencia → secuencia (son series temporales); se usan para clasificación de videos cuadro a cuadro (EJ: precio de acciones en el futuro)
+secuencia → singular; se usan para clasificación de documentos (EJ: análisis de sentimientos)
+singular → secuencia; se usan para etiquetado de imágenes
+Los problemas que tiene una red recurrente son:
+desvanecimiento del gradiente → lo tienen todas las redes profundas pues cuánto más capas hay el gradiente tiende a 0 y la actualización de los pesos es cada vez menor, el problema es exponencial
+gradientes inestables → dificultad para converger en el entrenamiento porque cambia la función de error en cada paso (el gradiente oscila)
+demoras → una sola capa con 100 pasos temporales es como entrenar una red de 100 capas de alimentación hacia adelante
+memoria a corto plazo → no pueden recordarse secuencias demasiado largas
+4) ¿Cómo se analizaron los valores atípicos? De una ejemplo realizado en el tp y describa el proceso y cómo luego se trataron esos datos atípicos encontrados.
+TP1
+Examen 13/12/2022 (otro tema)
+1) daban un cuadrito con 4 frases y 3 decían la clase (C o U), pedían: probabilidad de clase C; prob de clase U; vocabulario, y prob de que sea la palabra chileno sabiendo que era de clase C. Hacerlo considerando smoothing laplace 
+1
+	
+Chileno Santiago Chileno
+	
+C
+
+2
+	
+Chileno Chileno Valparaiso
+	
+C
+
+3
+	
+Chileno Allende
+	
+C
+
+4
+	
+Montevideo Uruguay Chileno
+	
+U
+
+5
+	
+Chileno Chileno Chileno Montevideo Uruguay
+	
+C
+Vocabulario
+{Chileno, Santiago, Valparaíso, Allende, Montevideo, Uruguay}
+| vocabulario | = 6
+Probabilidad de clase C?
+“Cantidad de documentos de la clase C, sobre el total” “¿Que probabilidad tengo de que sea C (conteo)?” 4/5
+Probabilidad de clase U? 1/5
+Probabilidad de Chileno sabiendo que es de C
+𝑃
+(
+‘
+‘
+𝑝
+𝑎
+𝑙
+𝑎
+𝑏
+𝑟
+𝑎
+"
+∣
+𝑐
+𝑙
+𝑎
+𝑠
+𝑒
+)
+=
+#
+“palabra" en documentos de clase “clase" + 1
+#
+palabras en documento de clase “clase"
++
+#
+palabras del vocabulario
+P(‘‘palabra"∣clase)=
+#palabras en documento de clase “clase"+#palabras del vocabulario
+#“palabra" en documentos de clase “clase" + 1
+	​
+
+​
+P(“Chileno” | C) = (8 + 1) / (13 + 6) = 0.47
+Probabilidad de Chileno sabiendo que es de U
+P(“Chileno” | U) = (1 + 1) / (3 + 6) = 0.22
+Probabilidad de Uruguay sabiendo que es de U
+P(“Uruguay” | U) = (1 + 1) / (3 + 6) = 0.22
+Probabilidad de Uruguay sabiendo que es de C
+P(“Uruguay” | C) = (1 + 1) / (13 + 6) = 0.11
+2) dibujar esquema sintético de una red convolucional, explicar las capas, el orden y funciones de activación  
+Capas:
+Capa input: El dominio de entrada (imagen).
+Capa Pooling: Reducción de la dimensionalidad. Hace uso de la función de activación.
+Capa Fully Connected: Capa de clasificación.
+Capa output: Resultado final del proceso de la red.
+Funciones de Activación (más usadas):
+Relu: Se usa en capas ocultas para evitar el desvanecimiento del gradiente. Tiene una mejor performance en tiempo computacional.
+SoftMax: Suele usarse en la última capa.
+...
+3) Del tp1 explicar qué técnica se usó para reducción de dimensión y comentar como fue la performance en el conjunto de test.
+¿Qué técnicas usamos?
+Eliminamos del dataset las variables irrelevantes.
+En caso de tener dos o más variables con un alto nivel de correlación entre si, eliminamos estas, ya que tenerlas a todas no nos va a aportar más información de la que conseguimos con una sola.
+Estudiamos también si nos son relevantes las variables con un valor bajo de varianza (no lo son).
+Estudiamos los distintos candidatos a outliers (univariados y multivariados), y en caso de determinar que lo sean procedemos a eliminarlos.
+¿Cómo fue la performance en test?
+Dado que el conjunto de técnicas realizadas durante el proceso de la reducción de la dimensionalidad fueron para obtener un dataset resultante más limpio en cuanto a sus datos, las métricas obtenidas con este, deberían ser más precisas que utilizando el dataset original.
+4) Explicar por qué es importante separar el train y test, que consideraciones hay que tener en el preprocesamiento y explicar una técnica usada en los tps.
+La separación de los conjuntos de datos en entrenamiento (train) y prueba (test) es un paso fundamental en la metodología de la ciencia de datos, y conlleva consideraciones específicas durante el preprocesamiento, como se evidencia en los trabajos prácticos (TPs).
+Importancia de la separación entre Train y Test
+La partición de los datos es crucial para garantizar que el modelo de aprendizaje automático pueda generalizar y se evalúe su rendimiento sobre datos que nunca ha visto.
+1. Evaluación Objetiva y Generalización: La separación asegura que la predicción se realice con datos desconocidos, evitando la influencia del modelo sobre estos. El conjunto de prueba (test) se utiliza para validar qué tan bueno fue el método, empleando las métricas adecuadas. Una evaluación en el conjunto de prueba refleja la capacidad real del modelo para generalizar a datos no vistos.
+2. Mitigación del Sobreajuste (Overfitting): Si el modelo se ajusta demasiado a los datos de entrenamiento, aprendería el ruido y las particularidades específicas de ese conjunto, lo que se conoce como overfitting. Al evaluarlo con datos de prueba separados, podemos detectar si el estimador memorizó los datos de entrenamiento pero no será bueno con datos nuevos.
+Consideraciones en el Preprocesamiento
+El preprocesamiento de datos debe realizarse de manera que las transformaciones y aprendizajes obtenidos del conjunto de entrenamiento no "filtren" información al conjunto de prueba, un fenómeno conocido como data leakage.
+Las consideraciones clave incluyen:
+Uso del Conjunto de Entrenamiento: El dataset de entrenamiento se utiliza para estudiar la naturaleza de los datos, incluyendo la identificación de valores nulos, la determinación de variables irrelevantes, el estudio de valores atípicos (outliers) y la realización de tareas de codificación y preparación del dataset.
+Imputación y Escalado: Las técnicas de imputación para datos faltantes (como reemplazar con la media o mediana) y las de escalado (como la normalización Z-score), deben calcularse (ajustarse) solo en el conjunto de entrenamiento y luego aplicarse al conjunto de prueba y validación.
+Gestión de Outliers: Es necesario identificar y analizar los valores atípicos, que son observaciones que se desvían tanto de las demás que despiertan sospechas de haber sido generadas por un mecanismo diferente. Estos deben ser inspeccionados cuidadosamente ya que pueden influir en los resultados del análisis estadístico.
+Tokenización y Extracción de Características (NLP): En tareas de procesamiento de lenguaje natural (como en el TP2), el preprocesamiento implica la tokenización del texto, la extracción de características (palabras clave) y lidiar con la negación para no obtener connotaciones erróneas, entre otras acciones. Para la clasificación de sentimientos, se realizó una limpieza textual eliminando caracteres no alfabéticos, unificando espacios en blanco y removiendo stopwords del español.
+Técnica utilizada en los TPs: Análisis de Valores Atípicos Multivariados
+En el Trabajo Práctico 1 (TP1), el análisis de valores atípicos fue una parte crucial del preprocesamiento. Existen diferentes enfoques, incluyendo métodos univariados (en una sola variable) y multivariados (en un espacio n-dimensional).
+Una técnica usada para analizar valores atípicos es la Distancia de Mahalanobis.
+Explicación de la Distancia de Mahalanobis:
+1.
+Concepto:
+La Distancia de Mahalanobis es una medida de distancia multivariada
+. Sirve para evaluar cuán lejos está un punto particular (
+x
+) de un conjunto de observaciones con una media (
+μ
+) y una matriz de covarianza (
+S
+)
+.
+2. Propósito: Este método es útil para el análisis global de outliers en espacios de alta dimensionalidad. Los valores con alta distancia de Mahalanobis son aquellos que quedan aislados y pueden ser considerados outliers.
+3. Aplicación en TP1: En el TP1, para el análisis de valores atípicos, se utilizaron diversas técnicas, incluyendo el boxplot, el z-score, el z-score modificado, la distancia de Mahalanobis, dispersogramas y gráficos de densidad. Esto subraya la necesidad de utilizar métodos robustos para identificar observaciones extremas que pueden distorsionar los modelos.
+En esencia, la Distancia de Mahalanobis actúa como una lupa en un espacio multidimensional: en lugar de simplemente medir la distancia euclidiana, ajusta esa distancia basándose en la dispersión (covarianza) de los datos, lo que permite identificar puntos inusuales dentro del patrón de distribución general.
+5) Explicar técnicas usadas para ampliación del dataset en el tp2 y comentar la performance.
+La técnica utilizada en el Trabajo Práctico 2 (TP2) para detectar aspectos (o atributos) en las críticas fue el Método de Minqing Hu y Bing Liu.
+Este método se basa en la búsqueda de frases frecuentes en las críticas, denominando a estas frases aspectos, atributos u objetos de sentimiento, ya que representan el objeto al cual se dirige el juicio de valor. Esta técnica utiliza tanto la frecuencia como reglas para identificar estos elementos.
+Nuevos Features agregados al Dataset
+Luego de aplicar la técnica mencionada, el dataset original fue ampliado de dos maneras principales:
+1. El dataset base fue ampliado utilizando información del de property_descriptions.
+2. Se incluyeron nuevas features como columnas por cada uno de los aspectos seleccionados utilizando la técnica de Minqing Hu y Bing Liu.
+Impacto en la Performance del Modelo
+La ampliación y limpieza del dataset mediante estas técnicas tuvo como objetivo obtener un conjunto de datos más limpio, lo que se espera resulte en métricas más precisas en comparación con el uso del dataset original.
+El impacto en el rendimiento (performance) del modelo se evaluó con métricas de clasificación, principalmente el F1-Score:
+Resultados generales: Los modelos base demostraron un rendimiento robusto en el conjunto de validación local (una porción del archivo training). El Modelo de ensamble (Voting), que combinó varios modelos, alcanzó el F1-Score más alto, llegando a 0.8835 en la validación.
+Redes Neuronales: Específicamente, para el modelo de Red Neuronal Profunda, se aplicó una reducción de dimensionalidad con TruncatedSVD al dataset vectorial. Esto redujo las 30,000 características originales a 300 componentes. Esta acción fue crucial para evitar el sobreajuste y acelerar el entrenamiento, a la vez que mantuvo la capacidad discriminativa. Este modelo se destacó como el mejor modelo individual base, con un F1-Score de 0.8619 en validación local,.
+Optimización de Hiperparámetros: Aunque la optimización de hiperparámetros utilizando Randomized Search CV (RSCV) puede resultar en un score ligeramente inferior al teórico máximo (por ejemplo, ~57.9% versus ~58%), esta técnica es elegida por ser mucho más conveniente en cuanto a los tiempos de ejecución,.
+6) Que es un lexicón y como utilizarlo en análisis de sentimiento, que ventajas y desventajas tiene comparado con entrenar un modelo de cero.
+¿Qué es un lexicón?
+Un lexicón es un diccionario que brinda la carga de valor de una palabra. Lo entrenamos cuando no queremos entrenar un algoritmo de clasificación (se usa para algoritmos supervisados).
+También podemos crearnos uno propio. Para esto necesitamos un conjunto de ejemplos previamente clasificados (polaridad positiva/negativa) o bien reglas que identifiquen patrones en una frase.
+¿Cómo utilizarlo en análisis de sentimiento?
+El diccionario nos brinda la polaridad de una palabra, y en base a eso se puede determinar la polaridad que una frase/texto mediante distintos algoritmos que sirven para ponderar estos.
+Algoritmos:
+Hatzivassiloglou y McKeown → Lo utilizamos para la ampliación de un lexicón mediante la utilización de las palabras “y” y “pero” para detectar la polaridad similar u opuesta de un par de palabras. Comete errores, con lo cual es necesario luego una supervisión manual.
+Turney → Nos ayuda para obtener la polaridad de una frase y, en definitiva, la ponderación general de un texto. Esto último podemos calcularlo haciendo el promedio de la polaridad de todas las frases.
+Ventajas y desventajas contra entrenar un modelo de cero.
+La principal ventaja que vamos a obtener si utilizamos un lexicón es en cuanto a lo temporal. Mientras que al entrenar un modelo desde cero vamos a tener que invertir recursos en su entrenamiento, el usar un lexicón nos ahorra esta tarea.
+Por otro lado, en cuanto a las desventajas, podemos atribuirle la necesidad de revisión por parte de una persona, dado que sus clasificaciones podrían contener errores (por ejemplo cuando un texto posee sutilezas y expectativas frustradas).
+Ejemplo de algoritmo de Turney (el unico que vi)
+Lexicón → Algoritmo de Turney
+Un texto está compuesto por:
+frase 1
+frase 2
+frase 2
+frase 3
+frase 1
+Sabiendo, las polaridades son:
+Polaridad(frase 1) = 0,5
+Polaridad(frase 2) = 0,8
+Polaridad(frase 3) = 0,2
+Que me pidan la polaridad de un texto, es equivalente a hacer su promedio:
+𝑃
+𝑜
+𝑙
+𝑎
+𝑟
+𝑖
+𝑑
+𝑎
+𝑑
+(
+𝑡
+𝑒
+𝑥
+𝑡
+𝑜
+)
+=
+(
+2
+∗
+𝑃
+𝑜
+𝑙
+𝑎
+𝑟
+𝑖
+𝑑
+𝑎
+𝑑
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+1
+)
++
+2
+∗
+𝑃
+𝑜
+𝑙
+𝑎
+𝑟
+𝑖
+𝑑
+𝑎
+𝑑
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+2
+)
++
+𝑃
+𝑜
+𝑙
+𝑎
+𝑟
+𝑖
+𝑑
+𝑎
+𝑑
+(
+𝑓
+𝑟
+𝑎
+𝑠
+𝑒
+3
+)
+)
+5
+Polaridad(texto)=
+5
+(2∗Polaridad(frase1)+2∗Polaridad(frase2)+Polaridad(frase3))
+	​
+
+​
+De la fórmula:
+Simulacro hecho por ChatGPT
+EJERCICIO 1 – Naive Bayes “con trampa” (20 pts)
+Se tiene el siguiente corpus de entrenamiento:
+Doc
+	
+Texto
+	
+Clase
+
+D1
+	
+bueno barato rápido
+	
+POS
+
+D2
+	
+malo lento caro
+	
+NEG
+
+D3
+	
+bueno rápido
+	
+POS
+
+D4
+	
+caro lento
+	
+NEG
+
+D5
+	
+bueno caro
+	
+?
+a) Determine el vocabulario.
+El vocabulario (V) se compone de todas las palabras únicas presentes en el conjunto de entrenamiento (D1 a D4).
+V = {bueno, barato, rápido, malo, lento, caro}
+El tamaño del vocabulario es ∣V∣=6.
+b) Calcule las probabilidades a priori.
+Las probabilidades a priori P(c) se calculan como la cantidad de documentos de una clase sobre el total de documentos de entrenamiento (N=4).
+P(POS)=2/4=0.5 (D1 y D3 son POS)
+P(NEG)=2/4=0.5 (D2 y D4 son NEG)
+c) Calcule 
+𝑃
+(
+bueno
+/
+POS
+)
+P(bueno/POS) con Laplace.
+Utilizamos la fórmula de Laplace smoothing (o Add-one): P′(w∣c)=∑count(palabras en c)+∣V∣count(w,c)+1.
+1. Conteo de "bueno" en POS: Aparece 1 vez en D1 y 1 vez en D3. Total = 2.
+2. Suma de palabras en documentos POS: D1 (3 palabras) + D3 (2 palabras). Total = 5.
+3. Tamaño del vocabulario (∣V∣): 6.
+𝑃
+(
+𝑏
+𝑢
+𝑒
+𝑛
+𝑜
+∣
+𝑃
+𝑂
+𝑆
+)
+=
+2
++
+1
+5
++
+6
+=
+3
+11
+≈
+0.2727.
+P(bueno∣POS)=
+5+6
+2+1
+	​
+
+=
+11
+3
+	​
+
+≈0.2727.​
+d) Clasifique el documento D5 usando Naive Bayes.
+Para clasificar, debemos encontrar la clase que maximice el producto de la probabilidad a priori y las probabilidades condicionales de cada palabra del documento.
+Probabilidades para la clase POS:
+P(bueno∣POS)=3/11
+P(caro∣POS)=0 + 1 / 5 + 6=1/11 (la palabra "caro" no está en POS)
+Puntaje POS 
+∝
+0.5
+×
+3
+11
+×
+1
+11
+≈
+0.0124
+∝0.5×
+11
+3
+	​
+
+×
+11
+1
+	​
+
+≈0.0124​
+Probabilidades para la clase NEG:
+P(bueno∣NEG)= 0 + 1 / 5 + 6=1/11 (la palabra "bueno" no está en NEG)
+P(caro∣NEG)=2+1 / 5+6=3/11 ("caro" aparece en D2 y D4)
+Puntaje NEG 
+∝
+0.5
+×
+1
+11
+×
+3
+11
+≈
+0.0124
+∝0.5×
+11
+1
+	​
+
+×
+11
+3
+	​
+
+≈0.0124​
+Resultado: Existe un empate técnico entre ambas clases. En este corpus simplificado, el documento D5 tiene la misma probabilidad de ser POS o NEG debido a que las palabras "bueno" y "caro" tienen frecuencias opuestas idénticas en sus respectivas clases.
+e) Explique qué sucedería si no se usara smoothing.
+Si no se aplicara una técnica de suavizado como Laplace, ocurriría lo siguiente:
+Probabilidades nulas: Cualquier palabra que no haya aparecido en una clase durante el entrenamiento tendría una probabilidad condicional de 0.
+Anulación de la predicción: Dado que Naive Bayes multiplica todas las probabilidades entre sí, un solo valor "0" causaría que la probabilidad total de esa clase sea 0, eliminando toda la información aportada por las demás palabras del documento.
+El suavizado asegura que todas las palabras tengan, al menos, una probabilidad mínima, permitiendo que el clasificador funcione incluso con términos nuevos o infrecuentes.
+EJERCICIO 2 – Texto (no BoW clásico) (15 pts)
+a) Explique por qué Bag of Words no captura semántica.
+El modelo de Bolsa de Palabras (BoW) falla en capturar la semántica por dos razones fundamentales:
+Ignora el orden y la estructura: Como su nombre lo indica, trata al documento como un conjunto de palabras desordenadas. Esto hace que no pueda distinguir entre oraciones que contienen las mismas palabras pero con significados opuestos, como "Él es una buena persona y no un violento" frente a "Él es un violento y no una buena persona".
+Representación Ortogonal: En este modelo (habitualmente basado en One-Hot Encoding), cada palabra es un vector independiente y ortogonal a los demás. Esto significa que todas las palabras están a la misma distancia entre sí, por lo que no existe una noción natural de similitud; el modelo no "sabe" que "maravilloso" y "bueno" tienen significados cercanos.
+b) ¿Qué ventaja ofrecen los embeddings frente a BoW?
+Los Embeddings de palabras representan una evolución significativa al mapear palabras a vectores reales densos. Sus principales ventajas son:
+Captura de Relaciones Semánticas y Sintácticas: Basándose en la hipótesis distribucional ("dime con quién andas y te diré qué significas"), palabras con contextos similares terminan cerca en el espacio vectorial.
+Álgebra de Palabras: Permiten realizar operaciones matemáticas con significado. El ejemplo clásico es que el vector resultante de "Rey - Hombre + Mujer" es muy cercano al vector de "Reina".
+Reducción de Dimensionalidad: Mientras que BoW genera vectores dispersos del tamaño del vocabulario (ej. 10.000 o más), los embeddings comprimen esa información en vectores densos de dimensiones mucho menores (frecuentemente 300), lo que acelera el entrenamiento y ayuda a evitar el sobreajuste.
+c) ¿Qué problema introducen los n-gramas?
+Si bien los n-gramas se utilizan para incorporar información contextual y capturar expresiones compuestas (como "muy buena" o "pésima actuación"), introducen el siguiente problema:
+Explosión de la Dimensionalidad: Al considerar combinaciones de 2, 3 o más palabras, el número de características potenciales aumenta de forma exponencial. Esto genera matrices extremadamente dispersas y vocabularios demasiado grandes, lo que puede incrementar el costo computacional y el riesgo de que el modelo sobreajuste (overfitting) si no se establecen límites de frecuencia o se aplican técnicas de reducción como TruncatedSVD.
+EJERCICIO 3 – Reducción de Dimensionalidad “teórica” (15 pts)
+Se tienen datos de alta dimensión con ruido y correlaciones fuertes.
+a) ¿Por qué PCA puede ayudar incluso si no se reduce dimensión?
+Incluso si se mantienen todos los componentes (sin reducir la dimensión física), el Análisis de Componentes Principales (PCA) aporta beneficios estructurales a los datos:
+Eliminación de redundancia: PCA transforma las variables originales en ejes ortogonales (perpendiculares entre sí), lo que elimina las correlaciones fuertes y la multicolinealidad entre variables.
+Reducción de ruido: Al encontrar las direcciones de máxima varianza, permite identificar qué combinaciones de variables contienen la estructura principal de la información y cuáles podrían considerarse ruido.
+Interpretación de variables: A través de los loading scores, permite entender qué variables originales tienen más peso en la dispersión de los datos.
+b) ¿Por qué t-SNE no es recomendable como input de un modelo supervisado?
+A pesar de ser una excelente técnica para visualización, t-SNE presenta debilidades críticas para ser parte de un pipeline de aprendizaje supervisado:
+Incapacidad de proyectar nuevos datos: La mayor limitación es que no se puede usar para nuevos puntos; es decir, no existe una función de mapeo para transformar el conjunto de test o datos futuros basándose en lo aprendido en el entrenamiento.
+Naturaleza estocástica: Es un algoritmo no determinista, lo que significa que diferentes ejecuciones pueden generar representaciones distintas, dificultando la estabilidad de un modelo supervisado.
+Costo computacional: No escala bien con una gran cantidad de registros o dimensiones en comparación con métodos lineales.
+c) ¿Qué diferencia conceptual hay entre PCA y Autoencoders?
+Aunque ambos se utilizan para la compresión de información y reducción de dimensionalidad, difieren en su fundamento matemático y capacidad:
+Característica
+	
+PCA
+	
+Autoencoders
+
+Naturaleza
+	
+Técnica lineal basada en álgebra lineal.
+	
+Redes neuronales de aprendizaje profundo.
+
+Relaciones
+	
+Solo captura relaciones lineales mediante varianza.
+	
+Puede capturar relaciones no lineales complejas mediante capas ocultas y funciones de activación.
+
+Objetivo
+	
+Maximizar la varianza/dispersión de los datos proyectados.
+	
+Minimizar el error de reconstrucción (Loss) entre la entrada y la salida.
+
+Estructura
+	
+Descomposición en autovectores y autovalores.
+	
+Arquitectura con capas de codificación y decodificación con igual número de neuronas en entrada y salida.
+EJERCICIO 4 – Ensambles “comparación cruzada” (15 pts)
+a) ¿Por qué Boosting es más propenso al overfitting que Bagging?
+La diferencia radica en la naturaleza del proceso de entrenamiento de cada técnica:
+Naturaleza Secuencial del Boosting: Los modelos de Boosting se entrenan de forma secuencial, donde cada nuevo predictor intenta corregir los errores cometidos por los anteriores,. Para lograr esto, el algoritmo pondera las instancias mal clasificadas, aumentando su peso relativo para que el siguiente modelo se focalice en ellas,. Si los datos contienen ruido o valores atípicos (outliers), el algoritmo puede forzar el ajuste hacia estas anomalías, lo que deriva en sobreajuste,.
+Independencia en Bagging: Por el contrario, el Bagging entrena múltiples modelos de forma independiente y en paralelo utilizando muestras aleatorias con reemplazo (bootstrap),,. Al combinar los resultados mediante votación, se reduce la varianza global y se mitiga el impacto de los outliers, lo que generalmente reduce el riesgo de overfitting,.
+b) ¿Cuándo Stacking puede empeorar el desempeño?
+El Stacking es una técnica compleja que puede ser contraproducente en ciertos escenarios:
+Complejidad y Sobreajuste: Debido a su estructura de múltiples capas, el Stacking introduce un riesgo mayor de overfitting sobre el conjunto de entrenamiento si el metamodelo se vuelve demasiado complejo,.
+Falta de Certeza en Modelos Base: Este método suele funcionar mejor cuando los clasificadores base pueden generar medidas de certeza; de lo contrario, el meta-aprendiz podría no tener información suficiente para combinar las predicciones de manera efectiva.
+Correlación entre Modelos: Si los modelos base son muy similares entre sí o están altamente correlacionados, el ensamble no aporta diversidad y el metamodelo podría simplemente replicar los errores existentes en lugar de corregirlos.
+c) ¿Por qué Random Forest reduce la correlación entre árboles?
+Random Forest introduce una mejora sobre el Bagging tradicional para garantizar que los modelos sean diversos:
+Attribute Bagging (Random Subspace): En un ensamble de árboles convencional, si unos pocos atributos son predictores muy fuertes, todos los árboles tenderán a usarlos cerca de la raíz y terminarán pareciéndose entre sí (alta correlación).
+Subconjunto Aleatorio de Atributos: Random Forest soluciona esto obligando a cada árbol a considerar, en cada nodo, solo un subconjunto aleatorio de "m" atributos para decidir la división,.
+Diversidad Estructural: Habitualmente se toma la raíz cuadrada del número total de atributos como valor de "m". Esta restricción asegura que incluso los atributos menos dominantes tengan la oportunidad de formar parte de la estructura del árbol, generando modelos poco correlacionados cuya votación final reduce drásticamente la varianza de la clasificación,,.
+EJERCICIO 5 – Deep Learning conceptual (20 pts)
+a) ¿Por qué las GAN son difíciles de entrenar?
+Las Redes Generativas Adversarias (GAN) presentan una alta complejidad en su entrenamiento debido a su naturaleza competitiva. Están compuestas por dos redes (el Generador y el Discriminador) que se enfrentan en un juego de suma cero.
+Las principales dificultades son:
+Inestabilidad de los gradientes: Dado que ambas redes aprenden simultáneamente, la función de error cambia constantemente en cada paso, lo que puede provocar que los gradientes oscilen en lugar de converger.
+Falta de control: Es muy difícil controlar características específicas de los datos generados (como rasgos en una imagen), ya que las funciones internas están "enredadas"; modificar un solo parámetro de entrada suele afectar a múltiples rasgos a la vez.
+b) ¿Qué problema resuelven LSTM/GRU respecto a RNN simples?
+Las celdas LSTM (Long Short-Term Memory) y GRU (Gated Recurrent Unit) fueron diseñadas para mitigar dos fallas críticas de las redes recurrentes simples:
+Desvanecimiento del gradiente: En las RNN tradicionales, a medida que hay más capas o pasos temporales, el gradiente tiende a cero, impidiendo que los pesos se actualicen correctamente.
+Memoria a corto plazo: Las RNN simples no pueden recordar secuencias muy largas. Las celdas LSTM/GRU utilizan mecanismos de Gating (compuertas), que permiten a la red decidir de forma aprendida qué información es importante mantener y cuál debe olvidar.
+c) ¿Por qué los embeddings capturan relaciones semánticas?
+Los embeddings logran capturar el significado de las palabras basándose en la hipótesis distribucional, la cual sostiene que "elementos lingüísticos con distribuciones similares tienen significados similares".
+Bajo la premisa de "dime con quién andas y te diré qué significas", el modelo se entrena analizando los contextos (las palabras que rodean a una palabra central). Esto permite que palabras con usos similares terminen cerca en el espacio vectorial, habilitando el álgebra de palabras (ej: "Rey - Hombre + Mujer ≈ Reina").
+EJERCICIO 6 – Clasificación (15 pts)
+a) ¿Qué ventaja tiene SVM frente a un perceptrón?
+La principal ventaja radica en la capacidad de manejar datos que no son linealmente separables:
+Limitación del Perceptrón: El perceptrón simple es la unidad básica de una red neuronal, pero tiene la limitación fundamental de que solo puede resolver problemas linealmente separables (donde las clases pueden dividirse con un hiperplano). Por ejemplo, es incapaz de resolver el problema del XOR.
+Capacidad de SVM: Las Máquinas de Soporte de Vectores (SVM) pueden enfrentar casos no lineales mediante el Kernel Trick. Esta técnica permite calcular relaciones en dimensiones más altas como si los datos hubieran sido transformados, permitiendo encontrar un hiperplano separador en ese nuevo espacio sin el costo computacional de una transformación física real.
+b) ¿Qué rol juega el margen en SVM?
+El margen es un concepto central para la robustez del modelo:
+Definición: Se define como la distancia mínima entre cualquier observación (punto de datos) y el umbral o hiperplano de decisión.
+Vectores de Soporte: Las observaciones que se encuentran justo en el límite o dentro del margen se denominan Vectores de Soporte; ellos son los que "soportan" o definen el área del margen.
+Generalización: Un clasificador de Margen Máximo intenta que esta distancia sea lo más grande posible para mejorar la capacidad de predicción.
+Manejo de ruido (Soft Margin): El uso de un margen blando permite que algunas observaciones queden mal clasificadas o dentro del margen, lo cual es vital para que el modelo pueda manejar outliers y datos superpuestos sin caer en el sobreajuste.
+c) ¿Qué sucede si el parámetro C es muy grande?
+En el contexto de las SVM (específicamente en el Support Vector Classifier o margen blando), el parámetro de regularización C controla la tolerancia a los errores:
+Baja tolerancia al error: Un valor de C muy grande indica que el algoritmo debe priorizar la clasificación correcta de todos los puntos de entrenamiento, permitiendo muy pocas (o ninguna) violaciones del margen.
+Sobreajuste (Overfitting): Al intentar ajustarse tan estrictamente a cada dato, el modelo se vuelve muy sensible al ruido y a los valores atípicos (outliers).
+Sesgo y Varianza: Esto resulta en un modelo con bajo sesgo pero alta varianza, lo que significa que, aunque rinda perfectamente en el set de entrenamiento, tendrá un desempeño pobre con datos nuevos porque no logró generalizar patrones, sino que "memorizó" los datos conocidos.
+Simulacro hecho por NotebookLM
+EJERCICIO 1 – Clasificación con Naive Bayes (20 pts)
+Dada la siguiente tabla de entrenamiento para un clasificador de tópicos:
+Documento
+	
+Palabras
+	
+Clase
+
+1
+	
+Star Wars
+	
+A
+
+2
+	
+Star Wars Game
+	
+A
+
+3
+	
+Star Trek
+	
+B
+
+4
+	
+Star estrella
+	
+?
+Calcule los siguientes valores aplicando Laplace Smoothing:
+a) Determine el Vocabulario y su tamaño (∣V∣)
+El vocabulario se compone de todas las palabras únicas presentes tanto en el conjunto de entrenamiento (Documentos 1, 2 y 3) como en el de prueba (Documento 4).
+V = {Star, Wars, Game, Trek, estrella}
+El tamaño del vocabulario es ∣V∣=5.
+b) Probabilidades a priori: P(Clase A) y P(Clase B)
+Se calcula como la cantidad de documentos de cada clase sobre el total de documentos de entrenamiento (N=3).
+P(A)=2/3 (Documentos 1 y 2 pertenecen a la Clase A).
+P(B)=1/3 (El Documento 3 pertenece a la Clase B).
+c) Probabilidad condicional P("Wars"∣Clase A) con Laplace
+Utilizamos la fórmula de Laplace smoothing: P′(w∣c)=∑count(palabras en c)+∣V∣count(w,c)+1.
+1. Conteo de "Wars" en Clase A: Aparece 1 vez en D1 y 1 vez en D2. Total = 2.
+2. Suma de todas las palabras en Clase A: D1 ("Star", "Wars") + D2 ("Star", "Wars", "Game"). Total = 5.
+3. Tamaño del vocabulario (∣V∣): 5.
+P("Wars"∣A)=5+52+1=103=0.3.
+d) Clasificación del Documento 4 ("Star estrella")
+Para clasificar, calculamos el puntaje para cada clase multiplicando la probabilidad a priori por las probabilidades condicionales de cada palabra del nuevo documento.
+Puntaje para la Clase A:
+◦ P("Star"∣A)=5+52+1=3/10
+◦ P("estrella"∣A)=5+50+1=1/10
+◦ Total A ∝32×103×101=3006=0.02
+Puntaje para la Clase B:
+◦ Palabras en Clase B (D3: "Star", "Trek"): Total = 2.
+◦ P("Star"∣B)=2+51+1=2/7
+◦ P("estrella"∣B)=2+50+1=1/7
+◦ Total B ∝31×72×71=1472≈0.0136
+Resultado: Dado que 0.02>0.0136, es más probable que el Documento 4 pertenezca a la Clase A.
+e) ¿Por qué el algoritmo se llama "Naïve" (ingenuo)?
+Se denomina así porque el modelo realiza dos supuestos muy fuertes que simplifican la realidad del lenguaje:
+1. Independencia: Asume que la probabilidad de cada palabra es independiente de las demás palabras del documento dada la clase.
+2. Bolsa de Palabras (BoW): Asume que el orden de las palabras no importa, ignorando la estructura gramatical y sintáctica del texto.
+EJERCICIO 2 – Análisis de Sentimientos y NLP (15 pts)
+a) ¿Qué es un Lexicón y cómo se utiliza?
+Un lexicón es un diccionario de sentimientos que brinda la carga de valor o polaridad (positiva, negativa o neutral) de las palabras.
+Se utiliza principalmente para determinar la predisposición de un texto sin necesidad de entrenar un modelo de clasificación desde cero. Su funcionamiento básico consiste en:
+1. Identificar las palabras del texto que figuran en el lexicón.
+2. Asignarles su valor de polaridad.
+3. Calcular una ponderación general o promedio del sentimiento del texto completo utilizando algoritmos como el de Turney o el de Hatzivassiloglou y McKeown.
+b) Ventajas y desventajas del uso de un lexicón
+Frente al entrenamiento de un modelo de aprendizaje supervisado, el uso de un lexicón presenta los siguientes contrastes:
+Ventaja: Eficiencia temporal. Ahorra el tiempo y los recursos computacionales necesarios para recolectar grandes volúmenes de datos etiquetados y entrenar un clasificador desde el inicio.
+Desventaja: Riesgo de errores semánticos. Los lexicones a menudo requieren supervisión humana, ya que pueden fallar al interpretar sutilezas del lenguaje, como el sarcasmo o las "expectativas frustradas" (ej: "la película debería ser excelente... pero es aburrida").
+c) Los Aspectos en el análisis de sentimientos
+Los aspectos (también llamados atributos u objetos de sentimiento) son las características específicas de una entidad que están siendo criticadas o elogiadas en una oración. Son fundamentales para detectar múltiples sentimientos sobre distintos elementos en una misma frase.
+Ejemplo en una reseña de restaurante: En la frase "La comida era excelente pero el servicio pésimo", los aspectos identificados son "comida" y "servicio". Otros ejemplos comunes en este rubro incluyen el "vino", el "precio" y la "decoración".
+d) ¿Qué son las StopWords?
+Las StopWords son palabras muy frecuentes en un idioma que no aportan valor semántico ni información relevante para distinguir el sentimiento o el tópico de un texto. Se eliminan durante la etapa de preprocesamiento para reducir el ruido y mejorar la eficiencia del modelo.
+Ejemplos en español: Artículos, preposiciones y conjunciones como "el", "la", "de", "y" o "un".
+EJERCICIO 3 – Reducción de Dimensionalidad (15 pts)
+a) ¿Para qué sirve la reducción de dimensionalidad?
+Esta etapa del preprocesamiento de datos tiene múltiples propósitos críticos:
+Visualización de datos: Permite representar información compleja en espacios de 2D o 3D para entender su distribución y detectar patrones inherentes a simple vista.
+Reducción del ruido: Ayuda a limpiar el dataset eliminando información redundante o irrelevante que no aporta valor predictivo.
+Eficiencia computacional: Logra la aceleración de los tiempos de entrenamiento de los modelos de aprendizaje automático.
+Compresión de la información: Permite almacenar y procesar datos de manera más eficiente.
+Comunicación: Facilita la presentación de resultados a interesados que no necesariamente poseen conocimientos técnicos en ciencia de datos.
+b) Visualización de clusters y estructura local
+Si el objetivo principal es la visualización conservando la estructura local de los agrupamientos, la técnica recomendada es t-SNE (t-distributed Stochastic Neighbor Embedding).
+Esta técnica es considerada de las mejores para visualizar datos porque su proyección preserva los clusters.
+Tiene la capacidad de conservar estructuras no lineales tanto globales como locales, evitando que los grupos se colapsen entre sí en la representación visual.
+c) Variedad (manifold) curva y distancia geodésica
+Cuando los datos yacen sobre una superficie curva de alta dimensión, la técnica más apropiada es ISOMAP.
+ISOMAP se basa en la hipótesis de variedades, la cual asume que la mayoría de los conjuntos de datos del mundo real quedan cerca de una variedad con muchas menos dimensiones.
+Para obtener una proyección correcta, utiliza la distancia geodésica (la línea de mínima longitud contenida en la superficie de la variedad) en lugar de la distancia euclidiana directa.
+El algoritmo construye un grafo de los K vecinos más cercanos y utiliza algoritmos de caminos mínimos (como Dijkstra o Floyd-Warshall) para aproximar estas distancias antes de aplicar MDS.
+d) Diferencia conceptual entre PCA y MDS
+Aunque ambos se utilizan para proyectar datos en dimensiones menores, sus objetivos matemáticos difieren:
+PCA (Análisis de Componentes Principales): Se centra en la varianza y la correlación entre los ejemplos. Busca encontrar nuevas direcciones (componentes principales) que maximicen la dispersión de los datos proyectados.
+MDS (Escalamiento Multidimensional): Su idea central es preservar las distancias entre los puntos. Su objetivo es ubicar las observaciones en una dimensión menor de modo que las distancias en el nuevo espacio se parezcan lo más posible a las distancias calculadas en la matriz original.
+En resumen, mientras PCA maximiza la variabilidad explicada, MDS minimiza la distorsión de las distancias relativas entre pares de puntos.
+EJERCICIO 4 – Ensamble de Modelos (15 pts)
+a) Diferencia entre Bagging y Boosting
+La diferencia fundamental entre ambos métodos radica en el flujo de entrenamiento y el tipo de error que buscan minimizar:
+Entrenamiento:
+◦ Bagging: Los modelos se entrenan en paralelo e independientemente. Utiliza la técnica de bootstrap para construir múltiples subconjuntos de entrenamiento mediante muestreo aleatorio con reemplazo.
+◦ Boosting: Los modelos se entrenan de forma secuencial. Cada nuevo modelo (denominado weak learner) se construye focalizándose en corregir los errores cometidos por el modelo anterior, asignando mayor peso a las instancias que fueron mal clasificadas.
+Impacto en Sesgo y Varianza:
+◦ Bagging: Su impacto principal es la reducción de la varianza. Es ideal para modelos complejos que tienden al sobreajuste (bajo sesgo, alta varianza).
+◦ Boosting: Su impacto principal es la reducción del sesgo (bias). Busca mejorar el ajuste de modelos simples para convertirlos en un predictor fuerte, aunque tiene un mayor riesgo de sobreajustar si no se controla adecuadamente.
+b) Mecanismo de predicción: Stacking vs. Voting
+Aunque ambos son ensambles híbridos que combinan distintos tipos de clasificadores, difieren en cómo generan el resultado final:
+Voting (Votación): Utiliza un mecanismo directo donde todos los modelos individuales votan por una clase. La predicción final es la clase más elegida (voto mayoritario o hard voting) o un promedio ponderado de las probabilidades devueltas por cada modelo (soft voting).
+Stacking: Implementa un concepto de meta-aprendizaje. En lugar de un voto simple, las predicciones de los modelos base se utilizan como entrada (características) para un meta-modelo adicional, el cual aprende a decidir cuál es la predicción final basándose en el desempeño previo de los modelos base.
+c) Mecanismos de XGBoost contra el sobreajuste (overfitting)
+XGBoost (eXtreme Gradient Boosting) incorpora varias estrategias específicas para mejorar la generalización del modelo:
+1. Regularizaciones (L1 y L2): Utiliza parámetros de regularización (α para L1 y λ para L2) que penalizan la complejidad de los árboles, evitando que los pesos de las hojas crezcan de forma desmedida.
+2. Early Stopping (Parada temprana): Permite detener el proceso secuencial de entrenamiento en el momento en que la métrica de error en un conjunto de validación deja de mejorar, evitando que se sigan agregando árboles que solo capturen ruido.
+3. Tasa de aprendizaje (Learning Rate): Escala la contribución de cada nuevo árbol mediante un factor (usualmente entre 0 y 1), obligando al modelo a realizar pasos más pequeños y conservadores hacia la solución óptima, lo que reduce la varianza.
+EJERCICIO 5 – Deep Learning y Arquitecturas (20 pts)
+a) Esquema de una Red Neuronal Convolucional (CNN)
+Una CNN está diseñada para procesar datos con estructura de cuadrícula, como imágenes, y se compone típicamente de las siguientes etapas y capas:
+Orden típico de capas:
+1. Capa de entrada (Input): Recibe el dominio de entrada, generalmente una imagen.
+2. Capas de Convolución + ReLU: Realizan la extracción de características mediante filtros (kernels).
+3. Capas de Pooling (Submuestreo): Reducen la dimensionalidad espacial de los datos.
+4. Capa de Aplanado (Flatten): Convierte los mapas de características bidimensionales en un vector unidimensional.
+5. Capas Totalmente Conectadas (Fully Connected): Actúan como un perceptrón multicapa para la clasificación final.
+6. Capa de Salida: Proporciona el resultado final del proceso.
+Funciones de activación:
+◦ Capas Ocultas: Se utiliza habitualmente ReLU (Rectified Linear Unit) porque evita el desvanecimiento del gradiente y ofrece un mejor desempeño computacional.
+◦ Capa de Salida: Se suele usar Softmax para problemas de clasificación multiclase, ya que asigna probabilidades decimales a cada clase que suman 1.0.
+b) Redes GAN: Definición y Componentes
+Las GAN (Generative Adversarial Networks) son redes neuronales no supervisadas cuyo uso principal es la generación de nuevos datos, especialmente imágenes de alta calidad. Su funcionamiento se basa en la competencia de dos modelos:
+1. Generador: Su función es crear datos nuevos (como imágenes falsas) a partir de un vector de entrada aleatorio, intentando engañar al discriminador.
+2. Discriminador: Actúa como un evaluador que recibe tanto muestras reales como las creadas por el generador; su objetivo es determinar si una muestra es real o falsa.
+c) LSTM y GRU en Redes Recurrentes (RNN)
+Las celdas LSTM (Long Short-Term Memory) y GRU (Gated Recurrent Unit) fueron diseñadas para resolver problemas críticos de las RNN simples, tales como:
+Desvanecimiento del gradiente: En redes profundas, el gradiente puede tender a cero, impidiendo que los pesos se actualicen correctamente.
+Memoria a corto plazo: Las RNN simples no pueden recordar información de secuencias demasiado largas; las celdas LSTM y GRU utilizan mecanismos de "puertas" (gating) para decidir qué información olvidar y cuál recordar a largo plazo.
+d) Autoencoders: Definición y Usos
+Un Autoencoder es una red neuronal que aprende a producir en su salida exactamente la misma información que recibe en su entrada. Posee el mismo número de neuronas en la entrada y en la salida, pasando por una capa oculta más pequeña que representa los datos de forma comprimida.
+Dos funciones para las que se utiliza habitualmente son:
+1. Compresión de datos / Reducción de dimensionalidad: Reduce el tamaño de los datos preservando las características esenciales.
+2. Eliminación de ruido (Denoising): La red aprende a reconstruir una entrada limpia a partir de una versión con ruido.
+EJERCICIO 6 – Fundamentos de Clasificación (15 pts)
+a) SVM y casos no linealmente separables
+Cuando una SVM (Support Vector Machine) se enfrenta a datos que no pueden separarse mediante una línea o hiperplano en su espacio original, realiza lo siguiente:
+Aumento de dimensionalidad: El modelo lleva las observaciones desde un espacio de dimensión relativamente baja a uno de dimensión mayor.
+Funciones Kernel: Utiliza funciones matemáticas llamadas Kernels (como el polinómico o el radial) para encontrar un hiperplano que logre separar los datos en esa nueva dimensión superior.
+Kernel Trick: Para optimizar el cómputo, aplica el "truco del kernel", que permite calcular las relaciones entre los puntos como si estuvieran en otra dimensión sin necesidad de realizar físicamente la transformación del espacio, ahorrando tiempo de procesamiento.
+b) El Perceptrón Simple y el problema del XOR
+No, un perceptrón simple no puede resolver el problema del XOR.
+Justificación: La naturaleza de la frontera de decisión de un perceptrón de una sola capa es un hiperplano lineal (en 2D, una línea recta). Debido a que el problema XOR no es linealmente separable, es imposible trazar una única línea recta que divida correctamente las clases; para resolverlo, se requieren estructuras más complejas como el perceptrón multicapa.
+c) Método matemático para reducir el error
+El método fundamental que utilizan las redes neuronales para actualizar sus pesos y reducir el error se denomina Backpropagation (retropropagación).
+Este algoritmo se apoya matemáticamente en el Descenso por gradiente (Gradient Descent), que utiliza el gradiente de la función de error como una "brújula" para realizar ajustes iterativos en los pesos en la dirección opuesta al crecimiento del error, buscando alcanzar el mínimo global o local.
+d) El Margen en SVM
+En el contexto de SVM, el Margen se define como la distancia mínima entre cualquier observación del conjunto de datos y el umbral o hiperplano de decisión.
+¿Por qué es deseable maximizarlo?
+Mejor Generalización: Al maximizar el margen, se construye un clasificador de margen máximo (Maximal Margin Classifier), el cual es más robusto.
+Reducción de la Varianza: Un margen amplio hace que el modelo sea menos sensible a las fluctuaciones del conjunto de entrenamiento específico, lo que reduce la varianza y permite un mejor desempeño con datos nuevos que el modelo nunca ha visto.
+Segundo simulacro hecho por NotebookLM
+EJERCICIO 1 – Clasificación: Naïve Bayes (20 pts)
+Se desea clasificar si un mensaje es "Spam" (S) o "Legítimo" (L). Se cuenta con el siguiente corpus:
+Doc
+	
+Texto
+	
+Clase
+
+1
+	
+Oferta ganar dinero
+	
+S
+
+2
+	
+Ganar dinero rápido
+	
+S
+
+3
+	
+Reunión hoy dinero
+	
+L
+
+4
+	
+Oferta hoy
+	
+L
+
+5
+	
+Oferta ganar hoy
+	
+?
+Calcule aplicando Laplace Smoothing:
+a) Vocabulario (V) y su tamaño (∣V∣)
+El vocabulario se compone de todas las palabras únicas presentes en el conjunto de entrenamiento (D1 a D4). El documento de prueba (D5) no aporta palabras nuevas en este caso.
+V = {Oferta, ganar, dinero, rápido, Reunión, hoy}.
+El tamaño del vocabulario es ∣V∣=6.
+b) Probabilidades a priori P(S) y P(L)
+Se calcula como la cantidad de documentos de una clase sobre el total de documentos de entrenamiento (N=4).
+P(S)=2/4=0.5 (D1 y D2 son Spam).
+P(L)=2/4=0.5 (D3 y D4 son Legítimos).
+c) Probabilidad condicional P("ganar"∣S) con Laplace
+Utilizamos la fórmula de Laplace smoothing: P′(w∣c)=∑count(palabras en c)+∣V∣count(w,c)+1.
+1. Conteo de "ganar" en Spam (S): Aparece 1 vez en D1 y 1 vez en D2. Total = 2.
+2. Suma de palabras en documentos S: D1 (3 palabras) + D2 (3 palabras). Total = 6.
+3. Tamaño del vocabulario (∣V∣): 6.
+P("ganar"∣S)=6+62+1=123=0.25.
+d) Clasificación del Documento 5 ("Oferta ganar hoy")
+Para clasificar, calculamos el puntaje de cada clase multiplicando la probabilidad a priori por las probabilidades condicionales de cada palabra del documento.
+Puntaje para la clase Spam (S):
+◦ P("Oferta"∣S)=6+61+1=2/12
+◦ P("ganar"∣S)=6+62+1=3/12
+◦ P("hoy"∣S)=6+60+1=1/12
+◦ Total S ∝0.5×122×123×121=17283≈0.00173
+Puntaje para la clase Legítimo (L):
+◦ Suma de palabras en L: D3 (3) + D4 (2) = 5.
+◦ P("Oferta"∣L)=5+61+1=2/11
+◦ P("ganar"∣L)=5+60+1=1/11
+◦ P("hoy"∣L)=5+62+1=3/11
+◦ Total L ∝0.5×112×111×113=13313≈0.00225
+Resultado: Dado que el puntaje de la clase Legítimo (0.00225) es mayor al de Spam (0.00173), el Documento 5 se clasifica como Legítimo (L).
+e) Variante del algoritmo
+La variante que suele dar mejores resultados al eliminar palabras duplicadas (tratando al texto como presencia/ausencia de términos) se denomina Naïve Bayes multinomial binarizada (o booleana).
+EJERCICIO 2 – Ensambles: Bosques y Boosting (15 pts)
+a) Diferencia entre un árbol tradicional y un stump (tocón)
+La principal diferencia radica en la profundidad y la capacidad de decisión de cada estructura:
+Árbol Tradicional: Es un modelo completo que puede tener múltiples niveles de profundidad y ramificaciones, utilizando diversas variables para segmentar los datos de forma exhaustiva.
+Stump (Tocón): Es un árbol extremadamente simplificado que consta únicamente de un nodo raíz y dos hojas. Debido a esta estructura, un tocón solo puede utilizar una única variable para realizar la clasificación, lo que lo convierte en un "weak learner" o estimador pobre.
+b) Uso de la raíz cuadrada de atributos en Random Forest
+El uso de un subconjunto aleatorio de atributos (cuya cantidad suele ser la raíz cuadrada del total) responde a la necesidad de mejorar la robustez del ensamble:
+Reducción de la correlación: Si unos pocos atributos son predictores muy fuertes, todos los árboles en un ensamble de bagging tradicional tenderían a parecerse entre sí, concentrando esos atributos cerca de la raíz.
+Attribute Bagging: Al obligar a cada nodo de cada árbol a elegir solo entre un subconjunto aleatorio de variables, se garantiza que los árboles del bosque estén poco correlacionados.
+Disminución de la varianza: Esta diversidad estructural permite que, al promediar las decisiones mediante votación, se reduzca drásticamente la varianza del modelo final sin aumentar significativamente el sesgo.
+c) El parámetro Gamma (γ) en XGBoost y la poda
+El parámetro Gamma funciona como un factor de control para la complejidad del modelo a través de la poda:
+Definición: Gamma representa la reducción mínima de pérdida requerida para realizar una partición adicional en un nodo del árbol.
+Mecanismo de poda: Después de construir el árbol, el algoritmo calcula la diferencia entre la Ganancia (Gain) de un nodo y el valor de Gamma. Si el resultado es negativo (Ganancia < Gamma), el nodo se elimina (se poda); si es positivo, el nodo permanece.
+Efecto en el modelo: Por defecto, Gamma es igual a 0. A medida que se aumenta su valor, el algoritmo se vuelve más conservador, facilitando la poda de ramas que no aportan suficiente información, lo que ayuda directamente a prevenir el sobreajuste (overfitting).
+EJERCICIO 3 – Reducción de Dimensionalidad (15 pts)
+a) PCA vs. ISOMAP en espacios curvos
+Técnica preferible: ISOMAP.
+Justificación: El Análisis de Componentes Principales (PCA) es una técnica lineal que utiliza la distancia euclidiana (línea recta), la cual no es capaz de capturar la estructura de una variedad (manifold) curva. Por el contrario, ISOMAP está diseñado específicamente para estos casos, ya que busca preservar la distancia geodésica (la distancia medida sobre la superficie de la curva) en lugar de la distancia euclidiana directa. Esto permite "desenrollar" la estructura curva para representarla fielmente en una dimensión menor.
+b) Representación de los Loading Scores en PCA
+En el contexto de PCA, los Loading Scores representan las proporciones o pesos de cada una de las variables originales (ejes de entrada) dentro de la combinación lineal que conforma un Componente Principal. Indican qué tanta importancia o "carga" tiene cada variable original en la definición de la nueva dirección de máxima varianza.
+c) t-SNE: Naturaleza estocástica y Perplejidad
+¿Por qué es estocástica?: Se define como una técnica no determinista porque su proceso comienza colocando los puntos en el espacio de menor dimensión de forma aleatoria. Debido a esto, diferentes ejecuciones del algoritmo sobre los mismos datos pueden resultar en visualizaciones ligeramente distintas.
+Parámetro de Perplejidad (Perplexity):
+◦ Este parámetro representa la densidad esperada para un punto, lo cual equivale aproximadamente al número de vecinos que el algoritmo considera alrededor de cada observación.
+◦ Qué sucede si cambia: Al modificar la perplejidad, cambia la desviación estándar de las distribuciones gaussianas utilizadas para medir la similitud entre puntos. Un valor de perplejidad mayor implica una mayor variación y que el modelo tome en cuenta un contexto más global de vecinos, mientras que un valor bajo se concentra en la estructura muy local.
+EJERCICIO 4 – Preprocesamiento y Outliers (15 pts)
+a) Diferencia entre imputación Hot Deck e imputación Cold Deck
+La distinción principal radica en el origen de los datos utilizados para completar los valores faltantes:
+Imputación Hot Deck: Consiste en reemplazar los datos faltantes con valores obtenidos de registros que son los más similares dentro de la misma base de datos actual. Habitualmente se utilizan algoritmos como KNN para encontrar estos vecinos cercanos y copiar sus valores.
+Imputación Cold Deck: Selecciona valores o utiliza relaciones obtenidas de fuentes distintas o externas a la base de datos que se está procesando actualmente. Por ejemplo, si falta el barrio de una propiedad, se podría obtener consultando capas geográficas externas en lugar de mirar otros registros del mismo dataset.
+b) Funcionamiento básico de Isolation Forest
+El Isolation Forest es un algoritmo no supervisado basado en árboles de decisión que se fundamenta en la premisa de que las anomalías son pocas y diferentes, lo que las hace más fáciles de aislar que los datos normales.
+Su funcionamiento sigue estos pasos:
+1. Particiones recursivas: El algoritmo divide el conjunto de datos de forma aleatoria eligiendo una característica y un valor de corte entre el mínimo y el máximo de dicha variable.
+2. Aislamiento: Se repite este proceso hasta que cada observación queda aislada en un nodo hoja.
+3. Longitud de ruta: Debido a que los outliers tienen valores extremos o inusuales, requieren menos particiones para ser aislados.
+4. Detección: El modelo identifica como anomalías a aquellas observaciones que tienen las longitudes de ruta más cortas (menor altura en el árbol).
+c) Necesidad de escalamiento y normalización
+Algoritmos como KNN y Redes Neuronales requieren obligatoriamente el escalamiento de variables por su sensibilidad a la magnitud de los datos:
+KNN (K-Nearest Neighbors): Este algoritmo se basa en el cálculo de distancias (habitualmente la Euclídea). Si las variables tienen escalas muy distintas (por ejemplo, una variable de 0 a 1 y otra de 0 a 1.000.000), la variable con mayor magnitud dominará el cálculo de la distancia, haciendo que el resto de los atributos sean irrelevantes para el modelo.
+Redes Neuronales: Son sensibles a la escala porque trabajan optimizando pesos mediante el descenso por gradiente. Variables con grandes magnitudes pueden causar que los pesos se actualicen de forma desequilibrada o dificultar la convergencia del entrenamiento, por lo que la estandarización es vital para asegurar que todos los atributos tengan el mismo peso inicial en la red.
+EJERCICIO 5 – Redes Neuronales y Deep Learning (20 pts)
+a) Componentes de la regla de la cadena en Backpropagation
+Para actualizar un peso de la última capa (por ejemplo, w5 asociado a la neurona de salida o1), se utiliza la regla de la cadena para descomponer la derivada parcial del error total respecto a dicho peso en tres componentes fundamentales:
+1. Variación del error total respecto a la salida (∂outo1∂Etotal): Cuantifica cuánto cambia el error de la red cuando varía el valor final devuelto por la neurona de salida.
+2. Variación de la salida respecto a la suma neta (∂neto1∂outo1): Representa la derivada de la función de activación (ej. sigmoidea) aplicada en esa neurona.
+3. Variación de la suma neta respecto al peso (∂w5∂neto1): Indica cuánto cambia la entrada total de la neurona al modificar ese peso específico, lo cual suele equivaler al valor del dato de entrada (activación) de la capa anterior.
+b) Función de la capa de Pooling
+La capa de Pooling (o submuestreo) en una red convolucional cumple una función esencialmente estructural:
+Su objetivo principal es la reducción de la dimensionalidad espacial de los datos (mapas de características).
+Permite que la red sea más eficiente computacionalmente y ayuda a que las características detectadas sean invariantes a pequeñas traslaciones o distorsiones en la entrada.
+c) Embeddings y el mecanismo de Atención en Transformers
+Los embeddings tradicionales (como Word2Vec o GloVe) son estáticos: cada palabra tiene un único vector fijo sin importar dónde aparezca, lo que les impide distinguir significados según el contexto (polisemia), como en el caso de "banco" (asiento) vs. "banco" (entidad financiera).
+En los Transformers, este problema se resuelve mediante el Mecanismo de Atención (Attention):
+Este mecanismo es una capa que permite actualizar los embeddings originales utilizando la información de las otras palabras presentes en la oración (contexto).
+A través de matrices de consulta (Query), clave (Key) y valor (Value), la red calcula qué palabras del entorno son relevantes para modificar el vector de la palabra actual, logrando que el embedding de "banco" sea distinto en cada contexto.
+d) Métodos de regularización para evitar el overfitting
+Para mejorar la generalización y evitar que las redes profundas "memoricen" el ruido del entrenamiento, los materiales destacan los siguientes métodos:
+Dropout: Consiste en "apagar" o desactivar aleatoriamente un porcentaje de neuronas durante cada paso del entrenamiento, lo que obliga a la red a no depender de conexiones específicas y reduce codependencias.
+Early Stopping (Parada temprana): Es una técnica que detiene el proceso de entrenamiento en el momento exacto en que el error sobre el conjunto de validación comienza a subir, evitando que el modelo se sobreajuste a los datos de entrenamiento.
+Otros métodos válidos mencionados son la Regularización L1 y L2, que penalizan el valor de los pesos en la función de costo, y el Data Augmentation, que genera nuevos datos mediante transformaciones verosímiles.
+EJERCICIO 6 – Análisis de Sentimientos y NLP (15 pts)
+a) Cálculo de la polaridad según el algoritmo de Turney
+En el algoritmo de Turney, la polaridad de una frase se determina mediante la métrica PMI (Pointwise Mutual Information), que mide la co-ocurrencia de la frase con palabras "pivote" de polaridad conocida.
+Lógica del cálculo: Se calcula la diferencia entre la fuerza de asociación de la frase con la palabra "excelente" (positiva) y su asociación con la palabra "pobre" (negativa).
+Fórmula matemática: Polaridad(frase)=PMI(frase, "excelente")−PMI(frase, "pobre").
+Interpretación: Si el resultado es positivo, la frase se considera de tendencia positiva; si es negativo, se asume como negativa. El valor del PMI se obtiene analizando qué tan probable es que la frase aparezca NEAR (cerca de) los pivotes en un buscador o corpus de datos.
+b) Reconocimiento de Entidades Nombradas (NER)
+El Reconocimiento de Entidades Nombradas (NER) es una técnica de extracción de información que consiste en identificar y categorizar automáticamente nombres propios dentro de un texto.
+Categorías típicas: Identifica entidades como Personas, Lugares, Organizaciones, Fechas o Libros.
+Utilidad en análisis de sentimientos: Su función principal es identificar al destinatario de los sentimientos. Esto permite que el modelo no solo detecte si un texto es positivo o negativo, sino que sepa exactamente sobre quién o qué se está expresando esa actitud.
+c) ¿Qué es una StopWord y por qué se elimina?
+Las StopWords son palabras extremadamente frecuentes en un idioma que carecen de un valor semántico relevante para identificar el tema o el sentimiento de un mensaje.
+Características: Incluyen artículos, preposiciones y conjunciones (ejemplos en español: "el", "la", "de", "y", "un").
+Motivos para su eliminación:
+◦ Reducción de ruido: Al quitarlas, el modelo puede enfocarse en los términos que realmente cargan el significado (sustantivos, verbos y adjetivos).
+◦ Eficiencia: Reduce la dimensionalidad del vocabulario y mejora la velocidad de entrenamiento de algoritmos como Bayes Naive o Random Forest.
+◦ Mejora de métricas: Evita que el modelo se confunda con términos triviales que aparecen en todas las categorías de forma equitativa.
+Resúmenes de unidades
+Unidad 4 – Árboles de decisión: algoritmos ID3, C4.5 y Random Forest
+ Algoritmo ID3 (Iterative Dichotomiser 3)
+Que es la entropia?
+Entropía: Es la métrica que mide el desorden, impureza o aleatoriedad en los datos; una muestra homogénea tiene entropía cero, mientras que la máxima incertidumbre se representa con el valor más alto.
+Que es la ganancia de la información?
+Ganancia de Información: Se utiliza para cuantificar qué característica del conjunto de datos proporciona la máxima información para la clasificación.
+Cual es su funcionamiento?
+Funcionamiento: El algoritmo calcula la entropía de todas las clases y valores de los atributos para seleccionar aquel que maximice la reducción de la entropía (mayor ganancia), iterando este proceso para cada sub-nodo.
+Que mejoras propone el Algoritmo C 4.5 del ID3?
+Campos numéricos y rangos continuos: A diferencia de ID3, C4.5 puede crear dinámicamente umbrales booleanos para variables continuas, seleccionando el corte que proporcione la mayor ganancia de información.
+Tratamiento de datos faltantes: Permite que los atributos tengan valores nulos (marcados como "?"), los cuales simplemente se omiten en los cálculos de ganancia y entropía.
+Poda (Pruning): Para evitar el sobreajuste, el algoritmo analiza el árbol desde las hojas hacia la raíz y elimina nodos interiores si esto reduce o mantiene el error de clasificación sobre un conjunto de prueba.
+Random Forest
+Que es?
+Es un método de ensamble basado en la premisa de que "muchos estimadores mediocres, promediados, pueden ser muy buenos".
+Que es el attribute bagging?
+Attribute Bagging: En cada nodo de cada árbol, solo se considera un subconjunto aleatorio de atributos (usualmente la raíz cuadrada del total) para decidir la división, lo que garantiza que los árboles estén poco correlacionados entre sí.
+Que es la votacion?
+Votación: Para clasificar una nueva instancia, esta se somete a todos los árboles del bosque y se devuelve la clase más elegida o mayoritaria.
+Cual es su ventaja principal?
+Ventaja principal: Este método es altamente robusto y reduce drásticamente la varianza de la clasificación en comparación con un árbol individual.
+Unidad 5 – Procesamiento de lenguaje natural: Aprendizaje bayesiano, clasificación de textos, análisis de sentimientos y extracción de información.
+Clasificación de Textos y Aprendizaje Bayesiano
+En que consiste la clasificación de textos?
+La clasificación de textos consiste en asignar automáticamente una categoría o tópico a un fragmento de texto, como identificar el autor, el idioma o detectar spam.
+Que es el Naïve Bayes?
+Naïve Bayes: Es un enfoque estadístico que busca la probabilidad de que un documento d pertenezca a una clase c (P(c∣d)) aplicando el Teorema de Bayes. Se denomina "ingenuo" (naïve) porque asume que todas las palabras son independientes entre sí y que su orden no importa.
+Que es el Bag of Words?
+Modelo Bag of Words (BoW): Representa documentos como vectores numéricos basados en la frecuencia de las palabras, ignorando la estructura gramatical.
+Que es el Laplace Smoothing?
+Laplace Smoothing: Técnica esencial para evitar que palabras no vistas en el entrenamiento asignen una probabilidad de cero a toda una clase; consiste en sumar 1 al contador de cada palabra y el tamaño del vocabulario al denominador.
+Que son las redes Bayesianas?
+Redes Bayesianas: A diferencia de Naïve Bayes, permiten modelar dependencias condicionales explícitas entre variables mediante un grafo acíclico dirigido.
+Análisis de Sentimientos
+Que hace?
+Esta tarea clasifica textos según la actitud o predisposición del autor (positiva, negativa o neutral) hacia personas u objetos.
+Que son los lexicones?
+Lexicones: Son diccionarios que brindan la carga de valor (polaridad) de las palabras. El algoritmo de Hatzivassiloglou y McKeown permite ampliar lexicones analizando adjetivos unidos por conjunciones ("y" implica misma polaridad, "pero" implica opuesta).
+Cual es el proceso del Algoritmo de Pang y Lee (detección de polaridad)?
+Tokenización del texto
+Extracción de características (palabras o frases claves)
+Clasificamos usando distintos algoritmos de clasificación: Naïve Bayes, SVM, Max Entropy
+Cómo trabajar con negaciones?
+La idea principal es agregar como prefijo NO_ a todas las palabras que están entre un “no” y el siguiente signo de puntuación.
+Que es el Naïve Bayes multinomial binarizada (o booleana)?
+Consiste en eliminar las palabras duplicadas tanto del conjunto de entrenamiento como del de prueba antes de comenzar a calcular las probabilidades de las clases y contar las palabras.
+Esta variable del algoritmo da mejores resultados que el algoritmo original.
+Que hace el algoritmo de Turney y que utiliza?
+Extraer frases de opiniones críticas y armar un lexicón de frases
+Aprender la polaridad de cada frase
+Puntuar las críticas según el promedio de las polaridades de sus frases
+Utiliza la Información Mutua Punto a Punto (PMI) para aprender la polaridad de frases comparando su cercanía estadística con palabras pivote como "excelente" o "pobre".
+Que es el método de Minqing Hu y Bing Liu?
+Detección de Aspectos: El método de Minqing Hu y Bing Liu identifica "objetos de sentimiento" (como "comida" o "servicio") buscando frases frecuentes y aplicando reglas gramaticales para entender qué se está criticando específicamente.
+Extracción de Información
+Que busca capturar la extraccion de informacion?
+Busca capturar partes relevantes de un texto para generar una representación estructurada (como tuplas en una base de datos).
+Que es el Named Entity Recognition?
+NER (Named Entity Recognition): Identifica y etiqueta entidades como personas, lugares, fechas y organizaciones. Utiliza esquemas como IOB encoding (Inside, Outside, Beginning) para delimitar la extensión de las entidades.
+Cuales son las metodologias de aprendizaje?
+Metodologías de aprendizaje:
+Supervisado: Requiere grandes corpus etiquetados manualmente.
+Auto-supervisado (Bootstrapping): Parte de "entidades semilla" y patrones conocidos para buscar nuevas ocurrencias de forma iterativa.
+Open IE: Métodos no supervisados e independientes del dominio diseñados para trabajar con grandes cantidades de datos web.
+Aprendizaje Profundo en PLN
+Las arquitecturas modernas superan las limitaciones de los modelos estadísticos al capturar semántica y contexto complejos.
+Que son los Embeddings de palabras?
+Embeddings de Palabras: Mapean palabras a vectores reales densos donde la cercanía geométrica refleja similitud semántica, basándose en la hipótesis distribucional ("dime con quién andas y te diré qué significas").
+Word2Vec: Incluye los modelos Skip-gram (predice el contexto dada una palabra) y CBOW (predice una palabra dado su contexto).
+Que son las redes recurrentes en este caso?
+Redes Recurrentes (RNN, LSTM, GRU): Diseñadas para secuencias temporales de texto. Las celdas LSTM y GRU solucionan el desvanecimiento del gradiente mediante mecanismos de gating que deciden qué información recordar u olvidar.
+Que introducen los transformers?
+Transformers: Introducen el Mecanismo de Atención, permitiendo que cada palabra tome información de todo el contexto de la oración simultáneamente. Utilizan Positional Encoding para mantener la noción del orden de las palabras sin necesidad de recurrencia. Su función principal en la IA generativa es predecir el próximo token en una secuencia.
+Unidad 6 – Ensamble de modelos: AdaBoost, Gradient Boosting, XGBoost, ensambles híbridos.
+Métodos de Ensamble Homogéneos
+Que son?
+Combinan el mismo tipo de modelo base. Se dividen en dos enfoques principales.
+Que es el Bagging?
+Bagging (Bootstrap Aggregating): Entrena múltiples modelos de forma independiente y en paralelo utilizando muestras aleatorias con reemplazo (Bootstrap). Su principal objetivo es disminuir la varianza y reducir el overfitting. Un ejemplo clásico es Random Forest.
+Que es el Boosting?
+Boosting: Es una alternativa secuencial donde se buscan nuevos modelos para corregir las instancias mal clasificadas por los anteriores. Su objetivo principal es reducir el sesgo.
+Algoritmos de Boosting Exitosos:
+Que es el AdaBoost (Adaptive Boosting) (tres bullet points)?
+Combina muchos weak learners (estimadores pobres), generalmente stumps (árboles de un solo nodo y dos hojas). 
+En cada iteración, pondera las instancias mal clasificadas aumentando su peso relativo para que el siguiente modelo se focalice en ellas. 
+La clasificación final se hace mediante una votación ponderada donde cada estimador tiene un "Amount of say" basado en su error total.
+Que es el Gradient Boosting (dos bullet points)?
+Crea una cadena de árboles de profundidad fija donde cada nuevo árbol se entrena para calcular el error o residuo (también llamado pseudo-residuo) cometido por el anterior. 
+Utiliza un parámetro de Learning Rate (tasa de aprendizaje) para escalar la contribución de cada árbol, lo que permite dar "muchos pasos pequeños" hacia la dirección correcta y mantener una varianza baja.
+Que es el XGBoost (eXtreme Gradient Boosting) (dos bullet points)? 
+Es una implementación avanzada diseñada para Big Data y conjuntos complejos. 
+Es mucho más rápido que el Gradient Boost tradicional debido a su optimización de hardware y manejo eficiente del sobreajuste mediante regularizaciones (λ y α), el parámetro gamma (γ) para la poda de árboles y el Early Stopping.
+Ensambles Híbridos (Heterogéneos)
+Que son?
+Combinan clasificadores de distinto tipo (ej. un SVM, un Naive Bayes y un Árbol de Decisión) para mejorar la generalización.
+Que es el Voting?
+Voting (Votación): Se construyen N modelos con los mismos datos y se toma la predicción mayoritaria (voto duro) o el promedio de probabilidades (voto blando). Ayuda principalmente a reducir la varianza de la clasificación.
+Que es el Stacking?
+Stacking (Apilamiento): Utiliza el concepto de meta-aprendizaje. Se entrenan modelos base cuyas salidas alimentan a un metamodelo (usualmente una Regresión Logística, NB o Perceptrón), el cual decide cómo combinar dichas predicciones basándose en la certeza de cada una.
+Que es el Cascading?
+Cascading (Cascada): Es un enfoque de "multi-estado" donde los datos se pasan sucesivamente de un modelo a otro. El input de cada nivel son solo las instancias predichas con poca certeza por el modelo anterior. Es ideal cuando se requiere una altísima certeza en la predicción, como en la detección de fraudes bancarios.
+Cuales son las propiedades generales?
+Propiedades generales: Los ensambles logran mejores predicciones y un buen trade-off sesgo-varianza, pero tienen como desventaja una mayor complejidad computacional y la pérdida de interpretabilidad (se comportan como "cajas negras").
+Unidad 7 – Redes neuronales superficiales: Perceptrón simple. Perceptrón multicapa, Backpropagation, redes SOM (Kohonen).
+Perceptrón Simple
+Que es?
+Es la unidad más básica de una red neuronal, diseñada para resolver problemas de clasificación binaria.
+Cual es su funcionamiento?
+Funcionamiento: Calcula la suma ponderada de sus entradas (X1⋅w1+X2⋅w2+…), le suma un sesgo o umbral (bias) y aplica una función de activación (generalmente de tipo escalón) para determinar la salida.
+Como se entrenan?
+Entrenamiento: Se realiza de forma iterativa ajustando los pesos a medida que se comparan los valores esperados (etiquetas) con las predicciones del modelo hasta que el error es cero. El modelo entrenado se almacena finalmente como una matriz de números flotantes.
+Que limitación tienen?
+Limitación Fundamental: Solo puede resolver problemas que son linealmente separables (cuya frontera de decisión es un hiperplano). Por esta razón, el perceptrón simple no puede resolver el problema del XOR.
+Perceptrón Multicapa (MLP)
+Cual es la solucion que ofrece el MLP?
+Para superar las limitaciones del perceptrón simple, se introducen capas ocultas entre la entrada y la salida.
+Como es su estructura?
+Estructura: Se compone de una capa de entrada, una o más capas ocultas y una capa de salida, donde todas las neuronas suelen estar totalmente conectadas (fully connected).
+Cual es su capacidad?
+Capacidad: Un MLP con una sola capa oculta puede modelar funciones complejas, y con tres capas puede alcanzar una complejidad arbitraria limitada solo por el número de neuronas.
+Cuales son sus Componentes Clave?
+Funciones de activación: Se utilizan para introducir no linealidad, como la sigmoidea, ReLU (común en capas ocultas para evitar el desvanecimiento del gradiente) o Softmax (para clasificación multiclase).
+Hiperparámetros: El más importante es la tasa de aprendizaje (learning rate), que indica qué tan rápido se desciende en la función de costo.
+Backpropagation
+Que es?
+Es el método matemático fundamental utilizado por las redes neuronales para reducir el error y aprender de los datos.
+Cual es su mecanismo?
+Mecanismo: Utiliza la regla de la cadena para calcular de forma eficiente el gradiente (derivadas parciales) de la función de pérdida total respecto a cada peso de la red.
+Como es el proceso?
+Proceso: Propaga el error desde la capa de salida hacia atrás, hasta la capa de entrada. Una vez calculados los gradientes, un optimizador (como el Descenso por Gradiente Estocástico - SGD) actualiza los pesos multiplicando el gradiente por la tasa de aprendizaje.
+Cual es su función de perdida?
+Función de Pérdida: Comúnmente se busca minimizar el Error Cuadrático Medio (MSE) entre la salida real de la red y el objetivo esperado.
+Redes SOM (Kohonen)
+Que son?
+Los Mapas Auto-organizados (Self-Organizing Maps) representan un enfoque de aprendizaje no supervisado.
+Cual es su propósito?
+Propósito: Se utilizan principalmente para la reducción de la dimensionalidad y la visualización de datos de alta dimensión en un espacio menor, usualmente una rejilla o lattice 2D.
+Cual es su funcionamiento?
+Funcionamiento: A diferencia del MLP, estas redes preservan la topología de los datos de entrada. Durante el entrenamiento, las neuronas compiten por ser la más cercana a un vector de entrada utilizando medidas de distancia euclidiana. La neurona ganadora y sus vecinas ajustan sus pesos para parecerse más al input.
+Unidad 8 – Redes de aprendizaje profundo: Autoencoders, redes convolucionales, redes recurrentes de tensores, redes GAN. Introducción a Tensorflow. 
+Restricted Boltzmann Machine
+Que es?
+No es una red profunda en sí, pero una pila de RBM sirve para crear una red profunda ⇒ Autoencoder o Deep Belief Network.
+Como es su arquitectura?
+Arquitectura con dos capas (una de entrada y una de salida) que se entrena con KL Divergence.
+Que es el KL Divergence?
+KL Divergence: indica cuánta información perdemos al aproximar una distribución P (real) con una distribución Q (nuestro modelo/aproximación)
+Como es su proceso?
+Trata de replicar la entrada cuando se la corre en sentido inverso ⇒ ajusta pesos y umbrales de las salidas hasta que la red de salidas de la red invertida coincidan con las entradas, o se acercan lo más posible.
+Deep Belief Network
+Que es (tres bullet points)?
+Es una pila de RBMs. 
+La arquitectura es igual a la de un perceptrón multicapa → no hay conexiones hacia atrás, no hay bucles y cada neurona de una capa está conectada con todas las neuronas de la capa siguiente. 
+Lo único que cambia es el método de entrenamiento → usa KL Divergence.
+Cuales son sus caractreristicas (tres bullet points)?
+Cada capa aprende el input entero
+Cuando termina el entrenamiento → la red aprendió a detectar patrones inherentes a los datos
+Segunda parte de entrenamiento → se entrena un perceptrón multicapa tradicional para clasificación
+Autoencoders
+Que son?
+Los autoencoders son redes neuronales no supervisadas que aprenden a reproducir en la salida exactamente la misma información que reciben a la entrada.
+Cual es su estructura?
+Estructura: Poseen el mismo número de neuronas en la capa de entrada que en la de salida.
+Cuales son sus dos funciones principales?
+Funciones principales: Se utilizan como compresores, para la reducción de dimensionalidad y para la eliminación de ruido en los datos.
+Como se entrenan?
+Entrenamiento: Se entrenan mediante backpropagation, pero utilizando una métrica particular llamada "Loss", que mide la cantidad de información que la red perdió al intentar reconstruir el input original.
+Redes Convolucionales (CNN)
+Que area dominan estas redes y como se divide la arquitectura?
+Estas redes dominan el área de la visión espacial y el reconocimiento de imágenes. Su arquitectura se divide principalmente en dos etapas: Feature Learning (aprendizaje de características) y Classification (clasificación).
+Como se describen estas cinco capas?
+Capa convolucional → cada neurona de entrada está conectada a todas las neuronas de esta capa, pero las neuronas de esta capa no están conectadas entre sí. Cada neurona de la capa tiene los mismos pesos y los mismos umbrales que las otras en esa misma posición (por ejemplo la primera neurona de cada recuadro tiene los mismos valores, las segundas comparten los mismos valores entre sí, etc)
+Capa RELU (Rectified Linear Unit) → función de activación, entrenada con backpropagation: 
+𝑦
+=
+𝑚
+𝑎
+𝑥
+(
+0
+,
+𝑥
+)
+y=max(0,x)​
+Capa Pooling → reduce la dimensionalidad
+Capa Fully Connected → perceptrón multicapa que clasifica lo que sale de la red
+Capa SoftMax → Asigna probabilidades decimales a cada clase en un caso de clases múltiples. Las sumatoria de estas probabilidades debe ser 1.0
+Redes Recurrentes y de Tensores Recursivas
+Para que están diseñadas?
+Ambas arquitecturas están diseñadas para datos donde el orden y la secuencia son fundamentales.
+Que son las Redes Recurrentes (tres bullet points)?
+Son útiles cuando los patrones en los datos cambian con el tiempo. 
+Pueden tener estructuras de secuencia a secuencia (series temporales), secuencia a singular (análisis de sentimientos) o singular a secuencia (etiquetado de imágenes).
+Su principal limitación es la memoria a corto plazo y el desvanecimiento del gradiente, problemas que se mitigan con celdas LSTM (Long Short-Term Memory) o GRU.
+Que son las Redes de Tensores Recursivas?
+Redes de Tensores Recursivas (RNTN): Tienen una estructura de árbol y fueron creadas para el análisis de sentimientos, ya que consideran el orden y la agrupación sintáctica de las palabras. Utilizan un nodo raíz que genera un score que se propaga recursivamente hacia las neuronas hojas.
+Redes Generativas Adversarias (GAN)
+Que son?
+Las GAN son una técnica generativa donde dos redes compiten entre sí durante el entrenamiento.
+Que componentes tienen?
+Componentes: El Generador intenta crear muestras falsas (ej. imágenes) que parezcan reales, mientras que el Discriminador intenta distinguir entre las muestras reales y las creadas por el generador.
+Para que se usan?
+Usos: Se emplean para la generación de imágenes realistas, traducción de imagen a imagen y la creación de deep fakes.
+Introducción a TensorFlow e Implementación
+La implementación de estas redes profundas requiere la combinación de diversos componentes técnicos para asegurar la convergencia y generalización del modelo.
+Que arquitectura tiene?
+Ingredientes del entrenamiento: Para entrenar una red se define su arquitectura, los hiperparámetros (como la tasa de aprendizaje o learning rate), el optimizador (ej. SGD, RMSprop, Adam), la función de pérdida y las funciones de activación.
+Que herramienta usa?
+Herramientas: Se utiliza Keras como interfaz de alto nivel para configurar capas, como las capas densas o recurrentes, y asignar funciones de activación como la tangente hiperbólica o ReLU.
+Con que tecnicas se regula para evitar el overfitting?
+Regularización: Para evitar el overfitting (sobreajuste), es común emplear técnicas como Early Stopping (parar antes de que el error de validación suba), Dropout (apagar neuronas aleatoriamente) y Data Augmentation
+Unidad 9 – Reducción de la dimensionalidad: técnicas PCA, ISOMap, tSNE, MDS y PcoA.
+PCA (Análisis de Componentes Principales)
+Que es?
+Es una técnica lineal que busca identificar la estructura de los datos a través de la varianza.
+Como funciona?
+Funcionamiento: Encuentra nuevas direcciones ortogonales (componentes principales) que maximizan la dispersión de los datos. El primer componente (PC1) es la recta que mejor ajusta al conjunto minimizando las distancias perpendiculares o maximizando las distancias proyectadas al origen.
+Cual es su utilidad?
+Utilidad: Permite entender qué variables (a través de los loading scores) explican mayormente la dispersión y detectar correlaciones o agrupamientos lineales.
+Cual es su fortaleza?
+Fortaleza: Es extremadamente rápido en comparación con métodos no lineales.
+MDS (Multi-Dimensional Scaling) y PCoA
+Cual es el objetivo?
+El objetivo central de estas técnicas es preservar las distancias entre pares de puntos en el nuevo espacio de menor dimensión.
+Cual es su flexibilidad?
+Flexibilidad: MDS permite utilizar diversas métricas de distancia (Manhattan, Hamming, Mahalanobis o Great-circle) y soporta transformaciones no lineales.
+Cual es su debilidad?
+Debilidad: Utiliza optimización iterativa que puede caer en mínimos locales y es sensible a la elección de la métrica de distancia.
+ISOMap (Isometric Mapping)
+Que es?
+Esta técnica se basa en la hipótesis de variedades (manifolds), que asume que los datos de alta dimensión en realidad yacen sobre una superficie curva de menor dimensión.
+Que distancia utiliza?
+Distancia Geodésica: A diferencia de PCA o MDS, ISOMap no utiliza la distancia euclidiana directa, sino la distancia geodésica (el camino más corto sobre la superficie de la variedad).
+Como es el proceso?
+Proceso: Construye un grafo de los k vecinos más cercanos, calcula las distancias más cortas en el grafo (usando Dijkstra o Floyd-Warshall) y luego aplica MDS sobre esa matriz de distancias.
+Cual es su limitacion?
+Limitación: Es un algoritmo lento para grandes conjuntos de datos y es muy sensible al ruido.
+t-SNE (t-distributed Stochastic Neighbor Embedding)
+Que es?
+Es una de las mejores técnicas para la visualización de datos complejos, diseñada específicamente para preservar los clusters (agrupamientos).
+Como funciona?
+Funcionamiento: Calcula la similitud entre puntos usando una distribución Normal en el espacio original y una distribución t-Student en el espacio reducido. La distribución "t" permite que los puntos aparezcan más dispersos, evitando que todos los clusters se colapsen en el centro.
+Que característica tiene?
+Características: Es un método estocástico (no determinista) que conserva estructuras no lineales tanto globales como locales.
+Cual es su debilidad?
+Debilidad: No se puede utilizar para proyectar nuevos puntos después del entrenamiento y no escala bien con un número muy elevado de dimensiones o registros.
+Unidad 10 – Técnicas adicionales: K-nearest neighbors, Support Vector Machines (SVM) y Algoritmos genéricos.
+K-nearest neighbors (KNN)
+Que es?
+Es un método de clasificación basado en la cercanía o similitud entre las observaciones.
+Como funciona?
+Funcionamiento: Cuando aparece una nueva observación, el algoritmo identifica los K vecinos más cercanos en el espacio de características (habitualmente usando la distancia euclidiana) y le asigna la clase mayoritaria entre ellos.
+Cuales son los hiperparametros clave?
+Hiperparámetros clave:
+El valor K: El número de vecinos a considerar (en scikit-learn, el valor por defecto es 5).
+Tipo de distancia: Puede ser euclidiana, Manhattan, entre otras.
+Peso: Los vecinos pueden estar ponderados, dando más relevancia a los que están más cerca del punto a clasificar.
+Cual es su debilidad?
+Debilidades: Es sensible a los valores atípicos (outliers) y a los conjuntos de datos no balanceados, donde una clase predominante puede sesgar la clasificación de los vecinos.
+Cuales son sus otros usos?
+Otros usos: Además de clasificar, se utiliza en el preprocesamiento para la imputación de datos faltantes, estimando valores por semejanza a los registros más próximos.
+Support Vector Machines (SVM)
+Que son?
+Las SVM son clasificadores potentes que buscan encontrar un hiperplano óptimo para separar las clases en un espacio N-dimensional.
+A que se refiere cuando dice que el SVM utiliza un margen blando?
+Support Vector Classifier (Margen blando): Utiliza un "Soft Margin" que permite que algunas observaciones queden dentro del margen o incluso mal clasificadas. Esto ayuda a manejar el ruido y los datos superpuestos.
+Que son los vectores de soporte?
+Vectores de Soporte: Son las observaciones que se encuentran justo en los límites o dentro del margen blando; ellos son los que definen la ubicación del clasificador.
+Que sucede cuando no se pueden separar en un plano simple?
+Casos no linealmente separables: Cuando los datos no pueden separarse con una línea o plano simple, la idea principal es llevar los datos a una dimensión mayor donde sí sean separables.
+Que es el Kernel Trick?
+The Kernel Trick (Truco del Kernel): Es una técnica fundamental que permite calcular la relación entre pares de observaciones en dimensiones más altas sin realizar una transformación física del espacio. Esto reduce drásticamente el tiempo de cómputo y permite trabajar incluso en infinitas dimensiones (como con el Kernel Radial).
+Algoritmos Genéricos: Descenso por Gradiente
+Cual es su proposito?
+Propósito: Se trata de un algoritmo iterativo para encontrar el mínimo de una función de error.
+Cuales son sus aplicaciones?
+Aplicaciones:
+En regresión lineal para ajustar la mejor recta.
+En PCA y técnicas de reducción de dimensionalidad como MDS para minimizar la función de Stress.
+Es la base del algoritmo de Backpropagation utilizado para el entrenamiento de redes neuronales.
+Cual es su mecanismo?
+Mecanismo: Utiliza el gradiente como una "brújula" que apunta en la dirección de máximo crecimiento; moverse en la dirección opuesta permite acercarse al valor mínimo de la función de pérdida.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "apuntes de Ciencia de Datos" ("https://scratched-lantern-d4a.notion.site/apuntes-de-Ciencia-de-Datos-257716c1daf48005b682f0ec543b4129")
