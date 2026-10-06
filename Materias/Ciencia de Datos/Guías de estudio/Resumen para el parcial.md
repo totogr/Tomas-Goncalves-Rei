@@ -1,7 +1,11 @@
 # 📘 Resumen para el parcial — Ciencia de Datos
 
 > **Parcial: jueves 15/10 · presencial, escrito en hoja.** Promocionás con **7 o más en la primera fecha** (y los dos TPs aprobados).
-> Este resumen junta en un solo lugar **todo lo que entra**: lo de las guías de cada clase, lo que el profe remarcó en las teóricas ([Remarcado en clase](Remarcado%20en%20clase.md)) y los errores típicos que hay que evitar. Cuando lleguen parciales de ejemplo, se ajusta a su formato.
+> Este resumen junta en un solo lugar **todo lo que entra**: lo de las guías de cada clase, lo que el profe remarcó en las teóricas ([Remarcado en clase](Remarcado%20en%20clase.md)), lo que tomaron en **parciales de años anteriores** y los errores típicos que hay que evitar.
+>
+> **Se complementa con:**
+> - 📝 [**Parciales anteriores resueltos**](Parciales%20anteriores%20resueltos.md): todas las preguntas de 2022 a 2025 por tema, con la respuesta correcta y las cuentas resueltas.
+> - 🎯 **Preguntas sobre el TP1**: aparecen en casi todos los parciales. Están en `TP1 (privado)/`, solo en local.
 
 **Leyenda:** 🔴 = el profe dijo "esto es pregunta de examen" · 🟠 = dijo que hay que dominarlo · ✍️ = ejercicio para hacer a mano (con resolución).
 
@@ -29,14 +33,14 @@
 | Día | Qué hacer |
 | --- | --- |
 | **Mar 06** | Teórica de reducción de dimensionalidad (anotá lo que remarque). Leer secciones 1–3 |
-| **Mié 07** | Secciones 4 y 5. Hacer los ✍️ de métricas y descenso por gradiente |
-| **Jue 08** | Práctica de reducción de dimensionalidad. Secciones 6 y 7 (entropía y Gini **a mano**) |
+| **Mié 07** | Secciones 4 y 5. Hacer los ✍️ de métricas y descenso por gradiente + las **matrices de confusión** de los [parciales anteriores](Parciales%20anteriores%20resueltos.md#3-ejercicios-con-cuentas) |
+| **Jue 08** | Práctica de reducción de dimensionalidad. Secciones 6, 7 (entropía y Gini **a mano**) y **11** (qué técnica usar según el caso) |
 | **Vie 09** | Sección 8 (ensambles) |
-| **Sáb 10** | Sección 9 (KNN y SVM) |
+| **Sáb 10** | Sección 9 (KNN y SVM) + **preguntas sobre el TP1** (`TP1 (privado)/`) |
 | **Dom 11** | Sección 10 (redes): perceptrón a mano, regularización, optimizadores |
-| **Lun 12** | Sección 11 + [tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [hiperparámetros](#13-hiperparámetros-qué-pasa-si-los-subo). Parciales de ejemplo si aparecen |
+| **Lun 12** | [Tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [hiperparámetros](#13-hiperparámetros-qué-pasa-si-los-subo) + los **V/F** de los [parciales anteriores](Parciales%20anteriores%20resueltos.md#2-verdadero-o-falso) |
 | **Mar 13** | **Consultas para el parcial** en la teórica: llevá las dudas. ⚠️ Ese día también vence la **entrega del TP1** |
-| **Mié 14** | Simulacro: las [6 preguntas 🔴](#-las-6-preguntas-que-el-profe-marcó-como-de-examen) sin mirar + todos los ✍️ + la tabla [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
+| **Mié 14** | Simulacro: hacé un parcial anterior completo **sin mirar** (el de 2025-10 o el de 2023-10) + las [6 preguntas 🔴](#-las-6-preguntas-que-el-profe-marcó-como-de-examen) + la tabla [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
 | **Jue 15** | 🎯 Parcial |
 
 ---
@@ -134,6 +138,18 @@ flowchart TD
 - Las métricas se miden **siempre sobre datos que el modelo no vio** (validación o test).
 - **Train/test:** 80/20, 75/25 o 2/3–1/3. **Train/validación/test:** ej. 50/25/25 (validación para ajustar, test solo al final).
 - **Cross-validation (k folds):** con 5 folds, en cada ronda 4/5 entrena y 1/5 valida, rotando; se promedian las métricas.
+  - ✍️ Cuenta típica (parcial 2022): 250 filas, 80/20 → 200 de train; con k = 5 el modelo se entrena **5 veces**, cada una con **160** registros, y valida con **40**. Con 70/30 se sigue entrenando **5 veces** (depende de k, no del split).
+
+### Búsqueda de hiperparámetros
+
+| | **Grid Search** | **Random Search** |
+| --- | --- | --- |
+| Qué prueba | **Todas** las combinaciones de la grilla | Una cantidad **fija** de combinaciones **al azar** |
+| Ventaja | Determinístico; no se le escapa ninguna combinación de la grilla | Controlás el **costo** de antemano; explora más valores distintos cuando hay muchos hiperparámetros |
+| Desventaja | **Muy costoso** si hay muchos hiperparámetros | Puede no encontrar el óptimo exacto |
+| Cuándo | Pocos hiperparámetros y pocos valores | Muchos hiperparámetros o rangos amplios |
+
+Las dos se combinan con **cross-validation** (`GridSearchCV`, `RandomizedSearchCV`). ✍️ Con una grilla de 2 × 4 × 3 valores y `cv=10` se evalúan **24 combinaciones**, **10 veces cada una** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md#gridsearchcv-27102022)).
 
 ### Overfitting, underfitting, sesgo y varianza 🟠
 
@@ -165,7 +181,8 @@ Predicho  Neg  │   FN     │   TN     │   ← "se me escapó" = FN
 | **Accuracy** | (TP + TN) / total | ¿Qué proporción acertó? |
 | **Precisión** | TP / (TP + FP) | De lo que dije positivo, ¿cuánto lo era? |
 | **Recall** (sensibilidad, TPR) | TP / (TP + FN) | De todo lo positivo, ¿cuánto detecté? |
-| **F1** | 2·P·R / (P + R) | Balance entre precisión y recall (media armónica) |
+| **F1** | 2·P·R / (P + R) = **2·TP / (2·TP + FP + FN)** | Balance entre precisión y recall (media armónica). La segunda forma es la más rápida para dejar el resultado en fracción |
+| **F-beta** | (1 + β²)·P·R / (β²·P + R) | F1 generalizado: **β > 1** le da más peso al **recall**, **β < 1** a la **precisión** |
 | **FPR** | FP / (FP + TN) | De los negativos, ¿cuántos marqué como positivos? |
 
 - **Umbral:** subirlo → **más precisión, menos recall**; bajarlo → al revés. El punto donde se **cruzan** las curvas de precisión y recall es un buen umbral si querés equilibrar. En sklearn: `decision_function()` / `predict_proba()` y elegís el corte (en `SGDClassifier` el umbral por defecto es 0).
@@ -223,7 +240,9 @@ Antes de sacarlos, tres preguntas: ¿es **genuino o un error** de carga? ¿**me 
 | **LOF** (multivariado) | Compara la densidad local con la de sus vecinos |
 | **Isolation Forest** (multivariado) | Los raros se aíslan con **pocos cortes** al azar |
 
-> Un punto puede ser normal en X y normal en Y pero raro en la combinación (X, Y) → solo lo detecta un método **multivariado**.
+> Un punto puede ser normal en X y normal en Y pero raro en la combinación (X, Y) → solo lo detecta un método **multivariado** (ej. un nene de 4 años que mide 1,90 m).
+
+**Tipos de outliers según el contexto:** **global** (lejos de toda la nube de puntos) · **contextual** (raro solo en su contexto: temperatura bajo cero **en verano**) · **colectivo** (un grupo de puntos que, juntos, se comportan distinto al resto aunque cada uno no esté tan lejos).
 
 ✍️ Q1 = 20, Q3 = 40 → IQR = 20. Límites moderados: 20 − 30 = **−10** y 40 + 30 = **70**. Límites severos: 20 − 60 = **−40** y 40 + 60 = **100**. Un valor de 75 es un **outlier moderado**.
 
@@ -236,9 +255,10 @@ Antes de sacarlos, tres preguntas: ¿es **genuino o un error** de carga? ¿**me 
 | **Decimal scaling** | x / 10ᵈ | (−1, 1) |
 
 - **Hay que escalar** en modelos de **distancia** (KNN, SVM, K-Means) y de **gradiente** (redes, regresión con GD). **Los árboles y sus ensambles no lo necesitan** (cortan por umbrales).
-- **Sesgo fuerte** → log, raíz cuadrada, Box-Cox para acercar a una normal.
+- **Sesgo fuerte** → log, raíz cuadrada, Box-Cox para acercar a una normal. 🔴 *Parcial 2025:* precios con **sesgo positivo** (cola larga a la derecha) → **logaritmo**.
 - **Discretización:** igual ancho, igual frecuencia o cuantiles.
-- **One-hot encoding:** una columna binaria por categoría (con k categorías alcanzan **k − 1** para evitar multicolinealidad).
+- **One-hot encoding:** una columna binaria por categoría (con k categorías alcanzan **k − 1** para evitar multicolinealidad en modelos lineales).
+  - 🔴 *Parcial 2025:* **one-hot con 200 categorías** → 200 columnas casi todas en cero, más memoria y tiempo, **maldición de la dimensionalidad** y riesgo de **overfitting**. Alternativas: **agrupar** las categorías poco frecuentes en "Otros", **ordinal/label encoding**, **target/frecuencia encoding**, **embeddings**.
 - **Crear variables** con conocimiento del dominio (día de la semana a partir de una fecha, ratios, distancias).
 
 ✍️ Valores {10, 20, 30, 50}: Min-Max de 30 = (30 − 10) / (50 − 10) = **0.5**. Con μ = 50 y σ = 10, el z-score de 70 es (70 − 50) / 10 = **2**.
@@ -494,15 +514,34 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 ## 11. Reducción de la dimensionalidad
 
-> ⚠️ Es la teórica del **06/10** y la práctica del **08/10**: esta sección es preliminar y se completa con lo que se vea en clase.
+> 🔴 **Apareció en los tres últimos años de parciales** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md)). Casi siempre preguntan **qué técnica usar según el caso** y **para qué sirve el scree plot**. Armado con los parciales y los apuntes de otros alumnos de la cátedra; cuando llegue el material de la clase del 06/10 se ajusta.
 
-- **Por qué:** con muchas variables los modelos son lentos, cuesta visualizar y aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido).
-- **PCA:** busca nuevos ejes (**componentes principales**) en la dirección de **máxima varianza**, ordenados de mayor a menor, y proyecta los datos sobre los primeros k.
-  - Cada componente es una **combinación lineal** de las variables originales.
-  - Se elige k mirando la **varianza explicada** (ej. quedarse con los que juntan ~90%).
-  - Hay que **estandarizar** antes (si no, domina la variable de mayor escala).
-  - **Costo:** se pierde algo de información y la **interpretabilidad** (los componentes ya no son las variables originales).
-- Es **no supervisado** y suele usarse **antes** de modelos de distancia (ej. PCA + SVM).
+**¿Para qué reducir dimensiones?** Con muchas variables aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido). Reducir **baja el ruido y la colinealidad**, **acelera** el entrenamiento, **reduce el riesgo de overfitting** y permite **visualizar** en 2D/3D. A cambio se pierde algo de información e **interpretabilidad**. Son técnicas **no supervisadas**.
+
+### Las cuatro técnicas
+
+| Técnica | Qué conserva | Cómo funciona | Fortaleza | Debilidad |
+| --- | --- | --- | --- | --- |
+| **PCA** | La **varianza** (dispersión) | Busca direcciones **ortogonales** (componentes principales) de **máxima varianza**, ordenadas de mayor a menor, y proyecta sobre las primeras k. Cada componente es una **combinación lineal** de las variables | **Muy rápido**; dice **qué variables** explican la dispersión (*loadings*); puede transformar puntos nuevos | Es **lineal**: no capta estructuras curvas |
+| **MDS** (y PCoA) | Las **distancias** entre pares de puntos | Arma la matriz de distancias y ubica los puntos en baja dimensión respetándolas lo más posible (minimiza el *stress*) | Acepta **cualquier métrica**, incluso **no euclídea** (Manhattan, Hamming…) | Optimización iterativa: puede caer en **mínimos locales**; sensible a la métrica elegida |
+| **ISOMAP** | La **geometría de una variedad** (distancias **geodésicas**) | Arma un grafo de los **k vecinos más cercanos**, calcula caminos mínimos en el grafo (Dijkstra / Floyd) y aplica **MDS** sobre esas distancias | Ideal si los datos viven sobre una **superficie curva** de menor dimensión (el "rollo suizo") | **Lento** con muchos datos y **sensible al ruido** |
+| **t-SNE** | Los **clusters** (vecindarios locales) | Pasa las distancias a **probabilidades de ser vecinos** (normal en el espacio original, **t de Student** en el reducido) y minimiza la diferencia (divergencia KL) | La mejor para **visualizar** grupos en 2D/3D | **Estocástico** (cada corrida da distinto); no proyecta puntos nuevos; no preserva bien las distancias globales; lento con muchos datos (se suele aplicar PCA antes) |
+
+### ¿Qué técnica uso? 🔴
+
+| Si el enunciado dice… | Técnica |
+| --- | --- |
+| "entender **cuán dispersos** están los datos y sobre **qué ejes o variables**" | **PCA** |
+| "preservar las **distancias** entre puntos, incluso con métricas **no euclídeas**" | **MDS** |
+| "los datos están sobre una **variedad** del espacio" | **ISOMAP** |
+| "proyectar a 2 dimensiones **manteniendo los clusters**" | **t-SNE** |
+
+### PCA en detalle
+- **Estandarizar antes:** si no, domina la variable de mayor escala.
+- **Varianza explicada:** qué porcentaje de la dispersión total captura cada componente. El 1º (PC1) captura la mayor.
+- **Scree plot** 🔴: gráfico de la **varianza explicada por cada componente**, de mayor a menor. Sirve para **elegir cuántos componentes conservar**: donde la curva hace el **codo**, o al juntar un porcentaje acumulado (ej. 90%).
+- **Loadings:** cuánto aporta cada variable original a cada componente. Sirven para interpretar qué representa cada eje.
+- Uso típico: **antes de modelos de distancia** (PCA + SVM, PCA + K-Means) o **antes de t-SNE** para acelerarlo.
 
 ---
 
@@ -521,7 +560,10 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | MLP | Clasificación y regresión | Sí | **Sí** | Capas, neuronas, activación, learning rate, épocas, batch, optimizador, regularización | — |
 | K-Means | Clustering | **No** | **Sí** | K, inicialización, n_init | **Sensible** (usa la media) |
 | SOM | Clustering / visualización | **No** | Sí | Tamaño de la grilla, radio, learning rate | — |
-| PCA | Reducción de dimensionalidad | **No** | **Sí** | Cantidad de componentes | Sensible |
+| PCA | Reducción de dimensionalidad (conserva la **varianza**) | **No** | **Sí** | Cantidad de componentes (scree plot) | Sensible |
+| MDS | Reducción de dimensionalidad (conserva **distancias**) | **No** | Sí | Métrica de distancia, dimensiones | — |
+| ISOMAP | Reducción de dimensionalidad (datos sobre una **variedad**) | **No** | Sí | Cantidad de vecinos del grafo | **Sensible** al ruido |
+| t-SNE | Visualización 2D/3D (conserva **clusters**) | **No** | Sí | Perplejidad, semilla | — |
 
 ---
 
@@ -590,6 +632,14 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | MNIST: 0 = blanco | **0 = negro** (fondo), **255 = blanco** (trazo) |
 | Q2 del box plot = media | **Q2 = mediana** |
 | Validación cruzada = asignación aleatoria en un experimento | Son cosas distintas: cross-validation **evalúa un modelo rotando folds** |
+| "En Random Forest cada árbol vota según su peso" | En RF **todos los árboles valen igual**; el voto ponderado es de **AdaBoost** |
+| "AdaBoost usa árboles completos y bagging" | AdaBoost usa **tocones** y es **boosting**; los árboles completos y el bootstrap son de **Random Forest** |
+| "Backpropagation es una alternativa al descenso por gradiente" | Backpropagation **usa** descenso por gradiente |
+| "Las SOM necesitan datos etiquetados" | Son **no supervisadas** |
+| "El perceptrón no puede modelar NAND" | **Puede**: NAND es linealmente separable (igual que AND y OR) |
+| "Isolation Forest se basa en densidad" | Se basa en **árboles de aislamiento**; el basado en densidad es **LOF** |
+| Con k-fold, cambiar el split 80/20 a 70/30 cambia cuántas veces se entrena | Se entrena **k veces** igual; cambian los tamaños |
+| r = 0,35 es "ausencia de correlación" | Es correlación **positiva débil** |
 
 ---
 
@@ -625,6 +675,13 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 27. ¿Qué es Adam respecto de Momentum y RMSProp?
 28. ¿Cómo entrena una SOM? ¿En qué se parece a K-Means?
 29. ¿Qué busca PCA y qué se pierde al aplicarlo?
+30. ¿Para qué sirve el **scree plot**?
+31. ¿Qué técnica usás si los datos están sobre una **variedad**? ¿Y si querés conservar los **clusters**? ¿Y las **distancias** con una métrica no euclídea?
+32. Diferenciá **Grid Search** y **Random Search**.
+33. ¿Qué problema trae aplicar one-hot a una variable con **200 categorías**? ¿Qué alternativas hay?
+34. ¿Qué técnica de preprocesamiento aplicaron en el **TP1**? ¿Cuántos clusters eligieron y qué representan?
+
+> 📝 Para practicar con el **formato real**, hacé los parciales de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md): ahí están los V/F y las cuentas con su resolución.
 
 **Para hacer a mano** (las resoluciones están en cada sección)
 - Métricas desde una matriz de confusión → [sección 3](#3-cómo-se-evalúa-un-modelo)
@@ -638,4 +695,4 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 ---
 
-<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez) y las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 ([Remarcado en clase](Remarcado%20en%20clase.md)). La sección 11 se completa con la clase de reducción de dimensionalidad.</sub>
+<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 se ajusta cuando llegue el material de la clase de reducción de dimensionalidad.</sub>

@@ -24,6 +24,8 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 **[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 6 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
 
+**[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)** — las preguntas de los parciales 2022–2025 de la cátedra agrupadas por tema, con la respuesta correcta, las cuentas resueltas y los errores de las resoluciones que circulan.
+
 **[Remarcado en clase](Remarcado%20en%20clase.md)** — lo que el profe marcó como **pregunta de examen** o dijo que hay que dominar en las teóricas, con las respuestas correctas. Es la base para armar los resúmenes del parcial. Cada guía tiene además su sección *🎯 Remarcado en clase* o las preguntas de examen marcadas con 🔴.
 
 _Las 🟡 se arman con el temario del plan de estudios; cuando la cátedra suba las slides las ajustamos a su enfoque y ejemplos. La numeración sigue el temario y se acomoda al orden real de la cursada._

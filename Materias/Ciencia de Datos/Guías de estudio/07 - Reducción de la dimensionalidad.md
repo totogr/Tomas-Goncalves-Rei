@@ -1,7 +1,7 @@
 # 07 · Reducción de la dimensionalidad
 
 > 🧩 **Guía de estudio para llegar a la clase con el tema masticado.**
-> ⚠️ **Guía preliminar** basada en el temario del plan de estudios (aún sin slides de la cátedra). Se completa/corrige cuando llegue el material.
+> ⚠️ **Guía preliminar**: basada en el temario, en los parciales de años anteriores y en apuntes de otros alumnos de la cátedra (aún sin slides propias). Se completa cuando llegue el material de la clase del 06/10.
 
 ---
 
@@ -49,6 +49,19 @@ flowchart LR
 ### PCA visualmente
 
 ![PCA: elige la dirección de máxima varianza (PC1) y proyecta la nube sobre ella](assets/07-pca-proyeccion.svg)
+
+### Las cuatro técnicas que toman en los parciales
+
+> 🔴 Según los [parciales anteriores](Parciales%20anteriores%20resueltos.md), la cátedra ve **PCA, MDS (y PCoA), ISOMAP y t-SNE**, y casi siempre pregunta **cuál usar según el caso**. El detalle completo está en la [sección 11 del resumen](Resumen%20para%20el%20parcial.md#11-reducción-de-la-dimensionalidad).
+
+| Técnica | Qué conserva | Usala cuando… |
+| --- | --- | --- |
+| **PCA** | La **varianza** (dispersión), con combinaciones lineales de las variables | Querés entender **cuán dispersos** están los datos y **sobre qué ejes/variables**; también para acelerar otros modelos |
+| **MDS / PCoA** | Las **distancias** entre pares de puntos | Querés preservar distancias, incluso con métricas **no euclídeas** |
+| **ISOMAP** | Las distancias **geodésicas** (grafo de k vecinos + MDS) | Los datos están sobre una **variedad** (superficie curva de menor dimensión) |
+| **t-SNE** | Los **clusters** (vecindarios locales) | Querés **visualizar** en 2D/3D manteniendo los grupos |
+
+**Scree plot (PCA):** grafica la **varianza explicada por cada componente**; se elige la cantidad de componentes en el **codo** o al alcanzar un porcentaje acumulado (ej. 90%).
 
 ---
 
