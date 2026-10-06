@@ -20,7 +20,9 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 12 | [Introducción al aprendizaje profundo](12%20-%20Introducci%C3%B3n%20al%20aprendizaje%20profundo.md) | 🟡 |
 | 13 | [Métodos de agrupamiento (Clustering — K-Means)](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) | ✅ |
 
-### 🎯 Para el parcial
+### 🎯 Para el parcial (jueves 15/10)
+
+**[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 6 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
 
 **[Remarcado en clase](Remarcado%20en%20clase.md)** — lo que el profe marcó como **pregunta de examen** o dijo que hay que dominar en las teóricas, con las respuestas correctas. Es la base para armar los resúmenes del parcial. Cada guía tiene además su sección *🎯 Remarcado en clase* o las preguntas de examen marcadas con 🔴.
 

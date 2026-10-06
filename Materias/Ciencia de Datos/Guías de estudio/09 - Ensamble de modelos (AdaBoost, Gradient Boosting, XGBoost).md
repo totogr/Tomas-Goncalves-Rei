@@ -139,7 +139,7 @@ $$\text{Similarity} = \frac{(\sum \text{residuos})^2}{\#\text{residuos} + \lambd
 
 **2. Ingeniería.** XGBoost está pensado para *Big Data*: implementación en C++, paralelización por atributo, aprovechamiento de GPU, manejo eficiente de datos dispersos y valores faltantes.
 
-**Regularización.** Además de λ, XGBoost añade un término que penaliza la cantidad de hojas del árbol (α). Esta doble regularización + tuning fino de hiperparámetros es lo que lo hace ganador en competencias con datos tabulares.
+**Regularización.** Además de λ, XGBoost añade un término que penaliza la cantidad de hojas del árbol (**γ**, *gamma*): una división se poda si su Gain − γ < 0. (El parámetro **α** de XGBoost es otra cosa: una regularización L1 sobre los valores de las hojas.) Esta doble regularización + tuning fino de hiperparámetros es lo que lo hace ganador en competencias con datos tabulares.
 
 **XGBoost vs. Random Forest.** XGBoost **superó a Random Forest** en desempeño en la mayoría de los problemas tabulares y su biblioteca está muy optimizada (incluso usa GPU). A cambio, es **más costoso** de entrenar y **puede sobreajustar** si el conjunto es muy complejo o no se regulariza bien.
 
