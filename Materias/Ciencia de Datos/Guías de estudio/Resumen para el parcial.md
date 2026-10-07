@@ -24,7 +24,7 @@
 | 5 · 15/09 | Árboles · Random Forest / XGBoost | [7](#7-árboles-de-decisión) · [8](#8-ensambles) | [06](06%20-%20%C3%81rboles%20-%20ID3%2C%20C4.5%20y%20Random%20Forest.md) · [09](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) |
 | 6 · 22/09 | KNN · SVM · Ensambles híbridos | [8](#8-ensambles) · [9](#9-knn-y-svm) | [08](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) · [09](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) |
 | 7 · 29/09 | Redes neuronales superficiales | [10](#10-redes-neuronales) | [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) |
-| 8 · 06/10 | Reducción de la dimensionalidad | [11](#11-reducción-de-la-dimensionalidad) | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) ⚠️ |
+| 8 · 06/10 | Reducción de la dimensionalidad | [11](#11-reducción-de-la-dimensionalidad) | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) |
 
 **No entra:** PLN, deep learning, embeddings, LLMs (son después del parcial). La biología de la neurona (axón, dendritas) el profe aclaró que **no se evalúa**.
 
@@ -514,9 +514,9 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 ## 11. Reducción de la dimensionalidad
 
-> 🔴 **Apareció en los tres últimos años de parciales** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md)). Casi siempre preguntan **qué técnica usar según el caso** y **para qué sirve el scree plot**. Armado con los parciales y los apuntes de otros alumnos de la cátedra; cuando llegue el material de la clase del 06/10 se ajusta.
+> 🔴 **Apareció en los tres últimos años de parciales** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md)). Casi siempre preguntan **qué técnica usar según el caso** y **para qué sirve el scree plot**. Armado con las slides de la cátedra (PCA, MDS/PCoA, t-SNE, ISOMAP); el detalle paso a paso está en la [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md).
 
-**¿Para qué reducir dimensiones?** Con muchas variables aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido). Reducir **baja el ruido y la colinealidad**, **acelera** el entrenamiento, **reduce el riesgo de overfitting** y permite **visualizar** en 2D/3D. A cambio se pierde algo de información e **interpretabilidad**. Son técnicas **no supervisadas**.
+**¿Para qué reducir dimensiones?** Según la cátedra: **visualizar** la distribución, **detectar patrones** a simple vista, **reducir el ruido**, **acelerar** el entrenamiento, **comprimir** la información y **presentar resultados** a gente que no es del área. Además, con muchas variables aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido). Reducir **baja el ruido y la colinealidad**, **acelera** el entrenamiento, **reduce el riesgo de overfitting** y permite **visualizar** en 2D/3D. A cambio se pierde algo de información e **interpretabilidad**. Son técnicas **no supervisadas**.
 
 ### Las cuatro técnicas
 
@@ -537,11 +537,42 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | "proyectar a 2 dimensiones **manteniendo los clusters**" | **t-SNE** |
 
 ### PCA en detalle
+- **Pasos:**
+  1. **Centrar** los datos (el promedio de cada variable pasa al origen).
+  2. Buscar la recta por el origen que **mejor ajusta** → **PC1**. Es la que **maximiza la suma de las distancias al cuadrado** de los puntos proyectados al origen; por Pitágoras, equivale a minimizar la distancia de los puntos a la recta.
+  3. **PC2** es perpendicular a PC1, y así sigue.
+  4. **Proyectar** y **rotar** (PC1 horizontal).
+- **Vocabulario** 🟠:
+  - PC1 es una **combinación lineal** de las variables (ej.: 4 partes de árboles por 1 de RNA).
+  - Normalizada a largo 1 es el **autovector** (√(4² + 1²) = 4,12 → (0,97; 0,242)).
+  - Esas proporciones son los **loading scores**: dicen **qué variables pesan** en cada componente.
+  - La **suma de distancias al cuadrado** de los puntos proyectados es el **autovalor**.
+  - Se calcula con **SVD**.
+- **Variación de cada PC** = autovalor / (n − 1). El **% de variación** es su parte del total: con 15 y 3 → PC1 = 15/18 = **83%**, PC2 = **17%**.
+- **Scree plot** 🔴: barras con el **% de variación de cada componente**, de mayor a menor.
+  - Sirve para ver si **PC1 + PC2 alcanzan** para representar los datos en 2D (ej.: 79% + 15% = 94% → buena representación) y para **elegir cuántas componentes conservar** (en el **codo** o al juntar un % acumulado, ej. 90%).
+  - Si es **plano** (la variación está repartida), el gráfico 2D no muestra bien la dispersión, aunque **igual se pueden ver agrupamientos**.
 - **Estandarizar antes:** si no, domina la variable de mayor escala.
-- **Varianza explicada:** qué porcentaje de la dispersión total captura cada componente. El 1º (PC1) captura la mayor.
-- **Scree plot** 🔴: gráfico de la **varianza explicada por cada componente**, de mayor a menor. Sirve para **elegir cuántos componentes conservar**: donde la curva hace el **codo**, o al juntar un porcentaje acumulado (ej. 90%).
-- **Loadings:** cuánto aporta cada variable original a cada componente. Sirven para interpretar qué representa cada eje.
 - Uso típico: **antes de modelos de distancia** (PCA + SVM, PCA + K-Means) o **antes de t-SNE** para acelerarlo.
+
+### MDS / PCoA, t-SNE e ISOMAP en lo esencial
+- **MDS:**
+  - **MDS clásico = PCoA.**
+  - Se arma la **matriz de distancias** entre todos los pares de ejemplos (con **cualquier distancia**: euclídea, Hamming…) y se buscan coordenadas en 2D cuyas distancias se le parezcan.
+  - Se minimiza el **stress** = √Σ(dᵢⱼ original − dᵢⱼ nueva)² con métodos **iterativos**: **Kruskal** (descenso por gradiente) o **SMACOF**. Por eso puede caer en **mínimos locales** y dar resultados distintos.
+  - Con distancia **euclídea da el mismo gráfico que PCA**.
+- **t-SNE** (Hinton y Van der Maaten, 2008):
+  1. Calcula la **similitud** de cada punto con los demás usando una **normal** centrada en él. Su ancho depende de la densidad y lo fija la **perplejidad** (≈ cantidad de vecinos).
+  2. Ubica los puntos **al azar** en baja dimensión y calcula las similitudes con una **t de Student** (colas más altas → clusters más separados).
+  3. Mueve los puntos **de a uno, en pasos chicos**, hasta que las dos matrices de similitud se parezcan.
+- **ISOMAP:**
+  - Es para datos sobre una **variedad**. La **hipótesis de variedades** dice que los datos reales de alta dimensión viven cerca de una variedad de mucha menor dimensión (MNIST: 784 dimensiones).
+  - Usa la **distancia geodésica**, no la euclídea. Pasos:
+    1. Grafo de **k vecinos** pesado con la distancia euclídea.
+    2. Caminos mínimos con **Dijkstra / Floyd-Warshall**.
+    3. **MDS** sobre esa matriz de distancias.
+  - Si **k es muy grande** o hay **ruido**, aparecen atajos y la proyección queda mal; si **k es muy chico**, el grafo queda escaso.
+  - **Landmark ISOMAP** lo acelera usando solo algunos puntos especiales.
 
 ---
 
@@ -606,6 +637,8 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | Similarity (XGBoost) | (Σ residuos)² / (n + λ) |
 | Silhouette | (b − a) / max(a, b) |
 | Hopkins | Σy / (Σx + Σy) |
+| % de variación de una PC (PCA) | variación de la PC / suma de las variaciones de todas las PC |
+| Stress (MDS) | √Σ (dᵢⱼ original − dᵢⱼ nueva)² |
 | L1 · L2 | pérdida + λΣ\|w\| · pérdida + λΣw² |
 
 ---
@@ -640,6 +673,9 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | "Isolation Forest se basa en densidad" | Se basa en **árboles de aislamiento**; el basado en densidad es **LOF** |
 | Con k-fold, cambiar el split 80/20 a 70/30 cambia cuántas veces se entrena | Se entrena **k veces** igual; cambian los tamaños |
 | r = 0,35 es "ausencia de correlación" | Es correlación **positiva débil** |
+| El autovector es la suma de distancias al cuadrado (PCA) | Esa suma es el **autovalor**; el autovector es la **dirección** (largo 1) |
+| t-SNE sirve para transformar datos nuevos o como paso de un pipeline | **No proyecta puntos nuevos** y es estocástico: es para **visualizar**. Para pipelines, **PCA** |
+| PCA capta cualquier estructura | Es **lineal**: con datos sobre una variedad curva (la "S") hace falta **ISOMAP** |
 
 ---
 
@@ -680,6 +716,7 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 32. Diferenciá **Grid Search** y **Random Search**.
 33. ¿Qué problema trae aplicar one-hot a una variable con **200 categorías**? ¿Qué alternativas hay?
 34. ¿Qué técnica de preprocesamiento aplicaron en el **TP1**? ¿Cuántos clusters eligieron y qué representan?
+35. Definí **autovector**, **autovalor** y **loading score** de PCA. ¿Qué es la **perplejidad** de t-SNE? ¿Qué pasa en ISOMAP si k es muy grande o muy chico?
 
 > 📝 Para practicar con el **formato real**, hacé los parciales de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md): ahí están los V/F y las cuentas con su resolución.
 
@@ -692,7 +729,8 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 - Entropía, ganancia y Gini → [sección 7](#7-árboles-de-decisión)
 - Amount of Say, paso de Gradient Boosting y Similarity → [sección 8](#8-ensambles)
 - Entrenamiento del perceptrón para AND y cantidad de parámetros de una red → [sección 10](#10-redes-neuronales)
+- % de variación de cada PC, autovector y loading scores, paso de descenso por gradiente en MDS → [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md)
 
 ---
 
-<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 se ajusta cuando llegue el material de la clase de reducción de dimensionalidad.</sub>
+<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 está armada con las slides de reducción de dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP).</sub>
