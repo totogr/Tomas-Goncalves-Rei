@@ -11,6 +11,7 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 | [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
 | [`Teoría (PPTs de la cátedra)/`](Teor%C3%ADa%20%28PPTs%20de%20la%20c%C3%A1tedra%29/) | Presentaciones teóricas de la cátedra, numeradas según el orden de las clases. |
 | [`Resúmenes/`](Res%C3%BAmenes/) | Resúmenes de clases y apuntes de estudio. |
+| [`Material extra/`](Material%20extra/) | Material de terceros: consignas de parciales y finales anteriores, apuntes de otros alumnos (GitHub y Notion), con su fuente. Lo que sirve se vuelca, revisado, en las guías, el resumen y los parciales resueltos. |
 
 ## Temario y PPTs
 
@@ -29,7 +30,7 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 | 11 | Datagrama IP, TCP y UDP | ✅ |
 | 12 | Protocolos de capas 5, 6 y 7 (sesión, presentación y aplicación) | ✅ (clase #11 de 2026) |
 
-> 🎯 **Primer parcial:** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra.
+> 🎯 **Primer parcial:** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra. Para estudiar: [Resumen para el parcial](Gu%C3%ADas%20de%20estudio/Resumen%20para%20el%20parcial.md) y [Parciales anteriores resueltos](Gu%C3%ADas%20de%20estudio/Parciales%20anteriores%20resueltos.md).
 
 > Las PPTs con sufijo **`b`** son las versiones ampliadas de la cursada 2026. La **`08b`** (clase #9) trae por primera vez el material de **Sistemas Autónomos, BGP y OSPF**, que antes solo estaba en el resumen de [`Resúmenes/`](Res%C3%BAmenes/). La **`11b`** (clase #10) es la de **Protocolos de capa 4 (TCP y UDP)**, y la **`12`** (clase #11) la de **Protocolos de capas 5, 6 y 7**.
 
@@ -55,8 +56,13 @@ Redes/
 │   ├── 11 - Datagrama IP, TCP y UDP.pdf
 │   ├── 11b - Capa 4 TCP y UDP (ampliación 2026).pdf
 │   └── 12 - Protocolos Capa 5, 6 y 7 - Sesión, Presentación y Aplicación.pdf
-└── Resúmenes/
-    └── Clase 07-11 - Enrutamiento Dinámico (BGP y OSPF).pdf
+├── Resúmenes/
+│   └── Clase 07-11 - Enrutamiento Dinámico (BGP y OSPF).pdf
+└── Material extra/
+    ├── Parciales y finales anteriores/
+    ├── Apuntes GitHub (Ciliberto 1C 2026)/
+    ├── Apuntes GitHub (González Alejo 1C 2025)/
+    └── Apuntes Notion/
 ```
 
 _Se irá completando con más resúmenes, guías y material a medida que se agregue contenido._

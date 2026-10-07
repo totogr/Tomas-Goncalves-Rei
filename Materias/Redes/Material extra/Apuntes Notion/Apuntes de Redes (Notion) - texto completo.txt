@@ -1,0 +1,1413 @@
+PD: Mora, si estás leyendo esto, cuando te saques un 10 dedícamelo. Estás para eso querida, estás para eso.
+# Clases
+  ‣
+  ‣
+  ## Clase 17/03: Introducción a Redes y Telecomunicaciones
+    ▸ ¿Qué importancia tiene la figura de Martin Cooper en las redes? 
+      - Martin Cooper, ingeniero de Motorola, inventó el teléfono móvil y realizó la primera llamada inalámbrica en 1973. 
+      - Su visión era que las personas estuvieran siempre conectadas sin depender de cables, imaginando un futuro donde los dispositivos estuvieran integrados al cuerpo y el número de teléfono fuera parte de la identidad de cada persona.
+    ▸ ¿Cómo evolucionaron las telecomunicaciones técnicamente? 
+      - La evolución comenzó con señales visuales (telégrafo óptico), pasó a la era eléctrica (telégrafo electromagnético y código Morse), luego a la transmisión de voz (teléfono de Graham Bell) y finalmente a la interconexión de datos que dio origen a Internet. 
+      - Hoy en día, las redes integran múltiples servicios en una única infraestructura mediante tecnologías como 5G e Internet de las Cosas (IoT).
+    ▸ ¿Qué diferencia hay entre una red WAN y una LAN?
+      - WAN (Wide Area Network): Es una red de área amplia que conecta dispositivos a grandes distancias, como países o continentes, utilizando satélites o cables submarinos.
+      - LAN (Local Area Network): Es una red de área local, limitada a un edificio u oficina, que permite compartir recursos como impresoras o archivos mediante Ethernet o Wi-Fi.
+    ▸ ¿Qué es la red de acceso y la red de transporte?
+      - Red de acceso: Es la "última milla" que conecta al usuario final con el proveedor (ej. ADSL, Cablemódem, FTTH).
+      - Red de transporte: Es la infraestructura principal (backbone) de alta velocidad que interconecta los distintos nodos y operadores a nivel global.
+    ▸ ¿Qué tecnologías se utilizan para el acceso a Internet?
+      1. ADSL: Utiliza el par de cobre telefónico, dividiendo la frecuencia para permitir hablar y navegar simultáneamente.
+      1. Cablemódem: Utiliza cable coaxial (el de la TV), ofreciendo mayor velocidad que el ADSL.
+      1. FTTH (Fibra hasta el hogar): Es la tendencia moderna que permite integrar todos los servicios en un solo cable de fibra óptica.
+    ▸ ¿Cuál es el papel de los cables submarinos? 
+      - Son la base del Internet global. 
+      - Estos cables de fibra óptica se tienden en el fondo del mar mediante barcos especiales y conectan continentes enteros (como los sistemas Atlantis II o Panamericano). 
+      - El ancho de banda de estos cables puede mejorarse actualizando los equipos en los extremos sin necesidad de cambiar el cable físico.
+    ▸ ¿Qué es el "peering" entre operadoras? 
+      - Es el acuerdo de interconexión entre redes (Sistemas Autónomos) para intercambiar tráfico. 
+      - Si el tráfico entre dos operadoras está balanceado, generalmente no se cobran entre sí; si hay un desbalance significativo, una operadora le paga a la otra por el acceso a sus recursos.
+    ▸ ¿Para qué se utilizan las VPN y el QoS?
+      - VPN (Virtual Private Network): Permite crear una red privada segura utilizando una infraestructura pública (Internet), ya sea para conectar sucursales (Intranet), socios comerciales (Extranet) o empleados remotos.
+      - QoS (Quality of Service): Permite priorizar ciertos tipos de tráfico (como la voz sobre el envío de correos) para asegurar la calidad de la comunicación en tiempo real.
+  ## Clase 20/03: Conceptos de la Transmisión de Datos
+    ▸ Que son la señal analógica y las señal digital?
+      - Señal analógica: Son variables eléctricas continuas en el tiempo, pueden ser en forma de una corriente, una tensión o una carga eléctrica. (Varían en forma continua entre un límite inferior y un límite superior). Para señales periódicas podemos definir ciertos parámetros como el período T.
+      - Señal digital: Son variables eléctricas con dos niveles (0 o 1). Su variación en el tiempo contiene la información a transferir acorde a una codificación a utilizar.
+    ▸ Que es el teorema de Nyquist?
+      Este teorema responde a la pregunta:
+      > ¿Con qué frecuencia tengo que tomar muestras de una señal analógica para poder reconstruirla en formato digital?
+      Respuesta:
+      > Hay que tomar muestras al doble de la frecuencia más alta de la señal.
+      Fórmula:
+      FM ≥ 2 × FS
+      - FM = Frecuencia de muestreo (cuántas muestras tomamos por segundo).
+      - FS = Frecuencia máxima de la señal original.
+      Ejemplo:
+      Si la señal de voz humana tiene un máximo de 4kHz, debemos muestrear a 8kHz.
+    ▸ Como es el proceso de Muestreo y Conversión A/D (Analógico a Digital)?
+      Proceso:
+          1. Muestreador (Discretizador):
+            - Recibe una señal analógica y toma muestras a intervalos regulares según FM.
+            - Esto genera una señal con valores discretos (puntos finitos).
+          1. Conversor A/D:
+            - Convierte esos valores numéricos (por ejemplo: voltajes) a binario (0 y 1) usando una tabla de codificación.
+          [imagen]
+          Resultado final: una señal digital lista para transmitir.
+    ▸ Que es el SDH (Synchronous Digital Hierarchy) y el STM (Synchronous Transport Module)?
+      SDH – Synchronous Digital Hierarchy
+      Estandar internacional. Es un sistema internacional para transmitir grandes volumenes de datos a alta velocidad por fibra óptica. Organiza transmisiones digitales.
+      Tramas estándar (STM – Synchronous Transport Module):
+      Niveles de transmision definidos dentro de la jerarquia SDH
+        Data | Velocidad aproximada | Nivel
+        155 Mbps | STM-1
+        Multiplica STM por 4 | 622 Mbps | STM-4
+        Multiplica STM1 por 16 | 2.5 Gbps | STM-16
+        10 Gbps | STM-64
+        40 Gbps | STM-256
+      Se usa en redes de telecomunicaciones.
+    ▸ Como es el calculo base y que se transmite?
+      Cálculo base:
+      STM-1 = 8000 \ \frac{tramas}{seg} × 270 \ columnas × 9 \ filas × 8 \ bits = 155 \ Mbps
+      ¿Qué se transmite?
+      - Una llamada de voz digitalizada necesita:
+        → 8 kHz × 8 bits = 64 Kbps
+      Entonces:
+      - 32 canales → 64 × 32 = 2048 Kbps = 2 Mbps = trama E1
+      - 24 canales (en SONET, usado en EE.UU.) = 1.5 Mbps
+    ▸ Que es el SONET?
+      Se usa para la transmision de datos, especialemente en fibras opticas. 
+      - T1 / DS1: 1.536 Mbps
+      - T3 / DS3: 44.736 Mbps
+      - OC-3: 155.52 Mbps
+      - OC-12: 622.08 Mbps
+      - OC-48: 2.488 Gbps
+      → SONET y SDH son compatibles, pero con nombres y jerarquías diferentes.
+    ▸ Cuales son los métodos para detectar y corregir errores?
+      Cuando se transmiten datos, pueden cambiar algunos bits. Para evitar problemas, usamos códigos correctores.
+      Código de Hamming
+      Un método para detectar y corregir errores de 1 bit. Se agregan bits de paridad, para detectar errores.
+      Bit de Paridad (ejemplo básico):
+      Se agrega un bit extra (paridad) que depende del resto:
+      - Si la cantidad de 1 es impar, se agrega un 1 para hacerlo par (paridad par).
+      - Si llega algo diferente, sabemos que hubo un error.
+      Sirve solo para detectar errores de 1 bit.
+      Conceptos clave:
+      - Distancia de un código: cantidad de bits que deben cambiarse para pasar de una palabra a otra.
+      - Para detectar errores: distancia mínima = 2
+      - Para corregir errores: distancia mínima = 3
+    ▸ Como es un ejemplo de una palabra binaria de 4 bits?
+      Ejemplo: palabra binaria de 4 bits
+      Queremos proteger 4 bits (A, B, C, D).
+      Debemos agregar K bits de paridad tal que:
+      2^K ≥ M + K + 1
+      → Con M = 4, la mínima K que cumple esto es 3
+      Los bits de paridad (K1, K2, K4) van en posiciones que son potencias de 2.
+      La palabra final será:
+      K1 \ K2 \ M3 \ K4 \ M5 \ M6 \ M7
+      (M3 = A, M5 = B, M6 = C, M7 = D)
+    ▸ Que es la Multiplexacion?
+      Es una técnica de telecomunicación que permite transmitir varios datos por un mismo canal. Optimiza el uso del canal y ayuda a la eficiencia.
+    ▸ Que es el Multiplexor?
+      Multiplexor (MUX)
+          - Es un circuito digital con varias entradas de datos, algunas de control, y una sola salida.
+          - Solo una entrada es seleccionada para pasar a la salida, según las señales de control.
+          [imagen]
+      Ejemplo: si hay 2 entradas de control → puede haber 2² = 4 entradas de datos.
+    ▸ Que es un Demultiplexor?
+      Demultiplexor (DEMUX)
+          - Hace lo inverso: una sola entrada de datos, varias salidas.
+          - Las señales de control deciden a qué salida enviar el dato.
+          [imagen]
+      Ejemplo: con 2 controles → 4 salidas posibles.
+      Árbol de Demultiplexores
+      Podemos construir un DEMUX grande combinando otros más pequeños.
+      Ejemplo: usar 4 DEMUX de 4 salidas para crear uno de 16 salidas.
+    ▸ Cuales son los tipos de Multiplexacion?
+      [imagen]
+      TDM – Time Division Multiplexing
+      - Divide el tiempo en ranuras.
+      - Cada usuario transmite durante su turno.
+      - Ejemplo: llamadas digitales en una red.
+      FDM – Frequency Division Multiplexing
+      - Divide el espectro de frecuencias.
+      - Cada usuario usa una frecuencia diferente.
+      - Ejemplo: radio FM, cada emisora tiene una frecuencia propia.
+    ▸ Glosario para esta clase:
+      - FM: Frecuencia de muestreo.
+      - FS: Frecuencia máxima de la señal.
+      - MUX / DEMUX: Multiplexor / Demultiplexor.
+      - SDH / SONET: Estándares de transmisión digital.
+      - Bit de paridad: bit extra para detectar errores.
+      - Código de Hamming: técnica para detectar y corregir errores.
+      - TDM, FDM, WDM: técnicas de multiplexación.
+  ## Clase 27/05: Redes de Datos & Modelo de Capas
+    ▸ Que es una Red de Datos?
+      Una red de datos es un sistema informático, son entornos complejos que implican la existencia de múltiples medios y tienen como finalidad conectar dos o más dispositivos como por ejemplo computadoras de escritorio, dispositivos móviles, routers o aplicaciones, para permitir la transmisión, además del intercambio de información y recursos.
+    ▸ Cuales son las clasificaciones de redes de datos?
+      - REDES DE AREA LOCAL (LOCAL AREA NETWORK – LAN): Una red LAN conecta a usuarios y aplicaciones en una proximidad geográfica cercana (mismo edificio)
+      - REDES DE AREA EXTENDIDA (WIDE AREA NETWORK – WAN): Una red LAN conecta a usuarios y aplicaciones en ubicaciones geográficamente dispersas (extremo a extremo en cualquier parte del mundo)
+      [imagen]
+    ▸ Que es el modelo de capas OSI?
+      - El modelo Open Systems Interconnection (OSI) es un modelo conceptual creado por la Organización Internacional para la Estandarización, el cual permite que diversos sistemas de comunicación se conecten usando protocolos estándar.
+      - Estos estandares permiten que los equipos puedan comunicarse entre si.
+      - Es un lenguaje universal para la conexión de las redes de equipos.El concepto es dividir un Sistema de comunicación en 7 Capas Abstractas, cada una apilada sobre la inferior.
+      [imagen]
+    ▸ Cuales son la características de la Capa 7 (Capa de Aplicación)?
+      - Es la capa del modelo que identifica el partícipe de la comunicación y proporciona funciones para determinados servicios de aplicación como transferencia de archivos y los terminales virtuales.
+      - Entre las aplicaciones más comunes basadas en TCP/IP se incluyen las siguientes:
+      [imagen]
+    ▸ Cuales son la características de la Capa 6 (Capa de Presentación)?
+      - Esta capa proporciona servicios de comunicación convirtiendo transparentemente los distintos formatos de datos, vídeo, sonido y gráficos en un formato apropiado para la transmisión.
+      - Esta capa también es la responsable de la compresión, descompresión, cifrado y descifrado de datos.
+      - Estos protocolos suelen estar incorporados en los protocolos de capa de aplicación existentes:
+        - Texto: ASCII, EBCDIC
+        - Gráficos: TIFF, JPEG, GIF, PICT
+        - Sonido: MIDI, MPEG, QuickTime
+    ▸ Cuales son la características de la Capa 5 (Capa de Sesión)?
+      La capa de sesión controla el dialogo entre dispositivos o hosts. Establece, administra y termina sesiones entre las aplicaciones. Entre los ejemplos de protocolos de capa de sesión se incluyen los siguientes:
+      - Sistema de archivos en Red (NFS)
+      - Lenguaje de Consulta Estructurado (SQL)
+      - Llamada de Procedimiento Remoto (RPC)
+      - Sistema X-Window
+      - Protocolo de session AppleTalk (ASP)
+      - Protocolo de control de session DNA (SCP)
+    ▸ Cuales son la características de la Capa 4 (Capa de Transporte)?
+      - La capa de Transporte es la encargada de la entrega extremo a extremo de la información, en la que se incluye la recuperación de errores y el control del flujo.
+      - Los protocolos de la capa de transporte pueden ser confiables o no confiables. 
+      - Los protocolos no confiables pueden no tener ninguna responsabilidad a la hora de establecer conexiones, acuses de recibo, secuenciación y control del flujo.
+      - Los protocolos de transporte no confiables no tienen acuse de recibo ni tampoco secuenciación y control de flujo, por esta razón los protocolos encargados de la responsabilidad a la hora de establecer conexiones es de los protocolos confiables.
+      [imagen]
+    ▸ Cuales son la características de la Capa 3 (Capa de Red)?
+      - La capa de red proporciona conectividad y selección de ruta entre dos sistemas finales (el origen y el destino final) que pueden estar ubicados a nivel geográfico en distintas redes. 
+      - El direccionamiento de capa de red establece la dirección de origen y de destino (En TCP/IP, son las direcciones IP).Estas direcciones no cambian a lo largo de la ruta.
+      - Ejemplos de protocolos de capa de RED:
+        - PROTOCOLO DE INTERNET (IP)
+        - PROTOCOLO DE INTERCAMBIO DE PAQUETES (IPX)
+    ▸ Cuales son la características de la Capa 2 (Capa de Enlace de Datos)?
+      - Esta capa proporciona un tráfico confiable de los datos por un enlace físico. Al
+hacerlo, la capa de enlace de datos se ocupa del direccionamiento físico de la
+topología de red.
+      - Se ocupa de la entrega ordenada de tramas y el control de flujo de
+información. Estas tramas se entregan de un nodo a otro como, algunos ejemplos:
+      [imagen]
+    ▸ Cuales son la características de la Capa 1 (Capa Fisica)?
+      - Esta capa define las especificaciones eléctricas, mecánicas, procedimentales y funcionales para activar, mantener y desactivar en enlace físico entre sistemas finales.
+      - Características como los niveles de tensión, la duración de los cambios de tensión, las velocidades de datos físicos, las distancias máximas de transmisión, las conexiones físicas y otros atributos similares vienen definidos en las especificaciones de la capa física.
+      - Entre los estándares de capa física se incluyen algunos ejemplos:
+        - 10BASE-T (10Mbps)
+        - 100BASE-TX (100Mbps)
+        - V35
+        - RS232
+        - 1000BASE-SX (1Gbps - Medio de Transmisión FIBRA OPTICA)
+        - 40GBASE-LR4 (40Gbps – Medio de Transmisión FIBRA OPTICA)
+    ▸ Que es el SDH (SYNCHRONOUS DIGITAL HIERARCHY)?
+      - La trama SDH va encapsulada en un tipo especial de estructura denominado contenedor. Una vez encapsulados se añaden cabeceras de control que identifican el contenido de la misma.
+      - Luego se realiza un proceso de multiplexación (lo veremos más adelante) y se integra por ejemplo dentro de la estructura STM-1.
+      - Los niveles superiores se forman a partir de multiplexar a nivel de byte varias estructuras STM-1, dando lugar a los niveles STM-4,STM-16, STM-64 y STM-256.
+      - En la jerarquía americana SONET, que es un estándar de red óptica sincrónica ampliamente adoptado en América del Norte, diseñado para soportar varios servicios de transmisión de datos. En esta jerarquía tenemos:
+        - T1 o DS1: 1.536 Mbps
+        - T3 o DS3: 44.736 Mbps
+        - OC-3: 155.52Mbps
+        - OC-12: 622.08Mbps
+        - OC-48: 2.488 Gbps
+    ▸ Como se diferencian en términos de capas el modelo OSI y el modelo TCP/IP?
+      [imagen]
+          El modelo OSI tiene 7 capas:
+          1. Física
+          1. Enlace de datos
+          1. Red
+          1. Transporte
+          1. Sesión
+          1. Presentación
+          1. Aplicación
+          El modelo TCP/IP tiene 4 capas:
+          1. Acceso a la red
+          1. Internet
+          1. Transporte
+          1. Aplicación
+      Ambos modelos buscan organizar las funciones de una red, pero el modelo OSI es teórico, mientras que el modelo TCP/IP es el que se usa en la práctica en Internet.
+  ## Clase 30/03: El Factor Tecnológico en la Evolución de Redes
+    ▸ Qué importancia tiene la visión de Martin Cooper en el contexto actual? 
+      Cooper (inventor del celular) vaticinó hace 50 años que el dispositivo móvil dejaría de ser un simple teléfono para ser un dispositivo personal integral. Imaginó, por ejemplo, sensores corporales transmitiendo datos médicos en tiempo real para intercomunicarse con doctores, algo que hoy es una realidad gracias al IoT y la red 5G.
+    ▸ Cómo ha evolucionado el "driver" de las comunicaciones? 
+      La evolución ha seguido tres etapas principales:
+      1. Voz (Voice Driven): Basado en multiplexación por división de tiempo (TDM).
+      1. Datos (Data Driven): El auge de Internet y el protocolo IP que uniformizó las comunicaciones.
+      1. Plataformas (Deterministic Driven): Redes basadas totalmente en software y virtualización (NFV).
+    ▸ ¿Qué es la "Curva S" en tecnología? 
+      Es el ciclo de vida que siguen las tecnologías de red, compuesto por tres fases: investigación, desarrollo y aplicaciones.
+    ▸ ¿Cuáles son los 4 hitos del factor tecnológico de integración de redes? 
+      Para que una red sea moderna y eficiente, debe cumplir con:
+      1. Escalabilidad: Capacidad de crecer según la demanda.
+      1. Convergencia: Una única infraestructura para dar soporte multiservicio (voz, datos, video).
+      1. Seguridad: Protección integral de la información.
+      1. Alta Resiliencia: Disponibilidad con un SLA (Acuerdo de Nivel de Servicio) superior al 99.9%.
+    ▸ ¿Qué significa pasar de un modelo de hardware propietario a uno de software? 
+      Tradicionalmente, se compraban equipos físicos específicos (routers o balanceadores Cisco/Huawei). Hoy, la tendencia es usar hardware estándar (servidores X86) y correr sobre ellos funciones de red virtualizadas (NFV). Esto permite optimizar espacio, energía y gestionar la red mediante orquestadores de máquinas virtuales en caliente.
+    ▸ ¿Cómo se distribuye el tráfico de datos globalmente? 
+      Contrario a la creencia popular, el Cloud (nube centralizada) solo maneja entre el 20-25% del tráfico. El restante 75-80% circula en los bordes (Edge), impulsado por dispositivos IoT y redes inalámbricas.
+    ▸ ¿Qué diferencia hay entre Edge y Fog Computing?
+      - Edge Computing: Poder de cómputo en el extremo (el dispositivo). Ejemplo: un semáforo inteligente que procesa una foto localmente para enviar solo el dato de la patente (información) en lugar de la imagen pesada (dato bruto), ahorrando ancho de banda.
+      - FOG: Son híbridos que tienen características tanto de la nube como del borde, situándose en el medio de la pirámide de soluciones.
+    ▸ ¿Qué es el concepto "Software Defined X" (SDX)? 
+      Es el uso de plataformas de software para gerenciar integralmente la infraestructura (SDI) o la red (SDN), permitiendo una administración centralizada y flexible que antes era imposible con dispositivos estancos.
+    ▸ ¿Qué convergencia está ocurriendo en el ámbito industrial? 
+      Se están integrando las redes industriales (control de producción en fábricas) con las redes LAN corporativas tradicionales.
+    ▸ ¿En qué se basan los despliegues de infraestructura moderna? 
+      Se basan en normas internacionales (como las TIA) que definen estándares para edificios inteligentes (TIA-862), centros de datos (TIA-942) y alimentación sobre Ethernet (POE).
+    --------------------------------------------------------------------------------
+    Gestión Administrativa y Trabajo Práctico (TP)
+    ¿Cuál es la tarea asignada para la próxima clase (lunes 06/04)? Se deben conformar grupos de máximo 5 personas (aproximadamente 20 grupos en total). Cada grupo tendrá entre 5 y 7 minutos para presentar de forma preliminar el objetivo de su trabajo práctico final.
+    ¿En qué consiste el Trabajo Práctico final? 
+    Es una parte obligatoria de la cursada (Examen + TP). Consiste en el diseño y planificación de una red corporativa para una entidad (banco, centro de salud, planta industrial, etc.). Se deben definir los objetivos, tecnologías de conectividad, protocolos, seguridad y, fundamentalmente, un presupuesto que incluya CAPEX (inversión de capital) y OPEX (gastos operativos).
+  ## Clase 10/04: Tecnologías de Cobre
+    ▸ ¿Por qué se sigue utilizando el cobre como principal medio de transmisión? 
+      Se utiliza porque es un material accesible, flexible y relativamente barato (un commodity) que permite el transporte físico de datos de forma eficaz en distancias cortas. Además, su instalación es sencilla ya que puede pasar por espacios reducidos sin romperse fácilmente.
+    ▸ ¿Qué es la diafonía (Crosstalk) y cómo se mitiga? 
+      Es la interferencia electromagnética que ocurre entre los hilos de cobre cuando circula energía por ellos. Se combate mediante el trenzado helicoidal de los pares, lo que minimiza el acoplamiento electromagnético entre los conductores dentro de la misma vaina.
+    ▸ ¿Cuál es la distancia máxima estándar para un canal de cobre? 
+      La norma general establece un máximo de 100 metros para un canal de datos (incluyendo los patch cords de conexión final). Se recalca que en comunicaciones la distancia es inversamente proporcional al ancho de banda.
+    ▸ ¿Qué categorías de cables son las más utilizadas hoy en día?
+      - Categoría 6: Es el estándar más común para entornos corporativos y hogareños; soporta 1 Gbps a 100m y puede alcanzar 10 Gbps en distancias cortas (~55m).
+      - Categoría 6A: Diseñada para soportar 10 Gbps a 100 metros completos; es la recomendada para proyectos nuevos por su vida útil de 20 a 25 años.
+    ▸ ¿Por qué no se recomiendan las categorías 7 y 8? 
+      Aunque ofrecen más frecuencia, el Cat 7 utiliza conectores no estándar (como el conector TERA) en lugar del RJ45 común, lo que dificulta su adopción. El Cat 8 tiene una distancia muy limitada (máximo 30m), por lo que sus aplicaciones reales son mínimas frente a una solución de fibra.
+    ▸ ¿Qué diferencias hay entre los cables UTP, FTP y STP?
+      - UTP (Unshielded Twisted Pair): Sin blindaje, es el más barato y común para oficinas sin interferencias graves.
+      - FTP (Foiled Twisted Pair): Tiene un blindaje global de lámina de papel de aluminio para interferencias moderadas.
+      - STP/SFTP (Shielded Twisted Pair): Blindaje por cada par y/o malla general. Se usa en ambientes industriales críticos con motores o generadores que generan mucho ruido electromagnético.
+    ▸ ¿Cómo se mide un Rack y qué estándares cumple? 
+      El ancho estándar es de 19 pulgadas y la altura se mide en Unidades de Rack (U), donde 1U equivale a 1.75 pulgadas (4.44 cm). Existen Racks abiertos (bastidores), cerrados (gabinetes para mayor control de temperatura y seguridad) y murales (SOHO) para espacios chicos.
+    ▸ ¿Qué componentes forman parte del área de trabajo y el cuarto de telecomunicaciones?
+      - Patch Panels: Paneles donde terminan los cables horizontales para ser administrados.
+      - Jacks y Faceplates: Los conectores hembra y las tapas de pared en los puestos de trabajo.
+      - Patch Cords: Los cables finales que conectan el dispositivo (PC, cámara) al jack.
+    ▸ ¿Qué es el PoE (Power over Ethernet)? 
+      Es la tecnología que permite enviar energía eléctrica y datos por el mismo cable Ethernet. Esto permite alimentar dispositivos (cámaras IP, teléfonos VoIP, puntos de acceso Wi-Fi) sin necesidad de una fuente de alimentación externa o enchufes adicionales cerca del equipo.
+    ▸ ¿Cuáles son los niveles de potencia del PoE?
+       Existen 4 tipos, desde el Tipo 1 (15W) hasta el Tipo 4 (90W - 100W), este último capaz de alimentar pantallas o sistemas de videoconferencia complejos.
+    ▸ ¿Se puede superar el límite de los 100 metros en cobre? 
+      Existen soluciones especiales (como cables de ciertos fabricantes) que permiten llegar hasta los 250 metros, pero con una penalización: el ancho de banda cae drásticamente (por ejemplo, de 1 Gbps a 10 Mbps en la distancia máxima).
+  ## Clase 13/04: Tecnologías de Fibra óptica
+    ▸ Que son las áreas Riser y las áreas Plenum?
+      - Cuando se realiza la planeación de cableado hay que considerar en qué áreas serán instalados los cables.
+      - Hay dos áreas donde usualmente van los cables: las áreas tipo “Riser” y las áreas tipo “Plenum”.
+        - Las áreas tipo Riser son las que conocemos como “La vertical”. Es ese espacio donde los cables viajan en forma vertical de piso a piso.
+        - Las áreas tipo PLENUM son las que se encuentran entre el plafón y la loza, en estas áreas conviven los sistemas de iluminación, aire acondicionado, entre otros.
+        - Las áreas tipo RISER deben de ir con cables retardantes al fuego, mientras que en áreas plenum la norma es más rigurosa, ya que esta área es una constante entrada y salida de aire lo que con lleva a más oxigeno que alimente el fuego, por lo tanto, el cable instalado en estos espacios no debe propagar más las llamas.
+      - Los diferentes tipos de cables los encontramos en el mercado como Cables Plenum (CMP) y Cables Riser (CMR).
+    ▸ Cuales son las características de los Cables Riser y Plenum y de los cables halogenos?
+      Características de los cables
+      - Cables Plenum: Estos cables al contacto con el fuego, no crean llamas, generan muy poco humo y el forro del cable se derrite a la presencia del fuego.
+      - Cables Riser: El cable llega a crear flama, pero se apagan antes de llegar al metro y medio. La ventaja es que son más
+      - económicos, aunque crean un poco más humo que los cables Plenum.
+      Cables libres de halógenos
+      Existe otra característica importante en los cables, tanto los cables Plenum como los cables Riser llegan a crear un poco de humo; este humo puede ser toxico ya que los materiales con lo cual está hecho el forro, ya sea flúor, cloro, bromo, yodo y
+astato, derivan de un grupo de materiales llamados halógenos. Existen cables que son libres de halógenos lo que conlleva a reducir la cantidad de humo tóxico.
+    ▸ Cuales son los tres mecanismos de los conectores?
+      - Férula: Es el componente más importante de los conectores de fibra óptica ya que es la encargada de sujetar, proteger y alinear la fibra de vidrio. Las férulas usualmente son hechas con cerámica y plástico o metal de alta calidad.
+      - Mecanismo de acoplamiento: Mantiene el conector en su lugar cuando está conectado a otro dispositivo.
+      - Cuerpo: Es la estructura que sostiene la férula, el mecanismo de acoplamiento y la bota. Está hecho de plástico o metal.
+    ▸ Que es el pulido de Férula?
+      - El pulido de la férula determina la pérdida de retorno de un cable de fibra óptica.
+      - La pérdida de retorno es la cantidad de energía perdida que ocurre cuando la luz se devuelve de la fibra a la fuente de luz debido a la discontinuidad o espacio entre una férula y la otra. Es medida en decibeles.
+      - Las férulas son pulidas de diferentes maneras, lo que clasifica a los conectores como:
+        - PC (Physical Contact): Los conectores PC son pulidos con una ligera curvatura, lo que elimina el espacio de aire entre las férulas. La pérdida de retorno de estos conectores está entre -30 dB y -40 dB.
+        - UPC (Ultra Physical Contact): Los conectores UPC también tienen una curvatura, pero esta es mucho más pronunciada. Su pérdida de retorno va desde -40 dB to -55 dB, lo que los hace ideales para transmitir señales de TV y data.
+        - APC (Angled Physical Contact): Las férulas de los conectores APC tienen un ángulo de 8°, que hace que las conexiones sean mucho más unidas. Los estándares de la industrian dictan que deben tener una pérdida de retorno de -60dB.
+    ▸ Cuales son los tipos de conectores?
+      - Conectores pre-pulidos: Tienen un empalme de fibra pequeño pegado en su interior y ya vienen pulidos de fábrica. Se unen a la fibra con un empalme mecánico cubierto con un gel que tiene un índice de refracción parecido al de la fibra de vidrio encargado de reducir la pérdida. Son fáciles de instalar y su pérdida de inserción típica está entre 0.5dB y 0.7dB.
+      - Conectores monomodo y multimodo: Los conectores de fibra óptica también pueden ser categorizados como mono modo y multimodo y hay unas cuantas diferencias
+    ▸ Que es el SC (Standard Connector)?
+      El SC fue creado a mediados de los 80 por la empresa de telecomunicaciones Nippon Telegraph and Telephone, pero no fue muy usado en sus inicios ya que se consideraba muy costoso. Los conectores SC tienen una pérdida de inserción promedio de 0.25dB y están calificados para soportar 1000 ciclos de conexión y desconexión. Los SC alinean las fibras con precisión debido a sus férulas de cerámica, que funcionan con un sistema push y pull. Fueron inicialmente utilizados en sistemas de Gigabit Ethernet, pero fueron reemplazados por conectores de menor tamaño. Actualmente son utilizados en versiones mono modo y multimodo en sistemas de TV por cable y telefonía.
+    ▸ Que es el LC (Lucent Connector) y ST (Straight Tip)?
+      - LC (Lucent Connector): El LC, también conocido como Little Connector, fue creado por Lucent Technologies es extensamente utilizado en aplicaciones mono modo ya que tiene un excelente rendimiento y puede ser terminado de manera sencilla. Los conectores LC tienen férulas de 1.25mm que utilizan un mecanismo de push y pull. Tienen una pérdida de inserción típica de 0.10dB. El tamaño pequeño de los conectores LC reduce la necesidad de espacio en un 50% en contraste con conectores SC y ST, por lo tanto, son utilizados en sistema de alta densidad como paneles y racks, FTTH, distribución en edificios, Redes de Área Local, redes de procesamiento de data y sistemas de TV por cable. Pueden ser utilizados con cables mono modo y multimodo. FOCIS-10: TIA-604-10.
+        [imagen]
+      - ST (Straight Tip): El ST fue creado por AT&T y sigue siendo uno de los utilizados en sistemas de redes. Los conectores ST tienen una pérdida por inserción de 0.25dB y sostienen la fibra con una férula de 2.5mm que se mantiene con un sistema de anclaje por bayoneta. Los conectores ST son utilizados en aplicaciones de larga y corta distancia como campus o redes corporativas y en aplicaciones militares. Puede ser conectado y desconectado de manera fácil debido a su flexibilidad. FOCIS-2: TIA-604-2
+    ▸ Que es el FC (Ferrule Connector), el MTRJ y el MPO?
+      - FC (Ferrule Connector): Diseñado por Nippon Telegraph and Telephone, el FC es un conector con una férula de cerámica de 2.5mm que se mantiene en su lugar con un sistema de rosca. Los conectores FC están disponibles para fibra multimodo y mono modo, pero son mayormente utilizados en aplicaciones mono modo y en redes de alta velocidad. Su principal uso es en entornos de alta vibración debido a su sistema de rosca. Tiene una pérdida por inserción de 0.3dB.
+      - MTRJ (Mechanical Transfer-Registered Jack): El MTRJ es un conector dúplex, lo que significa que sostiene dos fibras al mismo tiempo. Su cuerpo y férulas están hechos de POLÍMERO y tiene versiones hembra y macho. Son mayormente utilizados con fibra multimodo.
+      - MPO (Multi-fiber Push-on): Es un conector multi-fibra que puede sostener desde 12 hasta 24 fibras en una sola férula rectangular. Los MPO son utilizados para construir redes de Ethernet de transmisión paralela de 40G, 100G, 400G. Las férulas de los conectores MPO macho tienen dos pines, mientras que los conectores hembra tienen dos agujeros. La pérdida por inserción es de 0.25dB.
+  ## Clase 17/04: Redes en el Centro de Datos
+    ▸ Que es un Centro de Datos?
+      Es una Sala Física, Edificio o Instalación que alberga Infraestructura Informática para crear, ejecutar y entregar aplicaciones y servicios, además de almacenar y gestionar los datos asociados a las aplicaciones y servicios entregados.
+    ▸ Que tipos de Centros de Datos hay?
+      - Centros de Datos Empresariales (Enterprise)
+        - En este modelo de centro de datos, toda la infraestructura de TI y los datos se alojan en las instalaciones. 
+        - Muchas empresas optan por tener sus propios centros de datos en las instalaciones porque sienten que tienen más control sobre la seguridad de la información.
+      - Centros de Datos de Nube (Cloud Computing o Hyperscale)
+        - Albergan recursos de Infraestructura de TI para uso compartido de múltiples clientes, desde decenas hasta millones de clientes a través de una o más conexiónes a Internet.
+        - Hay diferentes tipos de instalaciones de centros de datos y una sola empresa puede usar más de un tipo, según las cargas de trabajo y las necesidades empresariales.
+      - Centros de Datos de Gestionados (Telco o Collocation)
+        - Son instalaciones con Infraestructura desplegada generalmente por un Operador de Telecomunicaciones que permite a una empresa por ejemplo Pyme alojar sus servidores, aplicaciones y equipamiento de TI.
+    ▸ Que ejemplos hay de Centro de Datos?
+      [imagen]
+    ▸ Que es el Cabling Standard?
+      Los estándares están basados de experiencias colectivas y conocimiento de profesionales en campo y representan una serie de consensos en la industria, algunas de las ventajas de tener estándares definidos: 
+      - Marcan un camino hacia el uso de elementos de alta calidad y confiabilidad.
+      - Mejoran Inter-Operabilidad entre Fabricantes.
+      - Unifican Criterios. 
+      - Impulsan Mejores Prácticas.
+    ▸ Cuales son los aspectos de diseño de un centro de datos?
+      [imagen]
+    ▸ Que es el Uptime Institute y cuales son sus tiers?
+      [imagen]
+  ## Clase 27/04: Redes Legacy y Protocolos Capa 2
+    ▸ Que es una red Legacy?
+      - Protocolo de red de conmutación de paquetes que se orientaba al uso
+de redes de telefonía existentes para la transmisión de datos.
+      - La conmutación de paquetes se realizaba a través de circuitos virtuales.
+      - En estricto rigor utilizaba tres niveles de lo que conocemos del modelo 
+        OSI: Capa física, enlace y red.
+        - Tamaño de paquete: Variable (128 / 1024 bytes).
+        - Poseía corrección de errores.
+        - Protocolo basado en retransmisiones, lo que otorgaba una gran confiabilidad sobre redes físicas poco confiables.
+    ▸ Cual es la velocidad tipica del Legacy?
+      La velocidad típica era de 64kbps, heredada del canal de voz sin comprensión, lo que en la práctica se canalizaba a través de las tramas E1.
+      - Nivel físico (Layer 1): Conexión física con la red (como RS-232, V.35).
+      - Nivel de enlace (Layer 2): Utiliza LAPB (Link Access Procedure Balanced) para el control de errores y flujo.
+      - Nivel de red (Layer 3): Responsable de la entrega de paquetes y mantenimiento de circuitos virtuales.
+    ▸ Cuales son los tipos de circuito en Legacy?
+      Los tipos de circuitos lógicos que se podían establecer en estas redes eran dos:
+      - PVC (Permanent Virtual Circuit): Conexión fija, básicamente era una línea dedicada sobre una red conmutada.
+      - SVC (Switched Virtual Circuit): Se establecía temporalmente el circuito conmutado para dar servicio. En la práctica los operadores no ofrecían el servicio, y en general se comercializaban los PVC. 
+      X25 generaba mucha sobrecarga de red, y no era óptima para transmisión de datos Real Time. Uso en cajeros, puntos de venta, etc.
+    ▸ Cuales son las caracteristicas del TDM?
+      Características: es del tipo multiplexado, cada canal usa un tiempo fijo en cada ciclo. Muy usado en telefonía digital (como líneas T1 o E1) y transmisión de datos del tipo continuo. Este tipo de conexión permitía dar gran fiabilidad como redes de acceso a las futuras redes IP/MPLS.
+    ▸ Que es un Frame Relay?
+      Es una red basada en la conmutación de paquetes. Se caracteriza por la transmisión de tramas en redes WAN, sobre un soporte físico mas confiable que X25. No está orientado a la retransmisión.
+      Es más eficiente que X.25, basado en lo anterior y con tramas de longitud variable. Muy utilizado como reemplazo de X25 para tráfico de ráfagas por ejemplo para cajeros automáticos. Este tipo de redes en general ya no son comerciales, y pueden existir en ciertas geografías como redes de acceso de ancho de banda pequeño.
+    ▸ Como se identifica el trafico ATM?
+      El tráfico ATM se garantiza como QoS de la siguiente manera:
+      - CBR - Velocidad de bits constante: se especifica una velocidad máxima.
+      - VBR - Velocidad binaria variable: se especifica una velocidad binaria media o sostenible (SCR), que puede alcanzar un determinado nivel.
+      - ABR - Velocidad binaria disponible: se especifica una velocidad mínima garantizada.
+      - UBR - Velocidad binaria no especificada: el tráfico se asigna a toda la capacidad de transmisión restante. Es el servicio ATM más económico.
+    ▸ Que es la Capa 2?
+      Las redes de capa 2, también conocidas como redes de enlace de datos, se basan en la capa 2 del modelo OSI.
+      Esta capa se encarga del enlace de datos entre dispositivos en una misma red local (LAN). 
+      La capa 2 establece una conexión confiable entre dos nodos conectados directamente, controlando cómo se transmiten los datos y asegurando que lleguen sin errores.
+      Funciones principales de la capa 2:
+      - Direccionamiento físico (MAC)
+      - Utiliza direcciones MAC (Media Access Control) para identificar dispositivos en la red.
+      - Cada dispositivo tiene una dirección MAC única.
+      - Detección de errores, incluye mecanismos como CRC (Cyclic Redundancy Check) para verificar la integridad de los datos.
+      - Control de flujo, gestiona la velocidad a la que los datos se envían.
+      - Control de acceso al medio (MAC): Determina quién puede usar el canal de comunicación en un momento dado. 
+      - Protocolos como CSMA/CD (Ethernet) o CSMA/CA (Wi-Fi).
+    ▸ Cuales son los protocolos comunes de Capa 2?
+      Protocolos comunes en capa 2:
+      - Ethernet (IEEE 802.3)
+      - Wi-Fi (IEEE 802.11) 
+      - PPP (Point-to-Point Protocol)
+      - HDLC (High-Level Data Link Control): es un protocolo de capa 2 que proporciona una conexión confiable punto a punto entre dos nodos. Se usa principalmente en enlaces seriales sincrónicos por ejemplo, en enlaces WAN.
+      - STP (Spanning Tree Protocol): evita bucles en redes con switches. Cuando se conectan switches con múltiples enlaces redundantes, pueden producirse bucles de red. Se repiten tramas de broadcast indefinidamente causando que el rendimiento de la red caiga a cero (tormentas de broadcast). STP detecta esos caminos redundantes y bloquea selectivamente algunos puertos, creando un árbol lógico sin bucles (llamado "spanning tree"). 
+      Ejemplo: se tienen 3 computadoras conectadas a un switch Ethernet. Cuando una PC envía datos a otra, el switch revisa la dirección MAC de destino y los envía solo a ese puerto. Esto evita colisiones y mejora el rendimiento comparado con los hubs (capa 1).
+    ▸ Que es el Ethertnet 802.3?
+      Ethernet 802.3 es un estándar de red local (LAN) desarrollado por IEEE, que trabaja en la capa 2 (enlace de datos) del modelo OSI.
+      Es el tipo de red más usado en empresas, hogares y centros de datos. Permite que los dispositivos se comuniquen entre sí usando direcciones MAC y tramas para enviar datos a través de cables físicos.
+      Una trama Ethernet es el paquete que se envía por la red. Incluye: 
+      - Dirección MAC de destino (6 bytes)
+      - Dirección MAC de origen (6 bytes)
+      - Tipo o longitud (2 bytes)
+      - Datos (payload)
+      - FCS/CRC (verificación de errores – 4 bytes)
+      - Tamaño total: mínimo 64 bytes, máximo 1518 bytes.
+      - Se usa con cables UTP (como Cat 5e, Cat 6, 6A) o fibra óptica en distancias largas.
+    ▸ Que es una red Metro?
+      Una Red Metro Ethernet es una arquitectura de red de capa 2 que permite la interconexión de redes LAN extendidas. (Red Ethernet metropolitana - MAN).
+      Es una red multiservicio, soporta tráfico en tiempo real para aplicaciones como Telefonía IP y Video IP, aun cuando este tipo de tráfico es especialmente sensible a lo que se conoce como Jitter.
+      El Jitter es una variación o demora en la entrega de paquetes de datos a través de una red, es decir, una demora entre el momento en que se transmite y se recibe una señal. El retraso/variación/cambio en
+el tiempo es una interrupción en la secuencia ordinaria de envío de paquetes de datos y se mide en milisegundos (ms)
+      Las redes Metro Ethernet pueden utilizar líneas de cobre como medio de acceso y la fibra óptica para transporte de larga distancia.
+      La utilización del cobre implica una alta disponibilidad ya que es casi imposible la rotura de todas las líneas de cobre y en caso de rotura parcial el enlace sigue transmitiendo y reduce el ancho de banda de forma proporcional. La fibra óptica y el cobre, se complementan de forma ideal en el ámbito metropolitano, ofreciendo cobertura total a cualquier servicio a desplegar.
+    ▸ Como son las Redes Metro como acceso a Redes MPLS?
+      Cuando se habla de "Metro Ethernet en redes MPLS directas", se está describiendo un escenario donde el acceso a la red MPLS se realiza mediante un enlace Metro Ethernet dedicado.
+      Ejemplo: Una empresa se conecta al proveedor de servicios mediante una conexión Metro Ethernet. Esa conexión Ethernet forma parte de la infraestructura del carrier que soporta MPLS.
+      El tráfico del cliente viaja etiquetado dentro de la red MPLS del carrier, que puede transportar datos entre sucursales, data centers, etc. (VPN MPLS: Las empresas suelen usar VPNs MPLS para separar su tráfico del de otros clientes)
+    ▸ Que son las Redes MPLS?
+      MPLS (Multiprotocol Label Switching) es una tecnología de transporte de datos que dirige paquetes usando etiquetas (labels) en lugar de direcciones IP completas. 
+      Es utilizada principalmente por los Service Providers como medio de transporte WAN sin rutear con IP. 
+      Es mucho más eficiente y ágil en cuanto al transporte y la gestión.
+    ▸ Cuales son las ventajas de las Redes MPLS?
+      - Velocidad: Conmutación por etiquetas es más rápida que el enrutamiento IP tradicional.
+      - Calidad de servicio (QoS): Permite priorizar tráfico (voz, video, datos críticos).
+      - Escalabilidad: Fácil de ampliar para muchas sucursales o clientes.
+      - Soporte multiprotocolo: Funciona con IPv4, IPv6, ATM, Frame Relay, etc. 
+      - VPNs MPLS: Permite crear redes privadas virtuales seguras sobre la red del proveedor.
+      - Aplicaciones comunes VPNs corporativas (sucursales conectadas por red privada). • Tráfico de voz y video con alta prioridad.
+# Practica para el parcial
+  ### Sección 1: Fundamentos y Evolución de las Redes
+    ▸ ¿Cuál es la diferencia fundamental entre una red LAN y una WAN?
+      - Una LAN (Local Area Network) conecta dispositivos en un entorno geográfico reducido como una oficina o casa. 
+      - Una WAN (Wide Area Network) interconecta usuarios y redes LAN geográficamente dispersas (ciudades o países) a través de proveedores de transporte o carriers.
+    ▸ ¿Qué diferencia a la red de acceso de la red de transporte? 
+      - La red de acceso (o última milla) es la tecnología que conecta al usuario final con el proveedor (ej. ADSL, cablemódem, FTTH). 
+      - La red de transporte es la infraestructura principal de alta velocidad (backbone) que interconecta nodos y operadores a nivel regional o global.
+    ▸ ¿Cómo ha evolucionado el "driver" de las comunicaciones en el tiempo? 
+      La evolución ha seguido tres grandes etapas:
+      1. Voice Driven (TDM): Basada en la voz y multiplexación por tiempo.
+      1. Data Driven (IP): Unificación de todos los servicios bajo el protocolo de datos IP.
+      1. Deterministic/Platform Driven (Software): Redes basadas totalmente en software y virtualización de funciones.
+  ### Sección 2: Transmisión de Datos y Capa Física (Capa 1)
+    ▸ ¿Cuál es la diferencia fundamental entre una señal analógica y una digital?
+      - Las señales analógicas varían de forma continua en el tiempo y pueden tomar infinitos valores de amplitud (tensión, corriente), como la voz humana. 
+      - Las señales digitales son discretas y solo tienen dos niveles posibles: 0 y 1, resultado de una codificación previa.
+    ▸ ¿Qué establece el Teorema de Nyquist y por qué es clave en las comunicaciones? 
+      Establece que para reconstruir una señal analógica del otro lado de un canal, la frecuencia de muestreo debe ser al menos el doble de la frecuencia máxima de la señal original. Esto garantiza que la señal decodificada sea fiel a la original.
+    ▸ ¿Cómo funciona el Código de Hamming para la detección y corrección de errores? 
+          2^K≥M+K+1
+          - Si al recibir el mensaje se realiza un cálculo de paridad (XOR) y el resultado no es cero, dicho resultado indica la posición exacta del bit errado.
+          - A diferencia de la paridad simple, Hamming puede detectar y corregir un error en un bit. Para ello, agrega bits de redundancia (K) en posiciones que son potencias de 2 (1, 2, 4, 8...). 
+    ▸ ¿Cuál es el estándar de distancia máxima para un canal Ethernet de cobre? 
+      La norma general (TIA-568) establece un máximo de 100 metros para un canal de datos, lo que incluye 90m de cable horizontal y los patch cords de conexión.
+    ▸ ¿Cuáles son los conectores de fibra más comunes y qué indica su color?
+      - LC: Conector pequeño y duplex, el más usado en data centers actuales.
+      - MPO/MTP: Conector multifibra (8, 12, 16 o 24 fibras), ideal para altas velocidades (400G/800G).
+      - Colores: Generalmente, el azul indica pulido UPC (plano) y el verde indica pulido APC (angulado) para menor pérdida de retorno.
+    ▸ ¿Cómo se mide el espacio en los Racks de telecomunicaciones?
+       El ancho estándar es de 19 pulgadas. La altura se mide en Unidades de Rack (U), donde 1U equivale a 1.75 pulgadas (4.44 cm).
+    ▸ ¿Qué función cumplen el Patch Panel y el ODF? 
+      - El Patch Panel es donde terminan los cables de cobre horizontales para su administración en el rack. 
+      - El ODF (Optical Distribution Frame) cumple la misma función pero para las conexiones de fibra óptica.
+    ▸ ¿Cuáles son las diferencias entre TDM, FDM y WDM?
+      - TDM (Tiempo): Divide el canal en slots de tiempo asignados a cada usuario.
+      - FDM (Frecuencia): Asigna a cada usuario una banda de frecuencia distinta (ej. radio FM).
+      - WDM (Onda): Utilizado en fibra óptica, divide la señal en diferentes colores o longitudes de onda.
+    ▸ ¿Qué es la jerarquía SDH y cómo se diferencia de SONET? 
+      - Son protocolos de transporte óptico sincrónico. 
+      - SDH es el estándar europeo (utilizado en Argentina) y usa niveles STM (STM-1 = 155 Mbps). 
+      - SONET es el estándar americano y utiliza niveles OC (OC-3 equivale a STM-1).
+    ▸ ¿Qué es una trama E1? 
+      Es una unidad de transmisión de la jerarquía europea que concatena 32 canales de 64 kbps, resultando en una velocidad total de 2.048 Mbps.
+  ### Sección 3: Modelos de Capas (OSI vs. TCP/IP)
+    ▸ ¿Qué es el modelo OSI y cuál es su propósito principal?
+      - El modelo OSI es un modelo conceptual y teórico creado por la Organización Internacional para la Estandarización (ISO). 
+      - Su propósito es establecer un lenguaje universal y pautas estándar para que diversos sistemas de comunicación puedan conectarse y comunicarse entre sí, independientemente del fabricante. 
+      - Se compone de siete capas abstractas, donde cada una depende de la capa inferior y tiene una función específica.
+    ▸ Enumera las 7 capas del modelo OSI desde la más baja a la más alta (F.E.R.T.Se.P.A). 
+      Las capas son: 
+      1. Física
+      1. Enlace de Datos
+      1. Red
+      1. Transporte
+      1. Sesión
+      1. Presentación
+      1. Aplicación
+    ▸ ¿Cuál es la función de la Capa 1 (Física) y qué elementos la componen? 
+      - La Capa Física define las especificaciones eléctricas, mecánicas y de procedimiento para activar y mantener el enlace físico entre dispositivos. 
+      - Maneja la transmisión de bits (ceros y unos) a través de medios como cables de cobre (par trenzado), fibra óptica o radiofrecuencia. 
+      - Sus estándares definen niveles de tensión, duraciones de pulsos y distancias máximas de transmisión.
+    ▸ ¿Qué tareas realiza la Capa 2 (Enlace de Datos) y qué tipo de direccionamiento maneja? 
+      - Esta capa proporciona un tránsito de datos confiable a través del enlace físico y maneja el direccionamiento físico, conocido como dirección MAC. 
+      - La MAC es un número hexadecimal único asignado por el fabricante a cada tarjeta de red. 
+      - Entre sus protocolos se encuentran Ethernet (802.3), HDLC y PPP.
+    ▸ ¿De qué se encarga la Capa 3 (Red) y en qué se diferencia su direccionamiento de la Capa 2? 
+      - La Capa de Red proporciona conectividad y selección de ruta entre sistemas finales que pueden estar geográficamente separados. 
+      - A diferencia de la Capa 2 (física/MAC), esta capa maneja el direccionamiento lógico (IP) y el enrutamiento. 
+      - Es la capa donde opera el protocolo IP para determinar cómo los paquetes viajan de un origen a un destino.
+    ▸ ¿Cuál es el objetivo de la Capa 4 (Transporte)?
+      - Su función es garantizar la entrega de datos de extremo a extremo y controlar el flujo de información. 
+      - Divide los datos en segmentos y utiliza dos protocolos principales: TCP (confiable, con acuse de recibo y recuperación de errores) y UDP (no confiable, más rápido y sin acuse de recibo).
+    ▸ ¿Qué funciones cumplen las capas superiores (5, 6 y 7) del modelo OSI?
+      - Capa 5 (Sesión): Establece, administra y termina las sesiones de comunicación entre aplicaciones en diferentes hosts.
+      - Capa 6 (Presentación): Estandariza el formato de representación de los datos, encargándose de la compresión, cifrado y adaptación de formatos de archivos (como JPG, ASCII o GIF) para que sean interpretables por el receptor.
+      - Capa 7 (Aplicación): Es la interfaz directa con los procesos de red del usuario. Aquí operan protocolos como HTTP (navegación), SMTP (correo), FTP (archivos) y SSH.
+    ▸ ¿Qué es el modelo TCP/IP y por qué se considera un modelo "real"? 
+      - El modelo TCP/IP es el estándar práctico que realmente se utiliza en la operación de Internet. 
+      - A diferencia del modelo OSI, que es teórico y experimental, el TCP/IP condensa las funciones en menos capas para simplificar la gestión operativa.
+    ▸ ¿Cuáles son las 4 capas del modelo TCP/IP y cómo se mapean con el modelo OSI?
+      1. Acceso a la Red: Fusiona las capas Física y Enlace de Datos del modelo OSI (Capa 1 y 2).
+      1. Internet: Equivale a la capa de Red de OSI (Capa 3).
+      1. Transporte: Se mantiene igual que en el modelo OSI (Capa 4).
+      1. Aplicación: Integra las capas de Sesión, Presentación y Aplicación de OSI (Capas 5, 6 y 7) en una sola.
+    ▸ ¿Qué diferencia hay entre un protocolo orientado a conexión y uno que no lo es?
+      - Un protocolo orientado a conexión (como TCP en Capa 4) requiere establecer un enlace previo entre emisor y receptor antes de transmitir datos, garantizando integridad y orden. 
+      - Un protocolo no orientado a conexión (como IP en Capa 3 o UDP en Capa 4) envía la información sin establecer un enlace previo ni garantizar que los paquetes lleguen a destino o en el orden correcto.
+    ▸ ¿Cómo interactúan las capas en el proceso de encapsulamiento de datos? 
+      - Los datos bajan desde la capa de aplicación agregando información de control en cada nivel inferior. 
+      - Por ejemplo, un datagrama IP (Capa 3) recibe datos de transporte (Capa 4), se empaqueta y luego se envía a la capa de enlace (Capa 2), donde se añade un encabezado y cola específicos del medio físico (como Ethernet), generando lo que se conoce como overhead o sobrecarga de protocolo.
+    ▸ ¿En qué capa operan las tecnologías de transmisión como SDH o SONET? 
+      Estas tecnologías operan principalmente en la Capa 1 (Física), proporcionando la "autopista" o el medio de transmisión óptico (fibra) para que la información viaje, aunque requieren direccionamiento físico de Capa 2 para establecer la conectividad entre los nodos del anillo. No realizan ruteo lógico de Capa 3.
+  ### Sección 4: Infraestructura y Centros de Datos
+    ▸ ¿Qué es la diafonía (Crosstalk) y cómo se mitiga constructivamente? 
+      - Es la interferencia electromagnética que ocurre entre los hilos de cobre de una misma vaina cuando circula corriente. 
+      - Se reduce mediante el trenzado helicoidal de los pares, lo que genera un desacoplamiento electromagnético entre los conductores. 
+      - Existen dos tipos principales: NEXT (extremo cercano) y FEXT (extremo lejano).
+    ▸ ¿Cuáles son las categorías de cable de cobre más relevantes y sus límites?
+      - Categoría 6: Soporta hasta 1 Gbps a 100 metros; es el estándar común actual.
+      - Categoría 6A: Soporta 10 Gbps a 100 metros; es la recomendada para proyectos nuevos por su vida útil de 20-25 años.
+      - Categoría 8: Muy limitada en distancia (máximo 30 metros), por lo que su uso real es escaso frente a soluciones de fibra.
+    ▸ ¿Qué diferencias existen entre los blindajes UTP, FTP y STP?
+      - UTP (Unshielded): Sin blindaje, ideal para oficinas sin grandes interferencias.
+      - FTP (Foiled): Lámina global de aluminio para interferencias moderadas.
+      - STP/SFTP (Shielded): Blindaje por cada par y malla general; esencial para ambientes industriales críticos con motores o generadores.
+    ▸ ¿Qué es el PoE (Power over Ethernet) y cuáles son sus tipos? 
+      Es la tecnología que permite enviar energía eléctrica y datos por el mismo cable Ethernet RJ45.
+      - Tipo 1 (15W): Para teléfonos VoIP o controles de acceso.
+      - Tipo 4 (90-100W): Puede alimentar pantallas, laptops o sistemas de videoconferencia complejos.
+      Nota: Aumentar la distancia en cables especiales (hasta 250m) reduce drásticamente el ancho de banda (hasta 10 Mbps), pero mantiene la entrega de potencia.
+    ▸ ¿Qué diferencia a la fibra Monomodo (SM) de la Multimodo (MM)?
+      - Monomodo (OS2): Núcleo pequeño (9 micrones), un solo haz de luz láser; ideal para distancias muy largas (kilómetros).
+      - Multimodo (OM3/OM4/OM5): Núcleo más grande (50 micrones), la luz refracta en varios modos; ideal para distancias cortas (hasta 550m en centros de datos).
+    ▸ ¿Qué ventajas ofrece la fibra OM5 sobre la OM4? 
+      La fibra OM5 permite la multiplexación por longitud de onda (SWDM4), pudiendo enviar 4 longitudes de onda (landas) por un solo hilo de fibra, lo que optimiza el ancho de banda y el alcance en comparación con OM4.
+    ▸ ¿Qué es el conector MPO/MTP y por qué es clave en los centros de datos? 
+      - Es un conector multifibra que puede albergar 8, 12, 16 o 24 fibras en un solo cuerpo. 
+      - Es el estándar para transmisiones de alta velocidad como 400 GB o 800 GB, permitiendo altas densidades de conexión en poco espacio.
+    ▸ ¿Por qué es crítico el protocolo de inspección y limpieza de fibras? 
+      - El polvo o la grasitud en la cara del conector degradan severamente la señal (pérdidas de retorno).
+      -  La limpieza no debe hacerse con alcohol isopropílico común, ya que deja residuos; se deben usar solventes y paños especiales (stick o cassette cleaners).
+    ▸ ¿Cuáles son los tres tipos principales de centros de datos (E.C.C)?
+      1. Enterprise: Propiedad de una corporación (ej. un banco) para sus propios datos y aplicaciones.
+      1. Cloud / Hiperescala: Infraestructura masiva compartida para millones de clientes (ej. Google, Amazon, Microsoft).
+      1. Collocation (Telco): Espacio físico alquilado por empresas de telecomunicaciones para que terceros alojen sus propios servidores.
+    ▸ ¿Qué es un Datacenter Edge? 
+      Son centros de datos más pequeños situados en el borde de la red, más cerca del usuario final, para reducir la latencia y mejorar la experiencia en aplicaciones de tiempo real.
+    ▸ ¿Cuál es el estándar madre para el diseño de centros de datos? 
+      El estándar ANSI/TIA-942 es el principal para América, mientras que el EN-50600 lo es para Europa. Regulan desde el cableado hasta la arquitectura física y los sistemas de seguridad.
+    ▸ ¿Qué implican los niveles TIER del Uptime Institute?
+      - TIER I: Básico, sin redundancia, requiere paradas para mantenimiento.
+      - TIER II: Redundancia parcial; fallas en energía pueden afectar servicios.
+      - TIER III (Mantenimiento Concurrente): Permite reparar cualquier componente sin interrumpir el servicio. Tiene rutas de distribución redundantes.
+      - TIER IV: Tolerante a fallas; redundancia total incluso en proveedores de energía (difícil de certificar en Argentina por la falta de doble proveedor de red eléctrica).
+    ▸ ¿Cuáles son los bloques funcionales de un DC según el estándar (ER.M.I.Z.E)? 
+      Un centro de datos se organiza en áreas: 
+      - Entrance Room (entrada de proveedores)
+      - MDA (Distribución Principal)
+      - IDA (Intermedia)
+      - ZDA (de Zona)
+      - EDA (Área de Distribución de Equipamiento/Servidores).
+      [imagen]
+    ▸ ¿Qué ventajas ofrece la arquitectura Spine & Leaf? 
+      A diferencia del modelo jerárquico tradicional (Core-Agregación-Acceso), el Spine & Leaf reduce la latencia, optimiza el tráfico este-oeste (entre servidores) y ofrece una redundancia superior mediante múltiples conexiones activas.
+    ▸ ¿Qué es un SFP (Small Form Factor Plugable)?
+      Es una interfaz física (módulo) que se conecta a los slots de los switches o routers para proporcionar conectividad óptica o de cobre. Existen variantes para distintas velocidades y tipos de fibra (multimodo/monomodo).
+    > Consejo para el 10: Los docentes recalcaron que pueden pedir dibujar el bloque esquemático de un DC (Entrance Room -> MDA -> EDA) y justificar decisiones de diseño (ej. elegir OM5 sobre OM4 por costo-beneficio a largo plazo o Cat 6A para redes corporativas).
+  ### Sección 5: Protocolos de Capa 2 y Capa 3
+    ▸ ¿Qué son X.25, Frame Relay y ATM?
+       Son tecnologías de red denominadas "Legacy" o de legado que operan mayormente en Capa 2:
+      - X.25: Basada en la retransmisión y corrección de errores bit a bit; era confiable pero lenta debido al alto tráfico de confirmaciones (acknowledgments).
+      - Frame Relay: Una evolución más eficiente de X.25 que maneja tramas de datos variables y se utilizó ampliamente para interconectar sucursales corporativas.
+      - ATM (Asynchronous Transfer Mode): Utiliza celdas de tamaño fijo de 53 bytes (48 de datos y 5 de sobrecarga) y fue la primera en ofrecer Calidad de Servicio (QoS) nativa.
+    ▸ ¿Cuáles son los tipos de tráfico o servicios que ofrece ATM (C.V.A.U)? 
+      ATM ofrece cuatro categorías principales para garantizar la calidad del servicio:
+      1. CBR (Constant Bit Rate): Ancho de banda garantizado y fijo; ideal para voz y video en tiempo real.
+      1. VBR (Variable Bit Rate): Para aplicaciones con tráfico variable pero que requieren ciertos parámetros de tiempo.
+      1. ABR (Available Bit Rate): Garantiza un mínimo de ancho de banda y permite usar el excedente si la red está disponible.
+      1. UBR (Unspecified Bit Rate): El más económico; no garantiza nada y el tráfico se envía según la disponibilidad de la red (Best Effort).
+    ▸ ¿Qué es una Red MAN o Metro Ethernet? 
+      - Es una Red de Área Metropolitana que funciona como una capa 2 extendida fuera del edificio. 
+      - Permite a las empresas conectar sucursales (por ejemplo, en CABA) como si estuvieran en la misma LAN, dándoles el control de las capas superiores (Capa 3) mientras el proveedor solo gestiona el enlace físico y de datos. 
+      - En estas redes es crítico controlar el Jitter (variación de la demora) para servicios de voz y video.
+    ▸ ¿Cómo se estructura una dirección IPv4 y para qué sirve la máscara de subred? 
+      - Una dirección IPv4 consta de 32 bits divididos en cuatro octetos (representados decimalmente de 0 a 255). 
+      - La máscara de subred es fundamental porque define qué parte de la dirección identifica a la red y qué parte identifica al host (dispositivo específico).
+    ▸ ¿Cuál es la diferencia entre enrutamiento estático y dinámico?
+      - Estático: Las rutas son configuradas manualmente por un administrador; es simple pero tedioso en redes grandes y no se adapta automáticamente a fallas.
+      - Dinámico: Los routers utilizan protocolos (como BGP u OSPF) para intercambiar información de rutas y actualizar sus tablas automáticamente ante cambios o caídas en la red.
+    ▸ ¿Qué diferencia a una IP pública de una privada?
+      - Pública: Es un identificador único a nivel mundial que permite que un dispositivo sea localizado en Internet.
+      - Privada: Se utiliza dentro de redes locales (LAN) como oficinas o casas y no es visible directamente desde el exterior de esa red.
+    ▸ ¿Qué es MPLS y por qué se dice que actúa entre la Capa 2 y la Capa 3? 
+      - MPLS (Multi-Protocol Label Switching) es una tecnología de conmutación por etiquetas. 
+      - En lugar de que cada router analice la dirección IP completa (Capa 3), el paquete se etiqueta al entrar a la red y los routers internos lo reenvían basándose únicamente en esa etiqueta (Capa 2), lo que lo hace mucho más rápido y eficiente.
+    ▸ ¿Qué es un Sistema Autónomo (AS) y qué rol cumple el protocolo BGP?
+      - Un Sistema Autónomo es un conjunto de redes bajo la administración de una única entidad con una política de ruteo propia, identificada por un número único (ASN). 
+      - El BGP (Border Gateway Protocol) es el protocolo de "borde" que permite que diferentes Sistemas Autónomos se comuniquen entre sí, permitiendo el enrutamiento del tráfico global en Internet.
+    ▸ ¿Qué diferencia hay entre Peering y Tránsito IP?
+      - Peering: Es un acuerdo directo entre dos redes para intercambiar tráfico de forma gratuita porque el volumen entre ambas está balanceado (usualmente hasta una relación 2:1).
+      - Tránsito IP: Es un servicio pago donde un proveedor (normalmente un Tier 1 con cables submarinos) le da acceso a otra red a la totalidad de las rutas de Internet.
+    ▸ ¿Cómo se encapsula el IP sobre otras tecnologías? 
+      El protocolo IP (Capa 3) puede viajar "montado" sobre diversas infraestructuras de capas inferiores:
+      - IP sobre Ethernet: Común en redes LAN (estándar 802.3).
+      - IP sobre ATM: Los datagramas IP se fragmentan en las celdas fijas de ATM.
+      - Packet over SONET/SDH (PoS): Utiliza protocolos como PPP o HDLC para transportar IP directamente sobre redes de fibra óptica de alta capacidad.
+    > Tip para el examen: Los docentes suelen enfatizar que un Switch Layer 3 es básicamente un dispositivo que combina las capacidades de conmutación de Capa 2 con la inteligencia de ruteo de Capa 3, siendo más costoso pero más potente que un router tradicional.
+  ### Sección 6: Capa de Transporte y Seguridad (Capa 4)
+    ▸ ¿Qué es un "Socket" en el contexto de la Capa 4? 
+      - Es una interfaz creada por la aplicación emisora (especialmente en UDP) que permite encapsular el mensaje para ser enviado a nivel de red. 
+      - Se identifica mediante la combinación de una dirección IP y un número de puerto.
+    ▸ ¿Cuáles son las diferencias fundamentales entre TCP y UDP?
+      - TCP (Transmission Control Protocol): Es orientado a conexión (requiere un enlace previo o handshake), es confiable, garantiza la entrega, el orden de los datos y posee recuperación de errores. Es más lento debido a su cabecera compleja y la necesidad de acuses de recibo.
+      - UDP (User Datagram Protocol): Es no orientado a conexión, no confiable (no garantiza entrega ni orden) y no realiza control de errores. Su ventaja es la baja latencia y rapidez al tener una cabecera simple de solo 8 bytes.
+    ▸ ¿Qué son los "Puertos Bien Conocidos" y cuáles son ejemplos clave?
+       Son puertos (del 0 al 1023) reservados para servicios estándar del sistema. Ejemplos comunes incluyen:
+      - HTTP: Puerto 80 (TCP).
+      - FTP: Puertos 20/21 (TCP/UDP).
+      - SMTP (Mail): Puerto 25 (TCP).
+      - SNMP (Monitoreo): Puerto 161 (UDP).
+      - DNS: Puerto 53 (UDP).
+    ▸ ¿En qué consiste un ataque de inundación UDP (UDP Flooding)? 
+      Es un tipo de ataque de denegación de servicio (DDoS) que consiste en enviar masivamente datagramas UDP para saturar el ancho de banda y agotar los recursos de procesamiento (CPU y memoria) de un servidor, router o switch, provocando la caída de la red.
+    ▸ ¿Qué es un ataque de reflexión mediante UDP?
+      El atacante falsifica (camufla) la dirección IP de la víctima y envía datagramas a servidores legítimos. Estos servidores responden a la IP de la víctima, amplificando el tráfico y provocando la denegación del servicio para el blanco original.
+    ▸ ¿Qué otras vulnerabilidades afectan a los protocolos de transporte?
+      - Desbordamiento de búfer: Procesamiento de datagramas maliciosos que generan errores de memoria y pueden permitir la ejecución remota de código.
+      - Ataques de bucle (Loop): Creación de bucles de tráfico entre dispositivos mal configurados que agotan los recursos de la red.
+    ▸ ¿Cómo protege un Firewall de perímetro la Capa 4? 
+      Los Firewalls e IPS (Intrusion Prevention Systems) bloquean tráfico no deseado o sospechoso mediante la configuración de políticas que limitan el acceso a puertos UDP que no están en uso (cerrar "ventanas" de la red).
+    ▸ ¿Qué es la técnica de "Rate Limiting"? 
+      Es una restricción impuesta a la cantidad de paquetes recibidos de un emisor determinado en un tiempo específico. Esto reduce la posibilidad de sobrecargar el procesador y mitiga ataques de inundación.
+    ▸ ¿Qué rol cumplen el NOC y el SOC en la seguridad de transporte? 
+      El NOC (Network Operation Center) monitorea la red, mientras que el SOC (Security Operation Center) utiliza herramientas como Netflow o SNMP para detectar intrusiones e identificar patrones de tráfico anómalos en tiempo real, actuando ante ataques antes de que el servicio caiga.
+    ▸ ¿Qué es el protocolo QUIC y por qué es relevante? 
+      Desarrollado por Google, combina la velocidad de UDP con funciones de confiabilidad y cifrado (TLS). Es la base de HTTP/3 y está diseñado para reducir la latencia y evitar ataques simples de red.
+    ▸ ¿Qué diferencia al protocolo DTLS del TLS estándar? 
+      - DTLS (Datagram Transport Layer Security) es una adaptación de TLS diseñada específicamente para UDP.
+      - Proporciona seguridad y privacidad a aplicaciones que requieren baja latencia, como la comunicación de voz y video en tiempo real.
+    > Consejo para el 10: En el parcial, recordá que si te preguntan por una red "Best Effort", se refieren a IP (Capa 3), pero la fiabilidad de esa entrega se resuelve en la Capa 4 mediante TCP. También mencioná que la mayoría de los proveedores actuales venden la protección Anti-DDoS como un servicio de valor agregado para proteger estas capas.
+  ### Sección 7: Virtualización y Redes de Nueva Generación
+    ▸ ¿Qué es NFV (Network Function Virtualization) y cuál es su objetivo? 
+      - Es el desacople de las funciones de red (como ruteo, firewall o balanceo) del hardware propietario para ejecutarlas como software en servidores estándar (X86). 
+      - Su objetivo es lograr una mayor agilidad, eficiencia y flexibilidad en el manejo de servicios corporativos.
+    ▸ ¿Qué diferencia al modelo de red tradicional del basado en software?
+      - En el modelo tradicional, se utilizan dispositivos físicos dedicados (como routers Cisco o Huawei) cuya escalabilidad es lenta y costosa. 
+      - En el modelo basado en software, se utiliza un pool de hardware genérico donde se corren máquinas virtuales que emulan esas funciones, permitiendo cambios de configuración sentados desde un escritorio.
+    ▸ ¿Qué son las BNFs (Virtual Network Functions)? 
+      - Son aplicaciones de software que realizan tareas de red específicas que antes requerían hardware propio. 
+      - Ejemplos clave incluyen el Virtual Routing, el Virtual EPC (núcleo de red móvil) y el Virtual BNG (acceso a banda ancha).
+    ▸ ¿Cuál es el rol del Hipervisor y el Orquestador (NFVO)? 
+      - El hipervisor es la capa de software que actúa como nexo entre el hardware físico y las máquinas virtuales. 
+      - El orquestador (NFVO) se encarga de administrar estas máquinas virtuales de forma dinámica, pudiendo encender, apagar o mover aplicaciones entre servidores en caliente sin interrumpir el servicio.
+    ▸ ¿Cuáles son los 4 factores tecnológicos críticos para una red moderna (E.C.S.AR)? 
+      Para que una red sea eficiente y convergente, debe cumplir con:
+      1. Escalabilidad: Capacidad de crecer rápidamente según la demanda.
+      1. Convergencia: Una única infraestructura física para dar soporte a múltiples servicios (voz, datos, video).
+      1. Seguridad: Protección integral de la información en tránsito.
+      1. Alta Resiliencia: Disponibilidad garantizada mediante un SLA (Service Level Agreement) superior al 99.9%.
+    ▸ ¿Cómo se distribuye el tráfico de datos en la pirámide de soluciones? 
+      - Contrario a lo que se cree, el Cloud (nube centralizada) solo maneja entre el 20% y 25% del tráfico global. 
+      - El restante 75% a 80% circula en la periferia o bordes (Edge), impulsado por dispositivos IoT y redes inalámbricas.
+    ▸ ¿Qué es el Edge Computing y qué ventajas ofrece? 
+      - Consiste en situar el poder de cómputo en el dispositivo extremo (el borde) para procesar datos en tiempo real. 
+      - Por ejemplo, un semáforo inteligente puede procesar la foto de una patente localmente y enviar solo el texto (dato ligero) en lugar de la imagen pesada, ahorrando ancho de banda y reduciendo la latencia.
+    ▸ ¿Qué es el Fog Computing? 
+      - Es un concepto híbrido situado entre el Edge y el Cloud.
+      - Permite procesar información en centros de datos intermedios más pequeños, optimizando el recurso de red para aplicaciones que no necesitan ir hasta el Cloud central pero tampoco pueden resolverse totalmente en el dispositivo final.
+    ▸ ¿Por qué la red 5G se considera una red de nueva generación? 
+      - Porque no solo está pensada para telefonía y datos rápidos, sino que está preparada para conectar millones de dispositivos (IoT) en forma inalámbrica. 
+      - Requiere una infraestructura virtualizada debido a que sus celdas son mucho más densas que las de 4G, necesitando una flexibilidad que el hardware estándar no podría soportar.
+    ▸ ¿Qué implica la convergencia de Redes Industriales y LAN? 
+      - Es la tendencia de integrar las redes de control de producción en fábricas (redes industriales) con las redes de oficina (LAN). 
+      - Esto es posible porque hoy los sensores industriales (IIoT) utilizan el protocolo TCP/IP y puertos Ethernet, permitiendo que un caudalímetro o sensor de temperatura se vea como una PC más en la red.
+    ▸ ¿Qué significa el concepto SDX (Software Defined X)? 
+      - Es el uso de software para gerenciar integralmente la infraestructura (SDI) o la red (SDN/SD-WAN). 
+      - Esto permite una administración centralizada y ágil de entornos complejos que antes estaban compuestos por dispositivos estancos de distintos fabricantes.
+    ▸ ¿Qué diferencia al modelo Capex del Opex en proyectos de redes?
+      - CAPEX (Capital Expenditure): Es la inversión inicial fuerte para comprar hardware y armar la infraestructura propia.
+      - OPEX (Operational Expenditure): Es el gasto operativo mensual por contratar servicios en la nube o infraestructura alquilada, transformando la inversión inicial en un pago por uso.
+    > Tip para el 10: Recuerda que para el parcial se espera que sepas justificar decisiones de diseño (ej: por qué usar virtualización para subir un SLA) y que entiendas que el Core de la red actual es el Data Center.
+  ### Anexo: Preguntas de parcial
+    ▸ Desarrollar Datacenters, su clasificación, tolerancia a fallas, y dar un ejemplo.
+      Un centro de datos se define como una sala física o instalación que alberga infraestructura informática (servidores, almacenamiento, redes) con el fin de ejecutar aplicaciones, procesar servicios y almacenar datos. Para su correcto funcionamiento, estos recintos deben garantizar condiciones controladas de energía estable, refrigeración y mantenimiento durante las 24 horas del día. Actualmente, el núcleo de las redes modernas se ha desplazado hacia el centro de datos, ya que en ellos se virtualizan funciones que antes dependían de hardware propietario.
+      Clasificación de los Centros de Datos
+      Según su modelo de gestión y propiedad, se clasifican principalmente en:
+      - Enterprise (Corporativos): Son instalaciones propiedad de una empresa (como bancos o petroleras) destinadas exclusivamente a alojar su propia infraestructura y proteger sus datos internos.
+      - Cloud (Nube) / Hiperescala: Son infraestructuras masivas pertenecientes a gigantes tecnológicos (Google, Amazon, Microsoft) que ofrecen recursos compartidos a millones de clientes en todo el mundo.
+      - Collocation (Telco): Son centros gestionados por empresas de telecomunicaciones que alquilan espacio físico, racks y energía para que terceras empresas instalen sus propios servidores sin invertir en un edificio propio.
+      - Edge (Borde): Son instalaciones más pequeñas ubicadas geográficamente cerca del usuario final para reducir la latencia en aplicaciones de tiempo real.
+      Tolerancia a Fallas y Clasificación TIER
+      La tolerancia a fallas se rige por el estándar ANSI/TIA-942 y se mide mediante los niveles TIER certificados por el Uptime Institute. Estos niveles determinan la disponibilidad y redundancia de la infraestructura:
+      1. TIER I (Básico): No posee redundancia y requiere paradas programadas para realizar cualquier mantenimiento en los sistemas.
+      1. TIER II (Redundancia parcial): Incluye algunos componentes redundantes, pero fallos en la distribución de energía aún pueden afectar los servicios.
+      1. TIER III (Mantenimiento Concurrente): Es un nivel robusto donde cualquier componente puede ser reparado sin interrumpir el servicio gracias a rutas de distribución redundantes.
+      1. TIER IV (Tolerante a fallas): Es el nivel máximo, diseñado para soportar cualquier falla individual sin afectar la operación; su certificación en Argentina es compleja debido a la falta de doble proveedor de red eléctrica independiente.
+      Ejemplos de Aplicación
+      - Ejemplo de Telco/Collocation: El centro de datos de Telecom en Pacheco o el de Arsat en Benavides, que brindan servicios de alojamiento y conectividad a gran escala.
+      - Ejemplo Enterprise: Un banco (como Galicia o Santander) que opera su propio centro de datos para gestionar transacciones financieras y bases de datos críticas de forma privada.
+      - Ejemplo de Cloud: La infraestructura de Google, que permite que servicios como este Meet funcionen de forma fluida y redundante para usuarios globales.
+    ▸ Explicar Hamming y un ejemplo practico.
+      El código de Hamming es un método de codificación que permite no solo detectar un error en un bit, sino también identificar su posición exacta y corregirlo de forma automática en el receptor. A diferencia de la paridad simple, que solo advierte que algo llegó mal, Hamming otorga la capacidad de reconstruir el mensaje sin necesidad de solicitar una retransmisión al emisor.
+      Este sistema se basa en las siguientes premisas y reglas:
+      - Probabilidad de error: Se asume que, debido a la baja probabilidad de error de bit en las redes modernas, como mucho habrá un error en un único bit por cada palabra transmitida.
+      - Bits de redundancia (K): Se agregan bits extras al mensaje original (M). La cantidad de bits K necesarios debe cumplir con la desigualdad ⁍, donde M es la cantidad de bits de información.
+      - Posicionamiento: Los bits de redundancia (K) se ubican obligatoriamente en posiciones que sean potencias de 2 (1, 2, 4, 8, etc.), mientras que los bits del mensaje (M) ocupan los espacios restantes.
+      --------------------------------------------------------------------------------
+      Ejemplo Práctico: Transmisión de 4 bits
+      1. Configuración en el Transmisor (TX)
+      Si queremos transmitir 4 bits de información (M=4), necesitaremos 3 bits de redundancia (K=3), ya que ⁍ (es decir, 8=8). La palabra final tendrá 7 bits dispuestos así:
+      - Posición 1: K1 (Redundancia)
+      - Posición 2: K2 (Redundancia)
+      - Posición 3: M3 (Mensaje)
+      - Posición 4: K4 (Redundancia)
+      - Posición 5: M5 (Mensaje)
+      - Posición 6: M6 (Mensaje)
+      - Posición 7: M7 (Mensaje)
+      Para calcular los valores de K, se utiliza la paridad (operación XOR) de los bits de mensaje que contienen esa potencia de 2 en su índice binario:
+      - K1 se calcula con: ⁍
+      - K2 se calcula con: ⁍
+      - K4 se calcula con: ⁍
+      Supongamos que el mensaje es 0001 (M3=0,M5=0,M6=0,M7=1):
+      - ⁍
+      - ⁍
+      - ⁍
+      - Palabra transmitida: ⁍
+      2. Recepción con Error (RX)
+      Imagina que durante la transmisión ocurre una interferencia y el receptor recibe: 1101101.
+      - Si comparamos con la original (1101001), vemos que el bit en la posición 5 cambió de 0 a 1.
+      3. Detección y Corrección
+      El receptor, que no conoce el mensaje original, recalcula la paridad (P) realizando un XOR entre el bit K recibido y los bits de mensaje correspondientes:
+      - ⁍
+      - ⁍
+      - ⁍
+      Si los resultados de P fueran todos cero, no habría error. En este caso, el resultado es la terna ⁍.
+      - El número binario 101 equivale al 5 en decimal.
+      - Conclusión: El error está exactamente en el bit de la posición 5. El receptor simplemente invierte ese bit y obtiene el mensaje correcto original.
+    ▸ Describa funcionalidades y protocolo de una red MPLS, ¿Para que tipos de servicios la utilizarlas?
+      La red MPLS (Multiprotocol Label Switching) es una tecnología de conmutación de etiquetas que actúa entre las capas 2 (enlace de datos) y 3 (red) del modelo OSI. Su funcionamiento principal consiste en asignar etiquetas a los paquetes de datos al ingresar a la red, permitiendo que los routers internos tomen decisiones de reenvío basadas únicamente en dichas etiquetas, sin necesidad de examinar la dirección IP de destino en cada salto.
+      Funcionalidades y Protocolo
+      - Proceso de etiquetado: El ruteo se vuelve más ágil ya que, una vez que el paquete entra en el borde de la red (en el router llamado LER - Label Edge Router), se le añade una etiqueta. Dentro del núcleo de la red, los routers (denominados LSR - Label Switching Router) simplemente conmutan el tráfico siguiendo el camino predefinido por la etiqueta (LSP - Label Switched Path).
+      - Estructura del encabezado: El encabezado MPLS tiene un tamaño de 4 bytes y se sitúa entre el encabezado de la capa de enlace y el encabezado IP. Contiene:
+        - Etiqueta (20 bits): El identificador del camino.
+        - Experimental/CoS (3 bits): Utilizados para gestionar la Calidad de Servicio (QoS) y priorizar tráfico.
+        - Pila (1 bit): Indica si hay más etiquetas en el paquete.
+        - TTL (8 bits): Tiempo de vida del paquete para evitar bucles.
+      - Independencia de protocolo: Puede transportar diversos protocolos de capa 3, como IPv4, IPv6, o incluso montarse sobre tecnologías de capa 2 como ATM o Frame Relay, dándoles una jerarquía de ruteo superior.
+      Servicios y Aplicaciones
+      MPLS es ideal para los siguientes tipos de servicios debido a su eficiencia y capacidad de gestión de tráfico:
+      1. Redes Privadas Virtuales (VPN MPLS): Permite a los proveedores utilizar una infraestructura pública compartida para crear redes privadas seguras para empresas, conectando múltiples sucursales de forma transparente como si fuera una red propia.
+      1. Calidad de Servicio (QoS): Al permitir la priorización de paquetes mediante los bits de CoS, es la tecnología preferida para servicios sensibles a la latencia y al jitter, como la voz sobre IP (VoIP) y la videoconferencia.
+      1. Ingeniería de Tráfico: Facilita la administración de los caminos que siguen los datos dentro de la red de un carrier, optimizando el uso de los recursos y evitando la congestión de enlaces específicos.
+      1. Núcleo de Redes de Transporte (Backbone): Es utilizado masivamente por los operadores de telecomunicaciones para interconectar sus nodos principales y gestionar grandes volúmenes de tráfico de forma escalable.
+    ▸ Explicar el protocolo de enrutamiento BGP y establecer una breve comparativa con OSPF.
+      El protocolo BGP (Border Gateway Protocol) es el estándar de enrutamiento dinámico utilizado para la interconexión de redes a nivel global. Se define técnicamente como un protocolo de "borde" que permite que diferentes Sistemas Autónomos (AS) se comuniquen entre sí, haciendo posible el enrutamiento del tráfico en toda la infraestructura de Internet.
+      Funcionalidades del protocolo BGP
+      - Interconexión de Sistemas Autónomos: Su función principal es permitir que entidades con políticas de ruteo propias (como carriers, grandes empresas o universidades) intercambien información de alcanzabilidad.
+      - Gestión de Tránsito y Peering: Se utiliza para anunciar bloques de direcciones IP públicas entre proveedores y clientes en servicios de Tránsito IP, o para intercambiar rutas de forma directa en acuerdos de Peering.
+      - Plano de Control: Dentro de la arquitectura de red, BGP opera en el plano de control, encargándose de la lógica necesaria para construir las tablas de ruteo que luego utilizará el plano de datos para mover los paquetes.
+      - Escalabilidad Global: Gracias a BGP, los routers pueden aprender y actualizar automáticamente las mejores rutas hacia destinos internacionales, adaptándose a cambios o fallas en la red de forma dinámica.
+      Comparativa: BGP vs. OSPF
+      Ambos son protocolos de enrutamiento dinámico que operan en el plano de control, pero tienen alcances y objetivos muy distintos:
+        Característica | BGP (Border Gateway Protocol) | OSPF (Open Shortest Path First)
+        Tipo de Protocolo | Es el protocolo de ruteo externo estándar (EGP). | Es un protocolo de ruteo interno (IGP).
+        Ámbito de Aplicación | Se usa para conectar diferentes Sistemas Autónomos entre sí a nivel global. | Se usa para el intercambio de rutas dentro de una misma red o Sistema Autónomo.
+        Función Principal | Establece cómo las redes de distintos dueños (ej. Telecom y Verizon) intercambian tráfico. | Determina el camino más corto y eficiente entre routers internos de una corporación.
+        Complejidad | Enfocado en la aplicación de políticas de tráfico y acuerdos comerciales (SLA). | Enfocado en la velocidad de convergencia interna.
+      En resumen, mientras que OSPF se encarga de la "inteligencia" interna de una red para que los paquetes sepan cómo moverse entre sus propios nodos, BGP es la herramienta que une todas esas redes individuales para formar la red global de Internet.
+    ▸ SDH. Usos y aplicaciones. Jerarquía de tramas. Ejemplo de Packet over SDH/SONET
+      La jerarquía digital sincrónica, conocida como SDH (Synchronous Digital Hierarchy), es un estándar de tecnología de transporte de datos diseñado para redes ópticas de alta capacidad. Basado en normas europeas, su contraparte americana es el estándar SONET.
+      Usos y aplicaciones
+      SDH se utiliza principalmente en redes de transporte (backbone) de larga distancia y áreas extendidas (WAN) por parte de operadores de telecomunicaciones e ISPs. Sus aplicaciones clave incluyen:
+      - Infraestructura de transporte robusta: Funciona como una "autopista" física, generalmente de fibra óptica, que permite el viaje de grandes volúmenes de información sin ruteo lógico.
+      - Interconexión de sedes: Empresas con gran envergadura (como bancos u organismos gubernamentales) la utilizan para conectar nodos geográficamente dispersos, por ejemplo, uniendo Buenos Aires con La Pampa a través de un anillo de fibra.
+      - Soporte multiservicio: Permite granularizar el ancho de banda para entregar servicios específicos, como bajar una trama E3 de 34 Mbps desde un anillo STM-1 para un cliente dedicado.
+      Jerarquía de tramas
+      La estructura de SDH se organiza en módulos de transporte sincrónico denominados STM (Synchronous Transport Module). Los niveles de la jerarquía son múltiplos de la unidad básica:
+      - STM-1: Es el nivel base con una velocidad de 155,52 Mbps.
+      - STM-4: Equivale a 4 estructuras STM-1, alcanzando 622,08 Mbps.
+      - STM-16: Tiene una capacidad de aproximadamente 2,5 Gbps.
+      - STM-64: Alcanza velocidades de 10 Gbps.
+      - STM-256: Es el nivel superior con 40 Gbps.
+      Cada trama transporta información encapsulada en contenedores, a los que se les añade una cabecera de control u overhead para la gestión y sincronización del enlace.
+      Ejemplo de Packet over SDH/SONET (POS)
+      POS es una técnica que permite transportar paquetes IP directamente sobre la fibra óptica de alta capacidad utilizando la infraestructura SDH o SONET.
+      - Funcionamiento: Utiliza protocolos de capa 2 como PPP (Point-to-Point Protocol) o HDLC para encapsular el datagrama IP antes de enviarlo a la capa física óptica.
+      - Ventajas: Es extremadamente eficiente porque reduce la sobrecarga (overhead) al mínimo, no requiere direccionamiento MAC y mejora drásticamente las latencias en comparación con otras tecnologías como ATM.
+      - Caso de uso: Se aplica mayormente en los enlaces troncales (backbone) de los operadores para mover tráfico masivo de internet con alta confiabilidad y capacidad de recuperación de fallas.
+    ▸ Explicar el modelo de virtualizacion 2.0 y como ellos aplica la virtualizacion de funciones de red (NFV)
+      El modelo de Virtualización 2.0 y su aplicación en la Virtualización de Funciones de Red (NFV) representan un cambio de paradigma en las telecomunicaciones, permitiendo pasar de infraestructuras rígidas basadas en hardware a plataformas flexibles basadas en software.
+      El Modelo de Virtualización 2.0
+      Este modelo, que alcanzó su auge alrededor de la década de 2010, se basa en el uso de un hipervisor (capa de orquestación) que corre sobre hardware estándar (servidores genéricos x86) para gestionar múltiples máquinas virtuales (VMs).
+      - Optimización de Recursos: Antes de la virtualización, una empresa necesitaba un servidor físico por cada aplicación, los cuales solían estar subutilizados (usando solo el 5-10% de su capacidad). La virtualización permite consolidar múltiples aplicaciones en un solo equipo físico, aprovechando la capacidad ociosa de CPU, memoria y almacenamiento.
+      - Agilidad Operativa: Una de las grandes ventajas es la capacidad de mover máquinas virtuales "en caliente" (sin apagar la aplicación) entre diferentes servidores para realizar mantenimientos o balancear cargas de trabajo.
+      - Evolución hacia la Nube: Este modelo sentó las bases para el Cloud Computing, permitiendo ofrecer infraestructura y servicios bajo demanda.
+      Aplicación en la Virtualización de Funciones de Red (NFV)
+      La NFV aplica los conceptos de la Virtualización 2.0 específicamente al mundo de las redes y las telecomunicaciones. Su objetivo es desacoplar el software de red del hardware propietario de los fabricantes.
+      - De Hardware Propietario a Software: En el modelo tradicional, funciones como el ruteo o el firewall requerían equipos físicos costosos de marcas como Cisco, Nokia o Ericsson. Con NFV, estas funciones se convierten en Funciones de Red Virtuales (VNFs), que son máquinas virtuales que emulan el comportamiento del hardware original sobre servidores estándar.
+      - Ejemplos de VNFs:
+        - vRouter (Router Virtual): Realiza funciones de ruteo de Capa 3 mediante software.
+        - vEPC (Virtual Packet Core): El núcleo de procesamiento de datos de redes móviles (LTE/5G) ahora corre de forma virtualizada.
+        - vBNG (Virtual Broadband Network Gateway): Gestiona el acceso de banda ancha y la autenticación de usuarios por software.
+      - Orquestación y Gestión (MANO): Para administrar estas redes complejas, se utiliza una capa de gestión llamada MANO (Management and Orchestration), cuyo núcleo es el NFVO (NFV Orchestrator), encargado de automatizar el despliegue y escalado de las VNFs.
+      Ventajas del Modelo NFV
+      1. Escalabilidad y Flexibilidad: Permite levantar o modificar servicios de red de forma remota desde un escritorio, sin necesidad de intervenir físicamente las instalaciones (como cablear o cambiar equipos).
+      1. Reducción de Costos: El hardware estándar puede costar hasta una cuarta parte de lo que valía un equipo propietario equivalente. Además, se ahorra en espacio físico, energía y refrigeración en los centros de datos.
+      1. Alta Disponibilidad (SLA): Al trabajar con pools de recursos, si un servidor falla, las funciones de red se trasladan automáticamente a otro equipo, garantizando niveles de disponibilidad muy altos (SLA de "cinco nueves" o 99.999%).
+      1. Interoperabilidad (Multivendor): Permite mezclar soluciones de distintos fabricantes en una misma plataforma abierta, evitando quedar "atado" a un solo proveedor tecnológico.
+      1. El Data Center como el Core: En este entorno moderno, el núcleo de la red deja de ser un grupo de routers gigantes para convertirse en el propio Data Center, donde residen todas las funciones virtualizadas.
+    ▸ ⁠Definir red ATM, ventajas y para que servicios se pensó.
+      La red ATM (Asynchronous Transfer Mode) se define como una tecnología de capa 2 (enlace de datos) del modelo OSI que funciona mediante la conmutación de celdas de tamaño fijo. A diferencia de otros protocolos con tramas variables, ATM utiliza siempre celdas de 53 bytes, de los cuales 48 bytes corresponden a la carga útil (payload) y 5 bytes a la cabecera u overhead.
+      ¿Para qué servicios se pensó?
+      ATM fue diseñado originalmente con la visión de integrar múltiples servicios en una única infraestructura física. Sus objetivos principales fueron:
+      - Integración de voz, datos y video: Fue una de las primeras redes capaces de transportar estos tres tipos de tráfico de forma simultánea y eficiente.
+      - Soporte para tiempo real: Se pensó específicamente para aplicaciones que requieren una entrega constante, como la telefonía (voz) y el video, gracias a su capacidad de priorización.
+      - Red de acceso y transporte: Se utilizó masivamente por operadores de telecomunicaciones entre los años 90 y 2000 como red de acceso para empresas y para interconectar nodos.
+      Ventajas de la red ATM
+      Las principales ventajas que introdujo esta tecnología incluyen:
+      - Calidad de Servicio (QoS) nativa: Fue pionera en ofrecer mecanismos para garantizar el rendimiento según el tipo de tráfico, permitiendo que una celda de voz tuviera prioridad sobre una de datos.
+      - Velocidades superiores: En su momento, manejaba velocidades mucho más altas que tecnologías competidoras como Frame Relay, permitiendo enlaces dedicados de 2 Mbps o superiores.
+      - Eficiencia en el transporte: El tamaño constante de sus celdas optimiza el procesamiento en los equipos de red y facilita la reconstrucción de señales sensibles al retardo en el receptor.
+      - Versatilidad de servicios: Ofrece distintos niveles de garantía de ancho de banda a través de sus categorías de tráfico:
+        - CBR (Constant Bit Rate): Ancho de banda fijo y garantizado para voz y video en tiempo real.
+        - VBR (Variable Bit Rate): Para aplicaciones con tráfico variable pero con ciertos parámetros de tiempo.
+        - ABR (Available Bit Rate): Garantiza un mínimo y permite usar el excedente si la red está disponible.
+        - UBR (Unspecified Bit Rate): El más económico, sin garantías (mejor esfuerzo), ideal para datos no críticos.
+      - Escalabilidad: Permite la creación de múltiples circuitos virtuales (PVC/SVC) sobre un mismo puerto físico, facilitando la administración de diferentes clientes o servicios.
+    ▸ Cobre características uso, las categorías y características, poe
+      La infraestructura de cobre, correspondiente a la Capa 1 (Física), utiliza cables de par trenzado como medio de transmisión principal debido a que es un material económico, flexible y de fácil instalación.
+      Características y Limitaciones Físicas
+      - Construcción: Los hilos de cobre se entrelazan de forma helicoidal para generar un desacoplamiento electromagnético que reduce las interferencias externas y la diafonía (crosstalk).
+      - Diafonía: Es el fenómeno de interferencia electromagnética entre los pares de un mismo cable; se divide técnicamente en NEXT (extremo cercano) y FEXT (extremo lejano).
+      - Distancia: La distancia máxima típica permitida por la norma ANSI/TIA-568 para un canal Ethernet de cobre es de 100 metros. Superar este límite requiere soluciones especiales o fibra óptica, ya que la degradación de la señal es inversamente proporcional al ancho de banda.
+      Tipos de Blindaje
+      El tipo de recubrimiento determina la protección contra el ruido electromagnético en diferentes entornos:
+      - U/UTP (Unshielded): Sin blindaje metálico; es el más común y económico para oficinas o ambientes domésticos controlados.
+      - F/UTP o FTP (Foiled): Contiene una lámina global de aluminio que envuelve los cuatro pares, protegiendo contra interferencias ligeras.
+      - S/FTP (Shielded/Foiled): Posee blindaje individual por cada par y una malla metálica global; es esencial para ambientes industriales críticos con motores o generadores que generan alta inducción magnética.
+      Categorías de Cables
+      Las categorías definen la velocidad de transmisión, la frecuencia y la aplicación recomendada:
+      - Categoría 5e: Estándar para Gigabit Ethernet (1 Gbps) a 100m, aunque está siendo reemplazada por la Cat 6 debido a que sus costos son similares.
+      - Categoría 6: Soporta 1 Gbps a 100m y hasta 10 Gbps en tramos cortos (aprox. 55m); es el estándar actual para aplicaciones corporativas generales.
+      - Categoría 6A: Soporta 10 Gbps a 100m con una frecuencia de 500 MHz; es la opción recomendada para proyectos modernos por su vida útil de 20 a 25 años.
+      - Categoría 7/7A: Trabaja hasta 1000 MHz y 10 Gbps, pero utiliza conectores no estándares (TERA o GG45), lo que limita su adopción en Argentina.
+      - Categoría 8: Ofrece anchos de banda muy superiores (2000 MHz) pero está restringida a una distancia máxima de 30 metros, lo que la hace poco práctica frente a la fibra óptica.
+      PoE (Power over Ethernet)
+      Esta tecnología permite suministrar energía eléctrica y datos de forma simultánea a través del mismo cable de red RJ45. Sus principales ventajas son el ahorro de costos al eliminar fuentes de alimentación locales y la facilidad de gestión desde un switch centralizado.
+      Tipos y Estándares de PoE:
+      1. Tipo 1 (15.4W): Orientado a teléfonos VoIP, controles de acceso básicos y cámaras fijas.
+      1. Tipo 2 (30W): Conocido como PoE+, alimenta cámaras PTZ, lectores biométricos y access points de mayor potencia.
+      1. Tipo 3 (60W): Utilizado para laptops de bajo consumo y sistemas de iluminación inteligente.
+      1. Tipo 4 (90-100W): El estándar más alto, capaz de alimentar pantallas de video, computadoras de escritorio completas y sistemas de videoconferencia complejos.
+      Nota técnica: Si se utilizan cables especiales para extender el alcance de PoE hasta los 250 metros, el ancho de banda disponible cae automáticamente a 10 Mbps, aunque se mantiene la entrega de potencia.
+    ▸ Explicar los protocolos en capa 2, TDM, ATM, Frame relay
+      Los protocolos de Capa 2 (Enlace de Datos) se encargan de establecer la comunicación entre dispositivos controlando la transmisión de datos, detectando errores y gestionando el acceso al medio físico. A continuación, se explican las tecnologías solicitadas según los materiales de la cátedra:
+      1. TDM (Time Division Multiplexing)
+      La multiplexación por división de tiempo es un método que permite compartir un único canal de transmisión entre varios usuarios asignándoles diferentes intervalos o ranuras de tiempo (slots).
+      - Funcionamiento: Cada usuario utiliza la totalidad del ancho de banda del canal, pero solo durante el tiempo que tiene asignado.
+      - Tipos: Puede ser sincrónico (intervalos fijos predefinidos) o asincrónico (asignación dinámica según la demanda de datos).
+      - La trama E1: Es la unidad básica de la jerarquía europea de TDM. Multiplexa 32 intervalos de tiempo de 64 kbps cada uno, entregando un ancho de banda máximo de 2.048 Mbps. Esta tecnología fue la base de las redes digitales de soporte.
+      2. ATM (Asynchronous Transfer Mode)
+      Es una tecnología de conmutación de celdas de tamaño fijo, pionera en ofrecer Calidad de Servicio (QoS) nativa.
+      - Estructura: Utiliza celdas de 53 bytes, de los cuales 48 bytes son de carga útil (payload) y 5 bytes son de encabezado (overhead).
+      - Ventajas: El tamaño constante de sus celdas optimiza el tráfico de voz y datos, permitiendo priorizar servicios sensibles al retardo.
+      - Categorías de tráfico: Ofrece distintos niveles de garantía según la aplicación:
+        - CBR (Constant Bit Rate): Para servicios en tiempo real como voz y video.
+        - VBR (Variable Bit Rate): Para tráfico variable.
+        - ABR (Available Bit Rate): Garantiza un mínimo y permite usar excedentes.
+        - UBR (Unspecified Bit Rate): El más económico, sin garantías (mejor esfuerzo).
+      - Uso: Se utilizó masivamente como red de acceso y transporte para conectar sucursales y cajeros automáticos.
+      3. Frame Relay
+      Es una red de conmutación de tramas de longitud variable, diseñada como una evolución más eficiente del antiguo protocolo X.25.
+      - Características: A diferencia de ATM, sus tramas no son fijas, lo que las hace parecidas a los paquetes IP.
+      - Rendimiento: Manejaba velocidades inferiores a ATM, típicamente circuitos de 64 o 128 kbps, aunque también permitía gestionar clases de servicio para entornos corporativos.
+      - Aplicación: Fue muy utilizada para interconectar redes LAN empresariales y cajeros automáticos antes de la masificación total de IP. Al igual que X.25 y ATM, se basaba en la configuración de Circuitos Virtuales Permanentes (PVC).
+      Comparativa Resumida
+        TDM | Frame Relay | ATM | Característica
+        Ranura de tiempo (Slot) | Trama variable | Celda fija (53 bytes) | Unidad de datos
+        2 Mbps (E1) | 64 - 128 kbps | Superior (2 Mbps o más) | Velocidad típica
+        No (basado en clock) | Sí (limitado) | Sí (CBR, VBR, etc.) | QoS Nativo
+        Multiplexación | Conmutación de tramas | Conmutación de celdas | Naturaleza
+    ▸ Monomodo vs multimodo. Usos y aplicaciones. OM4 vs OM5
+      La principal diferencia entre la fibra óptica monomodo y multimodo radica en su construcción física, la forma en que transmiten la luz y las distancias que pueden cubrir.
+      1. Monomodo vs. Multimodo
+      - Construcción y Núcleo:
+        - La fibra monomodo (OS2) tiene un núcleo muy pequeño, de aproximadamente 9 micrones.
+        - La fibra multimodo (OM3, OM4, OM5) tiene un núcleo considerablemente más grande, típicamente de 50 micrones.
+      - Modo de Transmisión:
+        - En la monomodo, la luz viaja como un único haz láser continuo y uniforme, lo que evita la dispersión de la señal.
+        - En la multimodo, la señal se retransmite rebotando y refractando en varios modos dentro del núcleo de vidrio.
+      - Alcance y Distancia:
+        - La monomodo está diseñada para distancias largas (kilómetros), pudiendo alcanzar hasta 40 km sin necesidad de repetidores.
+        - La multimodo es para distancias cortas, con un alcance máximo de aproximadamente 550 metros (en categorías como OM4).
+      2. Usos y Aplicaciones
+      - Fibra Monomodo: Se utiliza mayoritariamente en redes de transporte, backbones de operadores, cables submarinos y para interconectar sedes o edificios que están separados por varios kilómetros (por ejemplo, enlaces de 8 km o 12 km).
+      - Fibra Multimodo: Es el estándar para redes de área local (LAN), aplicaciones empresariales internas y, fundamentalmente, para la conectividad de corto alcance dentro de los Centros de Datos (Data Centers), conectando servidores y switches.
+      3. OM4 vs. OM5 (Wideband Multimode Fiber)
+      Ambas son fibras multimodo con núcleo de 50 micrones, pero presentan diferencias tecnológicas clave:
+      - Capacidad de Longitudes de Onda:
+        - OM4: Opera típicamente en una sola longitud de onda (850 nm).
+        - OM5: Está optimizada para la multiplexación por división de longitud de onda corta (SWDM4), lo que le permite enviar cuatro longitudes de onda (entre 850 nm y 940 nm) por un solo hilo de fibra.
+      - Rendimiento y Alcance:
+        - OM5 ofrece un alcance superior en ciertas aplicaciones de alta velocidad; por ejemplo, soporta hasta 150 metros frente a los 100 metros de la OM4 en configuraciones específicas.
+        - OM5 es más eficiente para soportar las nuevas demandas de ancho de banda en centros de datos modernos (400 GB, 800 GB y hasta 1.6 TB) al permitir más tráfico por el mismo hilo físico.
+      - Recomendación de Diseño: En proyectos nuevos de centros de datos, se prefiere OM5 sobre OM4 si la diferencia de costo es pequeña (aprox. 10%), debido a su mayor tolerancia a distancias largas y su mejor soporte para tecnologías de modulación modernas.
+    ▸ Desarrolla acerca del estándar Ethernet 802.3 detallando capa en la que trabaja y sus velocidades de transmisión.
+      El estándar Ethernet 802.3, desarrollado por la IEEE, es el protocolo fundamental que rige el funcionamiento de las redes de área local (LAN) cableadas. A continuación, se detallan sus niveles de operación y capacidades de transmisión según el material de estudio:
+      Capas en las que trabaja
+      Dentro del modelo de referencia OSI, Ethernet opera simultáneamente en las dos capas inferiores:
+      - Capa 2 (Enlace de Datos): Es su ámbito principal de control. Aquí se encarga del direccionamiento físico mediante el uso de direcciones MAC (Media Access Control), que son identificadores hexadecimales únicos grabados en cada tarjeta de red. También gestiona el acceso al medio y la detección de errores en la transmisión.
+      - Capa 1 (Física): Define las especificaciones eléctricas y mecánicas de los medios de transmisión, como los niveles de tensión, la duración de los pulsos binarios y los tipos de conectores (principalmente el RJ45).
+      - En el modelo práctico TCP/IP, ambas funciones se agrupan en una única capa denominada Acceso a la Red.
+      Velocidades de transmisión y estándares
+      El estándar ha evolucionado para soportar una amplia gama de velocidades sobre diferentes medios físicos (cobre y fibra óptica):
+      1. Ethernet (10 Mbps): Definido como el estándar 10Base-T, utiliza cables de par trenzado para transmisiones básicas.
+      1. Fast Ethernet (100 Mbps): El estándar 100Base-TX permitió masificar esta velocidad en entornos corporativos.
+      1. Gigabit Ethernet (1,000 Mbps / 1 Gbps): Es el estándar común actual en la mayoría de las oficinas. Requiere interfaces 1000Base-T sobre cables de Categoría 6 para alcanzar los 100 metros de distancia.
+      1. 10 Gigabit Ethernet (10 Gbps): Estándar de alta velocidad recomendado para proyectos modernos. Para llegar a los 100 metros sobre cobre, es indispensable utilizar cables de Categoría 6A; con Categoría 6 común, la distancia se limita a unos 55 metros.
+      1. Altas velocidades en Data Centers: Ethernet ha escalado a capacidades de 40 Gbps (40Gbase-LR4), 100 Gbps, 400 Gbps y hasta 800 Gbps, utilizando interfaces ópticas de tipo SFP o conectores multifibra como el MPO/MTP.
+      En las redes modernas de centros de datos, se observa una tendencia hacia velocidades superiores a 1 Tbps, con proyecciones de alcanzar los 6.4 Tbps para el año 2028.
+# Practica para el Integrador
+  ### BLOQUE 1: MPLS (Multiprotocol Label Switching)
+    ▸ ¿Qué es MPLS y cuáles son sus siglas?
+      - MPLS significa Multiprotocol Label Switching (Conmutación de etiquetas multiprotocolo). 
+      - Es una tecnología de transporte de datos diseñada para combinar la velocidad de reenvío de la Capa 2 (basada en etiquetas) con la capacidad de toma de decisiones del enrutamiento IP de la Capa 3.
+    ▸ ¿Cuáles son los componentes clave de la arquitectura MPLS (CE.PE.P)?
+      La arquitectura se divide principalmente en tres tipos de dispositivos:
+      1. CE (Customer Edge): Es el router o switch del cliente situado en sus instalaciones.
+      1. PE (Provider Edge): Es el router de borde del proveedor que recibe el tráfico del cliente, le asigna la etiqueta y lo introduce en la red troncal.
+      1. P (Provider) Router: Son los routers del núcleo (backbone) que conmutan los paquetes basándose únicamente en las etiquetas, sin mirar la dirección IP.
+    ▸ ¿Qué es una etiqueta (Label) en MPLS y cuánto mide su encabezado?
+      - La etiqueta es un identificador de camino que se añade al paquete IP al ingresar a la red. 
+      - El encabezado MPLS completo mide 32 bits (4 bytes) y se inserta entre las cabeceras de Capa 2 y Capa 3.
+    ▸ ¿Cuáles son los cuatro campos que componen la cabecera MPLS (L.E.S.T)?
+      1. Label (20 bits): El identificador del camino o tag.
+      1. EXP (3 bits): Campo experimental utilizado para definir el nivel de Calidad de Servicio (QoS).
+      1. S (Stack - 1 bit): Indica si es la última etiqueta de la pila (1) o si hay más etiquetas debajo (0).
+      1. TTL (8 bits): "Time to Live", funciona igual que en IP para evitar bucles infinitos.
+    ▸ ¿Qué significan los términos LDP y FEC?
+      - LDP (Label Distribution Protocol): Es el protocolo encargado de distribuir las etiquetas entre los routers del backbone para establecer las conexiones. 
+      - FEC (Forwarding Equivalence Class): Es un grupo de paquetes que la red trata de la misma manera (por tener el mismo destino o prioridad), asignándoles la misma etiqueta al entrar.
+    ▸ ¿Qué es una VRF (Virtual Routing and Forwarding) y cuál es su importancia?
+      - La VRF permite crear múltiples instancias de tablas de enrutamiento independientes dentro de un mismo router físico. 
+      - Es fundamental para los proveedores porque permite aislar el tráfico de distintos clientes; por ejemplo, el Cliente A y el Cliente B pueden usar el mismo rango de IPs privadas en sus redes sin que haya conflictos o se vean entre sí dentro del backbone del operador.
+    ▸ ¿Cómo funciona el proceso de conmutación de etiquetas (Label Switching)?
+      1. Cuando un paquete IP entra a la red, el router PE analiza la IP de destino y le pone una etiqueta. 
+      1. Los routers internos (P) no miran la dirección IP; simplemente consultan su tabla de etiquetas, reemplazan la etiqueta actual por una nueva y envían el paquete al siguiente salto. 
+      1. Antes de salir de la red del proveedor, el último router de núcleo (P) o el PE de salida retira la etiqueta para que el paquete vuelva a ser un datagrama IP estándar.
+    ▸ ¿Cuál es la diferencia entre una L2VPN (Layer 2 VPN) y una L3VPN?
+      - En una L2VPN (o Pseudowire), el proveedor extiende la red de Capa 2 del cliente de forma transparente (como un "cable largo"), permitiendo transportar protocolos que no usan IP o extender la misma VLAN entre sedes sin enrutamiento. 
+      - En una L3VPN, el proveedor participa en el ruteo IP del cliente; cada sede tiene su propio entorno IP y el proveedor gestiona el intercambio de rutas mediante protocolos como BGP.
+    ▸ ¿Cuáles son las principales ventajas del uso de MPLS (V.C.I.V)?
+      1. Velocidad: Es más eficiente conmutar por etiquetas fijas que procesar tablas de ruteo IP complejas en cada salto.
+      1. Calidad de Servicio (QoS): Permite priorizar tráfico crítico como voz o video sobre datos comunes.
+      1. Ingeniería de Tráfico: Permite definir rutas óptimas y evitar congestiones en puntos específicos de la red.
+      1. VPNs: Facilita la creación de redes privadas virtuales sobre infraestructura pública con alta seguridad.
+    ▸ ¿Qué es el "Penultimate Hop Popping" (PHP)?
+      - Es un proceso donde el penúltimo router del núcleo (P) retira la etiqueta antes de entregar el paquete al router PE de salida. 
+      - Esto se hace para ahorrarle al router PE el trabajo de procesar la etiqueta y hacer una búsqueda innecesaria, permitiéndole entregar el paquete IP directamente al cliente de forma más rápida.
+  ### BLOQUE 2: Redes de Acceso por Radio (RAN)
+    ▸ ¿Qué significan las siglas RAN y cuál es su función principal?
+      - RAN significa Radio Access Network (Red de Acceso por Radio). 
+      - Su función principal es actuar como la red de acceso inalámbrico que conecta los dispositivos terminales (teléfonos inteligentes, dispositivos IoT) con el núcleo (core) de la red del operador, gestionando los recursos de radio, el control de interferencias y garantizando la Calidad de Servicio (QoS).
+    ▸ ¿Cuáles son los componentes físicos básicos de una estación base en la RAN?
+      Los componentes fundamentales son la RRU (Remote Radio Unit), que se encarga de convertir la señal analógica del aire en digital, y la BBU (Baseband Unit), donde se procesa la banda base, incluyendo funciones de codificación, decodificación y modulación.
+    ▸ Explique brevemente la evolución de las generaciones móviles (1G a 5G).
+      - 1G: Telefonía celular analógica. 
+      - 2G: Digitalización de la voz y aparición del SMS (protocolos TDMA/CDMA). 
+      - 3G: Introducción masiva de la comunicación de datos. 
+      - 4G/LTE: Evolución a largo plazo con altas velocidades de datos y enfoque en banda ancha móvil. 
+      - 5G: Nueva generación orientada a ultra alta velocidad, bajísima latencia y conexión masiva de dispositivos IoT.
+    ▸ ¿Qué es la modulación QPSK y en qué consiste?
+      - Es una modulación por desplazamiento de fase (PSK) donde la información se transmite mediante cambios en la fase de la señal portadora. 
+      - Permite representar estados binarios mediante diferentes desfases (ej. -135°, -45°, etc.), lo que ayuda en la corrección y detección de errores en el medio físico.
+    ▸ ¿Cómo se estructura la pila de protocolos de la RAN en relación al modelo OSI?
+      La estructura se divide en tres niveles principales:
+      1. Capa Física (Equivalente a Capa 1): Maneja la transmisión y recepción de datos brutos.
+      1. Capa de Enlace (Equivalente a Capa 2): Incluye los subniveles MAC (asigna recursos), RLC (rearma datos) y PDCP (maneja cifrado y cabeceras).
+      1. Capa de Red (Equivalente a Capa 3): Utiliza el protocolo RRC para gestionar la señalización y el enlace entre el dispositivo y la red.
+    ▸ ¿Cuál es la diferencia entre D-RAN y C-RAN?
+      - La D-RAN (Distributed RAN) separa físicamente la unidad de radio (arriba en la torre) de la unidad de banda base (en la base). 
+      - La C-RAN (Cloud RAN) centraliza múltiples BBUs en un "pool" o nube para optimizar recursos y dar servicio a varias antenas de forma simultánea, mejorando la eficiencia y escalabilidad.
+    ▸ ¿En qué consiste el concepto de Open RAN?
+      El Open RAN busca la interoperabilidad multivendor, permitiendo que los operadores utilicen hardware y software de distintos fabricantes en una misma estación base, rompiendo la dependencia de un único proveedor propietario.
+    ▸ ¿Qué es la vRAN y cómo se relaciona con la virtualización?
+      La vRAN (Virtual RAN) es la evolución donde las funciones de la BBU se virtualizan como software (BNFs) que corre sobre hardware estándar (servidores X86 o Risk). Esto permite sustituir equipos propietarios costosos por plataformas ágiles y flexibles basadas en software.
+    ▸ ¿Qué diferencias existen entre 5G y LoraWAN para aplicaciones de IoT?
+      - El 5G está diseñado para alta capacidad, cobertura amplia en frecuencias licenciadas y aplicaciones que requieren alta velocidad. 
+      - LoraWAN es un protocolo complementario para áreas remotas o sin cobertura, optimizado para enviar ráfagas pequeñas de datos con un consumo de batería bajísimo (años de duración) en frecuencias no licenciadas.
+    ▸ ¿Cuál es la distinción técnica entre Lora y LoraWAN?
+      Lora se refiere a la tecnología física de radiofrecuencia (capa de abajo), mientras que LoraWAN es el protocolo de red y transporte (capas superiores) que gestiona la comunicación y la arquitectura entre sensores, gateways y servidores.
+    ▸ ¿Cómo se vislumbra el futuro con la llegada de la tecnología 6G?
+      El 6G se proyecta como una red totalmente integrada en la nube y con soporte satelital, orientada a la comunicación máquina a máquina (M2M) sin intervención humana, permitiendo la integración masiva de aplicaciones críticas e inteligencia artificial embebida.
+    ▸ ¿Qué es el Edge Computing y por qué es vital para 5G/IoT?
+      - Es la capacidad de realizar el procesamiento de datos en el borde de la red, lo más cerca posible de la fuente (sensor o cámara). 
+      - Es vital para aplicaciones en tiempo real (como semáforos inteligentes o cirugía remota) porque reduce drásticamente la latencia al no tener que enviar todo el tráfico a un data center central.
+  ### BLOQUE 3: Tecnologías Wi-Fi (WLAN)
+    ▸ ¿Qué es Wi-Fi y bajo qué estándar se rige?
+      - Wi-Fi es una tecnología de red de acceso inalámbrica basada en el estándar IEEE 802.11. 
+      - Utiliza ondas de radio como medio de transmisión para conectar dispositivos en distancias acotadas, generalmente dentro de entornos reducidos de no más de 100 metros.
+    ▸ ¿Qué es la Wi-Fi Alliance y cuál es su importancia?
+      - Es una corporación global sin fines de lucro encargada de certificar los estándares de la tecnología. 
+      - Su función es asegurar la interoperabilidad entre distintos fabricantes, la seguridad y el desarrollo de programas de certificación para las nuevas generaciones de Wi-Fi.
+    ▸ Explique los parámetros SNR y RSSI para medir la calidad de la red.
+      - El SNR (Signal to Noise Ratio) es la relación entre la potencia de la señal y el ruido de fondo; un valor alto indica mayor calidad de transmisión. 
+      - El RSSI (Received Signal Strength Indicator) mide la potencia de la señal recibida por un dispositivo, expresada en decibelios (dBm).
+    ▸ ¿Cuál ha sido la evolución de Wi-Fi desde la versión 4 hasta la 7?
+      - Wi-Fi 4 (802.11n): Lanzado en 2009, es dual band (2.4 y 5 GHz) y alcanza hasta 450 Mbps.
+      - Wi-Fi 5 (802.11ac): Opera en 5 GHz con velocidades de hasta 7 Gbps.
+      - Wi-Fi 6/6E (802.11ax): Introdujo la banda de 6 GHz (en la versión 6E) y velocidades de hasta 9.6 Gbps.
+      - Wi-Fi 7 (802.11be): Es la última evolución, operando en 2.4, 5 y 6 GHz con capacidades de hasta 46 Gbps.
+    ▸ ¿Qué significan las configuraciones de antena como 2x2 o 4x4?
+      - Se refieren al número de canales de transmisión y recepción por antena en sistemas MIMO. 
+      - Por ejemplo, una configuración 4x4 significa que el dispositivo cuenta con cuatro antenas transmisoras y cuatro receptoras, lo que aumenta la capacidad de tráfico.
+    ▸ Compare las bandas de 2.4 GHz, 5 GHz y 6 GHz.
+      - La banda de 2.4 GHz ofrece mayor alcance y penetración de obstáculos, pero tiene menos canales y más interferencia. 
+      - La de 5 GHz tiene más canales y velocidad, pero menor alcance. 
+      - La banda de 6 GHz es para tecnologías modernas (Wi-Fi 6E y 7), permitiendo altísimas velocidades para video 8K y streaming masivo.
+    ▸ ¿Qué es la tecnología Beamforming y cómo mejora la conexión?
+      - Es una técnica de formación de haces que ajusta la fase de las antenas para focalizar la energía directamente hacia el dispositivo receptor en lugar de irradiar en todas direcciones. 
+      - Esto mejora la cobertura, reduce las interferencias y aumenta la estabilidad del enlace.
+    ▸ ¿Qué establece la norma TIA TSB-162A para el diseño de infraestructura Wi-Fi?
+      - Recomienda diseñar celdas de cobertura de 18.3 m² (60 pies cuadrados). 
+      - Cada celda debe tener un punto de red central alimentado por dos cables Categoría 6A (para redundancia y 10 Gbps) y el cable final desde la boca de red al Access Point (AP) no debe superar los 13 metros.
+    ▸ ¿Cómo se determina el número de Access Points (WAP) según la cantidad de usuarios?
+      La norma sugiere una escala basada en la concurrencia: de 1 a 25 usuarios basta con un AP; de 26 a 50 se requieren dos; de 51 a 75 se necesitan tres; y para entornos de alta densidad de hasta 500 personas, se precisan 21 APs.
+    ▸ ¿Qué es el concepto BYOD y qué impacto tiene en la planificación?
+      - BYOD (Bring Your Own Device) es la tendencia de los empleados de llevar sus propios dispositivos a la oficina. 
+      - Esto implica que cada persona puede conectar varios equipos (móvil, tablet, laptop), aumentando la densidad de dispositivos concurrentes y obligando a un diseño de red más robusto.
+    ▸ ¿Qué consideraciones existen para la conectividad de IoT en Wi-Fi?
+      Para dispositivos de Internet de las cosas que requieren bajo consumo de batería (que debe durar años) y mayor alcance con ráfagas pequeñas de datos, se utilizan tecnologías como Wi-Fi HaLow (operando bajo 1 GHz) o protocolos de red como LoraWAN.
+  ### BLOQUE 4: IoT y Evolución Tecnológica
+    ▸ ¿Qué es el IoT y cuál es su principal motor de crecimiento actual?
+      - El IoT (Internet of Things) se refiere a la capacidad de conectar billones de dispositivos a la red para el intercambio de información. 
+      - Aunque el concepto de sensorizado tiene décadas, su crecimiento actual se debe a la masificación de la conectividad y a la capacidad de integrar estos sensores directamente a internet mediante el protocolo TCP/IP.
+    ▸ ¿Cuál es la diferencia fundamental entre el IoT de consumo y el IoT Industrial (IIoT)?
+      - El IoT de consumo se enfoca en dispositivos cotidianos como heladeras o lavarropas inteligentes. 
+      - El IIoT (IoT Industrial) se aplica a procesos de fabricación y control, donde sensores de temperatura o caudalímetros que antes usaban protocolos propietarios ahora se integran a la red corporativa bajo un estándar unificado de capa física Ethernet e IP.
+    ▸ ¿Cómo funciona un sistema de Edge Computing en una Smart City? Un ejemplo práctico.
+      - En un semáforo inteligente, la cámara captura la imagen de una patente, pero no transmite la foto completa a la central. 
+      - El dispositivo de borde (Edge) posee poder de cómputo para procesar la imagen localmente, extraer solo el número de patente y la infracción, y enviar únicamente esos datos mínimos (en formato ASCII) al sistema central.
+    ▸ ¿Qué es el Fog Computing y qué rol cumple en la jerarquía de red?
+      - El Fog Computing (computación en la niebla) es un modelo híbrido que se sitúa entre el Edge y el Cloud. 
+      - Se utiliza para aplicaciones que no requieren una respuesta inmediata en microsegundos (tiempo real extremo), pero que tampoco deben viajar hasta el data center central, permitiendo una optimización del ancho de banda y del recurso de cómputo intermedio.
+    ▸ ¿Cómo se comparan el Cloud, el Fog y el Edge en términos de tráfico y aplicaciones?
+      - El Cloud maneja aproximadamente el 20-25% del tráfico total y se reserva para aplicaciones corporativas no críticas en tiempo real, como facturadores o CRMs. 
+      - El Edge y el Fog manejan el 75-80% restante del tráfico, enfocándose en la periferia de la red y en aplicaciones que requieren baja latencia o procesamiento local masivo.
+    ▸ ¿Qué impacto tiene la convergencia IP en la Industria 4.0?
+      - La Industria 4.0 se basa en la unificación de la red LAN corporativa con la red industrial. 
+      - Antiguamente, las máquinas usaban redes aisladas con protocolos propietarios; hoy, dispositivos como transmisores de presión tienen puertos Ethernet y direcciones IP, permitiendo un gerenciamiento integral basado en software.
+    ▸ ¿Qué aplicaciones prácticas del IoT están transformando las ciudades y edificios?
+      - Las aplicaciones incluyen Smart Cities con semáforos inteligentes y gestión de residuos, así como la domótica en edificios inteligentes para control de acceso, seguridad biométrica y medidores inteligentes de agua, gas y electricidad. 
+      - Estos últimos permiten que las empresas de servicios conozcan el consumo del usuario en tiempo real sin necesidad de un operador físico.
+  ## Anexo: Preguntas de final
+    ▸ Explicar conceptos de RAN y V-RAN en el modelo PSK
+      - RAN (Radio Access Network): Es la red de acceso inalámbrico que conecta dispositivos terminales (celulares, IoT) con el núcleo o core del operador. Su función es gestionar los recursos de radio, controlar interferencias y garantizar la Calidad de Servicio (QoS).
+      - V-RAN (Virtual RAN): Es la evolución de la RAN tradicional donde las funciones de la unidad de banda base (BBU) se virtualizan mediante software (BNFs) sobre hardware estándar (servidores X86 o Risk). Esto permite un escalamiento ágil y el uso de múltiples proveedores (interoperabilidad).
+      - Modelo PSK (Phase Shift Keying): Es la forma de modulación por desplazamiento de fase que utiliza la RAN para transmitir información digital. Consiste en variar la fase de la señal portadora para representar estados binarios (ceros y unos); por ejemplo, el QPSK permite representar cuatro estados (00, 01, 10, 11) mediante desfases específicos, optimizando la corrección de errores en el medio físico.
+    ▸ Explicar brevemente la evolución de Wifi y comparar Wifi 4,5,6
+      2. Evolución y Comparativa de Wi-Fi 4, 5 y 6
+      La tecnología Wi-Fi ha evolucionado bajo el estándar IEEE 802.11, certificada por la Wi-Fi Alliance para asegurar la interoperabilidad.
+      - Wi-Fi 4 (802.11n): Lanzado hacia 2009, fue el primero en ser Dual Band (2.4 y 5 GHz), alcanzando velocidades de hasta 450 Mbps.
+      - Wi-Fi 5 (802.11ac): Opera principalmente en la banda de 5 GHz, elevando la capacidad hasta 7 Gbps. Introdujo de forma estandarizada la tecnología Beamforming para focalizar la energía hacia el receptor.
+      - Wi-Fi 6 (802.11ax): Diseñado para alta eficiencia y densidad, opera en 2.4 y 5 GHz alcanzando 9.6 Gbps. Utiliza modulaciones más complejas como 1024-QAM y sistemas MIMO de hasta 4x4 para manejar múltiples dispositivos simultáneos.
+    ▸ Explicar el concepto de Orquestación y IAAS
+      - Orquestación: Es la capa de software (orquestador) encargada de automatizar y administrar el ciclo de vida de las máquinas virtuales y funciones de red (BNFs). Permite mover aplicaciones en caliente entre servidores físicos sin interrumpir el servicio, garantizando la alta disponibilidad y el cumplimiento del SLA.
+      - IaaS (Infrastructure as a Service): Es un modelo de servicio en la nube donde el proveedor entrega los recursos fundamentales de computación (servidores, almacenamiento y redes) como un servicio bajo demanda. Esto permite a las empresas pasar de un modelo de inversión inicial (CAPEX) a uno de gasto operativo mensual (OPEX).
+    ▸ Explicar las diferencias entre las redes TX SDH y Sonet
+      Ambas son jerarquías digitales sincrónicas para el transporte de datos sobre fibra óptica, diferenciándose principalmente por su origen geográfico y nomenclatura:
+      - SDH (Synchronous Digital Hierarchy): Es el estándar europeo e internacional (adoptado en Argentina por empresas como Telecom). Su unidad básica es el STM-1 (155.52 Mbps) y escala en múltiplos de cuatro (STM-4, STM-16, etc.).
+      - SONET (Synchronous Optical Network): Es el estándar americano (EE. UU. y Canadá). Utiliza niveles OC (Optical Carrier), donde el OC-3 (155.52 Mbps) es equivalente al STM-1 de la norma europea.
+      - Tramos de Acceso: En la jerarquía de menor nivel, una trama E1 (europea) transporta 2 Mbps (32 canales), mientras que una T1 (americana) transporta 1.5 Mbps (24 canales).
+    ▸ Explicar Hamming y un ejemplo practico.
+      El código de Hamming es un método de codificación que permite no solo detectar un error en un bit, sino también identificar su posición exacta y corregirlo de forma automática en el receptor. A diferencia de la paridad simple, que solo advierte que algo llegó mal, Hamming otorga la capacidad de reconstruir el mensaje sin necesidad de solicitar una retransmisión al emisor.
+      Este sistema se basa en las siguientes premisas y reglas:
+      - Probabilidad de error: Se asume que, debido a la baja probabilidad de error de bit en las redes modernas, como mucho habrá un error en un único bit por cada palabra transmitida.
+      - Bits de redundancia (K): Se agregan bits extras al mensaje original (M). La cantidad de bits K necesarios debe cumplir con la desigualdad ⁍, donde M es la cantidad de bits de información.
+      - Posicionamiento: Los bits de redundancia (K) se ubican obligatoriamente en posiciones que sean potencias de 2 (1, 2, 4, 8, etc.), mientras que los bits del mensaje (M) ocupan los espacios restantes.
+      --------------------------------------------------------------------------------
+      Ejemplo Práctico: Transmisión de 4 bits
+      1. Configuración en el Transmisor (TX)
+      Si queremos transmitir 4 bits de información (⁍), necesitaremos 3 bits de redundancia (⁍), ya que ⁍ (es decir, 8=8). La palabra final tendrá 7 bits dispuestos así:
+      - Posición 1: ⁍ (Redundancia)
+      - Posición 2: ⁍ (Redundancia)
+      - Posición 3: ⁍ (Mensaje)
+      - Posición 4: ⁍ (Redundancia)
+      - Posición 5: ⁍ (Mensaje)
+      - Posición 6: ⁍ (Mensaje)
+      - Posición 7: ⁍ (Mensaje)
+      Para calcular los valores de ⁍, se utiliza la paridad (operación XOR) de los bits de mensaje que contienen esa potencia de 2 en su índice binario:
+      - K1 se calcula con: ⁍
+      - K2 se calcula con: ⁍
+      - K4 se calcula con: ⁍
+      Supongamos que el mensaje es 0001 (M3=0,M5=0,M6=0,M7=1):
+      - ⁍
+      - ⁍
+      - ⁍
+      - Palabra transmitida: ⁍
+      2. Recepción con Error (RX)
+      Imagina que durante la transmisión ocurre una interferencia y el receptor recibe: 1101101.
+      - Si comparamos con la original (1101001), vemos que el bit en la posición 5 cambió de 0 a 1.
+      3. Detección y Corrección
+      El receptor, que no conoce el mensaje original, recalcula la paridad (P) realizando un XOR entre el bit K recibido y los bits de mensaje correspondientes:
+      - ⁍
+      - ⁍
+      - ⁍
+      Si los resultados de P fueran todos cero, no habría error. En este caso, el resultado es la terna ⁍.
+      - El número binario 101 equivale al 5 en decimal.
+      - Conclusión: El error está exactamente en el bit de la posición 5. El receptor simplemente invierte ese bit y obtiene el mensaje correcto original.
+    ▸ Describir resumidamente el modelo OSI y compararlo con el de TCP/IP
+      El Modelo OSI (Open System Interconnection) es un modelo conceptual y teórico de 7 capas creado por la Organización Internacional de Normalización (ISO) para permitir que diversos sistemas de comunicación se conecten mediante protocolos estándar. Sus capas se organizan de forma abstracta, donde cada una cumple una función específica dependiente de la inferior: Física (transmisión de bits), Enlace de Datos (direccionamiento físico/MAC), Red (enrutamiento e IP), Transporte (conexiones extremo a extremo), Sesión (administración de comunicación entre hosts), Presentación (formato y cifrado de datos) y Aplicación (interfaz con protocolos como HTTP o SMTP).
+      Al comparar ambos esquemas, se destaca que el modelo TCP/IP es la versión práctica y real utilizada en internet, simplificando la estructura a solo 4 capas. La comparativa técnica entre ellos es la siguiente:
+      - Acceso a la Red (TCP/IP): Esta capa agrupa las funciones de las capas Física y de Enlace de Datos del modelo OSI, abarcando desde los medios de transmisión (cables, fibra) hasta el direccionamiento físico de las tarjetas de red.
+      - Internet (TCP/IP): Equivale directamente a la capa de Red de OSI; su función principal es el direccionamiento lógico y el enrutamiento de paquetes de datos.
+      - Transporte (TCP/IP): Se mantiene idéntica a la capa de Transporte de OSI, gestionando la entrega de datos y el control de flujo mediante protocolos como TCP (confiable) y UDP (no orientado a conexión).
+      - Aplicación (TCP/IP): Esta capa única consolida las tres capas superiores de OSI (Sesión, Presentación y Aplicación), integrando la gestión de diálogos, el formato de representación de datos y los protocolos de usuario final.
+    ▸ Explicar el protocolo de enrutamiento BGP y establecer una breve comparativa con OSPF.
+      El protocolo BGP (Border Gateway Protocol) es el estándar de enrutamiento dinámico utilizado para la interconexión de redes a nivel global. Se define técnicamente como un protocolo de "borde" que permite que diferentes Sistemas Autónomos (AS) se comuniquen entre sí, haciendo posible el enrutamiento del tráfico en toda la infraestructura de Internet. Por ejemplo, en nuestro TP (red WAN para la cadena de supermercados), se implementó eBGP para negociar las rutas entre los routers CE (Customer Edge) de cada sucursal y los routers PE (Provider Edge) del proveedor de servicios (Claro/Telecom).
+      Funcionalidades del protocolo BGP
+      - Interconexión de Sistemas Autónomos: Su función principal es permitir que entidades con políticas de ruteo propias (como carriers, grandes empresas o universidades) intercambien información de alcanzabilidad.
+      - Gestión de Tránsito y Peering: Se utiliza para anunciar bloques de direcciones IP públicas entre proveedores y clientes en servicios de Tránsito IP, o para intercambiar rutas de forma directa en acuerdos de Peering.
+      - Plano de Control: Dentro de la arquitectura de red, BGP opera en el plano de control, encargándose de la lógica necesaria para construir las tablas de ruteo que luego utilizará el plano de datos para mover los paquetes.
+      - Escalabilidad Global: Gracias a BGP, los routers pueden aprender y actualizar automáticamente las mejores rutas hacia destinos internacionales, adaptándose a cambios o fallas en la red de forma dinámica.
+      Comparativa: BGP vs. OSPF
+      Ambos son protocolos de enrutamiento dinámico que operan en el plano de control, pero tienen alcances y objetivos muy distintos:
+        Característica | BGP (Border Gateway Protocol) | OSPF (Open Shortest Path First)
+        Tipo de Protocolo | Es el protocolo de ruteo externo estándar (EGP). | Es un protocolo de ruteo interno (IGP).
+        Ámbito de Aplicación | Se usa para conectar diferentes Sistemas Autónomos entre sí a nivel global. | Se usa para el intercambio de rutas dentro de una misma red o Sistema Autónomo.
+        Función Principal | Establece cómo las redes de distintos dueños (ej. Telecom y Verizon) intercambian tráfico. | Determina el camino más corto y eficiente entre routers internos de una corporación.
+        Complejidad | Enfocado en la aplicación de políticas de tráfico y acuerdos comerciales (SLA). | Enfocado en la velocidad de convergencia interna.
+      En resumen, mientras que OSPF se encarga de la "inteligencia" interna de una red para que los paquetes sepan cómo moverse entre sus propios nodos, BGP es la herramienta que une todas esas redes individuales para formar la red global de Internet.
+    ▸ Describa funcionalidades y protocolo de una red MPLS, ¿Para que tipos de servicios la utilizarlas?
+      La red MPLS (Multiprotocol Label Switching) es una tecnología de conmutación de etiquetas que actúa entre las capas 2 (enlace de datos) y 3 (red) del modelo OSI. Su funcionamiento principal consiste en asignar etiquetas a los paquetes de datos al ingresar a la red, permitiendo que los routers internos tomen decisiones de reenvío basadas únicamente en dichas etiquetas, sin necesidad de examinar la dirección IP de destino en cada salto.
+      Funcionalidades y Protocolo
+      - Proceso de etiquetado: El ruteo se vuelve más ágil ya que, una vez que el paquete entra en el borde de la red (en el router llamado LER - Label Edge Router), se le añade una etiqueta. Dentro del núcleo de la red, los routers (denominados LSR - Label Switching Router) simplemente conmutan el tráfico siguiendo el camino predefinido por la etiqueta (LSP - Label Switched Path).
+      - Estructura del encabezado: El encabezado MPLS tiene un tamaño de 4 bytes y se sitúa entre el encabezado de la capa de enlace y el encabezado IP. Contiene:
+        - Etiqueta (20 bits): El identificador del camino.
+        - Experimental/CoS (3 bits): Utilizados para gestionar la Calidad de Servicio (QoS) y priorizar tráfico.
+        - Pila (1 bit): Indica si hay más etiquetas en el paquete.
+        - TTL (8 bits): Tiempo de vida del paquete para evitar bucles.
+      - Independencia de protocolo: Puede transportar diversos protocolos de capa 3, como IPv4, IPv6, o incluso montarse sobre tecnologías de capa 2 como ATM o Frame Relay, dándoles una jerarquía de ruteo superior.
+      Servicios y Aplicaciones
+      MPLS es ideal para los siguientes tipos de servicios debido a su eficiencia y capacidad de gestión de tráfico:
+      1. Redes Privadas Virtuales (VPN MPLS): Permite a los proveedores utilizar una infraestructura pública compartida para crear redes privadas seguras para empresas, conectando múltiples sucursales de forma transparente como si fuera una red propia.
+      1. Calidad de Servicio (QoS): Al permitir la priorización de paquetes mediante los bits de CoS, es la tecnología preferida para servicios sensibles a la latencia y al jitter, como la voz sobre IP (VoIP) y la videoconferencia.
+      1. Ingeniería de Tráfico: Facilita la administración de los caminos que siguen los datos dentro de la red de un carrier, optimizando el uso de los recursos y evitando la congestión de enlaces específicos.
+      1. Núcleo de Redes de Transporte (Backbone): Es utilizado masivamente por los operadores de telecomunicaciones para interconectar sus nodos principales y gestionar grandes volúmenes de tráfico de forma escalable.
+    ▸ Explicar los componentes de una red MPLS y su funcionamiento de ruteo básico
+      La red MPLS (Multiprotocol Label Switching) es una tecnología de conmutación de etiquetas que actúa entre las capas 2 (enlace) y 3 (red) del modelo OSI. Su función principal es agilizar el tráfico de datos al evitar que cada router de la red tenga que examinar la dirección IP de destino completa en cada salto.
+      Componentes de una red MPLS
+      La arquitectura de una red MPLS se compone de distintos tipos de routers con funciones específicas:
+      - LER (Label Edge Router): Es el router situado en los bordes de la red MPLS. Es el encargado de realizar el etiquetado al ingreso (poner la etiqueta al paquete IP) y el desetiquetado al egreso (quitar la etiqueta antes de entregar el paquete).
+      - LSR (Label Switch Router): Son los routers del núcleo (core) de la red. Su única función es recibir paquetes etiquetados, leer la etiqueta y reenviarlos al siguiente salto basándose en ella.
+      - CE / CPE (Customer Equipment / Premise Equipment): Es el router que se encuentra en las instalaciones del cliente y se conecta a la red del proveedor.
+      - PE (Provider Edge): Es el router del proveedor que conecta directamente con el equipo del cliente (CE).
+      - P (Provider) Router: Son los routers internos del proveedor que no tienen conexión directa con los clientes y funcionan como LSRs.
+      Funcionamiento del ruteo básico
+      El enrutamiento en MPLS no se basa en tablas de IP tradicionales en cada salto, sino en un proceso de conmutación de etiquetas:
+      1. Ingreso y Etiquetado: Cuando un paquete IP entra a la red MPLS, el router de borde (LER/PE) analiza la IP de destino y le añade una etiqueta (label) de 4 bytes en un encabezado especial. Esta etiqueta identifica a qué servicio pertenece el paquete (voz, datos, video) para aplicar políticas de Calidad de Servicio (QoS).
+      1. Tránsito en el Core: Dentro de la red, los routers (LSR/P) no miran la dirección IP. Simplemente observan la etiqueta y, basándose en una tabla predefinida, deciden a qué interfaz enviarlo y qué nueva etiqueta ponerle. Esto define un camino determinado llamado path.
+      1. Egreso: Al llegar al final de la red del proveedor, el router de borde de salida retira la etiqueta y el paquete vuelve a ser un paquete IP estándar para seguir su curso normal.
+      Ventajas de este modelo
+      - Velocidad: La conmutación por etiquetas es mucho más rápida y versátil que el ruteo por IP.
+      - Ingeniería de Tráfico: Permite definir rutas óptimas y manejar prioridades de tráfico de forma eficiente.
+      - VPNs: Facilita la creación de Redes Privadas Virtuales (VPNs) sobre infraestructura pública, permitiendo que una empresa conecte sus sucursales como si fuera una red propia.
+    ▸ Monomodo vs multimodo. Usos y aplicaciones. OM4 vs OM5
+      La principal diferencia entre la fibra óptica monomodo y multimodo radica en su construcción física, la forma en que transmiten la luz y las distancias que pueden cubrir.
+      1. Monomodo vs. Multimodo
+      - Construcción y Núcleo:
+        - La fibra monomodo (OS2) tiene un núcleo muy pequeño, de aproximadamente 9 micrones.
+        - La fibra multimodo (OM3, OM4, OM5) tiene un núcleo considerablemente más grande, típicamente de 50 micrones.
+      - Modo de Transmisión:
+        - En la monomodo, la luz viaja como un único haz láser continuo y uniforme, lo que evita la dispersión de la señal.
+        - En la multimodo, la señal se retransmite rebotando y refractando en varios modos dentro del núcleo de vidrio.
+      - Alcance y Distancia:
+        - La monomodo está diseñada para distancias largas (kilómetros), pudiendo alcanzar hasta 40 km sin necesidad de repetidores.
+        - La multimodo es para distancias cortas, con un alcance máximo de aproximadamente 550 metros (en categorías como OM4).
+      2. Usos y Aplicaciones
+      - Fibra Monomodo: Se utiliza mayoritariamente en redes de transporte, backbones de operadores, cables submarinos y para interconectar sedes o edificios que están separados por varios kilómetros (por ejemplo, enlaces de 8 km o 12 km).
+      - Fibra Multimodo: Es el estándar para redes de área local (LAN), aplicaciones empresariales internas y, fundamentalmente, para la conectividad de corto alcance dentro de los Centros de Datos (Data Centers), conectando servidores y switches.
+      3. OM4 vs. OM5 (Wideband Multimode Fiber)
+      Ambas son fibras multimodo con núcleo de 50 micrones, pero presentan diferencias tecnológicas clave:
+      - Capacidad de Longitudes de Onda:
+        - OM4: Opera típicamente en una sola longitud de onda (850 nm).
+        - OM5: Está optimizada para la multiplexación por división de longitud de onda corta (SWDM4), lo que le permite enviar cuatro longitudes de onda (entre 850 nm y 940 nm) por un solo hilo de fibra.
+      - Rendimiento y Alcance:
+        - OM5 ofrece un alcance superior en ciertas aplicaciones de alta velocidad; por ejemplo, soporta hasta 150 metros frente a los 100 metros de la OM4 en configuraciones específicas.
+        - OM5 es más eficiente para soportar las nuevas demandas de ancho de banda en centros de datos modernos (400 GB, 800 GB y hasta 1.6 TB) al permitir más tráfico por el mismo hilo físico.
+      - Recomendación de Diseño: En proyectos nuevos de centros de datos, se prefiere OM5 sobre OM4 si la diferencia de costo es pequeña (aprox. 10%), debido a su mayor tolerancia a distancias largas y su mejor soporte para tecnologías de modulación modernas.
+    ▸ Explicar los protocolos en capa 2, TDM, ATM, Frame relay
+      Los protocolos de Capa 2 (Enlace de Datos) se encargan de establecer la comunicación entre dispositivos controlando la transmisión de datos, detectando errores y gestionando el acceso al medio físico. A continuación, se explican las tecnologías solicitadas según los materiales de la cátedra:
+      1. TDM (Time Division Multiplexing)
+      La multiplexación por división de tiempo es un método que permite compartir un único canal de transmisión entre varios usuarios asignándoles diferentes intervalos o ranuras de tiempo (slots).
+      - Funcionamiento: Cada usuario utiliza la totalidad del ancho de banda del canal, pero solo durante el tiempo que tiene asignado.
+      - Tipos: Puede ser sincrónico (intervalos fijos predefinidos) o asincrónico (asignación dinámica según la demanda de datos).
+      - La trama E1: Es la unidad básica de la jerarquía europea de TDM. Multiplexa 32 intervalos de tiempo de 64 kbps cada uno, entregando un ancho de banda máximo de 2.048 Mbps. Esta tecnología fue la base de las redes digitales de soporte.
+      2. ATM (Asynchronous Transfer Mode)
+      Es una tecnología de conmutación de celdas de tamaño fijo, pionera en ofrecer Calidad de Servicio (QoS) nativa.
+      - Estructura: Utiliza celdas de 53 bytes, de los cuales 48 bytes son de carga útil (payload) y 5 bytes son de encabezado (overhead).
+      - Ventajas: El tamaño constante de sus celdas optimiza el tráfico de voz y datos, permitiendo priorizar servicios sensibles al retardo.
+      - Categorías de tráfico: Ofrece distintos niveles de garantía según la aplicación:
+        - CBR (Constant Bit Rate): Para servicios en tiempo real como voz y video.
+        - VBR (Variable Bit Rate): Para tráfico variable.
+        - ABR (Available Bit Rate): Garantiza un mínimo y permite usar excedentes.
+        - UBR (Unspecified Bit Rate): El más económico, sin garantías (mejor esfuerzo).
+      - Uso: Se utilizó masivamente como red de acceso y transporte para conectar sucursales y cajeros automáticos.
+      3. Frame Relay
+      Es una red de conmutación de tramas de longitud variable, diseñada como una evolución más eficiente del antiguo protocolo X.25.
+      - Características: A diferencia de ATM, sus tramas no son fijas, lo que las hace parecidas a los paquetes IP.
+      - Rendimiento: Manejaba velocidades inferiores a ATM, típicamente circuitos de 64 o 128 kbps, aunque también permitía gestionar clases de servicio para entornos corporativos.
+      - Aplicación: Fue muy utilizada para interconectar redes LAN empresariales y cajeros automáticos antes de la masificación total de IP. Al igual que X.25 y ATM, se basaba en la configuración de Circuitos Virtuales Permanentes (PVC).
+      Comparativa Resumida
+        TDM | Frame Relay | ATM | Característica
+        Ranura de tiempo (Slot) | Trama variable | Celda fija (53 bytes) | Unidad de datos
+        2 Mbps (E1) | 64 - 128 kbps | Superior (2 Mbps o más) | Velocidad típica
+        No (basado en clock) | Sí (limitado) | Sí (CBR, VBR, etc.) | QoS Nativo
+        Multiplexación | Conmutación de tramas | Conmutación de celdas | Naturaleza
+    ▸ Desarrollar Datacenters, su clasificación, tolerancia a fallas, y dar un ejemplo.
+      Un centro de datos se define como una sala física o instalación que alberga infraestructura informática (servidores, almacenamiento, redes) con el fin de ejecutar aplicaciones, procesar servicios y almacenar datos. Para su correcto funcionamiento, estos recintos deben garantizar condiciones controladas de energía estable, refrigeración y mantenimiento durante las 24 horas del día. Actualmente, el núcleo de las redes modernas se ha desplazado hacia el centro de datos, ya que en ellos se virtualizan funciones que antes dependían de hardware propietario.
+      Clasificación de los Centros de Datos
+      Según su modelo de gestión y propiedad, se clasifican principalmente en:
+      - Enterprise (Corporativos): Son instalaciones propiedad de una empresa (como bancos o petroleras) destinadas exclusivamente a alojar su propia infraestructura y proteger sus datos internos.
+      - Cloud (Nube) / Hiperescala: Son infraestructuras masivas pertenecientes a gigantes tecnológicos (Google, Amazon, Microsoft) que ofrecen recursos compartidos a millones de clientes en todo el mundo.
+      - Collocation (Telco): Son centros gestionados por empresas de telecomunicaciones que alquilan espacio físico, racks y energía para que terceras empresas instalen sus propios servidores sin invertir en un edificio propio.
+      - Edge (Borde): Son instalaciones más pequeñas ubicadas geográficamente cerca del usuario final para reducir la latencia en aplicaciones de tiempo real.
+      Tolerancia a Fallas y Clasificación TIER
+      La tolerancia a fallas se rige por el estándar ANSI/TIA-942 y se mide mediante los niveles TIER certificados por el Uptime Institute. Estos niveles determinan la disponibilidad y redundancia de la infraestructura:
+      1. TIER I (Básico): No posee redundancia y requiere paradas programadas para realizar cualquier mantenimiento en los sistemas.
+      1. TIER II (Redundancia parcial): Incluye algunos componentes redundantes, pero fallos en la distribución de energía aún pueden afectar los servicios.
+      1. TIER III (Mantenimiento Concurrente): Es un nivel robusto donde cualquier componente puede ser reparado sin interrumpir el servicio gracias a rutas de distribución redundantes.
+      1. TIER IV (Tolerante a fallas): Es el nivel máximo, diseñado para soportar cualquier falla individual sin afectar la operación; su certificación en Argentina es compleja debido a la falta de doble proveedor de red eléctrica independiente.
+      Ejemplos de Aplicación
+      - Ejemplo de Telco/Collocation: El centro de datos de Telecom en Pacheco o el de Arsat en Benavides, que brindan servicios de alojamiento y conectividad a gran escala.
+      - Ejemplo Enterprise: Un banco (como Galicia o Santander) que opera su propio centro de datos para gestionar transacciones financieras y bases de datos críticas de forma privada.
+      - Ejemplo de Cloud: La infraestructura de Google, que permite que servicios como este Meet funcionen de forma fluida y redundante para usuarios globales.
+    ▸ Explicar el modelo de virtualizacion 2.0 y como ellos aplica la virtualizacion de funciones de red (NFV)
+      El modelo de Virtualización 2.0 y su aplicación en la Virtualización de Funciones de Red (NFV) representan un cambio de paradigma en las telecomunicaciones, permitiendo pasar de infraestructuras rígidas basadas en hardware a plataformas flexibles basadas en software.
+      El Modelo de Virtualización 2.0
+      Este modelo, que alcanzó su auge alrededor de la década de 2010, se basa en el uso de un hipervisor (capa de orquestación) que corre sobre hardware estándar (servidores genéricos x86) para gestionar múltiples máquinas virtuales (VMs).
+      - Optimización de Recursos: Antes de la virtualización, una empresa necesitaba un servidor físico por cada aplicación, los cuales solían estar subutilizados (usando solo el 5-10% de su capacidad). La virtualización permite consolidar múltiples aplicaciones en un solo equipo físico, aprovechando la capacidad ociosa de CPU, memoria y almacenamiento.
+      - Agilidad Operativa: Una de las grandes ventajas es la capacidad de mover máquinas virtuales "en caliente" (sin apagar la aplicación) entre diferentes servidores para realizar mantenimientos o balancear cargas de trabajo.
+      - Evolución hacia la Nube: Este modelo sentó las bases para el Cloud Computing, permitiendo ofrecer infraestructura y servicios bajo demanda.
+      Aplicación en la Virtualización de Funciones de Red (NFV)
+      La NFV aplica los conceptos de la Virtualización 2.0 específicamente al mundo de las redes y las telecomunicaciones. Su objetivo es desacoplar el software de red del hardware propietario de los fabricantes.
+      - De Hardware Propietario a Software: En el modelo tradicional, funciones como el ruteo o el firewall requerían equipos físicos costosos de marcas como Cisco, Nokia o Ericsson. Con NFV, estas funciones se convierten en Funciones de Red Virtuales (VNFs), que son máquinas virtuales que emulan el comportamiento del hardware original sobre servidores estándar.
+      - Ejemplos de VNFs:
+        - vRouter (Router Virtual): Realiza funciones de ruteo de Capa 3 mediante software.
+        - vEPC (Virtual Packet Core): El núcleo de procesamiento de datos de redes móviles (LTE/5G) ahora corre de forma virtualizada.
+        - vBNG (Virtual Broadband Network Gateway): Gestiona el acceso de banda ancha y la autenticación de usuarios por software.
+      - Orquestación y Gestión (MANO): Para administrar estas redes complejas, se utiliza una capa de gestión llamada MANO (Management and Orchestration), cuyo núcleo es el NFVO (NFV Orchestrator), encargado de automatizar el despliegue y escalado de las VNFs.
+      Ventajas del Modelo NFV
+      1. Escalabilidad y Flexibilidad: Permite levantar o modificar servicios de red de forma remota desde un escritorio, sin necesidad de intervenir físicamente las instalaciones (como cablear o cambiar equipos).
+      1. Reducción de Costos: El hardware estándar puede costar hasta una cuarta parte de lo que valía un equipo propietario equivalente. Además, se ahorra en espacio físico, energía y refrigeración en los centros de datos.
+      1. Alta Disponibilidad (SLA): Al trabajar con pools de recursos, si un servidor falla, las funciones de red se trasladan automáticamente a otro equipo, garantizando niveles de disponibilidad muy altos (SLA de "cinco nueves" o 99.999%).
+      1. Interoperabilidad (Multivendor): Permite mezclar soluciones de distintos fabricantes en una misma plataforma abierta, evitando quedar "atado" a un solo proveedor tecnológico.
+      1. El Data Center como el Core: En este entorno moderno, el núcleo de la red deja de ser un grupo de routers gigantes para convertirse en el propio Data Center, donde residen todas las funciones virtualizadas.
+    ▸ Explicar métodos que soporten QoS
+      El Quality of Service (QoS) o Calidad de Servicio es la capacidad de una red para priorizar ciertos tipos de tráfico (como voz o video) frente a otros (como datos comunes o descargas) para garantizar una comunicación fluida y sin interrupciones.
+      A continuación, se explican los principales métodos y tecnologías que soportan QoS según las fuentes:
+      1. ATM (Asynchronous Transfer Mode)
+      La tecnología ATM fue pionera en ofrecer QoS nativo. Su funcionamiento se basa en:
+      - Celdas de tamaño fijo: Utiliza celdas constantes de 53 bytes (48 de carga útil y 5 de cabecera), lo que facilita la sincronización y minimiza el retardo.
+      - Categorías de Servicio: Define distintos niveles de prioridad según la necesidad:
+        - CBR (Constant Bit Rate): Garantiza un ancho de banda constante, ideal para aplicaciones en tiempo real como la voz.
+        - VBR (Variable Bit Rate): Para tráficos que varían pero necesitan ciertas garantías.
+        - ABR y UBR: Servicios con menores garantías o de "mejor esfuerzo" para datos no críticos.
+      2. MPLS (Multiprotocol Label Switching)
+      MPLS aplica QoS mediante un sistema de etiquetado (labeling) que permite a los routers identificar y priorizar paquetes de manera mucho más rápida que el ruteo IP tradicional.
+      - Campo EXP (Experimental): Dentro de la cabecera MPLS de 32 bits, existen 3 bits destinados específicamente a definir el nivel de QoS de ese paquete.
+      - Ingeniería de Tráfico: Permite definir rutas óptimas y evitar cuellos de botella para servicios sensibles como la multimedia.
+      - VPNs MPLS: Facilita la creación de redes privadas virtuales donde se pueden aplicar políticas de priorización personalizadas para cada sucursal de una empresa.
+      3. Redes de Acceso (RAN y Wi-Fi)
+      - RAN (Red de Acceso por Radio): En las redes móviles (4G/5G), la capa MAC (Medium Access Control) es la encargada de asignar los recursos de radio y garantizar que el tráfico de voz sobre IP tenga la prioridad necesaria para cumplir con los estándares de calidad.
+      - Wi-Fi (WLAN): Las redes inalámbricas modernas pueden configurarse para priorizar aplicaciones sensibles a la latencia (VoIP, streaming 8K) mediante la asignación de recursos específicos y la gestión del espectro en bandas de 5 GHz o 6 GHz.
+      4. Parámetros Críticos para QoS
+      Para que estos métodos sean efectivos, deben controlar tres factores fundamentales:
+      - Jitter: Es la variación en el tiempo de llegada de los paquetes. Si es excesivo, impide que la voz se reconstruya correctamente en el receptor.
+      - Latencia: El tiempo total que tarda un paquete en ir del origen al destino.
+      - SLA (Service Level Agreement): Es el acuerdo de nivel de servicio que garantiza una disponibilidad (típicamente superior al 99.9%) y parámetros técnicos mínimos.
+      En las redes IP actuales, aunque originalmente eran de "mejor esfuerzo" (Best Effort), la convergencia tecnológica ha permitido integrar estos mecanismos (como MPLS) para dar soporte multiservicio en una única infraestructura física.
+    ▸ Definir las clases de direccionamiento IP y en qué rango está comprendida cada una de ellas. Dado un bloque de direccionamiento definido como /29, cuántas direcciónes IP serían utilizables.
+      Las clases de direccionamiento IP se dividen tradicionalmente en cinco categorías principales (A, B, C, D y E), las cuales se identifican por los bits iniciales del primer octeto. A continuación, se detallan sus rangos y características generales:
+      Clases de Direccionamiento IP
+      - Clase A:
+        - Rango: 0.0.0.0 a 127.255.255.255.
+        - Identificación: El primer bit es siempre 0.
+        - Uso: Diseñada para redes muy grandes, ya que utiliza el primer octeto para la red y los tres restantes para hosts.
+      - Clase B:
+        - Rango: 128.0.0.0 a 191.255.255.255.
+        - Identificación: Los primeros dos bits son 10.
+        - Uso: Pensada para redes de tamaño mediano, dividiendo los octetos en dos para red y dos para hosts.
+      - Clase C:
+        - Rango: 192.0.0.0 a 223.255.255.255.
+        - Identificación: Los primeros tres bits son 110.
+        - Uso: Común en redes pequeñas (como hogares u oficinas), donde los primeros tres octetos identifican la red y el último los hosts.
+      - Clase D:
+        - Rango: 224.0.0.0 a 239.255.255.255.
+        - Identificación: Los primeros cuatro bits son 1110.
+        - Uso: Reservada para grupos de multicast (multidifusión).
+      - Clase E:
+        - Rango: 240.0.0.0 a 255.255.255.255.
+        - Identificación: Los primeros bits son 1111.
+        - Uso: Reservada para fines experimentales o de investigación.
+      (Nota: Los rangos decimales específicos no se mencionan explícitamente en el texto de las fuentes, pero se derivan de la identificación de bits descrita en las mismas).
+      Cálculo de Direcciones Usables para un bloque /29
+      Para determinar cuántas direcciones IP son utilizables en un bloque con máscara de subred /29, se debe considerar la estructura de 32 bits de una dirección IPv4:
+      1. Bits de Host: Una máscara /29 utiliza 29 bits para identificar la red, lo que deja 3 bits para identificar a los hosts (⁍).
+      1. Direcciones Totales: La cantidad total de direcciones en el bloque es ⁍ direcciones IP.
+      1. Direcciones Usables: Según la normativa de redes, siempre se deben reservar dos direcciones de cada bloque:
+        - La primera dirección, que identifica a la Red (todos los bits de host en 0).
+        - La última dirección, utilizada para el Broadcast (todos los bits de host en 1).
+      Por lo tanto, en un bloque /29, hay 6 direcciones IP utilizables (⁍).
+    ▸ FDM vs WDM
+      Tanto el FDM (Frequency Division Multiplexing) como el WDM (Wavelength Division Multiplexing) son técnicas de multiplexación que permiten enviar múltiples señales simultáneamente por un único medio físico, pero operan en dominios y medios distintos,.
+      A continuación, se presenta una comparación detallada basada en las fuentes:
+      1. FDM (Multiplexación por División de Frecuencia)
+        - Concepto: Divide el ancho de banda total del canal en distintos rangos de frecuencia, asignando una "banda" o canal propio a cada usuario.
+        - Funcionamiento: Utiliza filtros en el espectro de frecuencias para separar las señales. Cada señal se modula con una portadora distinta para evitar interferencias, requiriendo que las bandas estén suficientemente separadas entre sí,.
+        - Medio y Aplicaciones: Es común en medios que transmiten señales eléctricas o electromagnéticas por aire o cable.
+          - Analógico: Radio FM (ej. 101.5 MHz) y AM,.
+          - Digital: Comunicaciones por satélite.
+        - Ventaja: Permite la transmisión de múltiples usuarios al mismo tiempo sin necesidad de dividir el tiempo en ranuras.
+      1. WDM (Multiplexación por División de Longitud de Onda)
+        - Concepto: Esencialmente es un tipo de FDM pero aplicado específicamente a la fibra óptica. En lugar de frecuencias eléctricas, divide la información por colores o longitudes de onda de la luz,.
+        - Funcionamiento en Redes Modernas (SWDM4): Se utiliza en fibras de nueva generación como la OM5,. Esta tecnología permite transmitir hasta cuatro longitudes de onda (landas) por un mismo hilo de fibra en la ventana de 850 nm a 940 nm,.
+        - Medio y Aplicaciones: Se utiliza exclusivamente en infraestructura de fibra óptica para centros de datos y redes troncales de alta capacidad,.
+          - Ventaja: Optimiza drásticamente la eficiencia de los vínculos de fibra. Mientras que una fibra OM4 tradicional usa una sola longitud de onda, la OM5 con WDM puede cuadruplicar la capacidad de tráfico por hilo,.
+      Resumen comparativo
+        Característica | FDM | WDM
+        Dominio | Espectro de frecuencias eléctricas. | Espectro de luz (longitudes de onda/colores).
+        Medio típico | Aire (radio), cables de cobre. | Fibra óptica.
+        División | Canales de frecuencia (Hz). | Canales de longitud de onda (nanómetros - nm).
+        Ejemplos | Radio FM, TV analógica, Satélite,. | Enlaces de alta velocidad, fibra OM5,.
+      En conclusión, WDM es la evolución del concepto de FDM para el mundo óptico, permitiendo que las redes modernas alcancen anchos de banda de 400 GB, 800 GB o superiores al multiplexar diferentes "colores" de láser en una misma fibra,.
+    ▸ Explicar TCP y UDP , comparar ambos.
+      Tanto TCP (Transmission Control Protocol) como UDP (User Datagram Protocol) son los protocolos fundamentales de la Capa 4 (Transporte) en el modelo OSI y en el modelo práctico TCP/IP. Aunque ambos transportan datos, están diseñados para objetivos opuestos: fiabilidad frente a velocidad.
+      Explicación de TCP y UDP
+      - TCP (Transmission Control Protocol): Es un protocolo orientado a la conexión que garantiza que la información llegue completa y en el orden correcto. Antes de enviar datos, establece un "apretón de manos" (handshake) con el receptor. Si un paquete se pierde, TCP lo retransmite automáticamente.
+      - UDP (User Datagram Protocol): Es un protocolo no orientado a la conexión diseñado para ser simple y eficiente. Envía datagramas directamente sin establecer una conexión previa ni realizar controles de error. No garantiza que los paquetes lleguen a destino ni asegura su orden.
+      Comparativa Técnica
+        TCP | Característica | UDP
+        Orientada a conexión (requiere sesión previa). | Conexión | Sin conexión (envío directo).
+        Confiable: garantiza entrega y acuse de recibo (ACK). | Confiabilidad | No confiable: no garantiza entrega ni integridad.
+        Los datos llegan en un orden específico. | Secuenciación | Los datos llegan como llegan, sin orden.
+        Más lenta por la sobrecarga del encabezado y gestión. | Velocidad | Más rápida y con baja latencia.
+        Reenvía paquetes perdidos. | Retransmisión | No recupera datos perdidos; si no llega, se descarta.
+        Más complejo y pesado. | Encabezado | Simple y ligero (16 bits).
+      Casos de Uso y Aplicaciones
+      La elección entre uno u otro depende de si la aplicación prioriza la integridad de los datos o la rapidez de la transmisión:
+      - Uso de TCP: Se utiliza donde la pérdida de datos es inaceptable, como en la navegación web (HTTP), transferencia de archivos (FTP), envío de correos (SMTP) o acceso remoto (Telnet).
+      - Uso de UDP: Es ideal para aplicaciones en tiempo real donde un pequeño retraso es peor que la pérdida de un paquete, como en streaming de video/audio, telefonía por IP (VoIP), juegos en línea (gaming) y servicios de red como DNS, DHCP o SNMP.
+      Dato de seguridad: Debido a su naturaleza sin conexión, UDP es frecuentemente utilizado para realizar ataques de denegación de servicio (DDoS) por inundación, ya que permite saturar el ancho de banda y los recursos de un dispositivo mediante el envío masivo de datagramas.
+    ▸ Desarrolla acerca del estándar Ethernet 802.3 detallando capa en la que trabaja y sus velocidades de transmisión.
+      El estándar Ethernet 802.3, desarrollado por la IEEE, es el protocolo fundamental que rige el funcionamiento de las redes de área local (LAN) cableadas. A continuación, se detallan sus niveles de operación y capacidades de transmisión según el material de estudio:
+      Capas en las que trabaja
+      Dentro del modelo de referencia OSI, Ethernet opera simultáneamente en las dos capas inferiores:
+      - Capa 2 (Enlace de Datos): Es su ámbito principal de control. Aquí se encarga del direccionamiento físico mediante el uso de direcciones MAC (Media Access Control), que son identificadores hexadecimales únicos grabados en cada tarjeta de red. También gestiona el acceso al medio y la detección de errores en la transmisión.
+      - Capa 1 (Física): Define las especificaciones eléctricas y mecánicas de los medios de transmisión, como los niveles de tensión, la duración de los pulsos binarios y los tipos de conectores (principalmente el RJ45).
+      - En el modelo práctico TCP/IP, ambas funciones se agrupan en una única capa denominada Acceso a la Red.
+      Velocidades de transmisión y estándares
+      El estándar ha evolucionado para soportar una amplia gama de velocidades sobre diferentes medios físicos (cobre y fibra óptica):
+      1. Ethernet (10 Mbps): Definido como el estándar 10Base-T, utiliza cables de par trenzado para transmisiones básicas.
+      1. Fast Ethernet (100 Mbps): El estándar 100Base-TX permitió masificar esta velocidad en entornos corporativos.
+      1. Gigabit Ethernet (1,000 Mbps / 1 Gbps): Es el estándar común actual en la mayoría de las oficinas. Requiere interfaces 1000Base-T sobre cables de Categoría 6 para alcanzar los 100 metros de distancia.
+      1. 10 Gigabit Ethernet (10 Gbps): Estándar de alta velocidad recomendado para proyectos modernos. Para llegar a los 100 metros sobre cobre, es indispensable utilizar cables de Categoría 6A; con Categoría 6 común, la distancia se limita a unos 55 metros.
+      1. Altas velocidades en Data Centers: Ethernet ha escalado a capacidades de 40 Gbps (40Gbase-LR4), 100 Gbps, 400 Gbps y hasta 800 Gbps, utilizando interfaces ópticas de tipo SFP o conectores multifibra como el MPO/MTP.
+      En las redes modernas de centros de datos, se observa una tendencia hacia velocidades superiores a 1 Tbps, con proyecciones de alcanzar los 6.4 Tbps para el año 2028.
+    ▸ Sobre el TP, describí en detalle el cálculo de ancho de banda realizado para cada aplicación utilizada.
+      En el Trabajo Práctico (TP), el dimensionamiento del ancho de banda para cada sucursal se realizó identificando los cuatro servicios principales que generan tráfico WAN, calculando su consumo individual y aplicando un overhead del 20% para absorber picos de tráfico y crecimiento futuro.
+      A continuación se detalla el cálculo para cada aplicación utilizada por sucursal:
+      - Terminales POS y Gestión de Stock: Se calcularon 5 cajas por sucursal, con una estimación de 10 transacciones por minuto y un tamaño de 5 KB por transacción. Esto arroja un consumo de 2.0 Mbps, representando el 16% del tráfico total de la sucursal.
+      - Voz sobre IP (VoIP): Se dimensionaron 2 llamadas simultáneas utilizando el códec G.711. Cada llamada consume 87 kbps (64 kbps de carga útil RTP más 23 kbps de overhead de red). El consumo resultante es de 0.2 Mbps (2% del tráfico).
+      - Videovigilancia (CCTV): Es la aplicación más demandante, representando el 79% del tráfico WAN total. Se calcularon 5 cámaras HD 720p utilizando compresión H.264, con un flujo de 2 Mbps por cámara, resultando en un total de 10.0 Mbps continuos por sucursal.
+      - Administración y Correo Electrónico: Se estimó el uso para 3 usuarios internos administrativos, con un requerimiento de 0.5 Mbps (4% del tráfico).
+      ### Resumen de Dimensionamiento
+      1. Subtotal por Sucursal: La suma de los servicios da 12.7 Mbps.
+      1. Margen de Seguridad: Se aplicó un overhead del 20% (+2.5 Mbps), lo que lleva el requerimiento a 15.2 Mbps.
+      1. Enlace Recomendado por Sucursal: Se definió un nivel de servicio (Tier) de 15 Mbps simétricos bajo tecnología MPLS.
+      1. Dimensionamiento de la Sede Central (HQ): La sede central debe agregar el tráfico de las cinco sucursales (5 × 15 Mbps = 75 Mbps). Aplicando un headroom (margen de maniobra) del 25% (aprox. 25 Mbps), se recomendó un enlace de 100 Mbps MPLS para el sitio central.
+      El video CCTV fue el criterio determinante para elegir MPLS como tecnología WAN, ya que requiere flujos continuos con baja latencia y bajo jitter que solo un SLA (Service Level Agreement) contractual puede garantizar.
+    ▸ Explicar la capa 3 del modelo OSI y compararlo con tcpi
+      La Capa 3 del modelo OSI, conocida como la Capa de Red, es el nivel encargado de proporcionar conectividad y seleccionar la mejor ruta para el intercambio de datos entre sistemas finales que pueden estar en redes geográficamente separadas.
+      Explicación de la Capa 3 (Red)
+      Sus funciones principales y características son:
+      - Direccionamiento Lógico: A diferencia de la Capa 2, que usa direcciones físicas (MAC), la Capa 3 maneja el direccionamiento lógico, predominantemente a través del protocolo IP. Se puede comparar con los "domicilios de entrega" de un paquete, identificando un origen y un destino únicos.
+      - Enrutamiento (Routing): Determina qué camino deben seguir los paquetes de datos basándose en tablas de enrutamiento y protocolos (como BGP u OSPF) para decidir la ruta más eficiente.
+      - Encapsulamiento y Fragmentación: Recibe los datos de la capa de transporte, los empaqueta en datagramas IP y, si el paquete es demasiado grande para el medio físico, se encarga de fragmentarlo.
+      - Protocolo IP: Es el estándar central de esta capa. Se define como un protocolo no orientado a la conexión y "no confiable", ya que no garantiza que el paquete llegue ni asegura su orden, delegando esa tarea a la capa superior (TCP).
+      Comparación con el modelo TCP/IP
+      Aunque ambos modelos buscan organizar las funciones de red, presentan diferencias en su estructura:
+      - Equivalencia directa: La Capa 3 de OSI (Red) equivale directamente a la Capa de Internet en el modelo TCP/IP.
+      - Funcionalidad: En ambos modelos, esta capa tiene la misma funcionalidad: gestionar el direccionamiento lógico y el enrutamiento de paquetes.
+      - Nomenclatura: Mientras que OSI la denomina formalmente "Network" o Red, en el modelo práctico TCP/IP se llama capa de "Internet".
+      - Teoría vs. Práctica: El modelo OSI es un estándar conceptual y teórico de 7 capas para el estudio de redes, mientras que el modelo TCP/IP es la implementación práctica y simplificada de 4 capas que se utiliza realmente en Internet para facilitar la gestión operativa.

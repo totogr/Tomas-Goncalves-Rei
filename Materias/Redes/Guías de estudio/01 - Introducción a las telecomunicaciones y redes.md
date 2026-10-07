@@ -54,6 +54,52 @@ timeline
 
 ![Topologías: bus, estrella, anillo y malla con hosts y enlaces](assets/01-topologias.svg)
 
+### Martin Cooper y "el futuro hay que crearlo" 🎯
+- Inventó el **teléfono móvil**: la primera llamada fue en **abril de 1973**, en una esquina de Nueva York, cuando trabajaba en Motorola.
+- **Su visión:**
+  - dispositivos inalámbricos **incrustados en el cuerpo**, que ayuden a **diagnosticar y curar** enfermedades en forma instantánea e inalámbrica;
+  - el **cuerpo humano como fuente de energía** de esos dispositivos;
+  - un número de teléfono asignado **al nacer**.
+- Ve el crecimiento en industrias como **la salud y la energía**. El freno no es la tecnología, sino **la resistencia de la gente al cambio**.
+- **Las eras de Internet:** e-commerce → portales → búsqueda → redes sociales → streaming → ultramovilidad → IA.
+
+> Pregunta tomada: *"¿Cómo podemos tomar la tecnología del presente para vaticinar los próximos 50 años, como hizo Cooper?"*
+> Respuesta: proyectar las tendencias actuales (wearables, IoT, 5G, IA) hacia la **integración con el ser humano**, buscar soluciones disruptivas a los límites de hoy (por ejemplo, la batería) y tener en cuenta la **aceptación social**.
+
+### De redes paralelas a una red integrada
+- **Antes:** cada empresa tenía **redes separadas** → **mínimo uso de los recursos**. Eran tres:
+  - **SNA** (*System Network Architecture*) para datos;
+  - **LAN to LAN**;
+  - telefonía (**PSTN / ISDN**).
+- **Después:** **voz y datos consolidados sobre una única red IP**, típicamente un **backbone IP/MPLS** privado. Ofrece:
+  - acceso flexible (IP/MPLS, IPSec, ATM, Frame Relay);
+  - **QoS**;
+  - conexión **any-to-any**;
+  - seguridad (firewalls, cifrado, certificados digitales).
+
+### Tipos de VPN
+| VPN | Para qué | Rasgo |
+| --- | --- | --- |
+| **De intranet** | Casa central ↔ **sucursales** | Conexiones de bajo costo (**túneles**) con muchos servicios |
+| **De extranet** | Empresa ↔ **partners de negocio** | Extiende la WAN a terceros; nuevos modelos de negocio |
+| **De acceso remoto** | **Usuarios móviles** y teletrabajo | **Túneles encriptados** y escalables sobre una red **pública** |
+
+### Red de acceso vs. red de transporte 🎯
+- **Red de acceso** (la "última milla"): conecta al cliente con el proveedor.
+  - **Hogares:** ADSL, cablemódem, FTTH.
+  - **Empresas:** accesos **dedicados**, que no comparten con nadie: redes **Metro (LAN to LAN)**, **SDH**, **ATM**, TDM, Frame Relay, o **VPN IP** sobre redes públicas.
+  - Los **proveedores de contenido** se conectan con líneas punto a punto o ATM.
+- **Red de transporte:** las conexiones físicas de **gran capacidad** que unen los nodos de la WAN: fibra óptica (incluidos los **cables submarinos**), enlaces satelitales y radioenlaces.
+- **WAN vs. LAN:**
+  - La **LAN** cubre un área reducida (oficina, edificio) con **Ethernet o Wi-Fi** y switches de capa 2.
+  - La **WAN** interconecta LAN de **distintas ubicaciones**, incluso globales.
+- **Tipos de WAN:**
+  - **Circuitos conmutados:** el más antiguo; un circuito físico dedicado mientras dura la comunicación.
+  - **Paquetes conmutados:** el más usado hoy; los datos se dividen en paquetes que toman la mejor ruta.
+  - **Conmutación de paquetes orientada a conexión:** primero se establece la conexión y sus condiciones (ancho de banda, QoS).
+  - **MPLS:** circuitos virtuales con **etiquetas**.
+- **Cables submarinos:** la columna vertebral de la conectividad mundial (Columbus III, Panamericano, SEA-ME-WE 3). Usan amplificadores ópticos **EDFA** (fibra dopada con erbio).
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -62,6 +108,9 @@ timeline
 2. Ordená cronológicamente: radio, teléfono, telégrafo, Internet, satélite.
 3. ¿Qué agregó la televisión respecto de la radio?
 4. ¿Por qué se dice que cada avance "acortó distancia y tiempo"?
+5. ¿Qué imaginó **Martin Cooper**? ¿Qué obstáculo veía para que se cumpliera?
+6. Diferenciá **red de acceso** y **red de transporte**, con ejemplos para un hogar y para una empresa.
+7. Nombrá los **tres tipos de VPN** y para qué sirve cada uno.
 
 ---
 
@@ -73,4 +122,4 @@ timeline
 
 ---
 
-<sub>⚙️ Guía basada en la PPT 01 de la cátedra (Volpi / Giorgi / Llasat).</sub>
+<sub>⚙️ Guía basada en la PPT 01 de la cátedra (Volpi / Giorgi / Llasat), ampliada con lo que se tomó en parciales anteriores.</sub>

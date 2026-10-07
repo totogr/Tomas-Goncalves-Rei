@@ -21,6 +21,17 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 > 🎯 **Primer parcial:** entra **de la 01 a la 12** (la cátedra dijo que la clase #11 de capas 5, 6 y 7 es lo último que entra).
 
+### 🎯 Para el primer parcial
+
+**[Resumen para el parcial](Resumen%20para%20el%20parcial.md)**: todo lo que entra en un solo archivo. Incluye:
+- las 6 preguntas que más se repiten;
+- cada tema condensado;
+- la tabla de números para saber de memoria (SDH, E1, categorías, fibras, Tiers…);
+- las preguntas de diseño ("¿qué fibra elijo?");
+- los errores típicos y un plan de estudio.
+
+**[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)**: las consignas de 5 modelos de parcial de la cátedra, agrupadas por tema y con la respuesta modelo, más múltiple choice para practicar.
+
 **Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11) · TLS, cifrado, codificación, compresión y la tabla de puertos de capa 7 (12).
 
 **Temas del plan de estudios aún sin PPT propia** (se sumarán como guías cuando haya material): ARP · seguridad en redes (más allá de capa 4) · CDN, SDN.

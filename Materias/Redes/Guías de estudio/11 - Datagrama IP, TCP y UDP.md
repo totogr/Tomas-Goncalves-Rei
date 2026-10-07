@@ -56,6 +56,20 @@ flowchart TD
 | **D** | 224–239 | Multicast |
 | **E** | 240–255 | Experimental |
 
+**¿Cuántas direcciones utilizables tiene un bloque?** 🎯 *(pregunta de parcial)*
+- Un bloque **/n** deja **32 − n** bits para hosts → tiene **2^(32−n)** direcciones.
+- Hay que restar **2**:
+  - la **primera** identifica a la **red**;
+  - la **última** es el **broadcast**.
+- **Utilizables = 2^(32−n) − 2.**
+
+| Bloque | Totales | Utilizables |
+| --- | --- | --- |
+| /30 | 4 | **2** (típico de un enlace punto a punto entre routers) |
+| **/29** | **8** | **6** |
+| /28 | 16 | 14 |
+| /24 | 256 | 254 |
+
 ### Máscara de subred y ruteo básico
 
 - La **máscara** separa la parte de **red** de la parte de **host**. Se aplica un **AND lógico** bit a bit entre la IP y la máscara → da la **dirección de red**.

@@ -70,6 +70,45 @@ flowchart TD
 - **ANSI/TIA-568.3-D** adopta la nomenclatura de **ISO/IEC 11801**: **OM** = multimodo, **OS** = monomodo. Cada "OM" tiene un ancho de banda modal mínimo.
 - **OM5**: multimodo de última generación, pensado para **SWDM** (Shortwave WDM) — reduce la cantidad de fibras en paralelo y **escala hacia 800G**. Spec **TIA-4992-AAAE**.
 
+| Fibra | Tipo | Núcleo | Ancho de banda modal (850 nm, láser) | Uso |
+| --- | --- | --- | --- | --- |
+| OM1 | Multimodo | 62,5 µm | No especificado | Legado |
+| OM2 | Multimodo | 50 µm | No especificado | Legado |
+| OM3 | Multimodo | 50 µm | 2000 MHz·km | Data center, 10G/40G |
+| **OM4** | Multimodo | 50 µm | **4700 MHz·km** | Data center actual |
+| **OM5** | Multimodo **de banda ancha** | 50 µm | **4700 MHz·km** | Data center nuevo, **SWDM** (4 longitudes de onda) |
+| **OS2** | **Monomodo** | **~9 µm** | — (un solo haz) | **Kilómetros**: enlaces entre edificios, WAN, operadores |
+
+**Alcance máximo según la PPT** (multimodo, depende de la velocidad):
+
+| Aplicación | OM3 | OM4 | OM5 |
+| --- | --- | --- | --- |
+| 40GBASE-SR4 | 100 m | 150 m | 150 m |
+| 40G-BiDi | 100 m | 150 m | **200 m** |
+| 40G-SWDM4 | 240 m | 350 m | **440 m** |
+| 100GBASE-SR4 | 70 m | 100 m | 100 m |
+| 100G-SWDM4 | 75 m | 100 m | **150 m** |
+| 400GBASE-SR4.2 | — | 100 m | **150 m** |
+
+> 🎯 **OM4 vs. OM5** (pregunta de parcial): son **físicamente iguales** (50 µm, mismo ancho de banda a 850 nm), pero la OM5 está optimizada para **SWDM**, es decir, 4 longitudes de onda por el mismo hilo. Así usa **menos fibras en paralelo**, llega **más lejos** en las aplicaciones SWDM y BiDi y queda preparada para **400G/800G**. Si la diferencia de precio es chica, en un DC nuevo conviene OM5.
+
+### ¿Qué fibra elijo? 🎯 (pregunta fija: "conectar dos sedes a 8 km / 12 km")
+
+```mermaid
+flowchart TD
+    D{"¿Distancia?"} -->|"Kilómetros<br/>(entre sedes, WAN)"| S["<b>Monomodo OS2</b><br/>núcleo 9 µm, un solo haz,<br/>sin dispersión modal<br/>(LR hasta 10 km, ER/ZR 40 km o más)"]
+    D -->|"Cientos de metros<br/>(edificio, DC)"| M{"¿Futuro 400G/800G?"}
+    M -->|Sí| O5["<b>Multimodo OM5</b><br/>(SWDM)"]
+    M -->|"No / costo"| O4["<b>Multimodo OM4</b>"]
+```
+
+**Justificación modelo para 8 km:**
+- En la **multimodo** la luz viaja en **muchos modos** que rebotan y llegan desfasados (**dispersión modal**). Eso la limita a **cientos de metros**.
+- La **monomodo** (OS2, núcleo de ~9 µm) lleva **un único haz** de láser, sin dispersión modal. Con ópticas **LR** cubre hasta **10 km**, y con **ER/ZR**, 40 km o más.
+- → Para 8 km: **monomodo OS2**. Además hay que elegir:
+  - **conector LC** si hay alta densidad en el rack;
+  - **cable riser o plenum** según por dónde pase.
+
 ### Modulación: NRZ → PAM4
 
 | Modulación | Niveles | Bits/símbolo | Ejemplo |

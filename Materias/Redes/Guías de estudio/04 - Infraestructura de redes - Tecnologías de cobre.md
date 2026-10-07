@@ -67,7 +67,18 @@ Más largo el cable, más alta la frecuencia y menor la calidad → **más diafo
 ### Categorías (regla práctica)
 
 - **Cat 5e** → videovigilancia / hogar · **Cat 6** → oficinas · **Cat 6a** → edificios inteligentes · **Cat 7 / Cat 8** → servidores (con blindaje; poco adoptado).
-- **Ethernet sobre cobre**: canal típico **100 m** (Cat 8 baja a ~30 m).
+- **Ethernet sobre cobre**: canal típico **100 m**, que se reparte en **90 m de cableado horizontal** y **patch cords en los extremos**. En Cat 8 el máximo baja a **30 m**.
+
+| Categoría | Frecuencia | Velocidad | Distancia | Blindaje típico |
+| --- | --- | --- | --- | --- |
+| Cat 3 | 16 MHz | 10 Mbps | 100 m | — (telefonía vieja) |
+| Cat 5e | 100 MHz | 1 Gbps | 100 m | U/UTP |
+| **Cat 6** | **250 MHz** | **1 Gbps** (10 Gbps **solo hasta ~55 m**) | 100 m | U/UTP |
+| **Cat 6A** | **500 MHz** | **10 Gbps** | **100 m** | U/UTP o F/UTP |
+| Cat 7 / 7A | 600 MHz / 1000 MHz | 10 Gbps | 100 m | S/FTP, **sin RJ45** (GG45/TERA) |
+| Cat 8 | 2000 MHz | 25–40 Gbps | **30 m** | F/UTP |
+
+> 🎯 **Cat 6 vs. Cat 6A** (pregunta de final): la 6A **duplica la frecuencia** (500 vs. 250 MHz) y garantiza **10 Gbps en los 100 m completos**. La 6 llega a 10 Gbps solo en tramos cortos (~55 m). Para un proyecto nuevo se recomienda **6A**, que tiene una vida útil de 20–25 años. Cat 7 y Cat 8 casi no se usan: Cat 7 no tiene RJ45 y Cat 8 no pasa de 30 m.
 
 ### Blindajes finos: S/FTP vs. SF/UTP
 
@@ -100,9 +111,22 @@ Sistemas que agregan **inteligencia** a la infraestructura de cobre: los conecto
 
 Permite enviar **energía eléctrica y datos por el mismo cable Ethernet**. Muy usado para alimentar cámaras IP, teléfonos, access points y sensores IoT sin tener que llevar corriente hasta cada equipo.
 
+| Potencia | Estándar | Pares | Para qué alcanza |
+| --- | --- | --- | --- |
+| **15 W** | IEEE 802.3af, **Type 1**, PoE (2003) | 2 | Teléfonos VoIP, lectores de tarjetas, alarmas |
+| **30 W** | IEEE 802.3at, **Type 2**, PoE+ (2009) | 2 | Cámaras PTZ, access points |
+| **60 W** | IEEE 802.3bt, **Type 3**, PoE++ / UPoE (Cisco) | 4 | Laptops, controles de acceso, puntos de venta |
+| **90 W** | IEEE 802.3bt, **Type 4**, PoE++ / Power over HDBaseT | 4 | Televisores, videoconferencia, thin clients, PCs |
+
 ### Distancias extendidas en cobre (>100 m)
 
-Los 100 m son el estándar Ethernet clásico. Hoy existen soluciones que **extienden el cobre hasta ~250 m** (sacrificando ancho de banda), lo que evita saltar a fibra en tramos medios donde la fibra sería más cara sin necesidad.
+Los 100 m son el estándar Ethernet clásico. Hoy existen soluciones que **extienden el cobre hasta ~250 m**, lo que evita saltar a fibra en tramos medios donde la fibra sería más cara sin necesidad.
+- **El precio es el ancho de banda:** a más distancia, menos velocidad. Como referencia: ~1 Gbps a 150 m, 100 Mbps a 200 m y 10 Mbps a 250 m.
+- **PoE se mantiene**, así que sirve para cámaras de seguridad lejanas.
+- La PPT 2026 lo muestra con **puntos de consolidación**:
+  - reemplazan a los IDF de cada piso;
+  - desde el **MDF** sale un solo cable por piso hasta el punto de consolidación;
+  - de ahí se llega al puesto de trabajo, a 100 m o hasta 250 m.
 
 ### Estándares de cableado estructurado
 

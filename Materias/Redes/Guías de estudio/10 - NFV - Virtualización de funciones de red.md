@@ -78,6 +78,59 @@ Antes, cada función de red era un **electrodoméstico dedicado**: una tostadora
 
 > 🔑 **Nuevo paradigma:** la red deja de ser solamente **conectividad** y se convierte en una **plataforma de servicios** que genera valor para el negocio (APIs, microservicios, IA incorporada).
 
+### 🎯 El factor tecnológico: los 4 pilares de una red escalable ("El mayor hito de las redes")
+Pregunta tomada: *"Desarrolle los 4 hitos del factor tecnológico de la integración"*.
+
+| Pilar | Qué significa |
+| --- | --- |
+| **1. Redes escalables** (mayor capacidad y ancho de banda) | Satisfacer la demanda de **cada vez más dispositivos conectados** y más servicios: data centers, salas de cómputo y *telco rooms* que necesitan conectividad eficiente |
+| **2. Convergencia** | Los grandes fabricantes ofrecen **soluciones completas** que actúan en **distintas capas**: desde la infraestructura hasta las aplicaciones (switching, routing, inalámbrico) |
+| **3. Seguridad de la información** | **Autenticación segura** de dispositivos, **administración de políticas** y **encriptación** de la información sensible |
+| **4. Disponibilidad de red** | Soluciones con implementación, soporte y **resiliencia** flexibles: disponibilidad **mayor a 99,99%** |
+
+### Purpose-built vs. software-based (concepto de virtualización)
+| | **Purpose-built** (hardware específico) | **Software-based** (NFV) |
+| --- | --- | --- |
+| Estructura | **Una función = un equipo físico** (router Cisco, firewall Palo Alto) | **Varias funciones en el mismo hardware** |
+| Hardware | Propietario | **Estándar (COTS)**: un *pool* de CPU, almacenamiento y red |
+| Capa intermedia | — | **Capa de virtualización**: VM o contenedor (VMware, OpenStack, Kubernetes) |
+| Funciones | Cajas físicas | **VNF** (*Virtual Network Functions*): vRouter, vFirewall, vLoad Balancer, vVPN, vIMS/vEPC/v5G |
+| Resultado | Más costo, menos flexibilidad, escalabilidad limitada | Despliegue **rápido y escalable**, **automatización y orquestación**, menor costo |
+
+> De otras cursadas (puede aparecer): a las VNF las administra el marco **MANO** (*Management and Orchestration*). Tiene tres partes:
+> - **NFVO**, el orquestador de servicios;
+> - **VNFM**, que gestiona el ciclo de vida de cada VNF;
+> - **VIM**, que gestiona la infraestructura (OpenStack, Kubernetes).
+>
+> **SD-WAN** es una WAN definida por software, consecuencia directa de NFV/SDN.
+
+### Tendencias: del cloud al edge
+Cuanto más cerca del usuario se procesa, **menos latencia, más control y menos consumo**. Cuanto más cerca de la nube, **más escala, elasticidad y alcance global**.
+
+```mermaid
+flowchart LR
+    A["Device Edge<br/>sensores, cámaras,<br/>dispositivos"] --- B["Customer Edge<br/>sucursales, IoT,<br/>SD-WAN"]
+    B --- C["Far Edge<br/>sitios de radio,<br/>vRAN, MEC"]
+    C --- D["Telco Cloud Edge<br/>DC regionales<br/>(5G, AR/VR)"]
+    D --- E["Telco Cloud Core<br/>funciones de red<br/>(OSS/BSS)"]
+    E --- F["Public / Private Cloud<br/>AWS, Azure,<br/>Google Cloud"]
+```
+
+- **Edge computing:** procesar **en el borde**, cerca de donde se generan los datos.
+  - **Ejemplo:** un semáforo inteligente lee la patente y manda solo el texto, no la foto.
+  - Gana **baja latencia** y **ahorro de ancho de banda**.
+- **Fog computing:** capa **intermedia** entre el edge y la nube.
+
+### El camino a la "Service Based Infrastructure"
+**Purpose-built → Simplified → Virtualized → Orchestrated → Intelligent (service-based)**.
+
+Cada paso suma algo:
+- **Purpose-built:** eficiencia por la unión hardware + software.
+- **Simplified:** infraestructura consolidada.
+- **Virtualized:** flexibilidad y elasticidad.
+- **Orchestrated:** automatización.
+- **Intelligent:** la red ofrecida **como servicio**.
+
 ---
 
 ## ❓ Preguntas para autoevaluarte
@@ -88,6 +141,9 @@ Antes, cada función de red era un **electrodoméstico dedicado**: una tostadora
 4. ¿Qué significa el cambio de modelo **CapEx → OpEx** que trajo la nube?
 5. ¿Qué es **Kubernetes** y qué rol cumple en la era cloud native?
 6. ¿Qué prioriza un enfoque **deterministic driven** (pista: QoS)?
+7. 🎯 Desarrollá los **4 pilares** del factor tecnológico (escalabilidad, convergencia, seguridad, disponibilidad).
+8. Compará el modelo **purpose-built** con el **software-based**. ¿Qué es una **VNF**? Dá tres ejemplos.
+9. ¿Qué es el **edge computing** y por qué baja la latencia? ¿En qué se diferencia del **fog**?
 
 ---
 
