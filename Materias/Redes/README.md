@@ -27,8 +27,11 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 | 09 | Enrutamiento estático y dinámico (BGP y OSPF) | ✅ (dentro de la `08b`, clase #9 de 2026) |
 | 10 | NFV — virtualización de funciones de red | ✅ |
 | 11 | Datagrama IP, TCP y UDP | ✅ |
+| 12 | Protocolos de capas 5, 6 y 7 (sesión, presentación y aplicación) | ✅ (clase #11 de 2026) |
 
-> Las PPTs con sufijo **`b`** son las versiones ampliadas de la cursada 2026. La **`08b`** (clase #9) trae por primera vez el material de **Sistemas Autónomos, BGP y OSPF**, que antes solo estaba en el resumen de [`Resúmenes/`](Res%C3%BAmenes/). La **`11b`** (clase #10) es la de **Protocolos de capa 4 (TCP y UDP)**.
+> 🎯 **Primer parcial:** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra.
+
+> Las PPTs con sufijo **`b`** son las versiones ampliadas de la cursada 2026. La **`08b`** (clase #9) trae por primera vez el material de **Sistemas Autónomos, BGP y OSPF**, que antes solo estaba en el resumen de [`Resúmenes/`](Res%C3%BAmenes/). La **`11b`** (clase #10) es la de **Protocolos de capa 4 (TCP y UDP)**, y la **`12`** (clase #11) la de **Protocolos de capas 5, 6 y 7**.
 
 ## Estructura
 
@@ -50,7 +53,8 @@ Redes/
 │   ├── 08b - IP, Sistemas Autónomos y Routing BGP-OSPF (ampliación 2026).pdf
 │   ├── 10 - NFV - Virtualización de Funciones de Red.pdf
 │   ├── 11 - Datagrama IP, TCP y UDP.pdf
-│   └── 11b - Capa 4 TCP y UDP (ampliación 2026).pdf
+│   ├── 11b - Capa 4 TCP y UDP (ampliación 2026).pdf
+│   └── 12 - Protocolos Capa 5, 6 y 7 - Sesión, Presentación y Aplicación.pdf
 └── Resúmenes/
     └── Clase 07-11 - Enrutamiento Dinámico (BGP y OSPF).pdf
 ```

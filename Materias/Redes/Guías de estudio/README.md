@@ -17,7 +17,10 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 09 | [Enrutamiento estático y dinámico (BGP / OSPF)](09%20-%20Enrutamiento%20est%C3%A1tico%20y%20din%C3%A1mico%20%28BGP%20y%20OSPF%29.md) | ✅ |
 | 10 | [NFV — virtualización de funciones de red](10%20-%20NFV%20-%20Virtualizaci%C3%B3n%20de%20funciones%20de%20red.md) | ✅ |
 | 11 | [Datagrama IP, TCP y UDP](11%20-%20Datagrama%20IP%2C%20TCP%20y%20UDP.md) | ✅ |
+| 12 | [Capas 5, 6 y 7 — sesión, presentación y aplicación](12%20-%20Capas%205%2C%206%20y%207%20-%20Sesi%C3%B3n%2C%20Presentaci%C3%B3n%20y%20Aplicaci%C3%B3n.md) | ✅ |
 
-**Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11).
+> 🎯 **Primer parcial:** entra **de la 01 a la 12** (la cátedra dijo que la clase #11 de capas 5, 6 y 7 es lo último que entra).
 
-**Temas del plan de estudios aún sin PPT propia** (se sumarán como guías cuando haya material): capa de aplicación en profundidad · ARP · seguridad en redes (más allá de capa 4) · CDN, SDN.
+**Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11) · TLS, cifrado, codificación, compresión y la tabla de puertos de capa 7 (12).
+
+**Temas del plan de estudios aún sin PPT propia** (se sumarán como guías cuando haya material): ARP · seguridad en redes (más allá de capa 4) · CDN, SDN.
