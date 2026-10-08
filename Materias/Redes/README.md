@@ -30,7 +30,7 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 | 11 | Datagrama IP, TCP y UDP | ✅ |
 | 12 | Protocolos de capas 5, 6 y 7 (sesión, presentación y aplicación) | ✅ (clase #11 de 2026) |
 
-> 🎯 **Primer parcial:** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra. Para estudiar: [Resumen para el parcial](Gu%C3%ADas%20de%20estudio/Resumen%20para%20el%20parcial.md) y [Parciales anteriores resueltos](Gu%C3%ADas%20de%20estudio/Parciales%20anteriores%20resueltos.md).
+> 🎯 **Primer parcial (miércoles 4/11):** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra. Para estudiar: [Resumen para el parcial](Gu%C3%ADas%20de%20estudio/Resumen%20para%20el%20parcial.md) y [Parciales anteriores resueltos](Gu%C3%ADas%20de%20estudio/Parciales%20anteriores%20resueltos.md).
 
 > Las PPTs con sufijo **`b`** son las versiones ampliadas de la cursada 2026. La **`08b`** (clase #9) trae por primera vez el material de **Sistemas Autónomos, BGP y OSPF**, que antes solo estaba en el resumen de [`Resúmenes/`](Res%C3%BAmenes/). La **`11b`** (clase #10) es la de **Protocolos de capa 4 (TCP y UDP)**, y la **`12`** (clase #11) la de **Protocolos de capas 5, 6 y 7**.
 

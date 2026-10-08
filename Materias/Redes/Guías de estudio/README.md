@@ -19,7 +19,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 11 | [Datagrama IP, TCP y UDP](11%20-%20Datagrama%20IP%2C%20TCP%20y%20UDP.md) | ✅ |
 | 12 | [Capas 5, 6 y 7 — sesión, presentación y aplicación](12%20-%20Capas%205%2C%206%20y%207%20-%20Sesi%C3%B3n%2C%20Presentaci%C3%B3n%20y%20Aplicaci%C3%B3n.md) | ✅ |
 
-> 🎯 **Primer parcial:** entra **de la 01 a la 12** (la cátedra dijo que la clase #11 de capas 5, 6 y 7 es lo último que entra).
+> 🎯 **Primer parcial (miércoles 4/11):** entra **de la 01 a la 12** (la cátedra dijo que la clase #11 de capas 5, 6 y 7 es lo último que entra).
 
 ### 🎯 Para el primer parcial
 

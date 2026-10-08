@@ -1,6 +1,6 @@
 # 📘 Resumen para el parcial — Redes
 
-> **Primer parcial:** entra **de la clase 1 a la #11** (capas 5, 6 y 7), es decir, las guías **01 a 12**. Es escrito.
+> **Primer parcial: miércoles 4/11.** Entra **de la clase 1 a la #11** (capas 5, 6 y 7), es decir, las guías **01 a 12**. Es escrito.
 > Este resumen junta en un solo lugar **todo lo que entra**, priorizado según lo que se tomó en **5 modelos de parcial** de la cátedra.
 >
 > **Se complementa con:**
@@ -32,16 +32,25 @@
 
 **No entra:** MPLS a fondo (L2VPN/L3VPN, PHP), RAN y V-RAN, Wi-Fi, IoT/LoRa. Son de las clases posteriores y se toman en el **final**.
 
-### Plan de estudio (6 días)
+### Plan de estudio: del viernes 16/10 al miércoles 4/11
 
-| Día | Qué hacer |
+> Hasta el **jueves 15/10** la prioridad es el **parcial de Ciencia de Datos**. Redes arranca el viernes 16, con ritmo tranquilo: unos **40–60 minutos** los días de estudio.
+
+| Fecha | Qué hacer |
 | --- | --- |
-| **1** | Secciones 1–3. **Memorizá la [tabla de números](#-números-para-saber-de-memoria)**. Hacé el ✍️ de Hamming **a mano** |
-| **2** | Secciones 4–5 (cobre y fibra). Escribí sin mirar la respuesta a "**conectar dos sedes a 8 km**" y a "**OM4 vs. OM5**" |
-| **3** | Secciones 6–7 (DC y legacy). Escribí la **tabla de Tiers** y la de **ATM (CBR/VBR/ABR/UBR)** de memoria |
-| **4** | Secciones 8–9 (IP, BGP/OSPF, NFV) |
-| **5** | Secciones 10–11 (capas 4 a 7: puertos, TLS, sesión vs. transporte) |
-| **6** | **Simulacro:** hacé un modelo de [Parciales anteriores](Parciales%20anteriores%20resueltos.md) completo **sin mirar**, con reloj. Después, los 10 múltiple choice y la tabla [Ojo con esto](#13-ojo-con-esto-errores-típicos) |
+| **Vie 16 – Dom 18/10** | Secciones **1–3** (intro, transmisión de datos, OSI vs. TCP/IP). Empezá a memorizar la [tabla de números](#-números-para-saber-de-memoria). Hacé el ✍️ de **Hamming a mano** |
+| **Lun 19 – Jue 22/10** | Semana de la **exposición del TP1 de CdD**: solo un repaso corto de la tabla de números y de **OSI vs. TCP/IP** escrito de memoria |
+| **Vie 23 – Sáb 24/10** | Secciones **4–5** (cobre y fibra). Escribí sin mirar "**conectar dos sedes a 8 km**" y "**OM4 vs. OM5**" |
+| **Dom 25 – Lun 26/10** | Secciones **6–7** (data centers y legacy). Escribí de memoria la **tabla de Tiers** y la de **ATM (CBR/VBR/ABR/UBR)** |
+| **Mar 27 – Mié 28/10** | Secciones **8–9** (IP, /29, BGP/OSPF, peering vs. tránsito, NFV y los 4 pilares) |
+| **Jue 29 – Vie 30/10** | Secciones **10–11** (TCP/UDP, puertos, TLS, capa 5 vs. capa 4) |
+| **Sáb 31/10** | **Simulacro 1:** un modelo de [Parciales anteriores](Parciales%20anteriores%20resueltos.md) completo **sin mirar**, con reloj. Corregí y anotá qué falló |
+| **Dom 1/11** | Repasá lo que falló en el simulacro, con la guía de ese tema |
+| **Lun 2/11** | **Simulacro 2:** otro modelo + los **10 múltiple choice** + las [preguntas para practicar](#14-preguntas-para-practicar-sin-mirar) 🔴 |
+| **Mar 3/11** | Repaso liviano: [6 preguntas que más se repiten](#-las-6-preguntas-que-más-se-repiten), [¿qué elijo?](#12-qué-elijo-preguntas-de-diseño) y [Ojo con esto](#13-ojo-con-esto-errores-típicos) |
+| **Mié 4/11** | 🎯 **Parcial.** A la mañana, solo la tabla de números |
+
+> 💡 Las clases de Redes posteriores a la #11 (MPLS a fondo, RAN, Wi-Fi) **no entran en este parcial**: alcanza con ir a cursarlas.
 
 ---
 
