@@ -53,10 +53,10 @@ Puntaje de 6 alumnos por tema en un examen (árboles, RNA, PLN, SVM). Con 1, 2 o
 
 ```mermaid
 flowchart LR
-    A["1. Calcular el promedio<br/>de cada variable"] --> B["2. Centrar los datos<br/>(el promedio pasa<br/>al origen)"]
-    B --> C["3. Buscar la recta por el<br/>origen que mejor ajusta<br/>→ PC1"]
-    C --> D["4. PC2: perpendicular<br/>a PC1 (y así PC3…)"]
-    D --> E["5. Proyectar los puntos<br/>y rotar: PC1 horizontal"]
+    A["1 · Calcular el promedio<br/>de cada variable"] --> B["2 · Centrar los datos<br/>(el promedio pasa<br/>al origen)"]
+    B --> C["3 · Buscar la recta por el<br/>origen que mejor ajusta<br/>→ PC1"]
+    C --> D["4 · PC2: perpendicular<br/>a PC1 (y así PC3…)"]
+    D --> E["5 · Proyectar los puntos<br/>y rotar: PC1 horizontal"]
 ```
 
 **¿Qué significa "mejor ajusta"?** Se proyecta cada punto sobre la recta. Por Pitágoras, a² = b² + c², donde:
@@ -218,9 +218,9 @@ Más formal (la notebook de la práctica): las similitudes son **probabilidades 
 
 ```mermaid
 flowchart LR
-    A["1. Cada punto se conecta<br/>con sus <b>k vecinos</b> más<br/>cercanos (distancia euclídea)"] --> B["2. Grafo pesado:<br/>cada arista vale la<br/>distancia euclídea"]
-    B --> C["3. Matriz de distancias<br/>= camino más corto en el grafo<br/>(<b>Dijkstra</b> o <b>Floyd-Warshall</b>)"]
-    C --> D["4. Aplicar <b>MDS</b><br/>sobre esa matriz"]
+    A["1 · Cada punto se conecta<br/>con sus <b>k vecinos</b> más<br/>cercanos (distancia euclídea)"] --> B["2 · Grafo pesado:<br/>cada arista vale la<br/>distancia euclídea"]
+    B --> C["3 · Matriz de distancias<br/>= camino más corto en el grafo<br/>(<b>Dijkstra</b> o <b>Floyd-Warshall</b>)"]
+    C --> D["4 · Aplicar <b>MDS</b><br/>sobre esa matriz"]
 ```
 
 **Debilidades:**

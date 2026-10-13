@@ -8,7 +8,7 @@
     .lblg{font-family:sans-serif;font-size:11px;fill:#2e7d32;font-weight:bold}
     .lblr{font-family:sans-serif;font-size:11px;fill:#c62828;font-weight:bold}
   </style>
-  <text x="280" y="20" text-anchor="middle" class="t">Sesgo de supervivencia: los agujeros que VOLVIERON</text>
+  <text x="280" y="20" class="t" style="text-anchor:middle">Sesgo de supervivencia: los agujeros que VOLVIERON</text>
 
   <!-- Silueta simple de avión -->
   <g transform="translate(90,60)">
@@ -40,5 +40,5 @@
 
   <text x="90"  y="210" class="lblr">● Aquí sí hay impactos: aviones VOLVIERON.</text>
   <text x="90"  y="228" class="lblg">— — Aquí no hay: los que fueron impactados NO volvieron.</text>
-  <text x="280" y="250" text-anchor="middle" class="s">Reforzar donde NO hay agujeros — no donde hay. Analizás lo que sobrevivió, no lo perdido.</text>
+  <text x="280" y="250" class="s" style="text-anchor:middle">Reforzar donde NO hay agujeros — no donde hay. Analizás lo que sobrevivió, no lo perdido.</text>
 </svg>

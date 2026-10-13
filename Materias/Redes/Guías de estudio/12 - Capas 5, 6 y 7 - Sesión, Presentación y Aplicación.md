@@ -80,10 +80,10 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    A["1. Establecer sesión<br/>(solicitud, parámetros,<br/>sincronización)"] --> B["2. Transferencia<br/>en bloques con<br/>puntos de control"]
-    B --> C["3. ⚡ Falla la red<br/>(después del último<br/>punto confirmado)"]
-    C --> D["4. Reanudación<br/>desde el último punto:<br/>NO se reenvía todo"]
-    D --> E["5. Cierre de sesión<br/>y liberación<br/>de recursos"]
+    A["1 · Establecer sesión<br/>(solicitud, parámetros,<br/>sincronización)"] --> B["2 · Transferencia<br/>en bloques con<br/>puntos de control"]
+    B --> C["3 · ⚡ Falla la red<br/>(después del último<br/>punto confirmado)"]
+    C --> D["4 · Reanudación<br/>desde el último punto:<br/>NO se reenvía todo"]
+    D --> E["5 · Cierre de sesión<br/>y liberación<br/>de recursos"]
 ```
 
 **Establecimiento paso a paso:**

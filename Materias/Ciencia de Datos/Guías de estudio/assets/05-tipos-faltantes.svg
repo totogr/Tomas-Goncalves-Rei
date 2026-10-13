@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" role="img" aria-label="Tipos de datos faltantes: MCAR, MAR, MNAR">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 305" role="img" aria-label="Tipos de datos faltantes: MCAR, MAR, MNAR">
   <style>
     .bg { fill: #fff; }
     .box { stroke: #333; stroke-width: 1.6; rx: 10; }
@@ -11,12 +11,12 @@
     .ttl { font: 700 17px system-ui, sans-serif; fill:#222; }
     .ex { font: italic 11.5px system-ui, sans-serif; text-anchor: middle; fill:#444; }
   </style>
-  <rect class="bg" width="780" height="300"/>
+  <rect class="bg" width="780" height="305"/>
   <text class="ttl" x="20" y="26">Los 3 tipos de datos faltantes (clasificación de Rubin, 1976)</text>
 
   <!-- MCAR -->
   <g>
-    <rect class="box m1" x="30" y="60" width="230" height="215"/>
+    <rect class="box m1" x="30" y="60" width="230" height="225"/>
     <text class="h" x="145" y="90">MCAR</text>
     <text class="sub" x="145" y="108">Missing Completely At Random</text>
     <text class="p" x="145" y="140">La falta es 100% aleatoria.</text>
@@ -29,7 +29,7 @@
 
   <!-- MAR -->
   <g>
-    <rect class="box m2" x="275" y="60" width="230" height="215"/>
+    <rect class="box m2" x="275" y="60" width="230" height="225"/>
     <text class="h" x="390" y="90">MAR</text>
     <text class="sub" x="390" y="108">Missing At Random</text>
     <text class="p" x="390" y="140">La falta se puede explicar por</text>
@@ -43,7 +43,7 @@
 
   <!-- MNAR -->
   <g>
-    <rect class="box m3" x="520" y="60" width="230" height="215"/>
+    <rect class="box m3" x="520" y="60" width="230" height="225"/>
     <text class="h" x="635" y="90">MNAR</text>
     <text class="sub" x="635" y="108">Missing Not At Random</text>
     <text class="p" x="635" y="140">La falta SÍ depende del propio</text>

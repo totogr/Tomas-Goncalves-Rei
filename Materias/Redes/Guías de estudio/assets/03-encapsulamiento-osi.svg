@@ -18,17 +18,17 @@
     </marker>
   </defs>
 
-  <text x="360" y="20" text-anchor="middle" class="t">Encapsulamiento — cada capa agrega su propio "sobre" (header)</text>
+  <text x="360" y="20" class="t" style="text-anchor:middle">Encapsulamiento — cada capa agrega su propio "sobre" (header)</text>
 
   <!-- Capa 7 -->
   <g transform="translate(20,40)">
     <rect class="capa" x="0" y="0" width="140" height="40"/>
-    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">7 · Aplicación</text>
-    <text x="70" y="32" text-anchor="middle" class="ss">HTTP, DNS, SMTP</text>
+    <text x="70" y="18" class="s" style="font-weight:bold;text-anchor:middle">7 · Aplicación</text>
+    <text x="70" y="32" class="ss" style="text-anchor:middle">HTTP, DNS, SMTP</text>
   </g>
-  <g transform="translate(200,40)">
+  <g transform="translate(330,40)">
     <rect class="data" x="60" y="10" width="140" height="24"/>
-    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+    <text x="130" y="26" class="s" style="text-anchor:middle">DATOS</text>
   </g>
 
   <path class="arr" d="M 130,88 L 130,110"/>
@@ -36,15 +36,15 @@
   <!-- Capa 4 -->
   <g transform="translate(20,115)">
     <rect class="capa" x="0" y="0" width="140" height="40"/>
-    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">4 · Transporte</text>
-    <text x="70" y="32" text-anchor="middle" class="ss">TCP / UDP</text>
+    <text x="70" y="18" class="s" style="font-weight:bold;text-anchor:middle">4 · Transporte</text>
+    <text x="70" y="32" class="ss" style="text-anchor:middle">TCP / UDP</text>
   </g>
-  <g transform="translate(200,115)">
+  <g transform="translate(330,115)">
     <rect class="l4" x="0" y="10" width="60" height="24"/>
-    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <text x="30" y="26" class="s" style="text-anchor:middle">TCP</text>
     <rect class="data" x="60" y="10" width="140" height="24"/>
-    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
-    <text x="270" y="26" class="ss">segmento</text>
+    <text x="130" y="26" class="s" style="text-anchor:middle">DATOS</text>
+    <text x="245" y="26" class="ss">segmento</text>
   </g>
 
   <path class="arr" d="M 130,163 L 130,185"/>
@@ -52,17 +52,17 @@
   <!-- Capa 3 -->
   <g transform="translate(20,190)">
     <rect class="capa" x="0" y="0" width="140" height="40"/>
-    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">3 · Red</text>
-    <text x="70" y="32" text-anchor="middle" class="ss">IP</text>
+    <text x="70" y="18" class="s" style="font-weight:bold;text-anchor:middle">3 · Red</text>
+    <text x="70" y="32" class="ss" style="text-anchor:middle">IP</text>
   </g>
-  <g transform="translate(200,190)">
+  <g transform="translate(330,190)">
     <rect class="l3" x="-60" y="10" width="60" height="24"/>
-    <text x="-30" y="26" text-anchor="middle" class="s">IP</text>
+    <text x="-30" y="26" class="s" style="text-anchor:middle">IP</text>
     <rect class="l4" x="0" y="10" width="60" height="24"/>
-    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <text x="30" y="26" class="s" style="text-anchor:middle">TCP</text>
     <rect class="data" x="60" y="10" width="140" height="24"/>
-    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
-    <text x="270" y="26" class="ss">paquete</text>
+    <text x="130" y="26" class="s" style="text-anchor:middle">DATOS</text>
+    <text x="245" y="26" class="ss">paquete</text>
   </g>
 
   <path class="arr" d="M 130,238 L 130,260"/>
@@ -70,21 +70,21 @@
   <!-- Capa 2 -->
   <g transform="translate(20,265)">
     <rect class="capa" x="0" y="0" width="140" height="40"/>
-    <text x="70" y="18" text-anchor="middle" class="s" font-weight="bold">2 · Enlace</text>
-    <text x="70" y="32" text-anchor="middle" class="ss">Ethernet (MAC)</text>
+    <text x="70" y="18" class="s" style="font-weight:bold;text-anchor:middle">2 · Enlace</text>
+    <text x="70" y="32" class="ss" style="text-anchor:middle">Ethernet (MAC)</text>
   </g>
-  <g transform="translate(200,265)">
+  <g transform="translate(330,265)">
     <rect class="l2" x="-120" y="10" width="60" height="24"/>
-    <text x="-90" y="26" text-anchor="middle" class="s">MAC</text>
+    <text x="-90" y="26" class="s" style="text-anchor:middle">MAC</text>
     <rect class="l3" x="-60" y="10" width="60" height="24"/>
-    <text x="-30" y="26" text-anchor="middle" class="s">IP</text>
+    <text x="-30" y="26" class="s" style="text-anchor:middle">IP</text>
     <rect class="l4" x="0" y="10" width="60" height="24"/>
-    <text x="30" y="26" text-anchor="middle" class="s">TCP</text>
+    <text x="30" y="26" class="s" style="text-anchor:middle">TCP</text>
     <rect class="data" x="60" y="10" width="140" height="24"/>
-    <text x="130" y="26" text-anchor="middle" class="s">DATOS</text>
+    <text x="130" y="26" class="s" style="text-anchor:middle">DATOS</text>
     <rect class="l2" x="200" y="10" width="30" height="24"/>
-    <text x="215" y="26" text-anchor="middle" class="ss">FCS</text>
-    <text x="290" y="26" class="ss">trama</text>
+    <text x="215" y="26" class="ss" style="text-anchor:middle">FCS</text>
+    <text x="245" y="26" class="ss">trama</text>
   </g>
 
   <path class="arr" d="M 130,313 L 130,335"/>
@@ -92,9 +92,9 @@
   <!-- Capa 1 -->
   <g transform="translate(20,340)">
     <rect class="l1" x="0" y="0" width="140" height="16"/>
-    <text x="70" y="12" text-anchor="middle" class="s" font-weight="bold">1 · Física — bits al cable</text>
+    <text x="70" y="12" class="s" style="font-weight:bold;text-anchor:middle">1 · Física — bits al cable</text>
   </g>
-  <g transform="translate(200,340)">
-    <text x="130" y="12" text-anchor="middle" class="ss" fill="#7b1fa2">0101100010101110100110101010001011011101010101010...</text>
+  <g transform="translate(330,340)">
+    <text x="-120" y="12" class="ss" style="fill:#7b1fa2">0101100010101110100110101010001011011101010101010...</text>
   </g>
 </svg>

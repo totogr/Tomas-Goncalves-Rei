@@ -23,24 +23,24 @@
     <line class="ax" x1="0" y1="0" x2="0" y2="200"/>
     <line class="ax" x1="0" y1="200" x2="290" y2="200"/>
     <!-- labels axes -->
-    <text class="lbl" x="-10" y="0" text-anchor="end">WCSS</text>
-    <text class="lbl" x="290" y="220" text-anchor="middle">k (nº de clusters)</text>
+    <text class="lbl" x="-10" y="0" style="text-anchor:end">WCSS</text>
+    <text class="lbl" x="150" y="233" style="text-anchor:middle">k (nº de clusters)</text>
     <!-- ticks x -->
     <g>
-      <text class="lbl" x="30"  y="215" text-anchor="middle">1</text>
-      <text class="lbl" x="70"  y="215" text-anchor="middle">2</text>
-      <text class="lbl" x="110" y="215" text-anchor="middle">3</text>
-      <text class="lbl" x="150" y="215" text-anchor="middle">4</text>
-      <text class="lbl" x="190" y="215" text-anchor="middle">5</text>
-      <text class="lbl" x="230" y="215" text-anchor="middle">6</text>
-      <text class="lbl" x="270" y="215" text-anchor="middle">7</text>
+      <text class="lbl" x="30"  y="215" style="text-anchor:middle">1</text>
+      <text class="lbl" x="70"  y="215" style="text-anchor:middle">2</text>
+      <text class="lbl" x="110" y="215" style="text-anchor:middle">3</text>
+      <text class="lbl" x="150" y="215" style="text-anchor:middle">4</text>
+      <text class="lbl" x="190" y="215" style="text-anchor:middle">5</text>
+      <text class="lbl" x="230" y="215" style="text-anchor:middle">6</text>
+      <text class="lbl" x="270" y="215" style="text-anchor:middle">7</text>
     </g>
     <!-- curva de codo (baja rápido luego se aplana). Codo en k=4 (x=150) -->
     <path class="curve" d="M 30 20 L 70 60 L 110 100 L 150 145 L 190 170 L 230 180 L 270 186"/>
     <!-- codo -->
     <circle cx="150" cy="145" r="6" fill="#c62828"/>
     <text class="k" x="163" y="140">codo → k = 4</text>
-    <text class="note" x="145" y="248">agregar más clusters ya no reduce mucho el error</text>
+    <text class="note" x="145" y="252">agregar más clusters ya no reduce mucho el error</text>
   </g>
 
   <!-- ============ Silhouette ============ -->
@@ -48,12 +48,12 @@
   <g transform="translate(430,80)">
     <line class="ax" x1="0" y1="0" x2="0" y2="200"/>
     <line class="ax" x1="0" y1="200" x2="290" y2="200"/>
-    <text class="lbl" x="-10" y="0" text-anchor="end">s(i)</text>
-    <text class="lbl" x="290" y="220" text-anchor="middle">observaciones agrupadas por cluster</text>
+    <text class="lbl" x="-10" y="0" style="text-anchor:end">s(i)</text>
+    <text class="lbl" x="145" y="233" style="text-anchor:middle">observaciones agrupadas por cluster</text>
     <!-- valores de referencia -->
-    <text class="lbl" x="-10" y="60"  text-anchor="end">1</text>
-    <text class="lbl" x="-10" y="130" text-anchor="end">0</text>
-    <text class="lbl" x="-10" y="190" text-anchor="end">−1</text>
+    <text class="lbl" x="-10" y="60"  style="text-anchor:end">1</text>
+    <text class="lbl" x="-10" y="130" style="text-anchor:end">0</text>
+    <text class="lbl" x="-10" y="190" style="text-anchor:end">−1</text>
     <line class="grid" x1="0" y1="60" x2="290" y2="60"/>
     <line class="grid" x1="0" y1="130" x2="290" y2="130"/>
     <line class="grid" x1="0" y1="190" x2="290" y2="190"/>
@@ -84,7 +84,7 @@
     <rect class="barneg" x="274" y="130" width="10" height="20"/>
     <!-- promedio -->
     <line class="avg" x1="0" y1="90" x2="290" y2="90"/>
-    <text class="k" x="240" y="86">promedio</text>
-    <text class="note" x="145" y="248">bandas anchas y positivas → buen clustering</text>
+    <text class="k" x="292" y="96">promedio</text>
+    <text class="note" x="145" y="252">bandas anchas y positivas → buen clustering</text>
   </g>
 </svg>

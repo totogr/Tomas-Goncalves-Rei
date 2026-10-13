@@ -91,5 +91,5 @@
   <text class="era" x="700" y="245">Era of Applications / Services</text>
   <text class="lbl" x="700" y="262">APIs · red como plataforma</text>
 
-  <text class="head" x="410" y="300" text-anchor="middle" style="font-size:13px; fill:#333;">del hardware al software · del CapEx al OpEx · de la conectividad al servicio</text>
+  <text class="head" x="410" y="300" style="font-size:13px; fill:#333;text-anchor:middle">del hardware al software · del CapEx al OpEx · de la conectividad al servicio</text>
 </svg>

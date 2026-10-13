@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" role="img" aria-label="User Story Map: backbone y walking skeleton según Jeff Patton">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 380" role="img" aria-label="User Story Map: backbone y walking skeleton según Jeff Patton">
   <style>
     .bg { fill:#fff; }
     .ttl { font: 700 15.5px system-ui, sans-serif; fill:#222; }
@@ -16,7 +16,7 @@
     .rel { stroke:#c0392b; stroke-width:2.2; stroke-dasharray:6,3; fill:none; }
     .rel2 { stroke:#2e6fdb; stroke-width:2.2; stroke-dasharray:6,3; fill:none; }
   </style>
-  <rect class="bg" width="860" height="380"/>
+  <rect class="bg" width="960" height="380"/>
   <text class="ttl" x="20" y="24">User Story Map — el backlog "nuevo" de Jeff Patton</text>
 
   <!-- Eje: Backbone arriba (actividades del usuario) -->
@@ -53,7 +53,7 @@
   </g>
   <!-- Línea del walking skeleton (release 1) -->
   <path class="rel" d="M 55 115 L 845 115 L 845 158 L 55 158 Z"/>
-  <text class="p" x="850" y="140" text-anchor="start" style="fill:#c0392b; font-weight:700;">Release 1 · MVP</text>
+  <text class="p" x="850" y="140" style="fill:#c0392b; font-weight:700;text-anchor:start">Release 1 · MVP</text>
 
   <!-- Fila 2: mejoras -->
   <g>
@@ -69,7 +69,7 @@
     <text class="p" x="770" y="192">Reseña con foto</text>
   </g>
   <path class="rel2" d="M 55 165 L 845 165 L 845 208 L 55 208 Z"/>
-  <text class="p" x="850" y="190" text-anchor="start" style="fill:#2e6fdb; font-weight:700;">Release 2</text>
+  <text class="p" x="850" y="190" style="fill:#2e6fdb; font-weight:700;text-anchor:start">Release 2</text>
 
   <!-- Fila 3: opcional / futuro -->
   <g>
@@ -84,7 +84,7 @@
     <rect class="card g1" x="700" y="220" width="140" height="35"/>
     <text class="p" x="770" y="242">Responder reseñas</text>
   </g>
-  <text class="p" x="850" y="240" text-anchor="start">Futuro</text>
+  <text class="p" x="850" y="240" style="text-anchor:start">Futuro</text>
 
   <!-- Notas al pie -->
   <text class="stt" x="20" y="295">🦴 Backbone (fila amarilla): las actividades esenciales del usuario. Es la columna vertebral del producto.</text>

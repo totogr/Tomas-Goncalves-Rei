@@ -11,22 +11,22 @@
     .B{stroke:#7b1fa2;stroke-width:1.5;fill:none;stroke-dasharray:3,3}
   </style>
 
-  <text x="360" y="20" text-anchor="middle" class="t">Arquitectura spine-leaf típica de un data center moderno</text>
+  <text x="360" y="20" class="t" style="text-anchor:middle">Arquitectura spine-leaf típica de un data center moderno</text>
 
   <!-- Spines -->
-  <text x="60" y="60" text-anchor="middle" class="s" fill="#c62828">SPINE</text>
-  <rect class="spine" x="180" y="45" width="90" height="30" rx="5"/><text x="225" y="65" text-anchor="middle" class="s" fill="#fff">Spine 1</text>
-  <rect class="spine" x="320" y="45" width="90" height="30" rx="5"/><text x="365" y="65" text-anchor="middle" class="s" fill="#fff">Spine 2</text>
-  <rect class="spine" x="460" y="45" width="90" height="30" rx="5"/><text x="505" y="65" text-anchor="middle" class="s" fill="#fff">Spine 3</text>
-  <rect class="spine" x="600" y="45" width="90" height="30" rx="5"/><text x="645" y="65" text-anchor="middle" class="s" fill="#fff">Spine 4</text>
+  <text x="60" y="60" class="s" style="fill:#c62828;text-anchor:middle">SPINE</text>
+  <rect class="spine" x="180" y="45" width="90" height="30" rx="5"/><text x="225" y="65" class="s" style="fill:#fff;text-anchor:middle">Spine 1</text>
+  <rect class="spine" x="320" y="45" width="90" height="30" rx="5"/><text x="365" y="65" class="s" style="fill:#fff;text-anchor:middle">Spine 2</text>
+  <rect class="spine" x="460" y="45" width="90" height="30" rx="5"/><text x="505" y="65" class="s" style="fill:#fff;text-anchor:middle">Spine 3</text>
+  <rect class="spine" x="600" y="45" width="90" height="30" rx="5"/><text x="645" y="65" class="s" style="fill:#fff;text-anchor:middle">Spine 4</text>
 
   <!-- Leaves -->
-  <text x="60" y="180" text-anchor="middle" class="s" fill="#1976d2">LEAF</text>
-  <rect class="leaf" x="130" y="160" width="70" height="26" rx="4"/><text x="165" y="177" text-anchor="middle" class="s" fill="#fff">Leaf 1</text>
-  <rect class="leaf" x="230" y="160" width="70" height="26" rx="4"/><text x="265" y="177" text-anchor="middle" class="s" fill="#fff">Leaf 2</text>
-  <rect class="leaf" x="330" y="160" width="70" height="26" rx="4"/><text x="365" y="177" text-anchor="middle" class="s" fill="#fff">Leaf 3</text>
-  <rect class="leaf" x="430" y="160" width="70" height="26" rx="4"/><text x="465" y="177" text-anchor="middle" class="s" fill="#fff">Leaf 4</text>
-  <rect class="leaf" x="530" y="160" width="70" height="26" rx="4"/><text x="565" y="177" text-anchor="middle" class="s" fill="#fff">Leaf 5</text>
+  <text x="60" y="180" class="s" style="fill:#1976d2;text-anchor:middle">LEAF</text>
+  <rect class="leaf" x="130" y="160" width="70" height="26" rx="4"/><text x="165" y="177" class="s" style="fill:#fff;text-anchor:middle">Leaf 1</text>
+  <rect class="leaf" x="230" y="160" width="70" height="26" rx="4"/><text x="265" y="177" class="s" style="fill:#fff;text-anchor:middle">Leaf 2</text>
+  <rect class="leaf" x="330" y="160" width="70" height="26" rx="4"/><text x="365" y="177" class="s" style="fill:#fff;text-anchor:middle">Leaf 3</text>
+  <rect class="leaf" x="430" y="160" width="70" height="26" rx="4"/><text x="465" y="177" class="s" style="fill:#fff;text-anchor:middle">Leaf 4</text>
+  <rect class="leaf" x="530" y="160" width="70" height="26" rx="4"/><text x="565" y="177" class="s" style="fill:#fff;text-anchor:middle">Leaf 5</text>
 
   <!-- Enlaces spine-leaf (todos con todos) -->
   <g class="link">
@@ -39,25 +39,25 @@
 
   <!-- Servidores debajo -->
   <g>
-    <rect class="srv" x="140" y="220" width="50" height="18" rx="2"/><text x="165" y="233" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="140" y="242" width="50" height="18" rx="2"/><text x="165" y="255" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="240" y="220" width="50" height="18" rx="2"/><text x="265" y="233" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="240" y="242" width="50" height="18" rx="2"/><text x="265" y="255" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="340" y="220" width="50" height="18" rx="2"/><text x="365" y="233" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="340" y="242" width="50" height="18" rx="2"/><text x="365" y="255" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="440" y="220" width="50" height="18" rx="2"/><text x="465" y="233" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="440" y="242" width="50" height="18" rx="2"/><text x="465" y="255" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="540" y="220" width="50" height="18" rx="2"/><text x="565" y="233" text-anchor="middle" class="ss">srv</text>
-    <rect class="srv" x="540" y="242" width="50" height="18" rx="2"/><text x="565" y="255" text-anchor="middle" class="ss">srv</text>
+    <rect class="srv" x="140" y="220" width="50" height="18" rx="2"/><text x="165" y="233" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="140" y="242" width="50" height="18" rx="2"/><text x="165" y="255" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="240" y="220" width="50" height="18" rx="2"/><text x="265" y="233" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="240" y="242" width="50" height="18" rx="2"/><text x="265" y="255" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="340" y="220" width="50" height="18" rx="2"/><text x="365" y="233" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="340" y="242" width="50" height="18" rx="2"/><text x="365" y="255" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="440" y="220" width="50" height="18" rx="2"/><text x="465" y="233" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="440" y="242" width="50" height="18" rx="2"/><text x="465" y="255" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="540" y="220" width="50" height="18" rx="2"/><text x="565" y="233" class="ss" style="text-anchor:middle">srv</text>
+    <rect class="srv" x="540" y="242" width="50" height="18" rx="2"/><text x="565" y="255" class="ss" style="text-anchor:middle">srv</text>
   </g>
 
   <!-- Cables A/B -->
   <line class="A" x1="165" y1="186" x2="165" y2="220"/>
   <line class="B" x1="185" y1="186" x2="185" y2="220"/>
-  <text x="620" y="235" text-anchor="middle" class="ss" fill="#2e7d32">— — Camino A</text>
-  <text x="620" y="255" text-anchor="middle" class="ss" fill="#7b1fa2">— — Camino B</text>
+  <text x="620" y="235" class="ss" style="fill:#2e7d32;text-anchor:middle">— — Camino A</text>
+  <text x="620" y="255" class="ss" style="fill:#7b1fa2;text-anchor:middle">— — Camino B</text>
 
-  <text x="360" y="295" text-anchor="middle" class="ss">Cada leaf se conecta a TODOS los spines → múltiples caminos, sin cuellos de botella.</text>
-  <text x="360" y="312" text-anchor="middle" class="ss">Cada servidor tiene dos "caminos" A/B (redundancia) con acometidas eléctricas y de red independientes.</text>
-  <text x="360" y="329" text-anchor="middle" class="ss" font-style="italic">Reemplaza a la clásica jerarquía Core → Distribución → Acceso, mejor para tráfico "este-oeste" (VM ↔ VM).</text>
+  <text x="360" y="295" class="ss" style="text-anchor:middle">Cada leaf se conecta a TODOS los spines → múltiples caminos, sin cuellos de botella.</text>
+  <text x="360" y="312" class="ss" style="text-anchor:middle">Cada servidor tiene dos "caminos" A/B (redundancia) con acometidas eléctricas y de red independientes.</text>
+  <text x="360" y="329" class="ss" font-style="italic" style="text-anchor:middle">Reemplaza a la clásica jerarquía Core → Distribución → Acceso, mejor para tráfico "este-oeste" (VM ↔ VM).</text>
 </svg>

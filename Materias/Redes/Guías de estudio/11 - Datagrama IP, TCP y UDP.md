@@ -90,18 +90,19 @@ Protocolo de transporte **orientado a conexión** que garantiza la entrega **con
 ### Cómo vive una conexión TCP
 
 ```mermaid
+%%{init: {"sequence": {"actorMargin": 140}}}%%
 sequenceDiagram
     participant C as Cliente
     participant S as Servidor
-    Note over C,S: 1 · Three-Way Handshake (abre la conexión)
+    Note over C,S: 1 · Three-Way Handshake<br/>(abre la conexión)
     C->>S: SYN
     S->>C: SYN + ACK
     C->>S: ACK
-    Note over C,S: 2-3 · Datos en segmentos numerados, confirmados con ACK
+    Note over C,S: 2-3 · Datos en segmentos<br/>numerados, confirmados con ACK
     C->>S: Segmentos de datos
     S->>C: ACK
-    Note over C,S: 4-5 · Control de flujo y congestión (ventana deslizante). Si se pierde un segmento, se retransmite
-    Note over C,S: 6 · Four-Way Handshake (cierra la conexión)
+    Note over C,S: 4-5 · Control de flujo y congestión<br/>(ventana deslizante). Si se pierde<br/>un segmento, se retransmite
+    Note over C,S: 6 · Four-Way Handshake<br/>(cierra la conexión)
     C->>S: FIN
     S->>C: ACK
     S->>C: FIN

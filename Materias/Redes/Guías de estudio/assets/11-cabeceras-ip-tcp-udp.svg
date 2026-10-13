@@ -12,7 +12,7 @@
 
   <!-- Barra de bits -->
   <text x="30" y="30" class="t">Cabecera IPv4 (20 bytes = 5 filas de 32 bits)</text>
-  <g transform="translate(30,40)">
+  <g transform="translate(30,36)">
     <text x="0" y="12" class="bit">0</text>
     <text x="120" y="12" class="bit">8</text>
     <text x="240" y="12" class="bit">16</text>
@@ -23,22 +23,22 @@
   <!-- IP header -->
   <g transform="translate(30,50)">
     <!-- Fila 1 -->
-    <rect class="cellip" x="0" y="0" width="60" height="26"/><text x="30" y="17" text-anchor="middle" class="ss">Ver</text>
-    <rect class="cellip" x="60" y="0" width="60" height="26"/><text x="90" y="17" text-anchor="middle" class="ss">IHL</text>
-    <rect class="cellip" x="120" y="0" width="120" height="26"/><text x="180" y="17" text-anchor="middle" class="ss">Tipo servicio</text>
-    <rect class="cellip" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Longitud total</text>
+    <rect class="cellip" x="0" y="0" width="60" height="26"/><text x="30" y="17" class="ss" style="text-anchor:middle">Ver</text>
+    <rect class="cellip" x="60" y="0" width="60" height="26"/><text x="90" y="17" class="ss" style="text-anchor:middle">IHL</text>
+    <rect class="cellip" x="120" y="0" width="120" height="26"/><text x="180" y="17" class="ss" style="text-anchor:middle">Tipo servicio</text>
+    <rect class="cellip" x="240" y="0" width="240" height="26"/><text x="360" y="17" class="ss" style="text-anchor:middle">Longitud total</text>
     <!-- Fila 2 -->
-    <rect class="cellip" x="0" y="26" width="240" height="26"/><text x="120" y="43" text-anchor="middle" class="ss">Identificación</text>
-    <rect class="cellip" x="240" y="26" width="60" height="26"/><text x="270" y="43" text-anchor="middle" class="ss">Flags</text>
-    <rect class="cellip" x="300" y="26" width="180" height="26"/><text x="390" y="43" text-anchor="middle" class="ss">Fragment offset</text>
+    <rect class="cellip" x="0" y="26" width="240" height="26"/><text x="120" y="43" class="ss" style="text-anchor:middle">Identificación</text>
+    <rect class="cellip" x="240" y="26" width="60" height="26"/><text x="270" y="43" class="ss" style="text-anchor:middle">Flags</text>
+    <rect class="cellip" x="300" y="26" width="180" height="26"/><text x="390" y="43" class="ss" style="text-anchor:middle">Fragment offset</text>
     <!-- Fila 3 -->
-    <rect class="cellip" x="0" y="52" width="120" height="26"/><text x="60" y="69" text-anchor="middle" class="ss">TTL</text>
-    <rect class="cellip" x="120" y="52" width="120" height="26"/><text x="180" y="69" text-anchor="middle" class="ss">Protocolo</text>
-    <rect class="cellip" x="240" y="52" width="240" height="26"/><text x="360" y="69" text-anchor="middle" class="ss">Checksum de cabecera</text>
+    <rect class="cellip" x="0" y="52" width="120" height="26"/><text x="60" y="69" class="ss" style="text-anchor:middle">TTL</text>
+    <rect class="cellip" x="120" y="52" width="120" height="26"/><text x="180" y="69" class="ss" style="text-anchor:middle">Protocolo</text>
+    <rect class="cellip" x="240" y="52" width="240" height="26"/><text x="360" y="69" class="ss" style="text-anchor:middle">Checksum de cabecera</text>
     <!-- Fila 4 -->
-    <rect class="cellip" x="0" y="78" width="480" height="26"/><text x="240" y="95" text-anchor="middle" class="s" font-weight="bold">Dirección IP origen (32 bits)</text>
+    <rect class="cellip" x="0" y="78" width="480" height="26"/><text x="240" y="95" class="s" style="font-weight:bold;text-anchor:middle">Dirección IP origen (32 bits)</text>
     <!-- Fila 5 -->
-    <rect class="cellip" x="0" y="104" width="480" height="26"/><text x="240" y="121" text-anchor="middle" class="s" font-weight="bold">Dirección IP destino (32 bits)</text>
+    <rect class="cellip" x="0" y="104" width="480" height="26"/><text x="240" y="121" class="s" style="font-weight:bold;text-anchor:middle">Dirección IP destino (32 bits)</text>
   </g>
 
   <text x="530" y="105" class="ss">TTL = "vida"</text>
@@ -47,34 +47,34 @@
 
   <!-- TCP header -->
   <text x="30" y="210" class="t">Cabecera TCP (20 bytes)</text>
-  <g transform="translate(30,220)">
+  <g transform="translate(30,216)">
     <text x="0" y="12" class="bit">0</text><text x="120" y="12" class="bit">8</text><text x="240" y="12" class="bit">16</text><text x="360" y="12" class="bit">24</text><text x="470" y="12" class="bit">31</text>
   </g>
   <g transform="translate(30,230)">
-    <rect class="celltcp" x="0" y="0" width="240" height="26"/><text x="120" y="17" text-anchor="middle" class="ss">Puerto origen</text>
-    <rect class="celltcp" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Puerto destino</text>
-    <rect class="celltcp" x="0" y="26" width="480" height="26"/><text x="240" y="43" text-anchor="middle" class="s" font-weight="bold">Número de secuencia (32 bits)</text>
-    <rect class="celltcp" x="0" y="52" width="480" height="26"/><text x="240" y="69" text-anchor="middle" class="s" font-weight="bold">Número de acuse (ACK) (32 bits)</text>
-    <rect class="celltcp" x="0" y="78" width="60" height="26"/><text x="30" y="95" text-anchor="middle" class="ss">Off</text>
-    <rect class="celltcp" x="60" y="78" width="60" height="26"/><text x="90" y="95" text-anchor="middle" class="ss">Res</text>
-    <rect class="celltcp" x="120" y="78" width="120" height="26"/><text x="180" y="95" text-anchor="middle" class="ss">Flags (SYN/ACK/FIN…)</text>
-    <rect class="celltcp" x="240" y="78" width="240" height="26"/><text x="360" y="95" text-anchor="middle" class="ss">Tamaño de ventana</text>
-    <rect class="celltcp" x="0" y="104" width="240" height="26"/><text x="120" y="121" text-anchor="middle" class="ss">Checksum</text>
-    <rect class="celltcp" x="240" y="104" width="240" height="26"/><text x="360" y="121" text-anchor="middle" class="ss">Puntero urgente</text>
+    <rect class="celltcp" x="0" y="0" width="240" height="26"/><text x="120" y="17" class="ss" style="text-anchor:middle">Puerto origen</text>
+    <rect class="celltcp" x="240" y="0" width="240" height="26"/><text x="360" y="17" class="ss" style="text-anchor:middle">Puerto destino</text>
+    <rect class="celltcp" x="0" y="26" width="480" height="26"/><text x="240" y="43" class="s" style="font-weight:bold;text-anchor:middle">Número de secuencia (32 bits)</text>
+    <rect class="celltcp" x="0" y="52" width="480" height="26"/><text x="240" y="69" class="s" style="font-weight:bold;text-anchor:middle">Número de acuse (ACK) (32 bits)</text>
+    <rect class="celltcp" x="0" y="78" width="60" height="26"/><text x="30" y="95" class="ss" style="text-anchor:middle">Off</text>
+    <rect class="celltcp" x="60" y="78" width="60" height="26"/><text x="90" y="95" class="ss" style="text-anchor:middle">Res</text>
+    <rect class="celltcp" x="120" y="78" width="120" height="26"/><text x="180" y="95" class="ss" style="text-anchor:middle">Flags (SYN/ACK/FIN…)</text>
+    <rect class="celltcp" x="240" y="78" width="240" height="26"/><text x="360" y="95" class="ss" style="text-anchor:middle">Tamaño de ventana</text>
+    <rect class="celltcp" x="0" y="104" width="240" height="26"/><text x="120" y="121" class="ss" style="text-anchor:middle">Checksum</text>
+    <rect class="celltcp" x="240" y="104" width="240" height="26"/><text x="360" y="121" class="ss" style="text-anchor:middle">Puntero urgente</text>
   </g>
-  <text x="530" y="290" class="ss" fill="#f57c00">Sec + ACK + Flags =</text>
-  <text x="530" y="305" class="ss" fill="#f57c00">la máquina de estados</text>
-  <text x="530" y="320" class="ss" fill="#f57c00">de TCP (confiabilidad).</text>
+  <text x="530" y="290" class="ss" style="fill:#f57c00">Sec + ACK + Flags =</text>
+  <text x="530" y="305" class="ss" style="fill:#f57c00">la máquina de estados</text>
+  <text x="530" y="320" class="ss" style="fill:#f57c00">de TCP (confiabilidad).</text>
 
   <!-- UDP header -->
   <text x="30" y="405" class="t">Cabecera UDP (8 bytes) — mínima, sin garantías</text>
-  <g transform="translate(30,415)">
+  <g transform="translate(30,411)">
     <text x="0" y="12" class="bit">0</text><text x="120" y="12" class="bit">8</text><text x="240" y="12" class="bit">16</text><text x="360" y="12" class="bit">24</text><text x="470" y="12" class="bit">31</text>
   </g>
   <g transform="translate(30,425)">
-    <rect class="celludp" x="0" y="0" width="240" height="26"/><text x="120" y="17" text-anchor="middle" class="ss">Puerto origen</text>
-    <rect class="celludp" x="240" y="0" width="240" height="26"/><text x="360" y="17" text-anchor="middle" class="ss">Puerto destino</text>
-    <rect class="celludp" x="0" y="26" width="240" height="26"/><text x="120" y="43" text-anchor="middle" class="ss">Longitud</text>
-    <rect class="celludp" x="240" y="26" width="240" height="26"/><text x="360" y="43" text-anchor="middle" class="ss">Checksum</text>
+    <rect class="celludp" x="0" y="0" width="240" height="26"/><text x="120" y="17" class="ss" style="text-anchor:middle">Puerto origen</text>
+    <rect class="celludp" x="240" y="0" width="240" height="26"/><text x="360" y="17" class="ss" style="text-anchor:middle">Puerto destino</text>
+    <rect class="celludp" x="0" y="26" width="240" height="26"/><text x="120" y="43" class="ss" style="text-anchor:middle">Longitud</text>
+    <rect class="celludp" x="240" y="26" width="240" height="26"/><text x="360" y="43" class="ss" style="text-anchor:middle">Checksum</text>
   </g>
 </svg>
