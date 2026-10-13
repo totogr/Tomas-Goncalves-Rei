@@ -1,7 +1,7 @@
 # 07 · Reducción de la dimensionalidad
 
 > 🧩 **Guía de estudio para llegar a la clase con el tema masticado.**
-> Fundamentada en las slides de la cátedra (`Clases Teóricas/08-Reducción de la dimensionalidad/`: *Introducción y PCA*, *MDS y PCoA*, *t-SNE* e *ISOMAP*) y en lo que se tomó en los [parciales anteriores](Parciales%20anteriores%20resueltos.md#reducción-de-dimensionalidad).
+> Fundamentada en las slides de la cátedra (`Clases Teóricas/08-Reducción de la dimensionalidad/`: *Introducción y PCA*, *MDS y PCoA*, *t-SNE* e *ISOMAP*), la **teórica del 06/10**, las **notebooks de la práctica** (`Clases Prácticas/11 - Reducción de Dimensionalidad/`) y lo que se tomó en los [parciales anteriores](Parciales%20anteriores%20resueltos.md#reducción-de-dimensionalidad).
 
 ---
 
@@ -13,7 +13,7 @@ Reducir la dimensionalidad es **representar datos de muchas variables en pocas (
 
 ## 🧭 ¿Por qué importa / dónde encaja?
 
-Según la cátedra, sirve para:
+🔴 **"Presten atención, es pregunta de examen: ¿para qué sirve la reducción de la dimensionalidad?"** (teórica del 06/10). Según la cátedra, sirve para:
 
 1. **Visualizar** los datos y entender su distribución.
 2. **Detectar patrones** a simple vista (correlaciones, grupos).
@@ -21,6 +21,12 @@ Según la cátedra, sirve para:
 4. **Acelerar** el entrenamiento de un modelo.
 5. **Comprimir** la información.
 6. **Presentar resultados** a interesados que no saben de ciencia de datos.
+
+El profe remarcó que **los dos motivos principales son visualizar** (más de 3 dimensiones no se pueden ver) **y acelerar el entrenamiento** (por ejemplo, al buscar hiperparámetros con muchas variantes de un modelo).
+
+> 🟢 **Lo hacemos a diario sin darnos cuenta:**
+> - Un **planisferio** es la Tierra (3D) proyectada en un plano (2D).
+> - El **mapa del subte** reduce el recorrido a **una línea** (1D): se pierden las curvas y la profundidad, pero se conserva lo que le importa al pasajero, **qué estación está antes y cuál después**.
 
 Son técnicas **no supervisadas** (no usan la variable a predecir). Con muchas variables aparece la **maldición de la dimensionalidad**: los datos quedan ralos, las distancias pierden sentido y aumenta el riesgo de **overfitting**.
 
@@ -60,6 +66,14 @@ flowchart LR
 
 Como **a es fijo**, **minimizar b equivale a maximizar c**. PCA busca la recta que **maximiza la suma de las distancias al cuadrado** de los puntos proyectados al origen: d₁² + d₂² + … + d₆².
 
+> **¿Cómo se calcula en la práctica?** Lo de "rotar la recta" es la **intuición**. La cuenta real es **analítica** (no iterativa), y es lo que hace scikit-learn. Son los pasos de la notebook de la práctica:
+> 1. **Estandarizar** los atributos.
+> 2. Calcular la **matriz de covarianza**.
+> 3. Calcular sus **autovalores y autovectores** (o, equivalente, la **SVD** de los datos).
+> 4. **Ordenar los autovalores** de mayor a menor para elegir cuántas componentes usar.
+> 5. Armar la **matriz de transformación** con los autovectores en ese orden.
+> 6. **Proyectar** los datos.
+
 ### El vocabulario (pregunta clásica)
 
 | Término | Qué es | En el ejemplo |
@@ -82,7 +96,9 @@ Como **a es fijo**, **minimizar b equivale a maximizar c**. PCA busca la recta q
   - Si **PC1 + PC2 acumulan casi todo** (ej. 79% + 15% = 94% en 3D), el gráfico 2D es una **buena representación** de los datos originales.
   - Si el scree plot es **"plano"** (la variación está repartida entre muchas PCs), el gráfico de PC1 y PC2 **no alcanza** para ver la dispersión. **Igual se pueden detectar agrupamientos.**
 
-### Resumen de la cátedra
+### Resumen de la cátedra 🔴
+"También presten atención porque esto es pregunta de examen: **¿para qué o cuándo utilizaríamos PCA?**" (06/10)
+
 > PCA sirve para **identificar agrupamientos** en el espacio de entrada, **correlaciones**, **clusters**, o entender **cuán dispersos están los datos y sobre qué ejes o variables**. Es útil sobre todo cuando no se puede graficar el espacio de entrada en ejes cartesianos.
 
 ⚠️ Esa última frase es la que usan los parciales para la pregunta "¿qué técnica usás si…?" → **PCA**.
@@ -115,7 +131,16 @@ Además, aunque las slides no lo mencionan, conviene **estandarizar** antes de P
 
    ⚠️ Por ser iterativos, **a veces dan resultados distintos**.
 
-Con distancia **euclídea**, el resultado es **el mismo gráfico que PCA**: minimizar distancias lineales equivale a maximizar la correlación lineal. La gracia de MDS es poder usar **otras distancias**: por ejemplo, la **distancia de Hamming** (cantidad mínima de sustituciones para pasar de una cadena a otra; "karolin" → "kathrin" = 3), o cualquier fórmula apropiada al problema.
+Con distancia **euclídea**, el resultado es **el mismo gráfico que PCA**: minimizar distancias lineales equivale a maximizar la correlación lineal. La gracia de MDS es poder usar **otras distancias**, según lo que tenga sentido para el problema:
+
+| Distancia | Qué mide | Cuándo |
+| --- | --- | --- |
+| **Euclídea** | La línea recta | La de siempre |
+| **Manhattan** | Moverse por una **cuadrícula**, sin diagonales (como por las calles de una ciudad) | Recorridos sobre una grilla |
+| **Hamming** | Cantidad de **posiciones distintas** entre dos cadenas **del mismo largo** ("karolin" → "kathrin" = 3) | Texto, códigos |
+| **Great-circle** | El arco sobre la superficie de una **esfera** | Distancias entre ciudades de distintos países |
+| **Mahalanobis** | Distancia que tiene en cuenta la **dispersión y la correlación** de los datos | Detectar **outliers** (lo recordó un alumno en clase) |
+| **Una propia** | Cualquier fórmula pertinente al problema | — |
 
 | | PCA | MDS / PCoA |
 | --- | --- | --- |
@@ -145,13 +170,33 @@ Creado en 2008 por **Hinton y Van der Maaten**. Proyecta a baja dimensión (habi
 4. Se ubican los puntos **al azar** en el espacio nuevo y se calcula otra matriz de similitud, pero con una **distribución t de Student** (la **"t" de t-SNE**). La t es más baja en el centro y más alta en las colas que la normal, así que los clusters aparecen **más separados y fáciles de ver**.
 5. Los puntos se **mueven de a uno, en pasos chicos**: los de su cluster lo **atraen** como imanes y los lejanos lo **repelen**. Así, de a poco, la matriz nueva se parece a la original. No se puede resolver de una sola vez.
 
+Más formal (la notebook de la práctica): las similitudes son **probabilidades de que dos puntos sean vecinos**. La diferencia entre las del espacio original y las del reducido se mide con la **divergencia de Kullback-Leibler**, y se minimiza con **descenso por gradiente**.
+
+**Efecto de la perplejidad:**
+- **Baja** → mira pocos vecinos, trabaja **más localmente**.
+- **Alta** → la normal es más abarcativa. Si es demasiado alta, en el rollo suizo llega a tomar como vecinos puntos de **otra vuelta del rollo** e intenta acercarlos.
+- Además, **la cantidad de dimensiones de salida se fija de antemano** (`n_components`). En PCA, en cambio, podés calcular todas las componentes y elegir después con el scree plot.
+
+> 💬 **Pregunta de un alumno: ¿se puede usar PCA como "semilla" de t-SNE?** El profe dijo que podría funcionar. De hecho, **es práctica habitual**:
+> - la documentación de scikit-learn recomienda reducir primero con PCA (a unas 50 dimensiones) cuando hay muchas;
+> - `TSNE` usa `init="pca"` por defecto.
+
 | Fortalezas | Debilidades |
 | --- | --- |
 | **De lo mejor para visualizar** datos (ej.: MNIST queda separado por dígito) | Es **estocástico**: cada corrida da distinto |
 | Conserva **estructuras no lineales** | **Escala muy mal** en tiempo con dimensiones y puntos (en el ejemplo: **9 s contra 0,03 s de PCA**) |
-| | **No se puede usar con puntos nuevos** (no "transforma" datos que no vio) |
+| | **No se puede usar con puntos nuevos** (no "transforma" datos que no vio): hay que recalcular todo |
 
 > ⚠️ La slide dice que conserva estructuras "globales y locales". En realidad conserva sobre todo las **locales** (quién es vecino de quién). Los **tamaños de los clusters y las distancias entre clusters** del gráfico **no son interpretables**.
+
+**¿Y con puntos nuevos? (pregunta de un alumno)**
+
+| Técnica | ¿Proyecta puntos nuevos sin recalcular todo? |
+| --- | --- |
+| **PCA** | **Sí**: se multiplican por la matriz de transformación (`transform`) |
+| **MDS** | En scikit-learn **no** (no tiene `transform`). El profe comentó que se puede reaprovechar la matriz de distancias ya calculada |
+| **ISOMAP** | En scikit-learn **sí** (`transform`) |
+| **t-SNE** | **No**: hay que recalcular todo |
 
 ---
 
@@ -183,10 +228,77 @@ flowchart LR
 - **k demasiado grande** (respecto de la forma de la variedad) o **ruido** en los datos producen una proyección errónea, porque se crean "atajos" que saltan entre partes de la superficie. **Un solo dato mal medido** puede alterar muchas distancias.
 - **k demasiado chico**: el grafo queda **demasiado escaso** y no aproxima bien los caminos geodésicos.
 
+> 💬 **¿Cómo se elige k?** Es un **hiperparámetro**, como en KNN. Un alumno preguntó si hay algo como el método del codo: **no**, "es un poco a ojo". Se prueba con varios valores y se mira el resultado.
+
 **Landmark ISOMAP** (para hacerlo más rápido):
 - Se eligen **N puntos especiales** (*landmarks*), menos que el total, por ejemplo uniformemente distribuidos.
 - Solo se calculan las distancias que los involucran.
 - Después se aplica **Landmark-MDS (LMDS)** para proyectar todos los puntos.
+
+---
+
+## 🧪 La práctica (notebooks del 08/10)
+
+Están en `Clases Prácticas/11 - Reducción de Dimensionalidad/`.
+
+### Selección vs. extracción de variables
+La notebook arranca con las técnicas posibles. Hay dos familias:
+- **Seleccionar** variables (quedarse con algunas de las originales):
+  - eliminar variables **correlacionadas**;
+  - eliminar variables con **baja varianza**;
+  - quedarse con las de mayor **importancia** según un algoritmo que la calcule (por ejemplo, un árbol).
+- **Extraer** variables nuevas: **PCA, t-SNE, MDS, ISOMAP**.
+
+> PCA no requiere supuestos, así que **siempre se puede aplicar**. Pero solo **tiene sentido si las variables originales están correlacionadas**: si no lo están, cada componente termina siendo casi una variable original.
+
+### PCA en scikit-learn
+
+```python
+x = StandardScaler().fit_transform(x)   # estandarizar primero
+pca = PCA(n_components=4)
+x_pca = pca.fit_transform(x)
+pca.explained_variance_ratio_           # % de varianza de cada componente (el scree plot)
+pca.explained_variance_ratio_.cumsum()  # % acumulado
+```
+
+- **Iris (4 variables):** las componentes explican **73,0% · 22,9% · 3,7% · 0,5%**. Con **2 componentes ya se tiene el 95,8%** → el gráfico de PC1 y PC2 representa muy bien los datos.
+- **Compresión de imágenes:**
+  1. Una foto en escala de grises de 720 × 1280 es una matriz: cada fila es una observación con 1280 columnas.
+  2. Para explicar el 95% de la varianza alcanzan **unas 75 componentes** (de 1280).
+  3. `inverse_transform` **reconstruye** la imagen desde las componentes. Con 50 componentes la foto se reconoce bien; con 10 queda muy borrosa.
+
+### PCA vs. t-SNE con dígitos escritos a mano
+- **PCA a 2D:** las dos componentes explican solo **12,0% + 9,6% = 21,6%** → los dígitos aparecen **mezclados**.
+- **t-SNE con perplejidad 2, 5, 10 y 15:** los dígitos quedan en **grupos bien separados**.
+
+Es la misma conclusión que la slide: para **ver clusters**, t-SNE; PCA es mucho más rápido pero, si el scree plot es "plano", el gráfico 2D no alcanza.
+
+### Rollo suizo (*swiss roll*): MDS e ISOMAP
+- **MDS:** el **stress** (`embedding.stress_`) baja al aumentar las dimensiones de salida:
+
+  | Dimensiones | Stress |
+  | --- | --- |
+  | 1 | ≈ 77 millones |
+  | 2 | ≈ 11,8 millones |
+  | 3 | ≈ 38 |
+
+  Con 3 dimensiones es casi 0, porque **el rollo suizo vive en 3D**: no hay nada que perder. El valor absoluto depende de la escala (scikit-learn usa el stress "crudo", sin normalizar); lo que importa es **comparar**.
+- **ISOMAP** (`Isomap(n_neighbors=k, n_components=2)`):
+
+  | k | Resultado |
+  | --- | --- |
+  | **5** | El grafo queda **partido en 2 componentes** (scikit-learn avisa con un *warning*). La proyección queda más "esparsa", porque algunas distancias se agrandan |
+  | **15** | **Desenrolla bien** el rollo |
+  | **45** | Se **pierde la noción de distancia geodésica** (aparecen atajos entre vueltas) y el rollo queda sin desenrollar, como con las otras técnicas |
+
+### Multicolinealidad en regresión lineal (segunda notebook)
+Por qué conviene sacar variables correlacionadas antes de una regresión:
+1. Al dataset de **publicidad** (TV, radio, periódico → ventas) le agregan **9 copias de `tv` con un poco de ruido** (correlación ≈ 0,99999 con `tv`).
+2. Entrenan una regresión lineal con `tv`, `radio` y las 9 copias.
+3. **R² = 0,90** y **RMSE en test ≈ 1,59**: **predice bien**.
+4. Pero los **coeficientes no tienen sentido**: `tv` da −0,45, una copia +0,89, otra −0,54… El efecto total de TV se conserva (la suma ronda 0,05), pero **repartido al azar entre las copias**, con signos que cambian.
+
+**Conclusión:** con **multicolinealidad**, los coeficientes se vuelven **inestables e ininterpretables**, aunque la predicción siga bien. La solución es **reducir dimensiones**: sacar las variables correlacionadas o aplicar PCA, que produce componentes **no correlacionadas**.
 
 ---
 
@@ -217,6 +329,7 @@ flowchart TD
 2. PC1 tiene pendiente 0,5 (2 unidades de X por cada 1 de Y). ¿Cuál es su autovector? ¿Cuáles son los loading scores?
 3. Calculá la distancia euclídea entre A1 = (9, 6, 12, 5) y A2 = (10, 4, 9, 7).
 4. En MDS, una coordenada vale 6, la derivada del stress respecto de ella da −0,4 y el learning rate es 0,5. ¿Cuál es el nuevo valor?
+5. `explained_variance_ratio_` da [0,7296; 0,2285; 0,0367; 0,0052]. ¿Cuántas componentes necesitás para explicar al menos el 95%? ¿Y el 99%?
 
 <details>
 <summary>Resoluciones</summary>
@@ -225,6 +338,7 @@ flowchart TD
 2. Vector (2, 1), largo √(4 + 1) = √5 ≈ 2,236 → autovector **(0,894; 0,447)**. Loading scores: **0,894 de X y 0,447 de Y**.
 3. √((10 − 9)² + (4 − 6)² + (9 − 12)² + (7 − 5)²) = √(1 + 4 + 9 + 4) = **√18 ≈ 4,24**.
 4. x ← x − lr · derivada = 6 − 0,5 · (−0,4) = **6,2**. La derivada negativa indica que el error baja hacia la derecha.
+5. Acumulado: 72,96% → **95,81%** → 99,48% → 100%. Para el 95% alcanzan **2 componentes**; para el 99%, **3**.
 
 </details>
 
@@ -238,6 +352,19 @@ flowchart TD
 | PCA, slides 29 y 38: "el **autovector** de PC2 es la suma de las distancias cuadradas" / "maximizando su autovector" | Esa suma es el **autovalor**. El autovector es la **dirección** (vector de largo 1) |
 | MDS, matriz de distancias del ejemplo | Solo **A1–A2 = 4,24** sale de la tabla de notas; el resto de los valores son ilustrativos |
 | t-SNE: "conserva estructuras globales y locales" | Conserva bien las **locales**; las distancias **entre** clusters no son confiables |
+| Teórica: PCA ajusta la recta "con descenso por gradiente, de forma iterativa" | PCA se resuelve en forma **analítica**: autovectores de la matriz de covarianza, o SVD. Rotar la recta es la intuición. El que sí es iterativo es el **MDS por stress** (y t-SNE) |
+| Teórica: "SVD escala el vector para que valga 1" | **Normalizar** es dividir por el largo (4,12). La **SVD** es el método con el que se calculan las componentes |
+| Teórica: "estas distancias son los autovalores de PC1" | El autovalor es la **suma de las distancias al cuadrado** de los puntos proyectados, no una distancia suelta |
+| Teórica: MDS da igual que PCA porque "los dos son técnicas de descenso por gradiente" | Dan igual porque el **MDS clásico con distancia euclídea es matemáticamente equivalente a PCA** |
+| Teórica: Hamming entre "Caroline" y "Katherine" | Hamming solo compara cadenas **del mismo largo** (esas tienen 8 y 9 letras). El ejemplo clásico es "karolin" → "kathrin" = 3 |
+| Teórica: t-SNE lo propuso Hinton en 2008 | Lo publicaron **Van der Maaten y Hinton** (2008) |
+| Teórica: se usa la t de Student "porque probaron y funcionaba mejor" | Funciona mejor por sus **colas más pesadas**: evita que en 2D todo se amontone en el centro (*crowding problem*) y separa mejor los clusters |
+| Transcripción: "TSNI", "Floyd Quarsal", "Majalanobis", "dimensión 728" | **t-SNE**, **Floyd-Warshall**, **Mahalanobis**, **784** (28 × 28) |
+| Notebook: "PCA ejecutado en 6 pasos" | Lista 5; el sexto es **proyectar los datos** con la matriz de transformación |
+| Notebook: "TSNE - Distributed Stochastic Neighbor Embedding" | Es ***t*-distributed** Stochastic Neighbor Embedding |
+| Notebook: el ejemplo "PCA vs. TSNE" con "MNIST" | Usa `load_digits`: dígitos de **8 × 8 = 64** píxeles, no el MNIST de 784 |
+| Notebook: "el número mínimo de componentes para el 95% es 74" | `np.argmax` devuelve un **índice** que arranca en 0, así que son **75** componentes |
+| Notebook de multicolinealidad: R² ajustado con `p = 2` | El modelo tiene **11 variables** (tv, radio y 9 copias). Con p = 11 da ≈ **0,893**, no 0,899 |
 
 ---
 
@@ -255,6 +382,11 @@ flowchart TD
 10. ¿Por qué PCA falla con datos en forma de "S"? ¿Cómo lo resuelve ISOMAP? Contá sus 4 pasos.
 11. ¿Qué pasa en ISOMAP si **k** es muy grande? ¿Y si es muy chico?
 12. 🔴 ¿Qué técnica usás para: (a) ver cuán dispersos están los datos y sobre qué ejes; (b) preservar distancias no euclídeas; (c) datos sobre una variedad; (d) visualizar clusters en 2D?
+13. 🔴 ¿Para qué sirve la reducción de la dimensionalidad? ¿Cuáles son los dos motivos principales? Dá un ejemplo de la vida cotidiana.
+14. ¿Qué técnicas pueden proyectar **puntos nuevos** sin recalcular todo?
+15. ¿Qué pasa en t-SNE si subís mucho la perplejidad? ¿Y en ISOMAP con k = 5 y con k = 45 sobre el rollo suizo?
+16. ¿Qué es la **multicolinealidad**? ¿Por qué arruina los coeficientes de una regresión lineal aunque la predicción siga bien? ¿Cómo se soluciona?
+17. Diferenciá **seleccionar** variables de **extraer** variables nuevas, con ejemplos de cada una.
 
 ---
 
@@ -264,8 +396,9 @@ flowchart TD
 - El **vocabulario** de PCA y la lectura del **scree plot**: es lo que toman.
 - Que **MDS = PCoA** y que con distancia euclídea **da igual que PCA**.
 - **Qué preserva cada técnica** → es la base de la pregunta "¿qué técnica usarías?", que apareció en los tres últimos años de parciales.
-- 👉 Si en la práctica del 08/10 hacen la notebook, mirá `PCA(n_components=…)`, `explained_variance_ratio_` (el scree plot), `MDS`, `Isomap(n_neighbors=…)` y `TSNE(perplexity=…)` de scikit-learn.
+- 🔴 Las dos preguntas que el profe marcó en la teórica del 06/10: **para qué sirve reducir dimensiones** y **para qué / cuándo usar PCA**.
+- De la práctica: `explained_variance_ratio_` (el scree plot), el efecto de **k** en ISOMAP y de la **perplejidad** en t-SNE, y el experimento de **multicolinealidad**.
 
 ---
 
-<sub>⚙️ Guía fundamentada en las slides de la unidad *08-Reducción de la dimensionalidad* (Ing. Juan M. Rodríguez): Introducción y PCA, MDS y PCoA, t-SNE e ISOMAP. Las cuentas de los ejemplos fueron verificadas.</sub>
+<sub>⚙️ Guía fundamentada en las slides de la unidad *08-Reducción de la dimensionalidad* (Ing. Juan M. Rodríguez): Introducción y PCA, MDS y PCoA, t-SNE e ISOMAP. También en la teórica del 06/10 y en las notebooks de la práctica (reducción de dimensionalidad y experimento de multicolinealidad). Las cuentas de los ejemplos fueron verificadas.</sub>

@@ -17,6 +17,7 @@
 | 01/09 | Descenso por gradiente · Umbral · ROC · Repaso de métricas | [04](04%20-%20M%C3%A9tricas.md) · [08](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) |
 | 15/09 | Árboles (ID3, Gini, C4.5) · Random Forest · Intro a ensambles | [06](06%20-%20%C3%81rboles%20-%20ID3%2C%20C4.5%20y%20Random%20Forest.md) · [09](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) |
 | 29/09 | Redes neuronales · Regularización · Optimizadores · Repaso KNN/SVM | [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) · [08](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) |
+| 06/10 | Reducción de la dimensionalidad: PCA, MDS/PCoA, t-SNE, ISOMAP | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) |
 
 _Faltan transcripciones del 08/09 y del 22/09 — cuando lleguen, se suman acá._
 
@@ -83,6 +84,26 @@ Además, la visualización es **parte del análisis**: permite chequear supuesto
 | **Data augmentation** | Genera más datos a partir de los existentes (ej. rotar imágenes, agregar ruido, cambiar iluminación) |
 
 La idea de fondo: el **overfitting** aparece cuando el modelo es muy complejo para los datos que hay, o hay pocos datos para el modelo. Se combate **simplificando/penalizando el modelo** (L1, L2, dropout, early stopping) o **sumando datos** (data augmentation).
+
+### 7. ¿Para qué sirve la reducción de la dimensionalidad? (06/10)
+"Esto, presten atención, es pregunta examen."
+1. **Visualizar** los datos: con más de 3 dimensiones no se pueden ver. Al verlos se detectan patrones a simple vista, como outliers.
+2. **Reducir el ruido** (valores cargados con poca precisión).
+3. **Acelerar el entrenamiento** de un modelo, por ejemplo al buscar hiperparámetros con muchas variantes.
+4. **Comprender** la información.
+5. **Presentar los resultados** a los interesados en forma gráfica.
+
+**Visualizar y acelerar el entrenamiento** son, según el profe, **los dos motivos principales**.
+
+> 🟢 Ejemplos cotidianos: el **planisferio** (la esfera llevada a un plano) y el **mapa del subte** (el recorrido reducido a una línea: solo importa qué estación está antes y cuál después).
+
+### 8. ¿Para qué o cuándo usaríamos PCA? (06/10)
+"También presten atención porque esto es pregunta examen."
+- Para ver si hay **agrupamientos** de datos en el espacio de entrada.
+- Dicho de otra forma: **qué tan dispersos están los datos** en el espacio original y **sobre qué ejes o variables** está la mayor dispersión.
+- También permite ver **correlaciones** y **clusters**.
+
+Detalle en la [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md).
 
 ---
 
@@ -201,6 +222,30 @@ Antes de sacar un outlier, preguntarse:
 - **Kernel polinómico** (grado 2, 3…) y **kernel radial (RBF)**: trabaja en dimensiones infinitas y se comporta parecido a un KNN.
 - **Kernel trick**: no transforma realmente los datos; calcula las **relaciones par a par** entre observaciones como si estuvieran en el espacio mayor → mucho más barato.
 
+### Reducción de la dimensionalidad (06/10)
+- **PCA, el ejemplo de los alumnos:**
+  - Las notas de 6 alumnos en árboles, RNA, PLN y SVM.
+  - PC1 tiene pendiente 0,25: 4 de árboles por cada 1 de RNA, así que los datos están **más dispersos en árboles**.
+  - Normalizada (largo 4,12), da los loading scores **0,97 y 0,242**.
+  - Con variaciones 15 y 3, PC1 explica el **83%**.
+  - En 3D, PC1 + PC2 juntan el **94%**: si ahí se ven grupos, se puede confiar en que existen.
+- **MDS** busca preservar las **distancias** (PCA, la dispersión). Su ventaja es aceptar **otras distancias**: Manhattan, Hamming, *great-circle*, Mahalanobis (esta última sirve para outliers, como recordó un alumno).
+- **Descenso por gradiente en MDS** (repaso):
+  - Stress inicial 4,05.
+  - La derivada respecto de una coordenada da 0,3; con learning rate 0,5, la coordenada pasa de 10 a **9,85**.
+  - El stress baja a 4,00.
+  - En la práctica **no se usa la raíz**: minimizar el cuadrado es lo mismo y es más barato.
+- **t-SNE:**
+  - Preserva los **clusters**: ni las distancias ni la dispersión.
+  - La **perplejidad** se parece a la K de KNN (cuántos vecinos mira) y fija el ancho de cada normal.
+  - Con MNIST, **PCA tarda 0,03 s y t-SNE 9 s**.
+  - Es **estocástico** y **no admite puntos nuevos**: hay que recalcular todo.
+- **ISOMAP:**
+  - Solo sirve si los datos están sobre una **variedad**.
+  - La **k es un hiperparámetro** y se elige "un poco a ojo": no hay método del codo (respuesta a una pregunta).
+  - Tiene los mismos problemas que KNN: **sensible al ruido** y a una k mal elegida.
+  - Es **lento** desde las ~1000 observaciones.
+
 ---
 
 ## ⚠️ Ojo al repasar la grabación
@@ -216,7 +261,14 @@ Algunas cosas se dijeron mal al pasar o la transcripción automática las deform
 | "El MAE es más costoso y el MSE más barato" | Lo importante no es el costo: **MSE castiga más los errores grandes** (por el cuadrado) y es derivable en todos lados; **MAE es más robusto a outliers**. |
 | MNIST: "0 es blanco y 255 negro" | En MNIST, **0 = negro (fondo)** y **255 = blanco (trazo)** — el propio profe lo corrigió en clase. |
 | "De eso se trata KNN" al explicar el kernel | Estaba hablando de **SVM** (llevar los datos a una dimensión mayor). |
+| PCA encuentra la recta "de forma iterativa, con descenso por gradiente" (06/10) | PCA se resuelve en forma **analítica** (autovectores de la matriz de covarianza o SVD), como en la notebook de la práctica. Lo iterativo es MDS por stress y t-SNE. |
+| "Las distancias son los autovalores de PC1" (06/10) | El autovalor es la **suma de las distancias al cuadrado** de los puntos proyectados. |
+| MDS y PCA dan igual "porque los dos usan descenso por gradiente" (06/10) | Dan igual porque **MDS clásico con distancia euclídea es equivalente a PCA**. |
+| Hamming entre "Caroline" y "Katherine" (06/10) | Hamming solo compara cadenas **del mismo largo**. El ejemplo clásico es **"karolin" → "kathrin" = 3**. |
+| t-SNE "lo propuso Hinton en 2008" (06/10) | **Van der Maaten y Hinton**, 2008. |
+| "TSNI", "Floyd Quarsal", "Majalanobis", "728 dimensiones" (transcripción) | **t-SNE**, **Floyd-Warshall**, **Mahalanobis**, **784** dimensiones (28 × 28). |
+| ¿PCA como semilla de t-SNE? "Podría funcionar, no sé" (06/10) | **Es práctica habitual**: scikit-learn recomienda reducir antes con PCA (a ~50 dimensiones) y `TSNE` inicializa con PCA por defecto. |
 
 ---
 
-<sub>⚙️ Armado a partir de las transcripciones de las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 (Rodríguez). Las transcripciones originales no se suben al repo (traen datos de los asistentes y errores del reconocimiento de voz).</sub>
+<sub>⚙️ Armado a partir de las transcripciones de las teóricas del 18/08, 25/08, 01/09, 15/09, 29/09 y 06/10 (Rodríguez). Las transcripciones originales no se suben al repo (traen datos de los asistentes y errores del reconocimiento de voz).</sub>

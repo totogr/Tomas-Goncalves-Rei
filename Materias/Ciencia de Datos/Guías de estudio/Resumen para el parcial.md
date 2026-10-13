@@ -40,12 +40,12 @@
 | **Dom 11** | Sección 10 (redes): perceptrón a mano, regularización, optimizadores |
 | **Lun 12** | [Tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [hiperparámetros](#13-hiperparámetros-qué-pasa-si-los-subo) + los **V/F** de los [parciales anteriores](Parciales%20anteriores%20resueltos.md#2-verdadero-o-falso) |
 | **Mar 13** | **Consultas para el parcial** en la teórica: llevá las dudas. ⚠️ Ese día también vence la **entrega del TP1** |
-| **Mié 14** | Simulacro: hacé un parcial anterior completo **sin mirar** (el de 2025-10 o el de 2023-10) + las [6 preguntas 🔴](#-las-6-preguntas-que-el-profe-marcó-como-de-examen) + la tabla [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
+| **Mié 14** | Simulacro: hacé un parcial anterior completo **sin mirar** (el de 2025-10 o el de 2023-10) + las [8 preguntas 🔴](#-las-8-preguntas-que-el-profe-marcó-como-de-examen) + la tabla [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
 | **Jue 15** | 🎯 Parcial |
 
 ---
 
-## 🔴 Las 6 preguntas que el profe marcó como de examen
+## 🔴 Las 8 preguntas que el profe marcó como de examen
 
 Si tenés poco tiempo, empezá por acá. Cada una tiene su desarrollo en la sección indicada.
 
@@ -57,6 +57,8 @@ Si tenés poco tiempo, empezá por acá. Cada una tiene su desarrollo en la secc
 | 4 | Leer una matriz de confusión: ¿el modelo es bueno o malo? | Bueno = valores **altos en la diagonal** y **bajos fuera**. Si los FN superan a los TP, no detecta la clase positiva | [3](#3-cómo-se-evalúa-un-modelo) |
 | 5 | ¿Un perceptrón puede modelar AND, OR y XOR? | **AND y OR sí** (linealmente separables, alcanza una recta). **XOR no** (ninguna recta lo separa) → hace falta un **MLP** (más capas) | [10](#10-redes-neuronales) |
 | 6 | Métodos de regularización en redes neuronales | **L1, L2, Dropout, Early stopping, Data augmentation** | [10](#10-redes-neuronales) |
+| 7 | ¿Para qué sirve la reducción de la dimensionalidad? | **Visualizar** y **acelerar el entrenamiento** (los dos principales), **reducir el ruido**, **comprender** la información y **presentar resultados**. Ejemplos: planisferio, mapa del subte | [11](#11-reducción-de-la-dimensionalidad) |
+| 8 | ¿Para qué / cuándo usaríamos PCA? | Para ver si hay **agrupamientos**, **qué tan dispersos** están los datos y **sobre qué ejes o variables**; también correlaciones y clusters | [11](#11-reducción-de-la-dimensionalidad) |
 
 ---
 
@@ -516,7 +518,7 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 > 🔴 **Apareció en los tres últimos años de parciales** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md)). Casi siempre preguntan **qué técnica usar según el caso** y **para qué sirve el scree plot**. Armado con las slides de la cátedra (PCA, MDS/PCoA, t-SNE, ISOMAP); el detalle paso a paso está en la [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md).
 
-**¿Para qué reducir dimensiones?** Según la cátedra: **visualizar** la distribución, **detectar patrones** a simple vista, **reducir el ruido**, **acelerar** el entrenamiento, **comprimir** la información y **presentar resultados** a gente que no es del área. Además, con muchas variables aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido). Reducir **baja el ruido y la colinealidad**, **acelera** el entrenamiento, **reduce el riesgo de overfitting** y permite **visualizar** en 2D/3D. A cambio se pierde algo de información e **interpretabilidad**. Son técnicas **no supervisadas**.
+**¿Para qué reducir dimensiones?** 🔴 *(pregunta de examen, 06/10: los dos motivos principales son **visualizar** y **acelerar el entrenamiento**)*. Según la cátedra: **visualizar** la distribución, **detectar patrones** a simple vista, **reducir el ruido**, **acelerar** el entrenamiento, **comprimir** la información y **presentar resultados** a gente que no es del área. Además, con muchas variables aparece la **maldición de la dimensionalidad** (los datos quedan "ralos" y las distancias pierden sentido). Reducir **baja el ruido y la colinealidad**, **acelera** el entrenamiento, **reduce el riesgo de overfitting** y permite **visualizar** en 2D/3D. A cambio se pierde algo de información e **interpretabilidad**. Son técnicas **no supervisadas**.
 
 ### Las cuatro técnicas
 
@@ -553,6 +555,22 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
   - Sirve para ver si **PC1 + PC2 alcanzan** para representar los datos en 2D (ej.: 79% + 15% = 94% → buena representación) y para **elegir cuántas componentes conservar** (en el **codo** o al juntar un % acumulado, ej. 90%).
   - Si es **plano** (la variación está repartida), el gráfico 2D no muestra bien la dispersión, aunque **igual se pueden ver agrupamientos**.
 - **Estandarizar antes:** si no, domina la variable de mayor escala.
+- **Cómo se calcula de verdad** (notebook de la práctica): es **analítico**, no iterativo.
+  1. Estandarizar.
+  2. Calcular la matriz de covarianza.
+  3. Calcular autovalores y autovectores (o la SVD).
+  4. Ordenar los autovalores de mayor a menor.
+  5. Armar la matriz de transformación.
+  6. Proyectar.
+
+  Rotar la recta es solo la intuición.
+- En scikit-learn: `pca.explained_variance_ratio_` es el scree plot y `.cumsum()` el acumulado. Con **Iris**, PC1 y PC2 explican **73% + 23% = 95,8%**.
+- **¿Cuándo usar PCA?** 🔴 Para ver **agrupamientos** y **cuán dispersos están los datos y sobre qué variables**. Solo **tiene sentido si las variables están correlacionadas**.
+- **Multicolinealidad** (segunda notebook de la práctica):
+  - Con 9 copias casi idénticas de `tv` en una regresión lineal, el modelo **predice bien** (R² 0,90).
+  - Pero los **coeficientes son absurdos**, con signos que cambian.
+  - → Conviene **sacar las variables correlacionadas o aplicar PCA**, cuyas componentes no están correlacionadas.
+- **Seleccionar** variables (sacar las correlacionadas, las de baja varianza o quedarse con las más importantes) **vs. extraer** variables nuevas (PCA, MDS, t-SNE, ISOMAP).
 - Uso típico: **antes de modelos de distancia** (PCA + SVM, PCA + K-Means) o **antes de t-SNE** para acelerarlo.
 
 ### MDS / PCoA, t-SNE e ISOMAP en lo esencial
@@ -560,11 +578,15 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
   - **MDS clásico = PCoA.**
   - Se arma la **matriz de distancias** entre todos los pares de ejemplos (con **cualquier distancia**: euclídea, Hamming…) y se buscan coordenadas en 2D cuyas distancias se le parezcan.
   - Se minimiza el **stress** = √Σ(dᵢⱼ original − dᵢⱼ nueva)² con métodos **iterativos**: **Kruskal** (descenso por gradiente) o **SMACOF**. Por eso puede caer en **mínimos locales** y dar resultados distintos.
-  - Con distancia **euclídea da el mismo gráfico que PCA**.
+  - Con distancia **euclídea da el mismo gráfico que PCA**: el MDS clásico euclídeo es matemáticamente equivalente.
+  - Otras distancias posibles: **Manhattan** (cuadrícula), **Hamming** (cadenas del mismo largo), **great-circle** (sobre una esfera), **Mahalanobis** (outliers).
 - **t-SNE** (Hinton y Van der Maaten, 2008):
   1. Calcula la **similitud** de cada punto con los demás usando una **normal** centrada en él. Su ancho depende de la densidad y lo fija la **perplejidad** (≈ cantidad de vecinos).
   2. Ubica los puntos **al azar** en baja dimensión y calcula las similitudes con una **t de Student** (colas más altas → clusters más separados).
   3. Mueve los puntos **de a uno, en pasos chicos**, hasta que las dos matrices de similitud se parezcan.
+  - **Perplejidad baja** → más local. **Muy alta** → toma vecinos de otras partes (en el rollo suizo, de otra vuelta).
+  - Se suele **reducir antes con PCA** para acelerarlo.
+  - **No proyecta puntos nuevos** (PCA sí, con `transform`).
 - **ISOMAP:**
   - Es para datos sobre una **variedad**. La **hipótesis de variedades** dice que los datos reales de alta dimensión viven cerca de una variedad de mucha menor dimensión (MNIST: 784 dimensiones).
   - Usa la **distancia geodésica**, no la euclídea. Pasos:
@@ -572,6 +594,8 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
     2. Caminos mínimos con **Dijkstra / Floyd-Warshall**.
     3. **MDS** sobre esa matriz de distancias.
   - Si **k es muy grande** o hay **ruido**, aparecen atajos y la proyección queda mal; si **k es muy chico**, el grafo queda escaso.
+    - En la práctica, sobre el rollo suizo: con **k = 5** el grafo se parte en 2; con **k = 15** lo desenrolla bien; con **k = 45** pierde la distancia geodésica.
+    - **k se elige a ojo**: no hay método del codo.
   - **Landmark ISOMAP** lo acelera usando solo algunos puntos especiales.
 
 ---
@@ -676,6 +700,10 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | El autovector es la suma de distancias al cuadrado (PCA) | Esa suma es el **autovalor**; el autovector es la **dirección** (largo 1) |
 | t-SNE sirve para transformar datos nuevos o como paso de un pipeline | **No proyecta puntos nuevos** y es estocástico: es para **visualizar**. Para pipelines, **PCA** |
 | PCA capta cualquier estructura | Es **lineal**: con datos sobre una variedad curva (la "S") hace falta **ISOMAP** |
+| PCA se entrena con descenso por gradiente | Se resuelve en forma **analítica** (autovectores de la covarianza o SVD). Lo iterativo es MDS por stress y t-SNE |
+| MDS da igual que PCA "porque los dos usan gradiente" | Da igual porque el **MDS clásico euclídeo es equivalente a PCA** |
+| Hamming entre palabras de distinto largo | Hamming compara cadenas **del mismo largo** ("karolin" → "kathrin" = 3) |
+| Si la regresión predice bien, los coeficientes son confiables | Con **multicolinealidad** la predicción puede ser buena y los coeficientes **absurdos** |
 
 ---
 
@@ -717,6 +745,9 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 33. ¿Qué problema trae aplicar one-hot a una variable con **200 categorías**? ¿Qué alternativas hay?
 34. ¿Qué técnica de preprocesamiento aplicaron en el **TP1**? ¿Cuántos clusters eligieron y qué representan?
 35. Definí **autovector**, **autovalor** y **loading score** de PCA. ¿Qué es la **perplejidad** de t-SNE? ¿Qué pasa en ISOMAP si k es muy grande o muy chico?
+36. 🔴 ¿Para qué sirve la reducción de la dimensionalidad? ¿Cuáles son los dos motivos principales?
+37. 🔴 ¿Para qué o cuándo usarías PCA?
+38. ¿Qué es la **multicolinealidad** y por qué conviene reducir dimensiones antes de una regresión lineal?
 
 > 📝 Para practicar con el **formato real**, hacé los parciales de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md): ahí están los V/F y las cuentas con su resolución.
 
@@ -729,8 +760,8 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 - Entropía, ganancia y Gini → [sección 7](#7-árboles-de-decisión)
 - Amount of Say, paso de Gradient Boosting y Similarity → [sección 8](#8-ensambles)
 - Entrenamiento del perceptrón para AND y cantidad de parámetros de una red → [sección 10](#10-redes-neuronales)
-- % de variación de cada PC, autovector y loading scores, paso de descenso por gradiente en MDS → [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md)
+- % de variación de cada PC, cuántas componentes para el 95%, autovector y loading scores, paso de descenso por gradiente en MDS → [guía 07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md)
 
 ---
 
-<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09 y 29/09 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 está armada con las slides de reducción de dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP).</sub>
+<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09, 29/09 y 06/10 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 está armada con las slides de reducción de dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP), la teórica del 06/10 y las notebooks de la práctica.</sub>

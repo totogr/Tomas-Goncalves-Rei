@@ -22,7 +22,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 ### 🎯 Para el parcial (jueves 15/10)
 
-**[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 6 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
+**[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 8 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
 
 **[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)** — las preguntas de los parciales 2022–2025 de la cátedra agrupadas por tema, con la respuesta correcta, las cuentas resueltas y los errores de las resoluciones que circulan.
 
