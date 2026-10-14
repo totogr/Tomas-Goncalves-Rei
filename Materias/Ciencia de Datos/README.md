@@ -14,7 +14,7 @@ Los profesores van subiendo material clase a clase (slides y archivos) en **Clas
 | [`Guías de Ejercicios/`](Gu%C3%ADas%20de%20Ejercicios/) | Guías de ejercicios por tema (Pandas). |
 | [`Bibliografia/`](Bibliografia/) | Libros de referencia de la materia (Machine Learning con Scikit-Learn, Keras y TensorFlow). |
 | [`Material extra/`](Material%20extra/) | Material de terceros: parciales de años anteriores de la cátedra, apuntes y resúmenes de otros alumnos (con su fuente). Lo que sirve se vuelca, revisado, en las guías y el resumen. |
-| `Calendario 2do 2026.xlsx` | Calendario del cuatrimestre con fechas de clases y evaluaciones. |
+| `Calendario 2do 2026.xlsx` | Calendario del cuatrimestre con fechas de clases y evaluaciones (versión actualizada: el **parcial pasó al jueves 29/10** por el paro del 15/10; recuperatorio 19/11). |
 
 ## Estructura
 

@@ -11,6 +11,9 @@ Material de la materia **Gestión del Desarrollo de Sistemas de Información** (
 | Carpeta / Archivo | Descripción |
 | --- | --- |
 | [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
-| [`Cronograma 2C 2026.md`](Cronograma%202C%202026.md) | Cronograma completo del 2º cuatrimestre 2026: calendario clase por clase, material previo, entregas del TP y fechas de evaluación. |
+| [`Cronograma 2C 2026.md`](Cronograma%202C%202026.md) | Cronograma completo del 2º cuatrimestre 2026 (v0.5): calendario clase por clase, docentes, material previo, entregas del TP y fechas de evaluación. El PDF de la cátedra está al lado. |
+| [`Teoría/`](Teor%C3%ADa/) | Slides y material de la cátedra (experimentos de producto, Scrum + BDD Discovery) y el sample de *The BDD Books — Discovery*. |
+
+> 🎯 **Evaluación 1 — Producto: lunes 26/10.** Para estudiar: [Resumen para la Evaluación 1](Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md) y [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md).
 
 _Se irá completando con slides, guías de prácticos y resúmenes a medida que se agregue material._

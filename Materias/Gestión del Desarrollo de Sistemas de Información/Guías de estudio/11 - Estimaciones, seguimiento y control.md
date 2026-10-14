@@ -13,7 +13,7 @@ Estimar es **anticipar esfuerzo o tiempo** bajo incertidumbre: se puede hacer co
 
 ## 🧭 ¿Por qué importa / dónde encaja?
 
-Estimar mal es una de las causas clásicas de proyectos fallidos. Esta clase muestra enfoques **ágiles** de estimación (menos precisión falsa, más comparación) y cómo **seguir el avance** con datos. Acá va la **entrega final del TP** y el **recuperatorio de la Evaluación 1**.
+Estimar mal es una de las causas clásicas de proyectos fallidos. Esta clase muestra enfoques **ágiles** de estimación (menos precisión falsa, más comparación) y cómo **seguir el avance** con datos. Acá va la **entrega final del TP**. Según el cronograma v0.5, el 9/11 es **feriado** (el material queda en el campus) y el **recuperatorio de la Evaluación 1** pasó al 16/11.
 
 ---
 
@@ -64,7 +64,7 @@ flowchart TD
 - La lógica de la **estimación relativa** (story points, comparación).
 - El concepto de **velocidad** para proyectar entregas.
 - El enfoque **#NoEstimates** y cuándo tiene sentido.
-- ⚠️ Esta clase: **recuperatorio Evaluación 1** (17:00) y **entrega final del TP** (videos).
+- ⚠️ El 9/11 es **feriado**: no hay clase, pero sí material y la **guía de prácticos 5**. Ese día vence la **entrega final del TP** (videos).
 
 ---
 

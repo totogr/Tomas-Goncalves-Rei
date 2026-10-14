@@ -1,11 +1,12 @@
 # 📘 Resumen para el parcial — Ciencia de Datos
 
-> **Parcial: jueves 15/10 · presencial, escrito en hoja.** Promocionás con **7 o más en la primera fecha** (y los dos TPs aprobados).
+> **Parcial: jueves 29/10 · presencial, escrito en hoja** (estaba el 15/10 y se pasó por el paro; calendario actualizado de la cátedra). Recuperatorio: jueves 19/11. Promocionás con **7 o más en la primera fecha** (y los dos TPs aprobados).
 > Este resumen junta en un solo lugar **todo lo que entra**: lo de las guías de cada clase, lo que el profe remarcó en las teóricas ([Remarcado en clase](Remarcado%20en%20clase.md)), lo que tomaron en **parciales de años anteriores** y los errores típicos que hay que evitar.
 >
 > **Se complementa con:**
 > - 📝 [**Parciales anteriores resueltos**](Parciales%20anteriores%20resueltos.md): todas las preguntas de 2022 a 2025 por tema, con la respuesta correcta y las cuentas resueltas.
 > - 🎯 **Preguntas sobre el TP1**: aparecen en casi todos los parciales. Están en `TP1 (privado)/`, solo en local.
+> - 🟢 [**Resumen simple**](Resumen%20simple.md): los mismos temas sin fórmulas ni tecnicismos, para entender las ideas antes de meterte con las cuentas.
 
 **Leyenda:** 🔴 = el profe dijo "esto es pregunta de examen" · 🟠 = dijo que hay que dominarlo · ✍️ = ejercicio para hacer a mano (con resolución).
 
@@ -26,22 +27,25 @@
 | 7 · 29/09 | Redes neuronales superficiales | [10](#10-redes-neuronales) | [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) |
 | 8 · 06/10 | Reducción de la dimensionalidad | [11](#11-reducción-de-la-dimensionalidad) | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) |
 
-**No entra:** PLN, deep learning, embeddings, LLMs (son después del parcial). La biología de la neurona (axón, dendritas) el profe aclaró que **no se evalúa**.
+**No entra:** deep learning, embeddings, LLMs (son después del parcial). La biología de la neurona (axón, dendritas) el profe aclaró que **no se evalúa**.
 
-### Plan hasta el jueves 15
+> ⚠️ **PLN, a confirmar.** Con el cambio de fecha, la teórica de **lenguaje natural** (13/10) y su práctica (22/10) quedaron **antes** del parcial. El calendario no dice si entra: **preguntalo en clase**. Mientras tanto, el [Resumen simple](Resumen%20simple.md#12-procesamiento-de-lenguaje-natural-versión-corta) tiene una versión corta y la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) el detalle (todavía sin las slides de la cátedra).
+
+### Plan hasta el jueves 29/10
+
+> El 15/10 hubo paro y el parcial pasó al **29/10**. En el medio está la **Evaluación 1 de GDSI** (lunes 26/10), así que los días se reparten entre las dos materias. Como CdD ya la venías estudiando para el 15, este plan es de **repaso y práctica**. El de GDSI está en su [Resumen para la Evaluación 1](../../Gesti%C3%B3n%20del%20Desarrollo%20de%20Sistemas%20de%20Informaci%C3%B3n/Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md).
 
 | Día | Qué hacer |
 | --- | --- |
-| **Mar 06** | Teórica de reducción de dimensionalidad (anotá lo que remarque). Leer secciones 1–3 |
-| **Mié 07** | Secciones 4 y 5. Hacer los ✍️ de métricas y descenso por gradiente + las **matrices de confusión** de los [parciales anteriores](Parciales%20anteriores%20resueltos.md#3-ejercicios-con-cuentas) |
-| **Jue 08** | Práctica de reducción de dimensionalidad. Secciones 6, 7 (entropía y Gini **a mano**) y **11** (qué técnica usar según el caso) |
-| **Vie 09** | Sección 8 (ensambles) |
-| **Sáb 10** | Sección 9 (KNN y SVM) + **preguntas sobre el TP1** (`TP1 (privado)/`) |
-| **Dom 11** | Sección 10 (redes): perceptrón a mano, regularización, optimizadores |
-| **Lun 12** | [Tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [hiperparámetros](#13-hiperparámetros-qué-pasa-si-los-subo) + los **V/F** de los [parciales anteriores](Parciales%20anteriores%20resueltos.md#2-verdadero-o-falso) |
-| **Mar 13** | **Consultas para el parcial** en la teórica: llevá las dudas. ⚠️ Ese día también vence la **entrega del TP1** |
-| **Mié 14** | Simulacro: hacé un parcial anterior completo **sin mirar** (el de 2025-10 o el de 2023-10) + las [8 preguntas 🔴](#-las-8-preguntas-que-el-profe-marcó-como-de-examen) + la tabla [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
-| **Jue 15** | 🎯 Parcial |
+| **Sáb 17/10** | Leé el [Resumen simple](Resumen%20simple.md) de corrido. Después, secciones **1–4** de este resumen |
+| **Mar 20/10** | Teórica: **exposición del TP1**. A la noche, secciones **5–7** y los ✍️ de métricas, descenso por gradiente, entropía y Gini |
+| **Mié 21/10** | Secciones **8–9** (ensambles, KNN y SVM) + **preguntas sobre el TP1** (`TP1 (privado)/`) |
+| **Jue 22/10** | Práctica de **PLN**: preguntá si entra en el parcial |
+| **Sáb 24/10** | Secciones **10–11** (redes y reducción de dimensionalidad): perceptrón a mano y "qué técnica uso" |
+| **Lun 26/10** | Evaluación de GDSI: descanso de CdD |
+| **Mar 27/10** | Teórica: **exposición del TP1**. **Simulacro:** el parcial 2025-10 completo **sin mirar**, con reloj. Corregí con [Parciales anteriores](Parciales%20anteriores%20resueltos.md) |
+| **Mié 28/10** | Repasá lo que falló + [las 8 preguntas 🔴](#-las-8-preguntas-que-el-profe-marcó-como-de-examen) + [tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
+| **Jue 29/10** | 🎯 **Parcial** |
 
 ---
 

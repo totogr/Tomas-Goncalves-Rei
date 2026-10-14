@@ -13,7 +13,7 @@ Mejorar el proceso de forma sostenida requiere **mirar datos, no impresiones**: 
 
 ## 🧭 ¿Por qué importa / dónde encaja?
 
-Cierra el bloque **Producto** con la idea de **mejora continua**: no alcanza con entregar, hay que **aprender a entregar mejor**. Conecta con *Artful Making* (ensayar y ajustar) y anticipa el bloque de **Procesos** (Kanban, Toyota Kata). Acá van la **Evaluación 1** y la **entrega v3** (plan de mejora).
+Cierra el bloque **Producto** con la idea de **mejora continua**: no alcanza con entregar, hay que **aprender a entregar mejor**. Conecta con *Artful Making* (ensayar y ajustar) y anticipa el bloque de **Procesos** (Kanban, Toyota Kata). Es la última clase antes de la **Evaluación 1** (lunes 26/10, la clase siguiente), donde también se entrega la **v3** (plan de mejora).
 
 ---
 
@@ -77,7 +77,7 @@ Método para **no medir por medir**: primero el **objetivo**, después las **pre
 - Cómo una **retrospectiva** produce **acciones de mejora** (no solo quejas).
 - La lógica **GQM** (objetivo → pregunta → métrica).
 - Las **4 métricas DORA** y el balance velocidad/estabilidad.
-- ⚠️ Esta clase incluye la **Evaluación 1 (Producto)** y la **entrega v3 (plan de mejora)**.
+- ⚠️ La clase siguiente (26/10) es la **Evaluación 1 (Producto)** y la **entrega v3 (plan de mejora)**. Para prepararla: [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md).
 
 ---
 

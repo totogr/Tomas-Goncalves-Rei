@@ -64,6 +64,7 @@ flowchart LR
 - Cómo se usa el **mapa de ejemplos** para aceptar o rechazar lo construido.
 - La distinción **review (producto)** vs **retrospectiva (proceso)** — se retoma en la clase 9.
 - Preparar la **entrega v1** (mapa de ejemplos + plan de sprint) y la **prueba de usuario documentada**.
+- ℹ️ En el cronograma v0.5 el 21/9 figura como **feriado**: el tema se trabajó con el material y la guía de prácticos 2 del campus.
 
 ---
 

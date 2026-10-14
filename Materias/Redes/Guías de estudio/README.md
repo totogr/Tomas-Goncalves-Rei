@@ -30,6 +30,8 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 - las preguntas de diseño ("¿qué fibra elijo?");
 - los errores típicos y un plan de estudio.
 
+**[Resumen simple](Resumen%20simple.md)**: los mismos temas contados sin tecnicismos, con definiciones y ejemplos cotidianos. Para leer **primero** y entender cómo funciona una red antes de memorizar números y siglas.
+
 **[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)**: las consignas de 5 modelos de parcial de la cátedra, agrupadas por tema y con la respuesta modelo, más múltiple choice para practicar.
 
 **Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11) · TLS, cifrado, codificación, compresión y la tabla de puertos de capa 7 (12).

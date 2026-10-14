@@ -20,9 +20,11 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 12 | [Introducción al aprendizaje profundo](12%20-%20Introducci%C3%B3n%20al%20aprendizaje%20profundo.md) | 🟡 |
 | 13 | [Métodos de agrupamiento (Clustering — K-Means)](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) | ✅ |
 
-### 🎯 Para el parcial (jueves 15/10)
+### 🎯 Para el parcial (jueves 29/10, se pasó del 15/10 por el paro)
 
 **[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 8 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
+
+**[Resumen simple](Resumen%20simple.md)** — los mismos temas sin fórmulas ni tecnicismos: la idea de cada tema, las definiciones y un ejemplo cotidiano. Para leer **primero** y entender antes de meterte con las cuentas.
 
 **[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)** — las preguntas de los parciales 2022–2025 de la cátedra agrupadas por tema, con la respuesta correcta, las cuentas resueltas y los errores de las resoluciones que circulan.
 

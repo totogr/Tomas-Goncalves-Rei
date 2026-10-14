@@ -81,6 +81,7 @@ flowchart LR
 - Cómo leer un **CFD** para detectar cuellos de botella.
 - La comparación **Kanban vs Scrum** y cuándo cada uno.
 - El sistema **pull** (tirar trabajo cuando hay capacidad).
+- ⚠️ Esta clase es **presencial** y a las **17:00** se toma el **recuperatorio de la Evaluación 1** (cronograma v0.5).
 
 ---
 
