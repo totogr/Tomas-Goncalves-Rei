@@ -79,6 +79,35 @@ flowchart LR
 
 ---
 
+## 🎭 *Artful Making*, con las definiciones del libro
+
+> Lectura de la clase 1: el extracto del cap. 1 del libro. Una de las cuatro cualidades salió en la Evaluación I de 2025.
+
+- **Qué es:** "toda actividad que crea algo completamente nuevo **sin un plano** (*blueprint*) que diga cómo hacerlo".
+- **El cambio de lema:** de "hacelo bien la primera vez" (industrial) a "**hacelo excelente antes del deadline**" (artful).
+- **No se excluyen:** industrial y artful making se **complementan**. El error es aplicar uno donde corresponde el otro.
+- **Las tres condiciones** para trabajar así:
+  - un proceso **iterativo y confiable**;
+  - **necesidad de innovación**;
+  - **costo de iteración bajo**. Ese costo es el de **exploración** (lo que se prueba y no queda) más el de **reconfiguración** (volver a armar al cambiar de camino).
+
+| Cualidad | Definición (Austin y Devin) |
+| --- | --- |
+| **Release** | Un **método de control que acepta amplia variación dentro de parámetros conocidos**. Lo opuesto a la *restricción* industrial. No es "liberar versiones" |
+| **Collaboration** | Cada parte trata los aportes del otro **como material para trabajar, no como posiciones para discutir** |
+| **Ensemble** | Los miembros **ceden soberanía** sobre su trabajo y crean algo que ninguno haría solo: **un todo mayor que la suma de sus partes** |
+| **Play** | La cualidad de la producción **mientras se representa ante el público**, o de la interacción del grupo entre sí y, al final, **con el cliente** |
+
+- **Producto, proyecto y proceso:**
+  - **Producto:** continuo, equipo estable, retorno "en escalera".
+  - **Proyecto:** inicio y fin, equipo que se disuelve, "pozo financiero" hasta el final.
+  - **Proceso:** flujo continuo, mejora de a poco.
+- **Triángulo de hierro** (Patton lo llama "de la miseria"): si se fijan tiempo, costo y alcance a la vez, **se sacrifica la calidad**.
+
+Detalle en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#1-el-marco-artful-making-y-los-modelos-de-gestión).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué diferencia hay entre un modelo **iterativo** y uno **incremental**? (pista: uno *refina*, el otro *suma pedazos*).

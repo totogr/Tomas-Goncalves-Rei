@@ -60,6 +60,28 @@ flowchart LR
 
 ---
 
+## 📒 Lo que dio la cátedra (slides de la clase 8 de 2C 2025)
+
+> En 2C 2025, **Toyota Kata se dio dentro de la clase de mejora y métricas**, la que en 2026 es el 19/10, antes de la Evaluación 1. Por eso está resumida también en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#92-mejora-y-métricas-).
+
+- **Toyota Kata** (Mike Rother): practicar el **pensamiento científico** para mejorar. Tiene dos patrones:
+  - **Improvement Kata:** dirección o desafío (*North Star*) → condición actual → **siguiente condición objetivo** → **experimentos**.
+  - **Coaching Kata:** los gerentes son **coaches de mejora**: dan soporte, ayudan a profundizar, sostienen la disciplina y promueven la visibilidad.
+- **Para planificar un experimento:**
+  1. ¿Cuál es el desafío?
+  2. ¿Cuál es la siguiente condición objetivo?
+  3. ¿Cuál es la condición actual?
+  4. ¿Qué nos impide llegar?
+  5. ¿Cuál es nuestro siguiente experimento y qué esperamos que ocurra?
+  6. ¿Cuándo podemos evaluar los resultados?
+- **Para revisarlo:**
+  1. ¿Cuál fue el último experimento?
+  2. ¿Qué esperabas?
+  3. ¿Qué ocurrió?
+  4. ¿Qué aprendiste?
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Cuáles son los **4 pasos** del Improvement Kata?

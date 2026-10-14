@@ -50,6 +50,33 @@ flowchart LR
 
 ---
 
+## 📒 Lo que dio la cátedra en 1C 2026 (apuntes de un alumno, a confirmar con el material del campus)
+
+- **Mirada de proyecto vs. de producto:**
+
+| | **Proyecto** | **Producto** |
+| --- | --- | --- |
+| Duración | Inicio y fin definidos | Continua |
+| Enfoque | Entregar un alcance (output) | Mejorar el valor (outcome) |
+| Éxito | Plazo, costo y alcance | Satisfacción y métricas de negocio |
+| Equipo | Transitorio, jerárquico | Estable, horizontal |
+| Cambios | Excepcionales, con control de cambios | Esperados, motor de mejora |
+| Incertidumbre | Se intenta eliminar planificando | Se aprovecha experimentando |
+
+- **Cuándo conviene el enfoque predictivo:** alcance **estable y conocible**, baja incertidumbre, contrato cerrado o regulación estricta.
+- **Charter:**
+  - **Contiene:** justificación, objetivos medibles, alcance de alto nivel, stakeholders clave, riesgos de alto nivel, hitos, presupuesto, criterios de éxito y la **designación del PM con su autoridad**.
+  - **No contiene:** la lista de tareas, el cronograma día por día ni las horas por persona. Eso es planificación detallada.
+- **WBS/EDT:**
+  - se descompone en **entregables** (sustantivos), no en actividades (verbos);
+  - **no es un cronograma** (no tiene orden temporal);
+  - cumple la **regla del 100%**: incluye todo el trabajo del alcance.
+- **Cambio de alcance en un proyecto predictivo:** pasa por **control de cambios formal**. Si se fijan tiempo, costo y alcance, se resiente la calidad.
+
+> El ejercicio de la guía de 1C 2026 fue el caso "Turnos del Centro de Salud Norte". Ver [Material extra](../Material%20extra/README.md).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué es el **chartering** y qué contiene un **project charter**?

@@ -62,6 +62,34 @@ Método para **no medir por medir**: primero el **objetivo**, después las **pre
 
 ---
 
+## 📊 Lo que dan las slides de la cátedra (clase 8, 2C 2025)
+
+- **Mejora:**
+  - *"Si no estás mejorando cómo hacés tu trabajo, no estás haciendo tu trabajo"* (Tom Peters).
+  - **Razones:** todo empeora solo, no todo sale natural, los valores están por encima de la práctica, hay que adaptarse y siempre hay algo por aprender.
+  - **Ciclos:** PDCA y *Heart of Agile*.
+  - **Objetos de mejora:** procesos y prácticas, equipo, herramientas, producto, dirección, organización y consciencia.
+  - **Kaizen** (continua, pasos chicos) vs. **kaikaku** (radical).
+  - **7 desperdicios** (Poppendieck): trabajo en progreso, funcionalidades extras, reaprendizaje, traspasos, cambio de contexto, demoras y defectos.
+- **Métricas:**
+  - "Deben ser medidas de **realidad**, no de éxito o fracaso" (Tobias Mayer).
+  - **Métrica** = definición formal de la variable · **medición** = el acto de tomar valores · **indicador** = su representación visual.
+  - **Elementos de una métrica:** nombre, escala, valor más positivo, forma de medición y estadístico de agregación.
+  - **GQM:** objetivo → preguntas → métricas.
+- **Retrospectiva:**
+  - **Propósito:** analizar una situación, detectar causas y establecer compromisos de mejora.
+  - **Estructura:** ingreso → recolección de datos → priorización y análisis → propuestas y compromisos → salida.
+  - **Técnicas:** línea de tiempo, 5 porqués, agrupamiento temático.
+  - **Compromisos:** seleccionar uno, sacrificio rotativo, "alguien siempre hace progreso".
+- **Toyota Kata** (Rother):
+  - **Improvement Kata:** desafío → condición actual → siguiente condición objetivo → experimentos.
+  - **Coaching Kata:** el gerente como coach.
+  - Tiene preguntas fijas para **planificar** (6) y para **revisar** (4) un experimento.
+
+Detalle completo en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#92-mejora-y-métricas-).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué se mira en una **retrospectiva** y qué la distingue de un review?

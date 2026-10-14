@@ -65,6 +65,40 @@ flowchart LR
 
 ---
 
+## 📒 Lo que dio la cátedra en 1C 2026 (apuntes de un alumno)
+
+- **Push vs. pull:**
+  - **push:** se empuja trabajo según un plan, sin mirar la capacidad;
+  - **pull:** se empieza algo **solo cuando hay capacidad**. "Dejá de empezar, empezá a terminar".
+- **Principios de gestión del cambio:**
+  - empezar con lo que se hace hoy;
+  - buscar la mejora con **cambio evolutivo**;
+  - fomentar el liderazgo en todos los niveles.
+- **Prácticas:**
+  - **visualizar** el trabajo (que es invisible);
+  - **limitar el WIP**;
+  - **gestionar el flujo**;
+  - **hacer explícitas las políticas** (cuándo algo está "listo", quién mueve las tarjetas);
+  - **bucles de retroalimentación** (cadencias);
+  - **mejorar colaborativamente** con experimentos que se puedan deshacer sin daño.
+- **Columnas = estados del proceso, no personas:** "En pruebas", no "Tester".
+- **Clases de servicio:** por ejemplo, **expedite** (urgente): puede saltear el límite de WIP porque el costo de demora es muy alto.
+- **STATIK** (cómo introducir Kanban):
+  1. Insatisfacciones.
+  2. Demanda.
+  3. Capacidad.
+  4. Flujo de trabajo.
+  5. Clases de servicio.
+  6. Diseño del sistema.
+- **Métricas:**
+  - **lead time:** desde el compromiso hasta la entrega;
+  - **throughput:** ítems terminados por unidad de tiempo;
+  - **WIP**;
+  - **CFD:** si una banda se ensancha, hay acumulación.
+- **Saltearse el refinamiento** hace que las tarjetas "vuelvan para atrás" porque el pedido no se entendía.
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué es el **WIP** y por qué **limitarlo** acelera el flujo?

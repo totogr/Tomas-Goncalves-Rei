@@ -58,7 +58,7 @@
 
 ## Evaluaciones
 
-- **Evaluación 1 — Producto:** lunes **26/10**, presencial. Entra todo el bloque de Producto (clases 2 a 8 → guías [02 a 09](Gu%C3%ADas%20de%20estudio/)). Para estudiar: [Resumen para la Evaluación 1](Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md) y [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md). Recuperatorio el lunes **16/11 a las 17:00**.
+- **Evaluación 1 — Producto:** lunes **26/10**, presencial. Entra todo el bloque de Producto (clases 2 a 8 → guías [02 a 09](Gu%C3%ADas%20de%20estudio/)). Para estudiar: [Resumen para la Evaluación 1](Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md), [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md) y la [Evaluación I de 2025 resuelta](Gu%C3%ADas%20de%20estudio/Evaluaciones%20anteriores%20resueltas.md). Recuperatorio el lunes **16/11 a las 17:00**.
 - **Evaluación 2 — Proyectos y Procesos:** lunes **30/11**, presencial. Recuperatorio el lunes **14/12**.
 - El recuperatorio del **14/12** se toma en el mismo horario que el primer llamado a final, así que quien deba recuperar usará el **llamado de febrero**.
 

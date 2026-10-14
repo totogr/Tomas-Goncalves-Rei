@@ -147,6 +147,39 @@ flowchart LR
 
 ---
 
+## 🔄 Lo que dio la cátedra sobre Patton (*The game has changed*)
+
+**El ciclo de producto: Sense → Focus → Discovery → Delivery.** Salió en la Evaluación I de 2025, aplicado a un caso y ligado a riesgos.
+
+| Etapa | Qué se hace |
+| --- | --- |
+| **Sense** | Mirar el contexto (usuarios, tecnología, competencia) para detectar **oportunidades** |
+| **Focus** | Elegir la oportunidad y definir **visión, estrategia y outcome** buscado (Product Vision Board) |
+| **Discovery** | **Experimentar** para descartar las malas ideas antes de construir |
+| **Delivery** | **Construir** lo validado, en incrementos |
+
+- **Los 3 problemas con las ideas:**
+  1. hay **demasiadas**;
+  2. la **mayoría son malas** (entre el 65% y el 75% de las funcionalidades casi no se usan);
+  3. el **sesgo de optimismo**.
+- **MVP, tres sentidos:**
+  - **release mínimo exitoso** (Frank Robinson, 2001);
+  - **próximo experimento** (Eric Ries, *Lean Startup*);
+  - "**lo que entre antes de la fecha**".
+
+  Patton recomienda decir explícitamente cuál de los tres es.
+- **Aprendizaje validado:** elegir la **suposición más riesgosa** y experimentar sobre ella (Build → Measure → Learn).
+- **Riesgos del producto:**
+  - **valor:** ¿lo van a querer?;
+  - **usabilidad:** ¿lo van a poder usar?;
+  - **técnico:** ¿lo podemos construir?;
+  - **viabilidad:** ¿es sostenible para el negocio?
+- **Curva de adopción:** innovadores (feedback temprano pero poco representativo) → adoptantes tempranos → mayoría temprana → mayoría tardía → rezagados.
+
+Detalle en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#2-descubrimiento-de-producto-) y la evaluación resuelta en [Evaluaciones anteriores](Evaluaciones%20anteriores%20resueltas.md).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué problema evita el "descubrimiento de producto"?

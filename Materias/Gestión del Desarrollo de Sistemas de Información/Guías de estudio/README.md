@@ -24,6 +24,8 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 **[Resumen para la Evaluación 1 — Producto](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md)** (lunes 26/10, recuperatorio 16/11 a las 17:00): todo el bloque de Producto (guías 02–09) en un solo archivo. Incluye las ideas que atraviesan el bloque, cada tema condensado, tablas para no confundir conceptos, casos resueltos para practicar la aplicación, errores típicos y un plan de estudio día por día.
 
+**[Evaluaciones anteriores resueltas](Evaluaciones%20anteriores%20resueltas.md)**: la Evaluación I del 27/10/2025 transcripta (sin nombres), con el formato del examen y respuestas modelo. Es el mejor simulacro.
+
 **[Resumen simple](Resumen%20simple.md)**: toda la materia (Producto, Proyectos y Procesos) contada sin tecnicismos, con definiciones y ejemplos cotidianos. Para leer **primero** y entender las ideas antes de estudiar el resumen completo.
 
 _El detalle de fechas, docentes y entregas está en [`../Cronograma 2C 2026.md`](../Cronograma%202C%202026.md). Cuando la cátedra publique material específico de cada clase, se ajustan las guías a su enfoque._

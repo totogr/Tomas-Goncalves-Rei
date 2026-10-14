@@ -1,7 +1,7 @@
 # 🟢 Resumen simple — Gestión del Desarrollo de Sistemas Informáticos
 
 > **Para qué es este archivo:** para **entender** la materia, no para memorizarla. Cada tema está contado en palabras simples, con una idea central, las definiciones que hay que saber y un ejemplo de la vida cotidiana.
-> Leelo **primero**, de corrido. Cuando las ideas cierren, pasá al [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md), que tiene el detalle, las tablas completas y los casos para practicar.
+> Leelo **primero**, de corrido. Cuando las ideas cierren, pasá al [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md), que tiene el detalle, las tablas completas y los casos para practicar, y después hacé la [Evaluación I de 2025](Evaluaciones%20anteriores%20resueltas.md) como simulacro.
 >
 > **Evaluación 1 (lunes 26/10):** partes 1 a 9 (Producto). **Evaluación 2 (lunes 30/11):** partes 10 a 13 (Proyectos y Procesos).
 
@@ -28,11 +28,20 @@ La respuesta de fondo, que viene del libro *Artful Making*, es siempre la misma:
 
 El software se parece al teatro: cambiar una pantalla o una regla cuesta poco, así que conviene **ensayar muchas veces** en vez de pretender acertar de entrada. Eso propone *Artful Making* (Austin y Devin).
 
-**Las cuatro cualidades del "trabajo de artista"** según el libro:
-- **Liberar:** el jefe suelta el control y deja explorar.
-- **Colaborar:** las ideas de uno se apoyan en las de otro.
-- **Elenco:** el grupo funciona como una unidad.
-- **Jugar:** probar variantes y mostrarlas al público (el usuario).
+- **Cuándo usar este enfoque:** cuando hay que crear algo nuevo **sin un plano** que diga cómo hacerlo.
+- **El lema cambia:** de "hacelo bien la primera vez" a "**hacelo excelente antes de la fecha**".
+- **Hacen falta tres condiciones:**
+  - poder iterar de forma confiable;
+  - necesidad de innovar;
+  - que **iterar salga barato**. Lo que cuesta probar algo que después no queda, más lo que cuesta rearmar todo al cambiar de camino.
+
+**Las cuatro cualidades del "trabajo de artista"** (tomaron una en el examen de 2025):
+- **Release (liberación):** una forma de **controlar** que fija los límites pero deja variar dentro de ellos, en vez de controlar cada paso. ⚠️ No es "sacar versiones".
+- **Colaboración:** tomar lo que aporta el otro como **material para construir**, no como algo para discutir.
+- **Ensemble (elenco):** el grupo funciona como **un conjunto unificado** y logra algo que nadie haría solo.
+- **Play (la obra en función):** lo que pasa cuando la obra se presenta **ante el público**, y la interacción del grupo entre sí y con el cliente. ⚠️ No es "jugar sin reglas".
+
+**El triángulo de hierro:** tiempo, costo y alcance están atados. Si se quieren fijar los tres, lo que se termina sacrificando es la **calidad**.
 
 **Los modelos de gestión, de más rígido a más flexible:**
 - **En etapas (cascada):** primero todo el análisis, después todo el diseño, después todo el código. Si a mitad de camino cambia algo, duele mucho.
@@ -65,6 +74,23 @@ El software se parece al teatro: cambiar una pantalla o una regla cuesta poco, a
 - **Impacto** es lo que gana la organización (bajan los costos).
 
 El objetivo es lograr el mayor cambio con lo **mínimo** que haya que construir.
+
+**El ciclo de producto de Patton** (salió en el examen de 2025). Un equipo de producto da vueltas sin parar por cuatro etapas:
+1. **Sense (percibir):** mirar y escuchar. Qué problemas tiene la gente, qué cambia en la tecnología, qué hace la competencia. De ahí salen **oportunidades**.
+2. **Focus (enfocar):** elegir **una** oportunidad, armar la visión y decidir qué cambio queremos lograr en los usuarios.
+3. **Discovery (descubrir):** probar ideas con experimentos baratos para descartar las malas.
+4. **Delivery (entregar):** construir lo que se validó.
+
+Después se vuelve a mirar (Sense) cómo lo usan.
+
+**Por qué no alcanza con tener ideas:** hay **demasiadas**, la **mayoría son malas** (dos tercios de las funciones casi no se usan) y todos creemos que **la nuestra** sí va a funcionar.
+
+**MVP ("producto mínimo viable"):** la sigla se usa para cosas distintas.
+- **Release mínimo exitoso:** lo más chico que ya sirve y da resultado (el sentido original).
+- **Experimento mínimo:** lo más chico para probar una idea (el sentido de *Lean Startup*).
+- **"Lo que entre antes de la fecha":** el uso de todos los días.
+
+Patton recomienda decir cuál de los tres es.
 
 > 💡 **Para recordar:** primero aprender, después construir.
 
@@ -203,11 +229,13 @@ El objetivo es lograr el mayor cambio con lo **mínimo** que haya que construir.
 - **Riesgo:** algo que **puede** pasar y afectaría el proyecto. Si ya pasó, es un **problema**.
 - **Planilla de riesgos:** la lista de riesgos con su probabilidad, su impacto y qué se va a hacer con cada uno.
 - **Exposición:** probabilidad × impacto. Dice **cuál atender primero**.
-- **Qué se puede hacer con un riesgo:**
-  - **evitarlo** (cambiar el plan);
-  - **mitigarlo** (achicarlo);
-  - **transferirlo** (pasárselo a otro, como un seguro);
-  - **aceptarlo** (asumirlo, con un plan B por si pasa).
+- **Qué se puede hacer con un riesgo** (según la cátedra):
+  - **mitigarlo:** achicarlo **antes** de que pase;
+  - **transferirlo:** pasárselo a otro, como un seguro o un experto;
+  - **tener una contingencia:** el plan B para **cuando** pase (por ejemplo, volver a la versión anterior);
+  - **evitarlo:** cambiar el plan;
+  - **aceptarlo:** solo vigilarlo, si es chico.
+- **Los releases cortos ya son gestión de riesgos:** si algo sale mal, sale mal en chiquito y temprano.
 - **MoSCoW:** separar lo que se hace en cuatro grupos:
   - **Must:** sí o sí;
   - **Should:** debería;
@@ -232,6 +260,13 @@ El objetivo es lograr el mayor cambio con lo **mínimo** que haya que construir.
   - **Habilitador:** enseña y ayuda a otros equipos.
   - **Subsistema complicado:** se ocupa de una pieza muy especializada.
 - **Carga cognitiva:** un equipo puede entender y mantener una cantidad limitada de cosas. Si se lo sobrecarga, empeora todo.
+- **Teoría X y teoría Y:** dos formas de ver a las personas.
+  - **X:** necesitan control para trabajar.
+  - **Y:** se organizan y se motivan solas si tienen objetivos claros y apoyo. Lo ágil se apoya en la **Y**.
+- **Equipos por pieza técnica vs. por funcionalidad:**
+  - si cada equipo maneja una pieza técnica (uno la app, otro el servidor), toda función nueva necesita a varios equipos y se traba;
+  - un equipo **por funcionalidad** tiene a todos los perfiles y la entrega completa.
+- **Alinear y dar autonomía:** el líder dice **qué** hace falta y **para qué**; el equipo decide **cómo**.
 - **Equipos chicos:** cuanta más gente, más canales de comunicación hay que mantener (con 10 personas ya hay 45). Por eso se comunican mejor.
 - **Conflictos:** son normales. Se discuten **ideas**, no personas.
 
@@ -239,7 +274,24 @@ El objetivo es lograr el mayor cambio con lo **mínimo** que haya que construir.
 
 **La idea:** para mejorar hay que **mirar datos**, no solo sensaciones. Pero hay que medir lo que importa.
 
-- **Retrospectiva:** el equipo se pregunta qué funcionó, qué no y qué va a cambiar. Termina con **pocas acciones concretas**, no con una lista de quejas.
+- **Por qué mejorar:** porque todo se degrada solo si no se cuida, porque no todo nos sale natural y porque siempre hay algo para aprender.
+- **Kaizen y kaikaku:** el kaizen es la mejora **de a pasitos**; el kaikaku, el **cambio radical**.
+- **Desperdicios:** mejorar es sacar lo que no suma. Por ejemplo:
+  - tener mucho empezado y poco terminado;
+  - hacer funciones de más;
+  - pasarse el trabajo de mano en mano;
+  - saltar de tarea en tarea;
+  - esperar;
+  - rehacer por errores.
+- **Retrospectiva:** el equipo **analiza una situación, encuentra las causas y se compromete a mejorar algo**. Termina con **pocas acciones concretas**, no con una lista de quejas.
+  - **Regla de oro:** no se buscan culpables. Se parte de que todos hicieron lo mejor que pudieron con lo que sabían.
+  - **Técnica clásica:** los **5 porqués**. Se pregunta "¿por qué?" varias veces hasta llegar a la causa de fondo.
+- **Métrica, medición e indicador** (definiciones de la cátedra):
+  - **métrica** es la **definición** de qué se mide;
+  - **medición** es el **acto** de tomar el dato;
+  - **indicador** es el **gráfico** que lo muestra.
+- **Las métricas miden la realidad, no premian ni castigan.** Si se usan para premiar, la gente aprende a inflar el número (por ejemplo, partir tareas para "cerrar más tickets").
+- **Toyota Kata:** mejorar como hábito: fijar el próximo escalón y avanzar con experimentos chicos. Se vio en la clase de métricas de 2025, así que puede entrar en la Evaluación 1. Está más abajo, en la parte 13.
 - **GQM (objetivo → pregunta → métrica):** primero se decide **qué se quiere lograr**, después qué preguntas lo responderían, y recién ahí **qué medir**.
 - **Métricas DORA:** cuatro números para saber si un equipo entrega bien software:
   - dos de **velocidad**: cada cuánto publica y cuánto tarda un cambio en llegar al usuario;

@@ -60,6 +60,26 @@ flowchart TD
 
 ---
 
+## 👥 Lo que dio la cátedra (apuntes de 1C 2026)
+
+- **Teoría X vs. Y:**
+  - **X:** las personas necesitan control y supervisión.
+  - **Y:** son autónomas y automotivadas; la gestión da contexto y apoyo. Es la base de lo ágil.
+- **Equipos por componente vs. por funcionalidad:**
+  - **por componente:** especialistas → dependencias y cuellos de botella;
+  - **por funcionalidad:** multidisciplinarios, entregan de punta a punta.
+- **Tamaño y formación:** equipos chicos, alrededor de **7 ± 2** personas. Un grupo tarda **unos 5 sprints** en funcionar como equipo.
+- **Alineación + autonomía:** el líder dice **qué** y **para qué**; el equipo decide **cómo**.
+- **Liderazgo en Scrum:** el equipo lidera lo técnico, el Scrum Master el proceso y el Product Owner la visión.
+- **Estilos de liderazgo:** coercitivo, ejemplar, democrático, mentor, integrador y visionario.
+- **Comunicación no violenta:** separar la **observación** de la **evaluación**; evitar "siempre" y "nunca"; no suponer intenciones.
+
+> ⚠️ Los apuntes atribuyen el "7 ± 2" al Manifiesto Ágil, pero **el Manifiesto no habla de tamaño de equipo**. Es una recomendación habitual en Scrum: el Scrum Guide 2020 dice "típicamente 10 o menos".
+
+Detalle en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#91-equipos-personas-y-comunicación).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. Nombrá los **cuatro tipos de equipo** de Team Topologies y qué hace cada uno.

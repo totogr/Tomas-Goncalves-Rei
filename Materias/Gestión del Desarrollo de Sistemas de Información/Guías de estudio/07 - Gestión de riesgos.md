@@ -56,6 +56,33 @@ flowchart LR
 
 ---
 
+## 📄 Lo que dice el documento de riesgos de la cátedra
+
+- **Definición:** "proceso sistemático de **identificar, evaluar, priorizar y controlar** amenazas que podrían afectar el éxito del producto".
+- **Tipos de amenaza:** factibilidad técnica, atractivo para los usuarios, sostenibilidad del negocio y calidad.
+- **Siempre** se gestionan riesgos, con distinto detalle. Aparecen al **priorizar el story map**.
+- **Los releases frecuentes son un mitigador:** validan hipótesis temprano y reducen la exposición acumulada.
+- **Exposición = probabilidad × impacto.**
+  - El documento usa una matriz con valores 1, 3 y 5 (de 1 a 25) y sugiere **priorizar exposición > 10**.
+  - Ejemplo: "dependencia de un proveedor externo": media (3) × alto (5) = **15**.
+- **Mecanismos:**
+  - **mitigación** (antes de que ocurra);
+  - **transferencia** (a un tercero);
+  - **contingencia** (plan para cuando ocurra; por ejemplo, rollback);
+  - **evitar**;
+  - **aceptación** (monitorear, si la exposición es baja).
+- **Ejemplo del documento:** integración con otras aplicaciones de la empresa.
+  - **Mitigar** con releases modulares.
+  - **Transferir** al soporte de un experto.
+  - **Contingencia:** rollback.
+- **Recomendaciones:** foco en los más importantes, herramientas simples, integrarlo a la planificación ("¿qué riesgos ven en este release?").
+
+> ⚠️ **El documento tiene dos inconsistencias:** habla de una matriz "5×5" pero la tabla es 3×3, y da dos umbrales distintos (> 20 "alto" y > 10 "priorizar"). En un examen, explicitá la escala que uses.
+
+Detalle en el [Resumen para la Evaluación 1](Resumen%20para%20la%20Evaluaci%C3%B3n%201.md#8-gestión-de-riesgos-).
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué campos tiene una **planilla de riesgos**?

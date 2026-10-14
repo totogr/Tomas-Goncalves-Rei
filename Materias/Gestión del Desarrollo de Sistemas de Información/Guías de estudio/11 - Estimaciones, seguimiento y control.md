@@ -49,6 +49,41 @@ flowchart TD
 
 ---
 
+## 📒 Lo que dio la cátedra (2C 2025 y 1C 2026, apuntes de alumnos)
+
+- **Estimación vs. presupuesto:**
+  - la **estimación** es un **pronóstico**, idealmente un **rango** ("entre 3 y 5 días");
+  - el **presupuesto** es un **compromiso** entre partes y suma un margen por riesgo ("lo tengo en 7 días").
+- **Un buen estimador es insesgado:** tiene la misma probabilidad de errar por exceso que por defecto. Atar bonos a cumplir estimaciones las sesga hacia arriba.
+- **Enfoques:**
+  - **predictivo:** situaciones conocidas;
+  - **adaptativo:** alta incertidumbre, lo común en software;
+  - **estadístico:** distribuciones conocidas.
+- **Qué se estima:** duración, costo, esfuerzo y el objeto (proyecto, hito, requerimiento, tarea).
+- **Técnicas:**
+  - **análoga:** comparar con un proyecto parecido; poca información, al inicio;
+  - **paramétrica:** escalar un dato histórico con parámetros;
+  - **PERT (3 puntos):** optimista, más probable y pesimista;
+  - **Delphi:** rondas anónimas de expertos hasta el consenso;
+  - **planning poker:** estimación relativa en equipo, votando a la vez para evitar sesgos;
+  - **story points**;
+  - **Monte Carlo:** simular miles de veces con datos históricos y dar **percentiles**; el **P85** es el estándar para comprometerse;
+  - **#NoEstimates:** tareas chicas y de tamaño parecido, y proyectar con **throughput y lead time** reales.
+- **Takt time:** tiempo promedio entre dos entregas sucesivas. Tiempo total ≈ N ítems × takt, pero conviene usar su **distribución**, no solo el promedio.
+- **Curva en Z:** la entrega no es lineal.
+  - **Primer 20%:** lento (aprendizaje, ambientes).
+  - **60% del medio:** ritmo sostenido.
+  - **Último 20%:** lento (defectos, cierre).
+- **Seguimiento:**
+  - **producto:** satisfacción, uso por característica, ganancias;
+  - **proceso:** avance y las métricas DORA;
+  - **equipo:** satisfacción, rotación.
+  - **Indicadores "de futuro":** tiempo de revisión de código, estabilidad de requisitos, tamaño de los PR, tasa de retrabajo.
+
+> ⚠️ La prelectura de estimaciones trae una **tabla comparativa generada por IA** (época, enfoque, precisión y esfuerzo de cada técnica). La cátedra pide **"desafiar cada afirmación"**. Por ejemplo, poner la precisión de Monte Carlo como "muy alta" depende por completo de la calidad de los datos históricos.
+
+---
+
 ## ❓ Preguntas para autoevaluarte
 
 1. ¿Qué diferencia hay entre estimación **relativa** y **absoluta**? ¿Por qué la relativa suele ser mejor?
