@@ -5,7 +5,7 @@
 > Ese mismo día se entrega la **v3 del TP** (plan de mejora).
 >
 > **Se complementa con:**
-> - 📝 [**Evaluaciones anteriores resueltas**](Evaluaciones%20anteriores%20resueltas.md): la **Evaluación I del 27/10/2025** completa, con respuestas modelo.
+> - 📝 [**Evaluaciones anteriores resueltas**](Evaluaciones%20anteriores%20resueltas.md): tres evaluaciones completas con respuestas modelo. Son la de **27/10/2025** (MidFood), la de **18/5/2026** (ReciclaPlus, con lo que marcó el corrector) y una **Simulación de Evaluación I**. Arriba de todo hay una tabla de **lo que se repite en las tres**.
 > - 🟢 [**Resumen simple**](Resumen%20simple.md): la misma materia contada sin tecnicismos, para entender las ideas antes de memorizar.
 > - 📚 Las [guías por clase](README.md): para profundizar cuando algo no cierra.
 
@@ -112,6 +112,12 @@ Si en una respuesta no sabés cómo justificar, casi siempre la justificación e
 | **Ensemble** (elenco) | Cualidad de un grupo en el que **cada miembro cede soberanía sobre su trabajo** y así crean algo que ninguno haría solo: **un todo mayor que la suma de sus partes** | El equipo funciona como un **conjunto unificado** (fue la pregunta 1 de 2025) |
 | **Play** (juego / representación) | Cualidad de una producción **mientras se representa ante el público**, o de la **interacción entre los miembros de un grupo y, en última instancia, entre el grupo y el cliente** | La "obra en funcionamiento". ⚠️ **No es** "juego sin estructura" |
 
+> ⚠️ **Cómo lo pregunta la cátedra (Evaluación I de 1C 2026):** la opción correcta decía:
+> - *release* es "**soltar el control** para permitir la autonomía y la exploración";
+> - *play* es "el **espacio seguro para experimentar** y la obra que producimos".
+>
+> Es compatible con el libro, porque se suelta el control **paso a paso** pero se mantienen los límites. Buscá esa idea, y descartá las opciones de "liberar versiones", "documentación" o "celebración".
+
 **Cómo se conecta con el resto:**
 - experimentos y prototipos = ensayos baratos;
 - Scrum = iteraciones cortas con función frente al público (review);
@@ -182,6 +188,14 @@ Salió en la evaluación de 2025 (2 puntos, aplicado al caso). Los equipos de pr
 > 2. En las actividades, nombrá **qué riesgo concreto** atacan: valor/atractivo, usabilidad, técnico o de negocio.
 >
 > En 2025 el corrector bajó la nota cuando el riesgo quedaba dicho "en general" y anotó: "necesitaría más especificar cómo se entiende ese riesgo".
+
+> 🧪 **En qué etapa va cada experimento, según la cátedra** (Evaluación I de 1C 2026, con las anotaciones del corrector):
+> - **Observación etnográfica → Sense.**
+> - **Buy-a-Feature → Focus.**
+> - **Wizard of Oz → Discovery.**
+> - **A/B testing en producción → Delivery**, porque corre sobre lo ya entregado.
+>
+> Para decidirlo: ¿se prueba una idea **antes** de construirla (Discovery) o se optimiza algo que **ya está en producción** (Delivery)?
 
 ### Los 3 problemas con las ideas (Patton)
 
