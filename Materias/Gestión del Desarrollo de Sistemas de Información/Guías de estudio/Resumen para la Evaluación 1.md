@@ -5,7 +5,7 @@
 > Ese mismo día se entrega la **v3 del TP** (plan de mejora).
 >
 > **Se complementa con:**
-> - 📝 [**Evaluaciones anteriores resueltas**](Evaluaciones%20anteriores%20resueltas.md): tres evaluaciones completas con respuestas modelo. Son la de **27/10/2025** (MidFood), la de **18/5/2026** (ReciclaPlus, con lo que marcó el corrector) y una **Simulación de Evaluación I**. Arriba de todo hay una tabla de **lo que se repite en las tres**.
+> - 📝 [**Evaluaciones anteriores resueltas**](Evaluaciones%20anteriores%20resueltas.md): cuatro evaluaciones completas con respuestas modelo. Son **la del 26/10/2026, la de esta cursada** (ClubPlay, la mejor guía para el recuperatorio del 16/11), la de **27/10/2025** (MidFood), la de **18/5/2026** (ReciclaPlus, con lo que marcó el corrector) y una **Simulación de Evaluación I**. Arriba de todo hay una tabla de **lo que se repite**.
 > - 🟢 [**Resumen simple**](Resumen%20simple.md): la misma materia contada sin tecnicismos, para entender las ideas antes de memorizar.
 > - 📚 Las [guías por clase](README.md): para profundizar cuando algo no cierra.
 
@@ -23,6 +23,19 @@
 | **Caso** (una app inventada) | 3 preguntas de aplicación | Ciclo **Sense → Focus → Discovery → Delivery** de Patton ligado a **riesgos** · explicar un **experimento** con el caso · **dibujar un story map** con dos roles | **6** |
 
 > 🔑 **El 60% es aplicar las herramientas a un caso.** La consigna pide "explicitá cualquier supuesto que tomes". El story map solo vale 3 puntos. El tiempo es justo: llevá las estructuras de respuesta ya practicadas (ver [casos](#10-casos-para-practicar-)).
+
+> 🆕 **La del 26/10/2026 cambió el formato** ([resuelta acá](Evaluaciones%20anteriores%20resueltas.md#evaluación-1-del-26102026-2c-2026--caso-clubplay)):
+> - **Todo** sobre un mismo caso (ClubPlay), sin preguntas de definiciones;
+> - los múltiple choice piden **justificar**;
+> - temas:
+>   - leer un *fake door*;
+>   - partir una historia en cortes verticales;
+>   - criticar un plan de validación (riesgo → experimento);
+>   - story map con línea de corte + **plan con fecha fija**;
+>   - example map completo;
+>   - métricas de resultado vs. vanidad.
+>
+> Para el **recuperatorio del 16/11**, preparate con ese formato.
 
 ---
 
