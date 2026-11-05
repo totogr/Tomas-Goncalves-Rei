@@ -3,7 +3,7 @@
 > **Para qué es este archivo:** para **entender** cómo funciona una red antes de memorizar números y siglas. Cada tema está contado en palabras simples, con la idea central, las definiciones que hay que saber y un ejemplo de la vida cotidiana.
 > Leelo **primero**, de corrido. Cuando las ideas cierren, pasá al [Resumen para el parcial](Resumen%20para%20el%20parcial.md), que tiene los números, las tablas completas, los ejercicios y lo que más se tomó.
 >
-> **Primer parcial: miércoles 4/11.** Entran las partes 1 a 11 (guías 01 a 12).
+> **Primer parcial: miércoles 4/11.** Entraron las partes 1 a 11 (guías 01 a 12). La parte 12 (IoT y redes industriales) es de después: entra en el **final**.
 
 ---
 
@@ -293,6 +293,28 @@ En la otra punta se hace todo al revés. A nadie le importa cómo trabaja el cam
 
 ---
 
+## 12. IoT y redes industriales (para el final)
+
+> Clase #12 BIS. Detalle en la [guía 13](13%20-%20IoT%20y%20redes%20industriales%20%28IIoT%29.md).
+
+**La idea:** conectar **objetos** (sensores, medidores, máquinas) a la red para **medir y actuar**. En una fábrica se llama **IIoT**, y ahí la red no solo informa: **controla máquinas**.
+
+- **No hay una tecnología que sirva para todo:** se elige según lo que pide cada aparato.
+  - Un sensor que manda un dato cada 15 minutos necesita **poquísimo** y tiene que durar **años con una pila**: va por **LoRaWAN** o Sigfox (largo alcance, bajo consumo).
+  - Una cámara necesita **mucho ancho de banda**: Wi-Fi, cable o 5G.
+- **LoRa vs. LoRaWAN:** **LoRa** es la forma de transmitir por radio; **LoRaWAN** es el protocolo y la red que la usan.
+- **IT y OT:** IT es la red de la oficina (datos, usuarios); OT es la de la planta (máquinas). Hoy **se juntan** para decidir mejor, pero eso **no** quiere decir conectar todo a Internet.
+- **Lo que exige una fábrica:** que la red **no se caiga**, y que la orden a una máquina llegue **siempre en el mismo tiempo** (**determinismo**). Por eso se usan anillos que se recuperan solos si se corta un cable.
+- **Los protocolos, en una línea:**
+  - **Modbus:** el más simple y viejo para leer y escribir datos en máquinas (no tiene seguridad propia).
+  - **HART:** le agrega datos digitales al cable analógico de 4–20 mA de los instrumentos.
+  - **PROFINET:** Ethernet para controlar máquinas en tiempo real.
+  - **OPC UA:** que equipos de distintas marcas se **entiendan** (dice qué significa cada dato).
+  - **MQTT:** un "cartero" (broker) que reparte los datos a todos los que se suscribieron.
+- **Edge:** procesar los datos **cerca** de la máquina antes de mandarlos a la nube.
+
+---
+
 ## 🧠 Todo junto, en una tabla
 
 | Tema | La pregunta que responde | La idea en una frase |
@@ -308,6 +330,7 @@ En la otra punta se hace todo al revés. A nadie le importa cómo trabaja el cam
 | NFV | ¿Por qué todo se vuelve software? | Funciones de red como apps sobre servidores comunes |
 | TCP y UDP | ¿Llega todo o llega rápido? | TCP es la carta certificada; UDP, el volante |
 | Capas 5, 6 y 7 | ¿Qué pasa "arriba"? | Organizar la charla, traducir y cifrar, y los servicios que usamos |
+| IoT e industria | ¿Cómo se conectan las máquinas? | La tecnología según el aparato; en la fábrica, la red no puede llegar tarde |
 
 ---
 

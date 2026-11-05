@@ -301,7 +301,7 @@ Para practicar: cada una tiene la respuesta en la guía indicada.
 | **Martin Cooper**: ¿cómo vaticinar los próximos 50 años? | [Guía 01](01%20-%20Introducci%C3%B3n%20a%20las%20telecomunicaciones%20y%20redes.md) |
 | **Comprimir un canal de voz 6 a 1** → entran **6 conversaciones** en un canal de 64 kbps (~10,7 kbps cada una); 60 canales comprimidos ocupan **10** canales de 64 kbps | [Resumen](Resumen%20para%20el%20parcial.md), sección 2 |
 
-**Solo de final** (no entran en el parcial: son de las clases de después): RAN y V-RAN, Wi-Fi 4/5/6/7, beamforming, MU-MIMO y OFDMA, MPLS a fondo (L2VPN vs. L3VPN, operaciones *swap* y *pop*), IoT (LoRa).
+**Solo de final** (no entran en el parcial: son de las clases de después): RAN y V-RAN, Wi-Fi 4/5/6/7, beamforming, MU-MIMO y OFDMA, MPLS a fondo (L2VPN vs. L3VPN, operaciones *swap* y *pop*), IoT (LoRa): ver la [guía 13](13%20-%20IoT%20y%20redes%20industriales%20%28IIoT%29.md).
 
 ---
 

@@ -29,6 +29,7 @@ Las PPTs son de la cátedra (Ing. Marcelo E. Volpi, Ing. Lucas Giorgi, Ing. Vane
 | 10 | NFV — virtualización de funciones de red | ✅ |
 | 11 | Datagrama IP, TCP y UDP | ✅ |
 | 12 | Protocolos de capas 5, 6 y 7 (sesión, presentación y aplicación) | ✅ (clase #11 de 2026) |
+| 13 | IoT y redes industriales (IIoT): LoRaWAN, Modbus, HART, PROFINET, MQTT, OPC UA | ✅ (clase #12 BIS de 2026, tema de final) |
 
 > 🎯 **Primer parcial (miércoles 4/11):** entra del tema **01 al 12**. La clase #11 (capas 5, 6 y 7) es lo último que entra. Para estudiar: [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md) (para entender), [Resumen para el parcial](Gu%C3%ADas%20de%20estudio/Resumen%20para%20el%20parcial.md) y [Parciales anteriores resueltos](Gu%C3%ADas%20de%20estudio/Parciales%20anteriores%20resueltos.md).
 
@@ -55,7 +56,8 @@ Redes/
 │   ├── 10 - NFV - Virtualización de Funciones de Red.pdf
 │   ├── 11 - Datagrama IP, TCP y UDP.pdf
 │   ├── 11b - Capa 4 TCP y UDP (ampliación 2026).pdf
-│   └── 12 - Protocolos Capa 5, 6 y 7 - Sesión, Presentación y Aplicación.pdf
+│   ├── 12 - Protocolos Capa 5, 6 y 7 - Sesión, Presentación y Aplicación.pdf
+│   └── 13 - IoT y Redes Industriales (IIoT).pdf
 ├── Resúmenes/
 │   └── Clase 07-11 - Enrutamiento Dinámico (BGP y OSPF).pdf
 └── Material extra/

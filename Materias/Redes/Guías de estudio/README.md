@@ -18,6 +18,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 | 10 | [NFV — virtualización de funciones de red](10%20-%20NFV%20-%20Virtualizaci%C3%B3n%20de%20funciones%20de%20red.md) | ✅ |
 | 11 | [Datagrama IP, TCP y UDP](11%20-%20Datagrama%20IP%2C%20TCP%20y%20UDP.md) | ✅ |
 | 12 | [Capas 5, 6 y 7 — sesión, presentación y aplicación](12%20-%20Capas%205%2C%206%20y%207%20-%20Sesi%C3%B3n%2C%20Presentaci%C3%B3n%20y%20Aplicaci%C3%B3n.md) | ✅ |
+| 13 | [IoT y redes industriales (IIoT)](13%20-%20IoT%20y%20redes%20industriales%20%28IIoT%29.md) | ✅ (para el final) |
 
 > 🎯 **Primer parcial (miércoles 4/11):** entra **de la 01 a la 12** (la cátedra dijo que la clase #11 de capas 5, 6 y 7 es lo último que entra).
 
