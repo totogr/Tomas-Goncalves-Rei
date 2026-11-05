@@ -668,6 +668,14 @@ La matriz del documento de la cátedra:
 - **X-as-a-Service:** un equipo **consume** lo que el otro ofrece, con mínima coordinación.
 - **Facilitación:** un equipo **ayuda** a otro a aprender.
 
+> 🧱 **Lo que remarca la guía de prácticos 4 de la cátedra** ([resuelta en la guía 08](08%20-%20Equipos%2C%20personas%20y%20comunicaci%C3%B3n.md#-la-gu%C3%ADa-de-pr%C3%A1cticos-4-de-la-c%C3%A1tedra-team-topologies)):
+> - **La estructura de equipos es una decisión sistémica.** Un equipo puede hacer todo bien y entregar lento por **dependencias**, **arquitectura acoplada** o un **alcance** que lo supera. "Si no se diseña a propósito, se diseña sola."
+> - **Los modos de interacción no son permanentes:**
+>   - la **colaboración** es cara y sirve para **descubrir**: cuando termina, se pasa a **X-as-a-Service**;
+>   - un **habilitador** facilita por un **tiempo acotado** y busca dejar de ser necesario. Un equipo que **aprueba** todo no es habilitador: es un cuello de botella.
+> - **La plataforma se trata como un producto**: los otros equipos son sus clientes, y hay que hacer discovery y medir la adopción.
+> - **Sumar gente no achica la carga cognitiva:** mejor **partir** en equipos chicos con fronteras por **flujo de valor**.
+
 **Personas, equipos y comunicación:**
 
 | Concepto | Idea |

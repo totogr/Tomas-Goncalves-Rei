@@ -399,6 +399,8 @@ Las otras opciones describen otras tarjetas:
 
 Aprobación (nota 4) con el **60%**. El encabezado pide: "**Explicitá tus hipótesis**" y "**Validá que lo que escribís cumpla lo pedido en el enunciado**".
 
+> ℹ️ El texto está **verificado contra el enunciado digital** del examen. Su tabla de puntajes del encabezado no coincide con la de las preguntas (dice 3 = 30%, 4.a = 30% y 4.b = 20%). Acá se usan los pesos **de cada pregunta** (1, 2 y 3: 10% cada una; 4: 20%; 5: 20%; 6: 30%), que son los que usó el corrector.
+
 | Pregunta | Tipo | Tema | Peso |
 | --- | --- | --- | --- |
 | 1 | Múltiple choice | *Artful Making*: *release* y *play* | 10% |

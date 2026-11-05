@@ -267,6 +267,10 @@ Patton recomienda decir cuál de los tres es.
   - si cada equipo maneja una pieza técnica (uno la app, otro el servidor), toda función nueva necesita a varios equipos y se traba;
   - un equipo **por funcionalidad** tiene a todos los perfiles y la entrega completa.
 - **Alinear y dar autonomía:** el líder dice **qué** hace falta y **para qué**; el equipo decide **cómo**.
+- **Cómo se organizan los equipos importa tanto como lo que hace cada uno** (guía de prácticos 4):
+  - un equipo puede trabajar bien y **entregar lento** porque depende de otros o porque le dieron **demasiadas cosas** para entender;
+  - la **colaboración** entre equipos es buena para **inventar algo juntos**, pero cara. Cuando termina, uno le ofrece al otro **un servicio** listo para usar;
+  - un equipo que **aprueba** todo lo de los demás no ayuda: es un **embudo**.
 - **Equipos chicos:** cuanta más gente, más canales de comunicación hay que mantener (con 10 personas ya hay 45). Por eso se comunican mejor.
 - **Conflictos:** son normales. Se discuten **ideas**, no personas.
 
