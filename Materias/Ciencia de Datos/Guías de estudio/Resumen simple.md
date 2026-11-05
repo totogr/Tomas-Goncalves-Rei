@@ -3,7 +3,9 @@
 > **Para qué es este archivo:** para **entender** los temas antes de meterte con las cuentas. Casi no hay fórmulas: cada tema tiene la idea en palabras simples, las definiciones que hay que saber y un ejemplo cotidiano.
 > Leelo **primero**, de corrido. Cuando las ideas cierren, pasá al [Resumen para el parcial](Resumen%20para%20el%20parcial.md), que tiene las fórmulas, los ejercicios a mano y los errores típicos.
 >
-> **Parcial: jueves 29/10** (se pasó del 15/10 por el paro). Entran las partes 1 a 11. La parte 12 (lenguaje natural) se dio el 13/10, antes del parcial: **preguntá en clase si entra**. Por las dudas, está acá en versión corta.
+> **Parcial:** fue el jueves 29/10 y entraron las partes 1 a 11. **Recuperatorio: jueves 19/11.**
+> La parte 12 (lenguaje natural) se dio antes del parcial: **preguntá si entra en el recuperatorio**.
+> Las partes 13 a 16 (embeddings, redes profundas, recurrentes e IA generativa) son de la segunda mitad del cuatrimestre.
 
 ---
 
@@ -293,21 +295,103 @@ Un modelo es **bueno** si los aciertos (la diagonal) son grandes y los errores (
 
 ---
 
-## 12. Procesamiento de lenguaje natural (versión corta)
+## 12. Procesamiento de lenguaje natural
 
-> ⚠️ Esta parte sale del temario, sin las slides de la cátedra. Si entra en el parcial, completala con lo que se dio el 13/10 y en la práctica del 22/10.
+> Se dio el 13/10 (teórica) y el 22/10 (práctica), antes del parcial. **Preguntá si entra en el recuperatorio.** Detalle en la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md).
 
-**La idea:** enseñarle a la computadora a trabajar con **texto**: clasificar mails, detectar si una reseña es positiva o negativa, sacar nombres y fechas de un documento.
+**La idea:** enseñarle a la computadora a trabajar con **texto**. Por ejemplo:
+- clasificar mails;
+- detectar si una reseña es positiva o negativa;
+- sacar nombres y fechas de un documento.
 
 **Los pasos típicos:**
 1. **Tokenizar:** partir el texto en palabras.
 2. **Limpiar:**
-   - pasar a minúsculas;
-   - sacar las **stopwords**, palabras muy comunes que no aportan ("el", "de", "y").
-3. **Vectorizar:** convertir el texto en números para que un modelo lo pueda usar.
-   - **Bag of Words:** cuenta cuántas veces aparece cada palabra, sin importar el orden.
-   - **TF-IDF:** da más importancia a las palabras **frecuentes en ese texto pero raras en el resto**, que son las que lo distinguen.
-4. **Clasificar:** por ejemplo con **Naïve Bayes**, que aprende qué tan probable es cada palabra en cada clase. Se llama "ingenuo" porque supone que las palabras no dependen unas de otras: es falso, pero funciona bien.
+   - pasar a minúsculas y sacar tildes;
+   - sacar las **stop words**, palabras muy comunes que no aportan ("el", "de", "y");
+   - opcionalmente, llevar cada palabra a su raíz (**stemming**, más bruto) o a su forma de diccionario (**lema**: "corrían" → "correr").
+3. **Vectorizar:** convertir el texto en números.
+   - **Bolsa de palabras:** cuenta cuántas veces aparece cada palabra, sin importar el orden.
+   - **TF-IDF:** da más peso a las palabras **frecuentes en ese texto pero raras en el resto**. Una palabra que está en todos los textos pesa cero.
+4. **Clasificar.**
+
+**Naive Bayes (pregunta muy probable):**
+- **Qué hace:** para cada clase (positiva, negativa) aprende **qué tan probable es cada palabra**. Ante un texto nuevo, multiplica las probabilidades de sus palabras y elige la clase que da más alto.
+- **Por qué "ingenuo":** supone dos cosas falsas. Que el **orden no importa** y que las palabras **no dependen unas de otras** ("Buenos" casi siempre va con "Aires"). Igual funciona muy bien.
+- **El suavizado de Laplace:** si una palabra nunca apareció en una clase, su probabilidad sería cero y anularía todo el producto. Por eso se **suma 1 a cada conteo**.
+
+**Análisis de sentimientos:**
+- **Qué detecta:** la **actitud** de quien escribe hacia algo: quién opina, sobre qué y si es positivo o negativo.
+- **Trucos clásicos:**
+  - marcar las palabras **negadas** ("no me NO_gustó NO_nada");
+  - usar **todas** las palabras, no solo los adjetivos;
+  - usar **diccionarios** de palabras positivas y negativas (lexicones como SentiWordNet).
+- **Lo que le cuesta:** la ironía y las expectativas frustradas ("tenía todo para ser excelente, pero es aburridísima").
+
+**Extracción de información:** sacar **datos ordenados** de un texto libre.
+- **NER:** encontrar las **entidades**: personas, lugares, fechas, empresas.
+- **Relaciones:** "Borges **nació en** Buenos Aires" → (Borges, nació en, Buenos Aires). Se pueden buscar con reglas, con ejemplos etiquetados o arrancando de unos pocos pares conocidos y aprendiendo los patrones solo.
+
+---
+
+## 13. Embeddings: palabras con significado
+
+> Clase práctica del 5/11. Detalle en la [guía 14](14%20-%20Embeddings%20%28Word2Vec%29.md).
+
+**La idea:** representar cada palabra con **una lista corta de números** (por ejemplo, 300) que capture su significado. Las palabras parecidas quedan **cerca** entre sí.
+
+- **El ejemplo de la clase:** si describís a una persona con números (cuán extrovertida, cuán ordenada…), para encontrar a alguien parecido buscás a quien tenga **números parecidos**.
+- **Por qué no alcanza con numerarlas:** con el "one-hot" (un 1 en la posición de la palabra y ceros en el resto), todas las palabras quedan **igual de lejos**. "Rey" está tan lejos de "reina" como de "burlete".
+- **De dónde sale el significado:** de **con quién anda la palabra**. Las que aparecen en los mismos contextos significan cosas parecidas. Por eso alcanza con **mucho texto común**, sin etiquetar nada.
+- **Word2Vec:** aprende los vectores tratando de **adivinar las palabras vecinas** (skip-gram) o **la palabra del medio a partir de las vecinas** (CBOW).
+- **Lo sorprendente:** se puede hacer **álgebra**: **rey − hombre + mujer ≈ reina**, **Madrid − España + Francia ≈ París**.
+
+---
+
+## 14. Redes profundas: muchas capas
+
+> Teórica del 3/11. Detalle en la [guía 12](12%20-%20Introducci%C3%B3n%20al%20aprendizaje%20profundo.md).
+
+**La idea:** redes con **muchas capas** donde cada capa aprende algo más abstracto que la anterior: bordes → formas → caras.
+
+- **Por qué tardaron tanto:** el ajuste de los pesos (el "reto" por el error) **se pierde** antes de llegar a las primeras capas, que entonces no aprenden. Ese es el **desvanecimiento del gradiente**. Además, entrenar llevaba meses: las **GPU** lo bajaron a días.
+- **Cada red, para qué:**
+  - **Convolucionales (CNN):** para **imágenes**. Pasan "filtros" que buscan patrones, achican la imagen y al final clasifican.
+  - **Recurrentes:** para **secuencias** (texto, voz, series de tiempo).
+  - **Autoencoders:** aprenden a **copiar** su entrada pasando por un "cuello de botella". Sirven para comprimir y para limpiar ruido.
+  - **RBM y DBN:** aprenden patrones **sin etiquetas**, capa por capa.
+
+---
+
+## 15. Redes recurrentes: redes con memoria
+
+> Semana del 10/11. Detalle en la [guía 15](15%20-%20Redes%20recurrentes%20%28RNN%2C%20LSTM%2C%20GRU%29.md).
+
+**La idea:** una neurona que, además del dato nuevo, recibe **lo que ella misma dijo en el paso anterior**. Así "recuerda".
+
+- **Ejemplo cotidiano:** entendés cada palabra de una novela por lo que ya leíste.
+- **Sirven para:**
+  - predecir el **próximo valor** de una serie (la temperatura de mañana);
+  - leer una crítica y decir si es **positiva o negativa**;
+  - ponerle **título** a una foto.
+- **El problema:** tienen **memoria corta**. Las **LSTM** y **GRU** agregan "puertas" que deciden qué **olvidar** y qué **guardar**, como tomar notas al margen.
+- **Robo-Shakespeare:** una red que leyó todo Shakespeare y aprende a **adivinar la próxima letra**. Repitiéndolo, **escribe** texto nuevo.
+
+---
+
+## 16. IA generativa: GAN y Transformers
+
+> Detalle en la [guía 16](16%20-%20IA%20generativa%20-%20GAN%2C%20Deep%20Fakes%20y%20Transformers.md).
+
+**La idea:** modelos que no clasifican, sino que **crean** datos nuevos: imágenes, texto, voz.
+
+- **GAN:** un **falsificador** contra un **perito**. Una red inventa imágenes y otra trata de descubrir cuáles son falsas. Compitiendo, las dos mejoran hasta que las falsas parecen reales (como las caras de *thispersondoesnotexist.com*).
+- **Deep fakes:** se entrena una red que "comprime y reconstruye" la cara de una persona. Después se reconstruye **con la cara de otra**: queda el gesto de la primera con la cara de la segunda.
+- **Transformers (la "T" de ChatGPT):**
+  - **Qué hacen:** adivinan **la próxima palabra**, la agregan y repiten. Así escriben.
+  - **La atención:** cada palabra **mira a las demás** para entender su sentido. "Banco" se entiende distinto con "plaza" que con "plata".
+  - **La posición:** le agregan a cada palabra **en qué lugar** de la frase está, porque si no, "el gato comió al ratón" sería igual que "el ratón comió al gato".
+- **La temperatura:** un control de **creatividad**. Baja elige siempre lo más probable; alta se arriesga más.
 
 ---
 
@@ -328,6 +412,11 @@ Un modelo es **bueno** si los aciertos (la diagonal) son grandes y los errores (
 | SVM | ¿Dónde está la frontera? | La calle más ancha entre las clases |
 | Redes neuronales | ¿Y si el problema es complejo? | Capas de neuronas que ajustan sus pesos hacia atrás |
 | Reducción de dimensiones | ¿Cómo lo veo en 2D? | Pocas columnas nuevas que resumen todo |
+| Lenguaje natural | ¿Qué dice este texto? | Contar palabras y multiplicar probabilidades (Naive Bayes) |
+| Embeddings | ¿Qué significa esta palabra? | Números que dejan cerca a las palabras que se usan parecido |
+| Redes profundas | ¿Y con imágenes o voz? | Muchas capas, cada una más abstracta |
+| Recurrentes | ¿Qué viene después? | Neuronas con memoria del paso anterior |
+| IA generativa | ¿Puede crear algo nuevo? | Falsificador contra perito (GAN) y adivinar la próxima palabra mirando el contexto (Transformers) |
 
 ---
 

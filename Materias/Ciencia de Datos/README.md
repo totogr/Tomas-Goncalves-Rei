@@ -9,8 +9,8 @@ Los profesores van subiendo material clase a clase (slides y archivos) en **Clas
 | Carpeta / Archivo | Descripción |
 | --- | --- |
 | [`Guías de estudio/`](Gu%C3%ADas%20de%20estudio/) | Guías para llegar a cada clase con el tema entendido (analogías, diagramas, tablas y autoevaluación). |
-| [`Clases Teóricas/`](Clases%20Te%C3%B3ricas/) | Slides por unidad: introducción a la materia, visualización de datos, introducción a la ciencia de datos, ingeniería de features, árboles, ensambles, KNN y SVM, reducción de la dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP) y redes neuronales. |
-| [`Clases Prácticas/`](Clases%20Pr%C3%A1cticas/) | Notebooks de práctica por clase: Pandas y EDA, regresión, clasificación, clustering, feature engineering, árboles, ensambles, KNN y SVM, redes neuronales y reducción de dimensionalidad. |
+| [`Clases Teóricas/`](Clases%20Te%C3%B3ricas/) | Slides por unidad: introducción a la materia, visualización de datos, introducción a la ciencia de datos, ingeniería de features, árboles, ensambles, KNN y SVM, reducción de la dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP), redes neuronales, procesamiento de lenguaje natural (aprendizaje bayesiano, análisis de sentimientos, extracción de información, embeddings) y redes profundas (introducción, recurrentes, GAN, deep fakes, Transformers). |
+| [`Clases Prácticas/`](Clases%20Pr%C3%A1cticas/) | Notebooks de práctica por clase: Pandas y EDA, regresión, clasificación, clustering, feature engineering, árboles, ensambles, KNN y SVM, redes neuronales, reducción de dimensionalidad, introducción a NLP (Naive Bayes y SentiWordNet) y embeddings (Word2Vec y preentrenados). |
 | [`Guías de Ejercicios/`](Gu%C3%ADas%20de%20Ejercicios/) | Guías de ejercicios por tema (Pandas). |
 | [`Bibliografia/`](Bibliografia/) | Libros de referencia de la materia (Machine Learning con Scikit-Learn, Keras y TensorFlow). |
 | [`Material extra/`](Material%20extra/) | Material de terceros: parciales de años anteriores de la cátedra, apuntes y resúmenes de otros alumnos (con su fuente). Lo que sirve se vuelca, revisado, en las guías y el resumen. |
@@ -24,10 +24,14 @@ Ciencia de Datos/
 │   ├── Introducción a la materia.pptx
 │   ├── 02-visualización de datos/ … 07-KNN y SVM/
 │   ├── 08-Reducción de la dimensionalidad/
-│   └── 09-Redes Neuronales/
+│   ├── 09-Redes Neuronales/
+│   ├── 10-Procesamiento de lenguaje natural/
+│   └── 11-Deep Nets/
 ├── Clases Prácticas/
 │   ├── 1 - Intro Pandas/ … 10 - Redes Neuronales/
-│   └── 11 - Reducción de Dimensionalidad/
+│   ├── 11 - Reducción de Dimensionalidad/
+│   ├── 12 - Intro NLP/
+│   └── 13 - Embeddings/
 ├── Guías de Ejercicios/
 │   └── 1 - PANDAS/
 ├── Bibliografia/

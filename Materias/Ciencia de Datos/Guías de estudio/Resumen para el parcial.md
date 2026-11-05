@@ -29,7 +29,7 @@
 
 **No entra:** deep learning, embeddings, LLMs (son después del parcial). La biología de la neurona (axón, dendritas) el profe aclaró que **no se evalúa**.
 
-> ⚠️ **PLN, a confirmar.** Con el cambio de fecha, la teórica de **lenguaje natural** (13/10) y su práctica (22/10) quedaron **antes** del parcial. El calendario no dice si entra: **preguntalo en clase**. Mientras tanto, el [Resumen simple](Resumen%20simple.md#12-procesamiento-de-lenguaje-natural-versión-corta) tiene una versión corta y la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) el detalle (todavía sin las slides de la cátedra).
+> ⚠️ **PLN, a confirmar.** Con el cambio de fecha, la teórica de **lenguaje natural** (13/10) y su práctica (22/10) quedaron **antes** del parcial. El calendario no dice si entra: **preguntalo en clase**. Si entra en el recuperatorio (19/11), el [Resumen simple](Resumen%20simple.md#12-procesamiento-de-lenguaje-natural) tiene la versión corta y la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) el detalle, ya armada con las slides de la cátedra (Naive Bayes con el ejemplo resuelto, análisis de sentimientos y extracción de información).
 
 ### Plan hasta el jueves 29/10
 
