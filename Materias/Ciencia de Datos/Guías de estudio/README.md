@@ -25,6 +25,8 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 ### 🎯 Para el parcial y el recuperatorio (el parcial fue el jueves 29/10; recuperatorio el jueves 19/11)
 
+**[Mapa de temas del parcial](Mapa%20de%20temas%20del%20parcial.md)** — **empezá por acá** si te cuesta ubicar los temas: la materia dividida en cinco bloques (entender, preparar, supervisado, no supervisado, evaluar), con el árbol de subtemas de cada uno, los tipos de cada cosa, tablas de "no confundir", las palabras que cambian de significado según el bloque (K, regresión, varianza, sesgo) y un plan de días hasta el recuperatorio.
+
 **[Resumen para el parcial](Resumen%20para%20el%20parcial.md)** — todo lo que entra en un solo archivo: las 8 preguntas que el profe marcó como de examen, cada tema condensado, ejercicios para hacer a mano con su resolución, tabla comparativa de modelos, fórmulas, errores típicos y un plan de estudio día por día.
 
 **[Resumen simple](Resumen%20simple.md)** — los mismos temas sin fórmulas ni tecnicismos: la idea de cada tema, las definiciones y un ejemplo cotidiano. Para leer **primero** y entender antes de meterte con las cuentas.

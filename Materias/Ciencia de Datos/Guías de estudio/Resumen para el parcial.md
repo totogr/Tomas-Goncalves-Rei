@@ -4,6 +4,7 @@
 > Este resumen junta en un solo lugar **todo lo que entra**: lo de las guías de cada clase, lo que el profe remarcó en las teóricas ([Remarcado en clase](Remarcado%20en%20clase.md)), lo que tomaron en **parciales de años anteriores** y los errores típicos que hay que evitar.
 >
 > **Se complementa con:**
+> - 🧭 [**Mapa de temas del parcial**](Mapa%20de%20temas%20del%20parcial.md): los temas ordenados en cinco bloques, con subtemas, tipos y comparaciones. Leelo primero si te cuesta ver cómo se relacionan.
 > - 📝 [**Parciales anteriores resueltos**](Parciales%20anteriores%20resueltos.md): todas las preguntas de 2022 a 2025 por tema, con la respuesta correcta y las cuentas resueltas.
 > - 🎯 **Preguntas sobre el TP1**: aparecen en casi todos los parciales. Están en `TP1 (privado)/`, solo en local.
 > - 🟢 [**Resumen simple**](Resumen%20simple.md): los mismos temas sin fórmulas ni tecnicismos, para entender las ideas antes de meterte con las cuentas.
