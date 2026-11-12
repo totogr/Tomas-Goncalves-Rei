@@ -37,6 +37,12 @@
 >
 > Para el **recuperatorio del 16/11**, preparate con ese formato.
 
+> 📋 **Cómo corrige la cátedra**, según sus [respuestas de referencia de ClubPlay](Evaluaciones%20anteriores%20resueltas.md#-cómo-corrigió-la-cátedra):
+> - corrigen el **razonamiento**: una respuesta distinta, fundamentada y **con los supuestos explícitos**, vale igual;
+> - en el múltiple choice, la opción correcta **sin justificar vale la mitad**;
+> - una alternativa **genérica** ("hacer un experimento", "validar con usuarios") cuenta solo en parte: hay que **nombrar la herramienta y decir cómo se usaría**;
+> - en las preguntas abiertas no hace falta cubrir todo: tres riesgos bien trabajados alcanzan.
+
 ---
 
 ## 🗓️ Qué entra y cómo estudiarlo
@@ -990,6 +996,10 @@ La matriz del documento de la cátedra:
 | "El indicador es la métrica comparada con un objetivo" | Para la cátedra, el **indicador** es la **representación visual** de una métrica |
 | "Gestionar un riesgo = mitigarlo" | La cátedra da cinco mecanismos: **mitigación, transferencia, contingencia, evitar y aceptar** |
 | "Las métricas sirven para premiar o castigar" | Son medidas de **realidad**, no de éxito o fracaso (Tobias Mayer). Si se premian, se "juegan" |
+| "Corto la primera release así **para validar**" | Validar se hace **antes**, con experimentos. El corte se justifica por el **valor** que se entrega primero (lo remarcó la cátedra en la corrección de ClubPlay) |
+| Columnas del story map por módulo o componente técnico | Las actividades cuentan el **recorrido del usuario** de punta a punta. Por componentes es un "error importante" para la cátedra |
+| Un ejemplo del example map que repite la regla ("si cancela a tiempo, recupera la seña") | Un ejemplo tiene **datos concretos**, situación y resultado: "reservó para el sábado a las 20, cancela el jueves a las 18 → recupera los $10.000" |
+| "Con fecha fija: trabajamos más horas, sumamos gente o estimamos mejor" | Con fecha fija se ajusta el **alcance** (MoSCoW, buffer de alcance), y la prueba con usuarios reales **no se saltea** |
 
 ---
 

@@ -15,6 +15,6 @@ Material de la materia **Gestión del Desarrollo de Sistemas de Información** (
 | [`Material extra/`](Material%20extra/) | Links a material de terceros (alumnos de cursadas anteriores): la Evaluación I de 2025, slides de la clase 8, el documento de riesgos de la cátedra, apuntes y resúmenes. Lo útil está volcado en las guías y los resúmenes. |
 | [`Teoría/`](Teor%C3%ADa/) | Slides y material de la cátedra (experimentos de producto, Scrum + BDD Discovery, guía de prácticos 4 de Team Topologies) y el sample de *The BDD Books — Discovery*. |
 
-> 🎯 **Evaluación 1 — Producto: lunes 26/10.** Para estudiar: [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md) (para entender), [Resumen para la Evaluación 1](Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md) y la [Evaluación I de 2025 resuelta](Gu%C3%ADas%20de%20estudio/Evaluaciones%20anteriores%20resueltas.md).
+> 🎯 **Evaluación 1 — Producto:** se tomó el lunes 26/10; el **recuperatorio es el lunes 16/11 a las 17:00**. Para estudiar: [Resumen simple](Gu%C3%ADas%20de%20estudio/Resumen%20simple.md) (para entender), [Resumen para la Evaluación 1](Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md) y las [Evaluaciones anteriores resueltas](Gu%C3%ADas%20de%20estudio/Evaluaciones%20anteriores%20resueltas.md), empezando por la de esta cursada (ClubPlay), que tiene **cómo corrigió la cátedra**.
 
 _Se irá completando con slides, guías de prácticos y resúmenes a medida que se agregue material._

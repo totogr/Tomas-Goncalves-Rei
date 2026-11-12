@@ -1,7 +1,7 @@
 # 📝 Evaluaciones anteriores resueltas — GDSI
 
 > Cuatro evaluaciones de la misma cátedra (Gabardini y Fontdevila), transcriptas y resueltas con respuestas modelo:
-> 1. [**Evaluación 1 del 26/10/2026**](#evaluación-1-del-26102026-2c-2026--caso-clubplay) (**esta cursada**, caso ClubPlay). Es la más parecida a lo que puede venir en el **recuperatorio del 16/11**.
+> 1. [**Evaluación 1 del 26/10/2026**](#evaluación-1-del-26102026-2c-2026--caso-clubplay) (**esta cursada**, caso ClubPlay), con **cómo corrigió la cátedra** según sus respuestas de referencia. Es la más parecida a lo que puede venir en el **recuperatorio del 16/11**.
 > 2. [**Evaluación I del 27/10/2025**](#evaluación-i-del-27102025-2c-2025--caso-midfood) (caso MidFood).
 > 3. [**Evaluación I del 18/5/2026**](#evaluación-i-del-1852026-1c-2026--caso-reciclaplus) (1C 2026, caso ReciclaPlus), con **lo que marcó el corrector**.
 > 4. [**Simulación de Evaluación I**](#simulación-de-evaluación-i) (sin caso: riesgos y actividades de un grupo que arranca).
@@ -32,6 +32,8 @@
 > - un **example map** con reglas, ejemplos y preguntas;
 > - una tabla **riesgo → experimento**;
 > - y tené a mano **slicing vertical**, **alcance variable con fecha fija** y **outcome vs. output**.
+>
+> 📋 Antes de practicar, leé [cómo corrigió la cátedra](#-cómo-corrigió-la-cátedra) la de ClubPlay: dice qué cuenta entero, qué cuenta a medias y qué no alcanza.
 
 ---
 
@@ -100,9 +102,32 @@ Es la Evaluación 1 de esta cursada. Seis preguntas, **todas sobre el mismo caso
 
 **6.** (10%) Tres meses después del lanzamiento en cinco clubes, el equipo presenta en la Review: "*Vamos muy bien: ya tenemos 3.000 descargas*". ¿Qué opinás de esa medida para saber si a ClubPlay le está yendo bien? Proponé qué medirías vos y explicá cómo llegaste a esas medidas.
 
+### 📋 Cómo corrigió la cátedra
+
+> Después de la evaluación, la cátedra publicó sus **respuestas de referencia** (v1.1). Aclara que **no son las únicas correctas** y que sirven para guiarse. Acá va lo que esperaban en cada pregunta, resumido con palabras propias. Las [respuestas modelo](#respuestas-modelo) de abajo están revisadas contra esa referencia, y lo que se sumó a partir de ella está marcado con ➕.
+
+**Reglas generales:**
+- Se corrige el **razonamiento**, no que el texto coincida. Una respuesta distinta, **bien fundamentada y con sus hipótesis explícitas**, vale lo mismo.
+- En los **múltiple choice**, la opción correcta **sin justificación vale la mitad**.
+- En las preguntas abiertas no hace falta cubrir todo. En la 3, por ejemplo, **tres riesgos bien trabajados alcanzaban**.
+- **Cuenta solo en parte:**
+  - un riesgo bien visto, pero sin alternativa o con una alternativa **genérica** ("hacer un experimento", "validar con usuarios");
+  - métricas sueltas que no dicen **qué pregunta responden**.
+
+| Pregunta | Qué se esperaba | Qué no alcanzaba |
+| --- | --- | --- |
+| **1 · Fake door** | **b**, justificando la diferencia entre lo que se midió (un clic, una **intención**) y lo que se quiere saber (si la gente va a **jugar con desconocidos** y los partidos se completan). Para eso proponen otro experimento: un **concierge** o un **Wizard of Oz** (armar partidos a mano por WhatsApp y contar cuántos se completan) | La opción sin justificar. La **c** cae porque el 17,5% no es alto ni bajo **si no se fijó un umbral antes** |
+| **2 · Slicing** | **c**, justificando que al terminar cada historia queda algo **usable por un usuario real** | **b**: el jugador no puede reservar si el club no ve su grilla, así que ninguna mitad sirve sola. **d**: con clubes ficticios no hay nada que reservar; **es una demo, no una entrega** |
+| **3 · Plan de descubrimiento** | Al menos **tres riesgos** y, para cada uno, una forma **concreta** de evaluarlo mejor: **nombrar la herramienta y decir cómo se usaría** | Alternativas genéricas |
+| **4a · Story map** | Actividades que cuenten el **recorrido del usuario de punta a punta**. Historias en lenguaje de usuario, que digan de qué rol son, con **jugador y encargado**. Una línea de corte que forme un **recorrido completo y usable**, o que explique por qué una actividad queda vacía. El corte, **justificado por el valor** que se entrega primero | Columnas por **componentes técnicos** (la cátedra lo llama "error importante"). Justificar el corte con "**para validar**": validar se hace **antes**, con experimentos. Que la primera release sea "todo lo de arriba" |
+| **4b · Fecha fija** | Reconocer que **la fecha no se mueve y lo que se ajusta es el alcance**, y explicar el plan, con **criterios** o **sprint por sprint** (valen igual). La prueba con el club piloto tiene que **empezar temprano** y dejar tiempo para ajustar | "Trabajar más horas", "sumar gente", "programar más rápido", "estimar mejor", o achicar o saltear el piloto. "Pedir que muevan la fecha" vale solo **como complemento** de ajustar el alcance |
+| **5a · Example Mapping** | **Reglas** que describan comportamiento, no pasos ni tareas técnicas. **Ejemplos con datos concretos**: situación y resultado. Que cubran **bordes** (justo 24 h antes, un turno que ya empezó) y **casos negativos**. **Preguntas** que sean dudas reales de negocio. **No se pedía Gherkin** | Un "ejemplo" que repite la regla con otras palabras ("si cancela a tiempo recupera la seña") |
+| **5b · 3 reglas y 6 preguntas** | Leer qué indica la proporción y **tomar una postura argumentada**. La esperable: la historia **no está madura**; primero se responden las preguntas y, si hay apuro, se separa la parte clara en una historia más chica. También valía **meterla**, si se proponía cómo manejar la incertidumbre adentro del sprint (un **spike con tiempo acotado**) | "Sí, total se resuelve en el camino" |
+| **6 · Métricas** | Criticar las descargas **con un argumento**: son una métrica de vanidad, crecen solas y no ayudan a decidir. Proponer **al menos dos métricas atadas a un objetivo**, contando cómo se llegó a ellas (es GQM, aunque no hacía falta nombrarlo) | Decir solo que "no sirven". Métricas sueltas |
+
 ### Respuestas modelo
 
-> Son respuestas propias, armadas con el material de la cátedra. No hay corrección oficial de esta evaluación.
+> Son respuestas propias, armadas con el material de la cátedra y **revisadas contra sus respuestas de referencia** ([resumidas arriba](#-cómo-corrigió-la-cátedra)). Lo marcado con ➕ se sumó a partir de la referencia.
 
 **1 → b.**
 - **Qué mide un *fake door*:** el **interés** en la promesa tal como se presentó. El 17,5% (70 de 400) es una señal.
@@ -111,7 +136,7 @@ Es la Evaluación 1 de esta cursada. Seis preguntas, **todas sobre el mismo caso
   - **a** sobreinterpreta el resultado: un clic no valida el comportamiento real.
   - **c** inventa un umbral **después** de ver el dato. El criterio de éxito se fija **antes** del experimento.
   - **d** confunde interés con **usabilidad**, que se mide con tareas en un test de usabilidad.
-- **Siguiente paso:** un experimento que mida conducta. Por ejemplo, un **concierge**: el equipo arma a mano, por WhatsApp, los partidos a los que les falta uno en un club, y cuenta cuántos se completan.
+- **Siguiente paso:** un experimento que mida conducta. Por ejemplo, un **concierge**: el equipo arma a mano, por WhatsApp, los partidos a los que les falta uno en un club, y cuenta cuántos se completan. ➕ La referencia propone lo mismo, y suma como alternativa un **Wizard of Oz**.
 
 **2 → c.**
 - Es un **corte vertical**: cada historia deja algo que un usuario real puede usar.
@@ -134,6 +159,14 @@ Es la Evaluación 1 de esta cursada. Seis preguntas, **todas sobre el mismo caso
 | 3 · "Si da bien, la app completa" | **No hay criterio de éxito:** "dar bien" no está definido, y cualquier resultado se puede leer como bueno | Escribir cada experimento como **hipótesis con criterio de éxito decidido antes**. Por ejemplo: "si 6 de 10 jugadores contaron un partido suspendido en el último mes, seguimos" |
 | 3 · App completa | **Riesgo de producto y de plazos:** construir todo de una vez es lo contrario a entregar de a poco. Se aprende tarde y caro | **Story map** con un **walking skeleton** / release mínima para **un club piloto**, entregando incrementos y midiendo |
 | 3 · Pagos | **Técnico:** cobrar señas y **devolverlas** desde la app (pasarela de pago) | Un **spike** corto con la pasarela antes de comprometer la funcionalidad |
+| ➕ 2 · Prototipo solo para encargados | **Los jugadores no prueban nada:** de su lado solo hay una encuesta de opinión. Queda sin evaluar si un jugador logra reservar y señar, y sobre todo si "nos falta uno" funciona | **Test de usabilidad también con jugadores**, con tareas ("reservá una cancha para el jueves a las 21", "publicá que te falta uno"). Para saber si alguien se suma de verdad a jugar con desconocidos, cosa que un prototipo no responde, un **concierge** con un grupo de WhatsApp de la zona |
+| ➕ 2 · Prototipo | **Adopción del club**, probablemente el riesgo más grande: que el encargado deje el cuaderno y acepte cobrar por la app. El plan casi no lo pone a prueba | Un **concierge** o un **Wizard of Oz**: el equipo gestiona la grilla de un club durante un par de semanas y mide si el encargado la usa en lugar del cuaderno. También **observación contextual**: ver al encargado un viernes a la noche con WhatsApp y el cuaderno |
+
+➕ **Lo que agrega la referencia:**
+- **Con el ciclo de Patton:** el equipo pasa casi directo de **Sense** a **Delivery** y se saltea **Discovery**.
+- **Para el criterio de éxito:** escribir la hipótesis como "**creemos que… lo sabremos cuando…**", con un umbral para **seguir, pivotar o frenar**.
+- **Para la encuesta que mezcla dos problemas:** separarlos y **empezar por el más incierto**.
+- **Para "construir todo":** armar una **lista de riesgos priorizada** (de negocio, de atractivo, técnicos y de usabilidad), atacar primero el de **mayor impacto e incertidumbre** y recién después construir un primer corte chico.
 
 **4a. Story map.**
 
@@ -158,6 +191,22 @@ Es la Evaluación 1 de esta cursada. Seis preguntas, **todas sobre el mismo caso
 
   Se valida en paralelo con un concierge.
 
+➕ **El ejemplo de la cátedra**, para comparar (J = jugador, E = encargado):
+
+| | Encontrar cancha | Reservar | Armar el equipo | Jugar | Después del partido |
+| --- | --- | --- | --- | --- | --- |
+| **Primera release** | J: ver horarios libres de un club · E: cargar canchas y horarios | J: reservar un horario · J: cancelar la reserva · E: ver la grilla con reservas y cancelaciones al día · E: marcar la seña como cobrada | J: compartir la reserva con el grupo | E: ver quién reservó cada turno | — |
+| **Después** | J: buscar entre varios clubes cercanos · J: filtrar por zona y horario | J: pagar la seña desde la app · J: recuperar la seña al cancelar · E: cobrar señas sin intervenir | J: publicar "nos falta uno" · J: sumarse a un partido | E: registrar que no vino nadie | J: calificar al club · E: ver estadísticas de ocupación |
+
+**En qué se diferencia del de arriba, y qué conviene copiar:**
+- **Las actividades siguen un solo recorrido de punta a punta** (encontrar → reservar → armar el equipo → jugar → después), y **cada columna mezcla los dos roles**.
+  - El de arriba arma algunas actividades por rol ("Publicar la grilla", "Gestionar el día"). Es válido, porque son actividades de usuario y no módulos técnicos.
+  - Pero el recorrido único se lee mejor y es lo que pide la consigna. **En el recuperatorio, armalo así.**
+- **Cancelar va dentro de Reservar**, porque pasa antes del partido. Entra en la primera release porque resuelve un problema del caso: el club no se entera de que el grupo canceló.
+- **La seña:** en la primera release el encargado solo **la marca como cobrada**, y pagarla desde la app queda para después. El de arriba mete un link de pago. Las dos opciones son defendibles.
+- **Una actividad vacía en la primera release está bien si se explica.** Acá el corte apunta a sacar al club del cuaderno y al jugador de la llamada, y para eso no hace falta nada después de jugar.
+- **"Nos falta uno":** dejarlo afuera es defendible y meterlo también. Lo que importa es que el corte sea **consistente con el argumento**.
+
 **4b. Plan con fecha fija.**
 - **La fecha no se mueve:** si llega tarde, se pierde el año. Entonces, según el **triángulo de hierro**, fijamos **tiempo** (3 sprints) y **equipo**, y lo que se ajusta es el **alcance**. **No la calidad.**
 - **Sumar gente ahora** no ayuda: entrenar a los nuevos le saca tiempo al equipo.
@@ -179,6 +228,12 @@ Es la Evaluación 1 de esta cursada. Seis preguntas, **todas sobre el mismo caso
 
 - **Seguimiento:** **burn-up** sprint a sprint, y en cada **Review** el PO decide qué queda afuera si no llegamos.
 - **Contingencia:** si al final del sprint 2 la reserva desde la app no está estable, los clubes usan **solo la grilla en la app** y siguen tomando reservas por WhatsApp. Igual se evita el cuaderno y no se pierde la temporada.
+- ➕ **Lo que nombra la referencia y conviene usar:**
+  - **MoSCoW:** qué es imprescindible para que el club deje el cuaderno (**Must**) y qué se puede caer (**Should/Could**).
+  - **Buffer de alcance:** planificar los Must para que entren holgados, por ejemplo en 2 sprints, y dejar los Should/Could como colchón que se cae si hay atrasos.
+  - **Lo más incierto primero:** la **grilla del encargado**, porque si el encargado no la adopta, lo demás no sirve. El piloto arranca al final del sprint 1 con **turnos reales**, aunque sea **en paralelo con el cuaderno**.
+  - **Un punto de control:** si al final del sprint 1 el piloto no pudo arrancar, **se recorta más** (por ejemplo, las señas se siguen anotando en la planilla durante la temporada). No se saltea el piloto ni se pide mover la fecha.
+  - En el plan de la referencia, el sprint 3 suma al **segundo club**, y el 1/12 los dos arman la grilla de verano con ClubPlay.
 
 **5a. Example Mapping de "Como jugador quiero cancelar mi reserva y recuperar la seña".**
 
@@ -191,12 +246,17 @@ Supuesto: la política la define el club; para el ejemplo, 24 h.
 | **Al cancelar, el horario vuelve a quedar libre y el encargado recibe un aviso** | Lucas cancela el turno del sábado 20:00 → aparece libre en la grilla y al encargado le llega la notificación |
 | **Solo quien hizo la reserva puede cancelarla** | Martín se sumó al partido de Lucas e intenta cancelar la reserva → no puede |
 | **La seña se devuelve por el mismo medio con el que se pagó** | Lucas pagó con MercadoPago → la devolución vuelve a su cuenta de MercadoPago |
+| ➕ **Una reserva que ya empezó no se puede cancelar** | Son las 20:10 y el turno era a las 20:00 → la app no ofrece cancelar |
 
 🟥 **Preguntas abiertas:**
 - Si **el club** cancela (lluvia, cancha rota), ¿se devuelve el 100% siempre?
 - ¿El plazo de 24 h lo define cada club o es igual para todos?
 - ¿Quién paga la comisión de la pasarela cuando se devuelve la seña?
 - Si el grupo quiere **cambiar de horario** en vez de cancelar, ¿es una cancelación?
+- ➕ ¿Qué pasa si la seña se pagó **en efectivo** en el club?
+- ➕ Si **otro grupo toma el horario** liberado, ¿se devuelve la seña aunque se haya cancelado tarde?
+
+➕ La referencia pone como **regla** que, si el club suspende el turno (lluvia, cancha cerrada), el jugador recupera toda la seña sin importar la anticipación. Acá eso quedó como pregunta. Al revés, el medio de devolución, que acá es regla, allá es pregunta. Las dos formas sirven: lo que se evalúa es que las reglas sean **comportamiento**, que los ejemplos tengan **datos concretos** y que haya **bordes y casos negativos**.
 
 **5b. Meterla igual "para no frenar": no conviene.**
 - **Qué indican 6 preguntas contra 3 reglas:** la historia **todavía no se entiende**. Es la señal de que no está lista: es grande o tiene mucha incertidumbre.
@@ -206,6 +266,7 @@ Supuesto: la política la define el club; para el ejemplo, 24 h.
   - **partir** la historia, tomando ahora solo la parte cuyas reglas ya están claras;
   - si alguna pregunta es técnica, un **spike**.
 - **Así no se frena:** entra otra historia que ya esté lista. "No frenar" no es lo mismo que empezar algo que no se entiende.
+- ➕ La cátedra también aceptaba la postura contraria, **meterla**, si se proponía cómo manejar la incertidumbre adentro del sprint, por ejemplo con un **spike de tiempo acotado**. Lo que no alcanzaba era "se resuelve en el camino".
 
 **6. "3.000 descargas" no dice si ClubPlay funciona.**
 - **Es una métrica de vanidad:**
@@ -227,6 +288,11 @@ Supuesto: la política la define el club; para el ejemplo, 24 h.
 | Los partidos se completan | ¿Funciona "nos falta uno"? | % de publicaciones "nos falta uno" que se completan |
 
 > 🔑 Para cada métrica conviene tener la **línea de base** (cómo era antes de ClubPlay) y mirarlas **juntas**: una sola se puede inflar.
+
+➕ La referencia llega a métricas casi iguales:
+- **% de los turnos del club que pasan por la app** y **clubes activos por semana**, para saber si los encargados la usan en lugar del cuaderno;
+- **% de jugadores que vuelven a reservar dentro de los 30 días**;
+- **turnos en los que no se presenta nadie sin avisar, por semana, antes y después**.
 
 ---
 
