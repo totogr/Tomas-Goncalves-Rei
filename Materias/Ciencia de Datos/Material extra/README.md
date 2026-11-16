@@ -8,7 +8,7 @@ Material **de terceros**, ya publicado por sus autores, que se guarda acá para 
 
 | Carpeta | Qué hay | Fuente |
 | --- | --- | --- |
-| `Parciales anteriores/` | Parciales de la **cátedra Rodríguez** (2022-06, 2022-10, 2023-10, recuperatorio 2023-11, 2025-10-16, recuperatorio 2025-11-20), un enunciado sin fecha y ejemplos de preguntas tipo parcial. Algunos con respuestas o resolución | Notion público de un alumno de la cátedra Rodríguez (2C 2025): [apuntes de Ciencia de Datos](https://scratched-lantern-d4a.notion.site/apuntes-de-Ciencia-de-Datos-257716c1daf48005b682f0ec543b4129) |
+| `Parciales anteriores/` | Parciales de la **cátedra Rodríguez** (2022-06, 2022-10, 2023-10, recuperatorio 2023-11, 2025-10-16, recuperatorio 2025-11-20 y el de esta cursada, **2026-10-29, con la resolución de la cátedra**), un enunciado sin fecha y ejemplos de preguntas tipo parcial. Algunos con respuestas o resolución | Notion público de un alumno de la cátedra Rodríguez (2C 2025): [apuntes de Ciencia de Datos](https://scratched-lantern-d4a.notion.site/apuntes-de-Ciencia-de-Datos-257716c1daf48005b682f0ec543b4129) |
 | `Finales anteriores/` | Final del 13-12-2022 | Mismo Notion |
 | `Resúmenes de otros/` | `ResumenCiencia.pdf`: resumen de toda la materia | Mismo Notion |
 | `Apuntes Notion (Rodríguez 2C 2025)/` | El texto completo del Notion: apuntes por clase, 60 preguntas tipo parcial con respuestas, material para el integrador y resúmenes por unidad | Mismo Notion |

@@ -1,10 +1,10 @@
 # 📝 Parciales anteriores — resueltos y corregidos
 
-> Todas las preguntas de los parciales de la **cátedra Rodríguez** que conseguimos (2022 a 2025), agrupadas por tema y con **la respuesta correcta**. Los PDFs originales están en [`Material extra/Parciales anteriores`](../Material%20extra/Parciales%20anteriores/).
+> Todas las preguntas de los parciales de la **cátedra Rodríguez** que conseguimos (2022 a 2026), agrupadas por tema y con **la respuesta correcta**. Los PDFs originales están en [`Material extra/Parciales anteriores`](../Material%20extra/Parciales%20anteriores/).
 > Las resoluciones que circulan tienen errores. Acá cada respuesta está revisada, y al final hay una tabla con [los errores que encontramos](#-errores-en-las-resoluciones-que-circulan).
 > Va en conjunto con el [Resumen para el parcial](Resumen%20para%20el%20parcial.md).
 
-**Parciales usados:** 29/06/2022 (V/F) · 27/10/2022 · 26/10/2023 · recuperatorio 23/11/2023 · 16/10/2025 · recuperatorio 20/11/2025 · un enunciado sin fecha (02-E) · ejemplos de preguntas tipo parcial.
+**Parciales usados:** **29/10/2026 (esta cursada, con la resolución de la cátedra)** · 29/06/2022 (V/F) · 27/10/2022 · 26/10/2023 · recuperatorio 23/11/2023 · 16/10/2025 · recuperatorio 20/11/2025 · un enunciado sin fecha (02-E) · ejemplos de preguntas tipo parcial.
 
 ---
 
@@ -12,20 +12,151 @@
 
 | Tema | Veces que apareció | Formato típico |
 | --- | --- | --- |
-| **Métricas y matriz de confusión** | **7 de 8** | Calcular accuracy / precision / recall / F1 de dos modelos y elegir uno · cuándo maximizar precision o recall |
-| **Preguntas sobre el TP1** | **6 de 8** | Outliers que detectaron, técnica de preprocesamiento, cuántos clusters eligieron, qué afectó las métricas |
-| **Redes neuronales** | **6 de 8** | Perceptrón (limitación, calcular salidas), backpropagation, optimizadores, regularización, activaciones, SOM |
-| **Bagging vs. boosting / ensambles** | **5 de 8** | Diferencias, cómo se ve en Random Forest y XGBoost, voting vs. stacking, homogéneo vs. híbrido |
-| **Reducción de dimensionalidad** | **4 de 8** (los 3 últimos años) | Qué técnica usar según el caso (PCA, MDS, ISOMAP, t-SNE), para qué sirve el scree plot, ventajas |
-| **Overfitting, underfitting, sesgo y varianza** | **4 de 8** | Explicar, cómo detectarlos, cómo evitarlos, relación con la complejidad |
-| **Tipos de problema y de variables** | **4 de 8** | Clasificación vs. regresión vs. agrupamiento, con ejemplos y algoritmos |
-| **Outliers** | **4 de 8** | Univariados vs. multivariados, métodos de cada uno, qué hacer con ellos |
-| **Árboles de decisión** | **3 de 8** | Poda, atributos numéricos, Gini/entropía, ID3 vs. C4.5, hiperparámetros con GridSearchCV |
-| **Feature engineering** | **3 de 8** | Faltantes, normalización, one-hot con muchas categorías, transformación log |
-| **KNN y SVM** | 1 de 8 | Clase según K; kernels |
-| **K-Means** | 1 de 8 (+ el TP) | V/F básicos |
+| **Métricas y matriz de confusión** | **8 de 9** | Calcular accuracy / precision / recall / F1 de dos modelos y elegir uno · cuándo maximizar precision o recall |
+| **Preguntas sobre el TP1** | **7 de 9** | Outliers que detectaron, técnica de preprocesamiento, cuántos clusters eligieron y cómo lo justificaron, qué afectó las métricas |
+| **Redes neuronales** | **7 de 9** | Perceptrón (limitación, calcular salidas), backpropagation vs. optimizador, regularización, para qué sirven las activaciones no lineales, SOM |
+| **Bagging vs. boosting / ensambles** | **6 de 9** | Diferencias, cómo se ve en Random Forest y XGBoost, voting vs. stacking, homogéneo vs. híbrido |
+| **Overfitting, underfitting, sesgo y varianza** | **5 de 9** | Explicar, cómo detectarlos (leer métricas de train vs. validación), cómo evitarlos, relación con la complejidad |
+| **Reducción de dimensionalidad** | **4 de 9** (2023 a 2025; en 2026 no apareció) | Qué técnica usar según el caso (PCA, MDS, ISOMAP, t-SNE), para qué sirve el scree plot, ventajas |
+| **Tipos de problema y de variables** | **4 de 9** | Clasificación vs. regresión vs. agrupamiento, con ejemplos y algoritmos |
+| **Outliers** | **4 de 9** | Univariados vs. multivariados, métodos de cada uno, qué hacer con ellos |
+| **Árboles de decisión** | **4 de 9** | Poda, atributos numéricos, Gini/entropía, ID3 vs. C4.5, hiperparámetros contra el overfitting (`max_depth`, `min_samples_leaf`, `ccp_alpha`) |
+| **Feature engineering** | **4 de 9** | Faltantes, normalización, one-hot con muchas categorías, transformación log |
+| 🆕 **Metodología: fuga de datos y uso del test** | **1 de 9** (2026) | Encontrar los errores de un procedimiento (preprocesar antes de partir, elegir mirando test) y describir el correcto |
+| **KNN y SVM** | 1 de 9 | Clase según K; kernels |
+| **K-Means** | 1 de 9 (+ el TP) | V/F básicos |
 
+> 🆕 **El de esta cursada (29/10/2026)** tuvo seis ejercicios de desarrollo y una sola cuenta. Casi todo pide **razonar** sobre un procedimiento o un resultado ("¿hay errores?", "¿cuál elegirías y por qué?"). Está [resuelto abajo](#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra) con la resolución de la cátedra.
+>
 > 🔑 **Conclusión:** las métricas con cuentas, las preguntas del TP1, redes, ensambles y reducción de dimensionalidad aparecen casi siempre. Desde 2023 el formato es **desarrollo corto + alguna cuenta** (los resultados se pueden dejar como fracción).
+
+---
+
+## 🆕 Parcial del 29/10/2026 (esta cursada) — con la resolución de la cátedra
+
+> La cátedra publicó la resolución del primer parcial de esta cursada ([PDF](../Material%20extra/Parciales%20anteriores/2026-10-29%20-%20Parcial%20-%20Resoluci%C3%B3n.pdf)). Es la mejor referencia para el **recuperatorio del jueves 19/11**: muestra el formato y **qué respuesta esperan**. Acá va cada consigna con lo que esperaba la cátedra, contado con palabras propias, y notas para responder.
+
+| Ej. | Tema | Bloque del [mapa](Mapa%20de%20temas%20del%20parcial.md) | Dónde estudiarlo |
+| --- | --- | --- | --- |
+| 1 | K-Means del TP1 (LEGO): cuántos clusters, cómo se justificó y qué distingue a cada grupo | D + TP1 | `TP1 (privado)/` · [Resumen §6](Resumen%20para%20el%20parcial.md#6-clustering-k-means) |
+| 2 | Imputar y estandarizar antes de partir y elegir mirando test: errores y procedimiento correcto | B + E | [Resumen: fuga de datos](Resumen%20para%20el%20parcial.md#fuga-de-datos-data-leakage-) |
+| 3 | Precision y recall de dos modelos: ¿cuál detecta más? | E | [Resumen §3](Resumen%20para%20el%20parcial.md#3-cómo-se-evalúa-un-modelo) |
+| 4 | F1 de train vs. validación cruzada en tres árboles; otra forma de regularizar | C + E | [§3](Resumen%20para%20el%20parcial.md#3-cómo-se-evalúa-un-modelo) · [§7](Resumen%20para%20el%20parcial.md#7-árboles-de-decisión) |
+| 5 | Para qué sirven las activaciones no lineales; backpropagation vs. optimizador | C | [§10](Resumen%20para%20el%20parcial.md#10-redes-neuronales) |
+| 6 | Bagging vs. boosting; voting vs. stacking | C | [§8](Resumen%20para%20el%20parcial.md#8-ensambles) |
+
+> 🔑 **Lo que muestra:** no entraron reducción de dimensionalidad ni lenguaje natural. El **TP1**, las **métricas**, el **overfitting**, las **redes** y los **ensambles** siguen, como en años anteriores. Lo nuevo es la **metodología**: cómo evaluar bien un modelo sin hacer trampa con el test.
+
+### Ejercicio 1 · El K-Means del TP1
+
+**Consigna:** En el Ejercicio 1 del TP1 trabajaron con datos de LEGO. ¿Cuántos clusters eligieron y cómo justificaron esa elección? Explicá la particularidad de cada grupo encontrado.
+
+**Lo que esperaba la cátedra**, en tres partes:
+1. El **k elegido**.
+2. La **evidencia** que lo justifica:
+   - el **codo**, o sea, desde qué k la inercia baja poco;
+   - el **coeficiente de silueta**;
+   - que los grupos se puedan **interpretar**.
+3. Las **variables que distinguen** a cada cluster, idealmente con **estadísticas descriptivas** (por ejemplo, el promedio de cada variable en cada grupo).
+
+Su ejemplo es genérico: 3 clusters con sets chicos y baratos, intermedios, y grandes y caros. Es así porque la respuesta depende del TP de cada grupo. La de nuestro grupo está en `TP1 (privado)/`, solo en local.
+
+### Ejercicio 2 · Fuga de datos
+
+**Consigna:** Un estudiante imputa los valores faltantes con la media de cada variable y estandariza, calculando los dos procedimientos sobre **todo el dataset**. Después divide en entrenamiento y test, prueba distintas configuraciones y **elige la de mejor resultado en test**.
+- a) Analizá el procedimiento: ¿hay errores metodológicos? Si los hay, ¿cómo afectan la evaluación del modelo?
+- b) ¿Hay otra forma de hacerlo? Describí y justificá cómo harías el preprocesamiento, la selección de hiperparámetros y la evaluación final.
+
+**a) Hay dos errores:**
+- **Fuga de datos (*data leakage*):** la media para imputar, y la media y el desvío para estandarizar, se calcularon con filas que después quedan en test. Información del test se metió en el entrenamiento.
+- **Elegir la configuración por su resultado en test:** el test se usó para tomar decisiones, así que deja de ser una medición independiente. El rendimiento que se informa queda **optimista**: es mejor que el que el modelo va a tener con datos nuevos.
+
+**b) El procedimiento correcto:**
+1. Separar entrenamiento y test **primero**. En clasificación, con una partición **estratificada**, que mantiene la proporción de cada clase.
+2. Armar un **pipeline** con la imputación y el escalado, **ajustado solo con el entrenamiento**.
+3. Comparar hiperparámetros con **validación cruzada dentro del entrenamiento**, con una métrica adecuada al problema.
+4. Reentrenar la mejor configuración con **todo el entrenamiento**.
+5. Evaluar **una sola vez** en test, sin usar ese resultado para cambiar el modelo.
+
+> 💡 Con un `Pipeline` de scikit-learn dentro de `GridSearchCV`, la imputación y el escalado se vuelven a ajustar **en cada fold**, solo con la parte de entrenamiento de ese fold. Así tampoco hay fuga dentro de la validación cruzada.
+
+### Ejercicio 3 · Precision y recall
+
+**Consigna:** Dos modelos predicen cancelaciones sobre las mismas 1.000 reservas. La clase positiva es "reserva cancelada".
+
+| Modelo | VP | FN | FP | VN |
+| --- | --- | --- | --- | --- |
+| A | 40 | 10 | 60 | 890 |
+| B | 30 | 20 | 10 | 940 |
+
+- a) Calculá precision y recall de los dos.
+- b) ¿Cuál elegirías para detectar la mayor cantidad de cancelaciones? Justificá.
+
+**Resolución:**
+
+| Modelo | Precision = VP / (VP + FP) | Recall = VP / (VP + FN) |
+| --- | --- | --- |
+| A | 40 / (40 + 60) = **0,40** | 40 / (40 + 10) = **0,80** |
+| B | 30 / (30 + 10) = **0,75** | 30 / (30 + 20) = **0,60** |
+
+- **Se elige A:** encuentra 40 de las 50 cancelaciones reales; B encuentra 30. "Detectar la mayor cantidad" es maximizar el **recall**.
+- **El costo:** A da más falsas alarmas (60 contra 10). En general la elección depende de cuánto cuesta cada tipo de error; con el objetivo que pide la consigna, gana A.
+
+> 💡 La tabla no viene como matriz de confusión sino en columnas VP, FN, FP, VN. Las cancelaciones reales son VP + FN = 50, iguales en los dos modelos, porque son los mismos datos.
+
+### Ejercicio 4 · Árboles: train vs. validación cruzada
+
+**Consigna:** Tres árboles de decisión dan estos resultados.
+
+| Profundidad máxima | F1 en entrenamiento | F1 en validación cruzada |
+| --- | --- | --- |
+| 2 | 0,61 | 0,59 |
+| 8 | 0,88 | 0,83 |
+| Sin límite | 1,00 | 0,72 |
+
+- a) Identificá indicios de underfitting y overfitting. ¿Qué configuración elegirías y por qué?
+- b) Además de limitar la profundidad, mencioná otra medida para reducir el sobreajuste y explicá cómo actúa.
+
+**a) Diagnóstico:**
+- **Profundidad 2:** 0,61 y 0,59, los dos bajos y parecidos → **underfitting**: el modelo es demasiado simple.
+- **Profundidad 8:** 0,88 y 0,83, con una brecha chica (0,05) → **generaliza bien**.
+- **Sin límite:** 1,00 y 0,72, con una brecha de 0,28 → **overfitting**.
+- **Se elige 8**, porque tiene el **mayor F1 en validación cruzada**. Se elige mirando la validación, no el entrenamiento.
+
+**b) Otra medida (vale cualquiera de estas dos):**
+- **Subir `min_samples_leaf`**, el mínimo de ejemplos por hoja. El árbol no puede armar hojas para casos puntuales o ruido, y queda más simple.
+- **Podar con `ccp_alpha`** (poda por costo-complejidad). Se arma el árbol y después se cortan las ramas que no mejoran la generalización.
+
+> 🔑 **Cómo leer estas tablas:** si los dos valores son **bajos**, hay underfitting; si el de train es **mucho más alto** que el de validación, hay overfitting. Siempre se elige por **validación**.
+
+### Ejercicio 5 · Redes neuronales
+
+El enunciado salta de la a) a la c): no hay b).
+
+**a) ¿Para qué sirven las activaciones no lineales? Mencioná dos ejemplos.**
+- Permiten representar relaciones **no lineales** entre las entradas y la salida.
+- Sin ellas, apilar capas lineales equivale a **una sola transformación lineal**, por más capas que haya.
+- Ejemplos: **ReLU** = max(0, x) y **sigmoide** = 1 / (1 + e⁻ˣ).
+
+**c) Distinguí el rol de backpropagation del rol del optimizador.**
+- **Backpropagation** calcula, con la **regla de la cadena**, los **gradientes** de la pérdida respecto de cada parámetro.
+- El **optimizador** (SGD, Adam…) **usa** esos gradientes para actualizar los pesos y bajar la pérdida.
+- En una frase: backpropagation dice **cómo cambia la pérdida**; el optimizador decide **cómo mover los parámetros**.
+
+### Ejercicio 6 · Ensambles
+
+**a) Diferencias entre bagging y boosting, con un algoritmo de cada uno.**
+- **Bagging:**
+  - entrena modelos base, típicamente **en paralelo**, sobre **muestras bootstrap**;
+  - junta sus predicciones por **voto o promedio**;
+  - busca sobre todo **reducir la varianza**. Ejemplo: **Random Forest**.
+- **Boosting:**
+  - construye modelos **en secuencia**: cada uno intenta corregir los **errores o residuos** de los anteriores;
+  - mejora el ajuste de a poco, pero necesita **regularización** para no sobreajustar. Ejemplos: **AdaBoost** y **Gradient Boosting**.
+
+**b) Voting vs. stacking.**
+- **Voting** combina directamente las predicciones: por **mayoría** (hard voting) o **promediando probabilidades** (soft voting).
+- **Stacking** entrena un **metamodelo** que aprende a combinar las predicciones de los modelos base.
 
 ---
 

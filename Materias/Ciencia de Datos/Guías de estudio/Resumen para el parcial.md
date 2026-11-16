@@ -1,5 +1,7 @@
 # 📘 Resumen para el parcial — Ciencia de Datos
 
+> 🆕 **El parcial del 29/10 ya se tomó** y la cátedra publicó su resolución: está en [Parciales anteriores](Parciales%20anteriores%20resueltos.md#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra). Para el **recuperatorio del jueves 19/11**, empezá por el [Mapa de temas](Mapa%20de%20temas%20del%20parcial.md) y sumá la sección nueva de [fuga de datos](#fuga-de-datos-data-leakage-), que tomaron y no estaba en las guías.
+>
 > **Parcial: jueves 29/10 · presencial, escrito en hoja** (estaba el 15/10 y se pasó por el paro; calendario actualizado de la cátedra). Recuperatorio: jueves 19/11. Promocionás con **7 o más en la primera fecha** (y los dos TPs aprobados).
 > Este resumen junta en un solo lugar **todo lo que entra**: lo de las guías de cada clase, lo que el profe remarcó en las teóricas ([Remarcado en clase](Remarcado%20en%20clase.md)), lo que tomaron en **parciales de años anteriores** y los errores típicos que hay que evitar.
 >
@@ -30,23 +32,18 @@
 
 **No entra:** deep learning, embeddings, LLMs (son después del parcial). La biología de la neurona (axón, dendritas) el profe aclaró que **no se evalúa**.
 
-> ⚠️ **PLN, a confirmar.** Con el cambio de fecha, la teórica de **lenguaje natural** (13/10) y su práctica (22/10) quedaron **antes** del parcial. El calendario no dice si entra: **preguntalo en clase**. Si entra en el recuperatorio (19/11), el [Resumen simple](Resumen%20simple.md#12-procesamiento-de-lenguaje-natural) tiene la versión corta y la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) el detalle, ya armada con las slides de la cátedra (Naive Bayes con el ejemplo resuelto, análisis de sentimientos y extracción de información).
+> ⚠️ **PLN, a confirmar.** Con el cambio de fecha, la teórica de **lenguaje natural** (13/10) y su práctica (22/10) quedaron **antes** del parcial. El calendario no dice si entra: **preguntalo en clase**. En el parcial del 29/10 **no entró**, así que probablemente tampoco entre en el recuperatorio. Si entra (19/11), el [Resumen simple](Resumen%20simple.md#12-procesamiento-de-lenguaje-natural) tiene la versión corta y la [guía 11](11%20-%20Procesamiento%20de%20lenguaje%20natural.md) el detalle, ya armada con las slides de la cátedra (Naive Bayes con el ejemplo resuelto, análisis de sentimientos y extracción de información).
 
-### Plan hasta el jueves 29/10
+### Plan para el recuperatorio (jueves 19/11)
 
-> El 15/10 hubo paro y el parcial pasó al **29/10**. En el medio está la **Evaluación 1 de GDSI** (lunes 26/10), así que los días se reparten entre las dos materias. Como CdD ya la venías estudiando para el 15, este plan es de **repaso y práctica**. El de GDSI está en su [Resumen para la Evaluación 1](../../Gesti%C3%B3n%20del%20Desarrollo%20de%20Sistemas%20de%20Informaci%C3%B3n/Gu%C3%ADas%20de%20estudio/Resumen%20para%20la%20Evaluaci%C3%B3n%201.md).
+> El repaso bloque por bloque de los días anteriores está en el [plan del Mapa de temas](Mapa%20de%20temas%20del%20parcial.md#10-cómo-repartir-los-días-hasta-el-1911).
 
 | Día | Qué hacer |
 | --- | --- |
-| **Sáb 17/10** | Leé el [Resumen simple](Resumen%20simple.md) de corrido. Después, secciones **1–4** de este resumen |
-| **Mar 20/10** | Teórica: **exposición del TP1**. A la noche, secciones **5–7** y los ✍️ de métricas, descenso por gradiente, entropía y Gini |
-| **Mié 21/10** | Secciones **8–9** (ensambles, KNN y SVM) + **preguntas sobre el TP1** (`TP1 (privado)/`) |
-| **Jue 22/10** | Práctica de **PLN**: preguntá si entra en el parcial |
-| **Sáb 24/10** | Secciones **10–11** (redes y reducción de dimensionalidad): perceptrón a mano y "qué técnica uso" |
-| **Lun 26/10** | Evaluación de GDSI: descanso de CdD |
-| **Mar 27/10** | Teórica: **exposición del TP1**. **Simulacro:** el parcial 2025-10 completo **sin mirar**, con reloj. Corregí con [Parciales anteriores](Parciales%20anteriores%20resueltos.md) |
-| **Mié 28/10** | Repasá lo que falló + [las 8 preguntas 🔴](#-las-8-preguntas-que-el-profe-marcó-como-de-examen) + [tabla comparativa](#12-todos-los-modelos-en-una-tabla) + [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
-| **Jue 29/10** | 🎯 **Parcial** |
+| **Lun 16/11** | Recuperatorio de GDSI. Si te queda resto, leé el [parcial del 29/10 resuelto](Parciales%20anteriores%20resueltos.md#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra) para ver el formato |
+| **Mar 17/11** | **Simulacro:** el parcial del 29/10 **sin mirar la resolución**, con reloj. Corregí con la de la cátedra. Después, [fuga de datos](#fuga-de-datos-data-leakage-) y las preguntas del **TP1** (`TP1 (privado)/`) |
+| **Mié 18/11** | Otro simulacro: el del [16/10/2025](Parciales%20anteriores%20resueltos.md). Repasá lo que falló, [las 8 preguntas 🔴](#-las-8-preguntas-que-el-profe-marcó-como-de-examen) y [Ojo con esto](#15-ojo-con-esto-errores-típicos) |
+| **Jue 19/11** | 🎯 **Recuperatorio** |
 
 ---
 
@@ -158,6 +155,26 @@ flowchart TD
 
 Las dos se combinan con **cross-validation** (`GridSearchCV`, `RandomizedSearchCV`). ✍️ Con una grilla de 2 × 4 × 3 valores y `cv=10` se evalúan **24 combinaciones**, **10 veces cada una** (ver [Parciales anteriores](Parciales%20anteriores%20resueltos.md#gridsearchcv-27102022)).
 
+### Fuga de datos (*data leakage*) 🔴
+
+> 🔴 **Salió en el parcial del 29/10/2026** ([resuelto](Parciales%20anteriores%20resueltos.md#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra)). No estaba en las slides como tema aparte, pero es lo que hay detrás de "las métricas se miden con datos que el modelo no vio".
+
+**Qué es:** que información del **test** se cuele en el **entrenamiento**. El modelo parece mejor de lo que es, porque en parte "vio" los datos con los que se lo evalúa.
+
+| Error | Por qué es fuga | Lo correcto |
+| --- | --- | --- |
+| **Imputar o escalar con todo el dataset** y después partir | La media, el desvío, el mínimo y el máximo se calcularon **incluyendo las filas de test** | Partir **primero**, y calcular la imputación y el escalado **solo con train**. Al test se le aplican esos mismos valores |
+| **Elegir hiperparámetros mirando el test** | El test pasa a ser parte del ajuste: la métrica que se informa queda **optimista** | Elegir con **validación cruzada dentro de train**; el test se usa **una sola vez**, al final |
+| Una **variable que solo se conoce después** del resultado (por ejemplo, "monto reintegrado" para predecir fraude) | Le da al modelo la respuesta | Usar solo lo que se conoce **en el momento de predecir** |
+| **Filas repetidas** en train y en test | El modelo "reconoce" ejemplos que ya vio | Sacar los duplicados antes de partir |
+
+**El procedimiento correcto, en cinco pasos:**
+1. Separar train y test (**estratificado** en clasificación: mantiene la proporción de cada clase).
+2. Armar un **pipeline** (imputación + escalado + modelo) **ajustado solo con train**.
+3. Elegir hiperparámetros con **validación cruzada dentro de train** (por ejemplo `GridSearchCV` sobre el pipeline: así el preprocesamiento se reajusta en cada fold).
+4. Reentrenar la mejor configuración con **todo train**.
+5. Medir **una sola vez** en test.
+
 ### Overfitting, underfitting, sesgo y varianza 🟠
 
 | | Train | Test | Causa | Sesgo / varianza |
@@ -167,6 +184,16 @@ Las dos se combinan con **cross-validation** (`GridSearchCV`, `RandomizedSearchC
 | **Buen ajuste** | ✅ | ✅ (un poco peor que train) | — | Bajo sesgo y baja varianza |
 
 > Analogía del profe: estudiar **memorizando parciales viejos** → 10 en esos (train), desaprobás cuando cambian las preguntas (test).
+
+✍️ **Leer train vs. validación** (parcial 29/10/2026). F1 de tres árboles según la profundidad máxima:
+
+| Profundidad | Train | Validación cruzada | Diagnóstico |
+| --- | --- | --- | --- |
+| 2 | 0,61 | 0,59 | Los dos bajos → **underfitting** |
+| 8 | 0,88 | 0,83 | Brecha chica (0,05) → **generaliza bien** ✅ |
+| Sin límite | 1,00 | 0,72 | Brecha grande (0,28) → **overfitting** |
+
+Se elige **8** porque tiene el mayor F1 en **validación**: se elige por validación, nunca por train.
 
 ### Matriz de confusión 🔴
 
@@ -356,6 +383,11 @@ Cada **nodo** pregunta por un atributo, cada **rama** es un valor y cada **hoja*
 
 **Poda (C4.5):** desde las hojas hacia arriba, sacar un nodo si el **error en test** (mal clasificados / total) **no empeora**. Combate el **overfitting** del árbol completo.
 
+**Contra el overfitting de un árbol, en scikit-learn** 🔴 *(parcial 29/10/2026)*:
+- **`max_depth`:** la profundidad máxima.
+- **`min_samples_leaf`:** el mínimo de ejemplos por hoja. Si se sube, el árbol no arma hojas para casos puntuales o ruido.
+- **`ccp_alpha`:** la poda por costo-complejidad. Cuanto más alto, más ramas se cortan.
+
 > ⚠️ Un atributo que parece clasificar perfecto pero tiene **muchos nulos** no es necesariamente el mejor: solo clasifica bien los pocos casos completos.
 
 ✍️ **Entropía y ganancia** (14 días: 9 "sí", 5 "no"; atributo *Viento*: débil = 6 sí / 2 no, fuerte = 3 sí / 3 no).
@@ -475,6 +507,8 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 ### Funciones de activación
 
+**¿Para qué sirven las no lineales?** 🔴 *(parcial 29/10/2026)* Para representar relaciones **no lineales**. Sin ellas, varias capas seguidas equivalen a **una sola capa lineal**, porque una composición de funciones lineales sigue siendo lineal. Ejemplos: ReLU y sigmoide.
+
 | Función | Rango | Uso |
 | --- | --- | --- |
 | Escalón | {0, 1} | Perceptrón original. **No se usa para entrenar: no es derivable** → no hay gradiente |
@@ -488,6 +522,7 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 - Es **descenso por gradiente aplicado a todos los pesos** de la red, usando la **regla de la cadena**.
 - Los pesos se actualizan **desde la última capa hacia atrás**, porque el único valor esperado que conocemos es el de la **salida**.
 - Es la forma de entrenar las redes y es **costosa** (cada peso es un parámetro).
+- **Backpropagation vs. optimizador** 🔴 *(parcial 29/10/2026)*: backpropagation **calcula** los gradientes; el **optimizador** (SGD, Adam…) **decide cómo usarlos** para mover los pesos.
 
 ### Diseño de la red
 - **Entrada = cantidad de features** (MNIST 28×28 = **784**; Iris = **4**). **Salida = cantidad de clases** (MNIST **10**; Iris **3**).
@@ -709,6 +744,10 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 | MDS da igual que PCA "porque los dos usan gradiente" | Da igual porque el **MDS clásico euclídeo es equivalente a PCA** |
 | Hamming entre palabras de distinto largo | Hamming compara cadenas **del mismo largo** ("karolin" → "kathrin" = 3) |
 | Si la regresión predice bien, los coeficientes son confiables | Con **multicolinealidad** la predicción puede ser buena y los coeficientes **absurdos** |
+| Imputar y escalar con todo el dataset, y después partir | Es **fuga de datos**: se parte **primero** y el preprocesamiento se ajusta **solo con train** |
+| Elegir la mejor configuración por su resultado en test | El test queda "usado" y la métrica sale **optimista**: se elige con **validación cruzada** dentro de train |
+| Elegir la profundidad del árbol con mejor F1 en train | Se elige por **validación**: el de F1 = 1,00 en train suele ser el que más sobreajusta |
+| "Las activaciones no lineales son para que la red aprenda más rápido" | Son para poder representar relaciones **no lineales**: sin ellas, la red entera es lineal |
 
 ---
 
@@ -753,6 +792,9 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 36. 🔴 ¿Para qué sirve la reducción de la dimensionalidad? ¿Cuáles son los dos motivos principales?
 37. 🔴 ¿Para qué o cuándo usarías PCA?
 38. ¿Qué es la **multicolinealidad** y por qué conviene reducir dimensiones antes de una regresión lineal?
+39. 🔴 Un estudiante imputa con la media y estandariza con todo el dataset, después divide y elige la configuración con mejor resultado en test. ¿Qué errores hay y cómo lo harías bien? *(parcial 29/10/2026)*
+40. 🔴 ¿Para qué sirven las activaciones no lineales? ¿Qué rol cumple backpropagation y cuál el optimizador? *(parcial 29/10/2026)*
+41. Además de limitar la profundidad, ¿qué otra medida reduce el overfitting de un árbol y cómo actúa?
 
 > 📝 Para practicar con el **formato real**, hacé los parciales de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md): ahí están los V/F y las cuentas con su resolución.
 
@@ -769,4 +811,4 @@ El **learning rate** (típico 0.1) evita el overfitting: cada árbol aporta poco
 
 ---
 
-<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09, 29/09 y 06/10 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 está armada con las slides de reducción de dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP), la teórica del 06/10 y las notebooks de la práctica.</sub>
+<sub>⚙️ Resumen armado a partir de las guías de estudio 01–10 y 13, las slides y notebooks de la cátedra (Rodríguez), las teóricas del 18/08, 25/08, 01/09, 15/09, 29/09 y 06/10 ([Remarcado en clase](Remarcado%20en%20clase.md)) y los parciales 2022–2025 (más la resolución de la cátedra del parcial del 29/10/2026) y apuntes de otros alumnos guardados en `Material extra/` (revisados). La sección 11 está armada con las slides de reducción de dimensionalidad (PCA, MDS/PCoA, t-SNE, ISOMAP), la teórica del 06/10 y las notebooks de la práctica.</sub>

@@ -31,7 +31,7 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 **[Resumen simple](Resumen%20simple.md)** — los mismos temas sin fórmulas ni tecnicismos: la idea de cada tema, las definiciones y un ejemplo cotidiano. Para leer **primero** y entender antes de meterte con las cuentas.
 
-**[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)** — las preguntas de los parciales 2022–2025 de la cátedra agrupadas por tema, con la respuesta correcta, las cuentas resueltas y los errores de las resoluciones que circulan.
+**[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)** — las preguntas de los parciales 2022–2026 de la cátedra agrupadas por tema (arriba de todo, **el del 29/10/2026 con la resolución de la cátedra**), con la respuesta correcta, las cuentas resueltas y los errores de las resoluciones que circulan.
 
 **[Remarcado en clase](Remarcado%20en%20clase.md)** — lo que el profe marcó como **pregunta de examen** o dijo que hay que dominar en las teóricas, con las respuestas correctas. Es la base para armar los resúmenes del parcial. Cada guía tiene además su sección *🎯 Remarcado en clase* o las preguntas de examen marcadas con 🔴.
 

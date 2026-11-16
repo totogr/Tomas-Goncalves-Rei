@@ -30,13 +30,23 @@ flowchart TD
 
 | Bloque | Pregunta que responde | Qué temas entran | Guías | Resumen para el parcial | ¿Cuánto lo toman? |
 | --- | --- | --- | --- | --- | --- |
-| **A · Entender y graficar** | ¿Qué tengo? | Tipos de problema y de variables, estadística descriptiva, correlación, gráficos, falacias | [01](01%20-%20Introducci%C3%B3n%20a%20la%20materia.md) · [02](02%20-%20Visualizaci%C3%B3n%20de%20datos.md) · [03](03%20-%20Introducci%C3%B3n%20a%20la%20ciencia%20de%20datos.md) | [§1](Resumen%20para%20el%20parcial.md#1-fundamentos) · [§2](Resumen%20para%20el%20parcial.md#2-visualización-y-falacias) | Tipos de problema: 4 de 8 parciales |
-| **B · Preparar** | ¿Están listos los datos? | Faltantes, outliers, escalado, transformaciones, codificación de categorías | [05](05%20-%20Limpieza%20y%20normalizaci%C3%B3n%20de%20datos.md) | [§4](Resumen%20para%20el%20parcial.md#4-ingeniería-de-características-feature-engineering) | Outliers: 4 de 8 · feature engineering: 3 de 8 |
-| **C · Supervisado** | ¿De qué clase es? ¿Cuánto vale? | Regresión lineal y logística, KNN, SVM, árboles, ensambles, redes neuronales | [06](06%20-%20%C3%81rboles%20-%20ID3%2C%20C4.5%20y%20Random%20Forest.md) · [08](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) · [09](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) · [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | [§5](Resumen%20para%20el%20parcial.md#5-regresión-lineal-descenso-por-gradiente-y-regresión-logística) · [§7](Resumen%20para%20el%20parcial.md#7-árboles-de-decisión) · [§8](Resumen%20para%20el%20parcial.md#8-ensambles) · [§9](Resumen%20para%20el%20parcial.md#9-knn-y-svm) · [§10](Resumen%20para%20el%20parcial.md#10-redes-neuronales) | **Redes: 6 de 8 · ensambles: 5 de 8** · árboles: 3 de 8 |
-| **D · No supervisado** | ¿Qué estructura esconden los datos? | K-Means (con Hopkins, codo y Silhouette), SOM, PCA, MDS, ISOMAP, t-SNE | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) · [13](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) · SOM en la [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | [§6](Resumen%20para%20el%20parcial.md#6-clustering-k-means) · [§11](Resumen%20para%20el%20parcial.md#11-reducción-de-la-dimensionalidad) | **Reducción: 4 de 8 (los tres últimos años)** |
-| **E · Evaluar y ajustar** | ¿El modelo sirve? ¿Cómo lo mejoro? | Particiones, métricas, overfitting y underfitting, sesgo y varianza, búsqueda de hiperparámetros, regularización | [04](04%20-%20M%C3%A9tricas.md) | [§3](Resumen%20para%20el%20parcial.md#3-cómo-se-evalúa-un-modelo) · [§13](Resumen%20para%20el%20parcial.md#13-hiperparámetros-qué-pasa-si-los-subo) | **Métricas: 7 de 8** · overfitting: 4 de 8 |
+| **A · Entender y graficar** | ¿Qué tengo? | Tipos de problema y de variables, estadística descriptiva, correlación, gráficos, falacias | [01](01%20-%20Introducci%C3%B3n%20a%20la%20materia.md) · [02](02%20-%20Visualizaci%C3%B3n%20de%20datos.md) · [03](03%20-%20Introducci%C3%B3n%20a%20la%20ciencia%20de%20datos.md) | [§1](Resumen%20para%20el%20parcial.md#1-fundamentos) · [§2](Resumen%20para%20el%20parcial.md#2-visualización-y-falacias) | Tipos de problema: 4 de 9 parciales |
+| **B · Preparar** | ¿Están listos los datos? | Faltantes, outliers, escalado, transformaciones, codificación de categorías | [05](05%20-%20Limpieza%20y%20normalizaci%C3%B3n%20de%20datos.md) | [§4](Resumen%20para%20el%20parcial.md#4-ingeniería-de-características-feature-engineering) | Outliers: 4 de 9 · feature engineering: 4 de 9 |
+| **C · Supervisado** | ¿De qué clase es? ¿Cuánto vale? | Regresión lineal y logística, KNN, SVM, árboles, ensambles, redes neuronales | [06](06%20-%20%C3%81rboles%20-%20ID3%2C%20C4.5%20y%20Random%20Forest.md) · [08](08%20-%20Clasificaci%C3%B3n%20y%20regresi%C3%B3n%20cl%C3%A1sicos%20%28K-NN%2C%20SVM%2C%20lineal%2C%20log%C3%ADstica%29.md) · [09](09%20-%20Ensamble%20de%20modelos%20%28AdaBoost%2C%20Gradient%20Boosting%2C%20XGBoost%29.md) · [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | [§5](Resumen%20para%20el%20parcial.md#5-regresión-lineal-descenso-por-gradiente-y-regresión-logística) · [§7](Resumen%20para%20el%20parcial.md#7-árboles-de-decisión) · [§8](Resumen%20para%20el%20parcial.md#8-ensambles) · [§9](Resumen%20para%20el%20parcial.md#9-knn-y-svm) · [§10](Resumen%20para%20el%20parcial.md#10-redes-neuronales) | **Redes: 7 de 9 · ensambles: 6 de 9** · árboles: 4 de 9 |
+| **D · No supervisado** | ¿Qué estructura esconden los datos? | K-Means (con Hopkins, codo y Silhouette), SOM, PCA, MDS, ISOMAP, t-SNE | [07](07%20-%20Reducci%C3%B3n%20de%20la%20dimensionalidad.md) · [13](13%20-%20M%C3%A9todos%20de%20agrupamiento%20%28Clustering%29.md) · SOM en la [10](10%20-%20Redes%20neuronales%20%28perceptr%C3%B3n%2C%20MLP%2C%20backpropagation%2C%20SOM%29.md) | [§6](Resumen%20para%20el%20parcial.md#6-clustering-k-means) · [§11](Resumen%20para%20el%20parcial.md#11-reducción-de-la-dimensionalidad) | **Reducción: 4 de 9** (en 2026 no apareció) |
+| **E · Evaluar y ajustar** | ¿El modelo sirve? ¿Cómo lo mejoro? | Particiones, métricas, overfitting y underfitting, sesgo y varianza, búsqueda de hiperparámetros, regularización | [04](04%20-%20M%C3%A9tricas.md) | [§3](Resumen%20para%20el%20parcial.md#3-cómo-se-evalúa-un-modelo) · [§13](Resumen%20para%20el%20parcial.md#13-hiperparámetros-qué-pasa-si-los-subo) | **Métricas: 8 de 9** · overfitting: 5 de 9 · fuga de datos: nueva en 2026 |
 
-> 📌 **Además:** las **preguntas sobre el TP1** aparecieron en 6 de 8 parciales. Cruzan los bloques B (qué preprocesamiento hicieron, qué outliers encontraron) y D (cuántos clusters eligieron y qué representan). Están en `TP1 (privado)/`, solo en local.
+> 📌 **Además:** las **preguntas sobre el TP1** aparecieron en 7 de 9 parciales. Cruzan los bloques B (qué preprocesamiento hicieron, qué outliers encontraron) y D (cuántos clusters eligieron y qué representan). Están en `TP1 (privado)/`, solo en local.
+
+> 🆕 **El parcial del 29/10/2026**, [resuelto por la cátedra](Parciales%20anteriores%20resueltos.md#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra), tomó:
+> - el K-Means del TP1;
+> - la **fuga de datos**;
+> - precision y recall;
+> - train vs. validación cruzada en árboles;
+> - activaciones no lineales y backpropagation vs. optimizador;
+> - bagging vs. boosting y voting vs. stacking.
+>
+> Todo cae en los bloques **C, D y E**. No entraron ni la reducción de dimensionalidad ni lenguaje natural.
 
 ---
 
@@ -158,7 +168,7 @@ C. SUPERVISADO
 ├── Árboles de decisión
 │   ├── Criterio para elegir el atributo ── entropía / ganancia de información · Gini
 │   ├── Algoritmos ──────────────────────── ID3 → C4.5 · CART (el de scikit-learn)
-│   └── Poda (contra el overfitting)
+│   └── Contra el overfitting ────────────── poda (`ccp_alpha`) · `max_depth` · `min_samples_leaf`
 ├── Ensambles
 │   ├── Homogéneos (todos del mismo tipo)
 │   │   ├── Bagging ── Random Forest
@@ -225,9 +235,9 @@ Y los híbridos, que mezclan modelos **de distinto tipo**:
 | Pieza | Opciones | Cómo elegir |
 | --- | --- | --- |
 | **Arquitectura** | Perceptrón · MLP | El perceptrón traza **una recta**: puede AND, OR y NAND, **no XOR**. Para XOR hacen falta capas ocultas (MLP) |
-| **Activación de las capas ocultas** | ReLU (default) · tanh · sigmoide | La **escalón no sirve** para entrenar: no es derivable |
+| **Activación de las capas ocultas** | ReLU (default) · tanh · sigmoide | Tienen que ser **no lineales**: si no, muchas capas equivalen a una sola capa lineal. La **escalón no sirve** para entrenar: no es derivable |
 | **Activación de la salida** | Lineal · sigmoide · softmax | **Regresión → lineal** · **binaria → sigmoide** · **multiclase excluyente → softmax** (suman 1) · **multi-label → una sigmoide por neurona** |
-| **Entrenamiento** | Backpropagation + optimizador | Backpropagation **calcula** cuánto influye cada peso en el error (regla de la cadena, de atrás hacia adelante). El descenso por gradiente **usa** ese cálculo para mover los pesos |
+| **Entrenamiento** | Backpropagation + optimizador | Backpropagation **calcula** cuánto influye cada peso en el error (regla de la cadena, de atrás hacia adelante). El **optimizador** (SGD, Adam: variantes del descenso por gradiente) **usa** ese cálculo para mover los pesos |
 | **Optimizador** | Dos líneas de mejora del SGD | **Velocidad:** Momentum → Nesterov. **Paso adaptativo:** AdaGrad → RMSProp. **Adam = Momentum + RMSProp** · **Nadam = Adam + Nesterov** |
 | **Regularización** | Cinco métodos, en tres ideas | **Penalizar pesos grandes:** L1, L2 · **Que no dependa de pocas neuronas:** dropout · **Cortar a tiempo:** early stopping · **Más datos:** data augmentation |
 
@@ -312,6 +322,7 @@ Este bloque **atraviesa a todos los modelos**: cualquier modelo del bloque C se 
 ```
 E. EVALUAR Y AJUSTAR
 ├── Partir los datos ──────── train/test · train/validación/test · cross-validation (k folds)
+├── Hacerlo sin fuga de datos ─ partir primero → pipeline ajustado solo con train → CV para elegir → test una sola vez
 ├── Métricas
 │   ├── Clasificación ────── matriz de confusión → accuracy · precisión · recall · F1 / F-beta · FPR · ROC y AUC
 │   ├── Regresión ────────── MSE · RMSE · MAE
@@ -355,7 +366,7 @@ Esta tabla junta cosas que en las guías aparecen separadas, pero **todas hacen 
 
 | Modelo | Qué se hace |
 | --- | --- |
-| **Árbol** | **Poda**, limitar la profundidad |
+| **Árbol** | **Poda** (`ccp_alpha`), limitar la profundidad (`max_depth`), exigir un mínimo de ejemplos por hoja (`min_samples_leaf`) |
 | **Random Forest** | Ya es bagging. Sumar árboles no lo sobreajusta; se puede limitar la profundidad |
 | **Boosting / XGBoost** | **Learning rate** chico, λ y γ más grandes, menos árboles |
 | **KNN** | **Subir K** |
@@ -369,6 +380,7 @@ Esta tabla junta cosas que en las guías aparecen separadas, pero **todas hacen 
 | --- | --- | --- | --- |
 | **Parámetro** | | **Hiperparámetro** | El modelo **aprende** los parámetros (pesos, pendiente). **Vos elegís** los hiperparámetros (K, C, learning rate, profundidad) |
 | **Validación** | | **Test** | Validación es para **ajustar** hiperparámetros; test se usa **una sola vez**, al final |
+| **Preprocesar con todo el dataset** | | **Preprocesar solo con train** | Lo primero es **fuga de datos**: la media o el desvío ya incluyen el test. Se parte primero y se ajusta con train |
 | **Train/test** | | **Cross-validation** | Uno parte una vez; el otro rota k veces y promedia. Con k = 5, **se entrena 5 veces**, sea el split 80/20 o 70/30 |
 | **Grid Search** | | **Random Search** | Grid prueba **todas** las combinaciones (caro); Random prueba **una cantidad fija al azar** (controlás el costo) |
 | **Sesgo** | | **Varianza** | Sesgo: el modelo **no alcanza** a captar el patrón. Varianza: **cambia mucho** si cambian los datos |
@@ -407,6 +419,9 @@ La trampa más común es una misma palabra en dos bloques distintos. Antes de re
 | "muchas columnas", "visualizar en 2D" | D | Reducción → qué técnica según **qué hay que conservar** |
 | "le va muy bien en train y mal en test" | E | Overfitting → varianza → regularizar, podar, bagging, más datos |
 | "le va mal en train y en test" | E | Underfitting → sesgo → modelo más complejo, boosting |
+| "imputa y estandariza todo el dataset y después divide" | B + E | **Fuga de datos** → partir primero, pipeline ajustado con train |
+| "elige la configuración con mejor resultado en test" | E | Estimación **optimista** → elegir con validación cruzada dentro de train, test una sola vez |
+| "F1 en train 1,00 y en validación 0,72" | E | Overfitting → se elige la configuración con mejor **validación** |
 | "99% de accuracy" con fraude o enfermedad | E | Clases desbalanceadas → recall, precisión, F1, AUC; undersampling u oversampling |
 | "que no se escape ningún enfermo" | E | **Recall** |
 | "marcar solo si está seguro" | E | **Precisión** |
@@ -443,7 +458,7 @@ Naive Bayes es **clasificación supervisada**: si entra, va en el bloque C, y se
 
 ---
 
-## 10. 🗓️ Cómo repartir los días hasta el 19/11
+## 10. Cómo repartir los días hasta el 19/11
 
 | Día | Qué hacer |
 | --- | --- |
@@ -452,7 +467,7 @@ Naive Bayes es **clasificación supervisada**: si entra, va en el bloque C, y se
 | **Vie 13/11** | Bloque C, segunda parte: ensambles y redes ([§8](Resumen%20para%20el%20parcial.md#8-ensambles) y [§10](Resumen%20para%20el%20parcial.md#10-redes-neuronales)), con los ✍️ de AdaBoost, Gradient Boosting y el perceptrón |
 | **Sáb 14/11** | Bloques D y E ([§3](Resumen%20para%20el%20parcial.md#3-cómo-se-evalúa-un-modelo), [§6](Resumen%20para%20el%20parcial.md#6-clustering-k-means) y [§11](Resumen%20para%20el%20parcial.md#11-reducción-de-la-dimensionalidad)): métricas a mano y "¿qué técnica uso?". Repasá también lo del **TP1** |
 | **Dom 15 y lun 16/11** | Si rendís el **recuperatorio de GDSI** (lunes 16/11, 17 h), esos días son para eso. Si no, adelantá el simulacro |
-| **Mar 17/11** | **Simulacro:** un parcial de [Parciales anteriores](Parciales%20anteriores%20resueltos.md) completo, sin mirar y con reloj. Corregí y anotá en qué bloque estaban los errores |
+| **Mar 17/11** | **Simulacro:** el [parcial del 29/10/2026](Parciales%20anteriores%20resueltos.md#-parcial-del-29102026-esta-cursada--con-la-resolución-de-la-cátedra) completo, sin mirar la resolución y con reloj. Corregí con la de la cátedra y anotá en qué bloque estaban los errores. Después, [fuga de datos](Resumen%20para%20el%20parcial.md#fuga-de-datos-data-leakage-) |
 | **Mié 18/11** | Repasá los bloques donde fallaste, la [sección 7](#7--palabras-que-significan-cosas-distintas) de este mapa, las [8 preguntas 🔴](Resumen%20para%20el%20parcial.md#-las-8-preguntas-que-el-profe-marcó-como-de-examen) y [Ojo con esto](Resumen%20para%20el%20parcial.md#15-ojo-con-esto-errores-típicos) |
 | **Jue 19/11** | 🎯 **Recuperatorio** |
 
@@ -482,7 +497,9 @@ Respondé sin mirar; las respuestas están abajo de cada pregunta.
    <details><summary>Respuesta</summary>No. Backpropagation calcula los gradientes de todos los pesos con la regla de la cadena; el descenso por gradiente los usa para actualizar los pesos.</details>
 10. ¿Qué activación va en la salida para **regresión**, **binaria**, **multiclase** y **multi-label**?
     <details><summary>Respuesta</summary>Lineal, sigmoide, softmax y una sigmoide por neurona.</details>
+11. Un estudiante estandariza con todo el dataset y recién después divide en train y test. ¿Qué error es y en qué bloque va?
+    <details><summary>Respuesta</summary>Fuga de datos (data leakage): la media y el desvío incluyen las filas de test. Es del bloque E, aunque el paso sea del B: se arregla partiendo primero y ajustando el escalado solo con train.</details>
 
 ---
 
-<sub>⚙️ Mapa armado a partir de las guías 01–10 y 13, el [Resumen para el parcial](Resumen%20para%20el%20parcial.md), el [Resumen simple](Resumen%20simple.md) y la frecuencia por tema de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md). No agrega temas: los reordena por bloque y junta las comparaciones.</sub>
+<sub>⚙️ Mapa armado a partir de las guías 01–10 y 13, el [Resumen para el parcial](Resumen%20para%20el%20parcial.md), el [Resumen simple](Resumen%20simple.md) y la frecuencia por tema de [Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md), incluida la resolución de la cátedra del parcial del 29/10/2026. No agrega temas: los reordena por bloque y junta las comparaciones.</sub>
