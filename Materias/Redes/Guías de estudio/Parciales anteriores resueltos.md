@@ -211,6 +211,40 @@ Es el ejercicio nuevo. **No está en las PPTs**: sale del **TP** (diseño de la 
 
 ---
 
+## 📣 Lo que se marcó como "pregunta de examen" en las clases de 2C 2026
+
+> Sale de los **apuntes de clase de otro alumno de esta cursada** (Notion privado, clases 1 a 8). Los apuntes siguen las PPTs, pero tienen anotado lo que el profe remarcó para el parcial. Acá va solo eso, revisado contra las PPTs y con las respuestas.
+
+**Avisos de la cátedra:**
+- 🔴 **"El segundo parcial es hacer un mini dimensionamiento de una red".** Practicá el [ejercicio de ancho de banda](#dimensionar-el-ancho-de-banda-de-una-sede-ejercicio-nuevo).
+- El **final** es **teórico y práctico** y dura unas **2 horas**.
+
+| Pregunta marcada en clase | Respuesta |
+| --- | --- |
+| ¿Cuánto mide una **celda ATM**? | **53 bytes** = 48 de datos + 5 de cabecera |
+| ¿En qué se diferencian **TDM y FDM**? | **TDM** reparte el **tiempo**: cada canal usa todo el ancho de banda en su ranura. **FDM** reparte la **frecuencia**: cada canal tiene su banda, todos a la vez y con bandas de guarda (ej.: radio FM) |
+| Voz entre dos sucursales sobre **ATM**: ¿qué servicio? | **CBR**: velocidad constante garantizada, porque la voz es tiempo real y sensible al jitter |
+| ¿Qué redes pueden ofrecer **QoS**? | **ATM** (categorías CBR/VBR/ABR/UBR), **Frame Relay** (clases según contrato) y **MPLS** (bits de prioridad en la etiqueta). **IP sola no**: es *best effort* (las primeras redes IP no servían para voz en tiempo real) |
+| ¿Cómo está compuesta una **dirección MAC**? | **48 bits** (6 bytes): **24 bits identifican al fabricante** (OUI) y **24 al dispositivo**. Es la dirección **física** de la placa de red |
+| A una **red de capa 2** le falta un equipo: ¿router, hub o switch? | **Switch**: es el equipo de capa 2 que trabaja con **MAC** y manda cada trama solo al puerto del destino. El **hub** es de capa 1 (repite a todos) y el **router** es de capa 3 (IP) |
+| "¿Qué es un **TBM**?" (así quedó anotado) | En los apuntes la respuesta es la de un **PVC**: un **circuito virtual permanente**, es decir, un canal fijo de punto a punto dentro de una red conmutada (X.25, Frame Relay, ATM). La sigla "TBM" casi seguro está mal anotada: si la toman, respondé **PVC** (y contrastalo con el **SVC**, que se arma temporalmente) |
+| **Data center (PARCIAL):** "ver el esquema del centro de datos" | El recorrido de la fibra: **cámara 0** (en el piso, recibe las fibras de la ciudad) → **acometida** (la canalización hacia adentro) → **ER** (sala de entrada de los proveedores) → **MDA** → **IDA** → **ZDA** → **EDA** (servidores y storage). Ver la [guía 06](06%20-%20Redes%20en%20el%20centro%20de%20datos.md) |
+| **Data center (PARCIAL):** "ver la diferencia entre los dos esquemas" | La PPT muestra la **arquitectura modelo**, con una cámara y una acometida, y el **esquema de distribución típico**, con **dos acometidas (A y B)** de **dos proveedores** por **caminos distintos**. La diferencia es la **redundancia**: si se corta un camino, entra el otro. **Más proveedores = más resiliencia** |
+
+**Lo que dijeron que no toman:** en qué byte de la cabecera ATM va el **VPI**, ni **STP** en detalle.
+
+> ⚠️ **Errores de esos apuntes**, por si los usás:
+> - Dice que la capa 2 hace direccionamiento "**físico y lógico**". El lógico (IP) es de la **capa 3**.
+> - Dice que SDH "**llega a capa 1 y 2**". Para la cátedra, SDH es **capa 1** (transporte físico).
+> - Pone **UBR** como servicio de "video". UBR **no garantiza nada**: es para tráfico no crítico (correo, descargas). El video va con **CBR o VBR**.
+> - Dice que "**a partir de 10 Gb se requiere fibra**". El **Cat 6A** da **10 Gbps a 100 m** en cobre. Por encima de 10G, sí, la fibra es lo normal en el DC.
+> - Da **550 m** como alcance de la OM4 sin decir a qué velocidad. El alcance depende de la velocidad: de cientos de metros para abajo a medida que sube (ver la [sección 1](#1-fibra-óptica)).
+> - Dice que Internet "**nació en los 80 para interconectar dos universidades**". ARPANET arrancó a fines de los 60 (proyecto de 1966, la PPT) y en **1983** adoptó TCP/IP.
+> - Pone la **T1 en 1,536 Mbps**: son los 24 × 64 kbps de datos. Con el bit de entramado, la línea va a **1,544 Mbps** (≈ 1,5).
+> - En la parte de capa 5 mezcla **SCP**: el protocolo de sesión de DECnet y la copia segura por SSH son cosas distintas.
+
+---
+
 ## 1. Fibra óptica
 
 **Se tienen que conectar dos sedes A y B separadas por 8 km (o 12 km). ¿Qué tipo de fibra usar? Justificar y dar un ejemplo.** *(modelos 1, 2, 3)*

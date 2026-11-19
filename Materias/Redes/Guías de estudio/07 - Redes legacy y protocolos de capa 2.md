@@ -66,7 +66,7 @@ X.25 usaba **LAPB** (Link Access Procedure Balanced) en capa 2 para control de e
 ### La capa 2 (enlace de datos)
 
 **Funciones principales:**
-- **Direccionamiento físico (MAC)**: cada dispositivo tiene una **MAC única**.
+- **Direccionamiento físico (MAC)**: cada dispositivo tiene una **MAC única** de **48 bits** (6 bytes). Los primeros **24 bits** identifican al **fabricante** (OUI) y los otros **24** al **dispositivo**. 🎯 *Marcado en clase como pregunta de examen.*
 - **Detección de errores**: con **CRC** (Cyclic Redundancy Check).
 - **Control de flujo**: regula la velocidad de envío.
 - **Control de acceso al medio**: quién transmite y cuándo → **CSMA/CD** (Ethernet), **CSMA/CA** (Wi-Fi).
@@ -84,6 +84,8 @@ X.25 usaba **LAPB** (Link Access Procedure Balanced) en capa 2 para control de e
 | FCS / CRC (chequeo de error) | 4 |
 
 Tamaño: **mínimo 64 bytes, máximo 1518 bytes**. El **switch** mira la MAC destino y envía la trama **solo a ese puerto** (a diferencia del **hub**, capa 1, que repite a todos).
+
+> 🎯 **Pregunta marcada en clase:** a una red de capa 2 le falta un equipo y te dan a elegir **router, hub o switch** → **switch**, porque es el de capa 2 que trabaja con las MAC. El hub es capa 1 y el router, capa 3.
 
 ---
 

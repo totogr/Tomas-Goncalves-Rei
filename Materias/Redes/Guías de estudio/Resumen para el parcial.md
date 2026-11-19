@@ -13,6 +13,8 @@
 > - **Cat 6 vs. 6A**;
 > - las **arquitecturas de conectividad** del data center (tradicional vs. spine-leaf);
 > - un ejercicio nuevo, en los dos parciales: **dimensionar el ancho de banda de una sede**. Está resuelto paso a paso en ese archivo.
+>
+> 🔴 Según los apuntes de clase de esta cursada, **el segundo parcial es un mini dimensionamiento de una red**. Además, en clase se marcaron preguntas puntuales de examen (celda ATM, MAC de 24 + 24 bits, switch vs. hub vs. router, QoS, esquemas del DC): están [acá, con las respuestas](Parciales%20anteriores%20resueltos.md#-lo-que-se-marcó-como-pregunta-de-examen-en-las-clases-de-2c-2026).
 
 **Leyenda:**
 - 🔴 = salió en **casi todos** los parciales;
@@ -437,7 +439,7 @@
 | E1 / T1 / E3 | **2 Mbps** (32 canales) / **1,5 Mbps** (24 canales) / **34 Mbps** |
 | STM-1 / 4 / 16 / 64 / 256 | **155 Mbps / 622 Mbps / 2,5 Gbps / 10 Gbps / 40 Gbps** |
 | Celda ATM | **53 bytes** = 48 de datos + 5 de cabecera |
-| Trama Ethernet | **64 a 1518 bytes** · MAC de **6 bytes** |
+| Trama Ethernet | **64 a 1518 bytes** · MAC de **6 bytes** = 48 bits (**24 del fabricante + 24 del dispositivo**) |
 | Canal de cobre | **100 m** (90 m + patch cords) · extendido hasta **250 m** · Cat 8: **30 m** |
 | Cat 6 / 6A | **250 MHz** (10G hasta 55 m) / **500 MHz** (10G a 100 m) |
 | PoE | **15 / 30 / 60 / 90 W** |
@@ -468,6 +470,7 @@
 | Fábrica con **mucho ruido** eléctrico | **S/FTP** con puesta a tierra |
 | Alimentar una cámara o un AP por el mismo cable | **PoE** (30 W si es una cámara PTZ) |
 | **Voz** sobre ATM | **CBR** |
+| A una red de **capa 2** le falta un equipo (router, hub o switch) | **Switch** (capa 2, trabaja con MAC) |
 | Un DC que **no puede parar** para mantenimiento | Mínimo **Tier III**; si tampoco puede caerse ante una falla, **Tier IV** |
 | Aplicación en **tiempo real** (VoIP, juegos) | **UDP** |
 | Necesito que **llegue todo y en orden** | **TCP** |

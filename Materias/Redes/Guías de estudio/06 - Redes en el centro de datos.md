@@ -52,9 +52,32 @@ flowchart TD
 - Ventajas de estandarizar: alta calidad, **interoperabilidad** entre fabricantes, mejores prácticas.
 - Ejes de diseño: **uso eficiente de la energía**, **escalabilidad**, **refrigeración**, **seguridad**, **sustentabilidad**, redundancia de caminos (Camino A / Camino B, acometidas de proveedores distintos).
 
+### Del cable de la calle al servidor (🔴 marcado para el parcial)
+
+En clase dijeron **"ver el esquema del centro de datos"** y **"ver la diferencia entre los dos esquemas"**.
+
+1. **Cámara 0:** está embutida en el piso, afuera, y recibe las fibras que vienen de la ciudad.
+2. **Acometida:** la canalización que lleva esas fibras hacia adentro.
+3. **ER** (*Entrance Room*): la sala de entrada, donde llegan las fibras de los **distintos proveedores**.
+4. **MDA** (distribución principal) → **IDA** (intermedia) → **ZDA** (de zona) → **EDA** (equipos: servidores y storage).
+
+**Los dos esquemas de la PPT:**
+
+| Arquitectura modelo | Esquema de distribución típico |
+| --- | --- |
+| **Una** cámara y **una** acometida | **Dos acometidas (A y B)** de **dos proveedores**, por **caminos distintos** (cámaras del camino A y del camino B) |
+| Si se corta ese camino, el DC queda aislado | Si se corta un camino, sigue el otro: **redundancia**. Cuantos más proveedores, más resiliencia |
+
+Es la misma lógica de los Tiers: el **Tier III** pide **dos proveedores de telecomunicaciones** y dos cuartos de entrada.
+
 ### Escala y clasificación
 
 - Escala por potencia: **pequeños** hasta 20 MW · **medianos** 50–100 MW · **grandes** +100 MW.
+- Escala por uso (lámina de la PPT):
+  - **Core DC:** los gigantes de la nube (AWS, Google, Azure), con miles de racks y millones de usuarios;
+  - **Edge DC:** chicos, modulares y cerca del usuario, con menos consumo y latencia;
+  - **MTDC** (*Multi-Tenant Data Center*): grandes, y varias empresas comparten los racks.
+- **Nube híbrida** (*Footprint DC Hybrid Cloud*): la empresa mantiene su DC y, cuando tiene un **pico de demanda**, alquila capacidad extra en la nube solo por ese período. Sale más barato que tener esa capacidad todo el año.
 - **Tiers (Uptime Institute)**: clasifican la **disponibilidad/redundancia** del DC (a mayor Tier, más redundancia y menos tiempo de caída tolerado).
 
 ### Tiers en detalle
