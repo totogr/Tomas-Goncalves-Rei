@@ -8,6 +8,12 @@
 > - 🟢 [**Resumen simple**](Resumen%20simple.md): los mismos temas sin números ni siglas de más, para entender las ideas antes de memorizar.
 > - 📚 Las [guías por tema](README.md): para profundizar cuando algo no cierra.
 
+> 🆕 **Para el recuperatorio:** en los [parciales de esta cursada](Parciales%20anteriores%20resueltos.md#-parciales-de-esta-cursada-2c-2026) aparecieron temas que antes no salían:
+> - **capas 3 y 4** en detalle (funciones y protocolos);
+> - **Cat 6 vs. 6A**;
+> - las **arquitecturas de conectividad** del data center (tradicional vs. spine-leaf);
+> - un ejercicio nuevo, en los dos parciales: **dimensionar el ancho de banda de una sede**. Está resuelto paso a paso en ese archivo.
+
 **Leyenda:**
 - 🔴 = salió en **casi todos** los parciales;
 - 🟠 = salió alguna vez o es muy probable;
@@ -467,6 +473,7 @@
 | Necesito que **llegue todo y en orden** | **TCP** |
 | Salir a **toda Internet** | **Tránsito IP** |
 | Unir **sucursales** de forma privada | **VPN** (IP o MPLS) |
+| **Dimensionar** el enlace de una sede | Servicio por servicio (**consumo × cantidad × simultaneidad**), sumar, **+20–30 %** de margen y **redondear para arriba**. Enlace **simétrico** y **redundante** (ver el [ejercicio resuelto](Parciales%20anteriores%20resueltos.md#dimensionar-el-ancho-de-banda-de-una-sede-ejercicio-nuevo)) |
 
 ---
 
@@ -492,6 +499,9 @@
 | IP es confiable | IP es **best effort**; la confiabilidad la pone **TCP** |
 | Un hash es un cifrado | El hash **no se descifra**: sirve para la **integridad** |
 | La capa 5 es la que asegura la entrega | La entrega la asegura la **capa 4**; la 5 organiza el **diálogo** |
+| Al dimensionar, sumar todos los usuarios como si usaran todo a la vez | Aplicar un **porcentaje de simultaneidad** y escribir el supuesto |
+| Al dimensionar, tomar KB como kb | Los enlaces van en **bits**: **1 byte = 8 bits** |
+| Contratar el enlace justo o por debajo de lo calculado | Sumar **margen** (20–30 %) y **redondear para arriba** |
 
 ---
 
@@ -521,6 +531,11 @@
 22. Contá el **handshake de TLS**. ¿Qué garantiza?
 23. ¿Qué puerto y transporte usan DNS, DHCP, HTTPS, SSH y SNMP?
 24. ¿Qué imaginó **Martin Cooper**?
+25. 🆕 Explicá la **capa 3** del modelo OSI: funciones y protocolos. ¿Qué cambia y qué no a lo largo de la ruta?
+26. 🆕 Explicá la **capa 4**: funcionalidades y protocolos.
+27. 🆕 Dibujá el **modelo TCP/IP** resumido, con protocolos y unidad de cada capa.
+28. 🆕 Compará el **modelo tradicional** de switching con **spine & leaf**.
+29. 🆕 ✍️ Dimensioná el enlace de una sede de **50 empleados**: 30 % hablando por teléfono IP a la vez (G.711), 5 videoconferencias HD, 4 cámaras y datos para todos.
 
 <details>
 <summary>Resolución del 7 (Hamming de 0110)</summary>
@@ -536,6 +551,22 @@
   - P2 = 1 ⊕ 1 ⊕ 1 ⊕ 0 = **1**;
   - P4 = 0 ⊕ 1 ⊕ 1 ⊕ 0 = **0**.
 - **(P4 P2 P1) = 011 = 3** → se invierte M3 y se recupera `1100110`.
+
+</details>
+
+<details>
+<summary>Resolución del 29 (una posible: los supuestos pueden variar)</summary>
+
+| Servicio | Cálculo | Total |
+| --- | --- | --- |
+| Datos (60 % activos, 0,5 Mbps) | 30 × 0,5 | 15 Mbps |
+| Telefonía IP | 15 × 87 kbps | ≈ 1,3 Mbps |
+| Videoconferencia | 5 × 2 Mbps | 10 Mbps |
+| Cámaras | 4 × 2 Mbps | 8 Mbps |
+| **Subtotal** | | **34,3 Mbps** |
+| **+25 %** | 34,3 × 1,25 | **≈ 43 Mbps** |
+
+→ Enlace de **50 Mbps simétrico**, con un segundo enlace de respaldo de otro proveedor y QoS para voz y video.
 
 </details>
 

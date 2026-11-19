@@ -1,5 +1,7 @@
 # 📝 Parciales anteriores resueltos — Redes
 
+> 🆕 **Arriba de todo:** los [dos parciales de esta cursada (2C 2026)](#-parciales-de-esta-cursada-2c-2026), con el ejercicio nuevo de **dimensionar el ancho de banda de una sede**.
+>
 > Las consignas de **5 modelos de parcial** de la cátedra (Volpi / Giorgi / Llasat) más las preguntas de parcial que juntaron otros alumnos, **agrupadas por tema**, con la respuesta correcta revisada contra las PPTs.
 > Fuentes originales en [`Material extra/`](../Material%20extra/). Para estudiar la teoría, usá el [Resumen para el parcial](Resumen%20para%20el%20parcial.md).
 
@@ -28,6 +30,184 @@
 > 🔑 **Conclusión:**
 > - Si dominás **fibra (elegir y OM4/OM5)**, **OSI vs. TCP/IP**, **Tiers de DC**, la **tabla SDH/E1**, **ATM** y **Hamming**, tenés cubierto lo que salió en casi todos los parciales.
 > - **No se tomaron** capas 5–7 ni TCP/UDP en detalle, pero este cuatrimestre la cátedra dijo que **entra hasta la clase #11 (capas 5, 6 y 7)**, así que pueden aparecer.
+
+---
+
+## 🆕 Parciales de esta cursada (2C 2026)
+
+> Consignas de **dos parciales recientes**, tal como las recordaron alumnos: **no son textuales ni están completas**.
+> Siguen apareciendo fibra, OSI/TCP/IP y data centers, pero hay **cambios** respecto de los modelos viejos:
+> - **capas 3 y 4 en detalle** (funciones y protocolos);
+> - **Cat 6 vs. Cat 6A**;
+> - **arquitecturas de conectividad** del data center;
+> - un ejercicio **nuevo**: **dimensionar el ancho de banda de una sede**. Salió en los dos.
+
+| Parcial A | Parcial B |
+| --- | --- |
+| Capa 3 del modelo OSI: explicación y protocolos | Capa 4 del modelo OSI: funcionalidades y protocolos |
+| Diagrama resumido del modelo TCP/IP | Qué es un data center y tipos de arquitectura según conectividad |
+| Múltiple choice de fibra óptica | Múltiple choice de fibra óptica |
+| Tipos de data center con ejemplos | Diferencia entre cobre Cat 6 y Cat 6A |
+| Dimensionar el ancho de banda de una sede central según ciertos servicios | Dimensionar el ancho de banda de una sede de un banco de 100 empleados según sus servicios |
+
+### Capa 3 (Red): explicación y protocolos
+
+- **Qué hace, según la PPT:** da **conectividad y selección de ruta** entre el origen y el destino final, aunque estén en **redes distintas** y lejos.
+- **Funciones:**
+  - **Direccionamiento lógico:** cada paquete lleva la **IP de origen y de destino**, que **no cambian a lo largo de la ruta**. (Las MAC de capa 2, en cambio, cambian en cada salto).
+  - **Ruteo:** cada router mira la IP destino en su **tabla de ruteo** y elige por dónde seguir. Las tablas se arman a mano (**estático**) o con protocolos (**dinámico**).
+  - **Encapsulamiento:** recibe el segmento de la capa 4 y arma el **paquete** con la cabecera IP. Si no entra en la trama del medio, lo **fragmenta**.
+  - **Best effort:** IP es **no orientado a conexión** y **no confiable**. La confiabilidad la pone TCP, arriba.
+- **Unidad:** **paquete**. **Equipo típico:** el **router** (o un switch de capa 3).
+- **Protocolos:**
+  - **IP** (v4 de 32 bits y v6 de 128 bits). La PPT también nombra **IPX**, que es histórico;
+  - **ICMP:** mensajes de control y error (`ping`, `traceroute`);
+  - de **ruteo**: **OSPF** dentro de un sistema autónomo y **BGP** entre sistemas autónomos.
+- **En TCP/IP** equivale a la capa **Internet**.
+- Para sumar: clases de IP, máscara, pública vs. privada y NAT. Están en la [sección 8 del Resumen](Resumen%20para%20el%20parcial.md#8-capa-3-ip-ruteo-bgp-y-ospf).
+
+### Diagrama resumido del modelo TCP/IP
+
+Dibujalo así: las 4 capas, un par de protocolos y la unidad de cada una, y al costado a qué capas del OSI equivale.
+
+```
+  TCP/IP                 Protocolos                     Unidad        OSI
+ ┌──────────────────┐
+ │ Aplicación       │   HTTP, DNS, SMTP, FTP, TLS        Datos         7 + 6 + 5
+ ├──────────────────┤
+ │ Transporte       │   TCP, UDP                         Segmento      4
+ ├──────────────────┤
+ │ Internet         │   IP, ICMP, OSPF, BGP              Paquete       3
+ ├──────────────────┤
+ │ Acceso a la red  │   Ethernet, Wi-Fi, PPP;            Trama / bits  2 + 1
+ │                  │   cobre, fibra, radio
+ └──────────────────┘
+   ↓ al enviar, cada capa agrega su cabecera (encapsulamiento)
+   ↑ al recibir, cada capa saca la suya
+```
+
+- Agregá una línea de contexto: OSI es el modelo **teórico de referencia** (ISO, 7 capas); TCP/IP es el que **usa Internet** (4 capas).
+
+### Capa 4 (Transporte): funcionalidades y protocolos
+
+- **Qué hace:** comunicación **extremo a extremo** entre **procesos** (aplicaciones) de dos equipos. La capa 3 lleva el paquete de equipo a equipo; la 4, de aplicación a aplicación.
+- **Funcionalidades:**
+  - **Multiplexación por puertos:** varias aplicaciones comparten la misma IP. **Socket = IP + puerto**.
+  - **Segmentación y reensamblado** de los datos de la aplicación.
+  - **Control de errores:** checksum, acuses de recibo (**ACK**) y **retransmisión**.
+  - **Orden:** números de **secuencia**.
+  - **Control de flujo** (ventana deslizante) y **de congestión**.
+  - **Establecimiento y cierre de conexión** (handshake de 3 pasos).
+- **La PPT distingue** protocolos **confiables** (conexión, acuse de recibo, secuenciación y control de flujo) de **no confiables** (nada de eso).
+- **Protocolos:**
+  - **TCP:** confiable y orientado a conexión (web, correo, SSH);
+  - **UDP:** sin conexión, rápido, cabecera de 8 bytes (DNS, VoIP, streaming);
+  - **QUIC** corre sobre UDP y es la base de HTTP/3.
+- La tabla completa de TCP vs. UDP está en la [sección 10 del Resumen](Resumen%20para%20el%20parcial.md#10-capa-4-tcp-y-udp).
+
+### Data center: qué es, tipos y arquitecturas según conectividad
+
+- **Qué es:** una instalación que **aloja infraestructura informática** (servidores, almacenamiento y red) para **ejecutar aplicaciones y guardar datos**, con energía, refrigeración y seguridad 24/7.
+- **Tipos, con ejemplos:**
+
+| Tipo | Qué es | Ejemplo |
+| --- | --- | --- |
+| **Enterprise** | Propio de la empresa, para sus sistemas | Un banco, una petrolera |
+| **Cloud / hiperescala** | Del proveedor de nube, compartido | AWS, Google, Azure |
+| **Colocation / telco** | Alquila espacio, energía y conectividad | Telecom, Claro, ARSAT |
+| **Edge** | Chico y **cerca del usuario**, para baja latencia | Sucursales de retail o bancos |
+
+- **"Arquitecturas según conectividad"** es la lámina **"Arquitecturas de conectividad"** de la PPT: cómo se conectan los switches dentro del DC.
+
+| | **Modelo tradicional** (core → agregación → acceso) | **Spine & leaf** |
+| --- | --- | --- |
+| Cómo se conecta | En **árbol**, por niveles | **Cada leaf** se conecta con **todos** los spines; los servidores cuelgan de los leaf (switch **ToR**) |
+| Tráfico para el que sirve | **Norte-sur** (de los usuarios hacia los servidores) | **Este-oeste** (entre servidores, como en la virtualización) |
+| Ventajas (PPT) | Diseño **previsible y escalable** | **Menor latencia**, más **resiliente**, más **ancho de banda** |
+| Desventaja (PPT) | **Poco eficiente** para aplicaciones de **baja latencia o virtualizadas** | — |
+
+- **Ejemplo de la PPT:** spine-leaf a **100G**, con enlaces 100G SR4 entre spine y leaf, y cada servidor al ToR con **4 × 25G** (un puerto de 100G partido en cuatro).
+- **Tendencia:** para la **IA** se suma una red **back-end** aparte (InfiniBand) que une los servidores de cómputo y el almacenamiento, al lado de la red Ethernet de siempre (*front-end*).
+- Si sobra tiempo, nombrá los **Tiers**: es lo que más pedían los modelos viejos (ver [sección 3](#3-data-centers)).
+
+### Cat 6 vs. Cat 6A
+
+| | **Cat 6** | **Cat 6A** |
+| --- | --- | --- |
+| Frecuencia | **250 MHz** | **500 MHz** (el doble) |
+| 10 Gbps | Solo hasta **~55 m** | En los **100 m** completos |
+| 1 Gbps | 100 m | 100 m |
+| Cable | Más fino y barato | Más grueso y caro; mejor protegido contra la diafonía entre cables vecinos (*alien crosstalk*) |
+| Uso típico | Oficinas | Proyectos nuevos, edificios inteligentes, PoE de alta potencia |
+
+- **Conclusión para escribir:** para una instalación nueva conviene **6A**, porque da 10 Gbps a 100 m y dura **20–25 años**.
+
+### Múltiple choice de fibra óptica
+
+No se sabe qué opciones pusieron. Lo que más se presta para un choice:
+- núcleo **monomodo 9 µm** vs. **multimodo 50 µm**;
+- **monomodo** para kilómetros, **multimodo** para cientos de metros (dispersión modal);
+- **OM5** = multimodo con **SWDM** (4 longitudes de onda por hilo);
+- conectores **LC / SC / ST / FC / MPO**, y el pulido **APC** (8°, verde);
+- **Plenum, Riser y LSZH**;
+- el **OTDR** localiza cortes y empalmes.
+
+Practicá con la [sección 1](#1-fibra-óptica) y los [choice de la sección 9](#9-múltiple-choice-para-practicar-armados-con-el-estilo-de-la-cátedra).
+
+### Dimensionar el ancho de banda de una sede (ejercicio nuevo)
+
+Es el ejercicio nuevo. **No está en las PPTs**: sale del **TP** (diseño de la red de una empresa), donde se dimensiona el enlace de cada sede. No hay una única respuesta: lo que se corrige es el **método** y que los **supuestos estén escritos**.
+
+**Método en 5 pasos:**
+1. **Listar los servicios** que usan el enlace: datos y navegación, aplicaciones de la empresa, telefonía IP, videoconferencia, cámaras, backups.
+2. Para cada uno: **consumo unitario × cantidad × simultaneidad**. No todos usan todo a la vez: suponé un porcentaje y escribilo.
+3. **Sumar**.
+4. Agregar un **margen del 20–30 %** para picos y crecimiento.
+5. **Redondear para arriba** al enlace comercial siguiente (20, 50, 100, 200, 300 Mbps, 1 Gbps), **nunca para abajo**.
+
+**Valores de referencia** (típicos de la industria: si el enunciado da otros, usá los del enunciado):
+
+| Servicio | Consumo típico |
+| --- | --- |
+| Navegación, correo y ofimática en la nube | 0,5–1 Mbps por usuario activo |
+| Transacciones (cajas, cajeros, POS) | Menos de 0,1 Mbps por terminal |
+| Telefonía IP | **~87 kbps** por llamada con G.711 (64 kbps de voz + cabeceras) · ~31 kbps con G.729 (comprimido) |
+| Videoconferencia HD | 1,5–3 Mbps por participante |
+| Cámara de seguridad 1080p (H.264) | 2–4 Mbps por cámara |
+
+**Ejemplo: sede de un banco con 100 empleados**
+
+| Servicio | Supuesto | Cálculo | Total |
+| --- | --- | --- | --- |
+| Datos, correo y ofimática | 60 % de los empleados activos a la vez | 60 × 0,5 Mbps | 30 Mbps |
+| Aplicaciones bancarias (cajas, sistema central) | 20 terminales | 20 × 0,1 Mbps | 2 Mbps |
+| Telefonía IP (G.711) | 1 de cada 4 empleados hablando a la vez | 25 × 87 kbps | ≈ 2,2 Mbps |
+| Videoconferencia HD | 10 a la vez | 10 × 2 Mbps | 20 Mbps |
+| Cámaras hacia el centro de monitoreo | 8 cámaras | 8 × 2 Mbps | 16 Mbps |
+| **Subtotal** | | | **70,2 Mbps** |
+| **Con 25 % de margen** | | 70,2 × 1,25 | **≈ 88 Mbps** |
+
+→ **Enlace de 100 Mbps simétrico.**
+
+**Lo que suma puntos además del número:**
+- **Simétrico:** la sede **sube** tanto como baja (videollamadas, cámaras, backups).
+- **Redundancia:** un banco no puede quedarse sin enlace. Conviene un **segundo enlace** de **otro proveedor** y por **otro camino**: la misma idea que los caminos A y B del data center.
+- **Tecnología:** **VPN MPLS** (o VPN IP) hacia el data center y las sucursales, con **QoS** que priorice la voz y el video, porque son sensibles al **jitter**; más una salida a Internet (tránsito IP).
+- **Backups nocturnos:** van fuera del horario pico, así que no se suman al pico, pero hay que ver que entren en la ventana de la noche. 200 GB por 100 Mbps = 1.600.000 Mb ÷ 100 Mbps = 16.000 s ≈ **4,4 h**.
+
+**Si es una sede central:** a su propio consumo se le suma el tráfico de las **sucursales que pasan por ella**, por ejemplo si el data center está en la sede central. Por ejemplo, 5 sucursales de 20 Mbps más 88 Mbps propios = 188 Mbps → enlace de **200 Mbps** (o más, con margen).
+
+**Errores típicos:**
+- **Confundir bytes con bits:** 5 KB son **40 kb** (× 8). Los enlaces se miden en **bits** por segundo.
+- **Sumar todo como si todos usaran todo a la vez:** se exagera el enlace. Aplicá un porcentaje de simultaneidad.
+- **Contratar menos de lo calculado:** si da 15,2 Mbps, no alcanza un enlace de 15 Mbps. Hay que ir al siguiente.
+- **Dar solo el número**, sin supuestos, sin margen y sin tecnología.
+
+> ⚠️ **Ojo con el ejemplo de la Notion** (`Material extra/Apuntes Notion/`), que resume el TP de otro grupo:
+> - **5 cajas × 10 transacciones por minuto × 5 KB** dan 250 KB por minuto = 2000 kb ÷ 60 s ≈ **33 kbps**, no 2 Mbps como dice.
+> - Además, calcula **15,2 Mbps** y recomienda un enlace de **15 Mbps**, que queda **por debajo** de lo calculado.
+>
+> El método (servicio por servicio, G.711 a 87 kbps, cámaras a 2 Mbps, margen y sede central que suma sucursales) sí está bien.
 
 ---
 

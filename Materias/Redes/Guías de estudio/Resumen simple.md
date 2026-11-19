@@ -315,6 +315,21 @@ En la otra punta se hace todo al revés. A nadie le importa cómo trabaja el cam
 
 ---
 
+## 13. Dimensionar el ancho de banda de una sede (salió en los parciales de 2026)
+
+- **La pregunta:** ¿qué enlace hay que contratar para que una oficina funcione bien?
+- **La idea:** es como calcular cuánta agua necesita un edificio. Contás cuántas canillas hay, cuánto gasta cada una y cuántas se abren a la vez, y le sumás un poco por las dudas.
+- **Los pasos:**
+  1. anotar qué usa la gente: internet y correo, teléfono, videollamadas, cámaras;
+  2. para cada cosa, multiplicar lo que gasta una por cuántas se usan **a la vez**;
+  3. sumar todo;
+  4. agregar un **20–30 %** de margen;
+  5. contratar el enlace del tamaño **siguiente** (si da 88 Mbps, uno de 100).
+- **Lo que conviene decir además:** que el enlace sea **igual de rápido para subir que para bajar**, y que haya **un segundo enlace de otra empresa** por si se corta el primero.
+- El ejemplo con números (un banco de 100 empleados) está en [Parciales anteriores](Parciales%20anteriores%20resueltos.md#dimensionar-el-ancho-de-banda-de-una-sede-ejercicio-nuevo).
+
+---
+
 ## 🧠 Todo junto, en una tabla
 
 | Tema | La pregunta que responde | La idea en una frase |
