@@ -33,6 +33,8 @@ Guías pensadas para **llegar a cada clase con el tema leído y entendido a gran
 
 **[Resumen simple](Resumen%20simple.md)**: los mismos temas contados sin tecnicismos, con definiciones y ejemplos cotidianos. Para leer **primero** y entender cómo funciona una red antes de memorizar números y siglas.
 
+**[Glosario de siglas](Glosario%20de%20siglas.md)**: más de 300 siglas (SDH, TDM, NFV, BGP, OSPF, OM, OS…) agrupadas por tema, con el nombre completo, una línea de qué son, un truco por tema para recordarlas y un índice alfabético. Incluye las siglas que significan dos cosas distintas (FTP, STP, ER…).
+
 **[Parciales anteriores resueltos](Parciales%20anteriores%20resueltos.md)**: las consignas de 5 modelos de parcial de la cátedra, agrupadas por tema y con la respuesta modelo, más múltiple choice para practicar. 🆕 Arriba de todo, los dos parciales de esta cursada (2C 2026), con el ejercicio nuevo de **dimensionar el ancho de banda de una sede**.
 
 **Cubiertos dentro de otras guías:** ICMP (08) · Sistemas Autónomos e IXP (09) · TCP en detalle (handshake, control de flujo y congestión), DNS, DHCP, HTTP, FTP, SMTP y seguridad de capa 4 (11) · TLS, cifrado, codificación, compresión y la tabla de puertos de capa 7 (12).

@@ -6,6 +6,7 @@
 > **Se complementa con:**
 > - 📝 [**Parciales anteriores resueltos**](Parciales%20anteriores%20resueltos.md): cada consigna real con su respuesta modelo, y múltiple choice para practicar.
 > - 🟢 [**Resumen simple**](Resumen%20simple.md): los mismos temas sin números ni siglas de más, para entender las ideas antes de memorizar.
+> - 🔤 [**Glosario de siglas**](Glosario%20de%20siglas.md): todas las siglas agrupadas por tema, con su significado en una línea. Para cuando no te acordás de qué era SDH, OM5 o BGP.
 > - 📚 Las [guías por tema](README.md): para profundizar cuando algo no cierra.
 
 > 🆕 **Para el recuperatorio:** en los [parciales de esta cursada](Parciales%20anteriores%20resueltos.md#-parciales-de-esta-cursada-2c-2026) aparecieron temas que antes no salían:
